@@ -21,8 +21,7 @@ type Auth struct {
 
 // AliCloudDeleteAuthRole Create a role and associate policies to it.
 // role: The name of the role as it should appear in Vault.
-// alicloudMountPath: Path that the backend was mounted at
-func (a *Auth) AliCloudDeleteAuthRole(ctx context.Context, role string, alicloudMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AliCloudDeleteAuthRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -46,8 +45,7 @@ func (a *Auth) AliCloudDeleteAuthRole(ctx context.Context, role string, alicloud
 }
 
 // AliCloudListAuthRoles Lists all the roles that are registered with Vault.
-// alicloudMountPath: Path that the backend was mounted at
-func (a *Auth) AliCloudListAuthRoles(ctx context.Context, alicloudMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AliCloudListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -71,8 +69,7 @@ func (a *Auth) AliCloudListAuthRoles(ctx context.Context, alicloudMountPath stri
 }
 
 // AliCloudListAuthRoles2 Lists all the roles that are registered with Vault.
-// alicloudMountPath: Path that the backend was mounted at
-func (a *Auth) AliCloudListAuthRoles2(ctx context.Context, alicloudMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AliCloudListAuthRoles2(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -96,8 +93,7 @@ func (a *Auth) AliCloudListAuthRoles2(ctx context.Context, alicloudMountPath str
 }
 
 // AliCloudLogin Authenticates an RAM entity with Vault.
-// alicloudMountPath: Path that the backend was mounted at
-func (a *Auth) AliCloudLogin(ctx context.Context, alicloudMountPath string, request schema.AliCloudLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AliCloudLogin(ctx context.Context, request schema.AliCloudLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -121,8 +117,7 @@ func (a *Auth) AliCloudLogin(ctx context.Context, alicloudMountPath string, requ
 
 // AliCloudReadAuthRole Create a role and associate policies to it.
 // role: The name of the role as it should appear in Vault.
-// alicloudMountPath: Path that the backend was mounted at
-func (a *Auth) AliCloudReadAuthRole(ctx context.Context, role string, alicloudMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AliCloudReadAuthRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -147,8 +142,7 @@ func (a *Auth) AliCloudReadAuthRole(ctx context.Context, role string, alicloudMo
 
 // AliCloudWriteAuthRole Create a role and associate policies to it.
 // role: The name of the role as it should appear in Vault.
-// alicloudMountPath: Path that the backend was mounted at
-func (a *Auth) AliCloudWriteAuthRole(ctx context.Context, role string, alicloudMountPath string, request schema.AliCloudWriteAuthRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AliCloudWriteAuthRole(ctx context.Context, role string, request schema.AliCloudWriteAuthRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -173,8 +167,7 @@ func (a *Auth) AliCloudWriteAuthRole(ctx context.Context, role string, alicloudM
 
 // AppRoleDeleteBindSecretId
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleDeleteBindSecretId(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleDeleteBindSecretId(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -199,8 +192,7 @@ func (a *Auth) AppRoleDeleteBindSecretId(ctx context.Context, roleName string, a
 
 // AppRoleDeleteBoundCidrList
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleDeleteBoundCidrList(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleDeleteBoundCidrList(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -225,8 +217,7 @@ func (a *Auth) AppRoleDeleteBoundCidrList(ctx context.Context, roleName string, 
 
 // AppRoleDeletePeriod
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleDeletePeriod(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleDeletePeriod(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -251,8 +242,7 @@ func (a *Auth) AppRoleDeletePeriod(ctx context.Context, roleName string, approle
 
 // AppRoleDeletePolicies
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleDeletePolicies(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleDeletePolicies(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -277,8 +267,7 @@ func (a *Auth) AppRoleDeletePolicies(ctx context.Context, roleName string, appro
 
 // AppRoleDeleteRole
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleDeleteRole(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleDeleteRole(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -303,8 +292,7 @@ func (a *Auth) AppRoleDeleteRole(ctx context.Context, roleName string, approleMo
 
 // AppRoleDeleteSecretIdBoundCidrs
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleDeleteSecretIdBoundCidrs(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleDeleteSecretIdBoundCidrs(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -329,8 +317,7 @@ func (a *Auth) AppRoleDeleteSecretIdBoundCidrs(ctx context.Context, roleName str
 
 // AppRoleDeleteSecretIdNumUses
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleDeleteSecretIdNumUses(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleDeleteSecretIdNumUses(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -355,8 +342,7 @@ func (a *Auth) AppRoleDeleteSecretIdNumUses(ctx context.Context, roleName string
 
 // AppRoleDeleteSecretIdTtl
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleDeleteSecretIdTtl(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleDeleteSecretIdTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -381,8 +367,7 @@ func (a *Auth) AppRoleDeleteSecretIdTtl(ctx context.Context, roleName string, ap
 
 // AppRoleDeleteTokenBoundCidrs
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleDeleteTokenBoundCidrs(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleDeleteTokenBoundCidrs(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -407,8 +392,7 @@ func (a *Auth) AppRoleDeleteTokenBoundCidrs(ctx context.Context, roleName string
 
 // AppRoleDeleteTokenMaxTtl
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleDeleteTokenMaxTtl(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleDeleteTokenMaxTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -433,8 +417,7 @@ func (a *Auth) AppRoleDeleteTokenMaxTtl(ctx context.Context, roleName string, ap
 
 // AppRoleDeleteTokenNumUses
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleDeleteTokenNumUses(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleDeleteTokenNumUses(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -459,8 +442,7 @@ func (a *Auth) AppRoleDeleteTokenNumUses(ctx context.Context, roleName string, a
 
 // AppRoleDeleteTokenTtl
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleDeleteTokenTtl(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleDeleteTokenTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -485,8 +467,7 @@ func (a *Auth) AppRoleDeleteTokenTtl(ctx context.Context, roleName string, appro
 
 // AppRoleDestroySecretId
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleDestroySecretId(ctx context.Context, roleName string, approleMountPath string, request schema.AppRoleDestroySecretIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleDestroySecretId(ctx context.Context, roleName string, request schema.AppRoleDestroySecretIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -511,8 +492,7 @@ func (a *Auth) AppRoleDestroySecretId(ctx context.Context, roleName string, appr
 
 // AppRoleDestroySecretId2
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleDestroySecretId2(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleDestroySecretId2(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -537,8 +517,7 @@ func (a *Auth) AppRoleDestroySecretId2(ctx context.Context, roleName string, app
 
 // AppRoleDestroySecretIdByAccessor
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleDestroySecretIdByAccessor(ctx context.Context, roleName string, approleMountPath string, request schema.AppRoleDestroySecretIdByAccessorRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleDestroySecretIdByAccessor(ctx context.Context, roleName string, request schema.AppRoleDestroySecretIdByAccessorRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -563,8 +542,7 @@ func (a *Auth) AppRoleDestroySecretIdByAccessor(ctx context.Context, roleName st
 
 // AppRoleDestroySecretIdByAccessor2
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleDestroySecretIdByAccessor2(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleDestroySecretIdByAccessor2(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -588,8 +566,7 @@ func (a *Auth) AppRoleDestroySecretIdByAccessor2(ctx context.Context, roleName s
 }
 
 // AppRoleListRoles
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleListRoles(ctx context.Context, approleMountPath string, options ...RequestOption) (*Response[schema.AppRoleListRolesResponse], error) {
+func (a *Auth) AppRoleListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.AppRoleListRolesResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -614,8 +591,7 @@ func (a *Auth) AppRoleListRoles(ctx context.Context, approleMountPath string, op
 
 // AppRoleListSecretIds
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleListSecretIds(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[schema.AppRoleListSecretIdsResponse], error) {
+func (a *Auth) AppRoleListSecretIds(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleListSecretIdsResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -640,8 +616,7 @@ func (a *Auth) AppRoleListSecretIds(ctx context.Context, roleName string, approl
 }
 
 // AppRoleLogin
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleLogin(ctx context.Context, approleMountPath string, request schema.AppRoleLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleLogin(ctx context.Context, request schema.AppRoleLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -665,8 +640,7 @@ func (a *Auth) AppRoleLogin(ctx context.Context, approleMountPath string, reques
 
 // AppRoleLookUpSecretId
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleLookUpSecretId(ctx context.Context, roleName string, approleMountPath string, request schema.AppRoleLookUpSecretIdRequest, options ...RequestOption) (*Response[schema.AppRoleLookUpSecretIdResponse], error) {
+func (a *Auth) AppRoleLookUpSecretId(ctx context.Context, roleName string, request schema.AppRoleLookUpSecretIdRequest, options ...RequestOption) (*Response[schema.AppRoleLookUpSecretIdResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -691,8 +665,7 @@ func (a *Auth) AppRoleLookUpSecretId(ctx context.Context, roleName string, appro
 
 // AppRoleLookUpSecretIdByAccessor
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleLookUpSecretIdByAccessor(ctx context.Context, roleName string, approleMountPath string, request schema.AppRoleLookUpSecretIdByAccessorRequest, options ...RequestOption) (*Response[schema.AppRoleLookUpSecretIdByAccessorResponse], error) {
+func (a *Auth) AppRoleLookUpSecretIdByAccessor(ctx context.Context, roleName string, request schema.AppRoleLookUpSecretIdByAccessorRequest, options ...RequestOption) (*Response[schema.AppRoleLookUpSecretIdByAccessorResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -717,8 +690,7 @@ func (a *Auth) AppRoleLookUpSecretIdByAccessor(ctx context.Context, roleName str
 
 // AppRoleReadBindSecretId
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleReadBindSecretId(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[schema.AppRoleReadBindSecretIdResponse], error) {
+func (a *Auth) AppRoleReadBindSecretId(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadBindSecretIdResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -743,8 +715,7 @@ func (a *Auth) AppRoleReadBindSecretId(ctx context.Context, roleName string, app
 
 // AppRoleReadBoundCidrList
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleReadBoundCidrList(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[schema.AppRoleReadBoundCidrListResponse], error) {
+func (a *Auth) AppRoleReadBoundCidrList(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadBoundCidrListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -769,8 +740,7 @@ func (a *Auth) AppRoleReadBoundCidrList(ctx context.Context, roleName string, ap
 
 // AppRoleReadLocalSecretIds
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleReadLocalSecretIds(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[schema.AppRoleReadLocalSecretIdsResponse], error) {
+func (a *Auth) AppRoleReadLocalSecretIds(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadLocalSecretIdsResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -795,8 +765,7 @@ func (a *Auth) AppRoleReadLocalSecretIds(ctx context.Context, roleName string, a
 
 // AppRoleReadPeriod
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleReadPeriod(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[schema.AppRoleReadPeriodResponse], error) {
+func (a *Auth) AppRoleReadPeriod(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadPeriodResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -821,8 +790,7 @@ func (a *Auth) AppRoleReadPeriod(ctx context.Context, roleName string, approleMo
 
 // AppRoleReadPolicies
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleReadPolicies(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[schema.AppRoleReadPoliciesResponse], error) {
+func (a *Auth) AppRoleReadPolicies(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadPoliciesResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -847,8 +815,7 @@ func (a *Auth) AppRoleReadPolicies(ctx context.Context, roleName string, approle
 
 // AppRoleReadRole
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleReadRole(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[schema.AppRoleReadRoleResponse], error) {
+func (a *Auth) AppRoleReadRole(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadRoleResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -873,8 +840,7 @@ func (a *Auth) AppRoleReadRole(ctx context.Context, roleName string, approleMoun
 
 // AppRoleReadRoleId
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleReadRoleId(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[schema.AppRoleReadRoleIdResponse], error) {
+func (a *Auth) AppRoleReadRoleId(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadRoleIdResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -899,8 +865,7 @@ func (a *Auth) AppRoleReadRoleId(ctx context.Context, roleName string, approleMo
 
 // AppRoleReadSecretIdBoundCidrs
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleReadSecretIdBoundCidrs(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[schema.AppRoleReadSecretIdBoundCidrsResponse], error) {
+func (a *Auth) AppRoleReadSecretIdBoundCidrs(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadSecretIdBoundCidrsResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -925,8 +890,7 @@ func (a *Auth) AppRoleReadSecretIdBoundCidrs(ctx context.Context, roleName strin
 
 // AppRoleReadSecretIdNumUses
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleReadSecretIdNumUses(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[schema.AppRoleReadSecretIdNumUsesResponse], error) {
+func (a *Auth) AppRoleReadSecretIdNumUses(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadSecretIdNumUsesResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -951,8 +915,7 @@ func (a *Auth) AppRoleReadSecretIdNumUses(ctx context.Context, roleName string, 
 
 // AppRoleReadSecretIdTtl
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleReadSecretIdTtl(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[schema.AppRoleReadSecretIdTtlResponse], error) {
+func (a *Auth) AppRoleReadSecretIdTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadSecretIdTtlResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -977,8 +940,7 @@ func (a *Auth) AppRoleReadSecretIdTtl(ctx context.Context, roleName string, appr
 
 // AppRoleReadTokenBoundCidrs
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleReadTokenBoundCidrs(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[schema.AppRoleReadTokenBoundCidrsResponse], error) {
+func (a *Auth) AppRoleReadTokenBoundCidrs(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadTokenBoundCidrsResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1003,8 +965,7 @@ func (a *Auth) AppRoleReadTokenBoundCidrs(ctx context.Context, roleName string, 
 
 // AppRoleReadTokenMaxTtl
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleReadTokenMaxTtl(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[schema.AppRoleReadTokenMaxTtlResponse], error) {
+func (a *Auth) AppRoleReadTokenMaxTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadTokenMaxTtlResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1029,8 +990,7 @@ func (a *Auth) AppRoleReadTokenMaxTtl(ctx context.Context, roleName string, appr
 
 // AppRoleReadTokenNumUses
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleReadTokenNumUses(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[schema.AppRoleReadTokenNumUsesResponse], error) {
+func (a *Auth) AppRoleReadTokenNumUses(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadTokenNumUsesResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1055,8 +1015,7 @@ func (a *Auth) AppRoleReadTokenNumUses(ctx context.Context, roleName string, app
 
 // AppRoleReadTokenTtl
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleReadTokenTtl(ctx context.Context, roleName string, approleMountPath string, options ...RequestOption) (*Response[schema.AppRoleReadTokenTtlResponse], error) {
+func (a *Auth) AppRoleReadTokenTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadTokenTtlResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1080,8 +1039,7 @@ func (a *Auth) AppRoleReadTokenTtl(ctx context.Context, roleName string, approle
 }
 
 // AppRoleTidySecretId
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleTidySecretId(ctx context.Context, approleMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleTidySecretId(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1105,8 +1063,7 @@ func (a *Auth) AppRoleTidySecretId(ctx context.Context, approleMountPath string,
 
 // AppRoleWriteBindSecretId
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleWriteBindSecretId(ctx context.Context, roleName string, approleMountPath string, request schema.AppRoleWriteBindSecretIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWriteBindSecretId(ctx context.Context, roleName string, request schema.AppRoleWriteBindSecretIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1131,8 +1088,7 @@ func (a *Auth) AppRoleWriteBindSecretId(ctx context.Context, roleName string, ap
 
 // AppRoleWriteBoundCidrList
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleWriteBoundCidrList(ctx context.Context, roleName string, approleMountPath string, request schema.AppRoleWriteBoundCidrListRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWriteBoundCidrList(ctx context.Context, roleName string, request schema.AppRoleWriteBoundCidrListRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1157,8 +1113,7 @@ func (a *Auth) AppRoleWriteBoundCidrList(ctx context.Context, roleName string, a
 
 // AppRoleWriteCustomSecretId
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleWriteCustomSecretId(ctx context.Context, roleName string, approleMountPath string, request schema.AppRoleWriteCustomSecretIdRequest, options ...RequestOption) (*Response[schema.AppRoleWriteCustomSecretIdResponse], error) {
+func (a *Auth) AppRoleWriteCustomSecretId(ctx context.Context, roleName string, request schema.AppRoleWriteCustomSecretIdRequest, options ...RequestOption) (*Response[schema.AppRoleWriteCustomSecretIdResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1183,8 +1138,7 @@ func (a *Auth) AppRoleWriteCustomSecretId(ctx context.Context, roleName string, 
 
 // AppRoleWritePeriod
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleWritePeriod(ctx context.Context, roleName string, approleMountPath string, request schema.AppRoleWritePeriodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWritePeriod(ctx context.Context, roleName string, request schema.AppRoleWritePeriodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1209,8 +1163,7 @@ func (a *Auth) AppRoleWritePeriod(ctx context.Context, roleName string, approleM
 
 // AppRoleWritePolicies
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleWritePolicies(ctx context.Context, roleName string, approleMountPath string, request schema.AppRoleWritePoliciesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWritePolicies(ctx context.Context, roleName string, request schema.AppRoleWritePoliciesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1235,8 +1188,7 @@ func (a *Auth) AppRoleWritePolicies(ctx context.Context, roleName string, approl
 
 // AppRoleWriteRole
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleWriteRole(ctx context.Context, roleName string, approleMountPath string, request schema.AppRoleWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWriteRole(ctx context.Context, roleName string, request schema.AppRoleWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1261,8 +1213,7 @@ func (a *Auth) AppRoleWriteRole(ctx context.Context, roleName string, approleMou
 
 // AppRoleWriteRoleId
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleWriteRoleId(ctx context.Context, roleName string, approleMountPath string, request schema.AppRoleWriteRoleIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWriteRoleId(ctx context.Context, roleName string, request schema.AppRoleWriteRoleIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1287,8 +1238,7 @@ func (a *Auth) AppRoleWriteRoleId(ctx context.Context, roleName string, approleM
 
 // AppRoleWriteSecretId
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleWriteSecretId(ctx context.Context, roleName string, approleMountPath string, request schema.AppRoleWriteSecretIdRequest, options ...RequestOption) (*Response[schema.AppRoleWriteSecretIdResponse], error) {
+func (a *Auth) AppRoleWriteSecretId(ctx context.Context, roleName string, request schema.AppRoleWriteSecretIdRequest, options ...RequestOption) (*Response[schema.AppRoleWriteSecretIdResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1313,8 +1263,7 @@ func (a *Auth) AppRoleWriteSecretId(ctx context.Context, roleName string, approl
 
 // AppRoleWriteSecretIdBoundCidrs
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleWriteSecretIdBoundCidrs(ctx context.Context, roleName string, approleMountPath string, request schema.AppRoleWriteSecretIdBoundCidrsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWriteSecretIdBoundCidrs(ctx context.Context, roleName string, request schema.AppRoleWriteSecretIdBoundCidrsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1339,8 +1288,7 @@ func (a *Auth) AppRoleWriteSecretIdBoundCidrs(ctx context.Context, roleName stri
 
 // AppRoleWriteSecretIdNumUses
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleWriteSecretIdNumUses(ctx context.Context, roleName string, approleMountPath string, request schema.AppRoleWriteSecretIdNumUsesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWriteSecretIdNumUses(ctx context.Context, roleName string, request schema.AppRoleWriteSecretIdNumUsesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1365,8 +1313,7 @@ func (a *Auth) AppRoleWriteSecretIdNumUses(ctx context.Context, roleName string,
 
 // AppRoleWriteSecretIdTtl
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleWriteSecretIdTtl(ctx context.Context, roleName string, approleMountPath string, request schema.AppRoleWriteSecretIdTtlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWriteSecretIdTtl(ctx context.Context, roleName string, request schema.AppRoleWriteSecretIdTtlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1391,8 +1338,7 @@ func (a *Auth) AppRoleWriteSecretIdTtl(ctx context.Context, roleName string, app
 
 // AppRoleWriteTokenBoundCidrs
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleWriteTokenBoundCidrs(ctx context.Context, roleName string, approleMountPath string, request schema.AppRoleWriteTokenBoundCidrsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWriteTokenBoundCidrs(ctx context.Context, roleName string, request schema.AppRoleWriteTokenBoundCidrsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1417,8 +1363,7 @@ func (a *Auth) AppRoleWriteTokenBoundCidrs(ctx context.Context, roleName string,
 
 // AppRoleWriteTokenMaxTtl
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleWriteTokenMaxTtl(ctx context.Context, roleName string, approleMountPath string, request schema.AppRoleWriteTokenMaxTtlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWriteTokenMaxTtl(ctx context.Context, roleName string, request schema.AppRoleWriteTokenMaxTtlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1443,8 +1388,7 @@ func (a *Auth) AppRoleWriteTokenMaxTtl(ctx context.Context, roleName string, app
 
 // AppRoleWriteTokenNumUses
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleWriteTokenNumUses(ctx context.Context, roleName string, approleMountPath string, request schema.AppRoleWriteTokenNumUsesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWriteTokenNumUses(ctx context.Context, roleName string, request schema.AppRoleWriteTokenNumUsesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1469,8 +1413,7 @@ func (a *Auth) AppRoleWriteTokenNumUses(ctx context.Context, roleName string, ap
 
 // AppRoleWriteTokenTtl
 // roleName: Name of the role. Must be less than 4096 bytes.
-// approleMountPath: Path that the backend was mounted at
-func (a *Auth) AppRoleWriteTokenTtl(ctx context.Context, roleName string, approleMountPath string, request schema.AppRoleWriteTokenTtlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWriteTokenTtl(ctx context.Context, roleName string, request schema.AppRoleWriteTokenTtlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1495,8 +1438,7 @@ func (a *Auth) AppRoleWriteTokenTtl(ctx context.Context, roleName string, approl
 
 // AwsConfigureCertificate
 // certName: Name of the certificate.
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsConfigureCertificate(ctx context.Context, certName string, awsMountPath string, request schema.AwsConfigureCertificateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsConfigureCertificate(ctx context.Context, certName string, request schema.AwsConfigureCertificateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1520,8 +1462,7 @@ func (a *Auth) AwsConfigureCertificate(ctx context.Context, certName string, aws
 }
 
 // AwsConfigureClient
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsConfigureClient(ctx context.Context, awsMountPath string, request schema.AwsConfigureClientRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsConfigureClient(ctx context.Context, request schema.AwsConfigureClientRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1544,8 +1485,7 @@ func (a *Auth) AwsConfigureClient(ctx context.Context, awsMountPath string, requ
 }
 
 // AwsConfigureIdentityAccessListTidyOperation
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsConfigureIdentityAccessListTidyOperation(ctx context.Context, awsMountPath string, request schema.AwsConfigureIdentityAccessListTidyOperationRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsConfigureIdentityAccessListTidyOperation(ctx context.Context, request schema.AwsConfigureIdentityAccessListTidyOperationRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1568,8 +1508,7 @@ func (a *Auth) AwsConfigureIdentityAccessListTidyOperation(ctx context.Context, 
 }
 
 // AwsConfigureIdentityIntegration
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsConfigureIdentityIntegration(ctx context.Context, awsMountPath string, request schema.AwsConfigureIdentityIntegrationRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsConfigureIdentityIntegration(ctx context.Context, request schema.AwsConfigureIdentityIntegrationRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1592,8 +1531,7 @@ func (a *Auth) AwsConfigureIdentityIntegration(ctx context.Context, awsMountPath
 }
 
 // AwsConfigureIdentityWhitelistTidyOperation
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsConfigureIdentityWhitelistTidyOperation(ctx context.Context, awsMountPath string, request schema.AwsConfigureIdentityWhitelistTidyOperationRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsConfigureIdentityWhitelistTidyOperation(ctx context.Context, request schema.AwsConfigureIdentityWhitelistTidyOperationRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1616,8 +1554,7 @@ func (a *Auth) AwsConfigureIdentityWhitelistTidyOperation(ctx context.Context, a
 }
 
 // AwsConfigureRoleTagBlacklistTidyOperation
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsConfigureRoleTagBlacklistTidyOperation(ctx context.Context, awsMountPath string, request schema.AwsConfigureRoleTagBlacklistTidyOperationRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsConfigureRoleTagBlacklistTidyOperation(ctx context.Context, request schema.AwsConfigureRoleTagBlacklistTidyOperationRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1640,8 +1577,7 @@ func (a *Auth) AwsConfigureRoleTagBlacklistTidyOperation(ctx context.Context, aw
 }
 
 // AwsConfigureRoleTagDenyListTidyOperation
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsConfigureRoleTagDenyListTidyOperation(ctx context.Context, awsMountPath string, request schema.AwsConfigureRoleTagDenyListTidyOperationRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsConfigureRoleTagDenyListTidyOperation(ctx context.Context, request schema.AwsConfigureRoleTagDenyListTidyOperationRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1665,8 +1601,7 @@ func (a *Auth) AwsConfigureRoleTagDenyListTidyOperation(ctx context.Context, aws
 
 // AwsDeleteAuthRole
 // role: Name of the role.
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsDeleteAuthRole(ctx context.Context, role string, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsDeleteAuthRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1691,8 +1626,7 @@ func (a *Auth) AwsDeleteAuthRole(ctx context.Context, role string, awsMountPath 
 
 // AwsDeleteCertificateConfiguration
 // certName: Name of the certificate.
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsDeleteCertificateConfiguration(ctx context.Context, certName string, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsDeleteCertificateConfiguration(ctx context.Context, certName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1716,8 +1650,7 @@ func (a *Auth) AwsDeleteCertificateConfiguration(ctx context.Context, certName s
 }
 
 // AwsDeleteClientConfiguration
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsDeleteClientConfiguration(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsDeleteClientConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1741,8 +1674,7 @@ func (a *Auth) AwsDeleteClientConfiguration(ctx context.Context, awsMountPath st
 
 // AwsDeleteIdentityAccessList
 // instanceId: EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsDeleteIdentityAccessList(ctx context.Context, instanceId string, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsDeleteIdentityAccessList(ctx context.Context, instanceId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1766,8 +1698,7 @@ func (a *Auth) AwsDeleteIdentityAccessList(ctx context.Context, instanceId strin
 }
 
 // AwsDeleteIdentityAccessListTidySettings
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsDeleteIdentityAccessListTidySettings(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsDeleteIdentityAccessListTidySettings(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1791,8 +1722,7 @@ func (a *Auth) AwsDeleteIdentityAccessListTidySettings(ctx context.Context, awsM
 
 // AwsDeleteIdentityWhitelist
 // instanceId: EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsDeleteIdentityWhitelist(ctx context.Context, instanceId string, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsDeleteIdentityWhitelist(ctx context.Context, instanceId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1816,8 +1746,7 @@ func (a *Auth) AwsDeleteIdentityWhitelist(ctx context.Context, instanceId string
 }
 
 // AwsDeleteIdentityWhitelistTidySettings
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsDeleteIdentityWhitelistTidySettings(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsDeleteIdentityWhitelistTidySettings(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1841,8 +1770,7 @@ func (a *Auth) AwsDeleteIdentityWhitelistTidySettings(ctx context.Context, awsMo
 
 // AwsDeleteRoleTagBlacklist
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsDeleteRoleTagBlacklist(ctx context.Context, roleTag string, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsDeleteRoleTagBlacklist(ctx context.Context, roleTag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1866,8 +1794,7 @@ func (a *Auth) AwsDeleteRoleTagBlacklist(ctx context.Context, roleTag string, aw
 }
 
 // AwsDeleteRoleTagBlacklistTidySettings
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsDeleteRoleTagBlacklistTidySettings(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsDeleteRoleTagBlacklistTidySettings(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1891,8 +1818,7 @@ func (a *Auth) AwsDeleteRoleTagBlacklistTidySettings(ctx context.Context, awsMou
 
 // AwsDeleteRoleTagDenyList
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsDeleteRoleTagDenyList(ctx context.Context, roleTag string, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsDeleteRoleTagDenyList(ctx context.Context, roleTag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1916,8 +1842,7 @@ func (a *Auth) AwsDeleteRoleTagDenyList(ctx context.Context, roleTag string, aws
 }
 
 // AwsDeleteRoleTagDenyListTidySettings
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsDeleteRoleTagDenyListTidySettings(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsDeleteRoleTagDenyListTidySettings(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1941,8 +1866,7 @@ func (a *Auth) AwsDeleteRoleTagDenyListTidySettings(ctx context.Context, awsMoun
 
 // AwsDeleteStsRole
 // accountId: AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsDeleteStsRole(ctx context.Context, accountId string, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsDeleteStsRole(ctx context.Context, accountId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1966,8 +1890,7 @@ func (a *Auth) AwsDeleteStsRole(ctx context.Context, accountId string, awsMountP
 }
 
 // AwsListAuthRoles
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsListAuthRoles(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1991,8 +1914,7 @@ func (a *Auth) AwsListAuthRoles(ctx context.Context, awsMountPath string, option
 }
 
 // AwsListCertificateConfigurations
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsListCertificateConfigurations(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsListCertificateConfigurations(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2016,8 +1938,7 @@ func (a *Auth) AwsListCertificateConfigurations(ctx context.Context, awsMountPat
 }
 
 // AwsListIdentityAccessList
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsListIdentityAccessList(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsListIdentityAccessList(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2041,8 +1962,7 @@ func (a *Auth) AwsListIdentityAccessList(ctx context.Context, awsMountPath strin
 }
 
 // AwsListIdentityWhitelist
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsListIdentityWhitelist(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsListIdentityWhitelist(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2066,8 +1986,7 @@ func (a *Auth) AwsListIdentityWhitelist(ctx context.Context, awsMountPath string
 }
 
 // AwsListRoleTagBlacklists
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsListRoleTagBlacklists(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsListRoleTagBlacklists(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2091,8 +2010,7 @@ func (a *Auth) AwsListRoleTagBlacklists(ctx context.Context, awsMountPath string
 }
 
 // AwsListRoleTagDenyLists
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsListRoleTagDenyLists(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsListRoleTagDenyLists(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2116,8 +2034,7 @@ func (a *Auth) AwsListRoleTagDenyLists(ctx context.Context, awsMountPath string,
 }
 
 // AwsListRoles2
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsListRoles2(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsListRoles2(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2141,8 +2058,7 @@ func (a *Auth) AwsListRoles2(ctx context.Context, awsMountPath string, options .
 }
 
 // AwsListStsRoleRelationships
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsListStsRoleRelationships(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsListStsRoleRelationships(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2166,8 +2082,7 @@ func (a *Auth) AwsListStsRoleRelationships(ctx context.Context, awsMountPath str
 }
 
 // AwsLogin
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsLogin(ctx context.Context, awsMountPath string, request schema.AwsLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsLogin(ctx context.Context, request schema.AwsLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2191,8 +2106,7 @@ func (a *Auth) AwsLogin(ctx context.Context, awsMountPath string, request schema
 
 // AwsReadAuthRole
 // role: Name of the role.
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsReadAuthRole(ctx context.Context, role string, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsReadAuthRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2217,8 +2131,7 @@ func (a *Auth) AwsReadAuthRole(ctx context.Context, role string, awsMountPath st
 
 // AwsReadCertificateConfiguration
 // certName: Name of the certificate.
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsReadCertificateConfiguration(ctx context.Context, certName string, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsReadCertificateConfiguration(ctx context.Context, certName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2242,8 +2155,7 @@ func (a *Auth) AwsReadCertificateConfiguration(ctx context.Context, certName str
 }
 
 // AwsReadClientConfiguration
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsReadClientConfiguration(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsReadClientConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2267,8 +2179,7 @@ func (a *Auth) AwsReadClientConfiguration(ctx context.Context, awsMountPath stri
 
 // AwsReadIdentityAccessList
 // instanceId: EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsReadIdentityAccessList(ctx context.Context, instanceId string, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsReadIdentityAccessList(ctx context.Context, instanceId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2292,8 +2203,7 @@ func (a *Auth) AwsReadIdentityAccessList(ctx context.Context, instanceId string,
 }
 
 // AwsReadIdentityAccessListTidySettings
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsReadIdentityAccessListTidySettings(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsReadIdentityAccessListTidySettings(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2316,8 +2226,7 @@ func (a *Auth) AwsReadIdentityAccessListTidySettings(ctx context.Context, awsMou
 }
 
 // AwsReadIdentityIntegrationConfiguration
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsReadIdentityIntegrationConfiguration(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsReadIdentityIntegrationConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2341,8 +2250,7 @@ func (a *Auth) AwsReadIdentityIntegrationConfiguration(ctx context.Context, awsM
 
 // AwsReadIdentityWhitelist
 // instanceId: EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsReadIdentityWhitelist(ctx context.Context, instanceId string, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsReadIdentityWhitelist(ctx context.Context, instanceId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2366,8 +2274,7 @@ func (a *Auth) AwsReadIdentityWhitelist(ctx context.Context, instanceId string, 
 }
 
 // AwsReadIdentityWhitelistTidySettings
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsReadIdentityWhitelistTidySettings(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsReadIdentityWhitelistTidySettings(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2391,8 +2298,7 @@ func (a *Auth) AwsReadIdentityWhitelistTidySettings(ctx context.Context, awsMoun
 
 // AwsReadRoleTagBlacklist
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsReadRoleTagBlacklist(ctx context.Context, roleTag string, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsReadRoleTagBlacklist(ctx context.Context, roleTag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2416,8 +2322,7 @@ func (a *Auth) AwsReadRoleTagBlacklist(ctx context.Context, roleTag string, awsM
 }
 
 // AwsReadRoleTagBlacklistTidySettings
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsReadRoleTagBlacklistTidySettings(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsReadRoleTagBlacklistTidySettings(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2441,8 +2346,7 @@ func (a *Auth) AwsReadRoleTagBlacklistTidySettings(ctx context.Context, awsMount
 
 // AwsReadRoleTagDenyList
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsReadRoleTagDenyList(ctx context.Context, roleTag string, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsReadRoleTagDenyList(ctx context.Context, roleTag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2466,8 +2370,7 @@ func (a *Auth) AwsReadRoleTagDenyList(ctx context.Context, roleTag string, awsMo
 }
 
 // AwsReadRoleTagDenyListTidySettings
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsReadRoleTagDenyListTidySettings(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsReadRoleTagDenyListTidySettings(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2491,8 +2394,7 @@ func (a *Auth) AwsReadRoleTagDenyListTidySettings(ctx context.Context, awsMountP
 
 // AwsReadStsRole
 // accountId: AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsReadStsRole(ctx context.Context, accountId string, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsReadStsRole(ctx context.Context, accountId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2516,8 +2418,7 @@ func (a *Auth) AwsReadStsRole(ctx context.Context, accountId string, awsMountPat
 }
 
 // AwsRotateRootCredentials
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsRotateRootCredentials(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsRotateRootCredentials(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2540,8 +2441,7 @@ func (a *Auth) AwsRotateRootCredentials(ctx context.Context, awsMountPath string
 }
 
 // AwsTidyIdentityAccessList
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsTidyIdentityAccessList(ctx context.Context, awsMountPath string, request schema.AwsTidyIdentityAccessListRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsTidyIdentityAccessList(ctx context.Context, request schema.AwsTidyIdentityAccessListRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2564,8 +2464,7 @@ func (a *Auth) AwsTidyIdentityAccessList(ctx context.Context, awsMountPath strin
 }
 
 // AwsTidyIdentityWhitelist
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsTidyIdentityWhitelist(ctx context.Context, awsMountPath string, request schema.AwsTidyIdentityWhitelistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsTidyIdentityWhitelist(ctx context.Context, request schema.AwsTidyIdentityWhitelistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2588,8 +2487,7 @@ func (a *Auth) AwsTidyIdentityWhitelist(ctx context.Context, awsMountPath string
 }
 
 // AwsTidyRoleTagBlacklist
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsTidyRoleTagBlacklist(ctx context.Context, awsMountPath string, request schema.AwsTidyRoleTagBlacklistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsTidyRoleTagBlacklist(ctx context.Context, request schema.AwsTidyRoleTagBlacklistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2612,8 +2510,7 @@ func (a *Auth) AwsTidyRoleTagBlacklist(ctx context.Context, awsMountPath string,
 }
 
 // AwsTidyRoleTagDenyList
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsTidyRoleTagDenyList(ctx context.Context, awsMountPath string, request schema.AwsTidyRoleTagDenyListRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsTidyRoleTagDenyList(ctx context.Context, request schema.AwsTidyRoleTagDenyListRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2637,8 +2534,7 @@ func (a *Auth) AwsTidyRoleTagDenyList(ctx context.Context, awsMountPath string, 
 
 // AwsWriteAuthRole
 // role: Name of the role.
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsWriteAuthRole(ctx context.Context, role string, awsMountPath string, request schema.AwsWriteAuthRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsWriteAuthRole(ctx context.Context, role string, request schema.AwsWriteAuthRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2663,8 +2559,7 @@ func (a *Auth) AwsWriteAuthRole(ctx context.Context, role string, awsMountPath s
 
 // AwsWriteRoleTag
 // role: Name of the role.
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsWriteRoleTag(ctx context.Context, role string, awsMountPath string, request schema.AwsWriteRoleTagRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsWriteRoleTag(ctx context.Context, role string, request schema.AwsWriteRoleTagRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2689,8 +2584,7 @@ func (a *Auth) AwsWriteRoleTag(ctx context.Context, role string, awsMountPath st
 
 // AwsWriteRoleTagBlacklist
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsWriteRoleTagBlacklist(ctx context.Context, roleTag string, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsWriteRoleTagBlacklist(ctx context.Context, roleTag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2715,8 +2609,7 @@ func (a *Auth) AwsWriteRoleTagBlacklist(ctx context.Context, roleTag string, aws
 
 // AwsWriteRoleTagDenyList
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsWriteRoleTagDenyList(ctx context.Context, roleTag string, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsWriteRoleTagDenyList(ctx context.Context, roleTag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2741,8 +2634,7 @@ func (a *Auth) AwsWriteRoleTagDenyList(ctx context.Context, roleTag string, awsM
 
 // AwsWriteStsRole
 // accountId: AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-// awsMountPath: Path that the backend was mounted at
-func (a *Auth) AwsWriteStsRole(ctx context.Context, accountId string, awsMountPath string, request schema.AwsWriteStsRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsWriteStsRole(ctx context.Context, accountId string, request schema.AwsWriteStsRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2766,8 +2658,7 @@ func (a *Auth) AwsWriteStsRole(ctx context.Context, accountId string, awsMountPa
 }
 
 // AzureConfigureAuth
-// azureMountPath: Path that the backend was mounted at
-func (a *Auth) AzureConfigureAuth(ctx context.Context, azureMountPath string, request schema.AzureConfigureAuthRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AzureConfigureAuth(ctx context.Context, request schema.AzureConfigureAuthRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2790,8 +2681,7 @@ func (a *Auth) AzureConfigureAuth(ctx context.Context, azureMountPath string, re
 }
 
 // AzureDeleteAuthConfiguration
-// azureMountPath: Path that the backend was mounted at
-func (a *Auth) AzureDeleteAuthConfiguration(ctx context.Context, azureMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AzureDeleteAuthConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2815,8 +2705,7 @@ func (a *Auth) AzureDeleteAuthConfiguration(ctx context.Context, azureMountPath 
 
 // AzureDeleteAuthRole
 // name: Name of the role.
-// azureMountPath: Path that the backend was mounted at
-func (a *Auth) AzureDeleteAuthRole(ctx context.Context, name string, azureMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AzureDeleteAuthRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2840,8 +2729,7 @@ func (a *Auth) AzureDeleteAuthRole(ctx context.Context, name string, azureMountP
 }
 
 // AzureListAuthRoles
-// azureMountPath: Path that the backend was mounted at
-func (a *Auth) AzureListAuthRoles(ctx context.Context, azureMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AzureListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2865,8 +2753,7 @@ func (a *Auth) AzureListAuthRoles(ctx context.Context, azureMountPath string, op
 }
 
 // AzureLogin
-// azureMountPath: Path that the backend was mounted at
-func (a *Auth) AzureLogin(ctx context.Context, azureMountPath string, request schema.AzureLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AzureLogin(ctx context.Context, request schema.AzureLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2889,8 +2776,7 @@ func (a *Auth) AzureLogin(ctx context.Context, azureMountPath string, request sc
 }
 
 // AzureReadAuthConfiguration
-// azureMountPath: Path that the backend was mounted at
-func (a *Auth) AzureReadAuthConfiguration(ctx context.Context, azureMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AzureReadAuthConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2914,8 +2800,7 @@ func (a *Auth) AzureReadAuthConfiguration(ctx context.Context, azureMountPath st
 
 // AzureReadAuthRole
 // name: Name of the role.
-// azureMountPath: Path that the backend was mounted at
-func (a *Auth) AzureReadAuthRole(ctx context.Context, name string, azureMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AzureReadAuthRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2939,8 +2824,7 @@ func (a *Auth) AzureReadAuthRole(ctx context.Context, name string, azureMountPat
 }
 
 // AzureRotateRootCredentials
-// azureMountPath: Path that the backend was mounted at
-func (a *Auth) AzureRotateRootCredentials(ctx context.Context, azureMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AzureRotateRootCredentials(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2964,8 +2848,7 @@ func (a *Auth) AzureRotateRootCredentials(ctx context.Context, azureMountPath st
 
 // AzureWriteAuthRole
 // name: Name of the role.
-// azureMountPath: Path that the backend was mounted at
-func (a *Auth) AzureWriteAuthRole(ctx context.Context, name string, azureMountPath string, request schema.AzureWriteAuthRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AzureWriteAuthRole(ctx context.Context, name string, request schema.AzureWriteAuthRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2989,8 +2872,7 @@ func (a *Auth) AzureWriteAuthRole(ctx context.Context, name string, azureMountPa
 }
 
 // CentrifyConfigure
-// centrifyMountPath: Path that the backend was mounted at
-func (a *Auth) CentrifyConfigure(ctx context.Context, centrifyMountPath string, request schema.CentrifyConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CentrifyConfigure(ctx context.Context, request schema.CentrifyConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3013,8 +2895,7 @@ func (a *Auth) CentrifyConfigure(ctx context.Context, centrifyMountPath string, 
 }
 
 // CentrifyLogin Log in with a username and password.
-// centrifyMountPath: Path that the backend was mounted at
-func (a *Auth) CentrifyLogin(ctx context.Context, centrifyMountPath string, request schema.CentrifyLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CentrifyLogin(ctx context.Context, request schema.CentrifyLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3037,8 +2918,7 @@ func (a *Auth) CentrifyLogin(ctx context.Context, centrifyMountPath string, requ
 }
 
 // CentrifyReadConfiguration
-// centrifyMountPath: Path that the backend was mounted at
-func (a *Auth) CentrifyReadConfiguration(ctx context.Context, centrifyMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CentrifyReadConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3061,8 +2941,7 @@ func (a *Auth) CentrifyReadConfiguration(ctx context.Context, centrifyMountPath 
 }
 
 // CertConfigure
-// certMountPath: Path that the backend was mounted at
-func (a *Auth) CertConfigure(ctx context.Context, certMountPath string, request schema.CertConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CertConfigure(ctx context.Context, request schema.CertConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3086,8 +2965,7 @@ func (a *Auth) CertConfigure(ctx context.Context, certMountPath string, request 
 
 // CertDeleteCertificate Manage trusted certificates used for authentication.
 // name: The name of the certificate
-// certMountPath: Path that the backend was mounted at
-func (a *Auth) CertDeleteCertificate(ctx context.Context, name string, certMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CertDeleteCertificate(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3112,8 +2990,7 @@ func (a *Auth) CertDeleteCertificate(ctx context.Context, name string, certMount
 
 // CertDeleteCrl Manage Certificate Revocation Lists checked during authentication.
 // name: The name of the certificate
-// certMountPath: Path that the backend was mounted at
-func (a *Auth) CertDeleteCrl(ctx context.Context, name string, certMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CertDeleteCrl(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3137,8 +3014,7 @@ func (a *Auth) CertDeleteCrl(ctx context.Context, name string, certMountPath str
 }
 
 // CertListCertificates Manage trusted certificates used for authentication.
-// certMountPath: Path that the backend was mounted at
-func (a *Auth) CertListCertificates(ctx context.Context, certMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CertListCertificates(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3162,8 +3038,7 @@ func (a *Auth) CertListCertificates(ctx context.Context, certMountPath string, o
 }
 
 // CertListCrls
-// certMountPath: Path that the backend was mounted at
-func (a *Auth) CertListCrls(ctx context.Context, certMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CertListCrls(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3187,8 +3062,7 @@ func (a *Auth) CertListCrls(ctx context.Context, certMountPath string, options .
 }
 
 // CertLogin
-// certMountPath: Path that the backend was mounted at
-func (a *Auth) CertLogin(ctx context.Context, certMountPath string, request schema.CertLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CertLogin(ctx context.Context, request schema.CertLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3212,8 +3086,7 @@ func (a *Auth) CertLogin(ctx context.Context, certMountPath string, request sche
 
 // CertReadCertificate Manage trusted certificates used for authentication.
 // name: The name of the certificate
-// certMountPath: Path that the backend was mounted at
-func (a *Auth) CertReadCertificate(ctx context.Context, name string, certMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CertReadCertificate(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3237,8 +3110,7 @@ func (a *Auth) CertReadCertificate(ctx context.Context, name string, certMountPa
 }
 
 // CertReadConfiguration
-// certMountPath: Path that the backend was mounted at
-func (a *Auth) CertReadConfiguration(ctx context.Context, certMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CertReadConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3262,8 +3134,7 @@ func (a *Auth) CertReadConfiguration(ctx context.Context, certMountPath string, 
 
 // CertReadCrl Manage Certificate Revocation Lists checked during authentication.
 // name: The name of the certificate
-// certMountPath: Path that the backend was mounted at
-func (a *Auth) CertReadCrl(ctx context.Context, name string, certMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CertReadCrl(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3288,8 +3159,7 @@ func (a *Auth) CertReadCrl(ctx context.Context, name string, certMountPath strin
 
 // CertWriteCertificate Manage trusted certificates used for authentication.
 // name: The name of the certificate
-// certMountPath: Path that the backend was mounted at
-func (a *Auth) CertWriteCertificate(ctx context.Context, name string, certMountPath string, request schema.CertWriteCertificateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CertWriteCertificate(ctx context.Context, name string, request schema.CertWriteCertificateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3314,8 +3184,7 @@ func (a *Auth) CertWriteCertificate(ctx context.Context, name string, certMountP
 
 // CertWriteCrl Manage Certificate Revocation Lists checked during authentication.
 // name: The name of the certificate
-// certMountPath: Path that the backend was mounted at
-func (a *Auth) CertWriteCrl(ctx context.Context, name string, certMountPath string, request schema.CertWriteCrlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CertWriteCrl(ctx context.Context, name string, request schema.CertWriteCrlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3339,8 +3208,7 @@ func (a *Auth) CertWriteCrl(ctx context.Context, name string, certMountPath stri
 }
 
 // CloudFoundryConfigure
-// cfMountPath: Path that the backend was mounted at
-func (a *Auth) CloudFoundryConfigure(ctx context.Context, cfMountPath string, request schema.CloudFoundryConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CloudFoundryConfigure(ctx context.Context, request schema.CloudFoundryConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3363,8 +3231,7 @@ func (a *Auth) CloudFoundryConfigure(ctx context.Context, cfMountPath string, re
 }
 
 // CloudFoundryDeleteConfiguration
-// cfMountPath: Path that the backend was mounted at
-func (a *Auth) CloudFoundryDeleteConfiguration(ctx context.Context, cfMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CloudFoundryDeleteConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3388,8 +3255,7 @@ func (a *Auth) CloudFoundryDeleteConfiguration(ctx context.Context, cfMountPath 
 
 // CloudFoundryDeleteRole
 // role: The name of the role.
-// cfMountPath: Path that the backend was mounted at
-func (a *Auth) CloudFoundryDeleteRole(ctx context.Context, role string, cfMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CloudFoundryDeleteRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3413,8 +3279,7 @@ func (a *Auth) CloudFoundryDeleteRole(ctx context.Context, role string, cfMountP
 }
 
 // CloudFoundryListRoles
-// cfMountPath: Path that the backend was mounted at
-func (a *Auth) CloudFoundryListRoles(ctx context.Context, cfMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CloudFoundryListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3438,8 +3303,7 @@ func (a *Auth) CloudFoundryListRoles(ctx context.Context, cfMountPath string, op
 }
 
 // CloudFoundryLogin
-// cfMountPath: Path that the backend was mounted at
-func (a *Auth) CloudFoundryLogin(ctx context.Context, cfMountPath string, request schema.CloudFoundryLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CloudFoundryLogin(ctx context.Context, request schema.CloudFoundryLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3462,8 +3326,7 @@ func (a *Auth) CloudFoundryLogin(ctx context.Context, cfMountPath string, reques
 }
 
 // CloudFoundryReadConfiguration
-// cfMountPath: Path that the backend was mounted at
-func (a *Auth) CloudFoundryReadConfiguration(ctx context.Context, cfMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CloudFoundryReadConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3487,8 +3350,7 @@ func (a *Auth) CloudFoundryReadConfiguration(ctx context.Context, cfMountPath st
 
 // CloudFoundryReadRole
 // role: The name of the role.
-// cfMountPath: Path that the backend was mounted at
-func (a *Auth) CloudFoundryReadRole(ctx context.Context, role string, cfMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CloudFoundryReadRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3513,8 +3375,7 @@ func (a *Auth) CloudFoundryReadRole(ctx context.Context, role string, cfMountPat
 
 // CloudFoundryWriteRole
 // role: The name of the role.
-// cfMountPath: Path that the backend was mounted at
-func (a *Auth) CloudFoundryWriteRole(ctx context.Context, role string, cfMountPath string, request schema.CloudFoundryWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CloudFoundryWriteRole(ctx context.Context, role string, request schema.CloudFoundryWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3538,8 +3399,7 @@ func (a *Auth) CloudFoundryWriteRole(ctx context.Context, role string, cfMountPa
 }
 
 // GithubConfigure
-// githubMountPath: Path that the backend was mounted at
-func (a *Auth) GithubConfigure(ctx context.Context, githubMountPath string, request schema.GithubConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GithubConfigure(ctx context.Context, request schema.GithubConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3563,8 +3423,7 @@ func (a *Auth) GithubConfigure(ctx context.Context, githubMountPath string, requ
 
 // GithubDeleteTeamMapping Read/write/delete a single teams mapping
 // key: Key for the teams mapping
-// githubMountPath: Path that the backend was mounted at
-func (a *Auth) GithubDeleteTeamMapping(ctx context.Context, key string, githubMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GithubDeleteTeamMapping(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3589,8 +3448,7 @@ func (a *Auth) GithubDeleteTeamMapping(ctx context.Context, key string, githubMo
 
 // GithubDeleteUserMapping Read/write/delete a single users mapping
 // key: Key for the users mapping
-// githubMountPath: Path that the backend was mounted at
-func (a *Auth) GithubDeleteUserMapping(ctx context.Context, key string, githubMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GithubDeleteUserMapping(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3614,8 +3472,7 @@ func (a *Auth) GithubDeleteUserMapping(ctx context.Context, key string, githubMo
 }
 
 // GithubLogin
-// githubMountPath: Path that the backend was mounted at
-func (a *Auth) GithubLogin(ctx context.Context, githubMountPath string, request schema.GithubLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GithubLogin(ctx context.Context, request schema.GithubLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3638,8 +3495,7 @@ func (a *Auth) GithubLogin(ctx context.Context, githubMountPath string, request 
 }
 
 // GithubReadConfiguration
-// githubMountPath: Path that the backend was mounted at
-func (a *Auth) GithubReadConfiguration(ctx context.Context, githubMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GithubReadConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3663,8 +3519,7 @@ func (a *Auth) GithubReadConfiguration(ctx context.Context, githubMountPath stri
 
 // GithubReadTeamMapping Read/write/delete a single teams mapping
 // key: Key for the teams mapping
-// githubMountPath: Path that the backend was mounted at
-func (a *Auth) GithubReadTeamMapping(ctx context.Context, key string, githubMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GithubReadTeamMapping(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3688,8 +3543,7 @@ func (a *Auth) GithubReadTeamMapping(ctx context.Context, key string, githubMoun
 }
 
 // GithubReadTeams Read mappings for teams
-// githubMountPath: Path that the backend was mounted at
-func (a *Auth) GithubReadTeams(ctx context.Context, githubMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GithubReadTeams(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3714,8 +3568,7 @@ func (a *Auth) GithubReadTeams(ctx context.Context, githubMountPath string, opti
 
 // GithubReadUserMapping Read/write/delete a single users mapping
 // key: Key for the users mapping
-// githubMountPath: Path that the backend was mounted at
-func (a *Auth) GithubReadUserMapping(ctx context.Context, key string, githubMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GithubReadUserMapping(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3739,8 +3592,7 @@ func (a *Auth) GithubReadUserMapping(ctx context.Context, key string, githubMoun
 }
 
 // GithubReadUsers Read mappings for users
-// githubMountPath: Path that the backend was mounted at
-func (a *Auth) GithubReadUsers(ctx context.Context, githubMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GithubReadUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3765,8 +3617,7 @@ func (a *Auth) GithubReadUsers(ctx context.Context, githubMountPath string, opti
 
 // GithubWriteTeamMapping Read/write/delete a single teams mapping
 // key: Key for the teams mapping
-// githubMountPath: Path that the backend was mounted at
-func (a *Auth) GithubWriteTeamMapping(ctx context.Context, key string, githubMountPath string, request schema.GithubWriteTeamMappingRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GithubWriteTeamMapping(ctx context.Context, key string, request schema.GithubWriteTeamMappingRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3791,8 +3642,7 @@ func (a *Auth) GithubWriteTeamMapping(ctx context.Context, key string, githubMou
 
 // GithubWriteUserMapping Read/write/delete a single users mapping
 // key: Key for the users mapping
-// githubMountPath: Path that the backend was mounted at
-func (a *Auth) GithubWriteUserMapping(ctx context.Context, key string, githubMountPath string, request schema.GithubWriteUserMappingRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GithubWriteUserMapping(ctx context.Context, key string, request schema.GithubWriteUserMappingRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3816,8 +3666,7 @@ func (a *Auth) GithubWriteUserMapping(ctx context.Context, key string, githubMou
 }
 
 // GoogleCloudConfigureAuth
-// gcpMountPath: Path that the backend was mounted at
-func (a *Auth) GoogleCloudConfigureAuth(ctx context.Context, gcpMountPath string, request schema.GoogleCloudConfigureAuthRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GoogleCloudConfigureAuth(ctx context.Context, request schema.GoogleCloudConfigureAuthRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3841,8 +3690,7 @@ func (a *Auth) GoogleCloudConfigureAuth(ctx context.Context, gcpMountPath string
 
 // GoogleCloudDeleteRole Create a GCP role with associated policies and required attributes.
 // name: Name of the role.
-// gcpMountPath: Path that the backend was mounted at
-func (a *Auth) GoogleCloudDeleteRole(ctx context.Context, name string, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GoogleCloudDeleteRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3867,8 +3715,7 @@ func (a *Auth) GoogleCloudDeleteRole(ctx context.Context, name string, gcpMountP
 
 // GoogleCloudEditLabelsForRole Add or remove labels for an existing 'gce' role
 // name: Name of the role.
-// gcpMountPath: Path that the backend was mounted at
-func (a *Auth) GoogleCloudEditLabelsForRole(ctx context.Context, name string, gcpMountPath string, request schema.GoogleCloudEditLabelsForRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GoogleCloudEditLabelsForRole(ctx context.Context, name string, request schema.GoogleCloudEditLabelsForRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3893,8 +3740,7 @@ func (a *Auth) GoogleCloudEditLabelsForRole(ctx context.Context, name string, gc
 
 // GoogleCloudEditServiceAccountsForRole Add or remove service accounts for an existing `iam` role
 // name: Name of the role.
-// gcpMountPath: Path that the backend was mounted at
-func (a *Auth) GoogleCloudEditServiceAccountsForRole(ctx context.Context, name string, gcpMountPath string, request schema.GoogleCloudEditServiceAccountsForRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GoogleCloudEditServiceAccountsForRole(ctx context.Context, name string, request schema.GoogleCloudEditServiceAccountsForRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3918,8 +3764,7 @@ func (a *Auth) GoogleCloudEditServiceAccountsForRole(ctx context.Context, name s
 }
 
 // GoogleCloudListRoles Lists all the roles that are registered with Vault.
-// gcpMountPath: Path that the backend was mounted at
-func (a *Auth) GoogleCloudListRoles(ctx context.Context, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GoogleCloudListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3943,8 +3788,7 @@ func (a *Auth) GoogleCloudListRoles(ctx context.Context, gcpMountPath string, op
 }
 
 // GoogleCloudListRoles2 Lists all the roles that are registered with Vault.
-// gcpMountPath: Path that the backend was mounted at
-func (a *Auth) GoogleCloudListRoles2(ctx context.Context, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GoogleCloudListRoles2(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3968,8 +3812,7 @@ func (a *Auth) GoogleCloudListRoles2(ctx context.Context, gcpMountPath string, o
 }
 
 // GoogleCloudLogin
-// gcpMountPath: Path that the backend was mounted at
-func (a *Auth) GoogleCloudLogin(ctx context.Context, gcpMountPath string, request schema.GoogleCloudLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GoogleCloudLogin(ctx context.Context, request schema.GoogleCloudLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3992,8 +3835,7 @@ func (a *Auth) GoogleCloudLogin(ctx context.Context, gcpMountPath string, reques
 }
 
 // GoogleCloudReadAuthConfiguration
-// gcpMountPath: Path that the backend was mounted at
-func (a *Auth) GoogleCloudReadAuthConfiguration(ctx context.Context, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GoogleCloudReadAuthConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4017,8 +3859,7 @@ func (a *Auth) GoogleCloudReadAuthConfiguration(ctx context.Context, gcpMountPat
 
 // GoogleCloudReadRole Create a GCP role with associated policies and required attributes.
 // name: Name of the role.
-// gcpMountPath: Path that the backend was mounted at
-func (a *Auth) GoogleCloudReadRole(ctx context.Context, name string, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GoogleCloudReadRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4043,8 +3884,7 @@ func (a *Auth) GoogleCloudReadRole(ctx context.Context, name string, gcpMountPat
 
 // GoogleCloudWriteRole Create a GCP role with associated policies and required attributes.
 // name: Name of the role.
-// gcpMountPath: Path that the backend was mounted at
-func (a *Auth) GoogleCloudWriteRole(ctx context.Context, name string, gcpMountPath string, request schema.GoogleCloudWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GoogleCloudWriteRole(ctx context.Context, name string, request schema.GoogleCloudWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4069,8 +3909,7 @@ func (a *Auth) GoogleCloudWriteRole(ctx context.Context, name string, gcpMountPa
 
 // JwtConfigure Configure the JWT authentication backend.
 // The JWT authentication backend validates JWTs (or OIDC) using the configured credentials. If using OIDC Discovery, the URL must be provided, along with (optionally) the CA cert to use for the connection. If performing JWT validation locally, a set of public keys must be provided.
-// jwtMountPath: Path that the backend was mounted at
-func (a *Auth) JwtConfigure(ctx context.Context, jwtMountPath string, request schema.JwtConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) JwtConfigure(ctx context.Context, request schema.JwtConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4094,8 +3933,7 @@ func (a *Auth) JwtConfigure(ctx context.Context, jwtMountPath string, request sc
 
 // JwtDeleteRole Delete an existing role.
 // name: Name of the role.
-// jwtMountPath: Path that the backend was mounted at
-func (a *Auth) JwtDeleteRole(ctx context.Context, name string, jwtMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) JwtDeleteRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4120,8 +3958,7 @@ func (a *Auth) JwtDeleteRole(ctx context.Context, name string, jwtMountPath stri
 
 // JwtListRoles Lists all the roles registered with the backend.
 // The list will contain the names of the roles.
-// jwtMountPath: Path that the backend was mounted at
-func (a *Auth) JwtListRoles(ctx context.Context, jwtMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) JwtListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4145,8 +3982,7 @@ func (a *Auth) JwtListRoles(ctx context.Context, jwtMountPath string, options ..
 }
 
 // JwtLogin Authenticates to Vault using a JWT (or OIDC) token.
-// jwtMountPath: Path that the backend was mounted at
-func (a *Auth) JwtLogin(ctx context.Context, jwtMountPath string, request schema.JwtLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) JwtLogin(ctx context.Context, request schema.JwtLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4169,8 +4005,7 @@ func (a *Auth) JwtLogin(ctx context.Context, jwtMountPath string, request schema
 }
 
 // JwtOidcCallback Callback endpoint to complete an OIDC login.
-// jwtMountPath: Path that the backend was mounted at
-func (a *Auth) JwtOidcCallback(ctx context.Context, jwtMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) JwtOidcCallback(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4193,8 +4028,7 @@ func (a *Auth) JwtOidcCallback(ctx context.Context, jwtMountPath string, options
 }
 
 // JwtOidcCallbackWithParameters Callback endpoint to handle form_posts.
-// jwtMountPath: Path that the backend was mounted at
-func (a *Auth) JwtOidcCallbackWithParameters(ctx context.Context, jwtMountPath string, request schema.JwtOidcCallbackWithParametersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) JwtOidcCallbackWithParameters(ctx context.Context, request schema.JwtOidcCallbackWithParametersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4217,8 +4051,7 @@ func (a *Auth) JwtOidcCallbackWithParameters(ctx context.Context, jwtMountPath s
 }
 
 // JwtOidcRequestAuthorizationUrl Request an authorization URL to start an OIDC login flow.
-// jwtMountPath: Path that the backend was mounted at
-func (a *Auth) JwtOidcRequestAuthorizationUrl(ctx context.Context, jwtMountPath string, request schema.JwtOidcRequestAuthorizationUrlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) JwtOidcRequestAuthorizationUrl(ctx context.Context, request schema.JwtOidcRequestAuthorizationUrlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4241,8 +4074,7 @@ func (a *Auth) JwtOidcRequestAuthorizationUrl(ctx context.Context, jwtMountPath 
 }
 
 // JwtReadConfiguration Read the current JWT authentication backend configuration.
-// jwtMountPath: Path that the backend was mounted at
-func (a *Auth) JwtReadConfiguration(ctx context.Context, jwtMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) JwtReadConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4266,8 +4098,7 @@ func (a *Auth) JwtReadConfiguration(ctx context.Context, jwtMountPath string, op
 
 // JwtReadRole Read an existing role.
 // name: Name of the role.
-// jwtMountPath: Path that the backend was mounted at
-func (a *Auth) JwtReadRole(ctx context.Context, name string, jwtMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) JwtReadRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4293,8 +4124,7 @@ func (a *Auth) JwtReadRole(ctx context.Context, name string, jwtMountPath string
 // JwtWriteRole Register an role with the backend.
 // A role is required to authenticate with this backend. The role binds   JWT token information with token policies and settings.   The bindings, token polices and token settings can all be configured   using this endpoint
 // name: Name of the role.
-// jwtMountPath: Path that the backend was mounted at
-func (a *Auth) JwtWriteRole(ctx context.Context, name string, jwtMountPath string, request schema.JwtWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) JwtWriteRole(ctx context.Context, name string, request schema.JwtWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4318,8 +4148,7 @@ func (a *Auth) JwtWriteRole(ctx context.Context, name string, jwtMountPath strin
 }
 
 // KerberosConfigure
-// kerberosMountPath: Path that the backend was mounted at
-func (a *Auth) KerberosConfigure(ctx context.Context, kerberosMountPath string, request schema.KerberosConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KerberosConfigure(ctx context.Context, request schema.KerberosConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4342,8 +4171,7 @@ func (a *Auth) KerberosConfigure(ctx context.Context, kerberosMountPath string, 
 }
 
 // KerberosConfigureLdap
-// kerberosMountPath: Path that the backend was mounted at
-func (a *Auth) KerberosConfigureLdap(ctx context.Context, kerberosMountPath string, request schema.KerberosConfigureLdapRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KerberosConfigureLdap(ctx context.Context, request schema.KerberosConfigureLdapRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4367,8 +4195,7 @@ func (a *Auth) KerberosConfigureLdap(ctx context.Context, kerberosMountPath stri
 
 // KerberosDeleteGroup
 // name: Name of the LDAP group.
-// kerberosMountPath: Path that the backend was mounted at
-func (a *Auth) KerberosDeleteGroup(ctx context.Context, name string, kerberosMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KerberosDeleteGroup(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4392,8 +4219,7 @@ func (a *Auth) KerberosDeleteGroup(ctx context.Context, name string, kerberosMou
 }
 
 // KerberosListGroups
-// kerberosMountPath: Path that the backend was mounted at
-func (a *Auth) KerberosListGroups(ctx context.Context, kerberosMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KerberosListGroups(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4417,8 +4243,7 @@ func (a *Auth) KerberosListGroups(ctx context.Context, kerberosMountPath string,
 }
 
 // KerberosLogin
-// kerberosMountPath: Path that the backend was mounted at
-func (a *Auth) KerberosLogin(ctx context.Context, kerberosMountPath string, request schema.KerberosLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KerberosLogin(ctx context.Context, request schema.KerberosLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4441,8 +4266,7 @@ func (a *Auth) KerberosLogin(ctx context.Context, kerberosMountPath string, requ
 }
 
 // KerberosLogin2
-// kerberosMountPath: Path that the backend was mounted at
-func (a *Auth) KerberosLogin2(ctx context.Context, kerberosMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KerberosLogin2(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4465,8 +4289,7 @@ func (a *Auth) KerberosLogin2(ctx context.Context, kerberosMountPath string, opt
 }
 
 // KerberosReadConfiguration
-// kerberosMountPath: Path that the backend was mounted at
-func (a *Auth) KerberosReadConfiguration(ctx context.Context, kerberosMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KerberosReadConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4490,8 +4313,7 @@ func (a *Auth) KerberosReadConfiguration(ctx context.Context, kerberosMountPath 
 
 // KerberosReadGroup
 // name: Name of the LDAP group.
-// kerberosMountPath: Path that the backend was mounted at
-func (a *Auth) KerberosReadGroup(ctx context.Context, name string, kerberosMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KerberosReadGroup(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4515,8 +4337,7 @@ func (a *Auth) KerberosReadGroup(ctx context.Context, name string, kerberosMount
 }
 
 // KerberosReadLdapConfiguration
-// kerberosMountPath: Path that the backend was mounted at
-func (a *Auth) KerberosReadLdapConfiguration(ctx context.Context, kerberosMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KerberosReadLdapConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4540,8 +4361,7 @@ func (a *Auth) KerberosReadLdapConfiguration(ctx context.Context, kerberosMountP
 
 // KerberosWriteGroup
 // name: Name of the LDAP group.
-// kerberosMountPath: Path that the backend was mounted at
-func (a *Auth) KerberosWriteGroup(ctx context.Context, name string, kerberosMountPath string, request schema.KerberosWriteGroupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KerberosWriteGroup(ctx context.Context, name string, request schema.KerberosWriteGroupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4565,8 +4385,7 @@ func (a *Auth) KerberosWriteGroup(ctx context.Context, name string, kerberosMoun
 }
 
 // KubernetesConfigureAuth
-// kubernetesMountPath: Path that the backend was mounted at
-func (a *Auth) KubernetesConfigureAuth(ctx context.Context, kubernetesMountPath string, request schema.KubernetesConfigureAuthRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KubernetesConfigureAuth(ctx context.Context, request schema.KubernetesConfigureAuthRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4590,8 +4409,7 @@ func (a *Auth) KubernetesConfigureAuth(ctx context.Context, kubernetesMountPath 
 
 // KubernetesDeleteAuthRole Register an role with the backend.
 // name: Name of the role.
-// kubernetesMountPath: Path that the backend was mounted at
-func (a *Auth) KubernetesDeleteAuthRole(ctx context.Context, name string, kubernetesMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KubernetesDeleteAuthRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4615,8 +4433,7 @@ func (a *Auth) KubernetesDeleteAuthRole(ctx context.Context, name string, kubern
 }
 
 // KubernetesListAuthRoles Lists all the roles registered with the backend.
-// kubernetesMountPath: Path that the backend was mounted at
-func (a *Auth) KubernetesListAuthRoles(ctx context.Context, kubernetesMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KubernetesListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4640,8 +4457,7 @@ func (a *Auth) KubernetesListAuthRoles(ctx context.Context, kubernetesMountPath 
 }
 
 // KubernetesLogin Authenticates Kubernetes service accounts with Vault.
-// kubernetesMountPath: Path that the backend was mounted at
-func (a *Auth) KubernetesLogin(ctx context.Context, kubernetesMountPath string, request schema.KubernetesLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KubernetesLogin(ctx context.Context, request schema.KubernetesLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4664,8 +4480,7 @@ func (a *Auth) KubernetesLogin(ctx context.Context, kubernetesMountPath string, 
 }
 
 // KubernetesReadAuthConfiguration
-// kubernetesMountPath: Path that the backend was mounted at
-func (a *Auth) KubernetesReadAuthConfiguration(ctx context.Context, kubernetesMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KubernetesReadAuthConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4689,8 +4504,7 @@ func (a *Auth) KubernetesReadAuthConfiguration(ctx context.Context, kubernetesMo
 
 // KubernetesReadAuthRole Register an role with the backend.
 // name: Name of the role.
-// kubernetesMountPath: Path that the backend was mounted at
-func (a *Auth) KubernetesReadAuthRole(ctx context.Context, name string, kubernetesMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KubernetesReadAuthRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4715,8 +4529,7 @@ func (a *Auth) KubernetesReadAuthRole(ctx context.Context, name string, kubernet
 
 // KubernetesWriteAuthRole Register an role with the backend.
 // name: Name of the role.
-// kubernetesMountPath: Path that the backend was mounted at
-func (a *Auth) KubernetesWriteAuthRole(ctx context.Context, name string, kubernetesMountPath string, request schema.KubernetesWriteAuthRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KubernetesWriteAuthRole(ctx context.Context, name string, request schema.KubernetesWriteAuthRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4740,8 +4553,7 @@ func (a *Auth) KubernetesWriteAuthRole(ctx context.Context, name string, kuberne
 }
 
 // LdapConfigureAuth
-// ldapMountPath: Path that the backend was mounted at
-func (a *Auth) LdapConfigureAuth(ctx context.Context, ldapMountPath string, request schema.LdapConfigureAuthRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) LdapConfigureAuth(ctx context.Context, request schema.LdapConfigureAuthRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4765,8 +4577,7 @@ func (a *Auth) LdapConfigureAuth(ctx context.Context, ldapMountPath string, requ
 
 // LdapDeleteGroup Manage additional groups for users allowed to authenticate.
 // name: Name of the LDAP group.
-// ldapMountPath: Path that the backend was mounted at
-func (a *Auth) LdapDeleteGroup(ctx context.Context, name string, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) LdapDeleteGroup(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4791,8 +4602,7 @@ func (a *Auth) LdapDeleteGroup(ctx context.Context, name string, ldapMountPath s
 
 // LdapDeleteUser Manage users allowed to authenticate.
 // name: Name of the LDAP user.
-// ldapMountPath: Path that the backend was mounted at
-func (a *Auth) LdapDeleteUser(ctx context.Context, name string, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) LdapDeleteUser(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4816,8 +4626,7 @@ func (a *Auth) LdapDeleteUser(ctx context.Context, name string, ldapMountPath st
 }
 
 // LdapListGroups Manage additional groups for users allowed to authenticate.
-// ldapMountPath: Path that the backend was mounted at
-func (a *Auth) LdapListGroups(ctx context.Context, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) LdapListGroups(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4841,8 +4650,7 @@ func (a *Auth) LdapListGroups(ctx context.Context, ldapMountPath string, options
 }
 
 // LdapListUsers Manage users allowed to authenticate.
-// ldapMountPath: Path that the backend was mounted at
-func (a *Auth) LdapListUsers(ctx context.Context, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) LdapListUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4867,8 +4675,7 @@ func (a *Auth) LdapListUsers(ctx context.Context, ldapMountPath string, options 
 
 // LdapLogin Log in with a username and password.
 // username: DN (distinguished name) to be used for login.
-// ldapMountPath: Path that the backend was mounted at
-func (a *Auth) LdapLogin(ctx context.Context, username string, ldapMountPath string, request schema.LdapLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) LdapLogin(ctx context.Context, username string, request schema.LdapLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4892,8 +4699,7 @@ func (a *Auth) LdapLogin(ctx context.Context, username string, ldapMountPath str
 }
 
 // LdapReadAuthConfiguration
-// ldapMountPath: Path that the backend was mounted at
-func (a *Auth) LdapReadAuthConfiguration(ctx context.Context, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) LdapReadAuthConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4917,8 +4723,7 @@ func (a *Auth) LdapReadAuthConfiguration(ctx context.Context, ldapMountPath stri
 
 // LdapReadGroup Manage additional groups for users allowed to authenticate.
 // name: Name of the LDAP group.
-// ldapMountPath: Path that the backend was mounted at
-func (a *Auth) LdapReadGroup(ctx context.Context, name string, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) LdapReadGroup(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4943,8 +4748,7 @@ func (a *Auth) LdapReadGroup(ctx context.Context, name string, ldapMountPath str
 
 // LdapReadUser Manage users allowed to authenticate.
 // name: Name of the LDAP user.
-// ldapMountPath: Path that the backend was mounted at
-func (a *Auth) LdapReadUser(ctx context.Context, name string, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) LdapReadUser(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4969,8 +4773,7 @@ func (a *Auth) LdapReadUser(ctx context.Context, name string, ldapMountPath stri
 
 // LdapWriteGroup Manage additional groups for users allowed to authenticate.
 // name: Name of the LDAP group.
-// ldapMountPath: Path that the backend was mounted at
-func (a *Auth) LdapWriteGroup(ctx context.Context, name string, ldapMountPath string, request schema.LdapWriteGroupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) LdapWriteGroup(ctx context.Context, name string, request schema.LdapWriteGroupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4995,8 +4798,7 @@ func (a *Auth) LdapWriteGroup(ctx context.Context, name string, ldapMountPath st
 
 // LdapWriteUser Manage users allowed to authenticate.
 // name: Name of the LDAP user.
-// ldapMountPath: Path that the backend was mounted at
-func (a *Auth) LdapWriteUser(ctx context.Context, name string, ldapMountPath string, request schema.LdapWriteUserRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) LdapWriteUser(ctx context.Context, name string, request schema.LdapWriteUserRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5020,8 +4822,7 @@ func (a *Auth) LdapWriteUser(ctx context.Context, name string, ldapMountPath str
 }
 
 // OciConfigure
-// ociMountPath: Path that the backend was mounted at
-func (a *Auth) OciConfigure(ctx context.Context, ociMountPath string, request schema.OciConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OciConfigure(ctx context.Context, request schema.OciConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5044,8 +4845,7 @@ func (a *Auth) OciConfigure(ctx context.Context, ociMountPath string, request sc
 }
 
 // OciDeleteConfiguration
-// ociMountPath: Path that the backend was mounted at
-func (a *Auth) OciDeleteConfiguration(ctx context.Context, ociMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OciDeleteConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5069,8 +4869,7 @@ func (a *Auth) OciDeleteConfiguration(ctx context.Context, ociMountPath string, 
 
 // OciDeleteRole Create a role and associate policies to it.
 // role: Name of the role.
-// ociMountPath: Path that the backend was mounted at
-func (a *Auth) OciDeleteRole(ctx context.Context, role string, ociMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OciDeleteRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5094,8 +4893,7 @@ func (a *Auth) OciDeleteRole(ctx context.Context, role string, ociMountPath stri
 }
 
 // OciListRoles Lists all the roles that are registered with Vault.
-// ociMountPath: Path that the backend was mounted at
-func (a *Auth) OciListRoles(ctx context.Context, ociMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OciListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5120,8 +4918,7 @@ func (a *Auth) OciListRoles(ctx context.Context, ociMountPath string, options ..
 
 // OciLogin Authenticates to Vault using OCI credentials
 // role: Name of the role.
-// ociMountPath: Path that the backend was mounted at
-func (a *Auth) OciLogin(ctx context.Context, role string, ociMountPath string, request schema.OciLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OciLogin(ctx context.Context, role string, request schema.OciLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5145,8 +4942,7 @@ func (a *Auth) OciLogin(ctx context.Context, role string, ociMountPath string, r
 }
 
 // OciReadConfiguration
-// ociMountPath: Path that the backend was mounted at
-func (a *Auth) OciReadConfiguration(ctx context.Context, ociMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OciReadConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5170,8 +4966,7 @@ func (a *Auth) OciReadConfiguration(ctx context.Context, ociMountPath string, op
 
 // OciReadRole Create a role and associate policies to it.
 // role: Name of the role.
-// ociMountPath: Path that the backend was mounted at
-func (a *Auth) OciReadRole(ctx context.Context, role string, ociMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OciReadRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5196,8 +4991,7 @@ func (a *Auth) OciReadRole(ctx context.Context, role string, ociMountPath string
 
 // OciWriteRole Create a role and associate policies to it.
 // role: Name of the role.
-// ociMountPath: Path that the backend was mounted at
-func (a *Auth) OciWriteRole(ctx context.Context, role string, ociMountPath string, request schema.OciWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OciWriteRole(ctx context.Context, role string, request schema.OciWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5221,8 +5015,7 @@ func (a *Auth) OciWriteRole(ctx context.Context, role string, ociMountPath strin
 }
 
 // OktaConfigure
-// oktaMountPath: Path that the backend was mounted at
-func (a *Auth) OktaConfigure(ctx context.Context, oktaMountPath string, request schema.OktaConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OktaConfigure(ctx context.Context, request schema.OktaConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5246,8 +5039,7 @@ func (a *Auth) OktaConfigure(ctx context.Context, oktaMountPath string, request 
 
 // OktaDeleteGroup Manage users allowed to authenticate.
 // name: Name of the Okta group.
-// oktaMountPath: Path that the backend was mounted at
-func (a *Auth) OktaDeleteGroup(ctx context.Context, name string, oktaMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OktaDeleteGroup(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5272,8 +5064,7 @@ func (a *Auth) OktaDeleteGroup(ctx context.Context, name string, oktaMountPath s
 
 // OktaDeleteUser Manage additional groups for users allowed to authenticate.
 // name: Name of the user.
-// oktaMountPath: Path that the backend was mounted at
-func (a *Auth) OktaDeleteUser(ctx context.Context, name string, oktaMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OktaDeleteUser(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5297,8 +5088,7 @@ func (a *Auth) OktaDeleteUser(ctx context.Context, name string, oktaMountPath st
 }
 
 // OktaListGroups Manage users allowed to authenticate.
-// oktaMountPath: Path that the backend was mounted at
-func (a *Auth) OktaListGroups(ctx context.Context, oktaMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OktaListGroups(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5322,8 +5112,7 @@ func (a *Auth) OktaListGroups(ctx context.Context, oktaMountPath string, options
 }
 
 // OktaListUsers Manage additional groups for users allowed to authenticate.
-// oktaMountPath: Path that the backend was mounted at
-func (a *Auth) OktaListUsers(ctx context.Context, oktaMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OktaListUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5348,8 +5137,7 @@ func (a *Auth) OktaListUsers(ctx context.Context, oktaMountPath string, options 
 
 // OktaLogin Log in with a username and password.
 // username: Username to be used for login.
-// oktaMountPath: Path that the backend was mounted at
-func (a *Auth) OktaLogin(ctx context.Context, username string, oktaMountPath string, request schema.OktaLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OktaLogin(ctx context.Context, username string, request schema.OktaLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5373,8 +5161,7 @@ func (a *Auth) OktaLogin(ctx context.Context, username string, oktaMountPath str
 }
 
 // OktaReadConfiguration
-// oktaMountPath: Path that the backend was mounted at
-func (a *Auth) OktaReadConfiguration(ctx context.Context, oktaMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OktaReadConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5398,8 +5185,7 @@ func (a *Auth) OktaReadConfiguration(ctx context.Context, oktaMountPath string, 
 
 // OktaReadGroup Manage users allowed to authenticate.
 // name: Name of the Okta group.
-// oktaMountPath: Path that the backend was mounted at
-func (a *Auth) OktaReadGroup(ctx context.Context, name string, oktaMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OktaReadGroup(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5424,8 +5210,7 @@ func (a *Auth) OktaReadGroup(ctx context.Context, name string, oktaMountPath str
 
 // OktaReadUser Manage additional groups for users allowed to authenticate.
 // name: Name of the user.
-// oktaMountPath: Path that the backend was mounted at
-func (a *Auth) OktaReadUser(ctx context.Context, name string, oktaMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OktaReadUser(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5450,8 +5235,7 @@ func (a *Auth) OktaReadUser(ctx context.Context, name string, oktaMountPath stri
 
 // OktaVerify
 // nonce: Nonce provided during a login request to retrieve the number verification challenge for the matching request.
-// oktaMountPath: Path that the backend was mounted at
-func (a *Auth) OktaVerify(ctx context.Context, nonce string, oktaMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OktaVerify(ctx context.Context, nonce string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5476,8 +5260,7 @@ func (a *Auth) OktaVerify(ctx context.Context, nonce string, oktaMountPath strin
 
 // OktaWriteGroup Manage users allowed to authenticate.
 // name: Name of the Okta group.
-// oktaMountPath: Path that the backend was mounted at
-func (a *Auth) OktaWriteGroup(ctx context.Context, name string, oktaMountPath string, request schema.OktaWriteGroupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OktaWriteGroup(ctx context.Context, name string, request schema.OktaWriteGroupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5502,8 +5285,7 @@ func (a *Auth) OktaWriteGroup(ctx context.Context, name string, oktaMountPath st
 
 // OktaWriteUser Manage additional groups for users allowed to authenticate.
 // name: Name of the user.
-// oktaMountPath: Path that the backend was mounted at
-func (a *Auth) OktaWriteUser(ctx context.Context, name string, oktaMountPath string, request schema.OktaWriteUserRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OktaWriteUser(ctx context.Context, name string, request schema.OktaWriteUserRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5527,8 +5309,7 @@ func (a *Auth) OktaWriteUser(ctx context.Context, name string, oktaMountPath str
 }
 
 // RadiusConfigure
-// radiusMountPath: Path that the backend was mounted at
-func (a *Auth) RadiusConfigure(ctx context.Context, radiusMountPath string, request schema.RadiusConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) RadiusConfigure(ctx context.Context, request schema.RadiusConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5552,8 +5333,7 @@ func (a *Auth) RadiusConfigure(ctx context.Context, radiusMountPath string, requ
 
 // RadiusDeleteUser Manage users allowed to authenticate.
 // name: Name of the RADIUS user.
-// radiusMountPath: Path that the backend was mounted at
-func (a *Auth) RadiusDeleteUser(ctx context.Context, name string, radiusMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) RadiusDeleteUser(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5577,8 +5357,7 @@ func (a *Auth) RadiusDeleteUser(ctx context.Context, name string, radiusMountPat
 }
 
 // RadiusListUsers Manage users allowed to authenticate.
-// radiusMountPath: Path that the backend was mounted at
-func (a *Auth) RadiusListUsers(ctx context.Context, radiusMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) RadiusListUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5602,8 +5381,7 @@ func (a *Auth) RadiusListUsers(ctx context.Context, radiusMountPath string, opti
 }
 
 // RadiusLogin Log in with a username and password.
-// radiusMountPath: Path that the backend was mounted at
-func (a *Auth) RadiusLogin(ctx context.Context, radiusMountPath string, request schema.RadiusLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) RadiusLogin(ctx context.Context, request schema.RadiusLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5627,8 +5405,7 @@ func (a *Auth) RadiusLogin(ctx context.Context, radiusMountPath string, request 
 
 // RadiusLoginWithUsername Log in with a username and password.
 // urlusername: Username to be used for login. (URL parameter)
-// radiusMountPath: Path that the backend was mounted at
-func (a *Auth) RadiusLoginWithUsername(ctx context.Context, urlusername string, radiusMountPath string, request schema.RadiusLoginWithUsernameRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) RadiusLoginWithUsername(ctx context.Context, urlusername string, request schema.RadiusLoginWithUsernameRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5652,8 +5429,7 @@ func (a *Auth) RadiusLoginWithUsername(ctx context.Context, urlusername string, 
 }
 
 // RadiusReadConfiguration
-// radiusMountPath: Path that the backend was mounted at
-func (a *Auth) RadiusReadConfiguration(ctx context.Context, radiusMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) RadiusReadConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5677,8 +5453,7 @@ func (a *Auth) RadiusReadConfiguration(ctx context.Context, radiusMountPath stri
 
 // RadiusReadUser Manage users allowed to authenticate.
 // name: Name of the RADIUS user.
-// radiusMountPath: Path that the backend was mounted at
-func (a *Auth) RadiusReadUser(ctx context.Context, name string, radiusMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) RadiusReadUser(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5703,8 +5478,7 @@ func (a *Auth) RadiusReadUser(ctx context.Context, name string, radiusMountPath 
 
 // RadiusWriteUser Manage users allowed to authenticate.
 // name: Name of the RADIUS user.
-// radiusMountPath: Path that the backend was mounted at
-func (a *Auth) RadiusWriteUser(ctx context.Context, name string, radiusMountPath string, request schema.RadiusWriteUserRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) RadiusWriteUser(ctx context.Context, name string, request schema.RadiusWriteUserRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5738,7 +5512,7 @@ func (a *Auth) TokenCreate(ctx context.Context, request schema.TokenCreateReques
 	requestPath := "/v1/auth/token/create"
 
 	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("format", url.QueryEscape(format))
+	requestQueryParameters.Set("format", url.QueryEscape(parameterToString(format)))
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5764,7 +5538,7 @@ func (a *Auth) TokenCreateAgainstRole(ctx context.Context, roleName string, requ
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("format", url.QueryEscape(format))
+	requestQueryParameters.Set("format", url.QueryEscape(parameterToString(format)))
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5788,7 +5562,7 @@ func (a *Auth) TokenCreateOrphan(ctx context.Context, request schema.TokenCreate
 	requestPath := "/v1/auth/token/create-orphan"
 
 	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("format", url.QueryEscape(format))
+	requestQueryParameters.Set("format", url.QueryEscape(parameterToString(format)))
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6207,8 +5981,7 @@ func (a *Auth) TokenWriteRole(ctx context.Context, roleName string, request sche
 
 // UserpassDeleteUser Manage users allowed to authenticate.
 // username: Username for this user.
-// userpassMountPath: Path that the backend was mounted at
-func (a *Auth) UserpassDeleteUser(ctx context.Context, username string, userpassMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) UserpassDeleteUser(ctx context.Context, username string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6232,8 +6005,7 @@ func (a *Auth) UserpassDeleteUser(ctx context.Context, username string, userpass
 }
 
 // UserpassListUsers Manage users allowed to authenticate.
-// userpassMountPath: Path that the backend was mounted at
-func (a *Auth) UserpassListUsers(ctx context.Context, userpassMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) UserpassListUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6258,8 +6030,7 @@ func (a *Auth) UserpassListUsers(ctx context.Context, userpassMountPath string, 
 
 // UserpassLogin Log in with a username and password.
 // username: Username of the user.
-// userpassMountPath: Path that the backend was mounted at
-func (a *Auth) UserpassLogin(ctx context.Context, username string, userpassMountPath string, request schema.UserpassLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) UserpassLogin(ctx context.Context, username string, request schema.UserpassLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6284,8 +6055,7 @@ func (a *Auth) UserpassLogin(ctx context.Context, username string, userpassMount
 
 // UserpassReadUser Manage users allowed to authenticate.
 // username: Username for this user.
-// userpassMountPath: Path that the backend was mounted at
-func (a *Auth) UserpassReadUser(ctx context.Context, username string, userpassMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) UserpassReadUser(ctx context.Context, username string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6310,8 +6080,7 @@ func (a *Auth) UserpassReadUser(ctx context.Context, username string, userpassMo
 
 // UserpassResetPassword Reset user's password.
 // username: Username for this user.
-// userpassMountPath: Path that the backend was mounted at
-func (a *Auth) UserpassResetPassword(ctx context.Context, username string, userpassMountPath string, request schema.UserpassResetPasswordRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) UserpassResetPassword(ctx context.Context, username string, request schema.UserpassResetPasswordRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6336,8 +6105,7 @@ func (a *Auth) UserpassResetPassword(ctx context.Context, username string, userp
 
 // UserpassUpdatePolicies Update the policies associated with the username.
 // username: Username for this user.
-// userpassMountPath: Path that the backend was mounted at
-func (a *Auth) UserpassUpdatePolicies(ctx context.Context, username string, userpassMountPath string, request schema.UserpassUpdatePoliciesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) UserpassUpdatePolicies(ctx context.Context, username string, request schema.UserpassUpdatePoliciesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6362,8 +6130,7 @@ func (a *Auth) UserpassUpdatePolicies(ctx context.Context, username string, user
 
 // UserpassWriteUser Manage users allowed to authenticate.
 // username: Username for this user.
-// userpassMountPath: Path that the backend was mounted at
-func (a *Auth) UserpassWriteUser(ctx context.Context, username string, userpassMountPath string, request schema.UserpassWriteUserRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) UserpassWriteUser(ctx context.Context, username string, request schema.UserpassWriteUserRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err

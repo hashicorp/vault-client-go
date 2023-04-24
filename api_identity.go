@@ -1716,7 +1716,7 @@ func (i *Identity) OIDCListProviders(ctx context.Context, allowedClientId string
 	requestPath := "/v1/identity/oidc/provider"
 
 	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("allowedClientId", url.QueryEscape(allowedClientId))
+	requestQueryParameters.Set("allowedClientId", url.QueryEscape(parameterToString(allowedClientId)))
 	requestQueryParameters.Set("list", "true")
 
 	return sendRequestParseResponse[map[string]interface{}](

@@ -730,8 +730,8 @@ func (s *System) Monitor(ctx context.Context, logFormat string, logLevel string,
 	requestPath := "/v1/sys/monitor"
 
 	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("logFormat", url.QueryEscape(logFormat))
-	requestQueryParameters.Set("logLevel", url.QueryEscape(logLevel))
+	requestQueryParameters.Set("logFormat", url.QueryEscape(parameterToString(logFormat)))
+	requestQueryParameters.Set("logLevel", url.QueryEscape(parameterToString(logLevel)))
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1817,7 +1817,7 @@ func (s *System) ReadMetrics(ctx context.Context, format string, options ...Requ
 	requestPath := "/v1/sys/metrics"
 
 	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("format", url.QueryEscape(format))
+	requestQueryParameters.Set("format", url.QueryEscape(parameterToString(format)))
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,

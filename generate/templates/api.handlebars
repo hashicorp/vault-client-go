@@ -37,7 +37,7 @@ func ({{lower (substring classname 0 1)}} *{{cut classname "Api"}}) {{nickname}}
 
 	requestQueryParameters := make(url.Values){{#each queryParams}}{{#eq paramName "list"}}
 	requestQueryParameters.Set("{{paramName}}", "true"){{/eq}}{{#neq paramName "list"}}
-	requestQueryParameters.Set("{{paramName}}", url.QueryEscape({{paramName}})){{/neq}}{{/each}}
+	requestQueryParameters.Set("{{paramName}}", url.QueryEscape(parameterToString({{paramName}}))){{/neq}}{{/each}}
 
 {{#each bodyParams}}
 	return sendStructuredRequestParseResponse[{{#with returnType}}schema.{{{.}}}{{/with}}{{#unless returnType}}map[string]interface{}{{/unless}}](

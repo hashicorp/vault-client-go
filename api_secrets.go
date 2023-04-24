@@ -20,8 +20,7 @@ type Secrets struct {
 }
 
 // AliCloudConfigure
-// alicloudMountPath: Path that the backend was mounted at
-func (s *Secrets) AliCloudConfigure(ctx context.Context, alicloudMountPath string, request schema.AliCloudConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AliCloudConfigure(ctx context.Context, request schema.AliCloudConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -44,8 +43,7 @@ func (s *Secrets) AliCloudConfigure(ctx context.Context, alicloudMountPath strin
 }
 
 // AliCloudDeleteConfiguration
-// alicloudMountPath: Path that the backend was mounted at
-func (s *Secrets) AliCloudDeleteConfiguration(ctx context.Context, alicloudMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AliCloudDeleteConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -69,8 +67,7 @@ func (s *Secrets) AliCloudDeleteConfiguration(ctx context.Context, alicloudMount
 
 // AliCloudDeleteRole Read, write and reference policies and roles that API keys or STS credentials can be made for.
 // name: The name of the role.
-// alicloudMountPath: Path that the backend was mounted at
-func (s *Secrets) AliCloudDeleteRole(ctx context.Context, name string, alicloudMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AliCloudDeleteRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -95,8 +92,7 @@ func (s *Secrets) AliCloudDeleteRole(ctx context.Context, name string, alicloudM
 
 // AliCloudGenerateCredentials Generate an API key or STS credential using the given role's configuration.'
 // name: The name of the role.
-// alicloudMountPath: Path that the backend was mounted at
-func (s *Secrets) AliCloudGenerateCredentials(ctx context.Context, name string, alicloudMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AliCloudGenerateCredentials(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -120,8 +116,7 @@ func (s *Secrets) AliCloudGenerateCredentials(ctx context.Context, name string, 
 }
 
 // AliCloudListRoles List the existing roles in this backend.
-// alicloudMountPath: Path that the backend was mounted at
-func (s *Secrets) AliCloudListRoles(ctx context.Context, alicloudMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AliCloudListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -145,8 +140,7 @@ func (s *Secrets) AliCloudListRoles(ctx context.Context, alicloudMountPath strin
 }
 
 // AliCloudReadConfiguration
-// alicloudMountPath: Path that the backend was mounted at
-func (s *Secrets) AliCloudReadConfiguration(ctx context.Context, alicloudMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AliCloudReadConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -170,8 +164,7 @@ func (s *Secrets) AliCloudReadConfiguration(ctx context.Context, alicloudMountPa
 
 // AliCloudReadRole Read, write and reference policies and roles that API keys or STS credentials can be made for.
 // name: The name of the role.
-// alicloudMountPath: Path that the backend was mounted at
-func (s *Secrets) AliCloudReadRole(ctx context.Context, name string, alicloudMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AliCloudReadRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -196,8 +189,7 @@ func (s *Secrets) AliCloudReadRole(ctx context.Context, name string, alicloudMou
 
 // AliCloudWriteRole Read, write and reference policies and roles that API keys or STS credentials can be made for.
 // name: The name of the role.
-// alicloudMountPath: Path that the backend was mounted at
-func (s *Secrets) AliCloudWriteRole(ctx context.Context, name string, alicloudMountPath string, request schema.AliCloudWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AliCloudWriteRole(ctx context.Context, name string, request schema.AliCloudWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -221,8 +213,7 @@ func (s *Secrets) AliCloudWriteRole(ctx context.Context, name string, alicloudMo
 }
 
 // AwsConfigureLease
-// awsMountPath: Path that the backend was mounted at
-func (s *Secrets) AwsConfigureLease(ctx context.Context, awsMountPath string, request schema.AwsConfigureLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AwsConfigureLease(ctx context.Context, request schema.AwsConfigureLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -245,8 +236,7 @@ func (s *Secrets) AwsConfigureLease(ctx context.Context, awsMountPath string, re
 }
 
 // AwsConfigureRootIamCredentials
-// awsMountPath: Path that the backend was mounted at
-func (s *Secrets) AwsConfigureRootIamCredentials(ctx context.Context, awsMountPath string, request schema.AwsConfigureRootIamCredentialsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AwsConfigureRootIamCredentials(ctx context.Context, request schema.AwsConfigureRootIamCredentialsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -270,8 +260,7 @@ func (s *Secrets) AwsConfigureRootIamCredentials(ctx context.Context, awsMountPa
 
 // AwsDeleteRole Read, write and reference IAM policies that access keys can be made for.
 // name: Name of the policy
-// awsMountPath: Path that the backend was mounted at
-func (s *Secrets) AwsDeleteRole(ctx context.Context, name string, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AwsDeleteRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -296,8 +285,7 @@ func (s *Secrets) AwsDeleteRole(ctx context.Context, name string, awsMountPath s
 
 // AwsGenerateCredentials
 // name: Name of the role
-// awsMountPath: Path that the backend was mounted at
-func (s *Secrets) AwsGenerateCredentials(ctx context.Context, name string, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AwsGenerateCredentials(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -322,8 +310,7 @@ func (s *Secrets) AwsGenerateCredentials(ctx context.Context, name string, awsMo
 
 // AwsGenerateCredentials2
 // name: Name of the role
-// awsMountPath: Path that the backend was mounted at
-func (s *Secrets) AwsGenerateCredentials2(ctx context.Context, name string, awsMountPath string, request schema.AwsGenerateCredentials2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AwsGenerateCredentials2(ctx context.Context, name string, request schema.AwsGenerateCredentials2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -348,8 +335,7 @@ func (s *Secrets) AwsGenerateCredentials2(ctx context.Context, name string, awsM
 
 // AwsGenerateStsCredentials
 // name: Name of the role
-// awsMountPath: Path that the backend was mounted at
-func (s *Secrets) AwsGenerateStsCredentials(ctx context.Context, name string, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AwsGenerateStsCredentials(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -374,8 +360,7 @@ func (s *Secrets) AwsGenerateStsCredentials(ctx context.Context, name string, aw
 
 // AwsGenerateStsCredentials2
 // name: Name of the role
-// awsMountPath: Path that the backend was mounted at
-func (s *Secrets) AwsGenerateStsCredentials2(ctx context.Context, name string, awsMountPath string, request schema.AwsGenerateStsCredentials2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AwsGenerateStsCredentials2(ctx context.Context, name string, request schema.AwsGenerateStsCredentials2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -399,8 +384,7 @@ func (s *Secrets) AwsGenerateStsCredentials2(ctx context.Context, name string, a
 }
 
 // AwsListRoles List the existing roles in this backend
-// awsMountPath: Path that the backend was mounted at
-func (s *Secrets) AwsListRoles(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AwsListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -424,8 +408,7 @@ func (s *Secrets) AwsListRoles(ctx context.Context, awsMountPath string, options
 }
 
 // AwsReadLeaseConfiguration
-// awsMountPath: Path that the backend was mounted at
-func (s *Secrets) AwsReadLeaseConfiguration(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AwsReadLeaseConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -449,8 +432,7 @@ func (s *Secrets) AwsReadLeaseConfiguration(ctx context.Context, awsMountPath st
 
 // AwsReadRole Read, write and reference IAM policies that access keys can be made for.
 // name: Name of the policy
-// awsMountPath: Path that the backend was mounted at
-func (s *Secrets) AwsReadRole(ctx context.Context, name string, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AwsReadRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -474,8 +456,7 @@ func (s *Secrets) AwsReadRole(ctx context.Context, name string, awsMountPath str
 }
 
 // AwsReadRootIamCredentialsConfiguration
-// awsMountPath: Path that the backend was mounted at
-func (s *Secrets) AwsReadRootIamCredentialsConfiguration(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AwsReadRootIamCredentialsConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -498,8 +479,7 @@ func (s *Secrets) AwsReadRootIamCredentialsConfiguration(ctx context.Context, aw
 }
 
 // AwsRotateRootIamCredentials
-// awsMountPath: Path that the backend was mounted at
-func (s *Secrets) AwsRotateRootIamCredentials(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AwsRotateRootIamCredentials(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -523,8 +503,7 @@ func (s *Secrets) AwsRotateRootIamCredentials(ctx context.Context, awsMountPath 
 
 // AwsWriteRole Read, write and reference IAM policies that access keys can be made for.
 // name: Name of the policy
-// awsMountPath: Path that the backend was mounted at
-func (s *Secrets) AwsWriteRole(ctx context.Context, name string, awsMountPath string, request schema.AwsWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AwsWriteRole(ctx context.Context, name string, request schema.AwsWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -548,8 +527,7 @@ func (s *Secrets) AwsWriteRole(ctx context.Context, name string, awsMountPath st
 }
 
 // AzureConfigure
-// azureMountPath: Path that the backend was mounted at
-func (s *Secrets) AzureConfigure(ctx context.Context, azureMountPath string, request schema.AzureConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AzureConfigure(ctx context.Context, request schema.AzureConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -572,8 +550,7 @@ func (s *Secrets) AzureConfigure(ctx context.Context, azureMountPath string, req
 }
 
 // AzureDeleteConfiguration
-// azureMountPath: Path that the backend was mounted at
-func (s *Secrets) AzureDeleteConfiguration(ctx context.Context, azureMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AzureDeleteConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -597,8 +574,7 @@ func (s *Secrets) AzureDeleteConfiguration(ctx context.Context, azureMountPath s
 
 // AzureDeleteRole Manage the Vault roles used to generate Azure credentials.
 // name: Name of the role.
-// azureMountPath: Path that the backend was mounted at
-func (s *Secrets) AzureDeleteRole(ctx context.Context, name string, azureMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AzureDeleteRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -622,8 +598,7 @@ func (s *Secrets) AzureDeleteRole(ctx context.Context, name string, azureMountPa
 }
 
 // AzureListRoles List existing roles.
-// azureMountPath: Path that the backend was mounted at
-func (s *Secrets) AzureListRoles(ctx context.Context, azureMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AzureListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -647,8 +622,7 @@ func (s *Secrets) AzureListRoles(ctx context.Context, azureMountPath string, opt
 }
 
 // AzureReadConfiguration
-// azureMountPath: Path that the backend was mounted at
-func (s *Secrets) AzureReadConfiguration(ctx context.Context, azureMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AzureReadConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -672,8 +646,7 @@ func (s *Secrets) AzureReadConfiguration(ctx context.Context, azureMountPath str
 
 // AzureReadRole Manage the Vault roles used to generate Azure credentials.
 // name: Name of the role.
-// azureMountPath: Path that the backend was mounted at
-func (s *Secrets) AzureReadRole(ctx context.Context, name string, azureMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AzureReadRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -698,8 +671,7 @@ func (s *Secrets) AzureReadRole(ctx context.Context, name string, azureMountPath
 
 // AzureRequestServicePrincipalCredentials
 // role: Name of the Vault role
-// azureMountPath: Path that the backend was mounted at
-func (s *Secrets) AzureRequestServicePrincipalCredentials(ctx context.Context, role string, azureMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AzureRequestServicePrincipalCredentials(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -723,8 +695,7 @@ func (s *Secrets) AzureRequestServicePrincipalCredentials(ctx context.Context, r
 }
 
 // AzureRotateRoot
-// azureMountPath: Path that the backend was mounted at
-func (s *Secrets) AzureRotateRoot(ctx context.Context, azureMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AzureRotateRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -748,8 +719,7 @@ func (s *Secrets) AzureRotateRoot(ctx context.Context, azureMountPath string, op
 
 // AzureWriteRole Manage the Vault roles used to generate Azure credentials.
 // name: Name of the role.
-// azureMountPath: Path that the backend was mounted at
-func (s *Secrets) AzureWriteRole(ctx context.Context, name string, azureMountPath string, request schema.AzureWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AzureWriteRole(ctx context.Context, name string, request schema.AzureWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -773,8 +743,7 @@ func (s *Secrets) AzureWriteRole(ctx context.Context, name string, azureMountPat
 }
 
 // ConsulConfigureAccess
-// consulMountPath: Path that the backend was mounted at
-func (s *Secrets) ConsulConfigureAccess(ctx context.Context, consulMountPath string, request schema.ConsulConfigureAccessRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) ConsulConfigureAccess(ctx context.Context, request schema.ConsulConfigureAccessRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -798,8 +767,7 @@ func (s *Secrets) ConsulConfigureAccess(ctx context.Context, consulMountPath str
 
 // ConsulDeleteRole
 // name: Name of the role.
-// consulMountPath: Path that the backend was mounted at
-func (s *Secrets) ConsulDeleteRole(ctx context.Context, name string, consulMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) ConsulDeleteRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -824,8 +792,7 @@ func (s *Secrets) ConsulDeleteRole(ctx context.Context, name string, consulMount
 
 // ConsulGenerateCredentials
 // role: Name of the role.
-// consulMountPath: Path that the backend was mounted at
-func (s *Secrets) ConsulGenerateCredentials(ctx context.Context, role string, consulMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) ConsulGenerateCredentials(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -849,8 +816,7 @@ func (s *Secrets) ConsulGenerateCredentials(ctx context.Context, role string, co
 }
 
 // ConsulListRoles
-// consulMountPath: Path that the backend was mounted at
-func (s *Secrets) ConsulListRoles(ctx context.Context, consulMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) ConsulListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -874,8 +840,7 @@ func (s *Secrets) ConsulListRoles(ctx context.Context, consulMountPath string, o
 }
 
 // ConsulReadAccessConfiguration
-// consulMountPath: Path that the backend was mounted at
-func (s *Secrets) ConsulReadAccessConfiguration(ctx context.Context, consulMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) ConsulReadAccessConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -899,8 +864,7 @@ func (s *Secrets) ConsulReadAccessConfiguration(ctx context.Context, consulMount
 
 // ConsulReadRole
 // name: Name of the role.
-// consulMountPath: Path that the backend was mounted at
-func (s *Secrets) ConsulReadRole(ctx context.Context, name string, consulMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) ConsulReadRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -925,8 +889,7 @@ func (s *Secrets) ConsulReadRole(ctx context.Context, name string, consulMountPa
 
 // ConsulWriteRole
 // name: Name of the role.
-// consulMountPath: Path that the backend was mounted at
-func (s *Secrets) ConsulWriteRole(ctx context.Context, name string, consulMountPath string, request schema.ConsulWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) ConsulWriteRole(ctx context.Context, name string, request schema.ConsulWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1024,8 +987,7 @@ func (s *Secrets) CubbyholeWrite(ctx context.Context, path string, options ...Re
 
 // DatabaseConfigureConnection
 // name: Name of this database connection
-// databaseMountPath: Path that the backend was mounted at
-func (s *Secrets) DatabaseConfigureConnection(ctx context.Context, name string, databaseMountPath string, request schema.DatabaseConfigureConnectionRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) DatabaseConfigureConnection(ctx context.Context, name string, request schema.DatabaseConfigureConnectionRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1050,8 +1012,7 @@ func (s *Secrets) DatabaseConfigureConnection(ctx context.Context, name string, 
 
 // DatabaseDeleteConnectionConfiguration
 // name: Name of this database connection
-// databaseMountPath: Path that the backend was mounted at
-func (s *Secrets) DatabaseDeleteConnectionConfiguration(ctx context.Context, name string, databaseMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) DatabaseDeleteConnectionConfiguration(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1076,8 +1037,7 @@ func (s *Secrets) DatabaseDeleteConnectionConfiguration(ctx context.Context, nam
 
 // DatabaseDeleteRole Manage the roles that can be created with this backend.
 // name: Name of the role.
-// databaseMountPath: Path that the backend was mounted at
-func (s *Secrets) DatabaseDeleteRole(ctx context.Context, name string, databaseMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) DatabaseDeleteRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1102,8 +1062,7 @@ func (s *Secrets) DatabaseDeleteRole(ctx context.Context, name string, databaseM
 
 // DatabaseDeleteStaticRole Manage the static roles that can be created with this backend.
 // name: Name of the role.
-// databaseMountPath: Path that the backend was mounted at
-func (s *Secrets) DatabaseDeleteStaticRole(ctx context.Context, name string, databaseMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) DatabaseDeleteStaticRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1128,8 +1087,7 @@ func (s *Secrets) DatabaseDeleteStaticRole(ctx context.Context, name string, dat
 
 // DatabaseGenerateCredentials Request database credentials for a certain role.
 // name: Name of the role.
-// databaseMountPath: Path that the backend was mounted at
-func (s *Secrets) DatabaseGenerateCredentials(ctx context.Context, name string, databaseMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) DatabaseGenerateCredentials(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1153,8 +1111,7 @@ func (s *Secrets) DatabaseGenerateCredentials(ctx context.Context, name string, 
 }
 
 // DatabaseListConnections Configure connection details to a database plugin.
-// databaseMountPath: Path that the backend was mounted at
-func (s *Secrets) DatabaseListConnections(ctx context.Context, databaseMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) DatabaseListConnections(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1178,8 +1135,7 @@ func (s *Secrets) DatabaseListConnections(ctx context.Context, databaseMountPath
 }
 
 // DatabaseListRoles Manage the roles that can be created with this backend.
-// databaseMountPath: Path that the backend was mounted at
-func (s *Secrets) DatabaseListRoles(ctx context.Context, databaseMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) DatabaseListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1203,8 +1159,7 @@ func (s *Secrets) DatabaseListRoles(ctx context.Context, databaseMountPath strin
 }
 
 // DatabaseListStaticRoles Manage the static roles that can be created with this backend.
-// databaseMountPath: Path that the backend was mounted at
-func (s *Secrets) DatabaseListStaticRoles(ctx context.Context, databaseMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) DatabaseListStaticRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1229,8 +1184,7 @@ func (s *Secrets) DatabaseListStaticRoles(ctx context.Context, databaseMountPath
 
 // DatabaseReadConnectionConfiguration
 // name: Name of this database connection
-// databaseMountPath: Path that the backend was mounted at
-func (s *Secrets) DatabaseReadConnectionConfiguration(ctx context.Context, name string, databaseMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) DatabaseReadConnectionConfiguration(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1255,8 +1209,7 @@ func (s *Secrets) DatabaseReadConnectionConfiguration(ctx context.Context, name 
 
 // DatabaseReadRole Manage the roles that can be created with this backend.
 // name: Name of the role.
-// databaseMountPath: Path that the backend was mounted at
-func (s *Secrets) DatabaseReadRole(ctx context.Context, name string, databaseMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) DatabaseReadRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1281,8 +1234,7 @@ func (s *Secrets) DatabaseReadRole(ctx context.Context, name string, databaseMou
 
 // DatabaseReadStaticRole Manage the static roles that can be created with this backend.
 // name: Name of the role.
-// databaseMountPath: Path that the backend was mounted at
-func (s *Secrets) DatabaseReadStaticRole(ctx context.Context, name string, databaseMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) DatabaseReadStaticRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1307,8 +1259,7 @@ func (s *Secrets) DatabaseReadStaticRole(ctx context.Context, name string, datab
 
 // DatabaseReadStaticRoleCredentials Request database credentials for a certain static role. These credentials are rotated periodically.
 // name: Name of the static role.
-// databaseMountPath: Path that the backend was mounted at
-func (s *Secrets) DatabaseReadStaticRoleCredentials(ctx context.Context, name string, databaseMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) DatabaseReadStaticRoleCredentials(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1333,8 +1284,7 @@ func (s *Secrets) DatabaseReadStaticRoleCredentials(ctx context.Context, name st
 
 // DatabaseResetConnection Resets a database plugin.
 // name: Name of this database connection
-// databaseMountPath: Path that the backend was mounted at
-func (s *Secrets) DatabaseResetConnection(ctx context.Context, name string, databaseMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) DatabaseResetConnection(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1359,8 +1309,7 @@ func (s *Secrets) DatabaseResetConnection(ctx context.Context, name string, data
 
 // DatabaseRotateRootCredentials
 // name: Name of this database connection
-// databaseMountPath: Path that the backend was mounted at
-func (s *Secrets) DatabaseRotateRootCredentials(ctx context.Context, name string, databaseMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) DatabaseRotateRootCredentials(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1385,8 +1334,7 @@ func (s *Secrets) DatabaseRotateRootCredentials(ctx context.Context, name string
 
 // DatabaseRotateStaticRoleCredentials
 // name: Name of the static role
-// databaseMountPath: Path that the backend was mounted at
-func (s *Secrets) DatabaseRotateStaticRoleCredentials(ctx context.Context, name string, databaseMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) DatabaseRotateStaticRoleCredentials(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1411,8 +1359,7 @@ func (s *Secrets) DatabaseRotateStaticRoleCredentials(ctx context.Context, name 
 
 // DatabaseWriteRole Manage the roles that can be created with this backend.
 // name: Name of the role.
-// databaseMountPath: Path that the backend was mounted at
-func (s *Secrets) DatabaseWriteRole(ctx context.Context, name string, databaseMountPath string, request schema.DatabaseWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) DatabaseWriteRole(ctx context.Context, name string, request schema.DatabaseWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1437,8 +1384,7 @@ func (s *Secrets) DatabaseWriteRole(ctx context.Context, name string, databaseMo
 
 // DatabaseWriteStaticRole Manage the static roles that can be created with this backend.
 // name: Name of the role.
-// databaseMountPath: Path that the backend was mounted at
-func (s *Secrets) DatabaseWriteStaticRole(ctx context.Context, name string, databaseMountPath string, request schema.DatabaseWriteStaticRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) DatabaseWriteStaticRole(ctx context.Context, name string, request schema.DatabaseWriteStaticRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1462,8 +1408,7 @@ func (s *Secrets) DatabaseWriteStaticRole(ctx context.Context, name string, data
 }
 
 // GoogleCloudConfigure
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudConfigure(ctx context.Context, gcpMountPath string, request schema.GoogleCloudConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudConfigure(ctx context.Context, request schema.GoogleCloudConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1487,8 +1432,7 @@ func (s *Secrets) GoogleCloudConfigure(ctx context.Context, gcpMountPath string,
 
 // GoogleCloudDeleteImpersonatedAccount
 // name: Required. Name to refer to this impersonated account in Vault. Cannot be updated.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudDeleteImpersonatedAccount(ctx context.Context, name string, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudDeleteImpersonatedAccount(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1513,8 +1457,7 @@ func (s *Secrets) GoogleCloudDeleteImpersonatedAccount(ctx context.Context, name
 
 // GoogleCloudDeleteRoleset
 // name: Required. Name of the role.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudDeleteRoleset(ctx context.Context, name string, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudDeleteRoleset(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1539,8 +1482,7 @@ func (s *Secrets) GoogleCloudDeleteRoleset(ctx context.Context, name string, gcp
 
 // GoogleCloudDeleteStaticAccount
 // name: Required. Name to refer to this static account in Vault. Cannot be updated.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudDeleteStaticAccount(ctx context.Context, name string, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudDeleteStaticAccount(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1565,8 +1507,7 @@ func (s *Secrets) GoogleCloudDeleteStaticAccount(ctx context.Context, name strin
 
 // GoogleCloudGenerateImpersonatedAccountAccessToken
 // name: Required. Name of the impersonated account.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudGenerateImpersonatedAccountAccessToken(ctx context.Context, name string, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudGenerateImpersonatedAccountAccessToken(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1591,8 +1532,7 @@ func (s *Secrets) GoogleCloudGenerateImpersonatedAccountAccessToken(ctx context.
 
 // GoogleCloudGenerateImpersonatedAccountAccessToken2
 // name: Required. Name of the impersonated account.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudGenerateImpersonatedAccountAccessToken2(ctx context.Context, name string, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudGenerateImpersonatedAccountAccessToken2(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1617,8 +1557,7 @@ func (s *Secrets) GoogleCloudGenerateImpersonatedAccountAccessToken2(ctx context
 
 // GoogleCloudGenerateRolesetAccessToken
 // roleset: Required. Name of the role set.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudGenerateRolesetAccessToken(ctx context.Context, roleset string, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudGenerateRolesetAccessToken(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1643,8 +1582,7 @@ func (s *Secrets) GoogleCloudGenerateRolesetAccessToken(ctx context.Context, rol
 
 // GoogleCloudGenerateRolesetAccessToken2
 // roleset: Required. Name of the role set.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudGenerateRolesetAccessToken2(ctx context.Context, roleset string, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudGenerateRolesetAccessToken2(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1669,8 +1607,7 @@ func (s *Secrets) GoogleCloudGenerateRolesetAccessToken2(ctx context.Context, ro
 
 // GoogleCloudGenerateRolesetAccessTokenWithParameters
 // roleset: Required. Name of the role set.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudGenerateRolesetAccessTokenWithParameters(ctx context.Context, roleset string, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudGenerateRolesetAccessTokenWithParameters(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1695,8 +1632,7 @@ func (s *Secrets) GoogleCloudGenerateRolesetAccessTokenWithParameters(ctx contex
 
 // GoogleCloudGenerateRolesetAccessTokenWithParameters2
 // roleset: Required. Name of the role set.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudGenerateRolesetAccessTokenWithParameters2(ctx context.Context, roleset string, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudGenerateRolesetAccessTokenWithParameters2(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1721,8 +1657,7 @@ func (s *Secrets) GoogleCloudGenerateRolesetAccessTokenWithParameters2(ctx conte
 
 // GoogleCloudGenerateRolesetKey
 // roleset: Required. Name of the role set.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudGenerateRolesetKey(ctx context.Context, roleset string, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudGenerateRolesetKey(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1747,8 +1682,7 @@ func (s *Secrets) GoogleCloudGenerateRolesetKey(ctx context.Context, roleset str
 
 // GoogleCloudGenerateRolesetKey2
 // roleset: Required. Name of the role set.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudGenerateRolesetKey2(ctx context.Context, roleset string, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudGenerateRolesetKey2(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1773,8 +1707,7 @@ func (s *Secrets) GoogleCloudGenerateRolesetKey2(ctx context.Context, roleset st
 
 // GoogleCloudGenerateRolesetKeyWithParameters
 // roleset: Required. Name of the role set.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudGenerateRolesetKeyWithParameters(ctx context.Context, roleset string, gcpMountPath string, request schema.GoogleCloudGenerateRolesetKeyWithParametersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudGenerateRolesetKeyWithParameters(ctx context.Context, roleset string, request schema.GoogleCloudGenerateRolesetKeyWithParametersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1799,8 +1732,7 @@ func (s *Secrets) GoogleCloudGenerateRolesetKeyWithParameters(ctx context.Contex
 
 // GoogleCloudGenerateRolesetKeyWithParameters2
 // roleset: Required. Name of the role set.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudGenerateRolesetKeyWithParameters2(ctx context.Context, roleset string, gcpMountPath string, request schema.GoogleCloudGenerateRolesetKeyWithParameters2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudGenerateRolesetKeyWithParameters2(ctx context.Context, roleset string, request schema.GoogleCloudGenerateRolesetKeyWithParameters2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1825,8 +1757,7 @@ func (s *Secrets) GoogleCloudGenerateRolesetKeyWithParameters2(ctx context.Conte
 
 // GoogleCloudGenerateStaticAccountAccessToken
 // name: Required. Name of the static account.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudGenerateStaticAccountAccessToken(ctx context.Context, name string, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudGenerateStaticAccountAccessToken(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1851,8 +1782,7 @@ func (s *Secrets) GoogleCloudGenerateStaticAccountAccessToken(ctx context.Contex
 
 // GoogleCloudGenerateStaticAccountAccessTokenWithParameters
 // name: Required. Name of the static account.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudGenerateStaticAccountAccessTokenWithParameters(ctx context.Context, name string, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudGenerateStaticAccountAccessTokenWithParameters(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1877,8 +1807,7 @@ func (s *Secrets) GoogleCloudGenerateStaticAccountAccessTokenWithParameters(ctx 
 
 // GoogleCloudGenerateStaticAccountKey
 // name: Required. Name of the static account.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudGenerateStaticAccountKey(ctx context.Context, name string, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudGenerateStaticAccountKey(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1903,8 +1832,7 @@ func (s *Secrets) GoogleCloudGenerateStaticAccountKey(ctx context.Context, name 
 
 // GoogleCloudGenerateStaticAccountKeyWithParameters
 // name: Required. Name of the static account.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudGenerateStaticAccountKeyWithParameters(ctx context.Context, name string, gcpMountPath string, request schema.GoogleCloudGenerateStaticAccountKeyWithParametersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudGenerateStaticAccountKeyWithParameters(ctx context.Context, name string, request schema.GoogleCloudGenerateStaticAccountKeyWithParametersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1928,8 +1856,7 @@ func (s *Secrets) GoogleCloudGenerateStaticAccountKeyWithParameters(ctx context.
 }
 
 // GoogleCloudKmsConfigure
-// gcpkmsMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudKmsConfigure(ctx context.Context, gcpkmsMountPath string, request schema.GoogleCloudKmsConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudKmsConfigure(ctx context.Context, request schema.GoogleCloudKmsConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1953,8 +1880,7 @@ func (s *Secrets) GoogleCloudKmsConfigure(ctx context.Context, gcpkmsMountPath s
 
 // GoogleCloudKmsConfigureKey
 // key: Name of the key in Vault.
-// gcpkmsMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudKmsConfigureKey(ctx context.Context, key string, gcpkmsMountPath string, request schema.GoogleCloudKmsConfigureKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudKmsConfigureKey(ctx context.Context, key string, request schema.GoogleCloudKmsConfigureKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1979,8 +1905,7 @@ func (s *Secrets) GoogleCloudKmsConfigureKey(ctx context.Context, key string, gc
 
 // GoogleCloudKmsDecrypt Decrypt a ciphertext value using a named key
 // key: Name of the key in Vault to use for decryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-// gcpkmsMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudKmsDecrypt(ctx context.Context, key string, gcpkmsMountPath string, request schema.GoogleCloudKmsDecryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudKmsDecrypt(ctx context.Context, key string, request schema.GoogleCloudKmsDecryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2004,8 +1929,7 @@ func (s *Secrets) GoogleCloudKmsDecrypt(ctx context.Context, key string, gcpkmsM
 }
 
 // GoogleCloudKmsDeleteConfiguration
-// gcpkmsMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudKmsDeleteConfiguration(ctx context.Context, gcpkmsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudKmsDeleteConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2029,8 +1953,7 @@ func (s *Secrets) GoogleCloudKmsDeleteConfiguration(ctx context.Context, gcpkmsM
 
 // GoogleCloudKmsDeleteKey Interact with crypto keys in Vault and Google Cloud KMS
 // key: Name of the key in Vault.
-// gcpkmsMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudKmsDeleteKey(ctx context.Context, key string, gcpkmsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudKmsDeleteKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2055,8 +1978,7 @@ func (s *Secrets) GoogleCloudKmsDeleteKey(ctx context.Context, key string, gcpkm
 
 // GoogleCloudKmsDeregisterKey
 // key: Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
-// gcpkmsMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudKmsDeregisterKey(ctx context.Context, key string, gcpkmsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudKmsDeregisterKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2081,8 +2003,7 @@ func (s *Secrets) GoogleCloudKmsDeregisterKey(ctx context.Context, key string, g
 
 // GoogleCloudKmsDeregisterKey2
 // key: Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
-// gcpkmsMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudKmsDeregisterKey2(ctx context.Context, key string, gcpkmsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudKmsDeregisterKey2(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2107,8 +2028,7 @@ func (s *Secrets) GoogleCloudKmsDeregisterKey2(ctx context.Context, key string, 
 
 // GoogleCloudKmsEncrypt Encrypt a plaintext value using a named key
 // key: Name of the key in Vault to use for encryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-// gcpkmsMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudKmsEncrypt(ctx context.Context, key string, gcpkmsMountPath string, request schema.GoogleCloudKmsEncryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudKmsEncrypt(ctx context.Context, key string, request schema.GoogleCloudKmsEncryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2132,8 +2052,7 @@ func (s *Secrets) GoogleCloudKmsEncrypt(ctx context.Context, key string, gcpkmsM
 }
 
 // GoogleCloudKmsListKeys List named keys
-// gcpkmsMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudKmsListKeys(ctx context.Context, gcpkmsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudKmsListKeys(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2157,8 +2076,7 @@ func (s *Secrets) GoogleCloudKmsListKeys(ctx context.Context, gcpkmsMountPath st
 }
 
 // GoogleCloudKmsReadConfiguration
-// gcpkmsMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudKmsReadConfiguration(ctx context.Context, gcpkmsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudKmsReadConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2182,8 +2100,7 @@ func (s *Secrets) GoogleCloudKmsReadConfiguration(ctx context.Context, gcpkmsMou
 
 // GoogleCloudKmsReadKey Interact with crypto keys in Vault and Google Cloud KMS
 // key: Name of the key in Vault.
-// gcpkmsMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudKmsReadKey(ctx context.Context, key string, gcpkmsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudKmsReadKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2208,8 +2125,7 @@ func (s *Secrets) GoogleCloudKmsReadKey(ctx context.Context, key string, gcpkmsM
 
 // GoogleCloudKmsReadKeyConfiguration
 // key: Name of the key in Vault.
-// gcpkmsMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudKmsReadKeyConfiguration(ctx context.Context, key string, gcpkmsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudKmsReadKeyConfiguration(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2234,8 +2150,7 @@ func (s *Secrets) GoogleCloudKmsReadKeyConfiguration(ctx context.Context, key st
 
 // GoogleCloudKmsReencrypt Re-encrypt existing ciphertext data to a new version
 // key: Name of the key to use for encryption. This key must already exist in Vault and Google Cloud KMS.
-// gcpkmsMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudKmsReencrypt(ctx context.Context, key string, gcpkmsMountPath string, request schema.GoogleCloudKmsReencryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudKmsReencrypt(ctx context.Context, key string, request schema.GoogleCloudKmsReencryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2260,8 +2175,7 @@ func (s *Secrets) GoogleCloudKmsReencrypt(ctx context.Context, key string, gcpkm
 
 // GoogleCloudKmsRegisterKey Register an existing crypto key in Google Cloud KMS
 // key: Name of the key to register in Vault. This will be the named used to refer to the underlying crypto key when encrypting or decrypting data.
-// gcpkmsMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudKmsRegisterKey(ctx context.Context, key string, gcpkmsMountPath string, request schema.GoogleCloudKmsRegisterKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudKmsRegisterKey(ctx context.Context, key string, request schema.GoogleCloudKmsRegisterKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2286,8 +2200,7 @@ func (s *Secrets) GoogleCloudKmsRegisterKey(ctx context.Context, key string, gcp
 
 // GoogleCloudKmsRetrievePublicKey Retrieve the public key associated with the named key
 // key: Name of the key for which to get the public key. This key must already exist in Vault and Google Cloud KMS.
-// gcpkmsMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudKmsRetrievePublicKey(ctx context.Context, key string, gcpkmsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudKmsRetrievePublicKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2312,8 +2225,7 @@ func (s *Secrets) GoogleCloudKmsRetrievePublicKey(ctx context.Context, key strin
 
 // GoogleCloudKmsRotateKey Rotate a crypto key to a new primary version
 // key: Name of the key to rotate. This key must already be registered with Vault and point to a valid Google Cloud KMS crypto key.
-// gcpkmsMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudKmsRotateKey(ctx context.Context, key string, gcpkmsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudKmsRotateKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2338,8 +2250,7 @@ func (s *Secrets) GoogleCloudKmsRotateKey(ctx context.Context, key string, gcpkm
 
 // GoogleCloudKmsSign Signs a message or digest using a named key
 // key: Name of the key in Vault to use for signing. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-// gcpkmsMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudKmsSign(ctx context.Context, key string, gcpkmsMountPath string, request schema.GoogleCloudKmsSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudKmsSign(ctx context.Context, key string, request schema.GoogleCloudKmsSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2364,8 +2275,7 @@ func (s *Secrets) GoogleCloudKmsSign(ctx context.Context, key string, gcpkmsMoun
 
 // GoogleCloudKmsTrimKeyVersions
 // key: Name of the key in Vault.
-// gcpkmsMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudKmsTrimKeyVersions(ctx context.Context, key string, gcpkmsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudKmsTrimKeyVersions(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2390,8 +2300,7 @@ func (s *Secrets) GoogleCloudKmsTrimKeyVersions(ctx context.Context, key string,
 
 // GoogleCloudKmsTrimKeyVersions2
 // key: Name of the key in Vault.
-// gcpkmsMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudKmsTrimKeyVersions2(ctx context.Context, key string, gcpkmsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudKmsTrimKeyVersions2(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2416,8 +2325,7 @@ func (s *Secrets) GoogleCloudKmsTrimKeyVersions2(ctx context.Context, key string
 
 // GoogleCloudKmsVerify Verify a signature using a named key
 // key: Name of the key in Vault to use for verification. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-// gcpkmsMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudKmsVerify(ctx context.Context, key string, gcpkmsMountPath string, request schema.GoogleCloudKmsVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudKmsVerify(ctx context.Context, key string, request schema.GoogleCloudKmsVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2442,8 +2350,7 @@ func (s *Secrets) GoogleCloudKmsVerify(ctx context.Context, key string, gcpkmsMo
 
 // GoogleCloudKmsWriteKey Interact with crypto keys in Vault and Google Cloud KMS
 // key: Name of the key in Vault.
-// gcpkmsMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudKmsWriteKey(ctx context.Context, key string, gcpkmsMountPath string, request schema.GoogleCloudKmsWriteKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudKmsWriteKey(ctx context.Context, key string, request schema.GoogleCloudKmsWriteKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2467,8 +2374,7 @@ func (s *Secrets) GoogleCloudKmsWriteKey(ctx context.Context, key string, gcpkms
 }
 
 // GoogleCloudListImpersonatedAccounts
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudListImpersonatedAccounts(ctx context.Context, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudListImpersonatedAccounts(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2492,8 +2398,7 @@ func (s *Secrets) GoogleCloudListImpersonatedAccounts(ctx context.Context, gcpMo
 }
 
 // GoogleCloudListImpersonatedAccounts2
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudListImpersonatedAccounts2(ctx context.Context, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudListImpersonatedAccounts2(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2517,8 +2422,7 @@ func (s *Secrets) GoogleCloudListImpersonatedAccounts2(ctx context.Context, gcpM
 }
 
 // GoogleCloudListRolesets
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudListRolesets(ctx context.Context, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudListRolesets(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2542,8 +2446,7 @@ func (s *Secrets) GoogleCloudListRolesets(ctx context.Context, gcpMountPath stri
 }
 
 // GoogleCloudListRolesets2
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudListRolesets2(ctx context.Context, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudListRolesets2(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2567,8 +2470,7 @@ func (s *Secrets) GoogleCloudListRolesets2(ctx context.Context, gcpMountPath str
 }
 
 // GoogleCloudListStaticAccounts
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudListStaticAccounts(ctx context.Context, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudListStaticAccounts(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2592,8 +2494,7 @@ func (s *Secrets) GoogleCloudListStaticAccounts(ctx context.Context, gcpMountPat
 }
 
 // GoogleCloudListStaticAccounts2
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudListStaticAccounts2(ctx context.Context, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudListStaticAccounts2(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2617,8 +2518,7 @@ func (s *Secrets) GoogleCloudListStaticAccounts2(ctx context.Context, gcpMountPa
 }
 
 // GoogleCloudReadConfiguration
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudReadConfiguration(ctx context.Context, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudReadConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2642,8 +2542,7 @@ func (s *Secrets) GoogleCloudReadConfiguration(ctx context.Context, gcpMountPath
 
 // GoogleCloudReadImpersonatedAccount
 // name: Required. Name to refer to this impersonated account in Vault. Cannot be updated.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudReadImpersonatedAccount(ctx context.Context, name string, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudReadImpersonatedAccount(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2668,8 +2567,7 @@ func (s *Secrets) GoogleCloudReadImpersonatedAccount(ctx context.Context, name s
 
 // GoogleCloudReadRoleset
 // name: Required. Name of the role.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudReadRoleset(ctx context.Context, name string, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudReadRoleset(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2694,8 +2592,7 @@ func (s *Secrets) GoogleCloudReadRoleset(ctx context.Context, name string, gcpMo
 
 // GoogleCloudReadStaticAccount
 // name: Required. Name to refer to this static account in Vault. Cannot be updated.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudReadStaticAccount(ctx context.Context, name string, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudReadStaticAccount(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2720,8 +2617,7 @@ func (s *Secrets) GoogleCloudReadStaticAccount(ctx context.Context, name string,
 
 // GoogleCloudRotateRoleset
 // name: Name of the role.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudRotateRoleset(ctx context.Context, name string, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudRotateRoleset(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2746,8 +2642,7 @@ func (s *Secrets) GoogleCloudRotateRoleset(ctx context.Context, name string, gcp
 
 // GoogleCloudRotateRolesetKey
 // name: Name of the role.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudRotateRolesetKey(ctx context.Context, name string, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudRotateRolesetKey(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2771,8 +2666,7 @@ func (s *Secrets) GoogleCloudRotateRolesetKey(ctx context.Context, name string, 
 }
 
 // GoogleCloudRotateRootCredentials
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudRotateRootCredentials(ctx context.Context, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudRotateRootCredentials(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2796,8 +2690,7 @@ func (s *Secrets) GoogleCloudRotateRootCredentials(ctx context.Context, gcpMount
 
 // GoogleCloudRotateStaticAccountKey
 // name: Name of the account.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudRotateStaticAccountKey(ctx context.Context, name string, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudRotateStaticAccountKey(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2822,8 +2715,7 @@ func (s *Secrets) GoogleCloudRotateStaticAccountKey(ctx context.Context, name st
 
 // GoogleCloudWriteImpersonatedAccount
 // name: Required. Name to refer to this impersonated account in Vault. Cannot be updated.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudWriteImpersonatedAccount(ctx context.Context, name string, gcpMountPath string, request schema.GoogleCloudWriteImpersonatedAccountRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudWriteImpersonatedAccount(ctx context.Context, name string, request schema.GoogleCloudWriteImpersonatedAccountRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2848,8 +2740,7 @@ func (s *Secrets) GoogleCloudWriteImpersonatedAccount(ctx context.Context, name 
 
 // GoogleCloudWriteRoleset
 // name: Required. Name of the role.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudWriteRoleset(ctx context.Context, name string, gcpMountPath string, request schema.GoogleCloudWriteRolesetRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudWriteRoleset(ctx context.Context, name string, request schema.GoogleCloudWriteRolesetRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2874,8 +2765,7 @@ func (s *Secrets) GoogleCloudWriteRoleset(ctx context.Context, name string, gcpM
 
 // GoogleCloudWriteStaticAccount
 // name: Required. Name to refer to this static account in Vault. Cannot be updated.
-// gcpMountPath: Path that the backend was mounted at
-func (s *Secrets) GoogleCloudWriteStaticAccount(ctx context.Context, name string, gcpMountPath string, request schema.GoogleCloudWriteStaticAccountRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudWriteStaticAccount(ctx context.Context, name string, request schema.GoogleCloudWriteStaticAccountRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2899,8 +2789,7 @@ func (s *Secrets) GoogleCloudWriteStaticAccount(ctx context.Context, name string
 }
 
 // KubernetesCheckConfiguration
-// kubernetesMountPath: Path that the backend was mounted at
-func (s *Secrets) KubernetesCheckConfiguration(ctx context.Context, kubernetesMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) KubernetesCheckConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2923,8 +2812,7 @@ func (s *Secrets) KubernetesCheckConfiguration(ctx context.Context, kubernetesMo
 }
 
 // KubernetesConfigure
-// kubernetesMountPath: Path that the backend was mounted at
-func (s *Secrets) KubernetesConfigure(ctx context.Context, kubernetesMountPath string, request schema.KubernetesConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) KubernetesConfigure(ctx context.Context, request schema.KubernetesConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2947,8 +2835,7 @@ func (s *Secrets) KubernetesConfigure(ctx context.Context, kubernetesMountPath s
 }
 
 // KubernetesDeleteConfiguration
-// kubernetesMountPath: Path that the backend was mounted at
-func (s *Secrets) KubernetesDeleteConfiguration(ctx context.Context, kubernetesMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) KubernetesDeleteConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2972,8 +2859,7 @@ func (s *Secrets) KubernetesDeleteConfiguration(ctx context.Context, kubernetesM
 
 // KubernetesDeleteRole
 // name: Name of the role
-// kubernetesMountPath: Path that the backend was mounted at
-func (s *Secrets) KubernetesDeleteRole(ctx context.Context, name string, kubernetesMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) KubernetesDeleteRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2998,8 +2884,7 @@ func (s *Secrets) KubernetesDeleteRole(ctx context.Context, name string, kuberne
 
 // KubernetesGenerateCredentials
 // name: Name of the Vault role
-// kubernetesMountPath: Path that the backend was mounted at
-func (s *Secrets) KubernetesGenerateCredentials(ctx context.Context, name string, kubernetesMountPath string, request schema.KubernetesGenerateCredentialsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) KubernetesGenerateCredentials(ctx context.Context, name string, request schema.KubernetesGenerateCredentialsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3023,8 +2908,7 @@ func (s *Secrets) KubernetesGenerateCredentials(ctx context.Context, name string
 }
 
 // KubernetesListRoles
-// kubernetesMountPath: Path that the backend was mounted at
-func (s *Secrets) KubernetesListRoles(ctx context.Context, kubernetesMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) KubernetesListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3048,8 +2932,7 @@ func (s *Secrets) KubernetesListRoles(ctx context.Context, kubernetesMountPath s
 }
 
 // KubernetesReadConfiguration
-// kubernetesMountPath: Path that the backend was mounted at
-func (s *Secrets) KubernetesReadConfiguration(ctx context.Context, kubernetesMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) KubernetesReadConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3073,8 +2956,7 @@ func (s *Secrets) KubernetesReadConfiguration(ctx context.Context, kubernetesMou
 
 // KubernetesReadRole
 // name: Name of the role
-// kubernetesMountPath: Path that the backend was mounted at
-func (s *Secrets) KubernetesReadRole(ctx context.Context, name string, kubernetesMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) KubernetesReadRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3099,8 +2981,7 @@ func (s *Secrets) KubernetesReadRole(ctx context.Context, name string, kubernete
 
 // KubernetesWriteRole
 // name: Name of the role
-// kubernetesMountPath: Path that the backend was mounted at
-func (s *Secrets) KubernetesWriteRole(ctx context.Context, name string, kubernetesMountPath string, request schema.KubernetesWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) KubernetesWriteRole(ctx context.Context, name string, request schema.KubernetesWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3125,8 +3006,7 @@ func (s *Secrets) KubernetesWriteRole(ctx context.Context, name string, kubernet
 
 // KvV1Delete
 // path: Location of the secret.
-// kvV1MountPath: Path that the backend was mounted at
-func (s *Secrets) KvV1Delete(ctx context.Context, path string, kvV1MountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) KvV1Delete(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3151,8 +3031,7 @@ func (s *Secrets) KvV1Delete(ctx context.Context, path string, kvV1MountPath str
 
 // KvV1Read
 // path: Location of the secret.
-// kvV1MountPath: Path that the backend was mounted at
-func (s *Secrets) KvV1Read(ctx context.Context, path string, kvV1MountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) KvV1Read(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3178,8 +3057,7 @@ func (s *Secrets) KvV1Read(ctx context.Context, path string, kvV1MountPath strin
 
 // KvV1Write
 // path: Location of the secret.
-// kvV1MountPath: Path that the backend was mounted at
-func (s *Secrets) KvV1Write(ctx context.Context, path string, kvV1MountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) KvV1Write(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3203,8 +3081,7 @@ func (s *Secrets) KvV1Write(ctx context.Context, path string, kvV1MountPath stri
 }
 
 // KvV2Configure Configure backend level settings that are applied to every key in the key-value store.
-// kvV2MountPath: Path that the backend was mounted at
-func (s *Secrets) KvV2Configure(ctx context.Context, kvV2MountPath string, request schema.KvV2ConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) KvV2Configure(ctx context.Context, request schema.KvV2ConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3228,8 +3105,7 @@ func (s *Secrets) KvV2Configure(ctx context.Context, kvV2MountPath string, reque
 
 // KvV2Delete
 // path: Location of the secret.
-// kvV2MountPath: Path that the backend was mounted at
-func (s *Secrets) KvV2Delete(ctx context.Context, path string, kvV2MountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) KvV2Delete(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3254,8 +3130,7 @@ func (s *Secrets) KvV2Delete(ctx context.Context, path string, kvV2MountPath str
 
 // KvV2DeleteMetadata
 // path: Location of the secret.
-// kvV2MountPath: Path that the backend was mounted at
-func (s *Secrets) KvV2DeleteMetadata(ctx context.Context, path string, kvV2MountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) KvV2DeleteMetadata(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3280,8 +3155,7 @@ func (s *Secrets) KvV2DeleteMetadata(ctx context.Context, path string, kvV2Mount
 
 // KvV2DeleteVersions
 // path: Location of the secret.
-// kvV2MountPath: Path that the backend was mounted at
-func (s *Secrets) KvV2DeleteVersions(ctx context.Context, path string, kvV2MountPath string, request schema.KvV2DeleteVersionsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) KvV2DeleteVersions(ctx context.Context, path string, request schema.KvV2DeleteVersionsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3306,8 +3180,7 @@ func (s *Secrets) KvV2DeleteVersions(ctx context.Context, path string, kvV2Mount
 
 // KvV2DestroyVersions
 // path: Location of the secret.
-// kvV2MountPath: Path that the backend was mounted at
-func (s *Secrets) KvV2DestroyVersions(ctx context.Context, path string, kvV2MountPath string, request schema.KvV2DestroyVersionsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) KvV2DestroyVersions(ctx context.Context, path string, request schema.KvV2DestroyVersionsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3332,8 +3205,7 @@ func (s *Secrets) KvV2DestroyVersions(ctx context.Context, path string, kvV2Moun
 
 // KvV2Read
 // path: Location of the secret.
-// kvV2MountPath: Path that the backend was mounted at
-func (s *Secrets) KvV2Read(ctx context.Context, path string, kvV2MountPath string, options ...RequestOption) (*Response[schema.KvV2ReadResponse], error) {
+func (s *Secrets) KvV2Read(ctx context.Context, path string, options ...RequestOption) (*Response[schema.KvV2ReadResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3357,8 +3229,7 @@ func (s *Secrets) KvV2Read(ctx context.Context, path string, kvV2MountPath strin
 }
 
 // KvV2ReadConfiguration Read the backend level settings.
-// kvV2MountPath: Path that the backend was mounted at
-func (s *Secrets) KvV2ReadConfiguration(ctx context.Context, kvV2MountPath string, options ...RequestOption) (*Response[schema.KvV2ReadConfigurationResponse], error) {
+func (s *Secrets) KvV2ReadConfiguration(ctx context.Context, options ...RequestOption) (*Response[schema.KvV2ReadConfigurationResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3382,8 +3253,7 @@ func (s *Secrets) KvV2ReadConfiguration(ctx context.Context, kvV2MountPath strin
 
 // KvV2ReadMetadata
 // path: Location of the secret.
-// kvV2MountPath: Path that the backend was mounted at
-func (s *Secrets) KvV2ReadMetadata(ctx context.Context, path string, kvV2MountPath string, options ...RequestOption) (*Response[schema.KvV2ReadMetadataResponse], error) {
+func (s *Secrets) KvV2ReadMetadata(ctx context.Context, path string, options ...RequestOption) (*Response[schema.KvV2ReadMetadataResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3409,8 +3279,7 @@ func (s *Secrets) KvV2ReadMetadata(ctx context.Context, path string, kvV2MountPa
 
 // KvV2ReadSubkeys
 // path: Location of the secret.
-// kvV2MountPath: Path that the backend was mounted at
-func (s *Secrets) KvV2ReadSubkeys(ctx context.Context, path string, kvV2MountPath string, options ...RequestOption) (*Response[schema.KvV2ReadSubkeysResponse], error) {
+func (s *Secrets) KvV2ReadSubkeys(ctx context.Context, path string, options ...RequestOption) (*Response[schema.KvV2ReadSubkeysResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3435,8 +3304,7 @@ func (s *Secrets) KvV2ReadSubkeys(ctx context.Context, path string, kvV2MountPat
 
 // KvV2UndeleteVersions
 // path: Location of the secret.
-// kvV2MountPath: Path that the backend was mounted at
-func (s *Secrets) KvV2UndeleteVersions(ctx context.Context, path string, kvV2MountPath string, request schema.KvV2UndeleteVersionsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) KvV2UndeleteVersions(ctx context.Context, path string, request schema.KvV2UndeleteVersionsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3461,8 +3329,7 @@ func (s *Secrets) KvV2UndeleteVersions(ctx context.Context, path string, kvV2Mou
 
 // KvV2Write
 // path: Location of the secret.
-// kvV2MountPath: Path that the backend was mounted at
-func (s *Secrets) KvV2Write(ctx context.Context, path string, kvV2MountPath string, request schema.KvV2WriteRequest, options ...RequestOption) (*Response[schema.KvV2WriteResponse], error) {
+func (s *Secrets) KvV2Write(ctx context.Context, path string, request schema.KvV2WriteRequest, options ...RequestOption) (*Response[schema.KvV2WriteResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3487,8 +3354,7 @@ func (s *Secrets) KvV2Write(ctx context.Context, path string, kvV2MountPath stri
 
 // KvV2WriteMetadata
 // path: Location of the secret.
-// kvV2MountPath: Path that the backend was mounted at
-func (s *Secrets) KvV2WriteMetadata(ctx context.Context, path string, kvV2MountPath string, request schema.KvV2WriteMetadataRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) KvV2WriteMetadata(ctx context.Context, path string, request schema.KvV2WriteMetadataRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3512,8 +3378,7 @@ func (s *Secrets) KvV2WriteMetadata(ctx context.Context, path string, kvV2MountP
 }
 
 // LdapConfigure
-// ldapMountPath: Path that the backend was mounted at
-func (s *Secrets) LdapConfigure(ctx context.Context, ldapMountPath string, request schema.LdapConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapConfigure(ctx context.Context, request schema.LdapConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3536,8 +3401,7 @@ func (s *Secrets) LdapConfigure(ctx context.Context, ldapMountPath string, reque
 }
 
 // LdapDeleteConfiguration
-// ldapMountPath: Path that the backend was mounted at
-func (s *Secrets) LdapDeleteConfiguration(ctx context.Context, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapDeleteConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3561,8 +3425,7 @@ func (s *Secrets) LdapDeleteConfiguration(ctx context.Context, ldapMountPath str
 
 // LdapDeleteDynamicRole
 // name: Name of the role (lowercase)
-// ldapMountPath: Path that the backend was mounted at
-func (s *Secrets) LdapDeleteDynamicRole(ctx context.Context, name string, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapDeleteDynamicRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3587,8 +3450,7 @@ func (s *Secrets) LdapDeleteDynamicRole(ctx context.Context, name string, ldapMo
 
 // LdapDeleteStaticRole
 // name: Name of the role
-// ldapMountPath: Path that the backend was mounted at
-func (s *Secrets) LdapDeleteStaticRole(ctx context.Context, name string, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapDeleteStaticRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3613,8 +3475,7 @@ func (s *Secrets) LdapDeleteStaticRole(ctx context.Context, name string, ldapMou
 
 // LdapLibraryCheckIn Check service accounts in to the library.
 // name: Name of the set.
-// ldapMountPath: Path that the backend was mounted at
-func (s *Secrets) LdapLibraryCheckIn(ctx context.Context, name string, ldapMountPath string, request schema.LdapLibraryCheckInRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapLibraryCheckIn(ctx context.Context, name string, request schema.LdapLibraryCheckInRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3639,8 +3500,7 @@ func (s *Secrets) LdapLibraryCheckIn(ctx context.Context, name string, ldapMount
 
 // LdapLibraryCheckOut Check a service account out from the library.
 // name: Name of the set
-// ldapMountPath: Path that the backend was mounted at
-func (s *Secrets) LdapLibraryCheckOut(ctx context.Context, name string, ldapMountPath string, request schema.LdapLibraryCheckOutRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapLibraryCheckOut(ctx context.Context, name string, request schema.LdapLibraryCheckOutRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3665,8 +3525,7 @@ func (s *Secrets) LdapLibraryCheckOut(ctx context.Context, name string, ldapMoun
 
 // LdapLibraryCheckStatus Check the status of the service accounts in a library set.
 // name: Name of the set.
-// ldapMountPath: Path that the backend was mounted at
-func (s *Secrets) LdapLibraryCheckStatus(ctx context.Context, name string, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapLibraryCheckStatus(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3691,8 +3550,7 @@ func (s *Secrets) LdapLibraryCheckStatus(ctx context.Context, name string, ldapM
 
 // LdapLibraryConfigure Update a library set.
 // name: Name of the set.
-// ldapMountPath: Path that the backend was mounted at
-func (s *Secrets) LdapLibraryConfigure(ctx context.Context, name string, ldapMountPath string, request schema.LdapLibraryConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapLibraryConfigure(ctx context.Context, name string, request schema.LdapLibraryConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3717,8 +3575,7 @@ func (s *Secrets) LdapLibraryConfigure(ctx context.Context, name string, ldapMou
 
 // LdapLibraryDelete Delete a library set.
 // name: Name of the set.
-// ldapMountPath: Path that the backend was mounted at
-func (s *Secrets) LdapLibraryDelete(ctx context.Context, name string, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapLibraryDelete(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3743,8 +3600,7 @@ func (s *Secrets) LdapLibraryDelete(ctx context.Context, name string, ldapMountP
 
 // LdapLibraryForceCheckIn Check service accounts in to the library.
 // name: Name of the set.
-// ldapMountPath: Path that the backend was mounted at
-func (s *Secrets) LdapLibraryForceCheckIn(ctx context.Context, name string, ldapMountPath string, request schema.LdapLibraryForceCheckInRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapLibraryForceCheckIn(ctx context.Context, name string, request schema.LdapLibraryForceCheckInRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3768,8 +3624,7 @@ func (s *Secrets) LdapLibraryForceCheckIn(ctx context.Context, name string, ldap
 }
 
 // LdapLibraryList
-// ldapMountPath: Path that the backend was mounted at
-func (s *Secrets) LdapLibraryList(ctx context.Context, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapLibraryList(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3794,8 +3649,7 @@ func (s *Secrets) LdapLibraryList(ctx context.Context, ldapMountPath string, opt
 
 // LdapLibraryRead Read a library set.
 // name: Name of the set.
-// ldapMountPath: Path that the backend was mounted at
-func (s *Secrets) LdapLibraryRead(ctx context.Context, name string, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapLibraryRead(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3819,8 +3673,7 @@ func (s *Secrets) LdapLibraryRead(ctx context.Context, name string, ldapMountPat
 }
 
 // LdapListDynamicRoles
-// ldapMountPath: Path that the backend was mounted at
-func (s *Secrets) LdapListDynamicRoles(ctx context.Context, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapListDynamicRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3844,8 +3697,7 @@ func (s *Secrets) LdapListDynamicRoles(ctx context.Context, ldapMountPath string
 }
 
 // LdapListStaticRoles
-// ldapMountPath: Path that the backend was mounted at
-func (s *Secrets) LdapListStaticRoles(ctx context.Context, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapListStaticRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3869,8 +3721,7 @@ func (s *Secrets) LdapListStaticRoles(ctx context.Context, ldapMountPath string,
 }
 
 // LdapReadConfiguration
-// ldapMountPath: Path that the backend was mounted at
-func (s *Secrets) LdapReadConfiguration(ctx context.Context, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapReadConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3894,8 +3745,7 @@ func (s *Secrets) LdapReadConfiguration(ctx context.Context, ldapMountPath strin
 
 // LdapReadDynamicRole
 // name: Name of the role (lowercase)
-// ldapMountPath: Path that the backend was mounted at
-func (s *Secrets) LdapReadDynamicRole(ctx context.Context, name string, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapReadDynamicRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3920,8 +3770,7 @@ func (s *Secrets) LdapReadDynamicRole(ctx context.Context, name string, ldapMoun
 
 // LdapReadStaticRole
 // name: Name of the role
-// ldapMountPath: Path that the backend was mounted at
-func (s *Secrets) LdapReadStaticRole(ctx context.Context, name string, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapReadStaticRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3946,8 +3795,7 @@ func (s *Secrets) LdapReadStaticRole(ctx context.Context, name string, ldapMount
 
 // LdapRequestDynamicRoleCredentials
 // name: Name of the dynamic role.
-// ldapMountPath: Path that the backend was mounted at
-func (s *Secrets) LdapRequestDynamicRoleCredentials(ctx context.Context, name string, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapRequestDynamicRoleCredentials(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3972,8 +3820,7 @@ func (s *Secrets) LdapRequestDynamicRoleCredentials(ctx context.Context, name st
 
 // LdapRequestStaticRoleCredentials
 // name: Name of the static role.
-// ldapMountPath: Path that the backend was mounted at
-func (s *Secrets) LdapRequestStaticRoleCredentials(ctx context.Context, name string, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapRequestStaticRoleCredentials(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3997,8 +3844,7 @@ func (s *Secrets) LdapRequestStaticRoleCredentials(ctx context.Context, name str
 }
 
 // LdapRotateRootCredentials
-// ldapMountPath: Path that the backend was mounted at
-func (s *Secrets) LdapRotateRootCredentials(ctx context.Context, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapRotateRootCredentials(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4022,8 +3868,7 @@ func (s *Secrets) LdapRotateRootCredentials(ctx context.Context, ldapMountPath s
 
 // LdapRotateStaticRole
 // name: Name of the static role
-// ldapMountPath: Path that the backend was mounted at
-func (s *Secrets) LdapRotateStaticRole(ctx context.Context, name string, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapRotateStaticRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4048,8 +3893,7 @@ func (s *Secrets) LdapRotateStaticRole(ctx context.Context, name string, ldapMou
 
 // LdapWriteDynamicRole
 // name: Name of the role (lowercase)
-// ldapMountPath: Path that the backend was mounted at
-func (s *Secrets) LdapWriteDynamicRole(ctx context.Context, name string, ldapMountPath string, request schema.LdapWriteDynamicRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapWriteDynamicRole(ctx context.Context, name string, request schema.LdapWriteDynamicRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4074,8 +3918,7 @@ func (s *Secrets) LdapWriteDynamicRole(ctx context.Context, name string, ldapMou
 
 // LdapWriteStaticRole
 // name: Name of the role
-// ldapMountPath: Path that the backend was mounted at
-func (s *Secrets) LdapWriteStaticRole(ctx context.Context, name string, ldapMountPath string, request schema.LdapWriteStaticRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapWriteStaticRole(ctx context.Context, name string, request schema.LdapWriteStaticRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4099,8 +3942,7 @@ func (s *Secrets) LdapWriteStaticRole(ctx context.Context, name string, ldapMoun
 }
 
 // MongoDbAtlasConfigure
-// mongodbatlasMountPath: Path that the backend was mounted at
-func (s *Secrets) MongoDbAtlasConfigure(ctx context.Context, mongodbatlasMountPath string, request schema.MongoDbAtlasConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) MongoDbAtlasConfigure(ctx context.Context, request schema.MongoDbAtlasConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4124,8 +3966,7 @@ func (s *Secrets) MongoDbAtlasConfigure(ctx context.Context, mongodbatlasMountPa
 
 // MongoDbAtlasDeleteRole Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
 // name: Name of the Roles
-// mongodbatlasMountPath: Path that the backend was mounted at
-func (s *Secrets) MongoDbAtlasDeleteRole(ctx context.Context, name string, mongodbatlasMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) MongoDbAtlasDeleteRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4150,8 +3991,7 @@ func (s *Secrets) MongoDbAtlasDeleteRole(ctx context.Context, name string, mongo
 
 // MongoDbAtlasGenerateCredentials
 // name: Name of the role
-// mongodbatlasMountPath: Path that the backend was mounted at
-func (s *Secrets) MongoDbAtlasGenerateCredentials(ctx context.Context, name string, mongodbatlasMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) MongoDbAtlasGenerateCredentials(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4176,8 +4016,7 @@ func (s *Secrets) MongoDbAtlasGenerateCredentials(ctx context.Context, name stri
 
 // MongoDbAtlasGenerateCredentials2
 // name: Name of the role
-// mongodbatlasMountPath: Path that the backend was mounted at
-func (s *Secrets) MongoDbAtlasGenerateCredentials2(ctx context.Context, name string, mongodbatlasMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) MongoDbAtlasGenerateCredentials2(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4201,8 +4040,7 @@ func (s *Secrets) MongoDbAtlasGenerateCredentials2(ctx context.Context, name str
 }
 
 // MongoDbAtlasListRoles List the existing roles in this backend
-// mongodbatlasMountPath: Path that the backend was mounted at
-func (s *Secrets) MongoDbAtlasListRoles(ctx context.Context, mongodbatlasMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) MongoDbAtlasListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4226,8 +4064,7 @@ func (s *Secrets) MongoDbAtlasListRoles(ctx context.Context, mongodbatlasMountPa
 }
 
 // MongoDbAtlasReadConfiguration
-// mongodbatlasMountPath: Path that the backend was mounted at
-func (s *Secrets) MongoDbAtlasReadConfiguration(ctx context.Context, mongodbatlasMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) MongoDbAtlasReadConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4251,8 +4088,7 @@ func (s *Secrets) MongoDbAtlasReadConfiguration(ctx context.Context, mongodbatla
 
 // MongoDbAtlasReadRole Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
 // name: Name of the Roles
-// mongodbatlasMountPath: Path that the backend was mounted at
-func (s *Secrets) MongoDbAtlasReadRole(ctx context.Context, name string, mongodbatlasMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) MongoDbAtlasReadRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4277,8 +4113,7 @@ func (s *Secrets) MongoDbAtlasReadRole(ctx context.Context, name string, mongodb
 
 // MongoDbAtlasWriteRole Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
 // name: Name of the Roles
-// mongodbatlasMountPath: Path that the backend was mounted at
-func (s *Secrets) MongoDbAtlasWriteRole(ctx context.Context, name string, mongodbatlasMountPath string, request schema.MongoDbAtlasWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) MongoDbAtlasWriteRole(ctx context.Context, name string, request schema.MongoDbAtlasWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4302,8 +4137,7 @@ func (s *Secrets) MongoDbAtlasWriteRole(ctx context.Context, name string, mongod
 }
 
 // NomadConfigureAccess
-// nomadMountPath: Path that the backend was mounted at
-func (s *Secrets) NomadConfigureAccess(ctx context.Context, nomadMountPath string, request schema.NomadConfigureAccessRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) NomadConfigureAccess(ctx context.Context, request schema.NomadConfigureAccessRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4326,8 +4160,7 @@ func (s *Secrets) NomadConfigureAccess(ctx context.Context, nomadMountPath strin
 }
 
 // NomadConfigureLease
-// nomadMountPath: Path that the backend was mounted at
-func (s *Secrets) NomadConfigureLease(ctx context.Context, nomadMountPath string, request schema.NomadConfigureLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) NomadConfigureLease(ctx context.Context, request schema.NomadConfigureLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4350,8 +4183,7 @@ func (s *Secrets) NomadConfigureLease(ctx context.Context, nomadMountPath string
 }
 
 // NomadDeleteAccessConfiguration
-// nomadMountPath: Path that the backend was mounted at
-func (s *Secrets) NomadDeleteAccessConfiguration(ctx context.Context, nomadMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) NomadDeleteAccessConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4374,8 +4206,7 @@ func (s *Secrets) NomadDeleteAccessConfiguration(ctx context.Context, nomadMount
 }
 
 // NomadDeleteLeaseConfiguration
-// nomadMountPath: Path that the backend was mounted at
-func (s *Secrets) NomadDeleteLeaseConfiguration(ctx context.Context, nomadMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) NomadDeleteLeaseConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4399,8 +4230,7 @@ func (s *Secrets) NomadDeleteLeaseConfiguration(ctx context.Context, nomadMountP
 
 // NomadDeleteRole
 // name: Name of the role
-// nomadMountPath: Path that the backend was mounted at
-func (s *Secrets) NomadDeleteRole(ctx context.Context, name string, nomadMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) NomadDeleteRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4425,8 +4255,7 @@ func (s *Secrets) NomadDeleteRole(ctx context.Context, name string, nomadMountPa
 
 // NomadGenerateCredentials
 // name: Name of the role
-// nomadMountPath: Path that the backend was mounted at
-func (s *Secrets) NomadGenerateCredentials(ctx context.Context, name string, nomadMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) NomadGenerateCredentials(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4450,8 +4279,7 @@ func (s *Secrets) NomadGenerateCredentials(ctx context.Context, name string, nom
 }
 
 // NomadListRoles
-// nomadMountPath: Path that the backend was mounted at
-func (s *Secrets) NomadListRoles(ctx context.Context, nomadMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) NomadListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4475,8 +4303,7 @@ func (s *Secrets) NomadListRoles(ctx context.Context, nomadMountPath string, opt
 }
 
 // NomadReadAccessConfiguration
-// nomadMountPath: Path that the backend was mounted at
-func (s *Secrets) NomadReadAccessConfiguration(ctx context.Context, nomadMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) NomadReadAccessConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4499,8 +4326,7 @@ func (s *Secrets) NomadReadAccessConfiguration(ctx context.Context, nomadMountPa
 }
 
 // NomadReadLeaseConfiguration
-// nomadMountPath: Path that the backend was mounted at
-func (s *Secrets) NomadReadLeaseConfiguration(ctx context.Context, nomadMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) NomadReadLeaseConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4524,8 +4350,7 @@ func (s *Secrets) NomadReadLeaseConfiguration(ctx context.Context, nomadMountPat
 
 // NomadReadRole
 // name: Name of the role
-// nomadMountPath: Path that the backend was mounted at
-func (s *Secrets) NomadReadRole(ctx context.Context, name string, nomadMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) NomadReadRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4550,8 +4375,7 @@ func (s *Secrets) NomadReadRole(ctx context.Context, name string, nomadMountPath
 
 // NomadWriteRole
 // name: Name of the role
-// nomadMountPath: Path that the backend was mounted at
-func (s *Secrets) NomadWriteRole(ctx context.Context, name string, nomadMountPath string, request schema.NomadWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) NomadWriteRole(ctx context.Context, name string, request schema.NomadWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4575,8 +4399,7 @@ func (s *Secrets) NomadWriteRole(ctx context.Context, name string, nomadMountPat
 }
 
 // PkiConfigureAutoTidy
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiConfigureAutoTidy(ctx context.Context, pkiMountPath string, request schema.PkiConfigureAutoTidyRequest, options ...RequestOption) (*Response[schema.PkiConfigureAutoTidyResponse], error) {
+func (s *Secrets) PkiConfigureAutoTidy(ctx context.Context, request schema.PkiConfigureAutoTidyRequest, options ...RequestOption) (*Response[schema.PkiConfigureAutoTidyResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4599,8 +4422,7 @@ func (s *Secrets) PkiConfigureAutoTidy(ctx context.Context, pkiMountPath string,
 }
 
 // PkiConfigureCa
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiConfigureCa(ctx context.Context, pkiMountPath string, request schema.PkiConfigureCaRequest, options ...RequestOption) (*Response[schema.PkiConfigureCaResponse], error) {
+func (s *Secrets) PkiConfigureCa(ctx context.Context, request schema.PkiConfigureCaRequest, options ...RequestOption) (*Response[schema.PkiConfigureCaResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4623,8 +4445,7 @@ func (s *Secrets) PkiConfigureCa(ctx context.Context, pkiMountPath string, reque
 }
 
 // PkiConfigureCluster
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiConfigureCluster(ctx context.Context, pkiMountPath string, request schema.PkiConfigureClusterRequest, options ...RequestOption) (*Response[schema.PkiConfigureClusterResponse], error) {
+func (s *Secrets) PkiConfigureCluster(ctx context.Context, request schema.PkiConfigureClusterRequest, options ...RequestOption) (*Response[schema.PkiConfigureClusterResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4647,8 +4468,7 @@ func (s *Secrets) PkiConfigureCluster(ctx context.Context, pkiMountPath string, 
 }
 
 // PkiConfigureCrl
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiConfigureCrl(ctx context.Context, pkiMountPath string, request schema.PkiConfigureCrlRequest, options ...RequestOption) (*Response[schema.PkiConfigureCrlResponse], error) {
+func (s *Secrets) PkiConfigureCrl(ctx context.Context, request schema.PkiConfigureCrlRequest, options ...RequestOption) (*Response[schema.PkiConfigureCrlResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4671,8 +4491,7 @@ func (s *Secrets) PkiConfigureCrl(ctx context.Context, pkiMountPath string, requ
 }
 
 // PkiConfigureIssuers
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiConfigureIssuers(ctx context.Context, pkiMountPath string, request schema.PkiConfigureIssuersRequest, options ...RequestOption) (*Response[schema.PkiConfigureIssuersResponse], error) {
+func (s *Secrets) PkiConfigureIssuers(ctx context.Context, request schema.PkiConfigureIssuersRequest, options ...RequestOption) (*Response[schema.PkiConfigureIssuersResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4695,8 +4514,7 @@ func (s *Secrets) PkiConfigureIssuers(ctx context.Context, pkiMountPath string, 
 }
 
 // PkiConfigureKeys
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiConfigureKeys(ctx context.Context, pkiMountPath string, request schema.PkiConfigureKeysRequest, options ...RequestOption) (*Response[schema.PkiConfigureKeysResponse], error) {
+func (s *Secrets) PkiConfigureKeys(ctx context.Context, request schema.PkiConfigureKeysRequest, options ...RequestOption) (*Response[schema.PkiConfigureKeysResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4719,8 +4537,7 @@ func (s *Secrets) PkiConfigureKeys(ctx context.Context, pkiMountPath string, req
 }
 
 // PkiConfigureUrls
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiConfigureUrls(ctx context.Context, pkiMountPath string, request schema.PkiConfigureUrlsRequest, options ...RequestOption) (*Response[schema.PkiConfigureUrlsResponse], error) {
+func (s *Secrets) PkiConfigureUrls(ctx context.Context, request schema.PkiConfigureUrlsRequest, options ...RequestOption) (*Response[schema.PkiConfigureUrlsResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4743,8 +4560,7 @@ func (s *Secrets) PkiConfigureUrls(ctx context.Context, pkiMountPath string, req
 }
 
 // PkiCrossSignIntermediate
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiCrossSignIntermediate(ctx context.Context, pkiMountPath string, request schema.PkiCrossSignIntermediateRequest, options ...RequestOption) (*Response[schema.PkiCrossSignIntermediateResponse], error) {
+func (s *Secrets) PkiCrossSignIntermediate(ctx context.Context, request schema.PkiCrossSignIntermediateRequest, options ...RequestOption) (*Response[schema.PkiCrossSignIntermediateResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4768,8 +4584,7 @@ func (s *Secrets) PkiCrossSignIntermediate(ctx context.Context, pkiMountPath str
 
 // PkiDeleteIssuer
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiDeleteIssuer(ctx context.Context, issuerRef string, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) PkiDeleteIssuer(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4794,8 +4609,7 @@ func (s *Secrets) PkiDeleteIssuer(ctx context.Context, issuerRef string, pkiMoun
 
 // PkiDeleteKey
 // keyRef: Reference to key; either \&quot;default\&quot; for the configured default key, an identifier of a key, or the name assigned to the key.
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiDeleteKey(ctx context.Context, keyRef string, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) PkiDeleteKey(ctx context.Context, keyRef string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4820,8 +4634,7 @@ func (s *Secrets) PkiDeleteKey(ctx context.Context, keyRef string, pkiMountPath 
 
 // PkiDeleteRole
 // name: Name of the role
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiDeleteRole(ctx context.Context, name string, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) PkiDeleteRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4845,8 +4658,7 @@ func (s *Secrets) PkiDeleteRole(ctx context.Context, name string, pkiMountPath s
 }
 
 // PkiDeleteRoot
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiDeleteRoot(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) PkiDeleteRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4869,8 +4681,7 @@ func (s *Secrets) PkiDeleteRoot(ctx context.Context, pkiMountPath string, option
 }
 
 // PkiGenerateExportedKey
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiGenerateExportedKey(ctx context.Context, pkiMountPath string, request schema.PkiGenerateExportedKeyRequest, options ...RequestOption) (*Response[schema.PkiGenerateExportedKeyResponse], error) {
+func (s *Secrets) PkiGenerateExportedKey(ctx context.Context, request schema.PkiGenerateExportedKeyRequest, options ...RequestOption) (*Response[schema.PkiGenerateExportedKeyResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4894,8 +4705,7 @@ func (s *Secrets) PkiGenerateExportedKey(ctx context.Context, pkiMountPath strin
 
 // PkiGenerateIntermediate
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiGenerateIntermediate(ctx context.Context, exported string, pkiMountPath string, request schema.PkiGenerateIntermediateRequest, options ...RequestOption) (*Response[schema.PkiGenerateIntermediateResponse], error) {
+func (s *Secrets) PkiGenerateIntermediate(ctx context.Context, exported string, request schema.PkiGenerateIntermediateRequest, options ...RequestOption) (*Response[schema.PkiGenerateIntermediateResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4919,8 +4729,7 @@ func (s *Secrets) PkiGenerateIntermediate(ctx context.Context, exported string, 
 }
 
 // PkiGenerateInternalKey
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiGenerateInternalKey(ctx context.Context, pkiMountPath string, request schema.PkiGenerateInternalKeyRequest, options ...RequestOption) (*Response[schema.PkiGenerateInternalKeyResponse], error) {
+func (s *Secrets) PkiGenerateInternalKey(ctx context.Context, request schema.PkiGenerateInternalKeyRequest, options ...RequestOption) (*Response[schema.PkiGenerateInternalKeyResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4943,8 +4752,7 @@ func (s *Secrets) PkiGenerateInternalKey(ctx context.Context, pkiMountPath strin
 }
 
 // PkiGenerateKmsKey
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiGenerateKmsKey(ctx context.Context, pkiMountPath string, request schema.PkiGenerateKmsKeyRequest, options ...RequestOption) (*Response[schema.PkiGenerateKmsKeyResponse], error) {
+func (s *Secrets) PkiGenerateKmsKey(ctx context.Context, request schema.PkiGenerateKmsKeyRequest, options ...RequestOption) (*Response[schema.PkiGenerateKmsKeyResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4968,8 +4776,7 @@ func (s *Secrets) PkiGenerateKmsKey(ctx context.Context, pkiMountPath string, re
 
 // PkiGenerateRoot
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiGenerateRoot(ctx context.Context, exported string, pkiMountPath string, request schema.PkiGenerateRootRequest, options ...RequestOption) (*Response[schema.PkiGenerateRootResponse], error) {
+func (s *Secrets) PkiGenerateRoot(ctx context.Context, exported string, request schema.PkiGenerateRootRequest, options ...RequestOption) (*Response[schema.PkiGenerateRootResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4993,8 +4800,7 @@ func (s *Secrets) PkiGenerateRoot(ctx context.Context, exported string, pkiMount
 }
 
 // PkiImportKey
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiImportKey(ctx context.Context, pkiMountPath string, request schema.PkiImportKeyRequest, options ...RequestOption) (*Response[schema.PkiImportKeyResponse], error) {
+func (s *Secrets) PkiImportKey(ctx context.Context, request schema.PkiImportKeyRequest, options ...RequestOption) (*Response[schema.PkiImportKeyResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5018,8 +4824,7 @@ func (s *Secrets) PkiImportKey(ctx context.Context, pkiMountPath string, request
 
 // PkiIssueWithRole
 // role: The desired role with configuration for this request
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiIssueWithRole(ctx context.Context, role string, pkiMountPath string, request schema.PkiIssueWithRoleRequest, options ...RequestOption) (*Response[schema.PkiIssueWithRoleResponse], error) {
+func (s *Secrets) PkiIssueWithRole(ctx context.Context, role string, request schema.PkiIssueWithRoleRequest, options ...RequestOption) (*Response[schema.PkiIssueWithRoleResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5045,8 +4850,7 @@ func (s *Secrets) PkiIssueWithRole(ctx context.Context, role string, pkiMountPat
 // PkiIssuerIssueWithRole
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 // role: The desired role with configuration for this request
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiIssuerIssueWithRole(ctx context.Context, issuerRef string, role string, pkiMountPath string, request schema.PkiIssuerIssueWithRoleRequest, options ...RequestOption) (*Response[schema.PkiIssuerIssueWithRoleResponse], error) {
+func (s *Secrets) PkiIssuerIssueWithRole(ctx context.Context, issuerRef string, role string, request schema.PkiIssuerIssueWithRoleRequest, options ...RequestOption) (*Response[schema.PkiIssuerIssueWithRoleResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5072,8 +4876,7 @@ func (s *Secrets) PkiIssuerIssueWithRole(ctx context.Context, issuerRef string, 
 
 // PkiIssuerReadCrl
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiIssuerReadCrl(ctx context.Context, issuerRef string, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiIssuerReadCrlResponse], error) {
+func (s *Secrets) PkiIssuerReadCrl(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[schema.PkiIssuerReadCrlResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5098,8 +4901,7 @@ func (s *Secrets) PkiIssuerReadCrl(ctx context.Context, issuerRef string, pkiMou
 
 // PkiIssuerReadCrlDelta
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiIssuerReadCrlDelta(ctx context.Context, issuerRef string, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiIssuerReadCrlDeltaResponse], error) {
+func (s *Secrets) PkiIssuerReadCrlDelta(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[schema.PkiIssuerReadCrlDeltaResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5124,8 +4926,7 @@ func (s *Secrets) PkiIssuerReadCrlDelta(ctx context.Context, issuerRef string, p
 
 // PkiIssuerReadCrlDeltaDer
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiIssuerReadCrlDeltaDer(ctx context.Context, issuerRef string, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiIssuerReadCrlDeltaDerResponse], error) {
+func (s *Secrets) PkiIssuerReadCrlDeltaDer(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[schema.PkiIssuerReadCrlDeltaDerResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5150,8 +4951,7 @@ func (s *Secrets) PkiIssuerReadCrlDeltaDer(ctx context.Context, issuerRef string
 
 // PkiIssuerReadCrlDeltaPem
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiIssuerReadCrlDeltaPem(ctx context.Context, issuerRef string, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiIssuerReadCrlDeltaPemResponse], error) {
+func (s *Secrets) PkiIssuerReadCrlDeltaPem(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[schema.PkiIssuerReadCrlDeltaPemResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5176,8 +4976,7 @@ func (s *Secrets) PkiIssuerReadCrlDeltaPem(ctx context.Context, issuerRef string
 
 // PkiIssuerReadCrlDer
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiIssuerReadCrlDer(ctx context.Context, issuerRef string, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiIssuerReadCrlDerResponse], error) {
+func (s *Secrets) PkiIssuerReadCrlDer(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[schema.PkiIssuerReadCrlDerResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5202,8 +5001,7 @@ func (s *Secrets) PkiIssuerReadCrlDer(ctx context.Context, issuerRef string, pki
 
 // PkiIssuerReadCrlPem
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiIssuerReadCrlPem(ctx context.Context, issuerRef string, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiIssuerReadCrlPemResponse], error) {
+func (s *Secrets) PkiIssuerReadCrlPem(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[schema.PkiIssuerReadCrlPemResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5228,8 +5026,7 @@ func (s *Secrets) PkiIssuerReadCrlPem(ctx context.Context, issuerRef string, pki
 
 // PkiIssuerResignCrls
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiIssuerResignCrls(ctx context.Context, issuerRef string, pkiMountPath string, request schema.PkiIssuerResignCrlsRequest, options ...RequestOption) (*Response[schema.PkiIssuerResignCrlsResponse], error) {
+func (s *Secrets) PkiIssuerResignCrls(ctx context.Context, issuerRef string, request schema.PkiIssuerResignCrlsRequest, options ...RequestOption) (*Response[schema.PkiIssuerResignCrlsResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5254,8 +5051,7 @@ func (s *Secrets) PkiIssuerResignCrls(ctx context.Context, issuerRef string, pki
 
 // PkiIssuerSignIntermediate
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiIssuerSignIntermediate(ctx context.Context, issuerRef string, pkiMountPath string, request schema.PkiIssuerSignIntermediateRequest, options ...RequestOption) (*Response[schema.PkiIssuerSignIntermediateResponse], error) {
+func (s *Secrets) PkiIssuerSignIntermediate(ctx context.Context, issuerRef string, request schema.PkiIssuerSignIntermediateRequest, options ...RequestOption) (*Response[schema.PkiIssuerSignIntermediateResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5280,8 +5076,7 @@ func (s *Secrets) PkiIssuerSignIntermediate(ctx context.Context, issuerRef strin
 
 // PkiIssuerSignRevocationList
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiIssuerSignRevocationList(ctx context.Context, issuerRef string, pkiMountPath string, request schema.PkiIssuerSignRevocationListRequest, options ...RequestOption) (*Response[schema.PkiIssuerSignRevocationListResponse], error) {
+func (s *Secrets) PkiIssuerSignRevocationList(ctx context.Context, issuerRef string, request schema.PkiIssuerSignRevocationListRequest, options ...RequestOption) (*Response[schema.PkiIssuerSignRevocationListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5306,8 +5101,7 @@ func (s *Secrets) PkiIssuerSignRevocationList(ctx context.Context, issuerRef str
 
 // PkiIssuerSignSelfIssued
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiIssuerSignSelfIssued(ctx context.Context, issuerRef string, pkiMountPath string, request schema.PkiIssuerSignSelfIssuedRequest, options ...RequestOption) (*Response[schema.PkiIssuerSignSelfIssuedResponse], error) {
+func (s *Secrets) PkiIssuerSignSelfIssued(ctx context.Context, issuerRef string, request schema.PkiIssuerSignSelfIssuedRequest, options ...RequestOption) (*Response[schema.PkiIssuerSignSelfIssuedResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5332,8 +5126,7 @@ func (s *Secrets) PkiIssuerSignSelfIssued(ctx context.Context, issuerRef string,
 
 // PkiIssuerSignVerbatim
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiIssuerSignVerbatim(ctx context.Context, issuerRef string, pkiMountPath string, request schema.PkiIssuerSignVerbatimRequest, options ...RequestOption) (*Response[schema.PkiIssuerSignVerbatimResponse], error) {
+func (s *Secrets) PkiIssuerSignVerbatim(ctx context.Context, issuerRef string, request schema.PkiIssuerSignVerbatimRequest, options ...RequestOption) (*Response[schema.PkiIssuerSignVerbatimResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5359,8 +5152,7 @@ func (s *Secrets) PkiIssuerSignVerbatim(ctx context.Context, issuerRef string, p
 // PkiIssuerSignVerbatimWithRole
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 // role: The desired role with configuration for this request
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiIssuerSignVerbatimWithRole(ctx context.Context, issuerRef string, role string, pkiMountPath string, request schema.PkiIssuerSignVerbatimWithRoleRequest, options ...RequestOption) (*Response[schema.PkiIssuerSignVerbatimWithRoleResponse], error) {
+func (s *Secrets) PkiIssuerSignVerbatimWithRole(ctx context.Context, issuerRef string, role string, request schema.PkiIssuerSignVerbatimWithRoleRequest, options ...RequestOption) (*Response[schema.PkiIssuerSignVerbatimWithRoleResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5387,8 +5179,7 @@ func (s *Secrets) PkiIssuerSignVerbatimWithRole(ctx context.Context, issuerRef s
 // PkiIssuerSignWithRole
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 // role: The desired role with configuration for this request
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiIssuerSignWithRole(ctx context.Context, issuerRef string, role string, pkiMountPath string, request schema.PkiIssuerSignWithRoleRequest, options ...RequestOption) (*Response[schema.PkiIssuerSignWithRoleResponse], error) {
+func (s *Secrets) PkiIssuerSignWithRole(ctx context.Context, issuerRef string, role string, request schema.PkiIssuerSignWithRoleRequest, options ...RequestOption) (*Response[schema.PkiIssuerSignWithRoleResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5414,8 +5205,7 @@ func (s *Secrets) PkiIssuerSignWithRole(ctx context.Context, issuerRef string, r
 
 // PkiIssuersGenerateIntermediate
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiIssuersGenerateIntermediate(ctx context.Context, exported string, pkiMountPath string, request schema.PkiIssuersGenerateIntermediateRequest, options ...RequestOption) (*Response[schema.PkiIssuersGenerateIntermediateResponse], error) {
+func (s *Secrets) PkiIssuersGenerateIntermediate(ctx context.Context, exported string, request schema.PkiIssuersGenerateIntermediateRequest, options ...RequestOption) (*Response[schema.PkiIssuersGenerateIntermediateResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5440,8 +5230,7 @@ func (s *Secrets) PkiIssuersGenerateIntermediate(ctx context.Context, exported s
 
 // PkiIssuersGenerateRoot
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiIssuersGenerateRoot(ctx context.Context, exported string, pkiMountPath string, request schema.PkiIssuersGenerateRootRequest, options ...RequestOption) (*Response[schema.PkiIssuersGenerateRootResponse], error) {
+func (s *Secrets) PkiIssuersGenerateRoot(ctx context.Context, exported string, request schema.PkiIssuersGenerateRootRequest, options ...RequestOption) (*Response[schema.PkiIssuersGenerateRootResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5465,8 +5254,7 @@ func (s *Secrets) PkiIssuersGenerateRoot(ctx context.Context, exported string, p
 }
 
 // PkiIssuersImportBundle
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiIssuersImportBundle(ctx context.Context, pkiMountPath string, request schema.PkiIssuersImportBundleRequest, options ...RequestOption) (*Response[schema.PkiIssuersImportBundleResponse], error) {
+func (s *Secrets) PkiIssuersImportBundle(ctx context.Context, request schema.PkiIssuersImportBundleRequest, options ...RequestOption) (*Response[schema.PkiIssuersImportBundleResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5489,8 +5277,7 @@ func (s *Secrets) PkiIssuersImportBundle(ctx context.Context, pkiMountPath strin
 }
 
 // PkiIssuersImportCert
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiIssuersImportCert(ctx context.Context, pkiMountPath string, request schema.PkiIssuersImportCertRequest, options ...RequestOption) (*Response[schema.PkiIssuersImportCertResponse], error) {
+func (s *Secrets) PkiIssuersImportCert(ctx context.Context, request schema.PkiIssuersImportCertRequest, options ...RequestOption) (*Response[schema.PkiIssuersImportCertResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5514,8 +5301,7 @@ func (s *Secrets) PkiIssuersImportCert(ctx context.Context, pkiMountPath string,
 
 // PkiIssuersRotateRoot
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiIssuersRotateRoot(ctx context.Context, exported string, pkiMountPath string, request schema.PkiIssuersRotateRootRequest, options ...RequestOption) (*Response[schema.PkiIssuersRotateRootResponse], error) {
+func (s *Secrets) PkiIssuersRotateRoot(ctx context.Context, exported string, request schema.PkiIssuersRotateRootRequest, options ...RequestOption) (*Response[schema.PkiIssuersRotateRootResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5539,8 +5325,7 @@ func (s *Secrets) PkiIssuersRotateRoot(ctx context.Context, exported string, pki
 }
 
 // PkiListCerts
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiListCerts(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiListCertsResponse], error) {
+func (s *Secrets) PkiListCerts(ctx context.Context, options ...RequestOption) (*Response[schema.PkiListCertsResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5564,8 +5349,7 @@ func (s *Secrets) PkiListCerts(ctx context.Context, pkiMountPath string, options
 }
 
 // PkiListIssuers
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiListIssuers(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiListIssuersResponse], error) {
+func (s *Secrets) PkiListIssuers(ctx context.Context, options ...RequestOption) (*Response[schema.PkiListIssuersResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5589,8 +5373,7 @@ func (s *Secrets) PkiListIssuers(ctx context.Context, pkiMountPath string, optio
 }
 
 // PkiListKeys
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiListKeys(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiListKeysResponse], error) {
+func (s *Secrets) PkiListKeys(ctx context.Context, options ...RequestOption) (*Response[schema.PkiListKeysResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5614,8 +5397,7 @@ func (s *Secrets) PkiListKeys(ctx context.Context, pkiMountPath string, options 
 }
 
 // PkiListRevokedCerts
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiListRevokedCerts(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiListRevokedCertsResponse], error) {
+func (s *Secrets) PkiListRevokedCerts(ctx context.Context, options ...RequestOption) (*Response[schema.PkiListRevokedCertsResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5639,8 +5421,7 @@ func (s *Secrets) PkiListRevokedCerts(ctx context.Context, pkiMountPath string, 
 }
 
 // PkiListRoles
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiListRoles(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiListRolesResponse], error) {
+func (s *Secrets) PkiListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.PkiListRolesResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5664,8 +5445,7 @@ func (s *Secrets) PkiListRoles(ctx context.Context, pkiMountPath string, options
 }
 
 // PkiQueryOcsp
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiQueryOcsp(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) PkiQueryOcsp(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5689,8 +5469,7 @@ func (s *Secrets) PkiQueryOcsp(ctx context.Context, pkiMountPath string, options
 
 // PkiQueryOcspWithGetReq
 // req: base-64 encoded ocsp request
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiQueryOcspWithGetReq(ctx context.Context, req string, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) PkiQueryOcspWithGetReq(ctx context.Context, req string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5714,8 +5493,7 @@ func (s *Secrets) PkiQueryOcspWithGetReq(ctx context.Context, req string, pkiMou
 }
 
 // PkiReadAutoTidyConfiguration
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadAutoTidyConfiguration(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadAutoTidyConfigurationResponse], error) {
+func (s *Secrets) PkiReadAutoTidyConfiguration(ctx context.Context, options ...RequestOption) (*Response[schema.PkiReadAutoTidyConfigurationResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5738,8 +5516,7 @@ func (s *Secrets) PkiReadAutoTidyConfiguration(ctx context.Context, pkiMountPath
 }
 
 // PkiReadCaChainPem
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadCaChainPem(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadCaChainPemResponse], error) {
+func (s *Secrets) PkiReadCaChainPem(ctx context.Context, options ...RequestOption) (*Response[schema.PkiReadCaChainPemResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5762,8 +5539,7 @@ func (s *Secrets) PkiReadCaChainPem(ctx context.Context, pkiMountPath string, op
 }
 
 // PkiReadCaDer
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadCaDer(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadCaDerResponse], error) {
+func (s *Secrets) PkiReadCaDer(ctx context.Context, options ...RequestOption) (*Response[schema.PkiReadCaDerResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5786,8 +5562,7 @@ func (s *Secrets) PkiReadCaDer(ctx context.Context, pkiMountPath string, options
 }
 
 // PkiReadCaPem
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadCaPem(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadCaPemResponse], error) {
+func (s *Secrets) PkiReadCaPem(ctx context.Context, options ...RequestOption) (*Response[schema.PkiReadCaPemResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5811,8 +5586,7 @@ func (s *Secrets) PkiReadCaPem(ctx context.Context, pkiMountPath string, options
 
 // PkiReadCert
 // serial: Certificate serial number, in colon- or hyphen-separated octal
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadCert(ctx context.Context, serial string, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadCertResponse], error) {
+func (s *Secrets) PkiReadCert(ctx context.Context, serial string, options ...RequestOption) (*Response[schema.PkiReadCertResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5836,8 +5610,7 @@ func (s *Secrets) PkiReadCert(ctx context.Context, serial string, pkiMountPath s
 }
 
 // PkiReadCertCaChain
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadCertCaChain(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadCertCaChainResponse], error) {
+func (s *Secrets) PkiReadCertCaChain(ctx context.Context, options ...RequestOption) (*Response[schema.PkiReadCertCaChainResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5860,8 +5633,7 @@ func (s *Secrets) PkiReadCertCaChain(ctx context.Context, pkiMountPath string, o
 }
 
 // PkiReadCertCrl
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadCertCrl(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadCertCrlResponse], error) {
+func (s *Secrets) PkiReadCertCrl(ctx context.Context, options ...RequestOption) (*Response[schema.PkiReadCertCrlResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5884,8 +5656,7 @@ func (s *Secrets) PkiReadCertCrl(ctx context.Context, pkiMountPath string, optio
 }
 
 // PkiReadCertDeltaCrl
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadCertDeltaCrl(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadCertDeltaCrlResponse], error) {
+func (s *Secrets) PkiReadCertDeltaCrl(ctx context.Context, options ...RequestOption) (*Response[schema.PkiReadCertDeltaCrlResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5909,8 +5680,7 @@ func (s *Secrets) PkiReadCertDeltaCrl(ctx context.Context, pkiMountPath string, 
 
 // PkiReadCertRawDer
 // serial: Certificate serial number, in colon- or hyphen-separated octal
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadCertRawDer(ctx context.Context, serial string, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadCertRawDerResponse], error) {
+func (s *Secrets) PkiReadCertRawDer(ctx context.Context, serial string, options ...RequestOption) (*Response[schema.PkiReadCertRawDerResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5935,8 +5705,7 @@ func (s *Secrets) PkiReadCertRawDer(ctx context.Context, serial string, pkiMount
 
 // PkiReadCertRawPem
 // serial: Certificate serial number, in colon- or hyphen-separated octal
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadCertRawPem(ctx context.Context, serial string, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadCertRawPemResponse], error) {
+func (s *Secrets) PkiReadCertRawPem(ctx context.Context, serial string, options ...RequestOption) (*Response[schema.PkiReadCertRawPemResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5960,8 +5729,7 @@ func (s *Secrets) PkiReadCertRawPem(ctx context.Context, serial string, pkiMount
 }
 
 // PkiReadClusterConfiguration
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadClusterConfiguration(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadClusterConfigurationResponse], error) {
+func (s *Secrets) PkiReadClusterConfiguration(ctx context.Context, options ...RequestOption) (*Response[schema.PkiReadClusterConfigurationResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5984,8 +5752,7 @@ func (s *Secrets) PkiReadClusterConfiguration(ctx context.Context, pkiMountPath 
 }
 
 // PkiReadCrlConfiguration
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadCrlConfiguration(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadCrlConfigurationResponse], error) {
+func (s *Secrets) PkiReadCrlConfiguration(ctx context.Context, options ...RequestOption) (*Response[schema.PkiReadCrlConfigurationResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6008,8 +5775,7 @@ func (s *Secrets) PkiReadCrlConfiguration(ctx context.Context, pkiMountPath stri
 }
 
 // PkiReadCrlDelta
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadCrlDelta(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadCrlDeltaResponse], error) {
+func (s *Secrets) PkiReadCrlDelta(ctx context.Context, options ...RequestOption) (*Response[schema.PkiReadCrlDeltaResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6032,8 +5798,7 @@ func (s *Secrets) PkiReadCrlDelta(ctx context.Context, pkiMountPath string, opti
 }
 
 // PkiReadCrlDeltaPem
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadCrlDeltaPem(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadCrlDeltaPemResponse], error) {
+func (s *Secrets) PkiReadCrlDeltaPem(ctx context.Context, options ...RequestOption) (*Response[schema.PkiReadCrlDeltaPemResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6056,8 +5821,7 @@ func (s *Secrets) PkiReadCrlDeltaPem(ctx context.Context, pkiMountPath string, o
 }
 
 // PkiReadCrlDer
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadCrlDer(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadCrlDerResponse], error) {
+func (s *Secrets) PkiReadCrlDer(ctx context.Context, options ...RequestOption) (*Response[schema.PkiReadCrlDerResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6080,8 +5844,7 @@ func (s *Secrets) PkiReadCrlDer(ctx context.Context, pkiMountPath string, option
 }
 
 // PkiReadCrlPem
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadCrlPem(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadCrlPemResponse], error) {
+func (s *Secrets) PkiReadCrlPem(ctx context.Context, options ...RequestOption) (*Response[schema.PkiReadCrlPemResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6105,8 +5868,7 @@ func (s *Secrets) PkiReadCrlPem(ctx context.Context, pkiMountPath string, option
 
 // PkiReadIssuer
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadIssuer(ctx context.Context, issuerRef string, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadIssuerResponse], error) {
+func (s *Secrets) PkiReadIssuer(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[schema.PkiReadIssuerResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6131,8 +5893,7 @@ func (s *Secrets) PkiReadIssuer(ctx context.Context, issuerRef string, pkiMountP
 
 // PkiReadIssuerDer
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadIssuerDer(ctx context.Context, issuerRef string, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadIssuerDerResponse], error) {
+func (s *Secrets) PkiReadIssuerDer(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[schema.PkiReadIssuerDerResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6157,8 +5918,7 @@ func (s *Secrets) PkiReadIssuerDer(ctx context.Context, issuerRef string, pkiMou
 
 // PkiReadIssuerJson
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadIssuerJson(ctx context.Context, issuerRef string, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadIssuerJsonResponse], error) {
+func (s *Secrets) PkiReadIssuerJson(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[schema.PkiReadIssuerJsonResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6183,8 +5943,7 @@ func (s *Secrets) PkiReadIssuerJson(ctx context.Context, issuerRef string, pkiMo
 
 // PkiReadIssuerPem
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadIssuerPem(ctx context.Context, issuerRef string, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadIssuerPemResponse], error) {
+func (s *Secrets) PkiReadIssuerPem(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[schema.PkiReadIssuerPemResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6208,8 +5967,7 @@ func (s *Secrets) PkiReadIssuerPem(ctx context.Context, issuerRef string, pkiMou
 }
 
 // PkiReadIssuersConfiguration
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadIssuersConfiguration(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadIssuersConfigurationResponse], error) {
+func (s *Secrets) PkiReadIssuersConfiguration(ctx context.Context, options ...RequestOption) (*Response[schema.PkiReadIssuersConfigurationResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6233,8 +5991,7 @@ func (s *Secrets) PkiReadIssuersConfiguration(ctx context.Context, pkiMountPath 
 
 // PkiReadKey
 // keyRef: Reference to key; either \&quot;default\&quot; for the configured default key, an identifier of a key, or the name assigned to the key.
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadKey(ctx context.Context, keyRef string, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadKeyResponse], error) {
+func (s *Secrets) PkiReadKey(ctx context.Context, keyRef string, options ...RequestOption) (*Response[schema.PkiReadKeyResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6258,8 +6015,7 @@ func (s *Secrets) PkiReadKey(ctx context.Context, keyRef string, pkiMountPath st
 }
 
 // PkiReadKeysConfiguration
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadKeysConfiguration(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadKeysConfigurationResponse], error) {
+func (s *Secrets) PkiReadKeysConfiguration(ctx context.Context, options ...RequestOption) (*Response[schema.PkiReadKeysConfigurationResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6283,8 +6039,7 @@ func (s *Secrets) PkiReadKeysConfiguration(ctx context.Context, pkiMountPath str
 
 // PkiReadRole
 // name: Name of the role
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadRole(ctx context.Context, name string, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadRoleResponse], error) {
+func (s *Secrets) PkiReadRole(ctx context.Context, name string, options ...RequestOption) (*Response[schema.PkiReadRoleResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6308,8 +6063,7 @@ func (s *Secrets) PkiReadRole(ctx context.Context, name string, pkiMountPath str
 }
 
 // PkiReadUrlsConfiguration
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReadUrlsConfiguration(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiReadUrlsConfigurationResponse], error) {
+func (s *Secrets) PkiReadUrlsConfiguration(ctx context.Context, options ...RequestOption) (*Response[schema.PkiReadUrlsConfigurationResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6332,8 +6086,7 @@ func (s *Secrets) PkiReadUrlsConfiguration(ctx context.Context, pkiMountPath str
 }
 
 // PkiReplaceRoot
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiReplaceRoot(ctx context.Context, pkiMountPath string, request schema.PkiReplaceRootRequest, options ...RequestOption) (*Response[schema.PkiReplaceRootResponse], error) {
+func (s *Secrets) PkiReplaceRoot(ctx context.Context, request schema.PkiReplaceRootRequest, options ...RequestOption) (*Response[schema.PkiReplaceRootResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6356,8 +6109,7 @@ func (s *Secrets) PkiReplaceRoot(ctx context.Context, pkiMountPath string, reque
 }
 
 // PkiRevoke
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiRevoke(ctx context.Context, pkiMountPath string, request schema.PkiRevokeRequest, options ...RequestOption) (*Response[schema.PkiRevokeResponse], error) {
+func (s *Secrets) PkiRevoke(ctx context.Context, request schema.PkiRevokeRequest, options ...RequestOption) (*Response[schema.PkiRevokeResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6381,8 +6133,7 @@ func (s *Secrets) PkiRevoke(ctx context.Context, pkiMountPath string, request sc
 
 // PkiRevokeIssuer
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiRevokeIssuer(ctx context.Context, issuerRef string, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiRevokeIssuerResponse], error) {
+func (s *Secrets) PkiRevokeIssuer(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[schema.PkiRevokeIssuerResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6406,8 +6157,7 @@ func (s *Secrets) PkiRevokeIssuer(ctx context.Context, issuerRef string, pkiMoun
 }
 
 // PkiRevokeWithKey
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiRevokeWithKey(ctx context.Context, pkiMountPath string, request schema.PkiRevokeWithKeyRequest, options ...RequestOption) (*Response[schema.PkiRevokeWithKeyResponse], error) {
+func (s *Secrets) PkiRevokeWithKey(ctx context.Context, request schema.PkiRevokeWithKeyRequest, options ...RequestOption) (*Response[schema.PkiRevokeWithKeyResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6430,8 +6180,7 @@ func (s *Secrets) PkiRevokeWithKey(ctx context.Context, pkiMountPath string, req
 }
 
 // PkiRootSignIntermediate
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiRootSignIntermediate(ctx context.Context, pkiMountPath string, request schema.PkiRootSignIntermediateRequest, options ...RequestOption) (*Response[schema.PkiRootSignIntermediateResponse], error) {
+func (s *Secrets) PkiRootSignIntermediate(ctx context.Context, request schema.PkiRootSignIntermediateRequest, options ...RequestOption) (*Response[schema.PkiRootSignIntermediateResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6454,8 +6203,7 @@ func (s *Secrets) PkiRootSignIntermediate(ctx context.Context, pkiMountPath stri
 }
 
 // PkiRootSignSelfIssued
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiRootSignSelfIssued(ctx context.Context, pkiMountPath string, request schema.PkiRootSignSelfIssuedRequest, options ...RequestOption) (*Response[schema.PkiRootSignSelfIssuedResponse], error) {
+func (s *Secrets) PkiRootSignSelfIssued(ctx context.Context, request schema.PkiRootSignSelfIssuedRequest, options ...RequestOption) (*Response[schema.PkiRootSignSelfIssuedResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6478,8 +6226,7 @@ func (s *Secrets) PkiRootSignSelfIssued(ctx context.Context, pkiMountPath string
 }
 
 // PkiRotateCrl
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiRotateCrl(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiRotateCrlResponse], error) {
+func (s *Secrets) PkiRotateCrl(ctx context.Context, options ...RequestOption) (*Response[schema.PkiRotateCrlResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6502,8 +6249,7 @@ func (s *Secrets) PkiRotateCrl(ctx context.Context, pkiMountPath string, options
 }
 
 // PkiRotateDeltaCrl
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiRotateDeltaCrl(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiRotateDeltaCrlResponse], error) {
+func (s *Secrets) PkiRotateDeltaCrl(ctx context.Context, options ...RequestOption) (*Response[schema.PkiRotateDeltaCrlResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6526,8 +6272,7 @@ func (s *Secrets) PkiRotateDeltaCrl(ctx context.Context, pkiMountPath string, op
 }
 
 // PkiSetSignedIntermediate
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiSetSignedIntermediate(ctx context.Context, pkiMountPath string, request schema.PkiSetSignedIntermediateRequest, options ...RequestOption) (*Response[schema.PkiSetSignedIntermediateResponse], error) {
+func (s *Secrets) PkiSetSignedIntermediate(ctx context.Context, request schema.PkiSetSignedIntermediateRequest, options ...RequestOption) (*Response[schema.PkiSetSignedIntermediateResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6550,8 +6295,7 @@ func (s *Secrets) PkiSetSignedIntermediate(ctx context.Context, pkiMountPath str
 }
 
 // PkiSignVerbatim
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiSignVerbatim(ctx context.Context, pkiMountPath string, request schema.PkiSignVerbatimRequest, options ...RequestOption) (*Response[schema.PkiSignVerbatimResponse], error) {
+func (s *Secrets) PkiSignVerbatim(ctx context.Context, request schema.PkiSignVerbatimRequest, options ...RequestOption) (*Response[schema.PkiSignVerbatimResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6575,8 +6319,7 @@ func (s *Secrets) PkiSignVerbatim(ctx context.Context, pkiMountPath string, requ
 
 // PkiSignVerbatimWithRole
 // role: The desired role with configuration for this request
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiSignVerbatimWithRole(ctx context.Context, role string, pkiMountPath string, request schema.PkiSignVerbatimWithRoleRequest, options ...RequestOption) (*Response[schema.PkiSignVerbatimWithRoleResponse], error) {
+func (s *Secrets) PkiSignVerbatimWithRole(ctx context.Context, role string, request schema.PkiSignVerbatimWithRoleRequest, options ...RequestOption) (*Response[schema.PkiSignVerbatimWithRoleResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6601,8 +6344,7 @@ func (s *Secrets) PkiSignVerbatimWithRole(ctx context.Context, role string, pkiM
 
 // PkiSignWithRole
 // role: The desired role with configuration for this request
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiSignWithRole(ctx context.Context, role string, pkiMountPath string, request schema.PkiSignWithRoleRequest, options ...RequestOption) (*Response[schema.PkiSignWithRoleResponse], error) {
+func (s *Secrets) PkiSignWithRole(ctx context.Context, role string, request schema.PkiSignWithRoleRequest, options ...RequestOption) (*Response[schema.PkiSignWithRoleResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6626,8 +6368,7 @@ func (s *Secrets) PkiSignWithRole(ctx context.Context, role string, pkiMountPath
 }
 
 // PkiTidy
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiTidy(ctx context.Context, pkiMountPath string, request schema.PkiTidyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) PkiTidy(ctx context.Context, request schema.PkiTidyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6650,8 +6391,7 @@ func (s *Secrets) PkiTidy(ctx context.Context, pkiMountPath string, request sche
 }
 
 // PkiTidyCancel
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiTidyCancel(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiTidyCancelResponse], error) {
+func (s *Secrets) PkiTidyCancel(ctx context.Context, options ...RequestOption) (*Response[schema.PkiTidyCancelResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6674,8 +6414,7 @@ func (s *Secrets) PkiTidyCancel(ctx context.Context, pkiMountPath string, option
 }
 
 // PkiTidyStatus
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiTidyStatus(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[schema.PkiTidyStatusResponse], error) {
+func (s *Secrets) PkiTidyStatus(ctx context.Context, options ...RequestOption) (*Response[schema.PkiTidyStatusResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6699,8 +6438,7 @@ func (s *Secrets) PkiTidyStatus(ctx context.Context, pkiMountPath string, option
 
 // PkiWriteIssuer
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiWriteIssuer(ctx context.Context, issuerRef string, pkiMountPath string, request schema.PkiWriteIssuerRequest, options ...RequestOption) (*Response[schema.PkiWriteIssuerResponse], error) {
+func (s *Secrets) PkiWriteIssuer(ctx context.Context, issuerRef string, request schema.PkiWriteIssuerRequest, options ...RequestOption) (*Response[schema.PkiWriteIssuerResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6725,8 +6463,7 @@ func (s *Secrets) PkiWriteIssuer(ctx context.Context, issuerRef string, pkiMount
 
 // PkiWriteKey
 // keyRef: Reference to key; either \&quot;default\&quot; for the configured default key, an identifier of a key, or the name assigned to the key.
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiWriteKey(ctx context.Context, keyRef string, pkiMountPath string, request schema.PkiWriteKeyRequest, options ...RequestOption) (*Response[schema.PkiWriteKeyResponse], error) {
+func (s *Secrets) PkiWriteKey(ctx context.Context, keyRef string, request schema.PkiWriteKeyRequest, options ...RequestOption) (*Response[schema.PkiWriteKeyResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6751,8 +6488,7 @@ func (s *Secrets) PkiWriteKey(ctx context.Context, keyRef string, pkiMountPath s
 
 // PkiWriteRole
 // name: Name of the role
-// pkiMountPath: Path that the backend was mounted at
-func (s *Secrets) PkiWriteRole(ctx context.Context, name string, pkiMountPath string, request schema.PkiWriteRoleRequest, options ...RequestOption) (*Response[schema.PkiWriteRoleResponse], error) {
+func (s *Secrets) PkiWriteRole(ctx context.Context, name string, request schema.PkiWriteRoleRequest, options ...RequestOption) (*Response[schema.PkiWriteRoleResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6776,8 +6512,7 @@ func (s *Secrets) PkiWriteRole(ctx context.Context, name string, pkiMountPath st
 }
 
 // RabbitMqConfigureConnection Configure the connection URI, username, and password to talk to RabbitMQ management HTTP API.
-// rabbitmqMountPath: Path that the backend was mounted at
-func (s *Secrets) RabbitMqConfigureConnection(ctx context.Context, rabbitmqMountPath string, request schema.RabbitMqConfigureConnectionRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) RabbitMqConfigureConnection(ctx context.Context, request schema.RabbitMqConfigureConnectionRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6800,8 +6535,7 @@ func (s *Secrets) RabbitMqConfigureConnection(ctx context.Context, rabbitmqMount
 }
 
 // RabbitMqConfigureLease
-// rabbitmqMountPath: Path that the backend was mounted at
-func (s *Secrets) RabbitMqConfigureLease(ctx context.Context, rabbitmqMountPath string, request schema.RabbitMqConfigureLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) RabbitMqConfigureLease(ctx context.Context, request schema.RabbitMqConfigureLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6825,8 +6559,7 @@ func (s *Secrets) RabbitMqConfigureLease(ctx context.Context, rabbitmqMountPath 
 
 // RabbitMqDeleteRole Manage the roles that can be created with this backend.
 // name: Name of the role.
-// rabbitmqMountPath: Path that the backend was mounted at
-func (s *Secrets) RabbitMqDeleteRole(ctx context.Context, name string, rabbitmqMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) RabbitMqDeleteRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6850,8 +6583,7 @@ func (s *Secrets) RabbitMqDeleteRole(ctx context.Context, name string, rabbitmqM
 }
 
 // RabbitMqListRoles Manage the roles that can be created with this backend.
-// rabbitmqMountPath: Path that the backend was mounted at
-func (s *Secrets) RabbitMqListRoles(ctx context.Context, rabbitmqMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) RabbitMqListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6875,8 +6607,7 @@ func (s *Secrets) RabbitMqListRoles(ctx context.Context, rabbitmqMountPath strin
 }
 
 // RabbitMqReadLeaseConfiguration
-// rabbitmqMountPath: Path that the backend was mounted at
-func (s *Secrets) RabbitMqReadLeaseConfiguration(ctx context.Context, rabbitmqMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) RabbitMqReadLeaseConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6900,8 +6631,7 @@ func (s *Secrets) RabbitMqReadLeaseConfiguration(ctx context.Context, rabbitmqMo
 
 // RabbitMqReadRole Manage the roles that can be created with this backend.
 // name: Name of the role.
-// rabbitmqMountPath: Path that the backend was mounted at
-func (s *Secrets) RabbitMqReadRole(ctx context.Context, name string, rabbitmqMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) RabbitMqReadRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6926,8 +6656,7 @@ func (s *Secrets) RabbitMqReadRole(ctx context.Context, name string, rabbitmqMou
 
 // RabbitMqRequestCredentials Request RabbitMQ credentials for a certain role.
 // name: Name of the role.
-// rabbitmqMountPath: Path that the backend was mounted at
-func (s *Secrets) RabbitMqRequestCredentials(ctx context.Context, name string, rabbitmqMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) RabbitMqRequestCredentials(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6952,8 +6681,7 @@ func (s *Secrets) RabbitMqRequestCredentials(ctx context.Context, name string, r
 
 // RabbitMqWriteRole Manage the roles that can be created with this backend.
 // name: Name of the role.
-// rabbitmqMountPath: Path that the backend was mounted at
-func (s *Secrets) RabbitMqWriteRole(ctx context.Context, name string, rabbitmqMountPath string, request schema.RabbitMqWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) RabbitMqWriteRole(ctx context.Context, name string, request schema.RabbitMqWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6977,8 +6705,7 @@ func (s *Secrets) RabbitMqWriteRole(ctx context.Context, name string, rabbitmqMo
 }
 
 // SshConfigureCa
-// sshMountPath: Path that the backend was mounted at
-func (s *Secrets) SshConfigureCa(ctx context.Context, sshMountPath string, request schema.SshConfigureCaRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) SshConfigureCa(ctx context.Context, request schema.SshConfigureCaRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7001,8 +6728,7 @@ func (s *Secrets) SshConfigureCa(ctx context.Context, sshMountPath string, reque
 }
 
 // SshConfigureZeroAddress
-// sshMountPath: Path that the backend was mounted at
-func (s *Secrets) SshConfigureZeroAddress(ctx context.Context, sshMountPath string, request schema.SshConfigureZeroAddressRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) SshConfigureZeroAddress(ctx context.Context, request schema.SshConfigureZeroAddressRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7025,8 +6751,7 @@ func (s *Secrets) SshConfigureZeroAddress(ctx context.Context, sshMountPath stri
 }
 
 // SshDeleteCaConfiguration
-// sshMountPath: Path that the backend was mounted at
-func (s *Secrets) SshDeleteCaConfiguration(ctx context.Context, sshMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) SshDeleteCaConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7050,8 +6775,7 @@ func (s *Secrets) SshDeleteCaConfiguration(ctx context.Context, sshMountPath str
 
 // SshDeleteRole Manage the 'roles' that can be created with this backend.
 // role: [Required for all types] Name of the role being created.
-// sshMountPath: Path that the backend was mounted at
-func (s *Secrets) SshDeleteRole(ctx context.Context, role string, sshMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) SshDeleteRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7075,8 +6799,7 @@ func (s *Secrets) SshDeleteRole(ctx context.Context, role string, sshMountPath s
 }
 
 // SshDeleteZeroAddressConfiguration
-// sshMountPath: Path that the backend was mounted at
-func (s *Secrets) SshDeleteZeroAddressConfiguration(ctx context.Context, sshMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) SshDeleteZeroAddressConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7100,8 +6823,7 @@ func (s *Secrets) SshDeleteZeroAddressConfiguration(ctx context.Context, sshMoun
 
 // SshGenerateCredentials Creates a credential for establishing SSH connection with the remote host.
 // role: [Required] Name of the role
-// sshMountPath: Path that the backend was mounted at
-func (s *Secrets) SshGenerateCredentials(ctx context.Context, role string, sshMountPath string, request schema.SshGenerateCredentialsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) SshGenerateCredentials(ctx context.Context, role string, request schema.SshGenerateCredentialsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7126,8 +6848,7 @@ func (s *Secrets) SshGenerateCredentials(ctx context.Context, role string, sshMo
 
 // SshIssueCertificate
 // role: The desired role with configuration for this request.
-// sshMountPath: Path that the backend was mounted at
-func (s *Secrets) SshIssueCertificate(ctx context.Context, role string, sshMountPath string, request schema.SshIssueCertificateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) SshIssueCertificate(ctx context.Context, role string, request schema.SshIssueCertificateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7151,8 +6872,7 @@ func (s *Secrets) SshIssueCertificate(ctx context.Context, role string, sshMount
 }
 
 // SshListRoles Manage the 'roles' that can be created with this backend.
-// sshMountPath: Path that the backend was mounted at
-func (s *Secrets) SshListRoles(ctx context.Context, sshMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) SshListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7176,8 +6896,7 @@ func (s *Secrets) SshListRoles(ctx context.Context, sshMountPath string, options
 }
 
 // SshListRolesByIp List all the roles associated with the given IP address.
-// sshMountPath: Path that the backend was mounted at
-func (s *Secrets) SshListRolesByIp(ctx context.Context, sshMountPath string, request schema.SshListRolesByIpRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) SshListRolesByIp(ctx context.Context, request schema.SshListRolesByIpRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7200,8 +6919,7 @@ func (s *Secrets) SshListRolesByIp(ctx context.Context, sshMountPath string, req
 }
 
 // SshReadCaConfiguration
-// sshMountPath: Path that the backend was mounted at
-func (s *Secrets) SshReadCaConfiguration(ctx context.Context, sshMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) SshReadCaConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7224,8 +6942,7 @@ func (s *Secrets) SshReadCaConfiguration(ctx context.Context, sshMountPath strin
 }
 
 // SshReadPublicKey Retrieve the public key.
-// sshMountPath: Path that the backend was mounted at
-func (s *Secrets) SshReadPublicKey(ctx context.Context, sshMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) SshReadPublicKey(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7249,8 +6966,7 @@ func (s *Secrets) SshReadPublicKey(ctx context.Context, sshMountPath string, opt
 
 // SshReadRole Manage the 'roles' that can be created with this backend.
 // role: [Required for all types] Name of the role being created.
-// sshMountPath: Path that the backend was mounted at
-func (s *Secrets) SshReadRole(ctx context.Context, role string, sshMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) SshReadRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7274,8 +6990,7 @@ func (s *Secrets) SshReadRole(ctx context.Context, role string, sshMountPath str
 }
 
 // SshReadZeroAddressConfiguration
-// sshMountPath: Path that the backend was mounted at
-func (s *Secrets) SshReadZeroAddressConfiguration(ctx context.Context, sshMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) SshReadZeroAddressConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7299,8 +7014,7 @@ func (s *Secrets) SshReadZeroAddressConfiguration(ctx context.Context, sshMountP
 
 // SshSignCertificate Request signing an SSH key using a certain role with the provided details.
 // role: The desired role with configuration for this request.
-// sshMountPath: Path that the backend was mounted at
-func (s *Secrets) SshSignCertificate(ctx context.Context, role string, sshMountPath string, request schema.SshSignCertificateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) SshSignCertificate(ctx context.Context, role string, request schema.SshSignCertificateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7324,8 +7038,7 @@ func (s *Secrets) SshSignCertificate(ctx context.Context, role string, sshMountP
 }
 
 // SshTidyDynamicHostKeys This endpoint removes the stored host keys used for the removed Dynamic Key feature, if present.
-// sshMountPath: Path that the backend was mounted at
-func (s *Secrets) SshTidyDynamicHostKeys(ctx context.Context, sshMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) SshTidyDynamicHostKeys(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7348,8 +7061,7 @@ func (s *Secrets) SshTidyDynamicHostKeys(ctx context.Context, sshMountPath strin
 }
 
 // SshVerifyOtp Validate the OTP provided by Vault SSH Agent.
-// sshMountPath: Path that the backend was mounted at
-func (s *Secrets) SshVerifyOtp(ctx context.Context, sshMountPath string, request schema.SshVerifyOtpRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) SshVerifyOtp(ctx context.Context, request schema.SshVerifyOtpRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7373,8 +7085,7 @@ func (s *Secrets) SshVerifyOtp(ctx context.Context, sshMountPath string, request
 
 // SshWriteRole Manage the 'roles' that can be created with this backend.
 // role: [Required for all types] Name of the role being created.
-// sshMountPath: Path that the backend was mounted at
-func (s *Secrets) SshWriteRole(ctx context.Context, role string, sshMountPath string, request schema.SshWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) SshWriteRole(ctx context.Context, role string, request schema.SshWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7398,8 +7109,7 @@ func (s *Secrets) SshWriteRole(ctx context.Context, role string, sshMountPath st
 }
 
 // TerraformCloudConfigure
-// terraformMountPath: Path that the backend was mounted at
-func (s *Secrets) TerraformCloudConfigure(ctx context.Context, terraformMountPath string, request schema.TerraformCloudConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TerraformCloudConfigure(ctx context.Context, request schema.TerraformCloudConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7422,8 +7132,7 @@ func (s *Secrets) TerraformCloudConfigure(ctx context.Context, terraformMountPat
 }
 
 // TerraformCloudDeleteConfiguration
-// terraformMountPath: Path that the backend was mounted at
-func (s *Secrets) TerraformCloudDeleteConfiguration(ctx context.Context, terraformMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TerraformCloudDeleteConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7447,8 +7156,7 @@ func (s *Secrets) TerraformCloudDeleteConfiguration(ctx context.Context, terrafo
 
 // TerraformCloudDeleteRole
 // name: Name of the role
-// terraformMountPath: Path that the backend was mounted at
-func (s *Secrets) TerraformCloudDeleteRole(ctx context.Context, name string, terraformMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TerraformCloudDeleteRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7473,8 +7181,7 @@ func (s *Secrets) TerraformCloudDeleteRole(ctx context.Context, name string, ter
 
 // TerraformCloudGenerateCredentials
 // name: Name of the role
-// terraformMountPath: Path that the backend was mounted at
-func (s *Secrets) TerraformCloudGenerateCredentials(ctx context.Context, name string, terraformMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TerraformCloudGenerateCredentials(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7499,8 +7206,7 @@ func (s *Secrets) TerraformCloudGenerateCredentials(ctx context.Context, name st
 
 // TerraformCloudGenerateCredentials2
 // name: Name of the role
-// terraformMountPath: Path that the backend was mounted at
-func (s *Secrets) TerraformCloudGenerateCredentials2(ctx context.Context, name string, terraformMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TerraformCloudGenerateCredentials2(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7524,8 +7230,7 @@ func (s *Secrets) TerraformCloudGenerateCredentials2(ctx context.Context, name s
 }
 
 // TerraformCloudListRoles
-// terraformMountPath: Path that the backend was mounted at
-func (s *Secrets) TerraformCloudListRoles(ctx context.Context, terraformMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TerraformCloudListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7549,8 +7254,7 @@ func (s *Secrets) TerraformCloudListRoles(ctx context.Context, terraformMountPat
 }
 
 // TerraformCloudReadConfiguration
-// terraformMountPath: Path that the backend was mounted at
-func (s *Secrets) TerraformCloudReadConfiguration(ctx context.Context, terraformMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TerraformCloudReadConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7574,8 +7278,7 @@ func (s *Secrets) TerraformCloudReadConfiguration(ctx context.Context, terraform
 
 // TerraformCloudReadRole
 // name: Name of the role
-// terraformMountPath: Path that the backend was mounted at
-func (s *Secrets) TerraformCloudReadRole(ctx context.Context, name string, terraformMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TerraformCloudReadRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7600,8 +7303,7 @@ func (s *Secrets) TerraformCloudReadRole(ctx context.Context, name string, terra
 
 // TerraformCloudRotateRole
 // name: Name of the team or organization role
-// terraformMountPath: Path that the backend was mounted at
-func (s *Secrets) TerraformCloudRotateRole(ctx context.Context, name string, terraformMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TerraformCloudRotateRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7626,8 +7328,7 @@ func (s *Secrets) TerraformCloudRotateRole(ctx context.Context, name string, ter
 
 // TerraformCloudWriteRole
 // name: Name of the role
-// terraformMountPath: Path that the backend was mounted at
-func (s *Secrets) TerraformCloudWriteRole(ctx context.Context, name string, terraformMountPath string, request schema.TerraformCloudWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TerraformCloudWriteRole(ctx context.Context, name string, request schema.TerraformCloudWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7652,8 +7353,7 @@ func (s *Secrets) TerraformCloudWriteRole(ctx context.Context, name string, terr
 
 // TotpCreateKey
 // name: Name of the key.
-// totpMountPath: Path that the backend was mounted at
-func (s *Secrets) TotpCreateKey(ctx context.Context, name string, totpMountPath string, request schema.TotpCreateKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TotpCreateKey(ctx context.Context, name string, request schema.TotpCreateKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7678,8 +7378,7 @@ func (s *Secrets) TotpCreateKey(ctx context.Context, name string, totpMountPath 
 
 // TotpDeleteKey
 // name: Name of the key.
-// totpMountPath: Path that the backend was mounted at
-func (s *Secrets) TotpDeleteKey(ctx context.Context, name string, totpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TotpDeleteKey(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7704,8 +7403,7 @@ func (s *Secrets) TotpDeleteKey(ctx context.Context, name string, totpMountPath 
 
 // TotpGenerateCode
 // name: Name of the key.
-// totpMountPath: Path that the backend was mounted at
-func (s *Secrets) TotpGenerateCode(ctx context.Context, name string, totpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TotpGenerateCode(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7729,8 +7427,7 @@ func (s *Secrets) TotpGenerateCode(ctx context.Context, name string, totpMountPa
 }
 
 // TotpListKeys Manage the keys that can be created with this backend.
-// totpMountPath: Path that the backend was mounted at
-func (s *Secrets) TotpListKeys(ctx context.Context, totpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TotpListKeys(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7755,8 +7452,7 @@ func (s *Secrets) TotpListKeys(ctx context.Context, totpMountPath string, option
 
 // TotpReadKey
 // name: Name of the key.
-// totpMountPath: Path that the backend was mounted at
-func (s *Secrets) TotpReadKey(ctx context.Context, name string, totpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TotpReadKey(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7781,8 +7477,7 @@ func (s *Secrets) TotpReadKey(ctx context.Context, name string, totpMountPath st
 
 // TotpValidateCode
 // name: Name of the key.
-// totpMountPath: Path that the backend was mounted at
-func (s *Secrets) TotpValidateCode(ctx context.Context, name string, totpMountPath string, request schema.TotpValidateCodeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TotpValidateCode(ctx context.Context, name string, request schema.TotpValidateCodeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7807,8 +7502,7 @@ func (s *Secrets) TotpValidateCode(ctx context.Context, name string, totpMountPa
 
 // TransitBackUpKey Backup the named key
 // name: Name of the key
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitBackUpKey(ctx context.Context, name string, transitMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitBackUpKey(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7832,8 +7526,7 @@ func (s *Secrets) TransitBackUpKey(ctx context.Context, name string, transitMoun
 }
 
 // TransitConfigureCache Configures a new cache of the specified size
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitConfigureCache(ctx context.Context, transitMountPath string, request schema.TransitConfigureCacheRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitConfigureCache(ctx context.Context, request schema.TransitConfigureCacheRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7857,8 +7550,7 @@ func (s *Secrets) TransitConfigureCache(ctx context.Context, transitMountPath st
 
 // TransitConfigureKey Configure a named encryption key
 // name: Name of the key
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitConfigureKey(ctx context.Context, name string, transitMountPath string, request schema.TransitConfigureKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitConfigureKey(ctx context.Context, name string, request schema.TransitConfigureKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7882,8 +7574,7 @@ func (s *Secrets) TransitConfigureKey(ctx context.Context, name string, transitM
 }
 
 // TransitConfigureKeys
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitConfigureKeys(ctx context.Context, transitMountPath string, request schema.TransitConfigureKeysRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitConfigureKeys(ctx context.Context, request schema.TransitConfigureKeysRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7907,8 +7598,7 @@ func (s *Secrets) TransitConfigureKeys(ctx context.Context, transitMountPath str
 
 // TransitCreateKey
 // name: Name of the key
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitCreateKey(ctx context.Context, name string, transitMountPath string, request schema.TransitCreateKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitCreateKey(ctx context.Context, name string, request schema.TransitCreateKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7933,8 +7623,7 @@ func (s *Secrets) TransitCreateKey(ctx context.Context, name string, transitMoun
 
 // TransitDecrypt Decrypt a ciphertext value using a named key
 // name: Name of the key
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitDecrypt(ctx context.Context, name string, transitMountPath string, request schema.TransitDecryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitDecrypt(ctx context.Context, name string, request schema.TransitDecryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7959,8 +7648,7 @@ func (s *Secrets) TransitDecrypt(ctx context.Context, name string, transitMountP
 
 // TransitDeleteKey
 // name: Name of the key
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitDeleteKey(ctx context.Context, name string, transitMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitDeleteKey(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7985,8 +7673,7 @@ func (s *Secrets) TransitDeleteKey(ctx context.Context, name string, transitMoun
 
 // TransitEncrypt Encrypt a plaintext value or a batch of plaintext blocks using a named key
 // name: Name of the key
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitEncrypt(ctx context.Context, name string, transitMountPath string, request schema.TransitEncryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitEncrypt(ctx context.Context, name string, request schema.TransitEncryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8012,8 +7699,7 @@ func (s *Secrets) TransitEncrypt(ctx context.Context, name string, transitMountP
 // TransitExportKey Export named encryption or signing key
 // name: Name of the key
 // type_: Type of key to export (encryption-key, signing-key, hmac-key)
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitExportKey(ctx context.Context, name string, type_ string, transitMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitExportKey(ctx context.Context, name string, type_ string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8041,8 +7727,7 @@ func (s *Secrets) TransitExportKey(ctx context.Context, name string, type_ strin
 // name: Name of the key
 // type_: Type of key to export (encryption-key, signing-key, hmac-key)
 // version: Version of the key
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitExportKeyVersion(ctx context.Context, name string, type_ string, version string, transitMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitExportKeyVersion(ctx context.Context, name string, type_ string, version string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8070,8 +7755,7 @@ func (s *Secrets) TransitExportKeyVersion(ctx context.Context, name string, type
 // TransitGenerateDataKey Generate a data key
 // name: The backend key used for encrypting the data key
 // plaintext: \&quot;plaintext\&quot; will return the key in both plaintext and ciphertext; \&quot;wrapped\&quot; will return the ciphertext only.
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitGenerateDataKey(ctx context.Context, name string, plaintext string, transitMountPath string, request schema.TransitGenerateDataKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitGenerateDataKey(ctx context.Context, name string, plaintext string, request schema.TransitGenerateDataKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8097,8 +7781,7 @@ func (s *Secrets) TransitGenerateDataKey(ctx context.Context, name string, plain
 
 // TransitGenerateHmac Generate an HMAC for input data using the named key
 // name: The key to use for the HMAC function
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitGenerateHmac(ctx context.Context, name string, transitMountPath string, request schema.TransitGenerateHmacRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitGenerateHmac(ctx context.Context, name string, request schema.TransitGenerateHmacRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8124,8 +7807,7 @@ func (s *Secrets) TransitGenerateHmac(ctx context.Context, name string, transitM
 // TransitGenerateHmacWithAlgorithm Generate an HMAC for input data using the named key
 // name: The key to use for the HMAC function
 // urlalgorithm: Algorithm to use (POST URL parameter)
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitGenerateHmacWithAlgorithm(ctx context.Context, name string, urlalgorithm string, transitMountPath string, request schema.TransitGenerateHmacWithAlgorithmRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitGenerateHmacWithAlgorithm(ctx context.Context, name string, urlalgorithm string, request schema.TransitGenerateHmacWithAlgorithmRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8150,8 +7832,7 @@ func (s *Secrets) TransitGenerateHmacWithAlgorithm(ctx context.Context, name str
 }
 
 // TransitGenerateRandom Generate random bytes
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitGenerateRandom(ctx context.Context, transitMountPath string, request schema.TransitGenerateRandomRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitGenerateRandom(ctx context.Context, request schema.TransitGenerateRandomRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8175,8 +7856,7 @@ func (s *Secrets) TransitGenerateRandom(ctx context.Context, transitMountPath st
 
 // TransitGenerateRandomWithBytes Generate random bytes
 // urlbytes: The number of bytes to generate (POST URL parameter)
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitGenerateRandomWithBytes(ctx context.Context, urlbytes string, transitMountPath string, request schema.TransitGenerateRandomWithBytesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitGenerateRandomWithBytes(ctx context.Context, urlbytes string, request schema.TransitGenerateRandomWithBytesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8201,8 +7881,7 @@ func (s *Secrets) TransitGenerateRandomWithBytes(ctx context.Context, urlbytes s
 
 // TransitGenerateRandomWithSource Generate random bytes
 // source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitGenerateRandomWithSource(ctx context.Context, source string, transitMountPath string, request schema.TransitGenerateRandomWithSourceRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitGenerateRandomWithSource(ctx context.Context, source string, request schema.TransitGenerateRandomWithSourceRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8228,8 +7907,7 @@ func (s *Secrets) TransitGenerateRandomWithSource(ctx context.Context, source st
 // TransitGenerateRandomWithSourceAndBytes Generate random bytes
 // source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
 // urlbytes: The number of bytes to generate (POST URL parameter)
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitGenerateRandomWithSourceAndBytes(ctx context.Context, source string, urlbytes string, transitMountPath string, request schema.TransitGenerateRandomWithSourceAndBytesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitGenerateRandomWithSourceAndBytes(ctx context.Context, source string, urlbytes string, request schema.TransitGenerateRandomWithSourceAndBytesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8254,8 +7932,7 @@ func (s *Secrets) TransitGenerateRandomWithSourceAndBytes(ctx context.Context, s
 }
 
 // TransitHash Generate a hash sum for input data
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitHash(ctx context.Context, transitMountPath string, request schema.TransitHashRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitHash(ctx context.Context, request schema.TransitHashRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8279,8 +7956,7 @@ func (s *Secrets) TransitHash(ctx context.Context, transitMountPath string, requ
 
 // TransitHashWithAlgorithm Generate a hash sum for input data
 // urlalgorithm: Algorithm to use (POST URL parameter)
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitHashWithAlgorithm(ctx context.Context, urlalgorithm string, transitMountPath string, request schema.TransitHashWithAlgorithmRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitHashWithAlgorithm(ctx context.Context, urlalgorithm string, request schema.TransitHashWithAlgorithmRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8305,8 +7981,7 @@ func (s *Secrets) TransitHashWithAlgorithm(ctx context.Context, urlalgorithm str
 
 // TransitImportKey Imports an externally-generated key into a new transit key
 // name: The name of the key
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitImportKey(ctx context.Context, name string, transitMountPath string, request schema.TransitImportKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitImportKey(ctx context.Context, name string, request schema.TransitImportKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8331,8 +8006,7 @@ func (s *Secrets) TransitImportKey(ctx context.Context, name string, transitMoun
 
 // TransitImportKeyVersion Imports an externally-generated key into an existing imported key
 // name: The name of the key
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitImportKeyVersion(ctx context.Context, name string, transitMountPath string, request schema.TransitImportKeyVersionRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitImportKeyVersion(ctx context.Context, name string, request schema.TransitImportKeyVersionRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8356,8 +8030,7 @@ func (s *Secrets) TransitImportKeyVersion(ctx context.Context, name string, tran
 }
 
 // TransitListKeys Managed named encryption keys
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitListKeys(ctx context.Context, transitMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitListKeys(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8381,8 +8054,7 @@ func (s *Secrets) TransitListKeys(ctx context.Context, transitMountPath string, 
 }
 
 // TransitReadCacheConfiguration Returns the size of the active cache
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitReadCacheConfiguration(ctx context.Context, transitMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitReadCacheConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8406,8 +8078,7 @@ func (s *Secrets) TransitReadCacheConfiguration(ctx context.Context, transitMoun
 
 // TransitReadKey
 // name: Name of the key
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitReadKey(ctx context.Context, name string, transitMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitReadKey(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8431,8 +8102,7 @@ func (s *Secrets) TransitReadKey(ctx context.Context, name string, transitMountP
 }
 
 // TransitReadKeysConfiguration
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitReadKeysConfiguration(ctx context.Context, transitMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitReadKeysConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8455,8 +8125,7 @@ func (s *Secrets) TransitReadKeysConfiguration(ctx context.Context, transitMount
 }
 
 // TransitReadWrappingKey Returns the public key to use for wrapping imported keys
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitReadWrappingKey(ctx context.Context, transitMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitReadWrappingKey(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8480,8 +8149,7 @@ func (s *Secrets) TransitReadWrappingKey(ctx context.Context, transitMountPath s
 
 // TransitRestoreAndRenameKey Restore the named key
 // name: If set, this will be the name of the restored key.
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitRestoreAndRenameKey(ctx context.Context, name string, transitMountPath string, request schema.TransitRestoreAndRenameKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitRestoreAndRenameKey(ctx context.Context, name string, request schema.TransitRestoreAndRenameKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8505,8 +8173,7 @@ func (s *Secrets) TransitRestoreAndRenameKey(ctx context.Context, name string, t
 }
 
 // TransitRestoreKey Restore the named key
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitRestoreKey(ctx context.Context, transitMountPath string, request schema.TransitRestoreKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitRestoreKey(ctx context.Context, request schema.TransitRestoreKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8530,8 +8197,7 @@ func (s *Secrets) TransitRestoreKey(ctx context.Context, transitMountPath string
 
 // TransitRewrap Rewrap ciphertext
 // name: Name of the key
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitRewrap(ctx context.Context, name string, transitMountPath string, request schema.TransitRewrapRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitRewrap(ctx context.Context, name string, request schema.TransitRewrapRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8556,8 +8222,7 @@ func (s *Secrets) TransitRewrap(ctx context.Context, name string, transitMountPa
 
 // TransitRotateKey Rotate named encryption key
 // name: Name of the key
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitRotateKey(ctx context.Context, name string, transitMountPath string, request schema.TransitRotateKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitRotateKey(ctx context.Context, name string, request schema.TransitRotateKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8582,8 +8247,7 @@ func (s *Secrets) TransitRotateKey(ctx context.Context, name string, transitMoun
 
 // TransitSign Generate a signature for input data using the named key
 // name: The key to use
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitSign(ctx context.Context, name string, transitMountPath string, request schema.TransitSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitSign(ctx context.Context, name string, request schema.TransitSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8609,8 +8273,7 @@ func (s *Secrets) TransitSign(ctx context.Context, name string, transitMountPath
 // TransitSignWithAlgorithm Generate a signature for input data using the named key
 // name: The key to use
 // urlalgorithm: Hash algorithm to use (POST URL parameter)
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitSignWithAlgorithm(ctx context.Context, name string, urlalgorithm string, transitMountPath string, request schema.TransitSignWithAlgorithmRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitSignWithAlgorithm(ctx context.Context, name string, urlalgorithm string, request schema.TransitSignWithAlgorithmRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8636,8 +8299,7 @@ func (s *Secrets) TransitSignWithAlgorithm(ctx context.Context, name string, url
 
 // TransitTrimKey Trim key versions of a named key
 // name: Name of the key
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitTrimKey(ctx context.Context, name string, transitMountPath string, request schema.TransitTrimKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitTrimKey(ctx context.Context, name string, request schema.TransitTrimKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8662,8 +8324,7 @@ func (s *Secrets) TransitTrimKey(ctx context.Context, name string, transitMountP
 
 // TransitVerify Verify a signature or HMAC for input data created using the named key
 // name: The key to use
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitVerify(ctx context.Context, name string, transitMountPath string, request schema.TransitVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitVerify(ctx context.Context, name string, request schema.TransitVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8689,8 +8350,7 @@ func (s *Secrets) TransitVerify(ctx context.Context, name string, transitMountPa
 // TransitVerifyWithAlgorithm Verify a signature or HMAC for input data created using the named key
 // name: The key to use
 // urlalgorithm: Hash algorithm to use (POST URL parameter)
-// transitMountPath: Path that the backend was mounted at
-func (s *Secrets) TransitVerifyWithAlgorithm(ctx context.Context, name string, urlalgorithm string, transitMountPath string, request schema.TransitVerifyWithAlgorithmRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitVerifyWithAlgorithm(ctx context.Context, name string, urlalgorithm string, request schema.TransitVerifyWithAlgorithmRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err

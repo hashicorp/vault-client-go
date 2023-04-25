@@ -82,7 +82,7 @@ func main() {
 	}
 
 	// write a secret
-	_, err = client.Secrets.KVv2Write(ctx, "my-secret", schema.KVv2WriteRequest{
+	_, err = client.Secrets.KvV2Write(ctx, "my-secret", schema.KvV2WriteRequest{
 		Data: map[string]any{
 			"password1": "abc123",
 			"password2": "correct horse battery staple",
@@ -94,11 +94,11 @@ func main() {
 	log.Println("secret written successfully")
 
 	// read a secret
-	s, err := client.Secrets.KVv2Read(ctx, "my-secret")
+	s, err := client.Secrets.KvV2Read(ctx, "my-secret")
 	if err != nil {
 		log.Fatal(err)
 	}
-	log.Println("secret retrieved:", s.Data)
+	log.Println("secret retrieved:", s.Data.Data)
 }
 ```
 
@@ -155,7 +155,7 @@ client.Delete(...)
 client.DeleteWithParameters(...)
 ```
 
-For example, `client.Secrets.KVv2Write(...)` from
+For example, `client.Secrets.KvV2Write(...)` from
 [Getting Started](#getting-started) section could be rewritten using a generic
 `client.Write(...)` like so:
 
@@ -180,11 +180,11 @@ client.Identity // identity-related methods
 client.System   // various system-wide calls
 ```
 
-Below is an example of accessing a generated `System.ReadMounts` method
+Below is an example of accessing the generated `MountsListSecretsEngines` method
 (equivalent to `vault secrets list` or `GET /v1/sys/mounts`):
 
 ```go
-resp, err := client.System.ReadMounts(ctx)
+resp, err := client.System.MountsListSecretsEngines(ctx)
 if err != nil {
 	log.Fatal(err)
 }
@@ -208,7 +208,7 @@ _ = client.SetToken("my-token")
 _ = client.SetNamespace("my-namespace")
 
 // per-request decorators take precedence over the client-level settings
-resp, _ = client.Secrets.KVv2Read(
+resp, _ = client.Secrets.KvV2Read(
 	ctx,
 	"my-secret",
 	vault.WithToken("request-specific-token"),
@@ -231,7 +231,7 @@ syntax:
 
 ```go
 // Equivalent to client.Read(ctx, "my/mount/path/data/my-secret")
-secret, err := client.Secrets.KVv2Read(
+secret, err := client.Secrets.KvV2Read(
 	ctx,
 	"my-secret",
 	vault.WithMountPath("my/mount/path"),
@@ -245,7 +245,7 @@ more background information.
 
 ```go
 // wrap the response with a 5 minute TTL
-resp, _ := client.Secrets.KVv2Read(
+resp, _ := client.Secrets.KvV2Read(
 	ctx,
 	"my-secret",
 	vault.WithResponseWrapping(5*time.Minute),
@@ -269,7 +269,7 @@ The client also provides a convenience function `vault.IsErrorStatus(...)` to
 simplify error handling:
 
 ```go
-s, err := client.Secrets.KVv2Read(ctx, "my-secret")
+s, err := client.Secrets.KvV2Read(ctx, "my-secret")
 if err != nil {
 	if vault.IsErrorStatus(err, http.StatusForbidden) {
 		// special handling for 403 errors
@@ -322,7 +322,7 @@ if err != nil {
 	log.Fatal(err)
 }
 
-resp, err := client.Auth.CertificatesLogin(ctx, schema.CertificatesLoginRequest{
+resp, err := client.Auth.CertLogin(ctx, schema.CertLoginRequest{
 	Name: "my-cert",
 })
 if err != nil {
@@ -382,10 +382,10 @@ callbacks:
 var state string
 
 // write
-_, err := client.Secrets.KVv2Write(
+_, err := client.Secrets.KvV2Write(
 	ctx,
 	"my-secret",
-	schema.KVv2WriteRequest{
+	schema.KvV2WriteRequest{
 		Data: map[string]any{
 			"password1": "abc123",
 			"password2": "correct horse battery staple",
@@ -399,7 +399,7 @@ _, err := client.Secrets.KVv2Write(
 )
 
 // read
-secret, err := client.Secrets.KVv2Read(
+secret, err := client.Secrets.KvV2Read(
 	ctx,
 	"my-secret",
 	vault.WithRequestCallbacks(

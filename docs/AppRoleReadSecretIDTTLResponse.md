@@ -1,4 +1,4 @@
-# AppRoleReadSecretIDTTLResponse
+# AppRoleReadSecretIdTtlResponse
 
 
 ## Properties
@@ -12,47 +12,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewAppRoleReadSecretIDTTLResponse
+### NewAppRoleReadSecretIdTtlResponse
 
-`func NewAppRoleReadSecretIDTTLResponse() *AppRoleReadSecretIDTTLResponse`
+`func NewAppRoleReadSecretIdTtlResponse() *AppRoleReadSecretIdTtlResponse`
 
-NewAppRoleReadSecretIDTTLResponse instantiates a new AppRoleReadSecretIDTTLResponse object
+NewAppRoleReadSecretIdTtlResponse instantiates a new AppRoleReadSecretIdTtlResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAppRoleReadSecretIDTTLResponseWithDefaults
+### NewAppRoleReadSecretIdTtlResponseWithDefaults
 
-`func NewAppRoleReadSecretIDTTLResponseWithDefaults() *AppRoleReadSecretIDTTLResponse`
+`func NewAppRoleReadSecretIdTtlResponseWithDefaults() *AppRoleReadSecretIdTtlResponse`
 
-NewAppRoleReadSecretIDTTLResponseWithDefaults instantiates a new AppRoleReadSecretIDTTLResponse object
+NewAppRoleReadSecretIdTtlResponseWithDefaults instantiates a new AppRoleReadSecretIdTtlResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetSecretIdTtl
 
-`func (o *AppRoleReadSecretIDTTLResponse) GetSecretIdTtl() int32`
+`func (o *AppRoleReadSecretIdTtlResponse) GetSecretIdTtl() int32`
 
 GetSecretIdTtl returns the SecretIdTtl field if non-nil, zero value otherwise.
 
 ### GetSecretIdTtlOk
 
-`func (o *AppRoleReadSecretIDTTLResponse) GetSecretIdTtlOk() (*int32, bool)`
+`func (o *AppRoleReadSecretIdTtlResponse) GetSecretIdTtlOk() (*int32, bool)`
 
 GetSecretIdTtlOk returns a tuple with the SecretIdTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecretIdTtl
 
-`func (o *AppRoleReadSecretIDTTLResponse) SetSecretIdTtl(v int32)`
+`func (o *AppRoleReadSecretIdTtlResponse) SetSecretIdTtl(v int32)`
 
 SetSecretIdTtl sets SecretIdTtl field to given value.
 
 
 ### HasSecretIdTtl
 
-`func (o *AppRoleReadSecretIDTTLResponse) HasSecretIdTtl() bool`
+`func (o *AppRoleReadSecretIdTtlResponse) HasSecretIdTtl() bool`
 
 HasSecretIdTtl returns a boolean if a field has been set.
 

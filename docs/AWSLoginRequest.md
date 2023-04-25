@@ -1,4 +1,4 @@
-# AWSLoginRequest
+# AwsLoginRequest
 
 
 ## Properties
@@ -20,47 +20,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewAWSLoginRequest
+### NewAwsLoginRequest
 
-`func NewAWSLoginRequest() *AWSLoginRequest`
+`func NewAwsLoginRequest() *AwsLoginRequest`
 
-NewAWSLoginRequest instantiates a new AWSLoginRequest object
+NewAwsLoginRequest instantiates a new AwsLoginRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAWSLoginRequestWithDefaults
+### NewAwsLoginRequestWithDefaults
 
-`func NewAWSLoginRequestWithDefaults() *AWSLoginRequest`
+`func NewAwsLoginRequestWithDefaults() *AwsLoginRequest`
 
-NewAWSLoginRequestWithDefaults instantiates a new AWSLoginRequest object
+NewAwsLoginRequestWithDefaults instantiates a new AwsLoginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetIamHttpRequestMethod
 
-`func (o *AWSLoginRequest) GetIamHttpRequestMethod() string`
+`func (o *AwsLoginRequest) GetIamHttpRequestMethod() string`
 
 GetIamHttpRequestMethod returns the IamHttpRequestMethod field if non-nil, zero value otherwise.
 
 ### GetIamHttpRequestMethodOk
 
-`func (o *AWSLoginRequest) GetIamHttpRequestMethodOk() (*string, bool)`
+`func (o *AwsLoginRequest) GetIamHttpRequestMethodOk() (*string, bool)`
 
 GetIamHttpRequestMethodOk returns a tuple with the IamHttpRequestMethod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIamHttpRequestMethod
 
-`func (o *AWSLoginRequest) SetIamHttpRequestMethod(v string)`
+`func (o *AwsLoginRequest) SetIamHttpRequestMethod(v string)`
 
 SetIamHttpRequestMethod sets IamHttpRequestMethod field to given value.
 
 
 ### HasIamHttpRequestMethod
 
-`func (o *AWSLoginRequest) HasIamHttpRequestMethod() bool`
+`func (o *AwsLoginRequest) HasIamHttpRequestMethod() bool`
 
 HasIamHttpRequestMethod returns a boolean if a field has been set.
 
@@ -69,27 +69,27 @@ HasIamHttpRequestMethod returns a boolean if a field has been set.
 
 ### GetIamRequestBody
 
-`func (o *AWSLoginRequest) GetIamRequestBody() string`
+`func (o *AwsLoginRequest) GetIamRequestBody() string`
 
 GetIamRequestBody returns the IamRequestBody field if non-nil, zero value otherwise.
 
 ### GetIamRequestBodyOk
 
-`func (o *AWSLoginRequest) GetIamRequestBodyOk() (*string, bool)`
+`func (o *AwsLoginRequest) GetIamRequestBodyOk() (*string, bool)`
 
 GetIamRequestBodyOk returns a tuple with the IamRequestBody field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIamRequestBody
 
-`func (o *AWSLoginRequest) SetIamRequestBody(v string)`
+`func (o *AwsLoginRequest) SetIamRequestBody(v string)`
 
 SetIamRequestBody sets IamRequestBody field to given value.
 
 
 ### HasIamRequestBody
 
-`func (o *AWSLoginRequest) HasIamRequestBody() bool`
+`func (o *AwsLoginRequest) HasIamRequestBody() bool`
 
 HasIamRequestBody returns a boolean if a field has been set.
 
@@ -98,27 +98,27 @@ HasIamRequestBody returns a boolean if a field has been set.
 
 ### GetIamRequestHeaders
 
-`func (o *AWSLoginRequest) GetIamRequestHeaders() string`
+`func (o *AwsLoginRequest) GetIamRequestHeaders() string`
 
 GetIamRequestHeaders returns the IamRequestHeaders field if non-nil, zero value otherwise.
 
 ### GetIamRequestHeadersOk
 
-`func (o *AWSLoginRequest) GetIamRequestHeadersOk() (*string, bool)`
+`func (o *AwsLoginRequest) GetIamRequestHeadersOk() (*string, bool)`
 
 GetIamRequestHeadersOk returns a tuple with the IamRequestHeaders field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIamRequestHeaders
 
-`func (o *AWSLoginRequest) SetIamRequestHeaders(v string)`
+`func (o *AwsLoginRequest) SetIamRequestHeaders(v string)`
 
 SetIamRequestHeaders sets IamRequestHeaders field to given value.
 
 
 ### HasIamRequestHeaders
 
-`func (o *AWSLoginRequest) HasIamRequestHeaders() bool`
+`func (o *AwsLoginRequest) HasIamRequestHeaders() bool`
 
 HasIamRequestHeaders returns a boolean if a field has been set.
 
@@ -127,27 +127,27 @@ HasIamRequestHeaders returns a boolean if a field has been set.
 
 ### GetIamRequestUrl
 
-`func (o *AWSLoginRequest) GetIamRequestUrl() string`
+`func (o *AwsLoginRequest) GetIamRequestUrl() string`
 
 GetIamRequestUrl returns the IamRequestUrl field if non-nil, zero value otherwise.
 
 ### GetIamRequestUrlOk
 
-`func (o *AWSLoginRequest) GetIamRequestUrlOk() (*string, bool)`
+`func (o *AwsLoginRequest) GetIamRequestUrlOk() (*string, bool)`
 
 GetIamRequestUrlOk returns a tuple with the IamRequestUrl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIamRequestUrl
 
-`func (o *AWSLoginRequest) SetIamRequestUrl(v string)`
+`func (o *AwsLoginRequest) SetIamRequestUrl(v string)`
 
 SetIamRequestUrl sets IamRequestUrl field to given value.
 
 
 ### HasIamRequestUrl
 
-`func (o *AWSLoginRequest) HasIamRequestUrl() bool`
+`func (o *AwsLoginRequest) HasIamRequestUrl() bool`
 
 HasIamRequestUrl returns a boolean if a field has been set.
 
@@ -156,27 +156,27 @@ HasIamRequestUrl returns a boolean if a field has been set.
 
 ### GetIdentity
 
-`func (o *AWSLoginRequest) GetIdentity() string`
+`func (o *AwsLoginRequest) GetIdentity() string`
 
 GetIdentity returns the Identity field if non-nil, zero value otherwise.
 
 ### GetIdentityOk
 
-`func (o *AWSLoginRequest) GetIdentityOk() (*string, bool)`
+`func (o *AwsLoginRequest) GetIdentityOk() (*string, bool)`
 
 GetIdentityOk returns a tuple with the Identity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIdentity
 
-`func (o *AWSLoginRequest) SetIdentity(v string)`
+`func (o *AwsLoginRequest) SetIdentity(v string)`
 
 SetIdentity sets Identity field to given value.
 
 
 ### HasIdentity
 
-`func (o *AWSLoginRequest) HasIdentity() bool`
+`func (o *AwsLoginRequest) HasIdentity() bool`
 
 HasIdentity returns a boolean if a field has been set.
 
@@ -185,27 +185,27 @@ HasIdentity returns a boolean if a field has been set.
 
 ### GetNonce
 
-`func (o *AWSLoginRequest) GetNonce() string`
+`func (o *AwsLoginRequest) GetNonce() string`
 
 GetNonce returns the Nonce field if non-nil, zero value otherwise.
 
 ### GetNonceOk
 
-`func (o *AWSLoginRequest) GetNonceOk() (*string, bool)`
+`func (o *AwsLoginRequest) GetNonceOk() (*string, bool)`
 
 GetNonceOk returns a tuple with the Nonce field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNonce
 
-`func (o *AWSLoginRequest) SetNonce(v string)`
+`func (o *AwsLoginRequest) SetNonce(v string)`
 
 SetNonce sets Nonce field to given value.
 
 
 ### HasNonce
 
-`func (o *AWSLoginRequest) HasNonce() bool`
+`func (o *AwsLoginRequest) HasNonce() bool`
 
 HasNonce returns a boolean if a field has been set.
 
@@ -214,27 +214,27 @@ HasNonce returns a boolean if a field has been set.
 
 ### GetPkcs7
 
-`func (o *AWSLoginRequest) GetPkcs7() string`
+`func (o *AwsLoginRequest) GetPkcs7() string`
 
 GetPkcs7 returns the Pkcs7 field if non-nil, zero value otherwise.
 
 ### GetPkcs7Ok
 
-`func (o *AWSLoginRequest) GetPkcs7Ok() (*string, bool)`
+`func (o *AwsLoginRequest) GetPkcs7Ok() (*string, bool)`
 
 GetPkcs7Ok returns a tuple with the Pkcs7 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPkcs7
 
-`func (o *AWSLoginRequest) SetPkcs7(v string)`
+`func (o *AwsLoginRequest) SetPkcs7(v string)`
 
 SetPkcs7 sets Pkcs7 field to given value.
 
 
 ### HasPkcs7
 
-`func (o *AWSLoginRequest) HasPkcs7() bool`
+`func (o *AwsLoginRequest) HasPkcs7() bool`
 
 HasPkcs7 returns a boolean if a field has been set.
 
@@ -243,27 +243,27 @@ HasPkcs7 returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *AWSLoginRequest) GetRole() string`
+`func (o *AwsLoginRequest) GetRole() string`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *AWSLoginRequest) GetRoleOk() (*string, bool)`
+`func (o *AwsLoginRequest) GetRoleOk() (*string, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *AWSLoginRequest) SetRole(v string)`
+`func (o *AwsLoginRequest) SetRole(v string)`
 
 SetRole sets Role field to given value.
 
 
 ### HasRole
 
-`func (o *AWSLoginRequest) HasRole() bool`
+`func (o *AwsLoginRequest) HasRole() bool`
 
 HasRole returns a boolean if a field has been set.
 
@@ -272,27 +272,27 @@ HasRole returns a boolean if a field has been set.
 
 ### GetSignature
 
-`func (o *AWSLoginRequest) GetSignature() string`
+`func (o *AwsLoginRequest) GetSignature() string`
 
 GetSignature returns the Signature field if non-nil, zero value otherwise.
 
 ### GetSignatureOk
 
-`func (o *AWSLoginRequest) GetSignatureOk() (*string, bool)`
+`func (o *AwsLoginRequest) GetSignatureOk() (*string, bool)`
 
 GetSignatureOk returns a tuple with the Signature field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSignature
 
-`func (o *AWSLoginRequest) SetSignature(v string)`
+`func (o *AwsLoginRequest) SetSignature(v string)`
 
 SetSignature sets Signature field to given value.
 
 
 ### HasSignature
 
-`func (o *AWSLoginRequest) HasSignature() bool`
+`func (o *AwsLoginRequest) HasSignature() bool`
 
 HasSignature returns a boolean if a field has been set.
 

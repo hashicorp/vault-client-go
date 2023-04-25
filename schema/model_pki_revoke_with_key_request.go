@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// PKIRevokeWithKeyRequest struct for PKIRevokeWithKeyRequest
-type PKIRevokeWithKeyRequest struct {
+// PkiRevokeWithKeyRequest struct for PkiRevokeWithKeyRequest
+type PkiRevokeWithKeyRequest struct {
 	// Certificate to revoke in PEM format; must be signed by an issuer in this mount.
 	Certificate string `json:"certificate"`
 
@@ -21,16 +21,16 @@ type PKIRevokeWithKeyRequest struct {
 	SerialNumber string `json:"serial_number"`
 }
 
-// NewPKIRevokeWithKeyRequestWithDefaults instantiates a new PKIRevokeWithKeyRequest object
+// NewPkiRevokeWithKeyRequestWithDefaults instantiates a new PkiRevokeWithKeyRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewPKIRevokeWithKeyRequestWithDefaults() *PKIRevokeWithKeyRequest {
-	var this PKIRevokeWithKeyRequest
+func NewPkiRevokeWithKeyRequestWithDefaults() *PkiRevokeWithKeyRequest {
+	var this PkiRevokeWithKeyRequest
 
 	return &this
 }
 
-func (o PKIRevokeWithKeyRequest) MarshalJSON() ([]byte, error) {
+func (o PkiRevokeWithKeyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["certificate"] = o.Certificate

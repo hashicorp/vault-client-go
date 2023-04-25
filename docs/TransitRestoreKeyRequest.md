@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Backup** | Pointer to **string** | Backed up key data to be restored. This should be the output from the &#x27;backup/&#x27; endpoint. | [optional] 
 **Force** | Pointer to **bool** | If set and a key by the given name exists, force the restore operation and override the key. | [optional] [default to false]
+**Name** | Pointer to **string** | If set, this will be the name of the restored key. | [optional] 
 
 
 
@@ -85,6 +86,35 @@ SetForce sets Force field to given value.
 `func (o *TransitRestoreKeyRequest) HasForce() bool`
 
 HasForce returns a boolean if a field has been set.
+
+
+
+
+### GetName
+
+`func (o *TransitRestoreKeyRequest) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *TransitRestoreKeyRequest) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *TransitRestoreKeyRequest) SetName(v string)`
+
+SetName sets Name field to given value.
+
+
+### HasName
+
+`func (o *TransitRestoreKeyRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 
 

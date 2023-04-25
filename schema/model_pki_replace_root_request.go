@@ -9,24 +9,24 @@ import (
 	"encoding/json"
 )
 
-// PKIReplaceRootRequest struct for PKIReplaceRootRequest
-type PKIReplaceRootRequest struct {
+// PkiReplaceRootRequest struct for PkiReplaceRootRequest
+type PkiReplaceRootRequest struct {
 	// Reference (name or identifier) to the default issuer.
 	Default string `json:"default"`
 }
 
-// NewPKIReplaceRootRequestWithDefaults instantiates a new PKIReplaceRootRequest object
+// NewPkiReplaceRootRequestWithDefaults instantiates a new PkiReplaceRootRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewPKIReplaceRootRequestWithDefaults() *PKIReplaceRootRequest {
-	var this PKIReplaceRootRequest
+func NewPkiReplaceRootRequestWithDefaults() *PkiReplaceRootRequest {
+	var this PkiReplaceRootRequest
 
 	this.Default = "next"
 
 	return &this
 }
 
-func (o PKIReplaceRootRequest) MarshalJSON() ([]byte, error) {
+func (o PkiReplaceRootRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["default"] = o.Default

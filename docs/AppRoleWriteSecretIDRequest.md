@@ -1,4 +1,4 @@
-# AppRoleWriteSecretIDRequest
+# AppRoleWriteSecretIdRequest
 
 
 ## Properties
@@ -16,47 +16,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewAppRoleWriteSecretIDRequest
+### NewAppRoleWriteSecretIdRequest
 
-`func NewAppRoleWriteSecretIDRequest() *AppRoleWriteSecretIDRequest`
+`func NewAppRoleWriteSecretIdRequest() *AppRoleWriteSecretIdRequest`
 
-NewAppRoleWriteSecretIDRequest instantiates a new AppRoleWriteSecretIDRequest object
+NewAppRoleWriteSecretIdRequest instantiates a new AppRoleWriteSecretIdRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAppRoleWriteSecretIDRequestWithDefaults
+### NewAppRoleWriteSecretIdRequestWithDefaults
 
-`func NewAppRoleWriteSecretIDRequestWithDefaults() *AppRoleWriteSecretIDRequest`
+`func NewAppRoleWriteSecretIdRequestWithDefaults() *AppRoleWriteSecretIdRequest`
 
-NewAppRoleWriteSecretIDRequestWithDefaults instantiates a new AppRoleWriteSecretIDRequest object
+NewAppRoleWriteSecretIdRequestWithDefaults instantiates a new AppRoleWriteSecretIdRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetCidrList
 
-`func (o *AppRoleWriteSecretIDRequest) GetCidrList() []string`
+`func (o *AppRoleWriteSecretIdRequest) GetCidrList() []string`
 
 GetCidrList returns the CidrList field if non-nil, zero value otherwise.
 
 ### GetCidrListOk
 
-`func (o *AppRoleWriteSecretIDRequest) GetCidrListOk() (*[]string, bool)`
+`func (o *AppRoleWriteSecretIdRequest) GetCidrListOk() (*[]string, bool)`
 
 GetCidrListOk returns a tuple with the CidrList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCidrList
 
-`func (o *AppRoleWriteSecretIDRequest) SetCidrList(v []string)`
+`func (o *AppRoleWriteSecretIdRequest) SetCidrList(v []string)`
 
 SetCidrList sets CidrList field to given value.
 
 
 ### HasCidrList
 
-`func (o *AppRoleWriteSecretIDRequest) HasCidrList() bool`
+`func (o *AppRoleWriteSecretIdRequest) HasCidrList() bool`
 
 HasCidrList returns a boolean if a field has been set.
 
@@ -65,27 +65,27 @@ HasCidrList returns a boolean if a field has been set.
 
 ### GetMetadata
 
-`func (o *AppRoleWriteSecretIDRequest) GetMetadata() string`
+`func (o *AppRoleWriteSecretIdRequest) GetMetadata() string`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *AppRoleWriteSecretIDRequest) GetMetadataOk() (*string, bool)`
+`func (o *AppRoleWriteSecretIdRequest) GetMetadataOk() (*string, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *AppRoleWriteSecretIDRequest) SetMetadata(v string)`
+`func (o *AppRoleWriteSecretIdRequest) SetMetadata(v string)`
 
 SetMetadata sets Metadata field to given value.
 
 
 ### HasMetadata
 
-`func (o *AppRoleWriteSecretIDRequest) HasMetadata() bool`
+`func (o *AppRoleWriteSecretIdRequest) HasMetadata() bool`
 
 HasMetadata returns a boolean if a field has been set.
 
@@ -94,27 +94,27 @@ HasMetadata returns a boolean if a field has been set.
 
 ### GetNumUses
 
-`func (o *AppRoleWriteSecretIDRequest) GetNumUses() int32`
+`func (o *AppRoleWriteSecretIdRequest) GetNumUses() int32`
 
 GetNumUses returns the NumUses field if non-nil, zero value otherwise.
 
 ### GetNumUsesOk
 
-`func (o *AppRoleWriteSecretIDRequest) GetNumUsesOk() (*int32, bool)`
+`func (o *AppRoleWriteSecretIdRequest) GetNumUsesOk() (*int32, bool)`
 
 GetNumUsesOk returns a tuple with the NumUses field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumUses
 
-`func (o *AppRoleWriteSecretIDRequest) SetNumUses(v int32)`
+`func (o *AppRoleWriteSecretIdRequest) SetNumUses(v int32)`
 
 SetNumUses sets NumUses field to given value.
 
 
 ### HasNumUses
 
-`func (o *AppRoleWriteSecretIDRequest) HasNumUses() bool`
+`func (o *AppRoleWriteSecretIdRequest) HasNumUses() bool`
 
 HasNumUses returns a boolean if a field has been set.
 
@@ -123,27 +123,27 @@ HasNumUses returns a boolean if a field has been set.
 
 ### GetTokenBoundCidrs
 
-`func (o *AppRoleWriteSecretIDRequest) GetTokenBoundCidrs() []string`
+`func (o *AppRoleWriteSecretIdRequest) GetTokenBoundCidrs() []string`
 
 GetTokenBoundCidrs returns the TokenBoundCidrs field if non-nil, zero value otherwise.
 
 ### GetTokenBoundCidrsOk
 
-`func (o *AppRoleWriteSecretIDRequest) GetTokenBoundCidrsOk() (*[]string, bool)`
+`func (o *AppRoleWriteSecretIdRequest) GetTokenBoundCidrsOk() (*[]string, bool)`
 
 GetTokenBoundCidrsOk returns a tuple with the TokenBoundCidrs field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenBoundCidrs
 
-`func (o *AppRoleWriteSecretIDRequest) SetTokenBoundCidrs(v []string)`
+`func (o *AppRoleWriteSecretIdRequest) SetTokenBoundCidrs(v []string)`
 
 SetTokenBoundCidrs sets TokenBoundCidrs field to given value.
 
 
 ### HasTokenBoundCidrs
 
-`func (o *AppRoleWriteSecretIDRequest) HasTokenBoundCidrs() bool`
+`func (o *AppRoleWriteSecretIdRequest) HasTokenBoundCidrs() bool`
 
 HasTokenBoundCidrs returns a boolean if a field has been set.
 
@@ -152,27 +152,27 @@ HasTokenBoundCidrs returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *AppRoleWriteSecretIDRequest) GetTtl() int32`
+`func (o *AppRoleWriteSecretIdRequest) GetTtl() int32`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *AppRoleWriteSecretIDRequest) GetTtlOk() (*int32, bool)`
+`func (o *AppRoleWriteSecretIdRequest) GetTtlOk() (*int32, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *AppRoleWriteSecretIDRequest) SetTtl(v int32)`
+`func (o *AppRoleWriteSecretIdRequest) SetTtl(v int32)`
 
 SetTtl sets Ttl field to given value.
 
 
 ### HasTtl
 
-`func (o *AppRoleWriteSecretIDRequest) HasTtl() bool`
+`func (o *AppRoleWriteSecretIdRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
 

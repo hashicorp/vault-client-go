@@ -14,6 +14,9 @@ type TransitDecryptRequest struct {
 	// When using an AEAD cipher mode, such as AES-GCM, this parameter allows passing associated data (AD/AAD) into the encryption function; this data must be passed on subsequent decryption requests but can be transited in plaintext. On successful decryption, both the ciphertext and the associated data are attested not to have been tampered with.
 	AssociatedData string `json:"associated_data"`
 
+	// Specifies a list of items to be decrypted in a single batch. When this parameter is set, if the parameters 'ciphertext', 'context' and 'nonce' are also set, they will be ignored. Any batch output will preserve the order of the batch input.
+	BatchInput []map[string]interface{} `json:"batch_input"`
+
 	// The ciphertext to decrypt, provided as returned by encrypt.
 	Ciphertext string `json:"ciphertext"`
 
@@ -40,6 +43,7 @@ func (o TransitDecryptRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["associated_data"] = o.AssociatedData
+	toSerialize["batch_input"] = o.BatchInput
 	toSerialize["ciphertext"] = o.Ciphertext
 	toSerialize["context"] = o.Context
 	toSerialize["nonce"] = o.Nonce

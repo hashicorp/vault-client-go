@@ -16,6 +16,9 @@ type TransitRestoreKeyRequest struct {
 
 	// If set and a key by the given name exists, force the restore operation and override the key.
 	Force bool `json:"force"`
+
+	// If set, this will be the name of the restored key.
+	Name string `json:"name"`
 }
 
 // NewTransitRestoreKeyRequestWithDefaults instantiates a new TransitRestoreKeyRequest object
@@ -34,6 +37,7 @@ func (o TransitRestoreKeyRequest) MarshalJSON() ([]byte, error) {
 
 	toSerialize["backup"] = o.Backup
 	toSerialize["force"] = o.Force
+	toSerialize["name"] = o.Name
 
 	return json.Marshal(toSerialize)
 }

@@ -1,4 +1,4 @@
-# AppRoleWriteBindSecretIDRequest
+# AppRoleWriteBindSecretIdRequest
 
 
 ## Properties
@@ -12,47 +12,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewAppRoleWriteBindSecretIDRequest
+### NewAppRoleWriteBindSecretIdRequest
 
-`func NewAppRoleWriteBindSecretIDRequest() *AppRoleWriteBindSecretIDRequest`
+`func NewAppRoleWriteBindSecretIdRequest() *AppRoleWriteBindSecretIdRequest`
 
-NewAppRoleWriteBindSecretIDRequest instantiates a new AppRoleWriteBindSecretIDRequest object
+NewAppRoleWriteBindSecretIdRequest instantiates a new AppRoleWriteBindSecretIdRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAppRoleWriteBindSecretIDRequestWithDefaults
+### NewAppRoleWriteBindSecretIdRequestWithDefaults
 
-`func NewAppRoleWriteBindSecretIDRequestWithDefaults() *AppRoleWriteBindSecretIDRequest`
+`func NewAppRoleWriteBindSecretIdRequestWithDefaults() *AppRoleWriteBindSecretIdRequest`
 
-NewAppRoleWriteBindSecretIDRequestWithDefaults instantiates a new AppRoleWriteBindSecretIDRequest object
+NewAppRoleWriteBindSecretIdRequestWithDefaults instantiates a new AppRoleWriteBindSecretIdRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetBindSecretId
 
-`func (o *AppRoleWriteBindSecretIDRequest) GetBindSecretId() bool`
+`func (o *AppRoleWriteBindSecretIdRequest) GetBindSecretId() bool`
 
 GetBindSecretId returns the BindSecretId field if non-nil, zero value otherwise.
 
 ### GetBindSecretIdOk
 
-`func (o *AppRoleWriteBindSecretIDRequest) GetBindSecretIdOk() (*bool, bool)`
+`func (o *AppRoleWriteBindSecretIdRequest) GetBindSecretIdOk() (*bool, bool)`
 
 GetBindSecretIdOk returns a tuple with the BindSecretId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBindSecretId
 
-`func (o *AppRoleWriteBindSecretIDRequest) SetBindSecretId(v bool)`
+`func (o *AppRoleWriteBindSecretIdRequest) SetBindSecretId(v bool)`
 
 SetBindSecretId sets BindSecretId field to given value.
 
 
 ### HasBindSecretId
 
-`func (o *AppRoleWriteBindSecretIDRequest) HasBindSecretId() bool`
+`func (o *AppRoleWriteBindSecretIdRequest) HasBindSecretId() bool`
 
 HasBindSecretId returns a boolean if a field has been set.
 

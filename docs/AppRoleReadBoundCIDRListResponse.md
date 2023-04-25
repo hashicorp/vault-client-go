@@ -1,4 +1,4 @@
-# AppRoleReadBoundCIDRListResponse
+# AppRoleReadBoundCidrListResponse
 
 
 ## Properties
@@ -12,47 +12,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewAppRoleReadBoundCIDRListResponse
+### NewAppRoleReadBoundCidrListResponse
 
-`func NewAppRoleReadBoundCIDRListResponse() *AppRoleReadBoundCIDRListResponse`
+`func NewAppRoleReadBoundCidrListResponse() *AppRoleReadBoundCidrListResponse`
 
-NewAppRoleReadBoundCIDRListResponse instantiates a new AppRoleReadBoundCIDRListResponse object
+NewAppRoleReadBoundCidrListResponse instantiates a new AppRoleReadBoundCidrListResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAppRoleReadBoundCIDRListResponseWithDefaults
+### NewAppRoleReadBoundCidrListResponseWithDefaults
 
-`func NewAppRoleReadBoundCIDRListResponseWithDefaults() *AppRoleReadBoundCIDRListResponse`
+`func NewAppRoleReadBoundCidrListResponseWithDefaults() *AppRoleReadBoundCidrListResponse`
 
-NewAppRoleReadBoundCIDRListResponseWithDefaults instantiates a new AppRoleReadBoundCIDRListResponse object
+NewAppRoleReadBoundCidrListResponseWithDefaults instantiates a new AppRoleReadBoundCidrListResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetBoundCidrList
 
-`func (o *AppRoleReadBoundCIDRListResponse) GetBoundCidrList() []string`
+`func (o *AppRoleReadBoundCidrListResponse) GetBoundCidrList() []string`
 
 GetBoundCidrList returns the BoundCidrList field if non-nil, zero value otherwise.
 
 ### GetBoundCidrListOk
 
-`func (o *AppRoleReadBoundCIDRListResponse) GetBoundCidrListOk() (*[]string, bool)`
+`func (o *AppRoleReadBoundCidrListResponse) GetBoundCidrListOk() (*[]string, bool)`
 
 GetBoundCidrListOk returns a tuple with the BoundCidrList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBoundCidrList
 
-`func (o *AppRoleReadBoundCIDRListResponse) SetBoundCidrList(v []string)`
+`func (o *AppRoleReadBoundCidrListResponse) SetBoundCidrList(v []string)`
 
 SetBoundCidrList sets BoundCidrList field to given value.
 
 
 ### HasBoundCidrList
 
-`func (o *AppRoleReadBoundCIDRListResponse) HasBoundCidrList() bool`
+`func (o *AppRoleReadBoundCidrListResponse) HasBoundCidrList() bool`
 
 HasBoundCidrList returns a boolean if a field has been set.
 

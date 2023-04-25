@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// OIDCWriteProviderRequest struct for OIDCWriteProviderRequest
-type OIDCWriteProviderRequest struct {
+// OidcWriteProviderRequest struct for OidcWriteProviderRequest
+type OidcWriteProviderRequest struct {
 	// The client IDs that are permitted to use the provider
 	AllowedClientIds []string `json:"allowed_client_ids"`
 
@@ -21,16 +21,16 @@ type OIDCWriteProviderRequest struct {
 	ScopesSupported []string `json:"scopes_supported"`
 }
 
-// NewOIDCWriteProviderRequestWithDefaults instantiates a new OIDCWriteProviderRequest object
+// NewOidcWriteProviderRequestWithDefaults instantiates a new OidcWriteProviderRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewOIDCWriteProviderRequestWithDefaults() *OIDCWriteProviderRequest {
-	var this OIDCWriteProviderRequest
+func NewOidcWriteProviderRequestWithDefaults() *OidcWriteProviderRequest {
+	var this OidcWriteProviderRequest
 
 	return &this
 }
 
-func (o OIDCWriteProviderRequest) MarshalJSON() ([]byte, error) {
+func (o OidcWriteProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["allowed_client_ids"] = o.AllowedClientIds

@@ -1,4 +1,4 @@
-# OIDCWriteKeyRequest
+# OidcWriteKeyRequest
 
 
 ## Properties
@@ -15,47 +15,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewOIDCWriteKeyRequest
+### NewOidcWriteKeyRequest
 
-`func NewOIDCWriteKeyRequest() *OIDCWriteKeyRequest`
+`func NewOidcWriteKeyRequest() *OidcWriteKeyRequest`
 
-NewOIDCWriteKeyRequest instantiates a new OIDCWriteKeyRequest object
+NewOidcWriteKeyRequest instantiates a new OidcWriteKeyRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewOIDCWriteKeyRequestWithDefaults
+### NewOidcWriteKeyRequestWithDefaults
 
-`func NewOIDCWriteKeyRequestWithDefaults() *OIDCWriteKeyRequest`
+`func NewOidcWriteKeyRequestWithDefaults() *OidcWriteKeyRequest`
 
-NewOIDCWriteKeyRequestWithDefaults instantiates a new OIDCWriteKeyRequest object
+NewOidcWriteKeyRequestWithDefaults instantiates a new OidcWriteKeyRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetAlgorithm
 
-`func (o *OIDCWriteKeyRequest) GetAlgorithm() string`
+`func (o *OidcWriteKeyRequest) GetAlgorithm() string`
 
 GetAlgorithm returns the Algorithm field if non-nil, zero value otherwise.
 
 ### GetAlgorithmOk
 
-`func (o *OIDCWriteKeyRequest) GetAlgorithmOk() (*string, bool)`
+`func (o *OidcWriteKeyRequest) GetAlgorithmOk() (*string, bool)`
 
 GetAlgorithmOk returns a tuple with the Algorithm field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAlgorithm
 
-`func (o *OIDCWriteKeyRequest) SetAlgorithm(v string)`
+`func (o *OidcWriteKeyRequest) SetAlgorithm(v string)`
 
 SetAlgorithm sets Algorithm field to given value.
 
 
 ### HasAlgorithm
 
-`func (o *OIDCWriteKeyRequest) HasAlgorithm() bool`
+`func (o *OidcWriteKeyRequest) HasAlgorithm() bool`
 
 HasAlgorithm returns a boolean if a field has been set.
 
@@ -64,27 +64,27 @@ HasAlgorithm returns a boolean if a field has been set.
 
 ### GetAllowedClientIds
 
-`func (o *OIDCWriteKeyRequest) GetAllowedClientIds() []string`
+`func (o *OidcWriteKeyRequest) GetAllowedClientIds() []string`
 
 GetAllowedClientIds returns the AllowedClientIds field if non-nil, zero value otherwise.
 
 ### GetAllowedClientIdsOk
 
-`func (o *OIDCWriteKeyRequest) GetAllowedClientIdsOk() (*[]string, bool)`
+`func (o *OidcWriteKeyRequest) GetAllowedClientIdsOk() (*[]string, bool)`
 
 GetAllowedClientIdsOk returns a tuple with the AllowedClientIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowedClientIds
 
-`func (o *OIDCWriteKeyRequest) SetAllowedClientIds(v []string)`
+`func (o *OidcWriteKeyRequest) SetAllowedClientIds(v []string)`
 
 SetAllowedClientIds sets AllowedClientIds field to given value.
 
 
 ### HasAllowedClientIds
 
-`func (o *OIDCWriteKeyRequest) HasAllowedClientIds() bool`
+`func (o *OidcWriteKeyRequest) HasAllowedClientIds() bool`
 
 HasAllowedClientIds returns a boolean if a field has been set.
 
@@ -93,27 +93,27 @@ HasAllowedClientIds returns a boolean if a field has been set.
 
 ### GetRotationPeriod
 
-`func (o *OIDCWriteKeyRequest) GetRotationPeriod() int32`
+`func (o *OidcWriteKeyRequest) GetRotationPeriod() int32`
 
 GetRotationPeriod returns the RotationPeriod field if non-nil, zero value otherwise.
 
 ### GetRotationPeriodOk
 
-`func (o *OIDCWriteKeyRequest) GetRotationPeriodOk() (*int32, bool)`
+`func (o *OidcWriteKeyRequest) GetRotationPeriodOk() (*int32, bool)`
 
 GetRotationPeriodOk returns a tuple with the RotationPeriod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRotationPeriod
 
-`func (o *OIDCWriteKeyRequest) SetRotationPeriod(v int32)`
+`func (o *OidcWriteKeyRequest) SetRotationPeriod(v int32)`
 
 SetRotationPeriod sets RotationPeriod field to given value.
 
 
 ### HasRotationPeriod
 
-`func (o *OIDCWriteKeyRequest) HasRotationPeriod() bool`
+`func (o *OidcWriteKeyRequest) HasRotationPeriod() bool`
 
 HasRotationPeriod returns a boolean if a field has been set.
 
@@ -122,27 +122,27 @@ HasRotationPeriod returns a boolean if a field has been set.
 
 ### GetVerificationTtl
 
-`func (o *OIDCWriteKeyRequest) GetVerificationTtl() int32`
+`func (o *OidcWriteKeyRequest) GetVerificationTtl() int32`
 
 GetVerificationTtl returns the VerificationTtl field if non-nil, zero value otherwise.
 
 ### GetVerificationTtlOk
 
-`func (o *OIDCWriteKeyRequest) GetVerificationTtlOk() (*int32, bool)`
+`func (o *OidcWriteKeyRequest) GetVerificationTtlOk() (*int32, bool)`
 
 GetVerificationTtlOk returns a tuple with the VerificationTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVerificationTtl
 
-`func (o *OIDCWriteKeyRequest) SetVerificationTtl(v int32)`
+`func (o *OidcWriteKeyRequest) SetVerificationTtl(v int32)`
 
 SetVerificationTtl sets VerificationTtl field to given value.
 
 
 ### HasVerificationTtl
 
-`func (o *OIDCWriteKeyRequest) HasVerificationTtl() bool`
+`func (o *OidcWriteKeyRequest) HasVerificationTtl() bool`
 
 HasVerificationTtl returns a boolean if a field has been set.
 

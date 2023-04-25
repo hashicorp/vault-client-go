@@ -14,6 +14,9 @@ type TransitSignRequest struct {
 	// Deprecated: use \"hash_algorithm\" instead.
 	Algorithm string `json:"algorithm"`
 
+	// Specifies a list of items for processing. When this parameter is set, any supplied 'input' or 'context' parameters will be ignored. Responses are returned in the 'batch_results' array component of the 'data' element of the response. Any batch output will preserve the order of the batch input
+	BatchInput []map[string]interface{} `json:"batch_input"`
+
 	// Base64 encoded context for key derivation. Required if key derivation is enabled; currently only available with ed25519 keys.
 	Context string `json:"context"`
 
@@ -60,6 +63,7 @@ func (o TransitSignRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["algorithm"] = o.Algorithm
+	toSerialize["batch_input"] = o.BatchInput
 	toSerialize["context"] = o.Context
 	toSerialize["hash_algorithm"] = o.HashAlgorithm
 	toSerialize["input"] = o.Input

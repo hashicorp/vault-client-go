@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// OIDCWriteAssignmentRequest struct for OIDCWriteAssignmentRequest
-type OIDCWriteAssignmentRequest struct {
+// OidcWriteAssignmentRequest struct for OidcWriteAssignmentRequest
+type OidcWriteAssignmentRequest struct {
 	// Comma separated string or array of identity entity IDs
 	EntityIds []string `json:"entity_ids"`
 
@@ -18,16 +18,16 @@ type OIDCWriteAssignmentRequest struct {
 	GroupIds []string `json:"group_ids"`
 }
 
-// NewOIDCWriteAssignmentRequestWithDefaults instantiates a new OIDCWriteAssignmentRequest object
+// NewOidcWriteAssignmentRequestWithDefaults instantiates a new OidcWriteAssignmentRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewOIDCWriteAssignmentRequestWithDefaults() *OIDCWriteAssignmentRequest {
-	var this OIDCWriteAssignmentRequest
+func NewOidcWriteAssignmentRequestWithDefaults() *OidcWriteAssignmentRequest {
+	var this OidcWriteAssignmentRequest
 
 	return &this
 }
 
-func (o OIDCWriteAssignmentRequest) MarshalJSON() ([]byte, error) {
+func (o OidcWriteAssignmentRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["entity_ids"] = o.EntityIds

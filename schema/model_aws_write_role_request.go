@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// AWSWriteRoleRequest struct for AWSWriteRoleRequest
-type AWSWriteRoleRequest struct {
+// AwsWriteRoleRequest struct for AwsWriteRoleRequest
+type AwsWriteRoleRequest struct {
 	// Use role_arns or policy_arns instead.
 	// Deprecated
 	Arn string `json:"arn"`
@@ -50,18 +50,18 @@ type AWSWriteRoleRequest struct {
 	UserPath string `json:"user_path"`
 }
 
-// NewAWSWriteRoleRequestWithDefaults instantiates a new AWSWriteRoleRequest object
+// NewAwsWriteRoleRequestWithDefaults instantiates a new AwsWriteRoleRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAWSWriteRoleRequestWithDefaults() *AWSWriteRoleRequest {
-	var this AWSWriteRoleRequest
+func NewAwsWriteRoleRequestWithDefaults() *AwsWriteRoleRequest {
+	var this AwsWriteRoleRequest
 
 	this.UserPath = "/"
 
 	return &this
 }
 
-func (o AWSWriteRoleRequest) MarshalJSON() ([]byte, error) {
+func (o AwsWriteRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["arn"] = o.Arn

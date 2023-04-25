@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// OIDCWriteScopeRequest struct for OIDCWriteScopeRequest
-type OIDCWriteScopeRequest struct {
+// OidcWriteScopeRequest struct for OidcWriteScopeRequest
+type OidcWriteScopeRequest struct {
 	// The description of the scope
 	Description string `json:"description"`
 
@@ -18,16 +18,16 @@ type OIDCWriteScopeRequest struct {
 	Template string `json:"template"`
 }
 
-// NewOIDCWriteScopeRequestWithDefaults instantiates a new OIDCWriteScopeRequest object
+// NewOidcWriteScopeRequestWithDefaults instantiates a new OidcWriteScopeRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewOIDCWriteScopeRequestWithDefaults() *OIDCWriteScopeRequest {
-	var this OIDCWriteScopeRequest
+func NewOidcWriteScopeRequestWithDefaults() *OidcWriteScopeRequest {
+	var this OidcWriteScopeRequest
 
 	return &this
 }
 
-func (o OIDCWriteScopeRequest) MarshalJSON() ([]byte, error) {
+func (o OidcWriteScopeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["description"] = o.Description

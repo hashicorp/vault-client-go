@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// LDAPWriteStaticRoleRequest struct for LDAPWriteStaticRoleRequest
-type LDAPWriteStaticRoleRequest struct {
+// LdapWriteStaticRoleRequest struct for LdapWriteStaticRoleRequest
+type LdapWriteStaticRoleRequest struct {
 	// The distinguished name of the entry to manage.
 	Dn string `json:"dn"`
 
@@ -21,16 +21,16 @@ type LDAPWriteStaticRoleRequest struct {
 	Username string `json:"username"`
 }
 
-// NewLDAPWriteStaticRoleRequestWithDefaults instantiates a new LDAPWriteStaticRoleRequest object
+// NewLdapWriteStaticRoleRequestWithDefaults instantiates a new LdapWriteStaticRoleRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewLDAPWriteStaticRoleRequestWithDefaults() *LDAPWriteStaticRoleRequest {
-	var this LDAPWriteStaticRoleRequest
+func NewLdapWriteStaticRoleRequestWithDefaults() *LdapWriteStaticRoleRequest {
+	var this LdapWriteStaticRoleRequest
 
 	return &this
 }
 
-func (o LDAPWriteStaticRoleRequest) MarshalJSON() ([]byte, error) {
+func (o LdapWriteStaticRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["dn"] = o.Dn

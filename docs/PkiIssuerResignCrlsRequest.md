@@ -1,4 +1,4 @@
-# PKIIssuerResignCRLsRequest
+# PkiIssuerResignCrlsRequest
 
 
 ## Properties
@@ -16,47 +16,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewPKIIssuerResignCRLsRequest
+### NewPkiIssuerResignCrlsRequest
 
-`func NewPKIIssuerResignCRLsRequest() *PKIIssuerResignCRLsRequest`
+`func NewPkiIssuerResignCrlsRequest() *PkiIssuerResignCrlsRequest`
 
-NewPKIIssuerResignCRLsRequest instantiates a new PKIIssuerResignCRLsRequest object
+NewPkiIssuerResignCrlsRequest instantiates a new PkiIssuerResignCrlsRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewPKIIssuerResignCRLsRequestWithDefaults
+### NewPkiIssuerResignCrlsRequestWithDefaults
 
-`func NewPKIIssuerResignCRLsRequestWithDefaults() *PKIIssuerResignCRLsRequest`
+`func NewPkiIssuerResignCrlsRequestWithDefaults() *PkiIssuerResignCrlsRequest`
 
-NewPKIIssuerResignCRLsRequestWithDefaults instantiates a new PKIIssuerResignCRLsRequest object
+NewPkiIssuerResignCrlsRequestWithDefaults instantiates a new PkiIssuerResignCrlsRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetCrlNumber
 
-`func (o *PKIIssuerResignCRLsRequest) GetCrlNumber() int32`
+`func (o *PkiIssuerResignCrlsRequest) GetCrlNumber() int32`
 
 GetCrlNumber returns the CrlNumber field if non-nil, zero value otherwise.
 
 ### GetCrlNumberOk
 
-`func (o *PKIIssuerResignCRLsRequest) GetCrlNumberOk() (*int32, bool)`
+`func (o *PkiIssuerResignCrlsRequest) GetCrlNumberOk() (*int32, bool)`
 
 GetCrlNumberOk returns a tuple with the CrlNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCrlNumber
 
-`func (o *PKIIssuerResignCRLsRequest) SetCrlNumber(v int32)`
+`func (o *PkiIssuerResignCrlsRequest) SetCrlNumber(v int32)`
 
 SetCrlNumber sets CrlNumber field to given value.
 
 
 ### HasCrlNumber
 
-`func (o *PKIIssuerResignCRLsRequest) HasCrlNumber() bool`
+`func (o *PkiIssuerResignCrlsRequest) HasCrlNumber() bool`
 
 HasCrlNumber returns a boolean if a field has been set.
 
@@ -65,27 +65,27 @@ HasCrlNumber returns a boolean if a field has been set.
 
 ### GetCrls
 
-`func (o *PKIIssuerResignCRLsRequest) GetCrls() []string`
+`func (o *PkiIssuerResignCrlsRequest) GetCrls() []string`
 
 GetCrls returns the Crls field if non-nil, zero value otherwise.
 
 ### GetCrlsOk
 
-`func (o *PKIIssuerResignCRLsRequest) GetCrlsOk() (*[]string, bool)`
+`func (o *PkiIssuerResignCrlsRequest) GetCrlsOk() (*[]string, bool)`
 
 GetCrlsOk returns a tuple with the Crls field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCrls
 
-`func (o *PKIIssuerResignCRLsRequest) SetCrls(v []string)`
+`func (o *PkiIssuerResignCrlsRequest) SetCrls(v []string)`
 
 SetCrls sets Crls field to given value.
 
 
 ### HasCrls
 
-`func (o *PKIIssuerResignCRLsRequest) HasCrls() bool`
+`func (o *PkiIssuerResignCrlsRequest) HasCrls() bool`
 
 HasCrls returns a boolean if a field has been set.
 
@@ -94,27 +94,27 @@ HasCrls returns a boolean if a field has been set.
 
 ### GetDeltaCrlBaseNumber
 
-`func (o *PKIIssuerResignCRLsRequest) GetDeltaCrlBaseNumber() int32`
+`func (o *PkiIssuerResignCrlsRequest) GetDeltaCrlBaseNumber() int32`
 
 GetDeltaCrlBaseNumber returns the DeltaCrlBaseNumber field if non-nil, zero value otherwise.
 
 ### GetDeltaCrlBaseNumberOk
 
-`func (o *PKIIssuerResignCRLsRequest) GetDeltaCrlBaseNumberOk() (*int32, bool)`
+`func (o *PkiIssuerResignCrlsRequest) GetDeltaCrlBaseNumberOk() (*int32, bool)`
 
 GetDeltaCrlBaseNumberOk returns a tuple with the DeltaCrlBaseNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeltaCrlBaseNumber
 
-`func (o *PKIIssuerResignCRLsRequest) SetDeltaCrlBaseNumber(v int32)`
+`func (o *PkiIssuerResignCrlsRequest) SetDeltaCrlBaseNumber(v int32)`
 
 SetDeltaCrlBaseNumber sets DeltaCrlBaseNumber field to given value.
 
 
 ### HasDeltaCrlBaseNumber
 
-`func (o *PKIIssuerResignCRLsRequest) HasDeltaCrlBaseNumber() bool`
+`func (o *PkiIssuerResignCrlsRequest) HasDeltaCrlBaseNumber() bool`
 
 HasDeltaCrlBaseNumber returns a boolean if a field has been set.
 
@@ -123,27 +123,27 @@ HasDeltaCrlBaseNumber returns a boolean if a field has been set.
 
 ### GetFormat
 
-`func (o *PKIIssuerResignCRLsRequest) GetFormat() string`
+`func (o *PkiIssuerResignCrlsRequest) GetFormat() string`
 
 GetFormat returns the Format field if non-nil, zero value otherwise.
 
 ### GetFormatOk
 
-`func (o *PKIIssuerResignCRLsRequest) GetFormatOk() (*string, bool)`
+`func (o *PkiIssuerResignCrlsRequest) GetFormatOk() (*string, bool)`
 
 GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFormat
 
-`func (o *PKIIssuerResignCRLsRequest) SetFormat(v string)`
+`func (o *PkiIssuerResignCrlsRequest) SetFormat(v string)`
 
 SetFormat sets Format field to given value.
 
 
 ### HasFormat
 
-`func (o *PKIIssuerResignCRLsRequest) HasFormat() bool`
+`func (o *PkiIssuerResignCrlsRequest) HasFormat() bool`
 
 HasFormat returns a boolean if a field has been set.
 
@@ -152,27 +152,27 @@ HasFormat returns a boolean if a field has been set.
 
 ### GetNextUpdate
 
-`func (o *PKIIssuerResignCRLsRequest) GetNextUpdate() string`
+`func (o *PkiIssuerResignCrlsRequest) GetNextUpdate() string`
 
 GetNextUpdate returns the NextUpdate field if non-nil, zero value otherwise.
 
 ### GetNextUpdateOk
 
-`func (o *PKIIssuerResignCRLsRequest) GetNextUpdateOk() (*string, bool)`
+`func (o *PkiIssuerResignCrlsRequest) GetNextUpdateOk() (*string, bool)`
 
 GetNextUpdateOk returns a tuple with the NextUpdate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNextUpdate
 
-`func (o *PKIIssuerResignCRLsRequest) SetNextUpdate(v string)`
+`func (o *PkiIssuerResignCrlsRequest) SetNextUpdate(v string)`
 
 SetNextUpdate sets NextUpdate field to given value.
 
 
 ### HasNextUpdate
 
-`func (o *PKIIssuerResignCRLsRequest) HasNextUpdate() bool`
+`func (o *PkiIssuerResignCrlsRequest) HasNextUpdate() bool`
 
 HasNextUpdate returns a boolean if a field has been set.
 

@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// PKIIssuersGenerateIntermediateRequest struct for PKIIssuersGenerateIntermediateRequest
-type PKIIssuersGenerateIntermediateRequest struct {
+// PkiIssuersGenerateIntermediateRequest struct for PkiIssuersGenerateIntermediateRequest
+type PkiIssuersGenerateIntermediateRequest struct {
 	// Whether to add a Basic Constraints extension with CA: true. Only needed as a workaround in some compatibility scenarios with Active Directory Certificate Services.
 	AddBasicConstraints bool `json:"add_basic_constraints"`
 
@@ -93,11 +93,11 @@ type PKIIssuersGenerateIntermediateRequest struct {
 	UriSans []string `json:"uri_sans"`
 }
 
-// NewPKIIssuersGenerateIntermediateRequestWithDefaults instantiates a new PKIIssuersGenerateIntermediateRequest object
+// NewPkiIssuersGenerateIntermediateRequestWithDefaults instantiates a new PkiIssuersGenerateIntermediateRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewPKIIssuersGenerateIntermediateRequestWithDefaults() *PKIIssuersGenerateIntermediateRequest {
-	var this PKIIssuersGenerateIntermediateRequest
+func NewPkiIssuersGenerateIntermediateRequestWithDefaults() *PkiIssuersGenerateIntermediateRequest {
+	var this PkiIssuersGenerateIntermediateRequest
 
 	this.ExcludeCnFromSans = false
 	this.Format = "pem"
@@ -111,7 +111,7 @@ func NewPKIIssuersGenerateIntermediateRequestWithDefaults() *PKIIssuersGenerateI
 	return &this
 }
 
-func (o PKIIssuersGenerateIntermediateRequest) MarshalJSON() ([]byte, error) {
+func (o PkiIssuersGenerateIntermediateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["add_basic_constraints"] = o.AddBasicConstraints

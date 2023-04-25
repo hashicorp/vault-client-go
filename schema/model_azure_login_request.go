@@ -17,6 +17,9 @@ type AzureLoginRequest struct {
 	// The resource group from the instance.
 	ResourceGroupName string `json:"resource_group_name"`
 
+	// The fully qualified ID of the resource, includingthe resource name and resource type. Use the format, /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}. This value is ignored if vm_name or vmss_name is specified.
+	ResourceId string `json:"resource_id"`
+
 	// The token role.
 	Role string `json:"role"`
 
@@ -44,6 +47,7 @@ func (o AzureLoginRequest) MarshalJSON() ([]byte, error) {
 
 	toSerialize["jwt"] = o.Jwt
 	toSerialize["resource_group_name"] = o.ResourceGroupName
+	toSerialize["resource_id"] = o.ResourceId
 	toSerialize["role"] = o.Role
 	toSerialize["subscription_id"] = o.SubscriptionId
 	toSerialize["vm_name"] = o.VmName

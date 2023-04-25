@@ -1,4 +1,4 @@
-# GoogleCloudKMSWriteKeyRequest
+# GoogleCloudKmsWriteKeyRequest
 
 
 ## Properties
@@ -18,47 +18,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewGoogleCloudKMSWriteKeyRequest
+### NewGoogleCloudKmsWriteKeyRequest
 
-`func NewGoogleCloudKMSWriteKeyRequest() *GoogleCloudKMSWriteKeyRequest`
+`func NewGoogleCloudKmsWriteKeyRequest() *GoogleCloudKmsWriteKeyRequest`
 
-NewGoogleCloudKMSWriteKeyRequest instantiates a new GoogleCloudKMSWriteKeyRequest object
+NewGoogleCloudKmsWriteKeyRequest instantiates a new GoogleCloudKmsWriteKeyRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGoogleCloudKMSWriteKeyRequestWithDefaults
+### NewGoogleCloudKmsWriteKeyRequestWithDefaults
 
-`func NewGoogleCloudKMSWriteKeyRequestWithDefaults() *GoogleCloudKMSWriteKeyRequest`
+`func NewGoogleCloudKmsWriteKeyRequestWithDefaults() *GoogleCloudKmsWriteKeyRequest`
 
-NewGoogleCloudKMSWriteKeyRequestWithDefaults instantiates a new GoogleCloudKMSWriteKeyRequest object
+NewGoogleCloudKmsWriteKeyRequestWithDefaults instantiates a new GoogleCloudKmsWriteKeyRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetAlgorithm
 
-`func (o *GoogleCloudKMSWriteKeyRequest) GetAlgorithm() string`
+`func (o *GoogleCloudKmsWriteKeyRequest) GetAlgorithm() string`
 
 GetAlgorithm returns the Algorithm field if non-nil, zero value otherwise.
 
 ### GetAlgorithmOk
 
-`func (o *GoogleCloudKMSWriteKeyRequest) GetAlgorithmOk() (*string, bool)`
+`func (o *GoogleCloudKmsWriteKeyRequest) GetAlgorithmOk() (*string, bool)`
 
 GetAlgorithmOk returns a tuple with the Algorithm field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAlgorithm
 
-`func (o *GoogleCloudKMSWriteKeyRequest) SetAlgorithm(v string)`
+`func (o *GoogleCloudKmsWriteKeyRequest) SetAlgorithm(v string)`
 
 SetAlgorithm sets Algorithm field to given value.
 
 
 ### HasAlgorithm
 
-`func (o *GoogleCloudKMSWriteKeyRequest) HasAlgorithm() bool`
+`func (o *GoogleCloudKmsWriteKeyRequest) HasAlgorithm() bool`
 
 HasAlgorithm returns a boolean if a field has been set.
 
@@ -67,27 +67,27 @@ HasAlgorithm returns a boolean if a field has been set.
 
 ### GetCryptoKey
 
-`func (o *GoogleCloudKMSWriteKeyRequest) GetCryptoKey() string`
+`func (o *GoogleCloudKmsWriteKeyRequest) GetCryptoKey() string`
 
 GetCryptoKey returns the CryptoKey field if non-nil, zero value otherwise.
 
 ### GetCryptoKeyOk
 
-`func (o *GoogleCloudKMSWriteKeyRequest) GetCryptoKeyOk() (*string, bool)`
+`func (o *GoogleCloudKmsWriteKeyRequest) GetCryptoKeyOk() (*string, bool)`
 
 GetCryptoKeyOk returns a tuple with the CryptoKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCryptoKey
 
-`func (o *GoogleCloudKMSWriteKeyRequest) SetCryptoKey(v string)`
+`func (o *GoogleCloudKmsWriteKeyRequest) SetCryptoKey(v string)`
 
 SetCryptoKey sets CryptoKey field to given value.
 
 
 ### HasCryptoKey
 
-`func (o *GoogleCloudKMSWriteKeyRequest) HasCryptoKey() bool`
+`func (o *GoogleCloudKmsWriteKeyRequest) HasCryptoKey() bool`
 
 HasCryptoKey returns a boolean if a field has been set.
 
@@ -96,27 +96,27 @@ HasCryptoKey returns a boolean if a field has been set.
 
 ### GetKeyRing
 
-`func (o *GoogleCloudKMSWriteKeyRequest) GetKeyRing() string`
+`func (o *GoogleCloudKmsWriteKeyRequest) GetKeyRing() string`
 
 GetKeyRing returns the KeyRing field if non-nil, zero value otherwise.
 
 ### GetKeyRingOk
 
-`func (o *GoogleCloudKMSWriteKeyRequest) GetKeyRingOk() (*string, bool)`
+`func (o *GoogleCloudKmsWriteKeyRequest) GetKeyRingOk() (*string, bool)`
 
 GetKeyRingOk returns a tuple with the KeyRing field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyRing
 
-`func (o *GoogleCloudKMSWriteKeyRequest) SetKeyRing(v string)`
+`func (o *GoogleCloudKmsWriteKeyRequest) SetKeyRing(v string)`
 
 SetKeyRing sets KeyRing field to given value.
 
 
 ### HasKeyRing
 
-`func (o *GoogleCloudKMSWriteKeyRequest) HasKeyRing() bool`
+`func (o *GoogleCloudKmsWriteKeyRequest) HasKeyRing() bool`
 
 HasKeyRing returns a boolean if a field has been set.
 
@@ -125,27 +125,27 @@ HasKeyRing returns a boolean if a field has been set.
 
 ### GetLabels
 
-`func (o *GoogleCloudKMSWriteKeyRequest) GetLabels() map[string]interface{}`
+`func (o *GoogleCloudKmsWriteKeyRequest) GetLabels() map[string]interface{}`
 
 GetLabels returns the Labels field if non-nil, zero value otherwise.
 
 ### GetLabelsOk
 
-`func (o *GoogleCloudKMSWriteKeyRequest) GetLabelsOk() (*map[string]interface{}, bool)`
+`func (o *GoogleCloudKmsWriteKeyRequest) GetLabelsOk() (*map[string]interface{}, bool)`
 
 GetLabelsOk returns a tuple with the Labels field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabels
 
-`func (o *GoogleCloudKMSWriteKeyRequest) SetLabels(v map[string]interface{})`
+`func (o *GoogleCloudKmsWriteKeyRequest) SetLabels(v map[string]interface{})`
 
 SetLabels sets Labels field to given value.
 
 
 ### HasLabels
 
-`func (o *GoogleCloudKMSWriteKeyRequest) HasLabels() bool`
+`func (o *GoogleCloudKmsWriteKeyRequest) HasLabels() bool`
 
 HasLabels returns a boolean if a field has been set.
 
@@ -154,27 +154,27 @@ HasLabels returns a boolean if a field has been set.
 
 ### GetProtectionLevel
 
-`func (o *GoogleCloudKMSWriteKeyRequest) GetProtectionLevel() string`
+`func (o *GoogleCloudKmsWriteKeyRequest) GetProtectionLevel() string`
 
 GetProtectionLevel returns the ProtectionLevel field if non-nil, zero value otherwise.
 
 ### GetProtectionLevelOk
 
-`func (o *GoogleCloudKMSWriteKeyRequest) GetProtectionLevelOk() (*string, bool)`
+`func (o *GoogleCloudKmsWriteKeyRequest) GetProtectionLevelOk() (*string, bool)`
 
 GetProtectionLevelOk returns a tuple with the ProtectionLevel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProtectionLevel
 
-`func (o *GoogleCloudKMSWriteKeyRequest) SetProtectionLevel(v string)`
+`func (o *GoogleCloudKmsWriteKeyRequest) SetProtectionLevel(v string)`
 
 SetProtectionLevel sets ProtectionLevel field to given value.
 
 
 ### HasProtectionLevel
 
-`func (o *GoogleCloudKMSWriteKeyRequest) HasProtectionLevel() bool`
+`func (o *GoogleCloudKmsWriteKeyRequest) HasProtectionLevel() bool`
 
 HasProtectionLevel returns a boolean if a field has been set.
 
@@ -183,27 +183,27 @@ HasProtectionLevel returns a boolean if a field has been set.
 
 ### GetPurpose
 
-`func (o *GoogleCloudKMSWriteKeyRequest) GetPurpose() string`
+`func (o *GoogleCloudKmsWriteKeyRequest) GetPurpose() string`
 
 GetPurpose returns the Purpose field if non-nil, zero value otherwise.
 
 ### GetPurposeOk
 
-`func (o *GoogleCloudKMSWriteKeyRequest) GetPurposeOk() (*string, bool)`
+`func (o *GoogleCloudKmsWriteKeyRequest) GetPurposeOk() (*string, bool)`
 
 GetPurposeOk returns a tuple with the Purpose field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPurpose
 
-`func (o *GoogleCloudKMSWriteKeyRequest) SetPurpose(v string)`
+`func (o *GoogleCloudKmsWriteKeyRequest) SetPurpose(v string)`
 
 SetPurpose sets Purpose field to given value.
 
 
 ### HasPurpose
 
-`func (o *GoogleCloudKMSWriteKeyRequest) HasPurpose() bool`
+`func (o *GoogleCloudKmsWriteKeyRequest) HasPurpose() bool`
 
 HasPurpose returns a boolean if a field has been set.
 
@@ -212,27 +212,27 @@ HasPurpose returns a boolean if a field has been set.
 
 ### GetRotationPeriod
 
-`func (o *GoogleCloudKMSWriteKeyRequest) GetRotationPeriod() int32`
+`func (o *GoogleCloudKmsWriteKeyRequest) GetRotationPeriod() int32`
 
 GetRotationPeriod returns the RotationPeriod field if non-nil, zero value otherwise.
 
 ### GetRotationPeriodOk
 
-`func (o *GoogleCloudKMSWriteKeyRequest) GetRotationPeriodOk() (*int32, bool)`
+`func (o *GoogleCloudKmsWriteKeyRequest) GetRotationPeriodOk() (*int32, bool)`
 
 GetRotationPeriodOk returns a tuple with the RotationPeriod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRotationPeriod
 
-`func (o *GoogleCloudKMSWriteKeyRequest) SetRotationPeriod(v int32)`
+`func (o *GoogleCloudKmsWriteKeyRequest) SetRotationPeriod(v int32)`
 
 SetRotationPeriod sets RotationPeriod field to given value.
 
 
 ### HasRotationPeriod
 
-`func (o *GoogleCloudKMSWriteKeyRequest) HasRotationPeriod() bool`
+`func (o *GoogleCloudKmsWriteKeyRequest) HasRotationPeriod() bool`
 
 HasRotationPeriod returns a boolean if a field has been set.
 

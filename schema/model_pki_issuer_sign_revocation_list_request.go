@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// PKIIssuerSignRevocationListRequest struct for PKIIssuerSignRevocationListRequest
-type PKIIssuerSignRevocationListRequest struct {
+// PkiIssuerSignRevocationListRequest struct for PkiIssuerSignRevocationListRequest
+type PkiIssuerSignRevocationListRequest struct {
 	// The sequence number to be written within the CRL Number extension.
 	CrlNumber int32 `json:"crl_number"`
 
@@ -30,11 +30,11 @@ type PKIIssuerSignRevocationListRequest struct {
 	RevokedCerts []map[string]interface{} `json:"revoked_certs"`
 }
 
-// NewPKIIssuerSignRevocationListRequestWithDefaults instantiates a new PKIIssuerSignRevocationListRequest object
+// NewPkiIssuerSignRevocationListRequestWithDefaults instantiates a new PkiIssuerSignRevocationListRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewPKIIssuerSignRevocationListRequestWithDefaults() *PKIIssuerSignRevocationListRequest {
-	var this PKIIssuerSignRevocationListRequest
+func NewPkiIssuerSignRevocationListRequestWithDefaults() *PkiIssuerSignRevocationListRequest {
+	var this PkiIssuerSignRevocationListRequest
 
 	this.DeltaCrlBaseNumber = -1
 	this.Format = "pem"
@@ -43,7 +43,7 @@ func NewPKIIssuerSignRevocationListRequestWithDefaults() *PKIIssuerSignRevocatio
 	return &this
 }
 
-func (o PKIIssuerSignRevocationListRequest) MarshalJSON() ([]byte, error) {
+func (o PkiIssuerSignRevocationListRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["crl_number"] = o.CrlNumber

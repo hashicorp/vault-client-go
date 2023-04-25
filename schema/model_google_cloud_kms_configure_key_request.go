@@ -1,0 +1,37 @@
+// Copyright (c) HashiCorp, Inc.
+// SPDX-License-Identifier: MPL-2.0
+//
+// Code generated with OpenAPI Generator (https://openapi-generator.tech); DO NOT EDIT.
+
+package schema
+
+import (
+	"encoding/json"
+)
+
+// GoogleCloudKmsConfigureKeyRequest struct for GoogleCloudKmsConfigureKeyRequest
+type GoogleCloudKmsConfigureKeyRequest struct {
+	// Maximum allowed crypto key version. If set to a positive value, key versions greater than the given value are not permitted to be used. If set to 0 or a negative value, there is no maximum key version.
+	MaxVersion int32 `json:"max_version"`
+
+	// Minimum allowed crypto key version. If set to a positive value, key versions less than the given value are not permitted to be used. If set to 0 or a negative value, there is no minimum key version. This value only affects encryption/re-encryption, not decryption. To restrict old values from being decrypted, increase this value and then perform a trim operation.
+	MinVersion int32 `json:"min_version"`
+}
+
+// NewGoogleCloudKmsConfigureKeyRequestWithDefaults instantiates a new GoogleCloudKmsConfigureKeyRequest object
+// This constructor will only assign default values to properties that have it defined,
+// but it doesn't guarantee that properties required by API are set
+func NewGoogleCloudKmsConfigureKeyRequestWithDefaults() *GoogleCloudKmsConfigureKeyRequest {
+	var this GoogleCloudKmsConfigureKeyRequest
+
+	return &this
+}
+
+func (o GoogleCloudKmsConfigureKeyRequest) MarshalJSON() ([]byte, error) {
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["max_version"] = o.MaxVersion
+	toSerialize["min_version"] = o.MinVersion
+
+	return json.Marshal(toSerialize)
+}

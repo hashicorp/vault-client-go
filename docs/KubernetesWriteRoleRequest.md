@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **KubernetesRoleType** | Pointer to **string** | Specifies whether the Kubernetes role is a Role or ClusterRole. | [optional] [default to "Role"]
 **NameTemplate** | Pointer to **string** | The name template to use when generating service accounts, roles and role bindings. If unset, a default template is used. | [optional] 
 **ServiceAccountName** | Pointer to **string** | The pre-existing service account to generate tokens for. Mutually exclusive with all role parameters. If set, only a Kubernetes service account token will be created. | [optional] 
+**TokenDefaultAudiences** | Pointer to **[]string** | The default audiences for generated Kubernetes service account tokens. If not set or set to \&quot;\&quot;, will use k8s cluster default. | [optional] 
 **TokenDefaultTtl** | Pointer to **int32** | The default ttl for generated Kubernetes service account tokens. If not set or set to 0, will use system default. | [optional] 
 **TokenMaxTtl** | Pointer to **int32** | The maximum ttl for generated Kubernetes service account tokens. If not set or set to 0, will use system default. | [optional] 
 
@@ -297,6 +298,35 @@ SetServiceAccountName sets ServiceAccountName field to given value.
 `func (o *KubernetesWriteRoleRequest) HasServiceAccountName() bool`
 
 HasServiceAccountName returns a boolean if a field has been set.
+
+
+
+
+### GetTokenDefaultAudiences
+
+`func (o *KubernetesWriteRoleRequest) GetTokenDefaultAudiences() []string`
+
+GetTokenDefaultAudiences returns the TokenDefaultAudiences field if non-nil, zero value otherwise.
+
+### GetTokenDefaultAudiencesOk
+
+`func (o *KubernetesWriteRoleRequest) GetTokenDefaultAudiencesOk() (*[]string, bool)`
+
+GetTokenDefaultAudiencesOk returns a tuple with the TokenDefaultAudiences field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTokenDefaultAudiences
+
+`func (o *KubernetesWriteRoleRequest) SetTokenDefaultAudiences(v []string)`
+
+SetTokenDefaultAudiences sets TokenDefaultAudiences field to given value.
+
+
+### HasTokenDefaultAudiences
+
+`func (o *KubernetesWriteRoleRequest) HasTokenDefaultAudiences() bool`
+
+HasTokenDefaultAudiences returns a boolean if a field has been set.
 
 
 

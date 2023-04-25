@@ -19,9 +19,9 @@ type System struct {
 	client *Client
 }
 
-// CalculateAuditHash The hash of the given string via the given audit backend
+// AuditingCalculateHash
 // path: The name of the backend. Cannot be delimited. Example: \&quot;mysql\&quot;
-func (s *System) CalculateAuditHash(ctx context.Context, path string, request schema.CalculateAuditHashRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) AuditingCalculateHash(ctx context.Context, path string, request schema.AuditingCalculateHashRequest, options ...RequestOption) (*Response[schema.AuditingCalculateHashResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -32,7 +32,7 @@ func (s *System) CalculateAuditHash(ctx context.Context, path string, request sc
 
 	requestQueryParameters := make(url.Values)
 
-	return sendStructuredRequestParseResponse[map[string]interface{}](
+	return sendStructuredRequestParseResponse[schema.AuditingCalculateHashResponse](
 		ctx,
 		s.client,
 		http.MethodPost,
@@ -43,9 +43,9 @@ func (s *System) CalculateAuditHash(ctx context.Context, path string, request sc
 	)
 }
 
-// DeleteAuditDevice Disable the audit device at the given path.
+// AuditingDisableDevice Disable the audit device at the given path.
 // path: The name of the backend. Cannot be delimited. Example: \&quot;mysql\&quot;
-func (s *System) DeleteAuditDevice(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) AuditingDisableDevice(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -67,32 +67,8 @@ func (s *System) DeleteAuditDevice(ctx context.Context, path string, options ...
 	)
 }
 
-// DeleteAuthMethod Disable the auth method at the given auth path
-// path: The path to mount to. Cannot be delimited. Example: \&quot;user\&quot;
-func (s *System) DeleteAuthMethod(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/auth/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodDelete,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// DeleteConfigAuditingRequestHeader Disable auditing of the given request header.
-func (s *System) DeleteConfigAuditingRequestHeader(ctx context.Context, header string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// AuditingDisableRequestHeader Disable auditing of the given request header.
+func (s *System) AuditingDisableRequestHeader(ctx context.Context, header string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -114,8 +90,335 @@ func (s *System) DeleteConfigAuditingRequestHeader(ctx context.Context, header s
 	)
 }
 
-// DeleteConfigCORS Remove any CORS settings.
-func (s *System) DeleteConfigCORS(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// AuditingEnableDevice Enable a new audit device at the supplied path.
+// path: The name of the backend. Cannot be delimited. Example: \&quot;mysql\&quot;
+func (s *System) AuditingEnableDevice(ctx context.Context, path string, request schema.AuditingEnableDeviceRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/audit/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// AuditingEnableRequestHeader Enable auditing of a header.
+func (s *System) AuditingEnableRequestHeader(ctx context.Context, header string, request schema.AuditingEnableRequestHeaderRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/config/auditing/request-headers/{header}"
+	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// AuditingListEnabledDevices List the enabled audit devices.
+func (s *System) AuditingListEnabledDevices(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/audit"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// AuditingListRequestHeaders List the request headers that are configured to be audited.
+func (s *System) AuditingListRequestHeaders(ctx context.Context, options ...RequestOption) (*Response[schema.AuditingListRequestHeadersResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/config/auditing/request-headers"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.AuditingListRequestHeadersResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// AuditingReadRequestHeaderInformation List the information for the given request header.
+func (s *System) AuditingReadRequestHeaderInformation(ctx context.Context, header string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/config/auditing/request-headers/{header}"
+	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// AuthDisableMethod Disable the auth method at the given auth path
+// path: The path to mount to. Cannot be delimited. Example: \&quot;user\&quot;
+func (s *System) AuthDisableMethod(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/auth/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// AuthEnableMethod Enables a new auth method.
+// After enabling, the auth method can be accessed and configured via the auth path specified as part of the URL. This auth path will be nested under the auth prefix.  For example, enable the \"foo\" auth method will make it accessible at /auth/foo.
+// path: The path to mount to. Cannot be delimited. Example: \&quot;user\&quot;
+func (s *System) AuthEnableMethod(ctx context.Context, path string, request schema.AuthEnableMethodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/auth/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// AuthListEnabledMethods
+func (s *System) AuthListEnabledMethods(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/auth"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// AuthReadConfiguration Read the configuration of the auth engine at the given path.
+// path: The path to mount to. Cannot be delimited. Example: \&quot;user\&quot;
+func (s *System) AuthReadConfiguration(ctx context.Context, path string, options ...RequestOption) (*Response[schema.AuthReadConfigurationResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/auth/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.AuthReadConfigurationResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// AuthReadTuningInformation Reads the given auth path's configuration.
+// This endpoint requires sudo capability on the final path, but the same functionality can be achieved without sudo via `sys/mounts/auth/[auth-path]/tune`.
+// path: Tune the configuration parameters for an auth path.
+func (s *System) AuthReadTuningInformation(ctx context.Context, path string, options ...RequestOption) (*Response[schema.AuthReadTuningInformationResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/auth/{path}/tune"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.AuthReadTuningInformationResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// AuthTuneConfigurationParameters Tune configuration parameters for a given auth path.
+// This endpoint requires sudo capability on the final path, but the same functionality can be achieved without sudo via `sys/mounts/auth/[auth-path]/tune`.
+// path: Tune the configuration parameters for an auth path.
+func (s *System) AuthTuneConfigurationParameters(ctx context.Context, path string, request schema.AuthTuneConfigurationParametersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/auth/{path}/tune"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// CollectHostInformation Information about the host instance that this Vault server is running on.
+// Information about the host instance that this Vault server is running on.   The information that gets collected includes host hardware information, and CPU,   disk, and memory utilization
+func (s *System) CollectHostInformation(ctx context.Context, options ...RequestOption) (*Response[schema.CollectHostInformationResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/host-info"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.CollectHostInformationResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// CollectInFlightRequestInformation reports in-flight requests
+// This path responds to the following HTTP methods.   GET /    Returns a map of in-flight requests.
+func (s *System) CollectInFlightRequestInformation(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/in-flight-req"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// CorsConfigure Configure the CORS settings.
+func (s *System) CorsConfigure(ctx context.Context, request schema.CorsConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/config/cors"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// CorsDeleteConfiguration Remove any CORS settings.
+func (s *System) CorsDeleteConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -136,23 +439,21 @@ func (s *System) DeleteConfigCORS(ctx context.Context, options ...RequestOption)
 	)
 }
 
-// DeleteConfigUIHeader Remove a UI header.
-// header: The name of the header.
-func (s *System) DeleteConfigUIHeader(ctx context.Context, header string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// CorsReadConfiguration Return the current CORS settings.
+func (s *System) CorsReadConfiguration(ctx context.Context, options ...RequestOption) (*Response[schema.CorsReadConfigurationResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/config/ui/headers/{header}"
-	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
+	requestPath := "/v1/sys/config/cors"
 
 	requestQueryParameters := make(url.Values)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.CorsReadConfigurationResponse](
 		ctx,
 		s.client,
-		http.MethodDelete,
+		http.MethodGet,
 		requestPath,
 		nil, // request body
 		requestQueryParameters,
@@ -160,21 +461,43 @@ func (s *System) DeleteConfigUIHeader(ctx context.Context, header string, option
 	)
 }
 
-// DeleteGenerateRoot Cancels any in-progress root generation attempt.
-func (s *System) DeleteGenerateRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// EncryptionKeyConfigureRotation
+func (s *System) EncryptionKeyConfigureRotation(ctx context.Context, request schema.EncryptionKeyConfigureRotationRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/generate-root"
+	requestPath := "/v1/sys/rotate/config"
 
 	requestQueryParameters := make(url.Values)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
 		s.client,
-		http.MethodDelete,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// EncryptionKeyReadRotationConfiguration
+func (s *System) EncryptionKeyReadRotationConfiguration(ctx context.Context, options ...RequestOption) (*Response[schema.EncryptionKeyReadRotationConfigurationResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/rotate/config"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.EncryptionKeyReadRotationConfigurationResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
 		requestPath,
 		nil, // request body
 		requestQueryParameters,
@@ -182,21 +505,21 @@ func (s *System) DeleteGenerateRoot(ctx context.Context, options ...RequestOptio
 	)
 }
 
-// DeleteGenerateRootAttempt Cancels any in-progress root generation attempt.
-func (s *System) DeleteGenerateRootAttempt(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// EncryptionKeyRotate
+func (s *System) EncryptionKeyRotate(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/generate-root/attempt"
+	requestPath := "/v1/sys/rotate"
 
 	requestQueryParameters := make(url.Values)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		s.client,
-		http.MethodDelete,
+		http.MethodPost,
 		requestPath,
 		nil, // request body
 		requestQueryParameters,
@@ -204,9 +527,1157 @@ func (s *System) DeleteGenerateRootAttempt(ctx context.Context, options ...Reque
 	)
 }
 
-// DeleteLogger Revert a single logger to use log level provided in config.
+// EncryptionKeyStatus Provides information about the backend encryption key.
+func (s *System) EncryptionKeyStatus(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/key-status"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// GenerateHash
+func (s *System) GenerateHash(ctx context.Context, request schema.GenerateHashRequest, options ...RequestOption) (*Response[schema.GenerateHashResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/tools/hash"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[schema.GenerateHashResponse](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// GenerateHashWithAlgorithm
+// urlalgorithm: Algorithm to use (POST URL parameter)
+func (s *System) GenerateHashWithAlgorithm(ctx context.Context, urlalgorithm string, request schema.GenerateHashWithAlgorithmRequest, options ...RequestOption) (*Response[schema.GenerateHashWithAlgorithmResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/tools/hash/{urlalgorithm}"
+	requestPath = strings.Replace(requestPath, "{"+"urlalgorithm"+"}", url.PathEscape(urlalgorithm), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[schema.GenerateHashWithAlgorithmResponse](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// GenerateRandom
+func (s *System) GenerateRandom(ctx context.Context, request schema.GenerateRandomRequest, options ...RequestOption) (*Response[schema.GenerateRandomResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/tools/random"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[schema.GenerateRandomResponse](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// GenerateRandomWithBytes
+// urlbytes: The number of bytes to generate (POST URL parameter)
+func (s *System) GenerateRandomWithBytes(ctx context.Context, urlbytes string, request schema.GenerateRandomWithBytesRequest, options ...RequestOption) (*Response[schema.GenerateRandomWithBytesResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/tools/random/{urlbytes}"
+	requestPath = strings.Replace(requestPath, "{"+"urlbytes"+"}", url.PathEscape(urlbytes), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[schema.GenerateRandomWithBytesResponse](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// GenerateRandomWithSource
+// source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
+func (s *System) GenerateRandomWithSource(ctx context.Context, source string, request schema.GenerateRandomWithSourceRequest, options ...RequestOption) (*Response[schema.GenerateRandomWithSourceResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/tools/random/{source}"
+	requestPath = strings.Replace(requestPath, "{"+"source"+"}", url.PathEscape(source), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[schema.GenerateRandomWithSourceResponse](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// GenerateRandomWithSourceAndBytes
+// source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
+// urlbytes: The number of bytes to generate (POST URL parameter)
+func (s *System) GenerateRandomWithSourceAndBytes(ctx context.Context, source string, urlbytes string, request schema.GenerateRandomWithSourceAndBytesRequest, options ...RequestOption) (*Response[schema.GenerateRandomWithSourceAndBytesResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/tools/random/{source}/{urlbytes}"
+	requestPath = strings.Replace(requestPath, "{"+"source"+"}", url.PathEscape(source), -1)
+	requestPath = strings.Replace(requestPath, "{"+"urlbytes"+"}", url.PathEscape(urlbytes), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[schema.GenerateRandomWithSourceAndBytesResponse](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// HaStatus Check the HA status of a Vault cluster
+func (s *System) HaStatus(ctx context.Context, options ...RequestOption) (*Response[schema.HaStatusResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/ha-status"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.HaStatusResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// Initialize Initialize a new Vault.
+// The Vault must not have been previously initialized. The recovery options, as well as the stored shares option, are only available when using Vault HSM.
+func (s *System) Initialize(ctx context.Context, request schema.InitializeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/init"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// InternalClientActivityConfigure Enable or disable collection of client count, set retention period, or set default reporting period.
+func (s *System) InternalClientActivityConfigure(ctx context.Context, request schema.InternalClientActivityConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/internal/counters/config"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// InternalClientActivityExport Report the client count metrics, for this namespace and all child namespaces.
+func (s *System) InternalClientActivityExport(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/internal/counters/activity/export"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// InternalClientActivityReadConfiguration Read the client count tracking configuration.
+func (s *System) InternalClientActivityReadConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/internal/counters/config"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// InternalClientActivityReportCounts Report the client count metrics, for this namespace and all child namespaces.
+func (s *System) InternalClientActivityReportCounts(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/internal/counters/activity"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// InternalClientActivityReportCountsThisMonth Report the number of clients for this month, for this namespace and all child namespaces.
+func (s *System) InternalClientActivityReportCountsThisMonth(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/internal/counters/activity/monthly"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// InternalCountEntities Backwards compatibility is not guaranteed for this API
+func (s *System) InternalCountEntities(ctx context.Context, options ...RequestOption) (*Response[schema.InternalCountEntitiesResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/internal/counters/entities"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.InternalCountEntitiesResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// Deprecated
+// InternalCountRequests Backwards compatibility is not guaranteed for this API
+func (s *System) InternalCountRequests(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/internal/counters/requests"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// InternalCountTokens Backwards compatibility is not guaranteed for this API
+func (s *System) InternalCountTokens(ctx context.Context, options ...RequestOption) (*Response[schema.InternalCountTokensResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/internal/counters/tokens"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.InternalCountTokensResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// InternalGenerateOpenApiDocument
+// genericMountPaths: Use generic mount paths
+func (s *System) InternalGenerateOpenApiDocument(ctx context.Context, genericMountPaths bool, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/internal/specs/openapi"
+
+	requestQueryParameters := make(url.Values)
+	requestQueryParameters.Set("genericMountPaths", url.QueryEscape(parameterToString(genericMountPaths)))
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// InternalGenerateOpenApiDocument2
+// genericMountPaths: Use generic mount paths
+func (s *System) InternalGenerateOpenApiDocument2(ctx context.Context, request schema.InternalGenerateOpenApiDocument2Request, genericMountPaths bool, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/internal/specs/openapi"
+
+	requestQueryParameters := make(url.Values)
+	requestQueryParameters.Set("genericMountPaths", url.QueryEscape(parameterToString(genericMountPaths)))
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// InternalInspectRouter Expose the route entry and mount entry tables present in the router
+// tag: Name of subtree being observed
+func (s *System) InternalInspectRouter(ctx context.Context, tag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/internal/inspect/router/{tag}"
+	requestPath = strings.Replace(requestPath, "{"+"tag"+"}", url.PathEscape(tag), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// InternalUiListEnabledFeatureFlags Lists enabled feature flags.
+func (s *System) InternalUiListEnabledFeatureFlags(ctx context.Context, options ...RequestOption) (*Response[schema.InternalUiListEnabledFeatureFlagsResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/internal/ui/feature-flags"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.InternalUiListEnabledFeatureFlagsResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// InternalUiListEnabledVisibleMounts Lists all enabled and visible auth and secrets mounts.
+func (s *System) InternalUiListEnabledVisibleMounts(ctx context.Context, options ...RequestOption) (*Response[schema.InternalUiListEnabledVisibleMountsResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/internal/ui/mounts"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.InternalUiListEnabledVisibleMountsResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// InternalUiListNamespaces Backwards compatibility is not guaranteed for this API
+func (s *System) InternalUiListNamespaces(ctx context.Context, options ...RequestOption) (*Response[schema.InternalUiListNamespacesResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/internal/ui/namespaces"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.InternalUiListNamespacesResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// InternalUiReadMountInformation Return information about the given mount.
+// path: The path of the mount.
+func (s *System) InternalUiReadMountInformation(ctx context.Context, path string, options ...RequestOption) (*Response[schema.InternalUiReadMountInformationResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/internal/ui/mounts/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.InternalUiReadMountInformationResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// InternalUiReadResultantAcl Backwards compatibility is not guaranteed for this API
+func (s *System) InternalUiReadResultantAcl(ctx context.Context, options ...RequestOption) (*Response[schema.InternalUiReadResultantAclResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/internal/ui/resultant-acl"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.InternalUiReadResultantAclResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LeaderStatus Returns the high availability status and current leader instance of Vault.
+func (s *System) LeaderStatus(ctx context.Context, options ...RequestOption) (*Response[schema.LeaderStatusResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/leader"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.LeaderStatusResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LeasesCount
+func (s *System) LeasesCount(ctx context.Context, options ...RequestOption) (*Response[schema.LeasesCountResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/leases/count"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.LeasesCountResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LeasesForceRevokeLeaseWithPrefix Revokes all secrets or tokens generated under a given prefix immediately
+// Unlike `/sys/leases/revoke-prefix`, this path ignores backend errors encountered during revocation. This is potentially very dangerous and should only be used in specific emergency situations where errors in the backend or the connected backend service prevent normal revocation.  By ignoring these errors, Vault abdicates responsibility for ensuring that the issued credentials or secrets are properly revoked and/or cleaned up. Access to this endpoint should be tightly controlled.
+// prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
+func (s *System) LeasesForceRevokeLeaseWithPrefix(ctx context.Context, prefix string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/leases/revoke-force/{prefix}"
+	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LeasesForceRevokeLeaseWithPrefix2 Revokes all secrets or tokens generated under a given prefix immediately
+// Unlike `/sys/leases/revoke-prefix`, this path ignores backend errors encountered during revocation. This is potentially very dangerous and should only be used in specific emergency situations where errors in the backend or the connected backend service prevent normal revocation.  By ignoring these errors, Vault abdicates responsibility for ensuring that the issued credentials or secrets are properly revoked and/or cleaned up. Access to this endpoint should be tightly controlled.
+// prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
+func (s *System) LeasesForceRevokeLeaseWithPrefix2(ctx context.Context, prefix string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/revoke-force/{prefix}"
+	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LeasesList
+func (s *System) LeasesList(ctx context.Context, options ...RequestOption) (*Response[schema.LeasesListResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/leases"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.LeasesListResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LeasesLookUp
+func (s *System) LeasesLookUp(ctx context.Context, options ...RequestOption) (*Response[schema.LeasesLookUpResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/leases/lookup/"
+
+	requestQueryParameters := make(url.Values)
+	requestQueryParameters.Set("list", "true")
+
+	return sendRequestParseResponse[schema.LeasesLookUpResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LeasesLookUpWithPrefix
+// prefix: The path to list leases under. Example: \&quot;aws/creds/deploy\&quot;
+func (s *System) LeasesLookUpWithPrefix(ctx context.Context, prefix string, options ...RequestOption) (*Response[schema.LeasesLookUpWithPrefixResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/leases/lookup/{prefix}"
+	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
+
+	requestQueryParameters := make(url.Values)
+	requestQueryParameters.Set("list", "true")
+
+	return sendRequestParseResponse[schema.LeasesLookUpWithPrefixResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LeasesReadLease
+func (s *System) LeasesReadLease(ctx context.Context, request schema.LeasesReadLeaseRequest, options ...RequestOption) (*Response[schema.LeasesReadLeaseResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/leases/lookup"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[schema.LeasesReadLeaseResponse](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LeasesRenewLease Renews a lease, requesting to extend the lease.
+func (s *System) LeasesRenewLease(ctx context.Context, request schema.LeasesRenewLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/leases/renew"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LeasesRenewLease2 Renews a lease, requesting to extend the lease.
+func (s *System) LeasesRenewLease2(ctx context.Context, request schema.LeasesRenewLease2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/renew"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LeasesRenewLeaseWithId Renews a lease, requesting to extend the lease.
+// urlLeaseId: The lease identifier to renew. This is included with a lease.
+func (s *System) LeasesRenewLeaseWithId(ctx context.Context, urlLeaseId string, request schema.LeasesRenewLeaseWithIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/leases/renew/{url_lease_id}"
+	requestPath = strings.Replace(requestPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LeasesRenewLeaseWithId2 Renews a lease, requesting to extend the lease.
+// urlLeaseId: The lease identifier to renew. This is included with a lease.
+func (s *System) LeasesRenewLeaseWithId2(ctx context.Context, urlLeaseId string, request schema.LeasesRenewLeaseWithId2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/renew/{url_lease_id}"
+	requestPath = strings.Replace(requestPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LeasesRevokeLease Revokes a lease immediately.
+func (s *System) LeasesRevokeLease(ctx context.Context, request schema.LeasesRevokeLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/leases/revoke"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LeasesRevokeLease2 Revokes a lease immediately.
+func (s *System) LeasesRevokeLease2(ctx context.Context, request schema.LeasesRevokeLease2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/revoke"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LeasesRevokeLeaseWithId Revokes a lease immediately.
+// urlLeaseId: The lease identifier to renew. This is included with a lease.
+func (s *System) LeasesRevokeLeaseWithId(ctx context.Context, urlLeaseId string, request schema.LeasesRevokeLeaseWithIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/leases/revoke/{url_lease_id}"
+	requestPath = strings.Replace(requestPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LeasesRevokeLeaseWithId2 Revokes a lease immediately.
+// urlLeaseId: The lease identifier to renew. This is included with a lease.
+func (s *System) LeasesRevokeLeaseWithId2(ctx context.Context, urlLeaseId string, request schema.LeasesRevokeLeaseWithId2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/revoke/{url_lease_id}"
+	requestPath = strings.Replace(requestPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LeasesRevokeLeaseWithPrefix Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
+// prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
+func (s *System) LeasesRevokeLeaseWithPrefix(ctx context.Context, prefix string, request schema.LeasesRevokeLeaseWithPrefixRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/leases/revoke-prefix/{prefix}"
+	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LeasesRevokeLeaseWithPrefix2 Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
+// prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
+func (s *System) LeasesRevokeLeaseWithPrefix2(ctx context.Context, prefix string, request schema.LeasesRevokeLeaseWithPrefix2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/revoke-prefix/{prefix}"
+	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LeasesTidy
+func (s *System) LeasesTidy(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/leases/tidy"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// ListExperimentalFeatures Returns the available and enabled experiments
+func (s *System) ListExperimentalFeatures(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/experiments"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LockedUsersList Report the locked user count metrics, for this namespace and all child namespaces.
+func (s *System) LockedUsersList(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/locked-users"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LockedUsersUnlock Unlocks the user with given mount_accessor and alias_identifier
+// aliasIdentifier: It is the name of the alias (user). For example, if the alias belongs to userpass backend, the name should be a valid username within userpass auth method. If the alias belongs to an approle auth method, the name should be a valid RoleID
+// mountAccessor: MountAccessor is the identifier of the mount entry to which the user belongs
+func (s *System) LockedUsersUnlock(ctx context.Context, aliasIdentifier string, mountAccessor string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/locked-users/{mount_accessor}/unlock/{alias_identifier}"
+	requestPath = strings.Replace(requestPath, "{"+"alias_identifier"+"}", url.PathEscape(aliasIdentifier), -1)
+	requestPath = strings.Replace(requestPath, "{"+"mount_accessor"+"}", url.PathEscape(mountAccessor), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LoggersReadVerbosityLevel Read the log level for all existing loggers.
+func (s *System) LoggersReadVerbosityLevel(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/loggers"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LoggersReadVerbosityLevelFor Read the log level for a single logger.
 // name: The name of the logger to be modified.
-func (s *System) DeleteLogger(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) LoggersReadVerbosityLevelFor(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/loggers/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LoggersRevertVerbosityLevel Revert the all loggers to use log level provided in config.
+func (s *System) LoggersRevertVerbosityLevel(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/loggers"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// LoggersRevertVerbosityLevelFor Revert a single logger to use log level provided in config.
+// name: The name of the logger to be modified.
+func (s *System) LoggersRevertVerbosityLevelFor(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -228,8 +1699,8 @@ func (s *System) DeleteLogger(ctx context.Context, name string, options ...Reque
 	)
 }
 
-// DeleteLoggers Revert the all loggers to use log level provided in config.
-func (s *System) DeleteLoggers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// LoggersUpdateVerbosityLevel Modify the log level for all existing loggers.
+func (s *System) LoggersUpdateVerbosityLevel(ctx context.Context, request schema.LoggersUpdateVerbosityLevelRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -239,309 +1710,53 @@ func (s *System) DeleteLoggers(ctx context.Context, options ...RequestOption) (*
 
 	requestQueryParameters := make(url.Values)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
 		s.client,
-		http.MethodDelete,
+		http.MethodPost,
 		requestPath,
-		nil, // request body
+		request,
 		requestQueryParameters,
 		requestModifiers,
 	)
 }
 
-// DeleteMount Disable the mount point specified at the given path.
-// path: The path to mount to. Example: \&quot;aws/east\&quot;
-func (s *System) DeleteMount(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// LoggersUpdateVerbosityLevelFor Modify the log level of a single logger.
+// name: The name of the logger to be modified.
+func (s *System) LoggersUpdateVerbosityLevelFor(ctx context.Context, name string, request schema.LoggersUpdateVerbosityLevelForRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/mounts/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodDelete,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// DeletePluginsCatalogByTypeByName Remove the plugin with the given name.
-// name: The name of the plugin
-// type_: The type of the plugin, may be auth, secret, or database
-func (s *System) DeletePluginsCatalogByTypeByName(ctx context.Context, name string, type_ string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/plugins/catalog/{type}/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodDelete,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// DeletePoliciesACL Delete the ACL policy with the given name.
-// name: The name of the policy. Example: \&quot;ops\&quot;
-func (s *System) DeletePoliciesACL(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/policies/acl/{name}"
+	requestPath := "/v1/sys/loggers/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	requestQueryParameters := make(url.Values)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
 		s.client,
-		http.MethodDelete,
+		http.MethodPost,
 		requestPath,
-		nil, // request body
+		request,
 		requestQueryParameters,
 		requestModifiers,
 	)
 }
 
-// DeletePoliciesPassword Delete a password policy.
-// name: The name of the password policy.
-func (s *System) DeletePoliciesPassword(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// Metrics
+// format: Format to export metrics into. Currently accepts only \&quot;prometheus\&quot;.
+func (s *System) Metrics(ctx context.Context, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/policies/password/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/sys/metrics"
 
 	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodDelete,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// DeletePolicy Delete the policy with the given name.
-// name: The name of the policy. Example: \&quot;ops\&quot;
-func (s *System) DeletePolicy(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/policy/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodDelete,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// DeleteQuotasRateLimit
-// name: Name of the quota rule.
-func (s *System) DeleteQuotasRateLimit(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/quotas/rate-limit/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodDelete,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// DeleteRaw Delete the key with given path.
-func (s *System) DeleteRaw(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/raw"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodDelete,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// DeleteRawPath Delete the key with given path.
-func (s *System) DeleteRawPath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/raw/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodDelete,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// DeleteRekeyBackup Delete the backup copy of PGP-encrypted unseal keys.
-func (s *System) DeleteRekeyBackup(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/rekey/backup"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodDelete,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// DeleteRekeyInit Cancels any in-progress rekey.
-// This clears the rekey settings as well as any progress made. This must be called to change the parameters of the rekey. Note: verification is still a part of a rekey. If rekeying is canceled during the verification flow, the current unseal keys remain valid.
-func (s *System) DeleteRekeyInit(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/rekey/init"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodDelete,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// DeleteRekeyRecoveryKeyBackup Allows fetching or deleting the backup of the rotated unseal keys.
-func (s *System) DeleteRekeyRecoveryKeyBackup(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/rekey/recovery-key-backup"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodDelete,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// DeleteRekeyVerify Cancel any in-progress rekey verification operation.
-// This clears any progress made and resets the nonce. Unlike a `DELETE` against `sys/rekey/init`, this only resets the current verification operation, not the entire rekey atttempt.
-func (s *System) DeleteRekeyVerify(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/rekey/verify"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodDelete,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ListConfigUIHeaders Return a list of configured UI headers.
-func (s *System) ListConfigUIHeaders(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/config/ui/headers/"
-
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
+	requestQueryParameters.Set("format", url.QueryEscape(parameterToString(format)))
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -554,150 +1769,8 @@ func (s *System) ListConfigUIHeaders(ctx context.Context, options ...RequestOpti
 	)
 }
 
-// ListLeasesLookupPrefix Returns a list of lease ids.
-// prefix: The path to list leases under. Example: \&quot;aws/creds/deploy\&quot;
-func (s *System) ListLeasesLookupPrefix(ctx context.Context, prefix string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/leases/lookup/{prefix}"
-	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
-
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ListPluginsCatalogByType List the plugins in the catalog.
-// type_: The type of the plugin, may be auth, secret, or database
-func (s *System) ListPluginsCatalogByType(ctx context.Context, type_ string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/plugins/catalog/{type}"
-	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
-
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ListPoliciesACL List the configured access control policies.
-func (s *System) ListPoliciesACL(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/policies/acl"
-
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ListPoliciesPassword List the existing password policies.
-func (s *System) ListPoliciesPassword(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/policies/password"
-
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ListQuotasRateLimits
-func (s *System) ListQuotasRateLimits(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/quotas/rate-limit"
-
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ListVersionHistory Returns map of historical version change entries
-func (s *System) ListVersionHistory(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/version-history/"
-
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// MFAValidate Validates the login for the given MFA methods. Upon successful validation, it returns an auth response containing the client token
-func (s *System) MFAValidate(ctx context.Context, request schema.MFAValidateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// MfaValidate Validates the login for the given MFA methods. Upon successful validation, it returns an auth response containing the client token
+func (s *System) MfaValidate(ctx context.Context, request schema.MfaValidateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -744,1095 +1817,9 @@ func (s *System) Monitor(ctx context.Context, logFormat string, logLevel string,
 	)
 }
 
-// PprofRead Returns an HTML page listing the available profiles.
-// Returns an HTML page listing the available  profiles. This should be mainly accessed via browsers or applications that can  render pages.
-func (s *System) PprofRead(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/pprof/"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// PprofReadAllocs Returns a sampling of all past memory allocations.
-// Returns a sampling of all past memory allocations.
-func (s *System) PprofReadAllocs(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/pprof/allocs"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// PprofReadBlock Returns stack traces that led to blocking on synchronization primitives
-// Returns stack traces that led to blocking on synchronization primitives
-func (s *System) PprofReadBlock(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/pprof/block"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// PprofReadCmdline Returns the running program's command line.
-// Returns the running program's command line, with arguments separated by NUL bytes.
-func (s *System) PprofReadCmdline(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/pprof/cmdline"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// PprofReadGoroutine Returns stack traces of all current goroutines.
-// Returns stack traces of all current goroutines.
-func (s *System) PprofReadGoroutine(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/pprof/goroutine"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// PprofReadHeap Returns a sampling of memory allocations of live object.
-// Returns a sampling of memory allocations of live object.
-func (s *System) PprofReadHeap(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/pprof/heap"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// PprofReadMutex Returns stack traces of holders of contended mutexes
-// Returns stack traces of holders of contended mutexes
-func (s *System) PprofReadMutex(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/pprof/mutex"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// PprofReadProfile Returns a pprof-formatted cpu profile payload.
-// Returns a pprof-formatted cpu profile payload. Profiling lasts for duration specified in seconds GET parameter, or for 30 seconds if not specified.
-func (s *System) PprofReadProfile(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/pprof/profile"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// PprofReadSymbol Returns the program counters listed in the request.
-// Returns the program counters listed in the request.
-func (s *System) PprofReadSymbol(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/pprof/symbol"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// PprofReadThreadcreate Returns stack traces that led to the creation of new OS threads
-// Returns stack traces that led to the creation of new OS threads
-func (s *System) PprofReadThreadcreate(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/pprof/threadcreate"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// PprofReadTrace Returns the execution trace in binary form.
-// Returns  the execution trace in binary form. Tracing lasts for duration specified in seconds GET parameter, or for 1 second if not specified.
-func (s *System) PprofReadTrace(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/pprof/trace"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadAuditDevices List the enabled audit devices.
-func (s *System) ReadAuditDevices(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/audit"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadAuthMethod Read the configuration of the auth engine at the given path.
-// path: The path to mount to. Cannot be delimited. Example: \&quot;user\&quot;
-func (s *System) ReadAuthMethod(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/auth/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadAuthMethodTune Reads the given auth path's configuration.
-// This endpoint requires sudo capability on the final path, but the same functionality can be achieved without sudo via `sys/mounts/auth/[auth-path]/tune`.
-// path: Tune the configuration parameters for an auth path.
-func (s *System) ReadAuthMethodTune(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/auth/{path}/tune"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadAuthMethods List the currently enabled credential backends.
-func (s *System) ReadAuthMethods(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/auth"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadConfigAuditingRequestHeader List the information for the given request header.
-func (s *System) ReadConfigAuditingRequestHeader(ctx context.Context, header string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/config/auditing/request-headers/{header}"
-	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadConfigAuditingRequestHeaders List the request headers that are configured to be audited.
-func (s *System) ReadConfigAuditingRequestHeaders(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/config/auditing/request-headers"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadConfigCORS Return the current CORS settings.
-func (s *System) ReadConfigCORS(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/config/cors"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadConfigStateSanitized Return a sanitized version of the Vault server configuration.
-// The sanitized output strips configuration values in the storage, HA storage, and seals stanzas, which may contain sensitive values such as API tokens. It also removes any token or secret fields in other stanzas, such as the circonus_api_token from telemetry.
-func (s *System) ReadConfigStateSanitized(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/config/state/sanitized"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadConfigUIHeader Return the given UI header's configuration
-// header: The name of the header.
-func (s *System) ReadConfigUIHeader(ctx context.Context, header string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/config/ui/headers/{header}"
-	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadGenerateRoot Read the configuration and progress of the current root generation attempt.
-func (s *System) ReadGenerateRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/generate-root"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadGenerateRootAttempt Read the configuration and progress of the current root generation attempt.
-func (s *System) ReadGenerateRootAttempt(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/generate-root/attempt"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadHAStatus Check the HA status of a Vault cluster
-func (s *System) ReadHAStatus(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/ha-status"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadHealth Returns the health status of Vault.
-func (s *System) ReadHealth(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/health"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadHostInfo Information about the host instance that this Vault server is running on.
-// Information about the host instance that this Vault server is running on.   The information that gets collected includes host hardware information, and CPU,   disk, and memory utilization
-func (s *System) ReadHostInfo(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/host-info"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadInFlightRequests reports in-flight requests
-// This path responds to the following HTTP methods.   GET /    Returns a map of in-flight requests.
-func (s *System) ReadInFlightRequests(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/in-flight-req"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadInit Returns the initialization status of Vault.
-func (s *System) ReadInit(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/init"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadInternalCountersActivity Report the client count metrics, for this namespace and all child namespaces.
-func (s *System) ReadInternalCountersActivity(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/internal/counters/activity"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadInternalCountersActivityExport Report the client count metrics, for this namespace and all child namespaces.
-func (s *System) ReadInternalCountersActivityExport(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/internal/counters/activity/export"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadInternalCountersActivityMonthly Report the number of clients for this month, for this namespace and all child namespaces.
-func (s *System) ReadInternalCountersActivityMonthly(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/internal/counters/activity/monthly"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadInternalCountersConfig Read the client count tracking configuration.
-func (s *System) ReadInternalCountersConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/internal/counters/config"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadInternalCountersEntities Backwards compatibility is not guaranteed for this API
-func (s *System) ReadInternalCountersEntities(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/internal/counters/entities"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadInternalCountersRequests Backwards compatibility is not guaranteed for this API
-func (s *System) ReadInternalCountersRequests(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/internal/counters/requests"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadInternalCountersTokens Backwards compatibility is not guaranteed for this API
-func (s *System) ReadInternalCountersTokens(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/internal/counters/tokens"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadInternalInspectRouter Expose the route entry and mount entry tables present in the router
-// tag: Name of subtree being observed
-func (s *System) ReadInternalInspectRouter(ctx context.Context, tag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/internal/inspect/router/{tag}"
-	requestPath = strings.Replace(requestPath, "{"+"tag"+"}", url.PathEscape(tag), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadInternalSpecsOpenAPI Generate an OpenAPI 3 document of all mounted paths.
-func (s *System) ReadInternalSpecsOpenAPI(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/internal/specs/openapi"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadInternalUIFeatureFlags Lists enabled feature flags.
-func (s *System) ReadInternalUIFeatureFlags(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/internal/ui/feature-flags"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadInternalUIMount Return information about the given mount.
-// path: The path of the mount.
-func (s *System) ReadInternalUIMount(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/internal/ui/mounts/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadInternalUIMounts Lists all enabled and visible auth and secrets mounts.
-func (s *System) ReadInternalUIMounts(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/internal/ui/mounts"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadInternalUINamespaces Backwards compatibility is not guaranteed for this API
-func (s *System) ReadInternalUINamespaces(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/internal/ui/namespaces"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadInternalUIResultantACL Backwards compatibility is not guaranteed for this API
-func (s *System) ReadInternalUIResultantACL(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/internal/ui/resultant-acl"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadKeyStatus Provides information about the backend encryption key.
-func (s *System) ReadKeyStatus(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/key-status"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadLeader Returns the high availability status and current leader instance of Vault.
-func (s *System) ReadLeader(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/leader"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadLeases List leases associated with this Vault cluster
-func (s *System) ReadLeases(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/leases"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadLeasesCount Count of leases associated with this Vault cluster
-func (s *System) ReadLeasesCount(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/leases/count"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadLogger Read the log level for a single logger.
-// name: The name of the logger to be modified.
-func (s *System) ReadLogger(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/loggers/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadLoggers Read the log level for all existing loggers.
-func (s *System) ReadLoggers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/loggers"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadMetrics Export the metrics aggregated for telemetry purpose.
-// format: Format to export metrics into. Currently accepts only \&quot;prometheus\&quot;.
-func (s *System) ReadMetrics(ctx context.Context, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/metrics"
-
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("format", url.QueryEscape(parameterToString(format)))
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadMount Read the configuration of the secret engine at the given path.
+// MountsDisableSecretsEngine Disable the mount point specified at the given path.
 // path: The path to mount to. Example: \&quot;aws/east\&quot;
-func (s *System) ReadMount(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) MountsDisableSecretsEngine(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1846,7 +1833,7 @@ func (s *System) ReadMount(ctx context.Context, path string, options ...RequestO
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		s.client,
-		http.MethodGet,
+		http.MethodDelete,
 		requestPath,
 		nil, // request body
 		requestQueryParameters,
@@ -1854,8 +1841,32 @@ func (s *System) ReadMount(ctx context.Context, path string, options ...RequestO
 	)
 }
 
-// ReadMounts List the currently mounted backends.
-func (s *System) ReadMounts(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// MountsEnableSecretsEngine Enable a new secrets engine at the given path.
+// path: The path to mount to. Example: \&quot;aws/east\&quot;
+func (s *System) MountsEnableSecretsEngine(ctx context.Context, path string, request schema.MountsEnableSecretsEngineRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/mounts/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// MountsListSecretsEngines
+func (s *System) MountsListSecretsEngines(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1876,9 +1887,33 @@ func (s *System) ReadMounts(ctx context.Context, options ...RequestOption) (*Res
 	)
 }
 
-// ReadMountsConfig Tune backend configuration parameters for this mount.
+// MountsReadConfiguration Read the configuration of the secret engine at the given path.
 // path: The path to mount to. Example: \&quot;aws/east\&quot;
-func (s *System) ReadMountsConfig(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) MountsReadConfiguration(ctx context.Context, path string, options ...RequestOption) (*Response[schema.MountsReadConfigurationResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/mounts/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.MountsReadConfigurationResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// MountsReadTuningInformation
+// path: The path to mount to. Example: \&quot;aws/east\&quot;
+func (s *System) MountsReadTuningInformation(ctx context.Context, path string, options ...RequestOption) (*Response[schema.MountsReadTuningInformationResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1889,7 +1924,7 @@ func (s *System) ReadMountsConfig(ctx context.Context, path string, options ...R
 
 	requestQueryParameters := make(url.Values)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.MountsReadTuningInformationResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -1900,8 +1935,32 @@ func (s *System) ReadMountsConfig(ctx context.Context, path string, options ...R
 	)
 }
 
-// ReadPluginsCatalog Lists all the plugins known to Vault
-func (s *System) ReadPluginsCatalog(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// MountsTuneConfigurationParameters
+// path: The path to mount to. Example: \&quot;aws/east\&quot;
+func (s *System) MountsTuneConfigurationParameters(ctx context.Context, path string, request schema.MountsTuneConfigurationParametersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/mounts/{path}/tune"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PluginsCatalogListPlugins
+func (s *System) PluginsCatalogListPlugins(ctx context.Context, options ...RequestOption) (*Response[schema.PluginsCatalogListPluginsResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1911,7 +1970,7 @@ func (s *System) ReadPluginsCatalog(ctx context.Context, options ...RequestOptio
 
 	requestQueryParameters := make(url.Values)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.PluginsCatalogListPluginsResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -1922,10 +1981,159 @@ func (s *System) ReadPluginsCatalog(ctx context.Context, options ...RequestOptio
 	)
 }
 
-// ReadPluginsCatalogByTypeByName Return the configuration data for the plugin with the given name.
+// PluginsCatalogListPluginsWithType List the plugins in the catalog.
+// type_: The type of the plugin, may be auth, secret, or database
+func (s *System) PluginsCatalogListPluginsWithType(ctx context.Context, type_ string, options ...RequestOption) (*Response[schema.PluginsCatalogListPluginsWithTypeResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/plugins/catalog/{type}"
+	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
+
+	requestQueryParameters := make(url.Values)
+	requestQueryParameters.Set("list", "true")
+
+	return sendRequestParseResponse[schema.PluginsCatalogListPluginsWithTypeResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PluginsCatalogReadPluginConfiguration Return the configuration data for the plugin with the given name.
+// name: The name of the plugin
+func (s *System) PluginsCatalogReadPluginConfiguration(ctx context.Context, name string, options ...RequestOption) (*Response[schema.PluginsCatalogReadPluginConfigurationResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/plugins/catalog/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.PluginsCatalogReadPluginConfigurationResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PluginsCatalogReadPluginConfigurationWithType Return the configuration data for the plugin with the given name.
 // name: The name of the plugin
 // type_: The type of the plugin, may be auth, secret, or database
-func (s *System) ReadPluginsCatalogByTypeByName(ctx context.Context, name string, type_ string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) PluginsCatalogReadPluginConfigurationWithType(ctx context.Context, name string, type_ string, options ...RequestOption) (*Response[schema.PluginsCatalogReadPluginConfigurationWithTypeResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/plugins/catalog/{type}/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.PluginsCatalogReadPluginConfigurationWithTypeResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PluginsCatalogRegisterPlugin Register a new plugin, or updates an existing one with the supplied name.
+// name: The name of the plugin
+func (s *System) PluginsCatalogRegisterPlugin(ctx context.Context, name string, request schema.PluginsCatalogRegisterPluginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/plugins/catalog/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PluginsCatalogRegisterPluginWithType Register a new plugin, or updates an existing one with the supplied name.
+// name: The name of the plugin
+// type_: The type of the plugin, may be auth, secret, or database
+func (s *System) PluginsCatalogRegisterPluginWithType(ctx context.Context, name string, type_ string, request schema.PluginsCatalogRegisterPluginWithTypeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/plugins/catalog/{type}/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PluginsCatalogRemovePlugin Remove the plugin with the given name.
+// name: The name of the plugin
+func (s *System) PluginsCatalogRemovePlugin(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/plugins/catalog/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PluginsCatalogRemovePluginWithType Remove the plugin with the given name.
+// name: The name of the plugin
+// type_: The type of the plugin, may be auth, secret, or database
+func (s *System) PluginsCatalogRemovePluginWithType(ctx context.Context, name string, type_ string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1940,7 +2148,7 @@ func (s *System) ReadPluginsCatalogByTypeByName(ctx context.Context, name string
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		s.client,
-		http.MethodGet,
+		http.MethodDelete,
 		requestPath,
 		nil, // request body
 		requestQueryParameters,
@@ -1948,32 +2156,32 @@ func (s *System) ReadPluginsCatalogByTypeByName(ctx context.Context, name string
 	)
 }
 
-// ReadPolicies List the configured access control policies.
-func (s *System) ReadPolicies(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// PluginsReloadBackends Reload mounted plugin backends.
+// Either the plugin name (`plugin`) or the desired plugin backend mounts (`mounts`) must be provided, but not both. In the case that the plugin name is provided, all mounted paths that use that plugin backend will be reloaded.  If (`scope`) is provided and is (`global`), the plugin(s) are reloaded globally.
+func (s *System) PluginsReloadBackends(ctx context.Context, request schema.PluginsReloadBackendsRequest, options ...RequestOption) (*Response[schema.PluginsReloadBackendsResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/policy"
+	requestPath := "/v1/sys/plugins/reload/backend"
 
 	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendStructuredRequestParseResponse[schema.PluginsReloadBackendsResponse](
 		ctx,
 		s.client,
-		http.MethodGet,
+		http.MethodPost,
 		requestPath,
-		nil, // request body
+		request,
 		requestQueryParameters,
 		requestModifiers,
 	)
 }
 
-// ReadPoliciesACL Retrieve information about the named ACL policy.
+// PoliciesDeleteAclPolicy Delete the ACL policy with the given name.
 // name: The name of the policy. Example: \&quot;ops\&quot;
-func (s *System) ReadPoliciesACL(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) PoliciesDeleteAclPolicy(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1987,7 +2195,7 @@ func (s *System) ReadPoliciesACL(ctx context.Context, name string, options ...Re
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		s.client,
-		http.MethodGet,
+		http.MethodDelete,
 		requestPath,
 		nil, // request body
 		requestQueryParameters,
@@ -1995,57 +2203,9 @@ func (s *System) ReadPoliciesACL(ctx context.Context, name string, options ...Re
 	)
 }
 
-// ReadPoliciesPassword Retrieve an existing password policy.
-// name: The name of the password policy.
-func (s *System) ReadPoliciesPassword(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/policies/password/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadPoliciesPasswordGenerate Generate a password from an existing password policy.
-// name: The name of the password policy.
-func (s *System) ReadPoliciesPasswordGenerate(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/policies/password/{name}/generate"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ReadPolicy Retrieve the policy body for the named policy.
+// PoliciesDeleteAclPolicy2 Delete the policy with the given name.
 // name: The name of the policy. Example: \&quot;ops\&quot;
-func (s *System) ReadPolicy(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) PoliciesDeleteAclPolicy2(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2059,6 +2219,54 @@ func (s *System) ReadPolicy(ctx context.Context, name string, options ...Request
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		s.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PoliciesDeletePasswordPolicy Delete a password policy.
+// name: The name of the password policy.
+func (s *System) PoliciesDeletePasswordPolicy(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/policies/password/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PoliciesGeneratePasswordFromPasswordPolicy Generate a password from an existing password policy.
+// name: The name of the password policy.
+func (s *System) PoliciesGeneratePasswordFromPasswordPolicy(ctx context.Context, name string, options ...RequestOption) (*Response[schema.PoliciesGeneratePasswordFromPasswordPolicyResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/policies/password/{name}/generate"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.PoliciesGeneratePasswordFromPasswordPolicyResponse](
+		ctx,
+		s.client,
 		http.MethodGet,
 		requestPath,
 		nil, // request body
@@ -2067,14 +2275,228 @@ func (s *System) ReadPolicy(ctx context.Context, name string, options ...Request
 	)
 }
 
-// ReadQuotasConfig
-func (s *System) ReadQuotasConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// PoliciesList
+func (s *System) PoliciesList(ctx context.Context, options ...RequestOption) (*Response[schema.PoliciesListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/quotas/config"
+	requestPath := "/v1/sys/policy"
+
+	requestQueryParameters := make(url.Values)
+	requestQueryParameters.Set("list", "true")
+
+	return sendRequestParseResponse[schema.PoliciesListResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PoliciesListAclPolicies
+func (s *System) PoliciesListAclPolicies(ctx context.Context, options ...RequestOption) (*Response[schema.PoliciesListAclPoliciesResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/policies/acl"
+
+	requestQueryParameters := make(url.Values)
+	requestQueryParameters.Set("list", "true")
+
+	return sendRequestParseResponse[schema.PoliciesListAclPoliciesResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PoliciesListPasswordPolicies List the existing password policies.
+func (s *System) PoliciesListPasswordPolicies(ctx context.Context, options ...RequestOption) (*Response[schema.PoliciesListPasswordPoliciesResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/policies/password"
+
+	requestQueryParameters := make(url.Values)
+	requestQueryParameters.Set("list", "true")
+
+	return sendRequestParseResponse[schema.PoliciesListPasswordPoliciesResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PoliciesReadAclPolicy Retrieve information about the named ACL policy.
+// name: The name of the policy. Example: \&quot;ops\&quot;
+func (s *System) PoliciesReadAclPolicy(ctx context.Context, name string, options ...RequestOption) (*Response[schema.PoliciesReadAclPolicyResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/policies/acl/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.PoliciesReadAclPolicyResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PoliciesReadAclPolicy2 Retrieve the policy body for the named policy.
+// name: The name of the policy. Example: \&quot;ops\&quot;
+func (s *System) PoliciesReadAclPolicy2(ctx context.Context, name string, options ...RequestOption) (*Response[schema.PoliciesReadAclPolicy2Response], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/policy/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.PoliciesReadAclPolicy2Response](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PoliciesReadPasswordPolicy Retrieve an existing password policy.
+// name: The name of the password policy.
+func (s *System) PoliciesReadPasswordPolicy(ctx context.Context, name string, options ...RequestOption) (*Response[schema.PoliciesReadPasswordPolicyResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/policies/password/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.PoliciesReadPasswordPolicyResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PoliciesWriteAclPolicy Add a new or update an existing ACL policy.
+// name: The name of the policy. Example: \&quot;ops\&quot;
+func (s *System) PoliciesWriteAclPolicy(ctx context.Context, name string, request schema.PoliciesWriteAclPolicyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/policies/acl/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PoliciesWriteAclPolicy2 Add a new or update an existing policy.
+// name: The name of the policy. Example: \&quot;ops\&quot;
+func (s *System) PoliciesWriteAclPolicy2(ctx context.Context, name string, request schema.PoliciesWriteAclPolicy2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/policy/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PoliciesWritePasswordPolicy Add a new or update an existing password policy.
+// name: The name of the password policy.
+func (s *System) PoliciesWritePasswordPolicy(ctx context.Context, name string, request schema.PoliciesWritePasswordPolicyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/policies/password/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PprofBlocking Returns stack traces that led to blocking on synchronization primitives
+// Returns stack traces that led to blocking on synchronization primitives
+func (s *System) PprofBlocking(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/pprof/block"
 
 	requestQueryParameters := make(url.Values)
 
@@ -2089,9 +2511,327 @@ func (s *System) ReadQuotasConfig(ctx context.Context, options ...RequestOption)
 	)
 }
 
-// ReadQuotasRateLimit
+// PprofCommandLine Returns the running program's command line.
+// Returns the running program's command line, with arguments separated by NUL bytes.
+func (s *System) PprofCommandLine(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/pprof/cmdline"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PprofCpuProfile Returns a pprof-formatted cpu profile payload.
+// Returns a pprof-formatted cpu profile payload. Profiling lasts for duration specified in seconds GET parameter, or for 30 seconds if not specified.
+func (s *System) PprofCpuProfile(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/pprof/profile"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PprofExecutionTrace Returns the execution trace in binary form.
+// Returns  the execution trace in binary form. Tracing lasts for duration specified in seconds GET parameter, or for 1 second if not specified.
+func (s *System) PprofExecutionTrace(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/pprof/trace"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PprofGoroutines Returns stack traces of all current goroutines.
+// Returns stack traces of all current goroutines.
+func (s *System) PprofGoroutines(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/pprof/goroutine"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PprofIndex Returns an HTML page listing the available profiles.
+// Returns an HTML page listing the available  profiles. This should be mainly accessed via browsers or applications that can  render pages.
+func (s *System) PprofIndex(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/pprof/"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PprofMemoryAllocations Returns a sampling of all past memory allocations.
+// Returns a sampling of all past memory allocations.
+func (s *System) PprofMemoryAllocations(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/pprof/allocs"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PprofMemoryAllocationsLive Returns a sampling of memory allocations of live object.
+// Returns a sampling of memory allocations of live object.
+func (s *System) PprofMemoryAllocationsLive(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/pprof/heap"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PprofMutexes Returns stack traces of holders of contended mutexes
+// Returns stack traces of holders of contended mutexes
+func (s *System) PprofMutexes(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/pprof/mutex"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PprofSymbols Returns the program counters listed in the request.
+// Returns the program counters listed in the request.
+func (s *System) PprofSymbols(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/pprof/symbol"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PprofThreadCreations Returns stack traces that led to the creation of new OS threads
+// Returns stack traces that led to the creation of new OS threads
+func (s *System) PprofThreadCreations(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/pprof/threadcreate"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// QueryTokenAccessorCapabilities
+func (s *System) QueryTokenAccessorCapabilities(ctx context.Context, request schema.QueryTokenAccessorCapabilitiesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/capabilities-accessor"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// QueryTokenCapabilities
+func (s *System) QueryTokenCapabilities(ctx context.Context, request schema.QueryTokenCapabilitiesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/capabilities"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// QueryTokenSelfCapabilities
+func (s *System) QueryTokenSelfCapabilities(ctx context.Context, request schema.QueryTokenSelfCapabilitiesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/capabilities-self"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// RateLimitQuotasConfigure
+func (s *System) RateLimitQuotasConfigure(ctx context.Context, request schema.RateLimitQuotasConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/quotas/config"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// RateLimitQuotasDelete
 // name: Name of the quota rule.
-func (s *System) ReadQuotasRateLimit(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) RateLimitQuotasDelete(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2105,7 +2845,7 @@ func (s *System) ReadQuotasRateLimit(ctx context.Context, name string, options .
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		s.client,
-		http.MethodGet,
+		http.MethodDelete,
 		requestPath,
 		nil, // request body
 		requestQueryParameters,
@@ -2113,19 +2853,19 @@ func (s *System) ReadQuotasRateLimit(ctx context.Context, name string, options .
 	)
 }
 
-// ReadRaw Read the value of the key at the given path.
-func (s *System) ReadRaw(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// RateLimitQuotasList
+func (s *System) RateLimitQuotasList(ctx context.Context, options ...RequestOption) (*Response[schema.RateLimitQuotasListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/raw"
+	requestPath := "/v1/sys/quotas/rate-limit"
 
 	requestQueryParameters := make(url.Values)
 	requestQueryParameters.Set("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.RateLimitQuotasListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -2136,20 +2876,20 @@ func (s *System) ReadRaw(ctx context.Context, options ...RequestOption) (*Respon
 	)
 }
 
-// ReadRawPath Read the value of the key at the given path.
-func (s *System) ReadRawPath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// RateLimitQuotasRead
+// name: Name of the quota rule.
+func (s *System) RateLimitQuotasRead(ctx context.Context, name string, options ...RequestOption) (*Response[schema.RateLimitQuotasReadResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/raw/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+	requestPath := "/v1/sys/quotas/rate-limit/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.RateLimitQuotasReadResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -2160,14 +2900,60 @@ func (s *System) ReadRawPath(ctx context.Context, path string, options ...Reques
 	)
 }
 
-// ReadRekeyBackup Return the backup copy of PGP-encrypted unseal keys.
-func (s *System) ReadRekeyBackup(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// RateLimitQuotasReadConfiguration
+func (s *System) RateLimitQuotasReadConfiguration(ctx context.Context, options ...RequestOption) (*Response[schema.RateLimitQuotasReadConfigurationResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/rekey/backup"
+	requestPath := "/v1/sys/quotas/config"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.RateLimitQuotasReadConfigurationResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// RateLimitQuotasWrite
+// name: Name of the quota rule.
+func (s *System) RateLimitQuotasWrite(ctx context.Context, name string, request schema.RateLimitQuotasWriteRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/quotas/rate-limit/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// ReadHealthStatus Returns the health status of Vault.
+func (s *System) ReadHealthStatus(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/health"
 
 	requestQueryParameters := make(url.Values)
 
@@ -2182,8 +2968,98 @@ func (s *System) ReadRekeyBackup(ctx context.Context, options ...RequestOption) 
 	)
 }
 
-// ReadRekeyInit Reads the configuration and progress of the current rekey attempt.
-func (s *System) ReadRekeyInit(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// ReadInitializationStatus Returns the initialization status of Vault.
+func (s *System) ReadInitializationStatus(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/init"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// ReadSanitizedConfigurationState Return a sanitized version of the Vault server configuration.
+// The sanitized output strips configuration values in the storage, HA storage, and seals stanzas, which may contain sensitive values such as API tokens. It also removes any token or secret fields in other stanzas, such as the circonus_api_token from telemetry.
+func (s *System) ReadSanitizedConfigurationState(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/config/state/sanitized"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// ReadWrappingProperties Look up wrapping properties for the given token.
+func (s *System) ReadWrappingProperties(ctx context.Context, request schema.ReadWrappingPropertiesRequest, options ...RequestOption) (*Response[schema.ReadWrappingPropertiesResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/wrapping/lookup"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[schema.ReadWrappingPropertiesResponse](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// ReadWrappingProperties2 Look up wrapping properties for the requester's token.
+func (s *System) ReadWrappingProperties2(ctx context.Context, options ...RequestOption) (*Response[schema.ReadWrappingProperties2Response], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/wrapping/lookup"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.ReadWrappingProperties2Response](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// RekeyAttemptCancel Cancels any in-progress rekey.
+// This clears the rekey settings as well as any progress made. This must be called to change the parameters of the rekey. Note: verification is still a part of a rekey. If rekeying is canceled during the verification flow, the current unseal keys remain valid.
+func (s *System) RekeyAttemptCancel(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2196,6 +3072,51 @@ func (s *System) ReadRekeyInit(ctx context.Context, options ...RequestOption) (*
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		s.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// RekeyAttemptInitialize Initializes a new rekey attempt.
+// Only a single rekey attempt can take place at a time, and changing the parameters of a rekey requires canceling and starting a new rekey, which will also provide a new nonce.
+func (s *System) RekeyAttemptInitialize(ctx context.Context, request schema.RekeyAttemptInitializeRequest, options ...RequestOption) (*Response[schema.RekeyAttemptInitializeResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/rekey/init"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[schema.RekeyAttemptInitializeResponse](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// RekeyAttemptReadProgress Reads the configuration and progress of the current rekey attempt.
+func (s *System) RekeyAttemptReadProgress(ctx context.Context, options ...RequestOption) (*Response[schema.RekeyAttemptReadProgressResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/rekey/init"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.RekeyAttemptReadProgressResponse](
+		ctx,
+		s.client,
 		http.MethodGet,
 		requestPath,
 		nil, // request body
@@ -2204,8 +3125,52 @@ func (s *System) ReadRekeyInit(ctx context.Context, options ...RequestOption) (*
 	)
 }
 
-// ReadRekeyRecoveryKeyBackup Allows fetching or deleting the backup of the rotated unseal keys.
-func (s *System) ReadRekeyRecoveryKeyBackup(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// RekeyAttemptUpdate Enter a single unseal key share to progress the rekey of the Vault.
+func (s *System) RekeyAttemptUpdate(ctx context.Context, request schema.RekeyAttemptUpdateRequest, options ...RequestOption) (*Response[schema.RekeyAttemptUpdateResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/rekey/update"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[schema.RekeyAttemptUpdateResponse](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// RekeyDeleteBackupKey Delete the backup copy of PGP-encrypted unseal keys.
+func (s *System) RekeyDeleteBackupKey(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/rekey/backup"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// RekeyDeleteBackupRecoveryKey
+func (s *System) RekeyDeleteBackupRecoveryKey(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2218,7 +3183,7 @@ func (s *System) ReadRekeyRecoveryKeyBackup(ctx context.Context, options ...Requ
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		s.client,
-		http.MethodGet,
+		http.MethodDelete,
 		requestPath,
 		nil, // request body
 		requestQueryParameters,
@@ -2226,18 +3191,18 @@ func (s *System) ReadRekeyRecoveryKeyBackup(ctx context.Context, options ...Requ
 	)
 }
 
-// ReadRekeyVerify Read the configuration and progress of the current rekey verification attempt.
-func (s *System) ReadRekeyVerify(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// RekeyReadBackupKey Return the backup copy of PGP-encrypted unseal keys.
+func (s *System) RekeyReadBackupKey(ctx context.Context, options ...RequestOption) (*Response[schema.RekeyReadBackupKeyResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/rekey/verify"
+	requestPath := "/v1/sys/rekey/backup"
 
 	requestQueryParameters := make(url.Values)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.RekeyReadBackupKeyResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -2248,9 +3213,143 @@ func (s *System) ReadRekeyVerify(ctx context.Context, options ...RequestOption) 
 	)
 }
 
-// ReadRemountStatus Check status of a mount migration
+// RekeyReadBackupRecoveryKey
+func (s *System) RekeyReadBackupRecoveryKey(ctx context.Context, options ...RequestOption) (*Response[schema.RekeyReadBackupRecoveryKeyResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/rekey/recovery-key-backup"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.RekeyReadBackupRecoveryKeyResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// RekeyVerificationCancel Cancel any in-progress rekey verification operation.
+// This clears any progress made and resets the nonce. Unlike a `DELETE` against `sys/rekey/init`, this only resets the current verification operation, not the entire rekey atttempt.
+func (s *System) RekeyVerificationCancel(ctx context.Context, options ...RequestOption) (*Response[schema.RekeyVerificationCancelResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/rekey/verify"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.RekeyVerificationCancelResponse](
+		ctx,
+		s.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// RekeyVerificationReadProgress Read the configuration and progress of the current rekey verification attempt.
+func (s *System) RekeyVerificationReadProgress(ctx context.Context, options ...RequestOption) (*Response[schema.RekeyVerificationReadProgressResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/rekey/verify"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.RekeyVerificationReadProgressResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// RekeyVerificationUpdate Enter a single new key share to progress the rekey verification operation.
+func (s *System) RekeyVerificationUpdate(ctx context.Context, request schema.RekeyVerificationUpdateRequest, options ...RequestOption) (*Response[schema.RekeyVerificationUpdateResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/rekey/verify"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[schema.RekeyVerificationUpdateResponse](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// ReloadSubsystem Reload the given subsystem
+func (s *System) ReloadSubsystem(ctx context.Context, subsystem string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/config/reload/{subsystem}"
+	requestPath = strings.Replace(requestPath, "{"+"subsystem"+"}", url.PathEscape(subsystem), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// Remount Initiate a mount migration
+func (s *System) Remount(ctx context.Context, request schema.RemountRequest, options ...RequestOption) (*Response[schema.RemountResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/remount"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[schema.RemountResponse](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// RemountStatus Check status of a mount migration
 // migrationId: The ID of the migration operation
-func (s *System) ReadRemountStatus(ctx context.Context, migrationId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) RemountStatus(ctx context.Context, migrationId string, options ...RequestOption) (*Response[schema.RemountStatusResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2261,7 +3360,7 @@ func (s *System) ReadRemountStatus(ctx context.Context, migrationId string, opti
 
 	requestQueryParameters := make(url.Values)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.RemountStatusResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -2272,8 +3371,8 @@ func (s *System) ReadRemountStatus(ctx context.Context, migrationId string, opti
 	)
 }
 
-// ReadReplicationStatus
-func (s *System) ReadReplicationStatus(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// ReplicationStatus
+func (s *System) ReplicationStatus(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2294,18 +3393,130 @@ func (s *System) ReadReplicationStatus(ctx context.Context, options ...RequestOp
 	)
 }
 
-// ReadRotateConfig
-func (s *System) ReadRotateConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// Rewrap
+func (s *System) Rewrap(ctx context.Context, request schema.RewrapRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/rotate/config"
+	requestPath := "/v1/sys/wrapping/rewrap"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// RootTokenGenerationCancel Cancels any in-progress root generation attempt.
+func (s *System) RootTokenGenerationCancel(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/generate-root/attempt"
 
 	requestQueryParameters := make(url.Values)
 
 	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// RootTokenGenerationCancel2 Cancels any in-progress root generation attempt.
+func (s *System) RootTokenGenerationCancel2(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/generate-root"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// RootTokenGenerationInitialize Initializes a new root generation attempt.
+// Only a single root generation attempt can take place at a time. One (and only one) of otp or pgp_key are required.
+func (s *System) RootTokenGenerationInitialize(ctx context.Context, request schema.RootTokenGenerationInitializeRequest, options ...RequestOption) (*Response[schema.RootTokenGenerationInitializeResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/generate-root/attempt"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[schema.RootTokenGenerationInitializeResponse](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// RootTokenGenerationInitialize2 Initializes a new root generation attempt.
+// Only a single root generation attempt can take place at a time. One (and only one) of otp or pgp_key are required.
+func (s *System) RootTokenGenerationInitialize2(ctx context.Context, request schema.RootTokenGenerationInitialize2Request, options ...RequestOption) (*Response[schema.RootTokenGenerationInitialize2Response], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/generate-root"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[schema.RootTokenGenerationInitialize2Response](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// RootTokenGenerationReadProgress Read the configuration and progress of the current root generation attempt.
+func (s *System) RootTokenGenerationReadProgress(ctx context.Context, options ...RequestOption) (*Response[schema.RootTokenGenerationReadProgressResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/generate-root/attempt"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.RootTokenGenerationReadProgressResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -2316,18 +3527,18 @@ func (s *System) ReadRotateConfig(ctx context.Context, options ...RequestOption)
 	)
 }
 
-// ReadSealStatus Check the seal status of a Vault.
-func (s *System) ReadSealStatus(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// RootTokenGenerationReadProgress2 Read the configuration and progress of the current root generation attempt.
+func (s *System) RootTokenGenerationReadProgress2(ctx context.Context, options ...RequestOption) (*Response[schema.RootTokenGenerationReadProgress2Response], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/seal-status"
+	requestPath := "/v1/sys/generate-root"
 
 	requestQueryParameters := make(url.Values)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.RootTokenGenerationReadProgress2Response](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -2338,186 +3549,24 @@ func (s *System) ReadSealStatus(ctx context.Context, options ...RequestOption) (
 	)
 }
 
-// Remount Initiate a mount migration
-func (s *System) Remount(ctx context.Context, request schema.RemountRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// RootTokenGenerationUpdate Enter a single unseal key share to progress the root generation attempt.
+// If the threshold number of unseal key shares is reached, Vault will complete the root generation and issue the new token. Otherwise, this API must be called multiple times until that threshold is met. The attempt nonce must be provided with each call.
+func (s *System) RootTokenGenerationUpdate(ctx context.Context, request schema.RootTokenGenerationUpdateRequest, options ...RequestOption) (*Response[schema.RootTokenGenerationUpdateResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/remount"
+	requestPath := "/v1/sys/generate-root/update"
 
 	requestQueryParameters := make(url.Values)
 
-	return sendStructuredRequestParseResponse[map[string]interface{}](
+	return sendStructuredRequestParseResponse[schema.RootTokenGenerationUpdateResponse](
 		ctx,
 		s.client,
 		http.MethodPost,
 		requestPath,
 		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// Renew Renews a lease, requesting to extend the lease.
-func (s *System) Renew(ctx context.Context, request schema.RenewRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/renew"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// RenewFor Renews a lease, requesting to extend the lease.
-// urlLeaseId: The lease identifier to renew. This is included with a lease.
-func (s *System) RenewFor(ctx context.Context, urlLeaseId string, request schema.RenewForRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/renew/{url_lease_id}"
-	requestPath = strings.Replace(requestPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// Revoke Revokes a lease immediately.
-func (s *System) Revoke(ctx context.Context, request schema.RevokeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/revoke"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// RevokeForce Revokes all secrets or tokens generated under a given prefix immediately
-// Unlike `/sys/leases/revoke-prefix`, this path ignores backend errors encountered during revocation. This is potentially very dangerous and should only be used in specific emergency situations where errors in the backend or the connected backend service prevent normal revocation.  By ignoring these errors, Vault abdicates responsibility for ensuring that the issued credentials or secrets are properly revoked and/or cleaned up. Access to this endpoint should be tightly controlled.
-// prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
-func (s *System) RevokeForce(ctx context.Context, prefix string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/revoke-force/{prefix}"
-	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// RevokeLease Revokes a lease immediately.
-// urlLeaseId: The lease identifier to renew. This is included with a lease.
-func (s *System) RevokeLease(ctx context.Context, urlLeaseId string, request schema.RevokeLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/revoke/{url_lease_id}"
-	requestPath = strings.Replace(requestPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// RevokePrefix Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
-// prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
-func (s *System) RevokePrefix(ctx context.Context, prefix string, request schema.RevokePrefixRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/revoke-prefix/{prefix}"
-	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// Rotate Rotates the backend encryption key used to persist data.
-func (s *System) Rotate(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/rotate"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		nil, // request body
 		requestQueryParameters,
 		requestModifiers,
 	)
@@ -2538,6 +3587,28 @@ func (s *System) Seal(ctx context.Context, options ...RequestOption) (*Response[
 		ctx,
 		s.client,
 		http.MethodPost,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// SealStatus Check the seal status of a Vault.
+func (s *System) SealStatus(ctx context.Context, options ...RequestOption) (*Response[schema.SealStatusResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/seal-status"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.SealStatusResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
 		requestPath,
 		nil, // request body
 		requestQueryParameters,
@@ -2568,612 +3639,9 @@ func (s *System) StepDownLeader(ctx context.Context, options ...RequestOption) (
 	)
 }
 
-// SysDeletePluginsCatalogName Remove the plugin with the given name.
-// name: The name of the plugin
-func (s *System) SysDeletePluginsCatalogName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/plugins/catalog/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodDelete,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// SysListLeasesLookup Returns a list of lease ids.
-func (s *System) SysListLeasesLookup(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/leases/lookup/"
-
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// SysReadPluginsCatalogName Return the configuration data for the plugin with the given name.
-// name: The name of the plugin
-func (s *System) SysReadPluginsCatalogName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/plugins/catalog/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// SysWriteLockedusersMountAccessorUnlockAliasIdentifier Unlocks the user with given mount_accessor and alias_identifier
-// aliasIdentifier: It is the name of the alias (user). For example, if the alias belongs to userpass backend, the name should be a valid username within userpass auth method. If the alias belongs to an approle auth method, the name should be a valid RoleID
-// mountAccessor: MountAccessor is the identifier of the mount entry to which the user belongs
-func (s *System) SysWriteLockedusersMountAccessorUnlockAliasIdentifier(ctx context.Context, aliasIdentifier string, mountAccessor string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/lockedusers/{mount_accessor}/unlock/{alias_identifier}"
-	requestPath = strings.Replace(requestPath, "{"+"alias_identifier"+"}", url.PathEscape(aliasIdentifier), -1)
-	requestPath = strings.Replace(requestPath, "{"+"mount_accessor"+"}", url.PathEscape(mountAccessor), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// SysWritePluginsCatalogName Register a new plugin, or updates an existing one with the supplied name.
-// name: The name of the plugin
-func (s *System) SysWritePluginsCatalogName(ctx context.Context, name string, request schema.SysWritePluginsCatalogNameRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/plugins/catalog/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// SysWriteToolsRandomUrlbytes Generate random bytes
-// urlbytes: The number of bytes to generate (POST URL parameter)
-func (s *System) SysWriteToolsRandomUrlbytes(ctx context.Context, urlbytes string, request schema.SysWriteToolsRandomUrlbytesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/tools/random/{urlbytes}"
-	requestPath = strings.Replace(requestPath, "{"+"urlbytes"+"}", url.PathEscape(urlbytes), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ToolsGenerateRandom Generate random bytes
-func (s *System) ToolsGenerateRandom(ctx context.Context, request schema.ToolsGenerateRandomRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/tools/random"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ToolsGenerateRandomSource Generate random bytes
-// source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
-func (s *System) ToolsGenerateRandomSource(ctx context.Context, source string, request schema.ToolsGenerateRandomSourceRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/tools/random/{source}"
-	requestPath = strings.Replace(requestPath, "{"+"source"+"}", url.PathEscape(source), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ToolsGenerateRandomSourceBytes Generate random bytes
-// source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
-// urlbytes: The number of bytes to generate (POST URL parameter)
-func (s *System) ToolsGenerateRandomSourceBytes(ctx context.Context, source string, urlbytes string, request schema.ToolsGenerateRandomSourceBytesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/tools/random/{source}/{urlbytes}"
-	requestPath = strings.Replace(requestPath, "{"+"source"+"}", url.PathEscape(source), -1)
-	requestPath = strings.Replace(requestPath, "{"+"urlbytes"+"}", url.PathEscape(urlbytes), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ToolsHash Generate a hash sum for input data
-func (s *System) ToolsHash(ctx context.Context, request schema.ToolsHashRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/tools/hash"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// ToolsHashWith Generate a hash sum for input data
-// urlalgorithm: Algorithm to use (POST URL parameter)
-func (s *System) ToolsHashWith(ctx context.Context, urlalgorithm string, request schema.ToolsHashWithRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/tools/hash/{urlalgorithm}"
-	requestPath = strings.Replace(requestPath, "{"+"urlalgorithm"+"}", url.PathEscape(urlalgorithm), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// Unseal Unseal the Vault.
-func (s *System) Unseal(ctx context.Context, request schema.UnsealRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/unseal"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WrappingReadLookup Look up wrapping properties for the requester's token.
-func (s *System) WrappingReadLookup(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/wrapping/lookup"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WrappingRewrap Rotates a response-wrapped token.
-func (s *System) WrappingRewrap(ctx context.Context, request schema.WrappingRewrapRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/wrapping/rewrap"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WrappingUnwrap Unwraps a response-wrapped token.
-func (s *System) WrappingUnwrap(ctx context.Context, request schema.WrappingUnwrapRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/wrapping/unwrap"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WrappingWrap Response-wraps an arbitrary JSON object.
-func (s *System) WrappingWrap(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/wrapping/wrap"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WrappingWriteLookup Look up wrapping properties for the given token.
-func (s *System) WrappingWriteLookup(ctx context.Context, request schema.WrappingWriteLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/wrapping/lookup"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteAuditDevice Enable a new audit device at the supplied path.
-// path: The name of the backend. Cannot be delimited. Example: \&quot;mysql\&quot;
-func (s *System) WriteAuditDevice(ctx context.Context, path string, request schema.WriteAuditDeviceRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/audit/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteAuthMethod Enables a new auth method.
-// After enabling, the auth method can be accessed and configured via the auth path specified as part of the URL. This auth path will be nested under the auth prefix.  For example, enable the \"foo\" auth method will make it accessible at /auth/foo.
-// path: The path to mount to. Cannot be delimited. Example: \&quot;user\&quot;
-func (s *System) WriteAuthMethod(ctx context.Context, path string, request schema.WriteAuthMethodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/auth/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteAuthMethodTune Tune configuration parameters for a given auth path.
-// This endpoint requires sudo capability on the final path, but the same functionality can be achieved without sudo via `sys/mounts/auth/[auth-path]/tune`.
-// path: Tune the configuration parameters for an auth path.
-func (s *System) WriteAuthMethodTune(ctx context.Context, path string, request schema.WriteAuthMethodTuneRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/auth/{path}/tune"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteCapabilities Fetches the capabilities of the given token on the given path.
-func (s *System) WriteCapabilities(ctx context.Context, request schema.WriteCapabilitiesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/capabilities"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteCapabilitiesAccessor Fetches the capabilities of the token associated with the given token, on the given path.
-func (s *System) WriteCapabilitiesAccessor(ctx context.Context, request schema.WriteCapabilitiesAccessorRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/capabilities-accessor"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteCapabilitiesSelf Fetches the capabilities of the given token on the given path.
-func (s *System) WriteCapabilitiesSelf(ctx context.Context, request schema.WriteCapabilitiesSelfRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/capabilities-self"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteConfigAuditingRequestHeader Enable auditing of a header.
-func (s *System) WriteConfigAuditingRequestHeader(ctx context.Context, header string, request schema.WriteConfigAuditingRequestHeaderRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/config/auditing/request-headers/{header}"
-	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteConfigCORS Configure the CORS settings.
-func (s *System) WriteConfigCORS(ctx context.Context, request schema.WriteConfigCORSRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/config/cors"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteConfigReloadSubsystem Reload the given subsystem
-func (s *System) WriteConfigReloadSubsystem(ctx context.Context, subsystem string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/config/reload/{subsystem}"
-	requestPath = strings.Replace(requestPath, "{"+"subsystem"+"}", url.PathEscape(subsystem), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteConfigUIHeader Configure the values to be returned for the UI header.
+// UiHeadersConfigure Configure the values to be returned for the UI header.
 // header: The name of the header.
-func (s *System) WriteConfigUIHeader(ctx context.Context, header string, request schema.WriteConfigUIHeaderRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) UiHeadersConfigure(ctx context.Context, header string, request schema.UiHeadersConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3195,15 +3663,107 @@ func (s *System) WriteConfigUIHeader(ctx context.Context, header string, request
 	)
 }
 
-// WriteGenerateRoot Initializes a new root generation attempt.
-// Only a single root generation attempt can take place at a time. One (and only one) of otp or pgp_key are required.
-func (s *System) WriteGenerateRoot(ctx context.Context, request schema.WriteGenerateRootRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// UiHeadersDeleteConfiguration Remove a UI header.
+// header: The name of the header.
+func (s *System) UiHeadersDeleteConfiguration(ctx context.Context, header string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/generate-root"
+	requestPath := "/v1/sys/config/ui/headers/{header}"
+	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// UiHeadersList Return a list of configured UI headers.
+func (s *System) UiHeadersList(ctx context.Context, options ...RequestOption) (*Response[schema.UiHeadersListResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/config/ui/headers/"
+
+	requestQueryParameters := make(url.Values)
+	requestQueryParameters.Set("list", "true")
+
+	return sendRequestParseResponse[schema.UiHeadersListResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// UiHeadersReadConfiguration Return the given UI header's configuration
+// header: The name of the header.
+func (s *System) UiHeadersReadConfiguration(ctx context.Context, header string, options ...RequestOption) (*Response[schema.UiHeadersReadConfigurationResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/config/ui/headers/{header}"
+	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[schema.UiHeadersReadConfigurationResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// Unseal Unseal the Vault.
+func (s *System) Unseal(ctx context.Context, request schema.UnsealRequest, options ...RequestOption) (*Response[schema.UnsealResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/unseal"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[schema.UnsealResponse](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// Unwrap
+func (s *System) Unwrap(ctx context.Context, request schema.UnwrapRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/wrapping/unwrap"
 
 	requestQueryParameters := make(url.Values)
 
@@ -3218,222 +3778,37 @@ func (s *System) WriteGenerateRoot(ctx context.Context, request schema.WriteGene
 	)
 }
 
-// WriteGenerateRootAttempt Initializes a new root generation attempt.
-// Only a single root generation attempt can take place at a time. One (and only one) of otp or pgp_key are required.
-func (s *System) WriteGenerateRootAttempt(ctx context.Context, request schema.WriteGenerateRootAttemptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// VersionHistory Returns map of historical version change entries
+func (s *System) VersionHistory(ctx context.Context, options ...RequestOption) (*Response[schema.VersionHistoryResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/generate-root/attempt"
+	requestPath := "/v1/sys/version-history/"
 
 	requestQueryParameters := make(url.Values)
+	requestQueryParameters.Set("list", "true")
 
-	return sendStructuredRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.VersionHistoryResponse](
 		ctx,
 		s.client,
-		http.MethodPost,
+		http.MethodGet,
 		requestPath,
-		request,
+		nil, // request body
 		requestQueryParameters,
 		requestModifiers,
 	)
 }
 
-// WriteGenerateRootUpdate Enter a single unseal key share to progress the root generation attempt.
-// If the threshold number of unseal key shares is reached, Vault will complete the root generation and issue the new token. Otherwise, this API must be called multiple times until that threshold is met. The attempt nonce must be provided with each call.
-func (s *System) WriteGenerateRootUpdate(ctx context.Context, request schema.WriteGenerateRootUpdateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// Wrap
+func (s *System) Wrap(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/generate-root/update"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteInit Initialize a new Vault.
-// The Vault must not have been previously initialized. The recovery options, as well as the stored shares option, are only available when using Vault HSM.
-func (s *System) WriteInit(ctx context.Context, request schema.WriteInitRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/init"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteInternalCountersConfig Enable or disable collection of client count, set retention period, or set default reporting period.
-func (s *System) WriteInternalCountersConfig(ctx context.Context, request schema.WriteInternalCountersConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/internal/counters/config"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteLeasesLookup Retrieve lease metadata.
-func (s *System) WriteLeasesLookup(ctx context.Context, request schema.WriteLeasesLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/leases/lookup"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteLeasesRenew Renews a lease, requesting to extend the lease.
-func (s *System) WriteLeasesRenew(ctx context.Context, request schema.WriteLeasesRenewRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/leases/renew"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteLeasesRenew2 Renews a lease, requesting to extend the lease.
-// urlLeaseId: The lease identifier to renew. This is included with a lease.
-func (s *System) WriteLeasesRenew2(ctx context.Context, urlLeaseId string, request schema.WriteLeasesRenew2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/leases/renew/{url_lease_id}"
-	requestPath = strings.Replace(requestPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteLeasesRevoke Revokes a lease immediately.
-func (s *System) WriteLeasesRevoke(ctx context.Context, request schema.WriteLeasesRevokeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/leases/revoke"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteLeasesRevoke2 Revokes a lease immediately.
-// urlLeaseId: The lease identifier to renew. This is included with a lease.
-func (s *System) WriteLeasesRevoke2(ctx context.Context, urlLeaseId string, request schema.WriteLeasesRevoke2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/leases/revoke/{url_lease_id}"
-	requestPath = strings.Replace(requestPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteLeasesRevokeForce Revokes all secrets or tokens generated under a given prefix immediately
-// Unlike `/sys/leases/revoke-prefix`, this path ignores backend errors encountered during revocation. This is potentially very dangerous and should only be used in specific emergency situations where errors in the backend or the connected backend service prevent normal revocation.  By ignoring these errors, Vault abdicates responsibility for ensuring that the issued credentials or secrets are properly revoked and/or cleaned up. Access to this endpoint should be tightly controlled.
-// prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
-func (s *System) WriteLeasesRevokeForce(ctx context.Context, prefix string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/leases/revoke-force/{prefix}"
-	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
+	requestPath := "/v1/sys/wrapping/wrap"
 
 	requestQueryParameters := make(url.Values)
 
@@ -3443,447 +3818,6 @@ func (s *System) WriteLeasesRevokeForce(ctx context.Context, prefix string, opti
 		http.MethodPost,
 		requestPath,
 		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteLeasesRevokePrefix Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
-// prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
-func (s *System) WriteLeasesRevokePrefix(ctx context.Context, prefix string, request schema.WriteLeasesRevokePrefixRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/leases/revoke-prefix/{prefix}"
-	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteLeasesTidy This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
-func (s *System) WriteLeasesTidy(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/leases/tidy"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteLogger Modify the log level of a single logger.
-// name: The name of the logger to be modified.
-func (s *System) WriteLogger(ctx context.Context, name string, request schema.WriteLoggerRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/loggers/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteLoggers Modify the log level for all existing loggers.
-func (s *System) WriteLoggers(ctx context.Context, request schema.WriteLoggersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/loggers"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteMount Enable a new secrets engine at the given path.
-// path: The path to mount to. Example: \&quot;aws/east\&quot;
-func (s *System) WriteMount(ctx context.Context, path string, request schema.WriteMountRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/mounts/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteMountsConfig Tune backend configuration parameters for this mount.
-// path: The path to mount to. Example: \&quot;aws/east\&quot;
-func (s *System) WriteMountsConfig(ctx context.Context, path string, request schema.WriteMountsConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/mounts/{path}/tune"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WritePluginsCatalogByTypeByName Register a new plugin, or updates an existing one with the supplied name.
-// name: The name of the plugin
-// type_: The type of the plugin, may be auth, secret, or database
-func (s *System) WritePluginsCatalogByTypeByName(ctx context.Context, name string, type_ string, request schema.WritePluginsCatalogByTypeByNameRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/plugins/catalog/{type}/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WritePluginsReloadBackend Reload mounted plugin backends.
-// Either the plugin name (`plugin`) or the desired plugin backend mounts (`mounts`) must be provided, but not both. In the case that the plugin name is provided, all mounted paths that use that plugin backend will be reloaded.  If (`scope`) is provided and is (`global`), the plugin(s) are reloaded globally.
-func (s *System) WritePluginsReloadBackend(ctx context.Context, request schema.WritePluginsReloadBackendRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/plugins/reload/backend"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WritePoliciesACL Add a new or update an existing ACL policy.
-// name: The name of the policy. Example: \&quot;ops\&quot;
-func (s *System) WritePoliciesACL(ctx context.Context, name string, request schema.WritePoliciesACLRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/policies/acl/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WritePoliciesPassword Add a new or update an existing password policy.
-// name: The name of the password policy.
-func (s *System) WritePoliciesPassword(ctx context.Context, name string, request schema.WritePoliciesPasswordRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/policies/password/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WritePolicy Add a new or update an existing policy.
-// name: The name of the policy. Example: \&quot;ops\&quot;
-func (s *System) WritePolicy(ctx context.Context, name string, request schema.WritePolicyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/policy/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteQuotasConfig
-func (s *System) WriteQuotasConfig(ctx context.Context, request schema.WriteQuotasConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/quotas/config"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteQuotasRateLimit
-// name: Name of the quota rule.
-func (s *System) WriteQuotasRateLimit(ctx context.Context, name string, request schema.WriteQuotasRateLimitRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/quotas/rate-limit/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteRaw Update the value of the key at the given path.
-func (s *System) WriteRaw(ctx context.Context, request schema.WriteRawRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/raw"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteRawPath Update the value of the key at the given path.
-func (s *System) WriteRawPath(ctx context.Context, path string, request schema.WriteRawPathRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/raw/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteRekeyInit Initializes a new rekey attempt.
-// Only a single rekey attempt can take place at a time, and changing the parameters of a rekey requires canceling and starting a new rekey, which will also provide a new nonce.
-func (s *System) WriteRekeyInit(ctx context.Context, request schema.WriteRekeyInitRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/rekey/init"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteRekeyUpdate Enter a single unseal key share to progress the rekey of the Vault.
-func (s *System) WriteRekeyUpdate(ctx context.Context, request schema.WriteRekeyUpdateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/rekey/update"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteRekeyVerify Enter a single new key share to progress the rekey verification operation.
-func (s *System) WriteRekeyVerify(ctx context.Context, request schema.WriteRekeyVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/rekey/verify"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// WriteRotateConfig
-func (s *System) WriteRotateConfig(ctx context.Context, request schema.WriteRotateConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/rotate/config"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
 		requestQueryParameters,
 		requestModifiers,
 	)

@@ -9,22 +9,22 @@ import (
 	"encoding/json"
 )
 
-// AppRoleReadSecretIDBoundCIDRsResponse struct for AppRoleReadSecretIDBoundCIDRsResponse
-type AppRoleReadSecretIDBoundCIDRsResponse struct {
+// AppRoleReadSecretIdBoundCidrsResponse struct for AppRoleReadSecretIdBoundCidrsResponse
+type AppRoleReadSecretIdBoundCidrsResponse struct {
 	// Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can perform the login operation.
 	SecretIdBoundCidrs []string `json:"secret_id_bound_cidrs"`
 }
 
-// NewAppRoleReadSecretIDBoundCIDRsResponseWithDefaults instantiates a new AppRoleReadSecretIDBoundCIDRsResponse object
+// NewAppRoleReadSecretIdBoundCidrsResponseWithDefaults instantiates a new AppRoleReadSecretIdBoundCidrsResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAppRoleReadSecretIDBoundCIDRsResponseWithDefaults() *AppRoleReadSecretIDBoundCIDRsResponse {
-	var this AppRoleReadSecretIDBoundCIDRsResponse
+func NewAppRoleReadSecretIdBoundCidrsResponseWithDefaults() *AppRoleReadSecretIdBoundCidrsResponse {
+	var this AppRoleReadSecretIdBoundCidrsResponse
 
 	return &this
 }
 
-func (o AppRoleReadSecretIDBoundCIDRsResponse) MarshalJSON() ([]byte, error) {
+func (o AppRoleReadSecretIdBoundCidrsResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["secret_id_bound_cidrs"] = o.SecretIdBoundCidrs

@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// MFAWriteLoginEnforcementRequest struct for MFAWriteLoginEnforcementRequest
-type MFAWriteLoginEnforcementRequest struct {
+// MfaWriteLoginEnforcementRequest struct for MfaWriteLoginEnforcementRequest
+type MfaWriteLoginEnforcementRequest struct {
 	// Array of auth mount accessor IDs
 	AuthMethodAccessors []string `json:"auth_method_accessors"`
 
@@ -27,16 +27,16 @@ type MFAWriteLoginEnforcementRequest struct {
 	MfaMethodIds []string `json:"mfa_method_ids"`
 }
 
-// NewMFAWriteLoginEnforcementRequestWithDefaults instantiates a new MFAWriteLoginEnforcementRequest object
+// NewMfaWriteLoginEnforcementRequestWithDefaults instantiates a new MfaWriteLoginEnforcementRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewMFAWriteLoginEnforcementRequestWithDefaults() *MFAWriteLoginEnforcementRequest {
-	var this MFAWriteLoginEnforcementRequest
+func NewMfaWriteLoginEnforcementRequestWithDefaults() *MfaWriteLoginEnforcementRequest {
+	var this MfaWriteLoginEnforcementRequest
 
 	return &this
 }
 
-func (o MFAWriteLoginEnforcementRequest) MarshalJSON() ([]byte, error) {
+func (o MfaWriteLoginEnforcementRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["auth_method_accessors"] = o.AuthMethodAccessors

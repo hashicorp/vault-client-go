@@ -1,4 +1,4 @@
-# AppRoleWriteSecretIDBoundCIDRsRequest
+# AppRoleWriteSecretIdBoundCidrsRequest
 
 
 ## Properties
@@ -12,47 +12,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewAppRoleWriteSecretIDBoundCIDRsRequest
+### NewAppRoleWriteSecretIdBoundCidrsRequest
 
-`func NewAppRoleWriteSecretIDBoundCIDRsRequest() *AppRoleWriteSecretIDBoundCIDRsRequest`
+`func NewAppRoleWriteSecretIdBoundCidrsRequest() *AppRoleWriteSecretIdBoundCidrsRequest`
 
-NewAppRoleWriteSecretIDBoundCIDRsRequest instantiates a new AppRoleWriteSecretIDBoundCIDRsRequest object
+NewAppRoleWriteSecretIdBoundCidrsRequest instantiates a new AppRoleWriteSecretIdBoundCidrsRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAppRoleWriteSecretIDBoundCIDRsRequestWithDefaults
+### NewAppRoleWriteSecretIdBoundCidrsRequestWithDefaults
 
-`func NewAppRoleWriteSecretIDBoundCIDRsRequestWithDefaults() *AppRoleWriteSecretIDBoundCIDRsRequest`
+`func NewAppRoleWriteSecretIdBoundCidrsRequestWithDefaults() *AppRoleWriteSecretIdBoundCidrsRequest`
 
-NewAppRoleWriteSecretIDBoundCIDRsRequestWithDefaults instantiates a new AppRoleWriteSecretIDBoundCIDRsRequest object
+NewAppRoleWriteSecretIdBoundCidrsRequestWithDefaults instantiates a new AppRoleWriteSecretIdBoundCidrsRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetSecretIdBoundCidrs
 
-`func (o *AppRoleWriteSecretIDBoundCIDRsRequest) GetSecretIdBoundCidrs() []string`
+`func (o *AppRoleWriteSecretIdBoundCidrsRequest) GetSecretIdBoundCidrs() []string`
 
 GetSecretIdBoundCidrs returns the SecretIdBoundCidrs field if non-nil, zero value otherwise.
 
 ### GetSecretIdBoundCidrsOk
 
-`func (o *AppRoleWriteSecretIDBoundCIDRsRequest) GetSecretIdBoundCidrsOk() (*[]string, bool)`
+`func (o *AppRoleWriteSecretIdBoundCidrsRequest) GetSecretIdBoundCidrsOk() (*[]string, bool)`
 
 GetSecretIdBoundCidrsOk returns a tuple with the SecretIdBoundCidrs field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecretIdBoundCidrs
 
-`func (o *AppRoleWriteSecretIDBoundCIDRsRequest) SetSecretIdBoundCidrs(v []string)`
+`func (o *AppRoleWriteSecretIdBoundCidrsRequest) SetSecretIdBoundCidrs(v []string)`
 
 SetSecretIdBoundCidrs sets SecretIdBoundCidrs field to given value.
 
 
 ### HasSecretIdBoundCidrs
 
-`func (o *AppRoleWriteSecretIDBoundCIDRsRequest) HasSecretIdBoundCidrs() bool`
+`func (o *AppRoleWriteSecretIdBoundCidrsRequest) HasSecretIdBoundCidrs() bool`
 
 HasSecretIdBoundCidrs returns a boolean if a field has been set.
 

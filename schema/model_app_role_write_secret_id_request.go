@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// AppRoleWriteSecretIDRequest struct for AppRoleWriteSecretIDRequest
-type AppRoleWriteSecretIDRequest struct {
+// AppRoleWriteSecretIdRequest struct for AppRoleWriteSecretIdRequest
+type AppRoleWriteSecretIdRequest struct {
 	// Comma separated string or list of CIDR blocks enforcing secret IDs to be used from specific set of IP addresses. If 'bound_cidr_list' is set on the role, then the list of CIDR blocks listed here should be a subset of the CIDR blocks listed on the role.
 	CidrList []string `json:"cidr_list"`
 
@@ -27,16 +27,16 @@ type AppRoleWriteSecretIDRequest struct {
 	Ttl int32 `json:"ttl"`
 }
 
-// NewAppRoleWriteSecretIDRequestWithDefaults instantiates a new AppRoleWriteSecretIDRequest object
+// NewAppRoleWriteSecretIdRequestWithDefaults instantiates a new AppRoleWriteSecretIdRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAppRoleWriteSecretIDRequestWithDefaults() *AppRoleWriteSecretIDRequest {
-	var this AppRoleWriteSecretIDRequest
+func NewAppRoleWriteSecretIdRequestWithDefaults() *AppRoleWriteSecretIdRequest {
+	var this AppRoleWriteSecretIdRequest
 
 	return &this
 }
 
-func (o AppRoleWriteSecretIDRequest) MarshalJSON() ([]byte, error) {
+func (o AppRoleWriteSecretIdRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["cidr_list"] = o.CidrList

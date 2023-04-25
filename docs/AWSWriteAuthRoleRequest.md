@@ -1,4 +1,4 @@
-# AWSWriteAuthRoleRequest
+# AwsWriteAuthRoleRequest
 
 
 ## Properties
@@ -40,47 +40,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewAWSWriteAuthRoleRequest
+### NewAwsWriteAuthRoleRequest
 
-`func NewAWSWriteAuthRoleRequest() *AWSWriteAuthRoleRequest`
+`func NewAwsWriteAuthRoleRequest() *AwsWriteAuthRoleRequest`
 
-NewAWSWriteAuthRoleRequest instantiates a new AWSWriteAuthRoleRequest object
+NewAwsWriteAuthRoleRequest instantiates a new AwsWriteAuthRoleRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAWSWriteAuthRoleRequestWithDefaults
+### NewAwsWriteAuthRoleRequestWithDefaults
 
-`func NewAWSWriteAuthRoleRequestWithDefaults() *AWSWriteAuthRoleRequest`
+`func NewAwsWriteAuthRoleRequestWithDefaults() *AwsWriteAuthRoleRequest`
 
-NewAWSWriteAuthRoleRequestWithDefaults instantiates a new AWSWriteAuthRoleRequest object
+NewAwsWriteAuthRoleRequestWithDefaults instantiates a new AwsWriteAuthRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetAllowInstanceMigration
 
-`func (o *AWSWriteAuthRoleRequest) GetAllowInstanceMigration() bool`
+`func (o *AwsWriteAuthRoleRequest) GetAllowInstanceMigration() bool`
 
 GetAllowInstanceMigration returns the AllowInstanceMigration field if non-nil, zero value otherwise.
 
 ### GetAllowInstanceMigrationOk
 
-`func (o *AWSWriteAuthRoleRequest) GetAllowInstanceMigrationOk() (*bool, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetAllowInstanceMigrationOk() (*bool, bool)`
 
 GetAllowInstanceMigrationOk returns a tuple with the AllowInstanceMigration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowInstanceMigration
 
-`func (o *AWSWriteAuthRoleRequest) SetAllowInstanceMigration(v bool)`
+`func (o *AwsWriteAuthRoleRequest) SetAllowInstanceMigration(v bool)`
 
 SetAllowInstanceMigration sets AllowInstanceMigration field to given value.
 
 
 ### HasAllowInstanceMigration
 
-`func (o *AWSWriteAuthRoleRequest) HasAllowInstanceMigration() bool`
+`func (o *AwsWriteAuthRoleRequest) HasAllowInstanceMigration() bool`
 
 HasAllowInstanceMigration returns a boolean if a field has been set.
 
@@ -89,27 +89,27 @@ HasAllowInstanceMigration returns a boolean if a field has been set.
 
 ### GetAuthType
 
-`func (o *AWSWriteAuthRoleRequest) GetAuthType() string`
+`func (o *AwsWriteAuthRoleRequest) GetAuthType() string`
 
 GetAuthType returns the AuthType field if non-nil, zero value otherwise.
 
 ### GetAuthTypeOk
 
-`func (o *AWSWriteAuthRoleRequest) GetAuthTypeOk() (*string, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetAuthTypeOk() (*string, bool)`
 
 GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthType
 
-`func (o *AWSWriteAuthRoleRequest) SetAuthType(v string)`
+`func (o *AwsWriteAuthRoleRequest) SetAuthType(v string)`
 
 SetAuthType sets AuthType field to given value.
 
 
 ### HasAuthType
 
-`func (o *AWSWriteAuthRoleRequest) HasAuthType() bool`
+`func (o *AwsWriteAuthRoleRequest) HasAuthType() bool`
 
 HasAuthType returns a boolean if a field has been set.
 
@@ -118,27 +118,27 @@ HasAuthType returns a boolean if a field has been set.
 
 ### GetBoundAccountId
 
-`func (o *AWSWriteAuthRoleRequest) GetBoundAccountId() []string`
+`func (o *AwsWriteAuthRoleRequest) GetBoundAccountId() []string`
 
 GetBoundAccountId returns the BoundAccountId field if non-nil, zero value otherwise.
 
 ### GetBoundAccountIdOk
 
-`func (o *AWSWriteAuthRoleRequest) GetBoundAccountIdOk() (*[]string, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetBoundAccountIdOk() (*[]string, bool)`
 
 GetBoundAccountIdOk returns a tuple with the BoundAccountId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBoundAccountId
 
-`func (o *AWSWriteAuthRoleRequest) SetBoundAccountId(v []string)`
+`func (o *AwsWriteAuthRoleRequest) SetBoundAccountId(v []string)`
 
 SetBoundAccountId sets BoundAccountId field to given value.
 
 
 ### HasBoundAccountId
 
-`func (o *AWSWriteAuthRoleRequest) HasBoundAccountId() bool`
+`func (o *AwsWriteAuthRoleRequest) HasBoundAccountId() bool`
 
 HasBoundAccountId returns a boolean if a field has been set.
 
@@ -147,27 +147,27 @@ HasBoundAccountId returns a boolean if a field has been set.
 
 ### GetBoundAmiId
 
-`func (o *AWSWriteAuthRoleRequest) GetBoundAmiId() []string`
+`func (o *AwsWriteAuthRoleRequest) GetBoundAmiId() []string`
 
 GetBoundAmiId returns the BoundAmiId field if non-nil, zero value otherwise.
 
 ### GetBoundAmiIdOk
 
-`func (o *AWSWriteAuthRoleRequest) GetBoundAmiIdOk() (*[]string, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetBoundAmiIdOk() (*[]string, bool)`
 
 GetBoundAmiIdOk returns a tuple with the BoundAmiId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBoundAmiId
 
-`func (o *AWSWriteAuthRoleRequest) SetBoundAmiId(v []string)`
+`func (o *AwsWriteAuthRoleRequest) SetBoundAmiId(v []string)`
 
 SetBoundAmiId sets BoundAmiId field to given value.
 
 
 ### HasBoundAmiId
 
-`func (o *AWSWriteAuthRoleRequest) HasBoundAmiId() bool`
+`func (o *AwsWriteAuthRoleRequest) HasBoundAmiId() bool`
 
 HasBoundAmiId returns a boolean if a field has been set.
 
@@ -176,27 +176,27 @@ HasBoundAmiId returns a boolean if a field has been set.
 
 ### GetBoundEc2InstanceId
 
-`func (o *AWSWriteAuthRoleRequest) GetBoundEc2InstanceId() []string`
+`func (o *AwsWriteAuthRoleRequest) GetBoundEc2InstanceId() []string`
 
 GetBoundEc2InstanceId returns the BoundEc2InstanceId field if non-nil, zero value otherwise.
 
 ### GetBoundEc2InstanceIdOk
 
-`func (o *AWSWriteAuthRoleRequest) GetBoundEc2InstanceIdOk() (*[]string, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetBoundEc2InstanceIdOk() (*[]string, bool)`
 
 GetBoundEc2InstanceIdOk returns a tuple with the BoundEc2InstanceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBoundEc2InstanceId
 
-`func (o *AWSWriteAuthRoleRequest) SetBoundEc2InstanceId(v []string)`
+`func (o *AwsWriteAuthRoleRequest) SetBoundEc2InstanceId(v []string)`
 
 SetBoundEc2InstanceId sets BoundEc2InstanceId field to given value.
 
 
 ### HasBoundEc2InstanceId
 
-`func (o *AWSWriteAuthRoleRequest) HasBoundEc2InstanceId() bool`
+`func (o *AwsWriteAuthRoleRequest) HasBoundEc2InstanceId() bool`
 
 HasBoundEc2InstanceId returns a boolean if a field has been set.
 
@@ -205,27 +205,27 @@ HasBoundEc2InstanceId returns a boolean if a field has been set.
 
 ### GetBoundIamInstanceProfileArn
 
-`func (o *AWSWriteAuthRoleRequest) GetBoundIamInstanceProfileArn() []string`
+`func (o *AwsWriteAuthRoleRequest) GetBoundIamInstanceProfileArn() []string`
 
 GetBoundIamInstanceProfileArn returns the BoundIamInstanceProfileArn field if non-nil, zero value otherwise.
 
 ### GetBoundIamInstanceProfileArnOk
 
-`func (o *AWSWriteAuthRoleRequest) GetBoundIamInstanceProfileArnOk() (*[]string, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetBoundIamInstanceProfileArnOk() (*[]string, bool)`
 
 GetBoundIamInstanceProfileArnOk returns a tuple with the BoundIamInstanceProfileArn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBoundIamInstanceProfileArn
 
-`func (o *AWSWriteAuthRoleRequest) SetBoundIamInstanceProfileArn(v []string)`
+`func (o *AwsWriteAuthRoleRequest) SetBoundIamInstanceProfileArn(v []string)`
 
 SetBoundIamInstanceProfileArn sets BoundIamInstanceProfileArn field to given value.
 
 
 ### HasBoundIamInstanceProfileArn
 
-`func (o *AWSWriteAuthRoleRequest) HasBoundIamInstanceProfileArn() bool`
+`func (o *AwsWriteAuthRoleRequest) HasBoundIamInstanceProfileArn() bool`
 
 HasBoundIamInstanceProfileArn returns a boolean if a field has been set.
 
@@ -234,27 +234,27 @@ HasBoundIamInstanceProfileArn returns a boolean if a field has been set.
 
 ### GetBoundIamPrincipalArn
 
-`func (o *AWSWriteAuthRoleRequest) GetBoundIamPrincipalArn() []string`
+`func (o *AwsWriteAuthRoleRequest) GetBoundIamPrincipalArn() []string`
 
 GetBoundIamPrincipalArn returns the BoundIamPrincipalArn field if non-nil, zero value otherwise.
 
 ### GetBoundIamPrincipalArnOk
 
-`func (o *AWSWriteAuthRoleRequest) GetBoundIamPrincipalArnOk() (*[]string, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetBoundIamPrincipalArnOk() (*[]string, bool)`
 
 GetBoundIamPrincipalArnOk returns a tuple with the BoundIamPrincipalArn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBoundIamPrincipalArn
 
-`func (o *AWSWriteAuthRoleRequest) SetBoundIamPrincipalArn(v []string)`
+`func (o *AwsWriteAuthRoleRequest) SetBoundIamPrincipalArn(v []string)`
 
 SetBoundIamPrincipalArn sets BoundIamPrincipalArn field to given value.
 
 
 ### HasBoundIamPrincipalArn
 
-`func (o *AWSWriteAuthRoleRequest) HasBoundIamPrincipalArn() bool`
+`func (o *AwsWriteAuthRoleRequest) HasBoundIamPrincipalArn() bool`
 
 HasBoundIamPrincipalArn returns a boolean if a field has been set.
 
@@ -263,27 +263,27 @@ HasBoundIamPrincipalArn returns a boolean if a field has been set.
 
 ### GetBoundIamRoleArn
 
-`func (o *AWSWriteAuthRoleRequest) GetBoundIamRoleArn() []string`
+`func (o *AwsWriteAuthRoleRequest) GetBoundIamRoleArn() []string`
 
 GetBoundIamRoleArn returns the BoundIamRoleArn field if non-nil, zero value otherwise.
 
 ### GetBoundIamRoleArnOk
 
-`func (o *AWSWriteAuthRoleRequest) GetBoundIamRoleArnOk() (*[]string, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetBoundIamRoleArnOk() (*[]string, bool)`
 
 GetBoundIamRoleArnOk returns a tuple with the BoundIamRoleArn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBoundIamRoleArn
 
-`func (o *AWSWriteAuthRoleRequest) SetBoundIamRoleArn(v []string)`
+`func (o *AwsWriteAuthRoleRequest) SetBoundIamRoleArn(v []string)`
 
 SetBoundIamRoleArn sets BoundIamRoleArn field to given value.
 
 
 ### HasBoundIamRoleArn
 
-`func (o *AWSWriteAuthRoleRequest) HasBoundIamRoleArn() bool`
+`func (o *AwsWriteAuthRoleRequest) HasBoundIamRoleArn() bool`
 
 HasBoundIamRoleArn returns a boolean if a field has been set.
 
@@ -292,27 +292,27 @@ HasBoundIamRoleArn returns a boolean if a field has been set.
 
 ### GetBoundRegion
 
-`func (o *AWSWriteAuthRoleRequest) GetBoundRegion() []string`
+`func (o *AwsWriteAuthRoleRequest) GetBoundRegion() []string`
 
 GetBoundRegion returns the BoundRegion field if non-nil, zero value otherwise.
 
 ### GetBoundRegionOk
 
-`func (o *AWSWriteAuthRoleRequest) GetBoundRegionOk() (*[]string, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetBoundRegionOk() (*[]string, bool)`
 
 GetBoundRegionOk returns a tuple with the BoundRegion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBoundRegion
 
-`func (o *AWSWriteAuthRoleRequest) SetBoundRegion(v []string)`
+`func (o *AwsWriteAuthRoleRequest) SetBoundRegion(v []string)`
 
 SetBoundRegion sets BoundRegion field to given value.
 
 
 ### HasBoundRegion
 
-`func (o *AWSWriteAuthRoleRequest) HasBoundRegion() bool`
+`func (o *AwsWriteAuthRoleRequest) HasBoundRegion() bool`
 
 HasBoundRegion returns a boolean if a field has been set.
 
@@ -321,27 +321,27 @@ HasBoundRegion returns a boolean if a field has been set.
 
 ### GetBoundSubnetId
 
-`func (o *AWSWriteAuthRoleRequest) GetBoundSubnetId() []string`
+`func (o *AwsWriteAuthRoleRequest) GetBoundSubnetId() []string`
 
 GetBoundSubnetId returns the BoundSubnetId field if non-nil, zero value otherwise.
 
 ### GetBoundSubnetIdOk
 
-`func (o *AWSWriteAuthRoleRequest) GetBoundSubnetIdOk() (*[]string, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetBoundSubnetIdOk() (*[]string, bool)`
 
 GetBoundSubnetIdOk returns a tuple with the BoundSubnetId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBoundSubnetId
 
-`func (o *AWSWriteAuthRoleRequest) SetBoundSubnetId(v []string)`
+`func (o *AwsWriteAuthRoleRequest) SetBoundSubnetId(v []string)`
 
 SetBoundSubnetId sets BoundSubnetId field to given value.
 
 
 ### HasBoundSubnetId
 
-`func (o *AWSWriteAuthRoleRequest) HasBoundSubnetId() bool`
+`func (o *AwsWriteAuthRoleRequest) HasBoundSubnetId() bool`
 
 HasBoundSubnetId returns a boolean if a field has been set.
 
@@ -350,27 +350,27 @@ HasBoundSubnetId returns a boolean if a field has been set.
 
 ### GetBoundVpcId
 
-`func (o *AWSWriteAuthRoleRequest) GetBoundVpcId() []string`
+`func (o *AwsWriteAuthRoleRequest) GetBoundVpcId() []string`
 
 GetBoundVpcId returns the BoundVpcId field if non-nil, zero value otherwise.
 
 ### GetBoundVpcIdOk
 
-`func (o *AWSWriteAuthRoleRequest) GetBoundVpcIdOk() (*[]string, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetBoundVpcIdOk() (*[]string, bool)`
 
 GetBoundVpcIdOk returns a tuple with the BoundVpcId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBoundVpcId
 
-`func (o *AWSWriteAuthRoleRequest) SetBoundVpcId(v []string)`
+`func (o *AwsWriteAuthRoleRequest) SetBoundVpcId(v []string)`
 
 SetBoundVpcId sets BoundVpcId field to given value.
 
 
 ### HasBoundVpcId
 
-`func (o *AWSWriteAuthRoleRequest) HasBoundVpcId() bool`
+`func (o *AwsWriteAuthRoleRequest) HasBoundVpcId() bool`
 
 HasBoundVpcId returns a boolean if a field has been set.
 
@@ -379,27 +379,27 @@ HasBoundVpcId returns a boolean if a field has been set.
 
 ### GetDisallowReauthentication
 
-`func (o *AWSWriteAuthRoleRequest) GetDisallowReauthentication() bool`
+`func (o *AwsWriteAuthRoleRequest) GetDisallowReauthentication() bool`
 
 GetDisallowReauthentication returns the DisallowReauthentication field if non-nil, zero value otherwise.
 
 ### GetDisallowReauthenticationOk
 
-`func (o *AWSWriteAuthRoleRequest) GetDisallowReauthenticationOk() (*bool, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetDisallowReauthenticationOk() (*bool, bool)`
 
 GetDisallowReauthenticationOk returns a tuple with the DisallowReauthentication field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDisallowReauthentication
 
-`func (o *AWSWriteAuthRoleRequest) SetDisallowReauthentication(v bool)`
+`func (o *AwsWriteAuthRoleRequest) SetDisallowReauthentication(v bool)`
 
 SetDisallowReauthentication sets DisallowReauthentication field to given value.
 
 
 ### HasDisallowReauthentication
 
-`func (o *AWSWriteAuthRoleRequest) HasDisallowReauthentication() bool`
+`func (o *AwsWriteAuthRoleRequest) HasDisallowReauthentication() bool`
 
 HasDisallowReauthentication returns a boolean if a field has been set.
 
@@ -408,27 +408,27 @@ HasDisallowReauthentication returns a boolean if a field has been set.
 
 ### GetInferredAwsRegion
 
-`func (o *AWSWriteAuthRoleRequest) GetInferredAwsRegion() string`
+`func (o *AwsWriteAuthRoleRequest) GetInferredAwsRegion() string`
 
 GetInferredAwsRegion returns the InferredAwsRegion field if non-nil, zero value otherwise.
 
 ### GetInferredAwsRegionOk
 
-`func (o *AWSWriteAuthRoleRequest) GetInferredAwsRegionOk() (*string, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetInferredAwsRegionOk() (*string, bool)`
 
 GetInferredAwsRegionOk returns a tuple with the InferredAwsRegion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInferredAwsRegion
 
-`func (o *AWSWriteAuthRoleRequest) SetInferredAwsRegion(v string)`
+`func (o *AwsWriteAuthRoleRequest) SetInferredAwsRegion(v string)`
 
 SetInferredAwsRegion sets InferredAwsRegion field to given value.
 
 
 ### HasInferredAwsRegion
 
-`func (o *AWSWriteAuthRoleRequest) HasInferredAwsRegion() bool`
+`func (o *AwsWriteAuthRoleRequest) HasInferredAwsRegion() bool`
 
 HasInferredAwsRegion returns a boolean if a field has been set.
 
@@ -437,27 +437,27 @@ HasInferredAwsRegion returns a boolean if a field has been set.
 
 ### GetInferredEntityType
 
-`func (o *AWSWriteAuthRoleRequest) GetInferredEntityType() string`
+`func (o *AwsWriteAuthRoleRequest) GetInferredEntityType() string`
 
 GetInferredEntityType returns the InferredEntityType field if non-nil, zero value otherwise.
 
 ### GetInferredEntityTypeOk
 
-`func (o *AWSWriteAuthRoleRequest) GetInferredEntityTypeOk() (*string, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetInferredEntityTypeOk() (*string, bool)`
 
 GetInferredEntityTypeOk returns a tuple with the InferredEntityType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInferredEntityType
 
-`func (o *AWSWriteAuthRoleRequest) SetInferredEntityType(v string)`
+`func (o *AwsWriteAuthRoleRequest) SetInferredEntityType(v string)`
 
 SetInferredEntityType sets InferredEntityType field to given value.
 
 
 ### HasInferredEntityType
 
-`func (o *AWSWriteAuthRoleRequest) HasInferredEntityType() bool`
+`func (o *AwsWriteAuthRoleRequest) HasInferredEntityType() bool`
 
 HasInferredEntityType returns a boolean if a field has been set.
 
@@ -466,27 +466,27 @@ HasInferredEntityType returns a boolean if a field has been set.
 
 ### GetMaxTtl
 
-`func (o *AWSWriteAuthRoleRequest) GetMaxTtl() int32`
+`func (o *AwsWriteAuthRoleRequest) GetMaxTtl() int32`
 
 GetMaxTtl returns the MaxTtl field if non-nil, zero value otherwise.
 
 ### GetMaxTtlOk
 
-`func (o *AWSWriteAuthRoleRequest) GetMaxTtlOk() (*int32, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetMaxTtlOk() (*int32, bool)`
 
 GetMaxTtlOk returns a tuple with the MaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxTtl
 
-`func (o *AWSWriteAuthRoleRequest) SetMaxTtl(v int32)`
+`func (o *AwsWriteAuthRoleRequest) SetMaxTtl(v int32)`
 
 SetMaxTtl sets MaxTtl field to given value.
 
 
 ### HasMaxTtl
 
-`func (o *AWSWriteAuthRoleRequest) HasMaxTtl() bool`
+`func (o *AwsWriteAuthRoleRequest) HasMaxTtl() bool`
 
 HasMaxTtl returns a boolean if a field has been set.
 
@@ -495,27 +495,27 @@ HasMaxTtl returns a boolean if a field has been set.
 
 ### GetPeriod
 
-`func (o *AWSWriteAuthRoleRequest) GetPeriod() int32`
+`func (o *AwsWriteAuthRoleRequest) GetPeriod() int32`
 
 GetPeriod returns the Period field if non-nil, zero value otherwise.
 
 ### GetPeriodOk
 
-`func (o *AWSWriteAuthRoleRequest) GetPeriodOk() (*int32, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetPeriodOk() (*int32, bool)`
 
 GetPeriodOk returns a tuple with the Period field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPeriod
 
-`func (o *AWSWriteAuthRoleRequest) SetPeriod(v int32)`
+`func (o *AwsWriteAuthRoleRequest) SetPeriod(v int32)`
 
 SetPeriod sets Period field to given value.
 
 
 ### HasPeriod
 
-`func (o *AWSWriteAuthRoleRequest) HasPeriod() bool`
+`func (o *AwsWriteAuthRoleRequest) HasPeriod() bool`
 
 HasPeriod returns a boolean if a field has been set.
 
@@ -524,27 +524,27 @@ HasPeriod returns a boolean if a field has been set.
 
 ### GetPolicies
 
-`func (o *AWSWriteAuthRoleRequest) GetPolicies() []string`
+`func (o *AwsWriteAuthRoleRequest) GetPolicies() []string`
 
 GetPolicies returns the Policies field if non-nil, zero value otherwise.
 
 ### GetPoliciesOk
 
-`func (o *AWSWriteAuthRoleRequest) GetPoliciesOk() (*[]string, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetPoliciesOk() (*[]string, bool)`
 
 GetPoliciesOk returns a tuple with the Policies field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPolicies
 
-`func (o *AWSWriteAuthRoleRequest) SetPolicies(v []string)`
+`func (o *AwsWriteAuthRoleRequest) SetPolicies(v []string)`
 
 SetPolicies sets Policies field to given value.
 
 
 ### HasPolicies
 
-`func (o *AWSWriteAuthRoleRequest) HasPolicies() bool`
+`func (o *AwsWriteAuthRoleRequest) HasPolicies() bool`
 
 HasPolicies returns a boolean if a field has been set.
 
@@ -553,27 +553,27 @@ HasPolicies returns a boolean if a field has been set.
 
 ### GetResolveAwsUniqueIds
 
-`func (o *AWSWriteAuthRoleRequest) GetResolveAwsUniqueIds() bool`
+`func (o *AwsWriteAuthRoleRequest) GetResolveAwsUniqueIds() bool`
 
 GetResolveAwsUniqueIds returns the ResolveAwsUniqueIds field if non-nil, zero value otherwise.
 
 ### GetResolveAwsUniqueIdsOk
 
-`func (o *AWSWriteAuthRoleRequest) GetResolveAwsUniqueIdsOk() (*bool, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetResolveAwsUniqueIdsOk() (*bool, bool)`
 
 GetResolveAwsUniqueIdsOk returns a tuple with the ResolveAwsUniqueIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResolveAwsUniqueIds
 
-`func (o *AWSWriteAuthRoleRequest) SetResolveAwsUniqueIds(v bool)`
+`func (o *AwsWriteAuthRoleRequest) SetResolveAwsUniqueIds(v bool)`
 
 SetResolveAwsUniqueIds sets ResolveAwsUniqueIds field to given value.
 
 
 ### HasResolveAwsUniqueIds
 
-`func (o *AWSWriteAuthRoleRequest) HasResolveAwsUniqueIds() bool`
+`func (o *AwsWriteAuthRoleRequest) HasResolveAwsUniqueIds() bool`
 
 HasResolveAwsUniqueIds returns a boolean if a field has been set.
 
@@ -582,27 +582,27 @@ HasResolveAwsUniqueIds returns a boolean if a field has been set.
 
 ### GetRoleTag
 
-`func (o *AWSWriteAuthRoleRequest) GetRoleTag() string`
+`func (o *AwsWriteAuthRoleRequest) GetRoleTag() string`
 
 GetRoleTag returns the RoleTag field if non-nil, zero value otherwise.
 
 ### GetRoleTagOk
 
-`func (o *AWSWriteAuthRoleRequest) GetRoleTagOk() (*string, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetRoleTagOk() (*string, bool)`
 
 GetRoleTagOk returns a tuple with the RoleTag field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRoleTag
 
-`func (o *AWSWriteAuthRoleRequest) SetRoleTag(v string)`
+`func (o *AwsWriteAuthRoleRequest) SetRoleTag(v string)`
 
 SetRoleTag sets RoleTag field to given value.
 
 
 ### HasRoleTag
 
-`func (o *AWSWriteAuthRoleRequest) HasRoleTag() bool`
+`func (o *AwsWriteAuthRoleRequest) HasRoleTag() bool`
 
 HasRoleTag returns a boolean if a field has been set.
 
@@ -611,27 +611,27 @@ HasRoleTag returns a boolean if a field has been set.
 
 ### GetTokenBoundCidrs
 
-`func (o *AWSWriteAuthRoleRequest) GetTokenBoundCidrs() []string`
+`func (o *AwsWriteAuthRoleRequest) GetTokenBoundCidrs() []string`
 
 GetTokenBoundCidrs returns the TokenBoundCidrs field if non-nil, zero value otherwise.
 
 ### GetTokenBoundCidrsOk
 
-`func (o *AWSWriteAuthRoleRequest) GetTokenBoundCidrsOk() (*[]string, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetTokenBoundCidrsOk() (*[]string, bool)`
 
 GetTokenBoundCidrsOk returns a tuple with the TokenBoundCidrs field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenBoundCidrs
 
-`func (o *AWSWriteAuthRoleRequest) SetTokenBoundCidrs(v []string)`
+`func (o *AwsWriteAuthRoleRequest) SetTokenBoundCidrs(v []string)`
 
 SetTokenBoundCidrs sets TokenBoundCidrs field to given value.
 
 
 ### HasTokenBoundCidrs
 
-`func (o *AWSWriteAuthRoleRequest) HasTokenBoundCidrs() bool`
+`func (o *AwsWriteAuthRoleRequest) HasTokenBoundCidrs() bool`
 
 HasTokenBoundCidrs returns a boolean if a field has been set.
 
@@ -640,27 +640,27 @@ HasTokenBoundCidrs returns a boolean if a field has been set.
 
 ### GetTokenExplicitMaxTtl
 
-`func (o *AWSWriteAuthRoleRequest) GetTokenExplicitMaxTtl() int32`
+`func (o *AwsWriteAuthRoleRequest) GetTokenExplicitMaxTtl() int32`
 
 GetTokenExplicitMaxTtl returns the TokenExplicitMaxTtl field if non-nil, zero value otherwise.
 
 ### GetTokenExplicitMaxTtlOk
 
-`func (o *AWSWriteAuthRoleRequest) GetTokenExplicitMaxTtlOk() (*int32, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetTokenExplicitMaxTtlOk() (*int32, bool)`
 
 GetTokenExplicitMaxTtlOk returns a tuple with the TokenExplicitMaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenExplicitMaxTtl
 
-`func (o *AWSWriteAuthRoleRequest) SetTokenExplicitMaxTtl(v int32)`
+`func (o *AwsWriteAuthRoleRequest) SetTokenExplicitMaxTtl(v int32)`
 
 SetTokenExplicitMaxTtl sets TokenExplicitMaxTtl field to given value.
 
 
 ### HasTokenExplicitMaxTtl
 
-`func (o *AWSWriteAuthRoleRequest) HasTokenExplicitMaxTtl() bool`
+`func (o *AwsWriteAuthRoleRequest) HasTokenExplicitMaxTtl() bool`
 
 HasTokenExplicitMaxTtl returns a boolean if a field has been set.
 
@@ -669,27 +669,27 @@ HasTokenExplicitMaxTtl returns a boolean if a field has been set.
 
 ### GetTokenMaxTtl
 
-`func (o *AWSWriteAuthRoleRequest) GetTokenMaxTtl() int32`
+`func (o *AwsWriteAuthRoleRequest) GetTokenMaxTtl() int32`
 
 GetTokenMaxTtl returns the TokenMaxTtl field if non-nil, zero value otherwise.
 
 ### GetTokenMaxTtlOk
 
-`func (o *AWSWriteAuthRoleRequest) GetTokenMaxTtlOk() (*int32, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetTokenMaxTtlOk() (*int32, bool)`
 
 GetTokenMaxTtlOk returns a tuple with the TokenMaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenMaxTtl
 
-`func (o *AWSWriteAuthRoleRequest) SetTokenMaxTtl(v int32)`
+`func (o *AwsWriteAuthRoleRequest) SetTokenMaxTtl(v int32)`
 
 SetTokenMaxTtl sets TokenMaxTtl field to given value.
 
 
 ### HasTokenMaxTtl
 
-`func (o *AWSWriteAuthRoleRequest) HasTokenMaxTtl() bool`
+`func (o *AwsWriteAuthRoleRequest) HasTokenMaxTtl() bool`
 
 HasTokenMaxTtl returns a boolean if a field has been set.
 
@@ -698,27 +698,27 @@ HasTokenMaxTtl returns a boolean if a field has been set.
 
 ### GetTokenNoDefaultPolicy
 
-`func (o *AWSWriteAuthRoleRequest) GetTokenNoDefaultPolicy() bool`
+`func (o *AwsWriteAuthRoleRequest) GetTokenNoDefaultPolicy() bool`
 
 GetTokenNoDefaultPolicy returns the TokenNoDefaultPolicy field if non-nil, zero value otherwise.
 
 ### GetTokenNoDefaultPolicyOk
 
-`func (o *AWSWriteAuthRoleRequest) GetTokenNoDefaultPolicyOk() (*bool, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetTokenNoDefaultPolicyOk() (*bool, bool)`
 
 GetTokenNoDefaultPolicyOk returns a tuple with the TokenNoDefaultPolicy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenNoDefaultPolicy
 
-`func (o *AWSWriteAuthRoleRequest) SetTokenNoDefaultPolicy(v bool)`
+`func (o *AwsWriteAuthRoleRequest) SetTokenNoDefaultPolicy(v bool)`
 
 SetTokenNoDefaultPolicy sets TokenNoDefaultPolicy field to given value.
 
 
 ### HasTokenNoDefaultPolicy
 
-`func (o *AWSWriteAuthRoleRequest) HasTokenNoDefaultPolicy() bool`
+`func (o *AwsWriteAuthRoleRequest) HasTokenNoDefaultPolicy() bool`
 
 HasTokenNoDefaultPolicy returns a boolean if a field has been set.
 
@@ -727,27 +727,27 @@ HasTokenNoDefaultPolicy returns a boolean if a field has been set.
 
 ### GetTokenNumUses
 
-`func (o *AWSWriteAuthRoleRequest) GetTokenNumUses() int32`
+`func (o *AwsWriteAuthRoleRequest) GetTokenNumUses() int32`
 
 GetTokenNumUses returns the TokenNumUses field if non-nil, zero value otherwise.
 
 ### GetTokenNumUsesOk
 
-`func (o *AWSWriteAuthRoleRequest) GetTokenNumUsesOk() (*int32, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetTokenNumUsesOk() (*int32, bool)`
 
 GetTokenNumUsesOk returns a tuple with the TokenNumUses field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenNumUses
 
-`func (o *AWSWriteAuthRoleRequest) SetTokenNumUses(v int32)`
+`func (o *AwsWriteAuthRoleRequest) SetTokenNumUses(v int32)`
 
 SetTokenNumUses sets TokenNumUses field to given value.
 
 
 ### HasTokenNumUses
 
-`func (o *AWSWriteAuthRoleRequest) HasTokenNumUses() bool`
+`func (o *AwsWriteAuthRoleRequest) HasTokenNumUses() bool`
 
 HasTokenNumUses returns a boolean if a field has been set.
 
@@ -756,27 +756,27 @@ HasTokenNumUses returns a boolean if a field has been set.
 
 ### GetTokenPeriod
 
-`func (o *AWSWriteAuthRoleRequest) GetTokenPeriod() int32`
+`func (o *AwsWriteAuthRoleRequest) GetTokenPeriod() int32`
 
 GetTokenPeriod returns the TokenPeriod field if non-nil, zero value otherwise.
 
 ### GetTokenPeriodOk
 
-`func (o *AWSWriteAuthRoleRequest) GetTokenPeriodOk() (*int32, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetTokenPeriodOk() (*int32, bool)`
 
 GetTokenPeriodOk returns a tuple with the TokenPeriod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenPeriod
 
-`func (o *AWSWriteAuthRoleRequest) SetTokenPeriod(v int32)`
+`func (o *AwsWriteAuthRoleRequest) SetTokenPeriod(v int32)`
 
 SetTokenPeriod sets TokenPeriod field to given value.
 
 
 ### HasTokenPeriod
 
-`func (o *AWSWriteAuthRoleRequest) HasTokenPeriod() bool`
+`func (o *AwsWriteAuthRoleRequest) HasTokenPeriod() bool`
 
 HasTokenPeriod returns a boolean if a field has been set.
 
@@ -785,27 +785,27 @@ HasTokenPeriod returns a boolean if a field has been set.
 
 ### GetTokenPolicies
 
-`func (o *AWSWriteAuthRoleRequest) GetTokenPolicies() []string`
+`func (o *AwsWriteAuthRoleRequest) GetTokenPolicies() []string`
 
 GetTokenPolicies returns the TokenPolicies field if non-nil, zero value otherwise.
 
 ### GetTokenPoliciesOk
 
-`func (o *AWSWriteAuthRoleRequest) GetTokenPoliciesOk() (*[]string, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetTokenPoliciesOk() (*[]string, bool)`
 
 GetTokenPoliciesOk returns a tuple with the TokenPolicies field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenPolicies
 
-`func (o *AWSWriteAuthRoleRequest) SetTokenPolicies(v []string)`
+`func (o *AwsWriteAuthRoleRequest) SetTokenPolicies(v []string)`
 
 SetTokenPolicies sets TokenPolicies field to given value.
 
 
 ### HasTokenPolicies
 
-`func (o *AWSWriteAuthRoleRequest) HasTokenPolicies() bool`
+`func (o *AwsWriteAuthRoleRequest) HasTokenPolicies() bool`
 
 HasTokenPolicies returns a boolean if a field has been set.
 
@@ -814,27 +814,27 @@ HasTokenPolicies returns a boolean if a field has been set.
 
 ### GetTokenTtl
 
-`func (o *AWSWriteAuthRoleRequest) GetTokenTtl() int32`
+`func (o *AwsWriteAuthRoleRequest) GetTokenTtl() int32`
 
 GetTokenTtl returns the TokenTtl field if non-nil, zero value otherwise.
 
 ### GetTokenTtlOk
 
-`func (o *AWSWriteAuthRoleRequest) GetTokenTtlOk() (*int32, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetTokenTtlOk() (*int32, bool)`
 
 GetTokenTtlOk returns a tuple with the TokenTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenTtl
 
-`func (o *AWSWriteAuthRoleRequest) SetTokenTtl(v int32)`
+`func (o *AwsWriteAuthRoleRequest) SetTokenTtl(v int32)`
 
 SetTokenTtl sets TokenTtl field to given value.
 
 
 ### HasTokenTtl
 
-`func (o *AWSWriteAuthRoleRequest) HasTokenTtl() bool`
+`func (o *AwsWriteAuthRoleRequest) HasTokenTtl() bool`
 
 HasTokenTtl returns a boolean if a field has been set.
 
@@ -843,27 +843,27 @@ HasTokenTtl returns a boolean if a field has been set.
 
 ### GetTokenType
 
-`func (o *AWSWriteAuthRoleRequest) GetTokenType() string`
+`func (o *AwsWriteAuthRoleRequest) GetTokenType() string`
 
 GetTokenType returns the TokenType field if non-nil, zero value otherwise.
 
 ### GetTokenTypeOk
 
-`func (o *AWSWriteAuthRoleRequest) GetTokenTypeOk() (*string, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetTokenTypeOk() (*string, bool)`
 
 GetTokenTypeOk returns a tuple with the TokenType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenType
 
-`func (o *AWSWriteAuthRoleRequest) SetTokenType(v string)`
+`func (o *AwsWriteAuthRoleRequest) SetTokenType(v string)`
 
 SetTokenType sets TokenType field to given value.
 
 
 ### HasTokenType
 
-`func (o *AWSWriteAuthRoleRequest) HasTokenType() bool`
+`func (o *AwsWriteAuthRoleRequest) HasTokenType() bool`
 
 HasTokenType returns a boolean if a field has been set.
 
@@ -872,27 +872,27 @@ HasTokenType returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *AWSWriteAuthRoleRequest) GetTtl() int32`
+`func (o *AwsWriteAuthRoleRequest) GetTtl() int32`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *AWSWriteAuthRoleRequest) GetTtlOk() (*int32, bool)`
+`func (o *AwsWriteAuthRoleRequest) GetTtlOk() (*int32, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *AWSWriteAuthRoleRequest) SetTtl(v int32)`
+`func (o *AwsWriteAuthRoleRequest) SetTtl(v int32)`
 
 SetTtl sets Ttl field to given value.
 
 
 ### HasTtl
 
-`func (o *AWSWriteAuthRoleRequest) HasTtl() bool`
+`func (o *AwsWriteAuthRoleRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
 

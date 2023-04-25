@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// OIDCIntrospectRequest struct for OIDCIntrospectRequest
-type OIDCIntrospectRequest struct {
+// OidcIntrospectRequest struct for OidcIntrospectRequest
+type OidcIntrospectRequest struct {
 	// Optional client_id to verify
 	ClientId string `json:"client_id"`
 
@@ -18,16 +18,16 @@ type OIDCIntrospectRequest struct {
 	Token string `json:"token"`
 }
 
-// NewOIDCIntrospectRequestWithDefaults instantiates a new OIDCIntrospectRequest object
+// NewOidcIntrospectRequestWithDefaults instantiates a new OidcIntrospectRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewOIDCIntrospectRequestWithDefaults() *OIDCIntrospectRequest {
-	var this OIDCIntrospectRequest
+func NewOidcIntrospectRequestWithDefaults() *OidcIntrospectRequest {
+	var this OidcIntrospectRequest
 
 	return &this
 }
 
-func (o OIDCIntrospectRequest) MarshalJSON() ([]byte, error) {
+func (o OidcIntrospectRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["client_id"] = o.ClientId

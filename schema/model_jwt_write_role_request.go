@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// JWTWriteRoleRequest struct for JWTWriteRoleRequest
-type JWTWriteRoleRequest struct {
+// JwtWriteRoleRequest struct for JwtWriteRoleRequest
+type JwtWriteRoleRequest struct {
 	// Comma-separated list of allowed values for redirect_uri
 	AllowedRedirectUris []string `json:"allowed_redirect_uris"`
 
@@ -111,11 +111,11 @@ type JWTWriteRoleRequest struct {
 	VerboseOidcLogging bool `json:"verbose_oidc_logging"`
 }
 
-// NewJWTWriteRoleRequestWithDefaults instantiates a new JWTWriteRoleRequest object
+// NewJwtWriteRoleRequestWithDefaults instantiates a new JwtWriteRoleRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewJWTWriteRoleRequestWithDefaults() *JWTWriteRoleRequest {
-	var this JWTWriteRoleRequest
+func NewJwtWriteRoleRequestWithDefaults() *JwtWriteRoleRequest {
+	var this JwtWriteRoleRequest
 
 	this.BoundClaimsType = "string"
 	this.ExpirationLeeway = 150
@@ -125,7 +125,7 @@ func NewJWTWriteRoleRequestWithDefaults() *JWTWriteRoleRequest {
 	return &this
 }
 
-func (o JWTWriteRoleRequest) MarshalJSON() ([]byte, error) {
+func (o JwtWriteRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["allowed_redirect_uris"] = o.AllowedRedirectUris

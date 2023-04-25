@@ -1,4 +1,4 @@
-# PKIRevokeWithKeyRequest
+# PkiRevokeWithKeyRequest
 
 
 ## Properties
@@ -14,47 +14,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewPKIRevokeWithKeyRequest
+### NewPkiRevokeWithKeyRequest
 
-`func NewPKIRevokeWithKeyRequest() *PKIRevokeWithKeyRequest`
+`func NewPkiRevokeWithKeyRequest() *PkiRevokeWithKeyRequest`
 
-NewPKIRevokeWithKeyRequest instantiates a new PKIRevokeWithKeyRequest object
+NewPkiRevokeWithKeyRequest instantiates a new PkiRevokeWithKeyRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewPKIRevokeWithKeyRequestWithDefaults
+### NewPkiRevokeWithKeyRequestWithDefaults
 
-`func NewPKIRevokeWithKeyRequestWithDefaults() *PKIRevokeWithKeyRequest`
+`func NewPkiRevokeWithKeyRequestWithDefaults() *PkiRevokeWithKeyRequest`
 
-NewPKIRevokeWithKeyRequestWithDefaults instantiates a new PKIRevokeWithKeyRequest object
+NewPkiRevokeWithKeyRequestWithDefaults instantiates a new PkiRevokeWithKeyRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetCertificate
 
-`func (o *PKIRevokeWithKeyRequest) GetCertificate() string`
+`func (o *PkiRevokeWithKeyRequest) GetCertificate() string`
 
 GetCertificate returns the Certificate field if non-nil, zero value otherwise.
 
 ### GetCertificateOk
 
-`func (o *PKIRevokeWithKeyRequest) GetCertificateOk() (*string, bool)`
+`func (o *PkiRevokeWithKeyRequest) GetCertificateOk() (*string, bool)`
 
 GetCertificateOk returns a tuple with the Certificate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertificate
 
-`func (o *PKIRevokeWithKeyRequest) SetCertificate(v string)`
+`func (o *PkiRevokeWithKeyRequest) SetCertificate(v string)`
 
 SetCertificate sets Certificate field to given value.
 
 
 ### HasCertificate
 
-`func (o *PKIRevokeWithKeyRequest) HasCertificate() bool`
+`func (o *PkiRevokeWithKeyRequest) HasCertificate() bool`
 
 HasCertificate returns a boolean if a field has been set.
 
@@ -63,27 +63,27 @@ HasCertificate returns a boolean if a field has been set.
 
 ### GetPrivateKey
 
-`func (o *PKIRevokeWithKeyRequest) GetPrivateKey() string`
+`func (o *PkiRevokeWithKeyRequest) GetPrivateKey() string`
 
 GetPrivateKey returns the PrivateKey field if non-nil, zero value otherwise.
 
 ### GetPrivateKeyOk
 
-`func (o *PKIRevokeWithKeyRequest) GetPrivateKeyOk() (*string, bool)`
+`func (o *PkiRevokeWithKeyRequest) GetPrivateKeyOk() (*string, bool)`
 
 GetPrivateKeyOk returns a tuple with the PrivateKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrivateKey
 
-`func (o *PKIRevokeWithKeyRequest) SetPrivateKey(v string)`
+`func (o *PkiRevokeWithKeyRequest) SetPrivateKey(v string)`
 
 SetPrivateKey sets PrivateKey field to given value.
 
 
 ### HasPrivateKey
 
-`func (o *PKIRevokeWithKeyRequest) HasPrivateKey() bool`
+`func (o *PkiRevokeWithKeyRequest) HasPrivateKey() bool`
 
 HasPrivateKey returns a boolean if a field has been set.
 
@@ -92,27 +92,27 @@ HasPrivateKey returns a boolean if a field has been set.
 
 ### GetSerialNumber
 
-`func (o *PKIRevokeWithKeyRequest) GetSerialNumber() string`
+`func (o *PkiRevokeWithKeyRequest) GetSerialNumber() string`
 
 GetSerialNumber returns the SerialNumber field if non-nil, zero value otherwise.
 
 ### GetSerialNumberOk
 
-`func (o *PKIRevokeWithKeyRequest) GetSerialNumberOk() (*string, bool)`
+`func (o *PkiRevokeWithKeyRequest) GetSerialNumberOk() (*string, bool)`
 
 GetSerialNumberOk returns a tuple with the SerialNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSerialNumber
 
-`func (o *PKIRevokeWithKeyRequest) SetSerialNumber(v string)`
+`func (o *PkiRevokeWithKeyRequest) SetSerialNumber(v string)`
 
 SetSerialNumber sets SerialNumber field to given value.
 
 
 ### HasSerialNumber
 
-`func (o *PKIRevokeWithKeyRequest) HasSerialNumber() bool`
+`func (o *PkiRevokeWithKeyRequest) HasSerialNumber() bool`
 
 HasSerialNumber returns a boolean if a field has been set.
 

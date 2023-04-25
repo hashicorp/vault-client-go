@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// PKIIssuerSignVerbatimRequest struct for PKIIssuerSignVerbatimRequest
-type PKIIssuerSignVerbatimRequest struct {
+// PkiIssuerSignVerbatimRequest struct for PkiIssuerSignVerbatimRequest
+type PkiIssuerSignVerbatimRequest struct {
 	// The requested Subject Alternative Names, if any, in a comma-delimited list. If email protection is enabled for the role, this may contain email addresses.
 	AltNames string `json:"alt_names"`
 
@@ -67,13 +67,16 @@ type PKIIssuerSignVerbatimRequest struct {
 
 	// Whether or not to use PSS signatures when using a RSA key-type issuer. Defaults to false.
 	UsePss bool `json:"use_pss"`
+
+	// The requested user_ids value to place in the subject, if any, in a comma-delimited list. Restricted by allowed_user_ids. Any values are added with OID 0.9.2342.19200300.100.1.1.
+	UserIds []string `json:"user_ids"`
 }
 
-// NewPKIIssuerSignVerbatimRequestWithDefaults instantiates a new PKIIssuerSignVerbatimRequest object
+// NewPkiIssuerSignVerbatimRequestWithDefaults instantiates a new PkiIssuerSignVerbatimRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewPKIIssuerSignVerbatimRequestWithDefaults() *PKIIssuerSignVerbatimRequest {
-	var this PKIIssuerSignVerbatimRequest
+func NewPkiIssuerSignVerbatimRequestWithDefaults() *PkiIssuerSignVerbatimRequest {
+	var this PkiIssuerSignVerbatimRequest
 
 	this.Csr = ""
 	this.ExcludeCnFromSans = false
@@ -86,7 +89,7 @@ func NewPKIIssuerSignVerbatimRequestWithDefaults() *PKIIssuerSignVerbatimRequest
 	return &this
 }
 
-func (o PKIIssuerSignVerbatimRequest) MarshalJSON() ([]byte, error) {
+func (o PkiIssuerSignVerbatimRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["alt_names"] = o.AltNames
@@ -108,6 +111,7 @@ func (o PKIIssuerSignVerbatimRequest) MarshalJSON() ([]byte, error) {
 	toSerialize["ttl"] = o.Ttl
 	toSerialize["uri_sans"] = o.UriSans
 	toSerialize["use_pss"] = o.UsePss
+	toSerialize["user_ids"] = o.UserIds
 
 	return json.Marshal(toSerialize)
 }

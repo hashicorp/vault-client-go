@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// MongoDBAtlasWriteRoleRequest struct for MongoDBAtlasWriteRoleRequest
-type MongoDBAtlasWriteRoleRequest struct {
+// MongoDbAtlasWriteRoleRequest struct for MongoDbAtlasWriteRoleRequest
+type MongoDbAtlasWriteRoleRequest struct {
 	// Access list entry in CIDR notation to be added for the API key. Optional for organization and project keys.
 	CidrBlocks []string `json:"cidr_blocks"`
 
@@ -36,16 +36,16 @@ type MongoDBAtlasWriteRoleRequest struct {
 	Ttl int32 `json:"ttl"`
 }
 
-// NewMongoDBAtlasWriteRoleRequestWithDefaults instantiates a new MongoDBAtlasWriteRoleRequest object
+// NewMongoDbAtlasWriteRoleRequestWithDefaults instantiates a new MongoDbAtlasWriteRoleRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewMongoDBAtlasWriteRoleRequestWithDefaults() *MongoDBAtlasWriteRoleRequest {
-	var this MongoDBAtlasWriteRoleRequest
+func NewMongoDbAtlasWriteRoleRequestWithDefaults() *MongoDbAtlasWriteRoleRequest {
+	var this MongoDbAtlasWriteRoleRequest
 
 	return &this
 }
 
-func (o MongoDBAtlasWriteRoleRequest) MarshalJSON() ([]byte, error) {
+func (o MongoDbAtlasWriteRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["cidr_blocks"] = o.CidrBlocks

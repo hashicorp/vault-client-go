@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// OIDCWriteKeyRequest struct for OIDCWriteKeyRequest
-type OIDCWriteKeyRequest struct {
+// OidcWriteKeyRequest struct for OidcWriteKeyRequest
+type OidcWriteKeyRequest struct {
 	// Signing algorithm to use. This will default to RS256.
 	Algorithm string `json:"algorithm"`
 
@@ -24,18 +24,18 @@ type OIDCWriteKeyRequest struct {
 	VerificationTtl int32 `json:"verification_ttl"`
 }
 
-// NewOIDCWriteKeyRequestWithDefaults instantiates a new OIDCWriteKeyRequest object
+// NewOidcWriteKeyRequestWithDefaults instantiates a new OidcWriteKeyRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewOIDCWriteKeyRequestWithDefaults() *OIDCWriteKeyRequest {
-	var this OIDCWriteKeyRequest
+func NewOidcWriteKeyRequestWithDefaults() *OidcWriteKeyRequest {
+	var this OidcWriteKeyRequest
 
 	this.Algorithm = "RS256"
 
 	return &this
 }
 
-func (o OIDCWriteKeyRequest) MarshalJSON() ([]byte, error) {
+func (o OidcWriteKeyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["algorithm"] = o.Algorithm

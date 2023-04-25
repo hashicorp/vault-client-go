@@ -1,4 +1,4 @@
-# PKIWriteRoleRequest
+# PkiWriteRoleRequest
 
 
 ## Properties
@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **AllowedSerialNumbers** | Pointer to **[]string** | If set, an array of allowed serial numbers to put in Subject. These values support globbing. | [optional] 
 **AllowedUriSans** | Pointer to **[]string** | If set, an array of allowed URIs for URI Subject Alternative Names. Any valid URI is accepted, these values support globbing. | [optional] 
 **AllowedUriSansTemplate** | Pointer to **bool** | If set, Allowed URI SANs can be specified using identity template policies. Non-templated URI SANs are also permitted. | [optional] [default to false]
+**AllowedUserIds** | Pointer to **[]string** | If set, an array of allowed user-ids to put in user system login name specified here: https://www.rfc-editor.org/rfc/rfc1274#section-9.3.1 | [optional] 
 **Backend** | Pointer to **string** | Backend Type | [optional] 
 **BasicConstraintsValidForNonCa** | Pointer to **bool** | Mark Basic Constraints valid when issuing non-CA certificates. | [optional] 
 **ClientFlag** | Pointer to **bool** | If set, certificates are flagged for client auth use. Defaults to true. See also RFC 5280 Section 4.2.1.12. | [optional] [default to true]
@@ -57,47 +58,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewPKIWriteRoleRequest
+### NewPkiWriteRoleRequest
 
-`func NewPKIWriteRoleRequest() *PKIWriteRoleRequest`
+`func NewPkiWriteRoleRequest() *PkiWriteRoleRequest`
 
-NewPKIWriteRoleRequest instantiates a new PKIWriteRoleRequest object
+NewPkiWriteRoleRequest instantiates a new PkiWriteRoleRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewPKIWriteRoleRequestWithDefaults
+### NewPkiWriteRoleRequestWithDefaults
 
-`func NewPKIWriteRoleRequestWithDefaults() *PKIWriteRoleRequest`
+`func NewPkiWriteRoleRequestWithDefaults() *PkiWriteRoleRequest`
 
-NewPKIWriteRoleRequestWithDefaults instantiates a new PKIWriteRoleRequest object
+NewPkiWriteRoleRequestWithDefaults instantiates a new PkiWriteRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetAllowAnyName
 
-`func (o *PKIWriteRoleRequest) GetAllowAnyName() bool`
+`func (o *PkiWriteRoleRequest) GetAllowAnyName() bool`
 
 GetAllowAnyName returns the AllowAnyName field if non-nil, zero value otherwise.
 
 ### GetAllowAnyNameOk
 
-`func (o *PKIWriteRoleRequest) GetAllowAnyNameOk() (*bool, bool)`
+`func (o *PkiWriteRoleRequest) GetAllowAnyNameOk() (*bool, bool)`
 
 GetAllowAnyNameOk returns a tuple with the AllowAnyName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowAnyName
 
-`func (o *PKIWriteRoleRequest) SetAllowAnyName(v bool)`
+`func (o *PkiWriteRoleRequest) SetAllowAnyName(v bool)`
 
 SetAllowAnyName sets AllowAnyName field to given value.
 
 
 ### HasAllowAnyName
 
-`func (o *PKIWriteRoleRequest) HasAllowAnyName() bool`
+`func (o *PkiWriteRoleRequest) HasAllowAnyName() bool`
 
 HasAllowAnyName returns a boolean if a field has been set.
 
@@ -106,27 +107,27 @@ HasAllowAnyName returns a boolean if a field has been set.
 
 ### GetAllowBareDomains
 
-`func (o *PKIWriteRoleRequest) GetAllowBareDomains() bool`
+`func (o *PkiWriteRoleRequest) GetAllowBareDomains() bool`
 
 GetAllowBareDomains returns the AllowBareDomains field if non-nil, zero value otherwise.
 
 ### GetAllowBareDomainsOk
 
-`func (o *PKIWriteRoleRequest) GetAllowBareDomainsOk() (*bool, bool)`
+`func (o *PkiWriteRoleRequest) GetAllowBareDomainsOk() (*bool, bool)`
 
 GetAllowBareDomainsOk returns a tuple with the AllowBareDomains field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowBareDomains
 
-`func (o *PKIWriteRoleRequest) SetAllowBareDomains(v bool)`
+`func (o *PkiWriteRoleRequest) SetAllowBareDomains(v bool)`
 
 SetAllowBareDomains sets AllowBareDomains field to given value.
 
 
 ### HasAllowBareDomains
 
-`func (o *PKIWriteRoleRequest) HasAllowBareDomains() bool`
+`func (o *PkiWriteRoleRequest) HasAllowBareDomains() bool`
 
 HasAllowBareDomains returns a boolean if a field has been set.
 
@@ -135,27 +136,27 @@ HasAllowBareDomains returns a boolean if a field has been set.
 
 ### GetAllowGlobDomains
 
-`func (o *PKIWriteRoleRequest) GetAllowGlobDomains() bool`
+`func (o *PkiWriteRoleRequest) GetAllowGlobDomains() bool`
 
 GetAllowGlobDomains returns the AllowGlobDomains field if non-nil, zero value otherwise.
 
 ### GetAllowGlobDomainsOk
 
-`func (o *PKIWriteRoleRequest) GetAllowGlobDomainsOk() (*bool, bool)`
+`func (o *PkiWriteRoleRequest) GetAllowGlobDomainsOk() (*bool, bool)`
 
 GetAllowGlobDomainsOk returns a tuple with the AllowGlobDomains field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowGlobDomains
 
-`func (o *PKIWriteRoleRequest) SetAllowGlobDomains(v bool)`
+`func (o *PkiWriteRoleRequest) SetAllowGlobDomains(v bool)`
 
 SetAllowGlobDomains sets AllowGlobDomains field to given value.
 
 
 ### HasAllowGlobDomains
 
-`func (o *PKIWriteRoleRequest) HasAllowGlobDomains() bool`
+`func (o *PkiWriteRoleRequest) HasAllowGlobDomains() bool`
 
 HasAllowGlobDomains returns a boolean if a field has been set.
 
@@ -164,27 +165,27 @@ HasAllowGlobDomains returns a boolean if a field has been set.
 
 ### GetAllowIpSans
 
-`func (o *PKIWriteRoleRequest) GetAllowIpSans() bool`
+`func (o *PkiWriteRoleRequest) GetAllowIpSans() bool`
 
 GetAllowIpSans returns the AllowIpSans field if non-nil, zero value otherwise.
 
 ### GetAllowIpSansOk
 
-`func (o *PKIWriteRoleRequest) GetAllowIpSansOk() (*bool, bool)`
+`func (o *PkiWriteRoleRequest) GetAllowIpSansOk() (*bool, bool)`
 
 GetAllowIpSansOk returns a tuple with the AllowIpSans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowIpSans
 
-`func (o *PKIWriteRoleRequest) SetAllowIpSans(v bool)`
+`func (o *PkiWriteRoleRequest) SetAllowIpSans(v bool)`
 
 SetAllowIpSans sets AllowIpSans field to given value.
 
 
 ### HasAllowIpSans
 
-`func (o *PKIWriteRoleRequest) HasAllowIpSans() bool`
+`func (o *PkiWriteRoleRequest) HasAllowIpSans() bool`
 
 HasAllowIpSans returns a boolean if a field has been set.
 
@@ -193,27 +194,27 @@ HasAllowIpSans returns a boolean if a field has been set.
 
 ### GetAllowLocalhost
 
-`func (o *PKIWriteRoleRequest) GetAllowLocalhost() bool`
+`func (o *PkiWriteRoleRequest) GetAllowLocalhost() bool`
 
 GetAllowLocalhost returns the AllowLocalhost field if non-nil, zero value otherwise.
 
 ### GetAllowLocalhostOk
 
-`func (o *PKIWriteRoleRequest) GetAllowLocalhostOk() (*bool, bool)`
+`func (o *PkiWriteRoleRequest) GetAllowLocalhostOk() (*bool, bool)`
 
 GetAllowLocalhostOk returns a tuple with the AllowLocalhost field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowLocalhost
 
-`func (o *PKIWriteRoleRequest) SetAllowLocalhost(v bool)`
+`func (o *PkiWriteRoleRequest) SetAllowLocalhost(v bool)`
 
 SetAllowLocalhost sets AllowLocalhost field to given value.
 
 
 ### HasAllowLocalhost
 
-`func (o *PKIWriteRoleRequest) HasAllowLocalhost() bool`
+`func (o *PkiWriteRoleRequest) HasAllowLocalhost() bool`
 
 HasAllowLocalhost returns a boolean if a field has been set.
 
@@ -222,27 +223,27 @@ HasAllowLocalhost returns a boolean if a field has been set.
 
 ### GetAllowSubdomains
 
-`func (o *PKIWriteRoleRequest) GetAllowSubdomains() bool`
+`func (o *PkiWriteRoleRequest) GetAllowSubdomains() bool`
 
 GetAllowSubdomains returns the AllowSubdomains field if non-nil, zero value otherwise.
 
 ### GetAllowSubdomainsOk
 
-`func (o *PKIWriteRoleRequest) GetAllowSubdomainsOk() (*bool, bool)`
+`func (o *PkiWriteRoleRequest) GetAllowSubdomainsOk() (*bool, bool)`
 
 GetAllowSubdomainsOk returns a tuple with the AllowSubdomains field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowSubdomains
 
-`func (o *PKIWriteRoleRequest) SetAllowSubdomains(v bool)`
+`func (o *PkiWriteRoleRequest) SetAllowSubdomains(v bool)`
 
 SetAllowSubdomains sets AllowSubdomains field to given value.
 
 
 ### HasAllowSubdomains
 
-`func (o *PKIWriteRoleRequest) HasAllowSubdomains() bool`
+`func (o *PkiWriteRoleRequest) HasAllowSubdomains() bool`
 
 HasAllowSubdomains returns a boolean if a field has been set.
 
@@ -251,27 +252,27 @@ HasAllowSubdomains returns a boolean if a field has been set.
 
 ### GetAllowWildcardCertificates
 
-`func (o *PKIWriteRoleRequest) GetAllowWildcardCertificates() bool`
+`func (o *PkiWriteRoleRequest) GetAllowWildcardCertificates() bool`
 
 GetAllowWildcardCertificates returns the AllowWildcardCertificates field if non-nil, zero value otherwise.
 
 ### GetAllowWildcardCertificatesOk
 
-`func (o *PKIWriteRoleRequest) GetAllowWildcardCertificatesOk() (*bool, bool)`
+`func (o *PkiWriteRoleRequest) GetAllowWildcardCertificatesOk() (*bool, bool)`
 
 GetAllowWildcardCertificatesOk returns a tuple with the AllowWildcardCertificates field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowWildcardCertificates
 
-`func (o *PKIWriteRoleRequest) SetAllowWildcardCertificates(v bool)`
+`func (o *PkiWriteRoleRequest) SetAllowWildcardCertificates(v bool)`
 
 SetAllowWildcardCertificates sets AllowWildcardCertificates field to given value.
 
 
 ### HasAllowWildcardCertificates
 
-`func (o *PKIWriteRoleRequest) HasAllowWildcardCertificates() bool`
+`func (o *PkiWriteRoleRequest) HasAllowWildcardCertificates() bool`
 
 HasAllowWildcardCertificates returns a boolean if a field has been set.
 
@@ -280,27 +281,27 @@ HasAllowWildcardCertificates returns a boolean if a field has been set.
 
 ### GetAllowedDomains
 
-`func (o *PKIWriteRoleRequest) GetAllowedDomains() []string`
+`func (o *PkiWriteRoleRequest) GetAllowedDomains() []string`
 
 GetAllowedDomains returns the AllowedDomains field if non-nil, zero value otherwise.
 
 ### GetAllowedDomainsOk
 
-`func (o *PKIWriteRoleRequest) GetAllowedDomainsOk() (*[]string, bool)`
+`func (o *PkiWriteRoleRequest) GetAllowedDomainsOk() (*[]string, bool)`
 
 GetAllowedDomainsOk returns a tuple with the AllowedDomains field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowedDomains
 
-`func (o *PKIWriteRoleRequest) SetAllowedDomains(v []string)`
+`func (o *PkiWriteRoleRequest) SetAllowedDomains(v []string)`
 
 SetAllowedDomains sets AllowedDomains field to given value.
 
 
 ### HasAllowedDomains
 
-`func (o *PKIWriteRoleRequest) HasAllowedDomains() bool`
+`func (o *PkiWriteRoleRequest) HasAllowedDomains() bool`
 
 HasAllowedDomains returns a boolean if a field has been set.
 
@@ -309,27 +310,27 @@ HasAllowedDomains returns a boolean if a field has been set.
 
 ### GetAllowedDomainsTemplate
 
-`func (o *PKIWriteRoleRequest) GetAllowedDomainsTemplate() bool`
+`func (o *PkiWriteRoleRequest) GetAllowedDomainsTemplate() bool`
 
 GetAllowedDomainsTemplate returns the AllowedDomainsTemplate field if non-nil, zero value otherwise.
 
 ### GetAllowedDomainsTemplateOk
 
-`func (o *PKIWriteRoleRequest) GetAllowedDomainsTemplateOk() (*bool, bool)`
+`func (o *PkiWriteRoleRequest) GetAllowedDomainsTemplateOk() (*bool, bool)`
 
 GetAllowedDomainsTemplateOk returns a tuple with the AllowedDomainsTemplate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowedDomainsTemplate
 
-`func (o *PKIWriteRoleRequest) SetAllowedDomainsTemplate(v bool)`
+`func (o *PkiWriteRoleRequest) SetAllowedDomainsTemplate(v bool)`
 
 SetAllowedDomainsTemplate sets AllowedDomainsTemplate field to given value.
 
 
 ### HasAllowedDomainsTemplate
 
-`func (o *PKIWriteRoleRequest) HasAllowedDomainsTemplate() bool`
+`func (o *PkiWriteRoleRequest) HasAllowedDomainsTemplate() bool`
 
 HasAllowedDomainsTemplate returns a boolean if a field has been set.
 
@@ -338,27 +339,27 @@ HasAllowedDomainsTemplate returns a boolean if a field has been set.
 
 ### GetAllowedOtherSans
 
-`func (o *PKIWriteRoleRequest) GetAllowedOtherSans() []string`
+`func (o *PkiWriteRoleRequest) GetAllowedOtherSans() []string`
 
 GetAllowedOtherSans returns the AllowedOtherSans field if non-nil, zero value otherwise.
 
 ### GetAllowedOtherSansOk
 
-`func (o *PKIWriteRoleRequest) GetAllowedOtherSansOk() (*[]string, bool)`
+`func (o *PkiWriteRoleRequest) GetAllowedOtherSansOk() (*[]string, bool)`
 
 GetAllowedOtherSansOk returns a tuple with the AllowedOtherSans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowedOtherSans
 
-`func (o *PKIWriteRoleRequest) SetAllowedOtherSans(v []string)`
+`func (o *PkiWriteRoleRequest) SetAllowedOtherSans(v []string)`
 
 SetAllowedOtherSans sets AllowedOtherSans field to given value.
 
 
 ### HasAllowedOtherSans
 
-`func (o *PKIWriteRoleRequest) HasAllowedOtherSans() bool`
+`func (o *PkiWriteRoleRequest) HasAllowedOtherSans() bool`
 
 HasAllowedOtherSans returns a boolean if a field has been set.
 
@@ -367,27 +368,27 @@ HasAllowedOtherSans returns a boolean if a field has been set.
 
 ### GetAllowedSerialNumbers
 
-`func (o *PKIWriteRoleRequest) GetAllowedSerialNumbers() []string`
+`func (o *PkiWriteRoleRequest) GetAllowedSerialNumbers() []string`
 
 GetAllowedSerialNumbers returns the AllowedSerialNumbers field if non-nil, zero value otherwise.
 
 ### GetAllowedSerialNumbersOk
 
-`func (o *PKIWriteRoleRequest) GetAllowedSerialNumbersOk() (*[]string, bool)`
+`func (o *PkiWriteRoleRequest) GetAllowedSerialNumbersOk() (*[]string, bool)`
 
 GetAllowedSerialNumbersOk returns a tuple with the AllowedSerialNumbers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowedSerialNumbers
 
-`func (o *PKIWriteRoleRequest) SetAllowedSerialNumbers(v []string)`
+`func (o *PkiWriteRoleRequest) SetAllowedSerialNumbers(v []string)`
 
 SetAllowedSerialNumbers sets AllowedSerialNumbers field to given value.
 
 
 ### HasAllowedSerialNumbers
 
-`func (o *PKIWriteRoleRequest) HasAllowedSerialNumbers() bool`
+`func (o *PkiWriteRoleRequest) HasAllowedSerialNumbers() bool`
 
 HasAllowedSerialNumbers returns a boolean if a field has been set.
 
@@ -396,27 +397,27 @@ HasAllowedSerialNumbers returns a boolean if a field has been set.
 
 ### GetAllowedUriSans
 
-`func (o *PKIWriteRoleRequest) GetAllowedUriSans() []string`
+`func (o *PkiWriteRoleRequest) GetAllowedUriSans() []string`
 
 GetAllowedUriSans returns the AllowedUriSans field if non-nil, zero value otherwise.
 
 ### GetAllowedUriSansOk
 
-`func (o *PKIWriteRoleRequest) GetAllowedUriSansOk() (*[]string, bool)`
+`func (o *PkiWriteRoleRequest) GetAllowedUriSansOk() (*[]string, bool)`
 
 GetAllowedUriSansOk returns a tuple with the AllowedUriSans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowedUriSans
 
-`func (o *PKIWriteRoleRequest) SetAllowedUriSans(v []string)`
+`func (o *PkiWriteRoleRequest) SetAllowedUriSans(v []string)`
 
 SetAllowedUriSans sets AllowedUriSans field to given value.
 
 
 ### HasAllowedUriSans
 
-`func (o *PKIWriteRoleRequest) HasAllowedUriSans() bool`
+`func (o *PkiWriteRoleRequest) HasAllowedUriSans() bool`
 
 HasAllowedUriSans returns a boolean if a field has been set.
 
@@ -425,56 +426,85 @@ HasAllowedUriSans returns a boolean if a field has been set.
 
 ### GetAllowedUriSansTemplate
 
-`func (o *PKIWriteRoleRequest) GetAllowedUriSansTemplate() bool`
+`func (o *PkiWriteRoleRequest) GetAllowedUriSansTemplate() bool`
 
 GetAllowedUriSansTemplate returns the AllowedUriSansTemplate field if non-nil, zero value otherwise.
 
 ### GetAllowedUriSansTemplateOk
 
-`func (o *PKIWriteRoleRequest) GetAllowedUriSansTemplateOk() (*bool, bool)`
+`func (o *PkiWriteRoleRequest) GetAllowedUriSansTemplateOk() (*bool, bool)`
 
 GetAllowedUriSansTemplateOk returns a tuple with the AllowedUriSansTemplate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowedUriSansTemplate
 
-`func (o *PKIWriteRoleRequest) SetAllowedUriSansTemplate(v bool)`
+`func (o *PkiWriteRoleRequest) SetAllowedUriSansTemplate(v bool)`
 
 SetAllowedUriSansTemplate sets AllowedUriSansTemplate field to given value.
 
 
 ### HasAllowedUriSansTemplate
 
-`func (o *PKIWriteRoleRequest) HasAllowedUriSansTemplate() bool`
+`func (o *PkiWriteRoleRequest) HasAllowedUriSansTemplate() bool`
 
 HasAllowedUriSansTemplate returns a boolean if a field has been set.
 
 
 
 
+### GetAllowedUserIds
+
+`func (o *PkiWriteRoleRequest) GetAllowedUserIds() []string`
+
+GetAllowedUserIds returns the AllowedUserIds field if non-nil, zero value otherwise.
+
+### GetAllowedUserIdsOk
+
+`func (o *PkiWriteRoleRequest) GetAllowedUserIdsOk() (*[]string, bool)`
+
+GetAllowedUserIdsOk returns a tuple with the AllowedUserIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowedUserIds
+
+`func (o *PkiWriteRoleRequest) SetAllowedUserIds(v []string)`
+
+SetAllowedUserIds sets AllowedUserIds field to given value.
+
+
+### HasAllowedUserIds
+
+`func (o *PkiWriteRoleRequest) HasAllowedUserIds() bool`
+
+HasAllowedUserIds returns a boolean if a field has been set.
+
+
+
+
 ### GetBackend
 
-`func (o *PKIWriteRoleRequest) GetBackend() string`
+`func (o *PkiWriteRoleRequest) GetBackend() string`
 
 GetBackend returns the Backend field if non-nil, zero value otherwise.
 
 ### GetBackendOk
 
-`func (o *PKIWriteRoleRequest) GetBackendOk() (*string, bool)`
+`func (o *PkiWriteRoleRequest) GetBackendOk() (*string, bool)`
 
 GetBackendOk returns a tuple with the Backend field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBackend
 
-`func (o *PKIWriteRoleRequest) SetBackend(v string)`
+`func (o *PkiWriteRoleRequest) SetBackend(v string)`
 
 SetBackend sets Backend field to given value.
 
 
 ### HasBackend
 
-`func (o *PKIWriteRoleRequest) HasBackend() bool`
+`func (o *PkiWriteRoleRequest) HasBackend() bool`
 
 HasBackend returns a boolean if a field has been set.
 
@@ -483,27 +513,27 @@ HasBackend returns a boolean if a field has been set.
 
 ### GetBasicConstraintsValidForNonCa
 
-`func (o *PKIWriteRoleRequest) GetBasicConstraintsValidForNonCa() bool`
+`func (o *PkiWriteRoleRequest) GetBasicConstraintsValidForNonCa() bool`
 
 GetBasicConstraintsValidForNonCa returns the BasicConstraintsValidForNonCa field if non-nil, zero value otherwise.
 
 ### GetBasicConstraintsValidForNonCaOk
 
-`func (o *PKIWriteRoleRequest) GetBasicConstraintsValidForNonCaOk() (*bool, bool)`
+`func (o *PkiWriteRoleRequest) GetBasicConstraintsValidForNonCaOk() (*bool, bool)`
 
 GetBasicConstraintsValidForNonCaOk returns a tuple with the BasicConstraintsValidForNonCa field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBasicConstraintsValidForNonCa
 
-`func (o *PKIWriteRoleRequest) SetBasicConstraintsValidForNonCa(v bool)`
+`func (o *PkiWriteRoleRequest) SetBasicConstraintsValidForNonCa(v bool)`
 
 SetBasicConstraintsValidForNonCa sets BasicConstraintsValidForNonCa field to given value.
 
 
 ### HasBasicConstraintsValidForNonCa
 
-`func (o *PKIWriteRoleRequest) HasBasicConstraintsValidForNonCa() bool`
+`func (o *PkiWriteRoleRequest) HasBasicConstraintsValidForNonCa() bool`
 
 HasBasicConstraintsValidForNonCa returns a boolean if a field has been set.
 
@@ -512,27 +542,27 @@ HasBasicConstraintsValidForNonCa returns a boolean if a field has been set.
 
 ### GetClientFlag
 
-`func (o *PKIWriteRoleRequest) GetClientFlag() bool`
+`func (o *PkiWriteRoleRequest) GetClientFlag() bool`
 
 GetClientFlag returns the ClientFlag field if non-nil, zero value otherwise.
 
 ### GetClientFlagOk
 
-`func (o *PKIWriteRoleRequest) GetClientFlagOk() (*bool, bool)`
+`func (o *PkiWriteRoleRequest) GetClientFlagOk() (*bool, bool)`
 
 GetClientFlagOk returns a tuple with the ClientFlag field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClientFlag
 
-`func (o *PKIWriteRoleRequest) SetClientFlag(v bool)`
+`func (o *PkiWriteRoleRequest) SetClientFlag(v bool)`
 
 SetClientFlag sets ClientFlag field to given value.
 
 
 ### HasClientFlag
 
-`func (o *PKIWriteRoleRequest) HasClientFlag() bool`
+`func (o *PkiWriteRoleRequest) HasClientFlag() bool`
 
 HasClientFlag returns a boolean if a field has been set.
 
@@ -541,27 +571,27 @@ HasClientFlag returns a boolean if a field has been set.
 
 ### GetCnValidations
 
-`func (o *PKIWriteRoleRequest) GetCnValidations() []string`
+`func (o *PkiWriteRoleRequest) GetCnValidations() []string`
 
 GetCnValidations returns the CnValidations field if non-nil, zero value otherwise.
 
 ### GetCnValidationsOk
 
-`func (o *PKIWriteRoleRequest) GetCnValidationsOk() (*[]string, bool)`
+`func (o *PkiWriteRoleRequest) GetCnValidationsOk() (*[]string, bool)`
 
 GetCnValidationsOk returns a tuple with the CnValidations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCnValidations
 
-`func (o *PKIWriteRoleRequest) SetCnValidations(v []string)`
+`func (o *PkiWriteRoleRequest) SetCnValidations(v []string)`
 
 SetCnValidations sets CnValidations field to given value.
 
 
 ### HasCnValidations
 
-`func (o *PKIWriteRoleRequest) HasCnValidations() bool`
+`func (o *PkiWriteRoleRequest) HasCnValidations() bool`
 
 HasCnValidations returns a boolean if a field has been set.
 
@@ -570,27 +600,27 @@ HasCnValidations returns a boolean if a field has been set.
 
 ### GetCodeSigningFlag
 
-`func (o *PKIWriteRoleRequest) GetCodeSigningFlag() bool`
+`func (o *PkiWriteRoleRequest) GetCodeSigningFlag() bool`
 
 GetCodeSigningFlag returns the CodeSigningFlag field if non-nil, zero value otherwise.
 
 ### GetCodeSigningFlagOk
 
-`func (o *PKIWriteRoleRequest) GetCodeSigningFlagOk() (*bool, bool)`
+`func (o *PkiWriteRoleRequest) GetCodeSigningFlagOk() (*bool, bool)`
 
 GetCodeSigningFlagOk returns a tuple with the CodeSigningFlag field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCodeSigningFlag
 
-`func (o *PKIWriteRoleRequest) SetCodeSigningFlag(v bool)`
+`func (o *PkiWriteRoleRequest) SetCodeSigningFlag(v bool)`
 
 SetCodeSigningFlag sets CodeSigningFlag field to given value.
 
 
 ### HasCodeSigningFlag
 
-`func (o *PKIWriteRoleRequest) HasCodeSigningFlag() bool`
+`func (o *PkiWriteRoleRequest) HasCodeSigningFlag() bool`
 
 HasCodeSigningFlag returns a boolean if a field has been set.
 
@@ -599,27 +629,27 @@ HasCodeSigningFlag returns a boolean if a field has been set.
 
 ### GetCountry
 
-`func (o *PKIWriteRoleRequest) GetCountry() []string`
+`func (o *PkiWriteRoleRequest) GetCountry() []string`
 
 GetCountry returns the Country field if non-nil, zero value otherwise.
 
 ### GetCountryOk
 
-`func (o *PKIWriteRoleRequest) GetCountryOk() (*[]string, bool)`
+`func (o *PkiWriteRoleRequest) GetCountryOk() (*[]string, bool)`
 
 GetCountryOk returns a tuple with the Country field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCountry
 
-`func (o *PKIWriteRoleRequest) SetCountry(v []string)`
+`func (o *PkiWriteRoleRequest) SetCountry(v []string)`
 
 SetCountry sets Country field to given value.
 
 
 ### HasCountry
 
-`func (o *PKIWriteRoleRequest) HasCountry() bool`
+`func (o *PkiWriteRoleRequest) HasCountry() bool`
 
 HasCountry returns a boolean if a field has been set.
 
@@ -628,27 +658,27 @@ HasCountry returns a boolean if a field has been set.
 
 ### GetEmailProtectionFlag
 
-`func (o *PKIWriteRoleRequest) GetEmailProtectionFlag() bool`
+`func (o *PkiWriteRoleRequest) GetEmailProtectionFlag() bool`
 
 GetEmailProtectionFlag returns the EmailProtectionFlag field if non-nil, zero value otherwise.
 
 ### GetEmailProtectionFlagOk
 
-`func (o *PKIWriteRoleRequest) GetEmailProtectionFlagOk() (*bool, bool)`
+`func (o *PkiWriteRoleRequest) GetEmailProtectionFlagOk() (*bool, bool)`
 
 GetEmailProtectionFlagOk returns a tuple with the EmailProtectionFlag field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEmailProtectionFlag
 
-`func (o *PKIWriteRoleRequest) SetEmailProtectionFlag(v bool)`
+`func (o *PkiWriteRoleRequest) SetEmailProtectionFlag(v bool)`
 
 SetEmailProtectionFlag sets EmailProtectionFlag field to given value.
 
 
 ### HasEmailProtectionFlag
 
-`func (o *PKIWriteRoleRequest) HasEmailProtectionFlag() bool`
+`func (o *PkiWriteRoleRequest) HasEmailProtectionFlag() bool`
 
 HasEmailProtectionFlag returns a boolean if a field has been set.
 
@@ -657,27 +687,27 @@ HasEmailProtectionFlag returns a boolean if a field has been set.
 
 ### GetEnforceHostnames
 
-`func (o *PKIWriteRoleRequest) GetEnforceHostnames() bool`
+`func (o *PkiWriteRoleRequest) GetEnforceHostnames() bool`
 
 GetEnforceHostnames returns the EnforceHostnames field if non-nil, zero value otherwise.
 
 ### GetEnforceHostnamesOk
 
-`func (o *PKIWriteRoleRequest) GetEnforceHostnamesOk() (*bool, bool)`
+`func (o *PkiWriteRoleRequest) GetEnforceHostnamesOk() (*bool, bool)`
 
 GetEnforceHostnamesOk returns a tuple with the EnforceHostnames field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnforceHostnames
 
-`func (o *PKIWriteRoleRequest) SetEnforceHostnames(v bool)`
+`func (o *PkiWriteRoleRequest) SetEnforceHostnames(v bool)`
 
 SetEnforceHostnames sets EnforceHostnames field to given value.
 
 
 ### HasEnforceHostnames
 
-`func (o *PKIWriteRoleRequest) HasEnforceHostnames() bool`
+`func (o *PkiWriteRoleRequest) HasEnforceHostnames() bool`
 
 HasEnforceHostnames returns a boolean if a field has been set.
 
@@ -686,27 +716,27 @@ HasEnforceHostnames returns a boolean if a field has been set.
 
 ### GetExtKeyUsage
 
-`func (o *PKIWriteRoleRequest) GetExtKeyUsage() []string`
+`func (o *PkiWriteRoleRequest) GetExtKeyUsage() []string`
 
 GetExtKeyUsage returns the ExtKeyUsage field if non-nil, zero value otherwise.
 
 ### GetExtKeyUsageOk
 
-`func (o *PKIWriteRoleRequest) GetExtKeyUsageOk() (*[]string, bool)`
+`func (o *PkiWriteRoleRequest) GetExtKeyUsageOk() (*[]string, bool)`
 
 GetExtKeyUsageOk returns a tuple with the ExtKeyUsage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExtKeyUsage
 
-`func (o *PKIWriteRoleRequest) SetExtKeyUsage(v []string)`
+`func (o *PkiWriteRoleRequest) SetExtKeyUsage(v []string)`
 
 SetExtKeyUsage sets ExtKeyUsage field to given value.
 
 
 ### HasExtKeyUsage
 
-`func (o *PKIWriteRoleRequest) HasExtKeyUsage() bool`
+`func (o *PkiWriteRoleRequest) HasExtKeyUsage() bool`
 
 HasExtKeyUsage returns a boolean if a field has been set.
 
@@ -715,27 +745,27 @@ HasExtKeyUsage returns a boolean if a field has been set.
 
 ### GetExtKeyUsageOids
 
-`func (o *PKIWriteRoleRequest) GetExtKeyUsageOids() []string`
+`func (o *PkiWriteRoleRequest) GetExtKeyUsageOids() []string`
 
 GetExtKeyUsageOids returns the ExtKeyUsageOids field if non-nil, zero value otherwise.
 
 ### GetExtKeyUsageOidsOk
 
-`func (o *PKIWriteRoleRequest) GetExtKeyUsageOidsOk() (*[]string, bool)`
+`func (o *PkiWriteRoleRequest) GetExtKeyUsageOidsOk() (*[]string, bool)`
 
 GetExtKeyUsageOidsOk returns a tuple with the ExtKeyUsageOids field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExtKeyUsageOids
 
-`func (o *PKIWriteRoleRequest) SetExtKeyUsageOids(v []string)`
+`func (o *PkiWriteRoleRequest) SetExtKeyUsageOids(v []string)`
 
 SetExtKeyUsageOids sets ExtKeyUsageOids field to given value.
 
 
 ### HasExtKeyUsageOids
 
-`func (o *PKIWriteRoleRequest) HasExtKeyUsageOids() bool`
+`func (o *PkiWriteRoleRequest) HasExtKeyUsageOids() bool`
 
 HasExtKeyUsageOids returns a boolean if a field has been set.
 
@@ -744,27 +774,27 @@ HasExtKeyUsageOids returns a boolean if a field has been set.
 
 ### GetGenerateLease
 
-`func (o *PKIWriteRoleRequest) GetGenerateLease() bool`
+`func (o *PkiWriteRoleRequest) GetGenerateLease() bool`
 
 GetGenerateLease returns the GenerateLease field if non-nil, zero value otherwise.
 
 ### GetGenerateLeaseOk
 
-`func (o *PKIWriteRoleRequest) GetGenerateLeaseOk() (*bool, bool)`
+`func (o *PkiWriteRoleRequest) GetGenerateLeaseOk() (*bool, bool)`
 
 GetGenerateLeaseOk returns a tuple with the GenerateLease field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGenerateLease
 
-`func (o *PKIWriteRoleRequest) SetGenerateLease(v bool)`
+`func (o *PkiWriteRoleRequest) SetGenerateLease(v bool)`
 
 SetGenerateLease sets GenerateLease field to given value.
 
 
 ### HasGenerateLease
 
-`func (o *PKIWriteRoleRequest) HasGenerateLease() bool`
+`func (o *PkiWriteRoleRequest) HasGenerateLease() bool`
 
 HasGenerateLease returns a boolean if a field has been set.
 
@@ -773,27 +803,27 @@ HasGenerateLease returns a boolean if a field has been set.
 
 ### GetIssuerRef
 
-`func (o *PKIWriteRoleRequest) GetIssuerRef() string`
+`func (o *PkiWriteRoleRequest) GetIssuerRef() string`
 
 GetIssuerRef returns the IssuerRef field if non-nil, zero value otherwise.
 
 ### GetIssuerRefOk
 
-`func (o *PKIWriteRoleRequest) GetIssuerRefOk() (*string, bool)`
+`func (o *PkiWriteRoleRequest) GetIssuerRefOk() (*string, bool)`
 
 GetIssuerRefOk returns a tuple with the IssuerRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIssuerRef
 
-`func (o *PKIWriteRoleRequest) SetIssuerRef(v string)`
+`func (o *PkiWriteRoleRequest) SetIssuerRef(v string)`
 
 SetIssuerRef sets IssuerRef field to given value.
 
 
 ### HasIssuerRef
 
-`func (o *PKIWriteRoleRequest) HasIssuerRef() bool`
+`func (o *PkiWriteRoleRequest) HasIssuerRef() bool`
 
 HasIssuerRef returns a boolean if a field has been set.
 
@@ -802,27 +832,27 @@ HasIssuerRef returns a boolean if a field has been set.
 
 ### GetKeyBits
 
-`func (o *PKIWriteRoleRequest) GetKeyBits() int32`
+`func (o *PkiWriteRoleRequest) GetKeyBits() int32`
 
 GetKeyBits returns the KeyBits field if non-nil, zero value otherwise.
 
 ### GetKeyBitsOk
 
-`func (o *PKIWriteRoleRequest) GetKeyBitsOk() (*int32, bool)`
+`func (o *PkiWriteRoleRequest) GetKeyBitsOk() (*int32, bool)`
 
 GetKeyBitsOk returns a tuple with the KeyBits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyBits
 
-`func (o *PKIWriteRoleRequest) SetKeyBits(v int32)`
+`func (o *PkiWriteRoleRequest) SetKeyBits(v int32)`
 
 SetKeyBits sets KeyBits field to given value.
 
 
 ### HasKeyBits
 
-`func (o *PKIWriteRoleRequest) HasKeyBits() bool`
+`func (o *PkiWriteRoleRequest) HasKeyBits() bool`
 
 HasKeyBits returns a boolean if a field has been set.
 
@@ -831,27 +861,27 @@ HasKeyBits returns a boolean if a field has been set.
 
 ### GetKeyType
 
-`func (o *PKIWriteRoleRequest) GetKeyType() string`
+`func (o *PkiWriteRoleRequest) GetKeyType() string`
 
 GetKeyType returns the KeyType field if non-nil, zero value otherwise.
 
 ### GetKeyTypeOk
 
-`func (o *PKIWriteRoleRequest) GetKeyTypeOk() (*string, bool)`
+`func (o *PkiWriteRoleRequest) GetKeyTypeOk() (*string, bool)`
 
 GetKeyTypeOk returns a tuple with the KeyType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyType
 
-`func (o *PKIWriteRoleRequest) SetKeyType(v string)`
+`func (o *PkiWriteRoleRequest) SetKeyType(v string)`
 
 SetKeyType sets KeyType field to given value.
 
 
 ### HasKeyType
 
-`func (o *PKIWriteRoleRequest) HasKeyType() bool`
+`func (o *PkiWriteRoleRequest) HasKeyType() bool`
 
 HasKeyType returns a boolean if a field has been set.
 
@@ -860,27 +890,27 @@ HasKeyType returns a boolean if a field has been set.
 
 ### GetKeyUsage
 
-`func (o *PKIWriteRoleRequest) GetKeyUsage() []string`
+`func (o *PkiWriteRoleRequest) GetKeyUsage() []string`
 
 GetKeyUsage returns the KeyUsage field if non-nil, zero value otherwise.
 
 ### GetKeyUsageOk
 
-`func (o *PKIWriteRoleRequest) GetKeyUsageOk() (*[]string, bool)`
+`func (o *PkiWriteRoleRequest) GetKeyUsageOk() (*[]string, bool)`
 
 GetKeyUsageOk returns a tuple with the KeyUsage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyUsage
 
-`func (o *PKIWriteRoleRequest) SetKeyUsage(v []string)`
+`func (o *PkiWriteRoleRequest) SetKeyUsage(v []string)`
 
 SetKeyUsage sets KeyUsage field to given value.
 
 
 ### HasKeyUsage
 
-`func (o *PKIWriteRoleRequest) HasKeyUsage() bool`
+`func (o *PkiWriteRoleRequest) HasKeyUsage() bool`
 
 HasKeyUsage returns a boolean if a field has been set.
 
@@ -889,27 +919,27 @@ HasKeyUsage returns a boolean if a field has been set.
 
 ### GetLocality
 
-`func (o *PKIWriteRoleRequest) GetLocality() []string`
+`func (o *PkiWriteRoleRequest) GetLocality() []string`
 
 GetLocality returns the Locality field if non-nil, zero value otherwise.
 
 ### GetLocalityOk
 
-`func (o *PKIWriteRoleRequest) GetLocalityOk() (*[]string, bool)`
+`func (o *PkiWriteRoleRequest) GetLocalityOk() (*[]string, bool)`
 
 GetLocalityOk returns a tuple with the Locality field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLocality
 
-`func (o *PKIWriteRoleRequest) SetLocality(v []string)`
+`func (o *PkiWriteRoleRequest) SetLocality(v []string)`
 
 SetLocality sets Locality field to given value.
 
 
 ### HasLocality
 
-`func (o *PKIWriteRoleRequest) HasLocality() bool`
+`func (o *PkiWriteRoleRequest) HasLocality() bool`
 
 HasLocality returns a boolean if a field has been set.
 
@@ -918,27 +948,27 @@ HasLocality returns a boolean if a field has been set.
 
 ### GetMaxTtl
 
-`func (o *PKIWriteRoleRequest) GetMaxTtl() int32`
+`func (o *PkiWriteRoleRequest) GetMaxTtl() int32`
 
 GetMaxTtl returns the MaxTtl field if non-nil, zero value otherwise.
 
 ### GetMaxTtlOk
 
-`func (o *PKIWriteRoleRequest) GetMaxTtlOk() (*int32, bool)`
+`func (o *PkiWriteRoleRequest) GetMaxTtlOk() (*int32, bool)`
 
 GetMaxTtlOk returns a tuple with the MaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxTtl
 
-`func (o *PKIWriteRoleRequest) SetMaxTtl(v int32)`
+`func (o *PkiWriteRoleRequest) SetMaxTtl(v int32)`
 
 SetMaxTtl sets MaxTtl field to given value.
 
 
 ### HasMaxTtl
 
-`func (o *PKIWriteRoleRequest) HasMaxTtl() bool`
+`func (o *PkiWriteRoleRequest) HasMaxTtl() bool`
 
 HasMaxTtl returns a boolean if a field has been set.
 
@@ -947,27 +977,27 @@ HasMaxTtl returns a boolean if a field has been set.
 
 ### GetNoStore
 
-`func (o *PKIWriteRoleRequest) GetNoStore() bool`
+`func (o *PkiWriteRoleRequest) GetNoStore() bool`
 
 GetNoStore returns the NoStore field if non-nil, zero value otherwise.
 
 ### GetNoStoreOk
 
-`func (o *PKIWriteRoleRequest) GetNoStoreOk() (*bool, bool)`
+`func (o *PkiWriteRoleRequest) GetNoStoreOk() (*bool, bool)`
 
 GetNoStoreOk returns a tuple with the NoStore field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNoStore
 
-`func (o *PKIWriteRoleRequest) SetNoStore(v bool)`
+`func (o *PkiWriteRoleRequest) SetNoStore(v bool)`
 
 SetNoStore sets NoStore field to given value.
 
 
 ### HasNoStore
 
-`func (o *PKIWriteRoleRequest) HasNoStore() bool`
+`func (o *PkiWriteRoleRequest) HasNoStore() bool`
 
 HasNoStore returns a boolean if a field has been set.
 
@@ -976,27 +1006,27 @@ HasNoStore returns a boolean if a field has been set.
 
 ### GetNotAfter
 
-`func (o *PKIWriteRoleRequest) GetNotAfter() string`
+`func (o *PkiWriteRoleRequest) GetNotAfter() string`
 
 GetNotAfter returns the NotAfter field if non-nil, zero value otherwise.
 
 ### GetNotAfterOk
 
-`func (o *PKIWriteRoleRequest) GetNotAfterOk() (*string, bool)`
+`func (o *PkiWriteRoleRequest) GetNotAfterOk() (*string, bool)`
 
 GetNotAfterOk returns a tuple with the NotAfter field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNotAfter
 
-`func (o *PKIWriteRoleRequest) SetNotAfter(v string)`
+`func (o *PkiWriteRoleRequest) SetNotAfter(v string)`
 
 SetNotAfter sets NotAfter field to given value.
 
 
 ### HasNotAfter
 
-`func (o *PKIWriteRoleRequest) HasNotAfter() bool`
+`func (o *PkiWriteRoleRequest) HasNotAfter() bool`
 
 HasNotAfter returns a boolean if a field has been set.
 
@@ -1005,27 +1035,27 @@ HasNotAfter returns a boolean if a field has been set.
 
 ### GetNotBeforeDuration
 
-`func (o *PKIWriteRoleRequest) GetNotBeforeDuration() int32`
+`func (o *PkiWriteRoleRequest) GetNotBeforeDuration() int32`
 
 GetNotBeforeDuration returns the NotBeforeDuration field if non-nil, zero value otherwise.
 
 ### GetNotBeforeDurationOk
 
-`func (o *PKIWriteRoleRequest) GetNotBeforeDurationOk() (*int32, bool)`
+`func (o *PkiWriteRoleRequest) GetNotBeforeDurationOk() (*int32, bool)`
 
 GetNotBeforeDurationOk returns a tuple with the NotBeforeDuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNotBeforeDuration
 
-`func (o *PKIWriteRoleRequest) SetNotBeforeDuration(v int32)`
+`func (o *PkiWriteRoleRequest) SetNotBeforeDuration(v int32)`
 
 SetNotBeforeDuration sets NotBeforeDuration field to given value.
 
 
 ### HasNotBeforeDuration
 
-`func (o *PKIWriteRoleRequest) HasNotBeforeDuration() bool`
+`func (o *PkiWriteRoleRequest) HasNotBeforeDuration() bool`
 
 HasNotBeforeDuration returns a boolean if a field has been set.
 
@@ -1034,27 +1064,27 @@ HasNotBeforeDuration returns a boolean if a field has been set.
 
 ### GetOrganization
 
-`func (o *PKIWriteRoleRequest) GetOrganization() []string`
+`func (o *PkiWriteRoleRequest) GetOrganization() []string`
 
 GetOrganization returns the Organization field if non-nil, zero value otherwise.
 
 ### GetOrganizationOk
 
-`func (o *PKIWriteRoleRequest) GetOrganizationOk() (*[]string, bool)`
+`func (o *PkiWriteRoleRequest) GetOrganizationOk() (*[]string, bool)`
 
 GetOrganizationOk returns a tuple with the Organization field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrganization
 
-`func (o *PKIWriteRoleRequest) SetOrganization(v []string)`
+`func (o *PkiWriteRoleRequest) SetOrganization(v []string)`
 
 SetOrganization sets Organization field to given value.
 
 
 ### HasOrganization
 
-`func (o *PKIWriteRoleRequest) HasOrganization() bool`
+`func (o *PkiWriteRoleRequest) HasOrganization() bool`
 
 HasOrganization returns a boolean if a field has been set.
 
@@ -1063,27 +1093,27 @@ HasOrganization returns a boolean if a field has been set.
 
 ### GetOu
 
-`func (o *PKIWriteRoleRequest) GetOu() []string`
+`func (o *PkiWriteRoleRequest) GetOu() []string`
 
 GetOu returns the Ou field if non-nil, zero value otherwise.
 
 ### GetOuOk
 
-`func (o *PKIWriteRoleRequest) GetOuOk() (*[]string, bool)`
+`func (o *PkiWriteRoleRequest) GetOuOk() (*[]string, bool)`
 
 GetOuOk returns a tuple with the Ou field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOu
 
-`func (o *PKIWriteRoleRequest) SetOu(v []string)`
+`func (o *PkiWriteRoleRequest) SetOu(v []string)`
 
 SetOu sets Ou field to given value.
 
 
 ### HasOu
 
-`func (o *PKIWriteRoleRequest) HasOu() bool`
+`func (o *PkiWriteRoleRequest) HasOu() bool`
 
 HasOu returns a boolean if a field has been set.
 
@@ -1092,27 +1122,27 @@ HasOu returns a boolean if a field has been set.
 
 ### GetPolicyIdentifiers
 
-`func (o *PKIWriteRoleRequest) GetPolicyIdentifiers() []string`
+`func (o *PkiWriteRoleRequest) GetPolicyIdentifiers() []string`
 
 GetPolicyIdentifiers returns the PolicyIdentifiers field if non-nil, zero value otherwise.
 
 ### GetPolicyIdentifiersOk
 
-`func (o *PKIWriteRoleRequest) GetPolicyIdentifiersOk() (*[]string, bool)`
+`func (o *PkiWriteRoleRequest) GetPolicyIdentifiersOk() (*[]string, bool)`
 
 GetPolicyIdentifiersOk returns a tuple with the PolicyIdentifiers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPolicyIdentifiers
 
-`func (o *PKIWriteRoleRequest) SetPolicyIdentifiers(v []string)`
+`func (o *PkiWriteRoleRequest) SetPolicyIdentifiers(v []string)`
 
 SetPolicyIdentifiers sets PolicyIdentifiers field to given value.
 
 
 ### HasPolicyIdentifiers
 
-`func (o *PKIWriteRoleRequest) HasPolicyIdentifiers() bool`
+`func (o *PkiWriteRoleRequest) HasPolicyIdentifiers() bool`
 
 HasPolicyIdentifiers returns a boolean if a field has been set.
 
@@ -1121,27 +1151,27 @@ HasPolicyIdentifiers returns a boolean if a field has been set.
 
 ### GetPostalCode
 
-`func (o *PKIWriteRoleRequest) GetPostalCode() []string`
+`func (o *PkiWriteRoleRequest) GetPostalCode() []string`
 
 GetPostalCode returns the PostalCode field if non-nil, zero value otherwise.
 
 ### GetPostalCodeOk
 
-`func (o *PKIWriteRoleRequest) GetPostalCodeOk() (*[]string, bool)`
+`func (o *PkiWriteRoleRequest) GetPostalCodeOk() (*[]string, bool)`
 
 GetPostalCodeOk returns a tuple with the PostalCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPostalCode
 
-`func (o *PKIWriteRoleRequest) SetPostalCode(v []string)`
+`func (o *PkiWriteRoleRequest) SetPostalCode(v []string)`
 
 SetPostalCode sets PostalCode field to given value.
 
 
 ### HasPostalCode
 
-`func (o *PKIWriteRoleRequest) HasPostalCode() bool`
+`func (o *PkiWriteRoleRequest) HasPostalCode() bool`
 
 HasPostalCode returns a boolean if a field has been set.
 
@@ -1150,27 +1180,27 @@ HasPostalCode returns a boolean if a field has been set.
 
 ### GetProvince
 
-`func (o *PKIWriteRoleRequest) GetProvince() []string`
+`func (o *PkiWriteRoleRequest) GetProvince() []string`
 
 GetProvince returns the Province field if non-nil, zero value otherwise.
 
 ### GetProvinceOk
 
-`func (o *PKIWriteRoleRequest) GetProvinceOk() (*[]string, bool)`
+`func (o *PkiWriteRoleRequest) GetProvinceOk() (*[]string, bool)`
 
 GetProvinceOk returns a tuple with the Province field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProvince
 
-`func (o *PKIWriteRoleRequest) SetProvince(v []string)`
+`func (o *PkiWriteRoleRequest) SetProvince(v []string)`
 
 SetProvince sets Province field to given value.
 
 
 ### HasProvince
 
-`func (o *PKIWriteRoleRequest) HasProvince() bool`
+`func (o *PkiWriteRoleRequest) HasProvince() bool`
 
 HasProvince returns a boolean if a field has been set.
 
@@ -1179,27 +1209,27 @@ HasProvince returns a boolean if a field has been set.
 
 ### GetRequireCn
 
-`func (o *PKIWriteRoleRequest) GetRequireCn() bool`
+`func (o *PkiWriteRoleRequest) GetRequireCn() bool`
 
 GetRequireCn returns the RequireCn field if non-nil, zero value otherwise.
 
 ### GetRequireCnOk
 
-`func (o *PKIWriteRoleRequest) GetRequireCnOk() (*bool, bool)`
+`func (o *PkiWriteRoleRequest) GetRequireCnOk() (*bool, bool)`
 
 GetRequireCnOk returns a tuple with the RequireCn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRequireCn
 
-`func (o *PKIWriteRoleRequest) SetRequireCn(v bool)`
+`func (o *PkiWriteRoleRequest) SetRequireCn(v bool)`
 
 SetRequireCn sets RequireCn field to given value.
 
 
 ### HasRequireCn
 
-`func (o *PKIWriteRoleRequest) HasRequireCn() bool`
+`func (o *PkiWriteRoleRequest) HasRequireCn() bool`
 
 HasRequireCn returns a boolean if a field has been set.
 
@@ -1208,27 +1238,27 @@ HasRequireCn returns a boolean if a field has been set.
 
 ### GetServerFlag
 
-`func (o *PKIWriteRoleRequest) GetServerFlag() bool`
+`func (o *PkiWriteRoleRequest) GetServerFlag() bool`
 
 GetServerFlag returns the ServerFlag field if non-nil, zero value otherwise.
 
 ### GetServerFlagOk
 
-`func (o *PKIWriteRoleRequest) GetServerFlagOk() (*bool, bool)`
+`func (o *PkiWriteRoleRequest) GetServerFlagOk() (*bool, bool)`
 
 GetServerFlagOk returns a tuple with the ServerFlag field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerFlag
 
-`func (o *PKIWriteRoleRequest) SetServerFlag(v bool)`
+`func (o *PkiWriteRoleRequest) SetServerFlag(v bool)`
 
 SetServerFlag sets ServerFlag field to given value.
 
 
 ### HasServerFlag
 
-`func (o *PKIWriteRoleRequest) HasServerFlag() bool`
+`func (o *PkiWriteRoleRequest) HasServerFlag() bool`
 
 HasServerFlag returns a boolean if a field has been set.
 
@@ -1237,27 +1267,27 @@ HasServerFlag returns a boolean if a field has been set.
 
 ### GetSignatureBits
 
-`func (o *PKIWriteRoleRequest) GetSignatureBits() int32`
+`func (o *PkiWriteRoleRequest) GetSignatureBits() int32`
 
 GetSignatureBits returns the SignatureBits field if non-nil, zero value otherwise.
 
 ### GetSignatureBitsOk
 
-`func (o *PKIWriteRoleRequest) GetSignatureBitsOk() (*int32, bool)`
+`func (o *PkiWriteRoleRequest) GetSignatureBitsOk() (*int32, bool)`
 
 GetSignatureBitsOk returns a tuple with the SignatureBits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSignatureBits
 
-`func (o *PKIWriteRoleRequest) SetSignatureBits(v int32)`
+`func (o *PkiWriteRoleRequest) SetSignatureBits(v int32)`
 
 SetSignatureBits sets SignatureBits field to given value.
 
 
 ### HasSignatureBits
 
-`func (o *PKIWriteRoleRequest) HasSignatureBits() bool`
+`func (o *PkiWriteRoleRequest) HasSignatureBits() bool`
 
 HasSignatureBits returns a boolean if a field has been set.
 
@@ -1266,27 +1296,27 @@ HasSignatureBits returns a boolean if a field has been set.
 
 ### GetStreetAddress
 
-`func (o *PKIWriteRoleRequest) GetStreetAddress() []string`
+`func (o *PkiWriteRoleRequest) GetStreetAddress() []string`
 
 GetStreetAddress returns the StreetAddress field if non-nil, zero value otherwise.
 
 ### GetStreetAddressOk
 
-`func (o *PKIWriteRoleRequest) GetStreetAddressOk() (*[]string, bool)`
+`func (o *PkiWriteRoleRequest) GetStreetAddressOk() (*[]string, bool)`
 
 GetStreetAddressOk returns a tuple with the StreetAddress field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStreetAddress
 
-`func (o *PKIWriteRoleRequest) SetStreetAddress(v []string)`
+`func (o *PkiWriteRoleRequest) SetStreetAddress(v []string)`
 
 SetStreetAddress sets StreetAddress field to given value.
 
 
 ### HasStreetAddress
 
-`func (o *PKIWriteRoleRequest) HasStreetAddress() bool`
+`func (o *PkiWriteRoleRequest) HasStreetAddress() bool`
 
 HasStreetAddress returns a boolean if a field has been set.
 
@@ -1295,27 +1325,27 @@ HasStreetAddress returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *PKIWriteRoleRequest) GetTtl() int32`
+`func (o *PkiWriteRoleRequest) GetTtl() int32`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *PKIWriteRoleRequest) GetTtlOk() (*int32, bool)`
+`func (o *PkiWriteRoleRequest) GetTtlOk() (*int32, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *PKIWriteRoleRequest) SetTtl(v int32)`
+`func (o *PkiWriteRoleRequest) SetTtl(v int32)`
 
 SetTtl sets Ttl field to given value.
 
 
 ### HasTtl
 
-`func (o *PKIWriteRoleRequest) HasTtl() bool`
+`func (o *PkiWriteRoleRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
 
@@ -1324,27 +1354,27 @@ HasTtl returns a boolean if a field has been set.
 
 ### GetUseCsrCommonName
 
-`func (o *PKIWriteRoleRequest) GetUseCsrCommonName() bool`
+`func (o *PkiWriteRoleRequest) GetUseCsrCommonName() bool`
 
 GetUseCsrCommonName returns the UseCsrCommonName field if non-nil, zero value otherwise.
 
 ### GetUseCsrCommonNameOk
 
-`func (o *PKIWriteRoleRequest) GetUseCsrCommonNameOk() (*bool, bool)`
+`func (o *PkiWriteRoleRequest) GetUseCsrCommonNameOk() (*bool, bool)`
 
 GetUseCsrCommonNameOk returns a tuple with the UseCsrCommonName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUseCsrCommonName
 
-`func (o *PKIWriteRoleRequest) SetUseCsrCommonName(v bool)`
+`func (o *PkiWriteRoleRequest) SetUseCsrCommonName(v bool)`
 
 SetUseCsrCommonName sets UseCsrCommonName field to given value.
 
 
 ### HasUseCsrCommonName
 
-`func (o *PKIWriteRoleRequest) HasUseCsrCommonName() bool`
+`func (o *PkiWriteRoleRequest) HasUseCsrCommonName() bool`
 
 HasUseCsrCommonName returns a boolean if a field has been set.
 
@@ -1353,27 +1383,27 @@ HasUseCsrCommonName returns a boolean if a field has been set.
 
 ### GetUseCsrSans
 
-`func (o *PKIWriteRoleRequest) GetUseCsrSans() bool`
+`func (o *PkiWriteRoleRequest) GetUseCsrSans() bool`
 
 GetUseCsrSans returns the UseCsrSans field if non-nil, zero value otherwise.
 
 ### GetUseCsrSansOk
 
-`func (o *PKIWriteRoleRequest) GetUseCsrSansOk() (*bool, bool)`
+`func (o *PkiWriteRoleRequest) GetUseCsrSansOk() (*bool, bool)`
 
 GetUseCsrSansOk returns a tuple with the UseCsrSans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUseCsrSans
 
-`func (o *PKIWriteRoleRequest) SetUseCsrSans(v bool)`
+`func (o *PkiWriteRoleRequest) SetUseCsrSans(v bool)`
 
 SetUseCsrSans sets UseCsrSans field to given value.
 
 
 ### HasUseCsrSans
 
-`func (o *PKIWriteRoleRequest) HasUseCsrSans() bool`
+`func (o *PkiWriteRoleRequest) HasUseCsrSans() bool`
 
 HasUseCsrSans returns a boolean if a field has been set.
 
@@ -1382,27 +1412,27 @@ HasUseCsrSans returns a boolean if a field has been set.
 
 ### GetUsePss
 
-`func (o *PKIWriteRoleRequest) GetUsePss() bool`
+`func (o *PkiWriteRoleRequest) GetUsePss() bool`
 
 GetUsePss returns the UsePss field if non-nil, zero value otherwise.
 
 ### GetUsePssOk
 
-`func (o *PKIWriteRoleRequest) GetUsePssOk() (*bool, bool)`
+`func (o *PkiWriteRoleRequest) GetUsePssOk() (*bool, bool)`
 
 GetUsePssOk returns a tuple with the UsePss field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUsePss
 
-`func (o *PKIWriteRoleRequest) SetUsePss(v bool)`
+`func (o *PkiWriteRoleRequest) SetUsePss(v bool)`
 
 SetUsePss sets UsePss field to given value.
 
 
 ### HasUsePss
 
-`func (o *PKIWriteRoleRequest) HasUsePss() bool`
+`func (o *PkiWriteRoleRequest) HasUsePss() bool`
 
 HasUsePss returns a boolean if a field has been set.
 

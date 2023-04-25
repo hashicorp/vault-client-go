@@ -1,4 +1,4 @@
-# OIDCIntrospectRequest
+# OidcIntrospectRequest
 
 
 ## Properties
@@ -13,47 +13,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewOIDCIntrospectRequest
+### NewOidcIntrospectRequest
 
-`func NewOIDCIntrospectRequest() *OIDCIntrospectRequest`
+`func NewOidcIntrospectRequest() *OidcIntrospectRequest`
 
-NewOIDCIntrospectRequest instantiates a new OIDCIntrospectRequest object
+NewOidcIntrospectRequest instantiates a new OidcIntrospectRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewOIDCIntrospectRequestWithDefaults
+### NewOidcIntrospectRequestWithDefaults
 
-`func NewOIDCIntrospectRequestWithDefaults() *OIDCIntrospectRequest`
+`func NewOidcIntrospectRequestWithDefaults() *OidcIntrospectRequest`
 
-NewOIDCIntrospectRequestWithDefaults instantiates a new OIDCIntrospectRequest object
+NewOidcIntrospectRequestWithDefaults instantiates a new OidcIntrospectRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetClientId
 
-`func (o *OIDCIntrospectRequest) GetClientId() string`
+`func (o *OidcIntrospectRequest) GetClientId() string`
 
 GetClientId returns the ClientId field if non-nil, zero value otherwise.
 
 ### GetClientIdOk
 
-`func (o *OIDCIntrospectRequest) GetClientIdOk() (*string, bool)`
+`func (o *OidcIntrospectRequest) GetClientIdOk() (*string, bool)`
 
 GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClientId
 
-`func (o *OIDCIntrospectRequest) SetClientId(v string)`
+`func (o *OidcIntrospectRequest) SetClientId(v string)`
 
 SetClientId sets ClientId field to given value.
 
 
 ### HasClientId
 
-`func (o *OIDCIntrospectRequest) HasClientId() bool`
+`func (o *OidcIntrospectRequest) HasClientId() bool`
 
 HasClientId returns a boolean if a field has been set.
 
@@ -62,27 +62,27 @@ HasClientId returns a boolean if a field has been set.
 
 ### GetToken
 
-`func (o *OIDCIntrospectRequest) GetToken() string`
+`func (o *OidcIntrospectRequest) GetToken() string`
 
 GetToken returns the Token field if non-nil, zero value otherwise.
 
 ### GetTokenOk
 
-`func (o *OIDCIntrospectRequest) GetTokenOk() (*string, bool)`
+`func (o *OidcIntrospectRequest) GetTokenOk() (*string, bool)`
 
 GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetToken
 
-`func (o *OIDCIntrospectRequest) SetToken(v string)`
+`func (o *OidcIntrospectRequest) SetToken(v string)`
 
 SetToken sets Token field to given value.
 
 
 ### HasToken
 
-`func (o *OIDCIntrospectRequest) HasToken() bool`
+`func (o *OidcIntrospectRequest) HasToken() bool`
 
 HasToken returns a boolean if a field has been set.
 

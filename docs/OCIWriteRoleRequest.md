@@ -1,4 +1,4 @@
-# OCIWriteRoleRequest
+# OciWriteRoleRequest
 
 
 ## Properties
@@ -21,47 +21,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewOCIWriteRoleRequest
+### NewOciWriteRoleRequest
 
-`func NewOCIWriteRoleRequest() *OCIWriteRoleRequest`
+`func NewOciWriteRoleRequest() *OciWriteRoleRequest`
 
-NewOCIWriteRoleRequest instantiates a new OCIWriteRoleRequest object
+NewOciWriteRoleRequest instantiates a new OciWriteRoleRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewOCIWriteRoleRequestWithDefaults
+### NewOciWriteRoleRequestWithDefaults
 
-`func NewOCIWriteRoleRequestWithDefaults() *OCIWriteRoleRequest`
+`func NewOciWriteRoleRequestWithDefaults() *OciWriteRoleRequest`
 
-NewOCIWriteRoleRequestWithDefaults instantiates a new OCIWriteRoleRequest object
+NewOciWriteRoleRequestWithDefaults instantiates a new OciWriteRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetOcidList
 
-`func (o *OCIWriteRoleRequest) GetOcidList() []string`
+`func (o *OciWriteRoleRequest) GetOcidList() []string`
 
 GetOcidList returns the OcidList field if non-nil, zero value otherwise.
 
 ### GetOcidListOk
 
-`func (o *OCIWriteRoleRequest) GetOcidListOk() (*[]string, bool)`
+`func (o *OciWriteRoleRequest) GetOcidListOk() (*[]string, bool)`
 
 GetOcidListOk returns a tuple with the OcidList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOcidList
 
-`func (o *OCIWriteRoleRequest) SetOcidList(v []string)`
+`func (o *OciWriteRoleRequest) SetOcidList(v []string)`
 
 SetOcidList sets OcidList field to given value.
 
 
 ### HasOcidList
 
-`func (o *OCIWriteRoleRequest) HasOcidList() bool`
+`func (o *OciWriteRoleRequest) HasOcidList() bool`
 
 HasOcidList returns a boolean if a field has been set.
 
@@ -70,27 +70,27 @@ HasOcidList returns a boolean if a field has been set.
 
 ### GetTokenBoundCidrs
 
-`func (o *OCIWriteRoleRequest) GetTokenBoundCidrs() []string`
+`func (o *OciWriteRoleRequest) GetTokenBoundCidrs() []string`
 
 GetTokenBoundCidrs returns the TokenBoundCidrs field if non-nil, zero value otherwise.
 
 ### GetTokenBoundCidrsOk
 
-`func (o *OCIWriteRoleRequest) GetTokenBoundCidrsOk() (*[]string, bool)`
+`func (o *OciWriteRoleRequest) GetTokenBoundCidrsOk() (*[]string, bool)`
 
 GetTokenBoundCidrsOk returns a tuple with the TokenBoundCidrs field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenBoundCidrs
 
-`func (o *OCIWriteRoleRequest) SetTokenBoundCidrs(v []string)`
+`func (o *OciWriteRoleRequest) SetTokenBoundCidrs(v []string)`
 
 SetTokenBoundCidrs sets TokenBoundCidrs field to given value.
 
 
 ### HasTokenBoundCidrs
 
-`func (o *OCIWriteRoleRequest) HasTokenBoundCidrs() bool`
+`func (o *OciWriteRoleRequest) HasTokenBoundCidrs() bool`
 
 HasTokenBoundCidrs returns a boolean if a field has been set.
 
@@ -99,27 +99,27 @@ HasTokenBoundCidrs returns a boolean if a field has been set.
 
 ### GetTokenExplicitMaxTtl
 
-`func (o *OCIWriteRoleRequest) GetTokenExplicitMaxTtl() int32`
+`func (o *OciWriteRoleRequest) GetTokenExplicitMaxTtl() int32`
 
 GetTokenExplicitMaxTtl returns the TokenExplicitMaxTtl field if non-nil, zero value otherwise.
 
 ### GetTokenExplicitMaxTtlOk
 
-`func (o *OCIWriteRoleRequest) GetTokenExplicitMaxTtlOk() (*int32, bool)`
+`func (o *OciWriteRoleRequest) GetTokenExplicitMaxTtlOk() (*int32, bool)`
 
 GetTokenExplicitMaxTtlOk returns a tuple with the TokenExplicitMaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenExplicitMaxTtl
 
-`func (o *OCIWriteRoleRequest) SetTokenExplicitMaxTtl(v int32)`
+`func (o *OciWriteRoleRequest) SetTokenExplicitMaxTtl(v int32)`
 
 SetTokenExplicitMaxTtl sets TokenExplicitMaxTtl field to given value.
 
 
 ### HasTokenExplicitMaxTtl
 
-`func (o *OCIWriteRoleRequest) HasTokenExplicitMaxTtl() bool`
+`func (o *OciWriteRoleRequest) HasTokenExplicitMaxTtl() bool`
 
 HasTokenExplicitMaxTtl returns a boolean if a field has been set.
 
@@ -128,27 +128,27 @@ HasTokenExplicitMaxTtl returns a boolean if a field has been set.
 
 ### GetTokenMaxTtl
 
-`func (o *OCIWriteRoleRequest) GetTokenMaxTtl() int32`
+`func (o *OciWriteRoleRequest) GetTokenMaxTtl() int32`
 
 GetTokenMaxTtl returns the TokenMaxTtl field if non-nil, zero value otherwise.
 
 ### GetTokenMaxTtlOk
 
-`func (o *OCIWriteRoleRequest) GetTokenMaxTtlOk() (*int32, bool)`
+`func (o *OciWriteRoleRequest) GetTokenMaxTtlOk() (*int32, bool)`
 
 GetTokenMaxTtlOk returns a tuple with the TokenMaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenMaxTtl
 
-`func (o *OCIWriteRoleRequest) SetTokenMaxTtl(v int32)`
+`func (o *OciWriteRoleRequest) SetTokenMaxTtl(v int32)`
 
 SetTokenMaxTtl sets TokenMaxTtl field to given value.
 
 
 ### HasTokenMaxTtl
 
-`func (o *OCIWriteRoleRequest) HasTokenMaxTtl() bool`
+`func (o *OciWriteRoleRequest) HasTokenMaxTtl() bool`
 
 HasTokenMaxTtl returns a boolean if a field has been set.
 
@@ -157,27 +157,27 @@ HasTokenMaxTtl returns a boolean if a field has been set.
 
 ### GetTokenNoDefaultPolicy
 
-`func (o *OCIWriteRoleRequest) GetTokenNoDefaultPolicy() bool`
+`func (o *OciWriteRoleRequest) GetTokenNoDefaultPolicy() bool`
 
 GetTokenNoDefaultPolicy returns the TokenNoDefaultPolicy field if non-nil, zero value otherwise.
 
 ### GetTokenNoDefaultPolicyOk
 
-`func (o *OCIWriteRoleRequest) GetTokenNoDefaultPolicyOk() (*bool, bool)`
+`func (o *OciWriteRoleRequest) GetTokenNoDefaultPolicyOk() (*bool, bool)`
 
 GetTokenNoDefaultPolicyOk returns a tuple with the TokenNoDefaultPolicy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenNoDefaultPolicy
 
-`func (o *OCIWriteRoleRequest) SetTokenNoDefaultPolicy(v bool)`
+`func (o *OciWriteRoleRequest) SetTokenNoDefaultPolicy(v bool)`
 
 SetTokenNoDefaultPolicy sets TokenNoDefaultPolicy field to given value.
 
 
 ### HasTokenNoDefaultPolicy
 
-`func (o *OCIWriteRoleRequest) HasTokenNoDefaultPolicy() bool`
+`func (o *OciWriteRoleRequest) HasTokenNoDefaultPolicy() bool`
 
 HasTokenNoDefaultPolicy returns a boolean if a field has been set.
 
@@ -186,27 +186,27 @@ HasTokenNoDefaultPolicy returns a boolean if a field has been set.
 
 ### GetTokenNumUses
 
-`func (o *OCIWriteRoleRequest) GetTokenNumUses() int32`
+`func (o *OciWriteRoleRequest) GetTokenNumUses() int32`
 
 GetTokenNumUses returns the TokenNumUses field if non-nil, zero value otherwise.
 
 ### GetTokenNumUsesOk
 
-`func (o *OCIWriteRoleRequest) GetTokenNumUsesOk() (*int32, bool)`
+`func (o *OciWriteRoleRequest) GetTokenNumUsesOk() (*int32, bool)`
 
 GetTokenNumUsesOk returns a tuple with the TokenNumUses field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenNumUses
 
-`func (o *OCIWriteRoleRequest) SetTokenNumUses(v int32)`
+`func (o *OciWriteRoleRequest) SetTokenNumUses(v int32)`
 
 SetTokenNumUses sets TokenNumUses field to given value.
 
 
 ### HasTokenNumUses
 
-`func (o *OCIWriteRoleRequest) HasTokenNumUses() bool`
+`func (o *OciWriteRoleRequest) HasTokenNumUses() bool`
 
 HasTokenNumUses returns a boolean if a field has been set.
 
@@ -215,27 +215,27 @@ HasTokenNumUses returns a boolean if a field has been set.
 
 ### GetTokenPeriod
 
-`func (o *OCIWriteRoleRequest) GetTokenPeriod() int32`
+`func (o *OciWriteRoleRequest) GetTokenPeriod() int32`
 
 GetTokenPeriod returns the TokenPeriod field if non-nil, zero value otherwise.
 
 ### GetTokenPeriodOk
 
-`func (o *OCIWriteRoleRequest) GetTokenPeriodOk() (*int32, bool)`
+`func (o *OciWriteRoleRequest) GetTokenPeriodOk() (*int32, bool)`
 
 GetTokenPeriodOk returns a tuple with the TokenPeriod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenPeriod
 
-`func (o *OCIWriteRoleRequest) SetTokenPeriod(v int32)`
+`func (o *OciWriteRoleRequest) SetTokenPeriod(v int32)`
 
 SetTokenPeriod sets TokenPeriod field to given value.
 
 
 ### HasTokenPeriod
 
-`func (o *OCIWriteRoleRequest) HasTokenPeriod() bool`
+`func (o *OciWriteRoleRequest) HasTokenPeriod() bool`
 
 HasTokenPeriod returns a boolean if a field has been set.
 
@@ -244,27 +244,27 @@ HasTokenPeriod returns a boolean if a field has been set.
 
 ### GetTokenPolicies
 
-`func (o *OCIWriteRoleRequest) GetTokenPolicies() []string`
+`func (o *OciWriteRoleRequest) GetTokenPolicies() []string`
 
 GetTokenPolicies returns the TokenPolicies field if non-nil, zero value otherwise.
 
 ### GetTokenPoliciesOk
 
-`func (o *OCIWriteRoleRequest) GetTokenPoliciesOk() (*[]string, bool)`
+`func (o *OciWriteRoleRequest) GetTokenPoliciesOk() (*[]string, bool)`
 
 GetTokenPoliciesOk returns a tuple with the TokenPolicies field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenPolicies
 
-`func (o *OCIWriteRoleRequest) SetTokenPolicies(v []string)`
+`func (o *OciWriteRoleRequest) SetTokenPolicies(v []string)`
 
 SetTokenPolicies sets TokenPolicies field to given value.
 
 
 ### HasTokenPolicies
 
-`func (o *OCIWriteRoleRequest) HasTokenPolicies() bool`
+`func (o *OciWriteRoleRequest) HasTokenPolicies() bool`
 
 HasTokenPolicies returns a boolean if a field has been set.
 
@@ -273,27 +273,27 @@ HasTokenPolicies returns a boolean if a field has been set.
 
 ### GetTokenTtl
 
-`func (o *OCIWriteRoleRequest) GetTokenTtl() int32`
+`func (o *OciWriteRoleRequest) GetTokenTtl() int32`
 
 GetTokenTtl returns the TokenTtl field if non-nil, zero value otherwise.
 
 ### GetTokenTtlOk
 
-`func (o *OCIWriteRoleRequest) GetTokenTtlOk() (*int32, bool)`
+`func (o *OciWriteRoleRequest) GetTokenTtlOk() (*int32, bool)`
 
 GetTokenTtlOk returns a tuple with the TokenTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenTtl
 
-`func (o *OCIWriteRoleRequest) SetTokenTtl(v int32)`
+`func (o *OciWriteRoleRequest) SetTokenTtl(v int32)`
 
 SetTokenTtl sets TokenTtl field to given value.
 
 
 ### HasTokenTtl
 
-`func (o *OCIWriteRoleRequest) HasTokenTtl() bool`
+`func (o *OciWriteRoleRequest) HasTokenTtl() bool`
 
 HasTokenTtl returns a boolean if a field has been set.
 
@@ -302,27 +302,27 @@ HasTokenTtl returns a boolean if a field has been set.
 
 ### GetTokenType
 
-`func (o *OCIWriteRoleRequest) GetTokenType() string`
+`func (o *OciWriteRoleRequest) GetTokenType() string`
 
 GetTokenType returns the TokenType field if non-nil, zero value otherwise.
 
 ### GetTokenTypeOk
 
-`func (o *OCIWriteRoleRequest) GetTokenTypeOk() (*string, bool)`
+`func (o *OciWriteRoleRequest) GetTokenTypeOk() (*string, bool)`
 
 GetTokenTypeOk returns a tuple with the TokenType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenType
 
-`func (o *OCIWriteRoleRequest) SetTokenType(v string)`
+`func (o *OciWriteRoleRequest) SetTokenType(v string)`
 
 SetTokenType sets TokenType field to given value.
 
 
 ### HasTokenType
 
-`func (o *OCIWriteRoleRequest) HasTokenType() bool`
+`func (o *OciWriteRoleRequest) HasTokenType() bool`
 
 HasTokenType returns a boolean if a field has been set.
 

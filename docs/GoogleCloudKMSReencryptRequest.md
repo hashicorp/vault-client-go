@@ -1,4 +1,4 @@
-# GoogleCloudKMSReencryptRequest
+# GoogleCloudKmsReencryptRequest
 
 
 ## Properties
@@ -14,47 +14,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewGoogleCloudKMSReencryptRequest
+### NewGoogleCloudKmsReencryptRequest
 
-`func NewGoogleCloudKMSReencryptRequest() *GoogleCloudKMSReencryptRequest`
+`func NewGoogleCloudKmsReencryptRequest() *GoogleCloudKmsReencryptRequest`
 
-NewGoogleCloudKMSReencryptRequest instantiates a new GoogleCloudKMSReencryptRequest object
+NewGoogleCloudKmsReencryptRequest instantiates a new GoogleCloudKmsReencryptRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGoogleCloudKMSReencryptRequestWithDefaults
+### NewGoogleCloudKmsReencryptRequestWithDefaults
 
-`func NewGoogleCloudKMSReencryptRequestWithDefaults() *GoogleCloudKMSReencryptRequest`
+`func NewGoogleCloudKmsReencryptRequestWithDefaults() *GoogleCloudKmsReencryptRequest`
 
-NewGoogleCloudKMSReencryptRequestWithDefaults instantiates a new GoogleCloudKMSReencryptRequest object
+NewGoogleCloudKmsReencryptRequestWithDefaults instantiates a new GoogleCloudKmsReencryptRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetAdditionalAuthenticatedData
 
-`func (o *GoogleCloudKMSReencryptRequest) GetAdditionalAuthenticatedData() string`
+`func (o *GoogleCloudKmsReencryptRequest) GetAdditionalAuthenticatedData() string`
 
 GetAdditionalAuthenticatedData returns the AdditionalAuthenticatedData field if non-nil, zero value otherwise.
 
 ### GetAdditionalAuthenticatedDataOk
 
-`func (o *GoogleCloudKMSReencryptRequest) GetAdditionalAuthenticatedDataOk() (*string, bool)`
+`func (o *GoogleCloudKmsReencryptRequest) GetAdditionalAuthenticatedDataOk() (*string, bool)`
 
 GetAdditionalAuthenticatedDataOk returns a tuple with the AdditionalAuthenticatedData field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAdditionalAuthenticatedData
 
-`func (o *GoogleCloudKMSReencryptRequest) SetAdditionalAuthenticatedData(v string)`
+`func (o *GoogleCloudKmsReencryptRequest) SetAdditionalAuthenticatedData(v string)`
 
 SetAdditionalAuthenticatedData sets AdditionalAuthenticatedData field to given value.
 
 
 ### HasAdditionalAuthenticatedData
 
-`func (o *GoogleCloudKMSReencryptRequest) HasAdditionalAuthenticatedData() bool`
+`func (o *GoogleCloudKmsReencryptRequest) HasAdditionalAuthenticatedData() bool`
 
 HasAdditionalAuthenticatedData returns a boolean if a field has been set.
 
@@ -63,27 +63,27 @@ HasAdditionalAuthenticatedData returns a boolean if a field has been set.
 
 ### GetCiphertext
 
-`func (o *GoogleCloudKMSReencryptRequest) GetCiphertext() string`
+`func (o *GoogleCloudKmsReencryptRequest) GetCiphertext() string`
 
 GetCiphertext returns the Ciphertext field if non-nil, zero value otherwise.
 
 ### GetCiphertextOk
 
-`func (o *GoogleCloudKMSReencryptRequest) GetCiphertextOk() (*string, bool)`
+`func (o *GoogleCloudKmsReencryptRequest) GetCiphertextOk() (*string, bool)`
 
 GetCiphertextOk returns a tuple with the Ciphertext field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCiphertext
 
-`func (o *GoogleCloudKMSReencryptRequest) SetCiphertext(v string)`
+`func (o *GoogleCloudKmsReencryptRequest) SetCiphertext(v string)`
 
 SetCiphertext sets Ciphertext field to given value.
 
 
 ### HasCiphertext
 
-`func (o *GoogleCloudKMSReencryptRequest) HasCiphertext() bool`
+`func (o *GoogleCloudKmsReencryptRequest) HasCiphertext() bool`
 
 HasCiphertext returns a boolean if a field has been set.
 
@@ -92,27 +92,27 @@ HasCiphertext returns a boolean if a field has been set.
 
 ### GetKeyVersion
 
-`func (o *GoogleCloudKMSReencryptRequest) GetKeyVersion() int32`
+`func (o *GoogleCloudKmsReencryptRequest) GetKeyVersion() int32`
 
 GetKeyVersion returns the KeyVersion field if non-nil, zero value otherwise.
 
 ### GetKeyVersionOk
 
-`func (o *GoogleCloudKMSReencryptRequest) GetKeyVersionOk() (*int32, bool)`
+`func (o *GoogleCloudKmsReencryptRequest) GetKeyVersionOk() (*int32, bool)`
 
 GetKeyVersionOk returns a tuple with the KeyVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyVersion
 
-`func (o *GoogleCloudKMSReencryptRequest) SetKeyVersion(v int32)`
+`func (o *GoogleCloudKmsReencryptRequest) SetKeyVersion(v int32)`
 
 SetKeyVersion sets KeyVersion field to given value.
 
 
 ### HasKeyVersion
 
-`func (o *GoogleCloudKMSReencryptRequest) HasKeyVersion() bool`
+`func (o *GoogleCloudKmsReencryptRequest) HasKeyVersion() bool`
 
 HasKeyVersion returns a boolean if a field has been set.
 

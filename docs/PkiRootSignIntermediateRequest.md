@@ -1,4 +1,4 @@
-# PKIRootSignIntermediateRequest
+# PkiRootSignIntermediateRequest
 
 
 ## Properties
@@ -39,47 +39,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewPKIRootSignIntermediateRequest
+### NewPkiRootSignIntermediateRequest
 
-`func NewPKIRootSignIntermediateRequest() *PKIRootSignIntermediateRequest`
+`func NewPkiRootSignIntermediateRequest() *PkiRootSignIntermediateRequest`
 
-NewPKIRootSignIntermediateRequest instantiates a new PKIRootSignIntermediateRequest object
+NewPkiRootSignIntermediateRequest instantiates a new PkiRootSignIntermediateRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewPKIRootSignIntermediateRequestWithDefaults
+### NewPkiRootSignIntermediateRequestWithDefaults
 
-`func NewPKIRootSignIntermediateRequestWithDefaults() *PKIRootSignIntermediateRequest`
+`func NewPkiRootSignIntermediateRequestWithDefaults() *PkiRootSignIntermediateRequest`
 
-NewPKIRootSignIntermediateRequestWithDefaults instantiates a new PKIRootSignIntermediateRequest object
+NewPkiRootSignIntermediateRequestWithDefaults instantiates a new PkiRootSignIntermediateRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetAltNames
 
-`func (o *PKIRootSignIntermediateRequest) GetAltNames() string`
+`func (o *PkiRootSignIntermediateRequest) GetAltNames() string`
 
 GetAltNames returns the AltNames field if non-nil, zero value otherwise.
 
 ### GetAltNamesOk
 
-`func (o *PKIRootSignIntermediateRequest) GetAltNamesOk() (*string, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetAltNamesOk() (*string, bool)`
 
 GetAltNamesOk returns a tuple with the AltNames field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAltNames
 
-`func (o *PKIRootSignIntermediateRequest) SetAltNames(v string)`
+`func (o *PkiRootSignIntermediateRequest) SetAltNames(v string)`
 
 SetAltNames sets AltNames field to given value.
 
 
 ### HasAltNames
 
-`func (o *PKIRootSignIntermediateRequest) HasAltNames() bool`
+`func (o *PkiRootSignIntermediateRequest) HasAltNames() bool`
 
 HasAltNames returns a boolean if a field has been set.
 
@@ -88,27 +88,27 @@ HasAltNames returns a boolean if a field has been set.
 
 ### GetCommonName
 
-`func (o *PKIRootSignIntermediateRequest) GetCommonName() string`
+`func (o *PkiRootSignIntermediateRequest) GetCommonName() string`
 
 GetCommonName returns the CommonName field if non-nil, zero value otherwise.
 
 ### GetCommonNameOk
 
-`func (o *PKIRootSignIntermediateRequest) GetCommonNameOk() (*string, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetCommonNameOk() (*string, bool)`
 
 GetCommonNameOk returns a tuple with the CommonName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCommonName
 
-`func (o *PKIRootSignIntermediateRequest) SetCommonName(v string)`
+`func (o *PkiRootSignIntermediateRequest) SetCommonName(v string)`
 
 SetCommonName sets CommonName field to given value.
 
 
 ### HasCommonName
 
-`func (o *PKIRootSignIntermediateRequest) HasCommonName() bool`
+`func (o *PkiRootSignIntermediateRequest) HasCommonName() bool`
 
 HasCommonName returns a boolean if a field has been set.
 
@@ -117,27 +117,27 @@ HasCommonName returns a boolean if a field has been set.
 
 ### GetCountry
 
-`func (o *PKIRootSignIntermediateRequest) GetCountry() []string`
+`func (o *PkiRootSignIntermediateRequest) GetCountry() []string`
 
 GetCountry returns the Country field if non-nil, zero value otherwise.
 
 ### GetCountryOk
 
-`func (o *PKIRootSignIntermediateRequest) GetCountryOk() (*[]string, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetCountryOk() (*[]string, bool)`
 
 GetCountryOk returns a tuple with the Country field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCountry
 
-`func (o *PKIRootSignIntermediateRequest) SetCountry(v []string)`
+`func (o *PkiRootSignIntermediateRequest) SetCountry(v []string)`
 
 SetCountry sets Country field to given value.
 
 
 ### HasCountry
 
-`func (o *PKIRootSignIntermediateRequest) HasCountry() bool`
+`func (o *PkiRootSignIntermediateRequest) HasCountry() bool`
 
 HasCountry returns a boolean if a field has been set.
 
@@ -146,27 +146,27 @@ HasCountry returns a boolean if a field has been set.
 
 ### GetCsr
 
-`func (o *PKIRootSignIntermediateRequest) GetCsr() string`
+`func (o *PkiRootSignIntermediateRequest) GetCsr() string`
 
 GetCsr returns the Csr field if non-nil, zero value otherwise.
 
 ### GetCsrOk
 
-`func (o *PKIRootSignIntermediateRequest) GetCsrOk() (*string, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetCsrOk() (*string, bool)`
 
 GetCsrOk returns a tuple with the Csr field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCsr
 
-`func (o *PKIRootSignIntermediateRequest) SetCsr(v string)`
+`func (o *PkiRootSignIntermediateRequest) SetCsr(v string)`
 
 SetCsr sets Csr field to given value.
 
 
 ### HasCsr
 
-`func (o *PKIRootSignIntermediateRequest) HasCsr() bool`
+`func (o *PkiRootSignIntermediateRequest) HasCsr() bool`
 
 HasCsr returns a boolean if a field has been set.
 
@@ -175,27 +175,27 @@ HasCsr returns a boolean if a field has been set.
 
 ### GetExcludeCnFromSans
 
-`func (o *PKIRootSignIntermediateRequest) GetExcludeCnFromSans() bool`
+`func (o *PkiRootSignIntermediateRequest) GetExcludeCnFromSans() bool`
 
 GetExcludeCnFromSans returns the ExcludeCnFromSans field if non-nil, zero value otherwise.
 
 ### GetExcludeCnFromSansOk
 
-`func (o *PKIRootSignIntermediateRequest) GetExcludeCnFromSansOk() (*bool, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetExcludeCnFromSansOk() (*bool, bool)`
 
 GetExcludeCnFromSansOk returns a tuple with the ExcludeCnFromSans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExcludeCnFromSans
 
-`func (o *PKIRootSignIntermediateRequest) SetExcludeCnFromSans(v bool)`
+`func (o *PkiRootSignIntermediateRequest) SetExcludeCnFromSans(v bool)`
 
 SetExcludeCnFromSans sets ExcludeCnFromSans field to given value.
 
 
 ### HasExcludeCnFromSans
 
-`func (o *PKIRootSignIntermediateRequest) HasExcludeCnFromSans() bool`
+`func (o *PkiRootSignIntermediateRequest) HasExcludeCnFromSans() bool`
 
 HasExcludeCnFromSans returns a boolean if a field has been set.
 
@@ -204,27 +204,27 @@ HasExcludeCnFromSans returns a boolean if a field has been set.
 
 ### GetFormat
 
-`func (o *PKIRootSignIntermediateRequest) GetFormat() string`
+`func (o *PkiRootSignIntermediateRequest) GetFormat() string`
 
 GetFormat returns the Format field if non-nil, zero value otherwise.
 
 ### GetFormatOk
 
-`func (o *PKIRootSignIntermediateRequest) GetFormatOk() (*string, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetFormatOk() (*string, bool)`
 
 GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFormat
 
-`func (o *PKIRootSignIntermediateRequest) SetFormat(v string)`
+`func (o *PkiRootSignIntermediateRequest) SetFormat(v string)`
 
 SetFormat sets Format field to given value.
 
 
 ### HasFormat
 
-`func (o *PKIRootSignIntermediateRequest) HasFormat() bool`
+`func (o *PkiRootSignIntermediateRequest) HasFormat() bool`
 
 HasFormat returns a boolean if a field has been set.
 
@@ -233,27 +233,27 @@ HasFormat returns a boolean if a field has been set.
 
 ### GetIpSans
 
-`func (o *PKIRootSignIntermediateRequest) GetIpSans() []string`
+`func (o *PkiRootSignIntermediateRequest) GetIpSans() []string`
 
 GetIpSans returns the IpSans field if non-nil, zero value otherwise.
 
 ### GetIpSansOk
 
-`func (o *PKIRootSignIntermediateRequest) GetIpSansOk() (*[]string, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetIpSansOk() (*[]string, bool)`
 
 GetIpSansOk returns a tuple with the IpSans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIpSans
 
-`func (o *PKIRootSignIntermediateRequest) SetIpSans(v []string)`
+`func (o *PkiRootSignIntermediateRequest) SetIpSans(v []string)`
 
 SetIpSans sets IpSans field to given value.
 
 
 ### HasIpSans
 
-`func (o *PKIRootSignIntermediateRequest) HasIpSans() bool`
+`func (o *PkiRootSignIntermediateRequest) HasIpSans() bool`
 
 HasIpSans returns a boolean if a field has been set.
 
@@ -262,27 +262,27 @@ HasIpSans returns a boolean if a field has been set.
 
 ### GetIssuerName
 
-`func (o *PKIRootSignIntermediateRequest) GetIssuerName() string`
+`func (o *PkiRootSignIntermediateRequest) GetIssuerName() string`
 
 GetIssuerName returns the IssuerName field if non-nil, zero value otherwise.
 
 ### GetIssuerNameOk
 
-`func (o *PKIRootSignIntermediateRequest) GetIssuerNameOk() (*string, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetIssuerNameOk() (*string, bool)`
 
 GetIssuerNameOk returns a tuple with the IssuerName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIssuerName
 
-`func (o *PKIRootSignIntermediateRequest) SetIssuerName(v string)`
+`func (o *PkiRootSignIntermediateRequest) SetIssuerName(v string)`
 
 SetIssuerName sets IssuerName field to given value.
 
 
 ### HasIssuerName
 
-`func (o *PKIRootSignIntermediateRequest) HasIssuerName() bool`
+`func (o *PkiRootSignIntermediateRequest) HasIssuerName() bool`
 
 HasIssuerName returns a boolean if a field has been set.
 
@@ -291,27 +291,27 @@ HasIssuerName returns a boolean if a field has been set.
 
 ### GetIssuerRef
 
-`func (o *PKIRootSignIntermediateRequest) GetIssuerRef() string`
+`func (o *PkiRootSignIntermediateRequest) GetIssuerRef() string`
 
 GetIssuerRef returns the IssuerRef field if non-nil, zero value otherwise.
 
 ### GetIssuerRefOk
 
-`func (o *PKIRootSignIntermediateRequest) GetIssuerRefOk() (*string, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetIssuerRefOk() (*string, bool)`
 
 GetIssuerRefOk returns a tuple with the IssuerRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIssuerRef
 
-`func (o *PKIRootSignIntermediateRequest) SetIssuerRef(v string)`
+`func (o *PkiRootSignIntermediateRequest) SetIssuerRef(v string)`
 
 SetIssuerRef sets IssuerRef field to given value.
 
 
 ### HasIssuerRef
 
-`func (o *PKIRootSignIntermediateRequest) HasIssuerRef() bool`
+`func (o *PkiRootSignIntermediateRequest) HasIssuerRef() bool`
 
 HasIssuerRef returns a boolean if a field has been set.
 
@@ -320,27 +320,27 @@ HasIssuerRef returns a boolean if a field has been set.
 
 ### GetLocality
 
-`func (o *PKIRootSignIntermediateRequest) GetLocality() []string`
+`func (o *PkiRootSignIntermediateRequest) GetLocality() []string`
 
 GetLocality returns the Locality field if non-nil, zero value otherwise.
 
 ### GetLocalityOk
 
-`func (o *PKIRootSignIntermediateRequest) GetLocalityOk() (*[]string, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetLocalityOk() (*[]string, bool)`
 
 GetLocalityOk returns a tuple with the Locality field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLocality
 
-`func (o *PKIRootSignIntermediateRequest) SetLocality(v []string)`
+`func (o *PkiRootSignIntermediateRequest) SetLocality(v []string)`
 
 SetLocality sets Locality field to given value.
 
 
 ### HasLocality
 
-`func (o *PKIRootSignIntermediateRequest) HasLocality() bool`
+`func (o *PkiRootSignIntermediateRequest) HasLocality() bool`
 
 HasLocality returns a boolean if a field has been set.
 
@@ -349,27 +349,27 @@ HasLocality returns a boolean if a field has been set.
 
 ### GetMaxPathLength
 
-`func (o *PKIRootSignIntermediateRequest) GetMaxPathLength() int32`
+`func (o *PkiRootSignIntermediateRequest) GetMaxPathLength() int32`
 
 GetMaxPathLength returns the MaxPathLength field if non-nil, zero value otherwise.
 
 ### GetMaxPathLengthOk
 
-`func (o *PKIRootSignIntermediateRequest) GetMaxPathLengthOk() (*int32, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetMaxPathLengthOk() (*int32, bool)`
 
 GetMaxPathLengthOk returns a tuple with the MaxPathLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxPathLength
 
-`func (o *PKIRootSignIntermediateRequest) SetMaxPathLength(v int32)`
+`func (o *PkiRootSignIntermediateRequest) SetMaxPathLength(v int32)`
 
 SetMaxPathLength sets MaxPathLength field to given value.
 
 
 ### HasMaxPathLength
 
-`func (o *PKIRootSignIntermediateRequest) HasMaxPathLength() bool`
+`func (o *PkiRootSignIntermediateRequest) HasMaxPathLength() bool`
 
 HasMaxPathLength returns a boolean if a field has been set.
 
@@ -378,27 +378,27 @@ HasMaxPathLength returns a boolean if a field has been set.
 
 ### GetNotAfter
 
-`func (o *PKIRootSignIntermediateRequest) GetNotAfter() string`
+`func (o *PkiRootSignIntermediateRequest) GetNotAfter() string`
 
 GetNotAfter returns the NotAfter field if non-nil, zero value otherwise.
 
 ### GetNotAfterOk
 
-`func (o *PKIRootSignIntermediateRequest) GetNotAfterOk() (*string, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetNotAfterOk() (*string, bool)`
 
 GetNotAfterOk returns a tuple with the NotAfter field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNotAfter
 
-`func (o *PKIRootSignIntermediateRequest) SetNotAfter(v string)`
+`func (o *PkiRootSignIntermediateRequest) SetNotAfter(v string)`
 
 SetNotAfter sets NotAfter field to given value.
 
 
 ### HasNotAfter
 
-`func (o *PKIRootSignIntermediateRequest) HasNotAfter() bool`
+`func (o *PkiRootSignIntermediateRequest) HasNotAfter() bool`
 
 HasNotAfter returns a boolean if a field has been set.
 
@@ -407,27 +407,27 @@ HasNotAfter returns a boolean if a field has been set.
 
 ### GetNotBeforeDuration
 
-`func (o *PKIRootSignIntermediateRequest) GetNotBeforeDuration() int32`
+`func (o *PkiRootSignIntermediateRequest) GetNotBeforeDuration() int32`
 
 GetNotBeforeDuration returns the NotBeforeDuration field if non-nil, zero value otherwise.
 
 ### GetNotBeforeDurationOk
 
-`func (o *PKIRootSignIntermediateRequest) GetNotBeforeDurationOk() (*int32, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetNotBeforeDurationOk() (*int32, bool)`
 
 GetNotBeforeDurationOk returns a tuple with the NotBeforeDuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNotBeforeDuration
 
-`func (o *PKIRootSignIntermediateRequest) SetNotBeforeDuration(v int32)`
+`func (o *PkiRootSignIntermediateRequest) SetNotBeforeDuration(v int32)`
 
 SetNotBeforeDuration sets NotBeforeDuration field to given value.
 
 
 ### HasNotBeforeDuration
 
-`func (o *PKIRootSignIntermediateRequest) HasNotBeforeDuration() bool`
+`func (o *PkiRootSignIntermediateRequest) HasNotBeforeDuration() bool`
 
 HasNotBeforeDuration returns a boolean if a field has been set.
 
@@ -436,27 +436,27 @@ HasNotBeforeDuration returns a boolean if a field has been set.
 
 ### GetOrganization
 
-`func (o *PKIRootSignIntermediateRequest) GetOrganization() []string`
+`func (o *PkiRootSignIntermediateRequest) GetOrganization() []string`
 
 GetOrganization returns the Organization field if non-nil, zero value otherwise.
 
 ### GetOrganizationOk
 
-`func (o *PKIRootSignIntermediateRequest) GetOrganizationOk() (*[]string, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetOrganizationOk() (*[]string, bool)`
 
 GetOrganizationOk returns a tuple with the Organization field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrganization
 
-`func (o *PKIRootSignIntermediateRequest) SetOrganization(v []string)`
+`func (o *PkiRootSignIntermediateRequest) SetOrganization(v []string)`
 
 SetOrganization sets Organization field to given value.
 
 
 ### HasOrganization
 
-`func (o *PKIRootSignIntermediateRequest) HasOrganization() bool`
+`func (o *PkiRootSignIntermediateRequest) HasOrganization() bool`
 
 HasOrganization returns a boolean if a field has been set.
 
@@ -465,27 +465,27 @@ HasOrganization returns a boolean if a field has been set.
 
 ### GetOtherSans
 
-`func (o *PKIRootSignIntermediateRequest) GetOtherSans() []string`
+`func (o *PkiRootSignIntermediateRequest) GetOtherSans() []string`
 
 GetOtherSans returns the OtherSans field if non-nil, zero value otherwise.
 
 ### GetOtherSansOk
 
-`func (o *PKIRootSignIntermediateRequest) GetOtherSansOk() (*[]string, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetOtherSansOk() (*[]string, bool)`
 
 GetOtherSansOk returns a tuple with the OtherSans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOtherSans
 
-`func (o *PKIRootSignIntermediateRequest) SetOtherSans(v []string)`
+`func (o *PkiRootSignIntermediateRequest) SetOtherSans(v []string)`
 
 SetOtherSans sets OtherSans field to given value.
 
 
 ### HasOtherSans
 
-`func (o *PKIRootSignIntermediateRequest) HasOtherSans() bool`
+`func (o *PkiRootSignIntermediateRequest) HasOtherSans() bool`
 
 HasOtherSans returns a boolean if a field has been set.
 
@@ -494,27 +494,27 @@ HasOtherSans returns a boolean if a field has been set.
 
 ### GetOu
 
-`func (o *PKIRootSignIntermediateRequest) GetOu() []string`
+`func (o *PkiRootSignIntermediateRequest) GetOu() []string`
 
 GetOu returns the Ou field if non-nil, zero value otherwise.
 
 ### GetOuOk
 
-`func (o *PKIRootSignIntermediateRequest) GetOuOk() (*[]string, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetOuOk() (*[]string, bool)`
 
 GetOuOk returns a tuple with the Ou field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOu
 
-`func (o *PKIRootSignIntermediateRequest) SetOu(v []string)`
+`func (o *PkiRootSignIntermediateRequest) SetOu(v []string)`
 
 SetOu sets Ou field to given value.
 
 
 ### HasOu
 
-`func (o *PKIRootSignIntermediateRequest) HasOu() bool`
+`func (o *PkiRootSignIntermediateRequest) HasOu() bool`
 
 HasOu returns a boolean if a field has been set.
 
@@ -523,27 +523,27 @@ HasOu returns a boolean if a field has been set.
 
 ### GetPermittedDnsDomains
 
-`func (o *PKIRootSignIntermediateRequest) GetPermittedDnsDomains() []string`
+`func (o *PkiRootSignIntermediateRequest) GetPermittedDnsDomains() []string`
 
 GetPermittedDnsDomains returns the PermittedDnsDomains field if non-nil, zero value otherwise.
 
 ### GetPermittedDnsDomainsOk
 
-`func (o *PKIRootSignIntermediateRequest) GetPermittedDnsDomainsOk() (*[]string, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetPermittedDnsDomainsOk() (*[]string, bool)`
 
 GetPermittedDnsDomainsOk returns a tuple with the PermittedDnsDomains field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPermittedDnsDomains
 
-`func (o *PKIRootSignIntermediateRequest) SetPermittedDnsDomains(v []string)`
+`func (o *PkiRootSignIntermediateRequest) SetPermittedDnsDomains(v []string)`
 
 SetPermittedDnsDomains sets PermittedDnsDomains field to given value.
 
 
 ### HasPermittedDnsDomains
 
-`func (o *PKIRootSignIntermediateRequest) HasPermittedDnsDomains() bool`
+`func (o *PkiRootSignIntermediateRequest) HasPermittedDnsDomains() bool`
 
 HasPermittedDnsDomains returns a boolean if a field has been set.
 
@@ -552,27 +552,27 @@ HasPermittedDnsDomains returns a boolean if a field has been set.
 
 ### GetPostalCode
 
-`func (o *PKIRootSignIntermediateRequest) GetPostalCode() []string`
+`func (o *PkiRootSignIntermediateRequest) GetPostalCode() []string`
 
 GetPostalCode returns the PostalCode field if non-nil, zero value otherwise.
 
 ### GetPostalCodeOk
 
-`func (o *PKIRootSignIntermediateRequest) GetPostalCodeOk() (*[]string, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetPostalCodeOk() (*[]string, bool)`
 
 GetPostalCodeOk returns a tuple with the PostalCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPostalCode
 
-`func (o *PKIRootSignIntermediateRequest) SetPostalCode(v []string)`
+`func (o *PkiRootSignIntermediateRequest) SetPostalCode(v []string)`
 
 SetPostalCode sets PostalCode field to given value.
 
 
 ### HasPostalCode
 
-`func (o *PKIRootSignIntermediateRequest) HasPostalCode() bool`
+`func (o *PkiRootSignIntermediateRequest) HasPostalCode() bool`
 
 HasPostalCode returns a boolean if a field has been set.
 
@@ -581,27 +581,27 @@ HasPostalCode returns a boolean if a field has been set.
 
 ### GetPrivateKeyFormat
 
-`func (o *PKIRootSignIntermediateRequest) GetPrivateKeyFormat() string`
+`func (o *PkiRootSignIntermediateRequest) GetPrivateKeyFormat() string`
 
 GetPrivateKeyFormat returns the PrivateKeyFormat field if non-nil, zero value otherwise.
 
 ### GetPrivateKeyFormatOk
 
-`func (o *PKIRootSignIntermediateRequest) GetPrivateKeyFormatOk() (*string, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetPrivateKeyFormatOk() (*string, bool)`
 
 GetPrivateKeyFormatOk returns a tuple with the PrivateKeyFormat field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrivateKeyFormat
 
-`func (o *PKIRootSignIntermediateRequest) SetPrivateKeyFormat(v string)`
+`func (o *PkiRootSignIntermediateRequest) SetPrivateKeyFormat(v string)`
 
 SetPrivateKeyFormat sets PrivateKeyFormat field to given value.
 
 
 ### HasPrivateKeyFormat
 
-`func (o *PKIRootSignIntermediateRequest) HasPrivateKeyFormat() bool`
+`func (o *PkiRootSignIntermediateRequest) HasPrivateKeyFormat() bool`
 
 HasPrivateKeyFormat returns a boolean if a field has been set.
 
@@ -610,27 +610,27 @@ HasPrivateKeyFormat returns a boolean if a field has been set.
 
 ### GetProvince
 
-`func (o *PKIRootSignIntermediateRequest) GetProvince() []string`
+`func (o *PkiRootSignIntermediateRequest) GetProvince() []string`
 
 GetProvince returns the Province field if non-nil, zero value otherwise.
 
 ### GetProvinceOk
 
-`func (o *PKIRootSignIntermediateRequest) GetProvinceOk() (*[]string, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetProvinceOk() (*[]string, bool)`
 
 GetProvinceOk returns a tuple with the Province field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProvince
 
-`func (o *PKIRootSignIntermediateRequest) SetProvince(v []string)`
+`func (o *PkiRootSignIntermediateRequest) SetProvince(v []string)`
 
 SetProvince sets Province field to given value.
 
 
 ### HasProvince
 
-`func (o *PKIRootSignIntermediateRequest) HasProvince() bool`
+`func (o *PkiRootSignIntermediateRequest) HasProvince() bool`
 
 HasProvince returns a boolean if a field has been set.
 
@@ -639,27 +639,27 @@ HasProvince returns a boolean if a field has been set.
 
 ### GetSerialNumber
 
-`func (o *PKIRootSignIntermediateRequest) GetSerialNumber() string`
+`func (o *PkiRootSignIntermediateRequest) GetSerialNumber() string`
 
 GetSerialNumber returns the SerialNumber field if non-nil, zero value otherwise.
 
 ### GetSerialNumberOk
 
-`func (o *PKIRootSignIntermediateRequest) GetSerialNumberOk() (*string, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetSerialNumberOk() (*string, bool)`
 
 GetSerialNumberOk returns a tuple with the SerialNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSerialNumber
 
-`func (o *PKIRootSignIntermediateRequest) SetSerialNumber(v string)`
+`func (o *PkiRootSignIntermediateRequest) SetSerialNumber(v string)`
 
 SetSerialNumber sets SerialNumber field to given value.
 
 
 ### HasSerialNumber
 
-`func (o *PKIRootSignIntermediateRequest) HasSerialNumber() bool`
+`func (o *PkiRootSignIntermediateRequest) HasSerialNumber() bool`
 
 HasSerialNumber returns a boolean if a field has been set.
 
@@ -668,27 +668,27 @@ HasSerialNumber returns a boolean if a field has been set.
 
 ### GetSignatureBits
 
-`func (o *PKIRootSignIntermediateRequest) GetSignatureBits() int32`
+`func (o *PkiRootSignIntermediateRequest) GetSignatureBits() int32`
 
 GetSignatureBits returns the SignatureBits field if non-nil, zero value otherwise.
 
 ### GetSignatureBitsOk
 
-`func (o *PKIRootSignIntermediateRequest) GetSignatureBitsOk() (*int32, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetSignatureBitsOk() (*int32, bool)`
 
 GetSignatureBitsOk returns a tuple with the SignatureBits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSignatureBits
 
-`func (o *PKIRootSignIntermediateRequest) SetSignatureBits(v int32)`
+`func (o *PkiRootSignIntermediateRequest) SetSignatureBits(v int32)`
 
 SetSignatureBits sets SignatureBits field to given value.
 
 
 ### HasSignatureBits
 
-`func (o *PKIRootSignIntermediateRequest) HasSignatureBits() bool`
+`func (o *PkiRootSignIntermediateRequest) HasSignatureBits() bool`
 
 HasSignatureBits returns a boolean if a field has been set.
 
@@ -697,27 +697,27 @@ HasSignatureBits returns a boolean if a field has been set.
 
 ### GetSkid
 
-`func (o *PKIRootSignIntermediateRequest) GetSkid() string`
+`func (o *PkiRootSignIntermediateRequest) GetSkid() string`
 
 GetSkid returns the Skid field if non-nil, zero value otherwise.
 
 ### GetSkidOk
 
-`func (o *PKIRootSignIntermediateRequest) GetSkidOk() (*string, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetSkidOk() (*string, bool)`
 
 GetSkidOk returns a tuple with the Skid field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSkid
 
-`func (o *PKIRootSignIntermediateRequest) SetSkid(v string)`
+`func (o *PkiRootSignIntermediateRequest) SetSkid(v string)`
 
 SetSkid sets Skid field to given value.
 
 
 ### HasSkid
 
-`func (o *PKIRootSignIntermediateRequest) HasSkid() bool`
+`func (o *PkiRootSignIntermediateRequest) HasSkid() bool`
 
 HasSkid returns a boolean if a field has been set.
 
@@ -726,27 +726,27 @@ HasSkid returns a boolean if a field has been set.
 
 ### GetStreetAddress
 
-`func (o *PKIRootSignIntermediateRequest) GetStreetAddress() []string`
+`func (o *PkiRootSignIntermediateRequest) GetStreetAddress() []string`
 
 GetStreetAddress returns the StreetAddress field if non-nil, zero value otherwise.
 
 ### GetStreetAddressOk
 
-`func (o *PKIRootSignIntermediateRequest) GetStreetAddressOk() (*[]string, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetStreetAddressOk() (*[]string, bool)`
 
 GetStreetAddressOk returns a tuple with the StreetAddress field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStreetAddress
 
-`func (o *PKIRootSignIntermediateRequest) SetStreetAddress(v []string)`
+`func (o *PkiRootSignIntermediateRequest) SetStreetAddress(v []string)`
 
 SetStreetAddress sets StreetAddress field to given value.
 
 
 ### HasStreetAddress
 
-`func (o *PKIRootSignIntermediateRequest) HasStreetAddress() bool`
+`func (o *PkiRootSignIntermediateRequest) HasStreetAddress() bool`
 
 HasStreetAddress returns a boolean if a field has been set.
 
@@ -755,27 +755,27 @@ HasStreetAddress returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *PKIRootSignIntermediateRequest) GetTtl() int32`
+`func (o *PkiRootSignIntermediateRequest) GetTtl() int32`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *PKIRootSignIntermediateRequest) GetTtlOk() (*int32, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetTtlOk() (*int32, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *PKIRootSignIntermediateRequest) SetTtl(v int32)`
+`func (o *PkiRootSignIntermediateRequest) SetTtl(v int32)`
 
 SetTtl sets Ttl field to given value.
 
 
 ### HasTtl
 
-`func (o *PKIRootSignIntermediateRequest) HasTtl() bool`
+`func (o *PkiRootSignIntermediateRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
 
@@ -784,27 +784,27 @@ HasTtl returns a boolean if a field has been set.
 
 ### GetUriSans
 
-`func (o *PKIRootSignIntermediateRequest) GetUriSans() []string`
+`func (o *PkiRootSignIntermediateRequest) GetUriSans() []string`
 
 GetUriSans returns the UriSans field if non-nil, zero value otherwise.
 
 ### GetUriSansOk
 
-`func (o *PKIRootSignIntermediateRequest) GetUriSansOk() (*[]string, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetUriSansOk() (*[]string, bool)`
 
 GetUriSansOk returns a tuple with the UriSans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUriSans
 
-`func (o *PKIRootSignIntermediateRequest) SetUriSans(v []string)`
+`func (o *PkiRootSignIntermediateRequest) SetUriSans(v []string)`
 
 SetUriSans sets UriSans field to given value.
 
 
 ### HasUriSans
 
-`func (o *PKIRootSignIntermediateRequest) HasUriSans() bool`
+`func (o *PkiRootSignIntermediateRequest) HasUriSans() bool`
 
 HasUriSans returns a boolean if a field has been set.
 
@@ -813,27 +813,27 @@ HasUriSans returns a boolean if a field has been set.
 
 ### GetUseCsrValues
 
-`func (o *PKIRootSignIntermediateRequest) GetUseCsrValues() bool`
+`func (o *PkiRootSignIntermediateRequest) GetUseCsrValues() bool`
 
 GetUseCsrValues returns the UseCsrValues field if non-nil, zero value otherwise.
 
 ### GetUseCsrValuesOk
 
-`func (o *PKIRootSignIntermediateRequest) GetUseCsrValuesOk() (*bool, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetUseCsrValuesOk() (*bool, bool)`
 
 GetUseCsrValuesOk returns a tuple with the UseCsrValues field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUseCsrValues
 
-`func (o *PKIRootSignIntermediateRequest) SetUseCsrValues(v bool)`
+`func (o *PkiRootSignIntermediateRequest) SetUseCsrValues(v bool)`
 
 SetUseCsrValues sets UseCsrValues field to given value.
 
 
 ### HasUseCsrValues
 
-`func (o *PKIRootSignIntermediateRequest) HasUseCsrValues() bool`
+`func (o *PkiRootSignIntermediateRequest) HasUseCsrValues() bool`
 
 HasUseCsrValues returns a boolean if a field has been set.
 
@@ -842,27 +842,27 @@ HasUseCsrValues returns a boolean if a field has been set.
 
 ### GetUsePss
 
-`func (o *PKIRootSignIntermediateRequest) GetUsePss() bool`
+`func (o *PkiRootSignIntermediateRequest) GetUsePss() bool`
 
 GetUsePss returns the UsePss field if non-nil, zero value otherwise.
 
 ### GetUsePssOk
 
-`func (o *PKIRootSignIntermediateRequest) GetUsePssOk() (*bool, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetUsePssOk() (*bool, bool)`
 
 GetUsePssOk returns a tuple with the UsePss field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUsePss
 
-`func (o *PKIRootSignIntermediateRequest) SetUsePss(v bool)`
+`func (o *PkiRootSignIntermediateRequest) SetUsePss(v bool)`
 
 SetUsePss sets UsePss field to given value.
 
 
 ### HasUsePss
 
-`func (o *PKIRootSignIntermediateRequest) HasUsePss() bool`
+`func (o *PkiRootSignIntermediateRequest) HasUsePss() bool`
 
 HasUsePss returns a boolean if a field has been set.
 

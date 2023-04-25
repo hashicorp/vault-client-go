@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// JWTLoginRequest struct for JWTLoginRequest
-type JWTLoginRequest struct {
+// JwtLoginRequest struct for JwtLoginRequest
+type JwtLoginRequest struct {
 	// The signed JWT to validate.
 	Jwt string `json:"jwt"`
 
@@ -18,16 +18,16 @@ type JWTLoginRequest struct {
 	Role string `json:"role"`
 }
 
-// NewJWTLoginRequestWithDefaults instantiates a new JWTLoginRequest object
+// NewJwtLoginRequestWithDefaults instantiates a new JwtLoginRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewJWTLoginRequestWithDefaults() *JWTLoginRequest {
-	var this JWTLoginRequest
+func NewJwtLoginRequestWithDefaults() *JwtLoginRequest {
+	var this JwtLoginRequest
 
 	return &this
 }
 
-func (o JWTLoginRequest) MarshalJSON() ([]byte, error) {
+func (o JwtLoginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["jwt"] = o.Jwt

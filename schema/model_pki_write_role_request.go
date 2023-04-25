@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// PKIWriteRoleRequest struct for PKIWriteRoleRequest
-type PKIWriteRoleRequest struct {
+// PkiWriteRoleRequest struct for PkiWriteRoleRequest
+type PkiWriteRoleRequest struct {
 	// If set, clients can request certificates for any domain, regardless of allowed_domains restrictions. See the documentation for more information.
 	AllowAnyName bool `json:"allow_any_name"`
 
@@ -49,6 +49,9 @@ type PKIWriteRoleRequest struct {
 
 	// If set, Allowed URI SANs can be specified using identity template policies. Non-templated URI SANs are also permitted.
 	AllowedUriSansTemplate bool `json:"allowed_uri_sans_template"`
+
+	// If set, an array of allowed user-ids to put in user system login name specified here: https://www.rfc-editor.org/rfc/rfc1274#section-9.3.1
+	AllowedUserIds []string `json:"allowed_user_ids"`
 
 	// Backend Type
 	Backend string `json:"backend"`
@@ -150,11 +153,11 @@ type PKIWriteRoleRequest struct {
 	UsePss bool `json:"use_pss"`
 }
 
-// NewPKIWriteRoleRequestWithDefaults instantiates a new PKIWriteRoleRequest object
+// NewPkiWriteRoleRequestWithDefaults instantiates a new PkiWriteRoleRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewPKIWriteRoleRequestWithDefaults() *PKIWriteRoleRequest {
-	var this PKIWriteRoleRequest
+func NewPkiWriteRoleRequestWithDefaults() *PkiWriteRoleRequest {
+	var this PkiWriteRoleRequest
 
 	this.AllowIpSans = true
 	this.AllowLocalhost = true
@@ -177,7 +180,7 @@ func NewPKIWriteRoleRequestWithDefaults() *PKIWriteRoleRequest {
 	return &this
 }
 
-func (o PKIWriteRoleRequest) MarshalJSON() ([]byte, error) {
+func (o PkiWriteRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["allow_any_name"] = o.AllowAnyName
@@ -193,6 +196,7 @@ func (o PKIWriteRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize["allowed_serial_numbers"] = o.AllowedSerialNumbers
 	toSerialize["allowed_uri_sans"] = o.AllowedUriSans
 	toSerialize["allowed_uri_sans_template"] = o.AllowedUriSansTemplate
+	toSerialize["allowed_user_ids"] = o.AllowedUserIds
 	toSerialize["backend"] = o.Backend
 	toSerialize["basic_constraints_valid_for_non_ca"] = o.BasicConstraintsValidForNonCa
 	toSerialize["client_flag"] = o.ClientFlag

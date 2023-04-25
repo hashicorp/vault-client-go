@@ -1,4 +1,4 @@
-# AppRoleReadTokenTTLResponse
+# AppRoleReadTokenTtlResponse
 
 
 ## Properties
@@ -12,47 +12,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewAppRoleReadTokenTTLResponse
+### NewAppRoleReadTokenTtlResponse
 
-`func NewAppRoleReadTokenTTLResponse() *AppRoleReadTokenTTLResponse`
+`func NewAppRoleReadTokenTtlResponse() *AppRoleReadTokenTtlResponse`
 
-NewAppRoleReadTokenTTLResponse instantiates a new AppRoleReadTokenTTLResponse object
+NewAppRoleReadTokenTtlResponse instantiates a new AppRoleReadTokenTtlResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAppRoleReadTokenTTLResponseWithDefaults
+### NewAppRoleReadTokenTtlResponseWithDefaults
 
-`func NewAppRoleReadTokenTTLResponseWithDefaults() *AppRoleReadTokenTTLResponse`
+`func NewAppRoleReadTokenTtlResponseWithDefaults() *AppRoleReadTokenTtlResponse`
 
-NewAppRoleReadTokenTTLResponseWithDefaults instantiates a new AppRoleReadTokenTTLResponse object
+NewAppRoleReadTokenTtlResponseWithDefaults instantiates a new AppRoleReadTokenTtlResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetTokenTtl
 
-`func (o *AppRoleReadTokenTTLResponse) GetTokenTtl() int32`
+`func (o *AppRoleReadTokenTtlResponse) GetTokenTtl() int32`
 
 GetTokenTtl returns the TokenTtl field if non-nil, zero value otherwise.
 
 ### GetTokenTtlOk
 
-`func (o *AppRoleReadTokenTTLResponse) GetTokenTtlOk() (*int32, bool)`
+`func (o *AppRoleReadTokenTtlResponse) GetTokenTtlOk() (*int32, bool)`
 
 GetTokenTtlOk returns a tuple with the TokenTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenTtl
 
-`func (o *AppRoleReadTokenTTLResponse) SetTokenTtl(v int32)`
+`func (o *AppRoleReadTokenTtlResponse) SetTokenTtl(v int32)`
 
 SetTokenTtl sets TokenTtl field to given value.
 
 
 ### HasTokenTtl
 
-`func (o *AppRoleReadTokenTTLResponse) HasTokenTtl() bool`
+`func (o *AppRoleReadTokenTtlResponse) HasTokenTtl() bool`
 
 HasTokenTtl returns a boolean if a field has been set.
 

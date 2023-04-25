@@ -1,4 +1,4 @@
-# AppRoleReadSecretIDNumUsesResponse
+# AppRoleReadSecretIdNumUsesResponse
 
 
 ## Properties
@@ -12,47 +12,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewAppRoleReadSecretIDNumUsesResponse
+### NewAppRoleReadSecretIdNumUsesResponse
 
-`func NewAppRoleReadSecretIDNumUsesResponse() *AppRoleReadSecretIDNumUsesResponse`
+`func NewAppRoleReadSecretIdNumUsesResponse() *AppRoleReadSecretIdNumUsesResponse`
 
-NewAppRoleReadSecretIDNumUsesResponse instantiates a new AppRoleReadSecretIDNumUsesResponse object
+NewAppRoleReadSecretIdNumUsesResponse instantiates a new AppRoleReadSecretIdNumUsesResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAppRoleReadSecretIDNumUsesResponseWithDefaults
+### NewAppRoleReadSecretIdNumUsesResponseWithDefaults
 
-`func NewAppRoleReadSecretIDNumUsesResponseWithDefaults() *AppRoleReadSecretIDNumUsesResponse`
+`func NewAppRoleReadSecretIdNumUsesResponseWithDefaults() *AppRoleReadSecretIdNumUsesResponse`
 
-NewAppRoleReadSecretIDNumUsesResponseWithDefaults instantiates a new AppRoleReadSecretIDNumUsesResponse object
+NewAppRoleReadSecretIdNumUsesResponseWithDefaults instantiates a new AppRoleReadSecretIdNumUsesResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetSecretIdNumUses
 
-`func (o *AppRoleReadSecretIDNumUsesResponse) GetSecretIdNumUses() int32`
+`func (o *AppRoleReadSecretIdNumUsesResponse) GetSecretIdNumUses() int32`
 
 GetSecretIdNumUses returns the SecretIdNumUses field if non-nil, zero value otherwise.
 
 ### GetSecretIdNumUsesOk
 
-`func (o *AppRoleReadSecretIDNumUsesResponse) GetSecretIdNumUsesOk() (*int32, bool)`
+`func (o *AppRoleReadSecretIdNumUsesResponse) GetSecretIdNumUsesOk() (*int32, bool)`
 
 GetSecretIdNumUsesOk returns a tuple with the SecretIdNumUses field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecretIdNumUses
 
-`func (o *AppRoleReadSecretIDNumUsesResponse) SetSecretIdNumUses(v int32)`
+`func (o *AppRoleReadSecretIdNumUsesResponse) SetSecretIdNumUses(v int32)`
 
 SetSecretIdNumUses sets SecretIdNumUses field to given value.
 
 
 ### HasSecretIdNumUses
 
-`func (o *AppRoleReadSecretIDNumUsesResponse) HasSecretIdNumUses() bool`
+`func (o *AppRoleReadSecretIdNumUsesResponse) HasSecretIdNumUses() bool`
 
 HasSecretIdNumUses returns a boolean if a field has been set.
 

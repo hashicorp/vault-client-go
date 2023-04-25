@@ -1,4 +1,4 @@
-# GoogleCloudKMSVerifyRequest
+# GoogleCloudKmsVerifyRequest
 
 
 ## Properties
@@ -14,47 +14,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewGoogleCloudKMSVerifyRequest
+### NewGoogleCloudKmsVerifyRequest
 
-`func NewGoogleCloudKMSVerifyRequest() *GoogleCloudKMSVerifyRequest`
+`func NewGoogleCloudKmsVerifyRequest() *GoogleCloudKmsVerifyRequest`
 
-NewGoogleCloudKMSVerifyRequest instantiates a new GoogleCloudKMSVerifyRequest object
+NewGoogleCloudKmsVerifyRequest instantiates a new GoogleCloudKmsVerifyRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGoogleCloudKMSVerifyRequestWithDefaults
+### NewGoogleCloudKmsVerifyRequestWithDefaults
 
-`func NewGoogleCloudKMSVerifyRequestWithDefaults() *GoogleCloudKMSVerifyRequest`
+`func NewGoogleCloudKmsVerifyRequestWithDefaults() *GoogleCloudKmsVerifyRequest`
 
-NewGoogleCloudKMSVerifyRequestWithDefaults instantiates a new GoogleCloudKMSVerifyRequest object
+NewGoogleCloudKmsVerifyRequestWithDefaults instantiates a new GoogleCloudKmsVerifyRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetDigest
 
-`func (o *GoogleCloudKMSVerifyRequest) GetDigest() string`
+`func (o *GoogleCloudKmsVerifyRequest) GetDigest() string`
 
 GetDigest returns the Digest field if non-nil, zero value otherwise.
 
 ### GetDigestOk
 
-`func (o *GoogleCloudKMSVerifyRequest) GetDigestOk() (*string, bool)`
+`func (o *GoogleCloudKmsVerifyRequest) GetDigestOk() (*string, bool)`
 
 GetDigestOk returns a tuple with the Digest field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDigest
 
-`func (o *GoogleCloudKMSVerifyRequest) SetDigest(v string)`
+`func (o *GoogleCloudKmsVerifyRequest) SetDigest(v string)`
 
 SetDigest sets Digest field to given value.
 
 
 ### HasDigest
 
-`func (o *GoogleCloudKMSVerifyRequest) HasDigest() bool`
+`func (o *GoogleCloudKmsVerifyRequest) HasDigest() bool`
 
 HasDigest returns a boolean if a field has been set.
 
@@ -63,27 +63,27 @@ HasDigest returns a boolean if a field has been set.
 
 ### GetKeyVersion
 
-`func (o *GoogleCloudKMSVerifyRequest) GetKeyVersion() int32`
+`func (o *GoogleCloudKmsVerifyRequest) GetKeyVersion() int32`
 
 GetKeyVersion returns the KeyVersion field if non-nil, zero value otherwise.
 
 ### GetKeyVersionOk
 
-`func (o *GoogleCloudKMSVerifyRequest) GetKeyVersionOk() (*int32, bool)`
+`func (o *GoogleCloudKmsVerifyRequest) GetKeyVersionOk() (*int32, bool)`
 
 GetKeyVersionOk returns a tuple with the KeyVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyVersion
 
-`func (o *GoogleCloudKMSVerifyRequest) SetKeyVersion(v int32)`
+`func (o *GoogleCloudKmsVerifyRequest) SetKeyVersion(v int32)`
 
 SetKeyVersion sets KeyVersion field to given value.
 
 
 ### HasKeyVersion
 
-`func (o *GoogleCloudKMSVerifyRequest) HasKeyVersion() bool`
+`func (o *GoogleCloudKmsVerifyRequest) HasKeyVersion() bool`
 
 HasKeyVersion returns a boolean if a field has been set.
 
@@ -92,27 +92,27 @@ HasKeyVersion returns a boolean if a field has been set.
 
 ### GetSignature
 
-`func (o *GoogleCloudKMSVerifyRequest) GetSignature() string`
+`func (o *GoogleCloudKmsVerifyRequest) GetSignature() string`
 
 GetSignature returns the Signature field if non-nil, zero value otherwise.
 
 ### GetSignatureOk
 
-`func (o *GoogleCloudKMSVerifyRequest) GetSignatureOk() (*string, bool)`
+`func (o *GoogleCloudKmsVerifyRequest) GetSignatureOk() (*string, bool)`
 
 GetSignatureOk returns a tuple with the Signature field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSignature
 
-`func (o *GoogleCloudKMSVerifyRequest) SetSignature(v string)`
+`func (o *GoogleCloudKmsVerifyRequest) SetSignature(v string)`
 
 SetSignature sets Signature field to given value.
 
 
 ### HasSignature
 
-`func (o *GoogleCloudKMSVerifyRequest) HasSignature() bool`
+`func (o *GoogleCloudKmsVerifyRequest) HasSignature() bool`
 
 HasSignature returns a boolean if a field has been set.
 

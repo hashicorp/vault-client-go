@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// OCIWriteRoleRequest struct for OCIWriteRoleRequest
-type OCIWriteRoleRequest struct {
+// OciWriteRoleRequest struct for OciWriteRoleRequest
+type OciWriteRoleRequest struct {
 	// A comma separated list of Group or Dynamic Group OCIDs that are allowed to take this role.
 	OcidList []string `json:"ocid_list"`
 
@@ -42,18 +42,18 @@ type OCIWriteRoleRequest struct {
 	TokenType string `json:"token_type"`
 }
 
-// NewOCIWriteRoleRequestWithDefaults instantiates a new OCIWriteRoleRequest object
+// NewOciWriteRoleRequestWithDefaults instantiates a new OciWriteRoleRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewOCIWriteRoleRequestWithDefaults() *OCIWriteRoleRequest {
-	var this OCIWriteRoleRequest
+func NewOciWriteRoleRequestWithDefaults() *OciWriteRoleRequest {
+	var this OciWriteRoleRequest
 
 	this.TokenType = "default-service"
 
 	return &this
 }
 
-func (o OCIWriteRoleRequest) MarshalJSON() ([]byte, error) {
+func (o OciWriteRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["ocid_list"] = o.OcidList

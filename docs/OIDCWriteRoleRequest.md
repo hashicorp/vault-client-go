@@ -1,4 +1,4 @@
-# OIDCWriteRoleRequest
+# OidcWriteRoleRequest
 
 
 ## Properties
@@ -15,47 +15,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewOIDCWriteRoleRequest
+### NewOidcWriteRoleRequest
 
-`func NewOIDCWriteRoleRequest(key string, ) *OIDCWriteRoleRequest`
+`func NewOidcWriteRoleRequest(key string, ) *OidcWriteRoleRequest`
 
-NewOIDCWriteRoleRequest instantiates a new OIDCWriteRoleRequest object
+NewOidcWriteRoleRequest instantiates a new OidcWriteRoleRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewOIDCWriteRoleRequestWithDefaults
+### NewOidcWriteRoleRequestWithDefaults
 
-`func NewOIDCWriteRoleRequestWithDefaults() *OIDCWriteRoleRequest`
+`func NewOidcWriteRoleRequestWithDefaults() *OidcWriteRoleRequest`
 
-NewOIDCWriteRoleRequestWithDefaults instantiates a new OIDCWriteRoleRequest object
+NewOidcWriteRoleRequestWithDefaults instantiates a new OidcWriteRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetClientId
 
-`func (o *OIDCWriteRoleRequest) GetClientId() string`
+`func (o *OidcWriteRoleRequest) GetClientId() string`
 
 GetClientId returns the ClientId field if non-nil, zero value otherwise.
 
 ### GetClientIdOk
 
-`func (o *OIDCWriteRoleRequest) GetClientIdOk() (*string, bool)`
+`func (o *OidcWriteRoleRequest) GetClientIdOk() (*string, bool)`
 
 GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClientId
 
-`func (o *OIDCWriteRoleRequest) SetClientId(v string)`
+`func (o *OidcWriteRoleRequest) SetClientId(v string)`
 
 SetClientId sets ClientId field to given value.
 
 
 ### HasClientId
 
-`func (o *OIDCWriteRoleRequest) HasClientId() bool`
+`func (o *OidcWriteRoleRequest) HasClientId() bool`
 
 HasClientId returns a boolean if a field has been set.
 
@@ -64,20 +64,20 @@ HasClientId returns a boolean if a field has been set.
 
 ### GetKey
 
-`func (o *OIDCWriteRoleRequest) GetKey() string`
+`func (o *OidcWriteRoleRequest) GetKey() string`
 
 GetKey returns the Key field if non-nil, zero value otherwise.
 
 ### GetKeyOk
 
-`func (o *OIDCWriteRoleRequest) GetKeyOk() (*string, bool)`
+`func (o *OidcWriteRoleRequest) GetKeyOk() (*string, bool)`
 
 GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKey
 
-`func (o *OIDCWriteRoleRequest) SetKey(v string)`
+`func (o *OidcWriteRoleRequest) SetKey(v string)`
 
 SetKey sets Key field to given value.
 
@@ -87,27 +87,27 @@ SetKey sets Key field to given value.
 
 ### GetTemplate
 
-`func (o *OIDCWriteRoleRequest) GetTemplate() string`
+`func (o *OidcWriteRoleRequest) GetTemplate() string`
 
 GetTemplate returns the Template field if non-nil, zero value otherwise.
 
 ### GetTemplateOk
 
-`func (o *OIDCWriteRoleRequest) GetTemplateOk() (*string, bool)`
+`func (o *OidcWriteRoleRequest) GetTemplateOk() (*string, bool)`
 
 GetTemplateOk returns a tuple with the Template field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTemplate
 
-`func (o *OIDCWriteRoleRequest) SetTemplate(v string)`
+`func (o *OidcWriteRoleRequest) SetTemplate(v string)`
 
 SetTemplate sets Template field to given value.
 
 
 ### HasTemplate
 
-`func (o *OIDCWriteRoleRequest) HasTemplate() bool`
+`func (o *OidcWriteRoleRequest) HasTemplate() bool`
 
 HasTemplate returns a boolean if a field has been set.
 
@@ -116,27 +116,27 @@ HasTemplate returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *OIDCWriteRoleRequest) GetTtl() int32`
+`func (o *OidcWriteRoleRequest) GetTtl() int32`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *OIDCWriteRoleRequest) GetTtlOk() (*int32, bool)`
+`func (o *OidcWriteRoleRequest) GetTtlOk() (*int32, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *OIDCWriteRoleRequest) SetTtl(v int32)`
+`func (o *OidcWriteRoleRequest) SetTtl(v int32)`
 
 SetTtl sets Ttl field to given value.
 
 
 ### HasTtl
 
-`func (o *OIDCWriteRoleRequest) HasTtl() bool`
+`func (o *OidcWriteRoleRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
 

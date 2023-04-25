@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BatchInput** | Pointer to **[]map[string]interface{}** | Specifies a list of items to be re-encrypted in a single batch. When this parameter is set, if the parameters &#x27;ciphertext&#x27;, &#x27;context&#x27; and &#x27;nonce&#x27; are also set, they will be ignored. Any batch output will preserve the order of the batch input. | [optional] 
 **Ciphertext** | Pointer to **string** | Ciphertext value to rewrap | [optional] 
 **Context** | Pointer to **string** | Base64 encoded context for key derivation. Required for derived keys. | [optional] 
 **KeyVersion** | Pointer to **int32** | The version of the key to use for encryption. Must be 0 (for latest) or a value greater than or equal to the min_encryption_version configured on the key. | [optional] 
@@ -31,6 +32,35 @@ will change when the set of required properties is changed
 NewTransitRewrapRequestWithDefaults instantiates a new TransitRewrapRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+
+### GetBatchInput
+
+`func (o *TransitRewrapRequest) GetBatchInput() []map[string]interface{}`
+
+GetBatchInput returns the BatchInput field if non-nil, zero value otherwise.
+
+### GetBatchInputOk
+
+`func (o *TransitRewrapRequest) GetBatchInputOk() (*[]map[string]interface{}, bool)`
+
+GetBatchInputOk returns a tuple with the BatchInput field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBatchInput
+
+`func (o *TransitRewrapRequest) SetBatchInput(v []map[string]interface{})`
+
+SetBatchInput sets BatchInput field to given value.
+
+
+### HasBatchInput
+
+`func (o *TransitRewrapRequest) HasBatchInput() bool`
+
+HasBatchInput returns a boolean if a field has been set.
+
+
 
 
 ### GetCiphertext

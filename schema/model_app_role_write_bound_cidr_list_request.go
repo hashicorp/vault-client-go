@@ -9,22 +9,22 @@ import (
 	"encoding/json"
 )
 
-// AppRoleWriteBoundCIDRListRequest struct for AppRoleWriteBoundCIDRListRequest
-type AppRoleWriteBoundCIDRListRequest struct {
+// AppRoleWriteBoundCidrListRequest struct for AppRoleWriteBoundCidrListRequest
+type AppRoleWriteBoundCidrListRequest struct {
 	// Deprecated: Please use \"secret_id_bound_cidrs\" instead. Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can perform the login operation.
 	BoundCidrList []string `json:"bound_cidr_list"`
 }
 
-// NewAppRoleWriteBoundCIDRListRequestWithDefaults instantiates a new AppRoleWriteBoundCIDRListRequest object
+// NewAppRoleWriteBoundCidrListRequestWithDefaults instantiates a new AppRoleWriteBoundCidrListRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAppRoleWriteBoundCIDRListRequestWithDefaults() *AppRoleWriteBoundCIDRListRequest {
-	var this AppRoleWriteBoundCIDRListRequest
+func NewAppRoleWriteBoundCidrListRequestWithDefaults() *AppRoleWriteBoundCidrListRequest {
+	var this AppRoleWriteBoundCidrListRequest
 
 	return &this
 }
 
-func (o AppRoleWriteBoundCIDRListRequest) MarshalJSON() ([]byte, error) {
+func (o AppRoleWriteBoundCidrListRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["bound_cidr_list"] = o.BoundCidrList

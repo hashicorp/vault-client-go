@@ -19,9 +19,31 @@ type Identity struct {
 	client *Client
 }
 
-// AliasDeleteByID Update, read or delete an alias ID.
+// AliasCreate Create a new alias.
+func (i *Identity) AliasCreate(ctx context.Context, request schema.AliasCreateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/alias"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// AliasDeleteById
 // id: ID of the alias
-func (i *Identity) AliasDeleteByID(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) AliasDeleteById(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -43,8 +65,8 @@ func (i *Identity) AliasDeleteByID(ctx context.Context, id string, options ...Re
 	)
 }
 
-// AliasListByID List all the alias IDs.
-func (i *Identity) AliasListByID(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// AliasListById List all the alias IDs.
+func (i *Identity) AliasListById(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -66,9 +88,9 @@ func (i *Identity) AliasListByID(ctx context.Context, options ...RequestOption) 
 	)
 }
 
-// AliasReadByID Update, read or delete an alias ID.
+// AliasReadById
 // id: ID of the alias
-func (i *Identity) AliasReadByID(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) AliasReadById(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -90,31 +112,9 @@ func (i *Identity) AliasReadByID(ctx context.Context, id string, options ...Requ
 	)
 }
 
-// AliasWrite Create a new alias.
-func (i *Identity) AliasWrite(ctx context.Context, request schema.AliasWriteRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/alias"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// AliasWriteByID Update, read or delete an alias ID.
+// AliasUpdateById
 // id: ID of the alias
-func (i *Identity) AliasWriteByID(ctx context.Context, id string, request schema.AliasWriteByIDRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) AliasUpdateById(ctx context.Context, id string, request schema.AliasUpdateByIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -158,9 +158,53 @@ func (i *Identity) EntityBatchDelete(ctx context.Context, request schema.EntityB
 	)
 }
 
-// EntityDeleteAliasByID Update, read or delete an alias ID.
+// EntityCreate Create a new entity
+func (i *Identity) EntityCreate(ctx context.Context, request schema.EntityCreateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/entity"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// EntityCreateAlias Create a new alias.
+func (i *Identity) EntityCreateAlias(ctx context.Context, request schema.EntityCreateAliasRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/entity-alias"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// EntityDeleteAliasById
 // id: ID of the alias
-func (i *Identity) EntityDeleteAliasByID(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) EntityDeleteAliasById(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -182,9 +226,9 @@ func (i *Identity) EntityDeleteAliasByID(ctx context.Context, id string, options
 	)
 }
 
-// EntityDeleteByID Update, read or delete an entity using entity ID
+// EntityDeleteById
 // id: ID of the entity. If set, updates the corresponding existing entity.
-func (i *Identity) EntityDeleteByID(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) EntityDeleteById(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -206,7 +250,7 @@ func (i *Identity) EntityDeleteByID(ctx context.Context, id string, options ...R
 	)
 }
 
-// EntityDeleteByName Update, read or delete an entity using entity name
+// EntityDeleteByName
 // name: Name of the entity
 func (i *Identity) EntityDeleteByName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
@@ -230,8 +274,8 @@ func (i *Identity) EntityDeleteByName(ctx context.Context, name string, options 
 	)
 }
 
-// EntityListAliasesByID List all the alias IDs.
-func (i *Identity) EntityListAliasesByID(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// EntityListAliasesById List all the alias IDs.
+func (i *Identity) EntityListAliasesById(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -253,8 +297,8 @@ func (i *Identity) EntityListAliasesByID(ctx context.Context, options ...Request
 	)
 }
 
-// EntityListByID List all the entity IDs
-func (i *Identity) EntityListByID(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// EntityListById List all the entity IDs
+func (i *Identity) EntityListById(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -299,8 +343,8 @@ func (i *Identity) EntityListByName(ctx context.Context, options ...RequestOptio
 	)
 }
 
-// EntityLookup Query entities based on various properties.
-func (i *Identity) EntityLookup(ctx context.Context, request schema.EntityLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// EntityLookUp Query entities based on various properties.
+func (i *Identity) EntityLookUp(ctx context.Context, request schema.EntityLookUpRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -343,9 +387,9 @@ func (i *Identity) EntityMerge(ctx context.Context, request schema.EntityMergeRe
 	)
 }
 
-// EntityReadAliasByID Update, read or delete an alias ID.
+// EntityReadAliasById
 // id: ID of the alias
-func (i *Identity) EntityReadAliasByID(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) EntityReadAliasById(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -367,9 +411,9 @@ func (i *Identity) EntityReadAliasByID(ctx context.Context, id string, options .
 	)
 }
 
-// EntityReadByID Update, read or delete an entity using entity ID
+// EntityReadById
 // id: ID of the entity. If set, updates the corresponding existing entity.
-func (i *Identity) EntityReadByID(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) EntityReadById(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -391,7 +435,7 @@ func (i *Identity) EntityReadByID(ctx context.Context, id string, options ...Req
 	)
 }
 
-// EntityReadByName Update, read or delete an entity using entity name
+// EntityReadByName
 // name: Name of the entity
 func (i *Identity) EntityReadByName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
@@ -415,53 +459,9 @@ func (i *Identity) EntityReadByName(ctx context.Context, name string, options ..
 	)
 }
 
-// EntityWrite Create a new entity
-func (i *Identity) EntityWrite(ctx context.Context, request schema.EntityWriteRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/entity"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// EntityWriteAlias Create a new alias.
-func (i *Identity) EntityWriteAlias(ctx context.Context, request schema.EntityWriteAliasRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/entity-alias"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// EntityWriteAliasByID Update, read or delete an alias ID.
+// EntityUpdateAliasById
 // id: ID of the alias
-func (i *Identity) EntityWriteAliasByID(ctx context.Context, id string, request schema.EntityWriteAliasByIDRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) EntityUpdateAliasById(ctx context.Context, id string, request schema.EntityUpdateAliasByIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -483,9 +483,9 @@ func (i *Identity) EntityWriteAliasByID(ctx context.Context, id string, request 
 	)
 }
 
-// EntityWriteByID Update, read or delete an entity using entity ID
+// EntityUpdateById
 // id: ID of the entity. If set, updates the corresponding existing entity.
-func (i *Identity) EntityWriteByID(ctx context.Context, id string, request schema.EntityWriteByIDRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) EntityUpdateById(ctx context.Context, id string, request schema.EntityUpdateByIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -507,9 +507,9 @@ func (i *Identity) EntityWriteByID(ctx context.Context, id string, request schem
 	)
 }
 
-// EntityWriteByName Update, read or delete an entity using entity name
+// EntityUpdateByName
 // name: Name of the entity
-func (i *Identity) EntityWriteByName(ctx context.Context, name string, request schema.EntityWriteByNameRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) EntityUpdateByName(ctx context.Context, name string, request schema.EntityUpdateByNameRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -531,9 +531,53 @@ func (i *Identity) EntityWriteByName(ctx context.Context, name string, request s
 	)
 }
 
-// GroupDeleteAliasByID
+// GroupCreate Create a new group.
+func (i *Identity) GroupCreate(ctx context.Context, request schema.GroupCreateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/group"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// GroupCreateAlias Creates a new group alias, or updates an existing one.
+func (i *Identity) GroupCreateAlias(ctx context.Context, request schema.GroupCreateAliasRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/group-alias"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// GroupDeleteAliasById
 // id: ID of the group alias.
-func (i *Identity) GroupDeleteAliasByID(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) GroupDeleteAliasById(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -555,9 +599,9 @@ func (i *Identity) GroupDeleteAliasByID(ctx context.Context, id string, options 
 	)
 }
 
-// GroupDeleteByID Update or delete an existing group using its ID.
+// GroupDeleteById
 // id: ID of the group. If set, updates the corresponding existing group.
-func (i *Identity) GroupDeleteByID(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) GroupDeleteById(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -603,8 +647,8 @@ func (i *Identity) GroupDeleteByName(ctx context.Context, name string, options .
 	)
 }
 
-// GroupListAliasesByID List all the group alias IDs.
-func (i *Identity) GroupListAliasesByID(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// GroupListAliasesById List all the group alias IDs.
+func (i *Identity) GroupListAliasesById(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -626,8 +670,8 @@ func (i *Identity) GroupListAliasesByID(ctx context.Context, options ...RequestO
 	)
 }
 
-// GroupListByID List all the group IDs.
-func (i *Identity) GroupListByID(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// GroupListById List all the group IDs.
+func (i *Identity) GroupListById(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -672,8 +716,8 @@ func (i *Identity) GroupListByName(ctx context.Context, options ...RequestOption
 	)
 }
 
-// GroupLookup Query groups based on various properties.
-func (i *Identity) GroupLookup(ctx context.Context, request schema.GroupLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// GroupLookUp Query groups based on various properties.
+func (i *Identity) GroupLookUp(ctx context.Context, request schema.GroupLookUpRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -694,9 +738,9 @@ func (i *Identity) GroupLookup(ctx context.Context, request schema.GroupLookupRe
 	)
 }
 
-// GroupReadAliasByID
+// GroupReadAliasById
 // id: ID of the group alias.
-func (i *Identity) GroupReadAliasByID(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) GroupReadAliasById(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -718,9 +762,9 @@ func (i *Identity) GroupReadAliasByID(ctx context.Context, id string, options ..
 	)
 }
 
-// GroupReadByID Update or delete an existing group using its ID.
+// GroupReadById
 // id: ID of the group. If set, updates the corresponding existing group.
-func (i *Identity) GroupReadByID(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) GroupReadById(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -766,53 +810,9 @@ func (i *Identity) GroupReadByName(ctx context.Context, name string, options ...
 	)
 }
 
-// GroupWrite Create a new group.
-func (i *Identity) GroupWrite(ctx context.Context, request schema.GroupWriteRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/group"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// GroupWriteAlias Creates a new group alias, or updates an existing one.
-func (i *Identity) GroupWriteAlias(ctx context.Context, request schema.GroupWriteAliasRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/group-alias"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// GroupWriteAliasByID
+// GroupUpdateAliasById
 // id: ID of the group alias.
-func (i *Identity) GroupWriteAliasByID(ctx context.Context, id string, request schema.GroupWriteAliasByIDRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) GroupUpdateAliasById(ctx context.Context, id string, request schema.GroupUpdateAliasByIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -834,9 +834,9 @@ func (i *Identity) GroupWriteAliasByID(ctx context.Context, id string, request s
 	)
 }
 
-// GroupWriteByID Update or delete an existing group using its ID.
+// GroupUpdateById
 // id: ID of the group. If set, updates the corresponding existing group.
-func (i *Identity) GroupWriteByID(ctx context.Context, id string, request schema.GroupWriteByIDRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) GroupUpdateById(ctx context.Context, id string, request schema.GroupUpdateByIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -858,9 +858,9 @@ func (i *Identity) GroupWriteByID(ctx context.Context, id string, request schema
 	)
 }
 
-// GroupWriteByName
+// GroupUpdateByName
 // name: Name of the group.
-func (i *Identity) GroupWriteByName(ctx context.Context, name string, request schema.GroupWriteByNameRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) GroupUpdateByName(ctx context.Context, name string, request schema.GroupUpdateByNameRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -882,55 +882,8 @@ func (i *Identity) GroupWriteByName(ctx context.Context, name string, request sc
 	)
 }
 
-// MFADeleteLoginEnforcement Delete a login enforcement
-// name: Name for this login enforcement configuration
-func (i *Identity) MFADeleteLoginEnforcement(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/mfa/login-enforcement/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodDelete,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// MFAListLoginEnforcements List login enforcements
-func (i *Identity) MFAListLoginEnforcements(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/mfa/login-enforcement"
-
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// MFAMethodAdminDestroyTOTP Destroys a TOTP secret for the given MFA method ID on the given entity
-func (i *Identity) MFAMethodAdminDestroyTOTP(ctx context.Context, request schema.MFAMethodAdminDestroyTOTPRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// MfaAdminDestroyTotpSecret Destroys a TOTP secret for the given MFA method ID on the given entity
+func (i *Identity) MfaAdminDestroyTotpSecret(ctx context.Context, request schema.MfaAdminDestroyTotpSecretRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -951,8 +904,8 @@ func (i *Identity) MFAMethodAdminDestroyTOTP(ctx context.Context, request schema
 	)
 }
 
-// MFAMethodAdminGenerateTOTP Update or create TOTP secret for the given method ID on the given entity.
-func (i *Identity) MFAMethodAdminGenerateTOTP(ctx context.Context, request schema.MFAMethodAdminGenerateTOTPRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// MfaAdminGenerateTotpSecret Update or create TOTP secret for the given method ID on the given entity.
+func (i *Identity) MfaAdminGenerateTotpSecret(ctx context.Context, request schema.MfaAdminGenerateTotpSecretRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -973,9 +926,105 @@ func (i *Identity) MFAMethodAdminGenerateTOTP(ctx context.Context, request schem
 	)
 }
 
-// MFAMethodDeleteDuo Delete a configuration for the given MFA method
+// MfaConfigureDuoMethod Update or create a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
-func (i *Identity) MFAMethodDeleteDuo(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) MfaConfigureDuoMethod(ctx context.Context, methodId string, request schema.MfaConfigureDuoMethodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/mfa/method/duo/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// MfaConfigureOktaMethod Update or create a configuration for the given MFA method
+// methodId: The unique identifier for this MFA method.
+func (i *Identity) MfaConfigureOktaMethod(ctx context.Context, methodId string, request schema.MfaConfigureOktaMethodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/mfa/method/okta/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// MfaConfigurePingIdMethod Update or create a configuration for the given MFA method
+// methodId: The unique identifier for this MFA method.
+func (i *Identity) MfaConfigurePingIdMethod(ctx context.Context, methodId string, request schema.MfaConfigurePingIdMethodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/mfa/method/pingid/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// MfaConfigureTotpMethod Update or create a configuration for the given MFA method
+// methodId: The unique identifier for this MFA method.
+func (i *Identity) MfaConfigureTotpMethod(ctx context.Context, methodId string, request schema.MfaConfigureTotpMethodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/mfa/method/totp/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// MfaDeleteDuoMethod Delete a configuration for the given MFA method
+// methodId: The unique identifier for this MFA method.
+func (i *Identity) MfaDeleteDuoMethod(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -997,9 +1046,33 @@ func (i *Identity) MFAMethodDeleteDuo(ctx context.Context, methodId string, opti
 	)
 }
 
-// MFAMethodDeleteOkta Delete a configuration for the given MFA method
+// MfaDeleteLoginEnforcement Delete a login enforcement
+// name: Name for this login enforcement configuration
+func (i *Identity) MfaDeleteLoginEnforcement(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/mfa/login-enforcement/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// MfaDeleteOktaMethod Delete a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
-func (i *Identity) MFAMethodDeleteOkta(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) MfaDeleteOktaMethod(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1021,9 +1094,9 @@ func (i *Identity) MFAMethodDeleteOkta(ctx context.Context, methodId string, opt
 	)
 }
 
-// MFAMethodDeletePingID Delete a configuration for the given MFA method
+// MfaDeletePingIdMethod Delete a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
-func (i *Identity) MFAMethodDeletePingID(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) MfaDeletePingIdMethod(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1045,9 +1118,9 @@ func (i *Identity) MFAMethodDeletePingID(ctx context.Context, methodId string, o
 	)
 }
 
-// MFAMethodDeleteTOTP Delete a configuration for the given MFA method
+// MfaDeleteTotpMethod Delete a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
-func (i *Identity) MFAMethodDeleteTOTP(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) MfaDeleteTotpMethod(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1069,8 +1142,8 @@ func (i *Identity) MFAMethodDeleteTOTP(ctx context.Context, methodId string, opt
 	)
 }
 
-// MFAMethodGenerateTOTP Update or create TOTP secret for the given method ID on the given entity.
-func (i *Identity) MFAMethodGenerateTOTP(ctx context.Context, request schema.MFAMethodGenerateTOTPRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// MfaGenerateTotpSecret Update or create TOTP secret for the given method ID on the given entity.
+func (i *Identity) MfaGenerateTotpSecret(ctx context.Context, request schema.MfaGenerateTotpSecretRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1091,31 +1164,8 @@ func (i *Identity) MFAMethodGenerateTOTP(ctx context.Context, request schema.MFA
 	)
 }
 
-// MFAMethodList List MFA method configurations for all MFA methods
-func (i *Identity) MFAMethodList(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/mfa/method"
-
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// MFAMethodListDuo List MFA method configurations for the given MFA method
-func (i *Identity) MFAMethodListDuo(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// MfaListDuoMethods List MFA method configurations for the given MFA method
+func (i *Identity) MfaListDuoMethods(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1137,8 +1187,54 @@ func (i *Identity) MFAMethodListDuo(ctx context.Context, options ...RequestOptio
 	)
 }
 
-// MFAMethodListOkta List MFA method configurations for the given MFA method
-func (i *Identity) MFAMethodListOkta(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// MfaListLoginEnforcements List login enforcements
+func (i *Identity) MfaListLoginEnforcements(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/mfa/login-enforcement"
+
+	requestQueryParameters := make(url.Values)
+	requestQueryParameters.Set("list", "true")
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// MfaListMethods List MFA method configurations for all MFA methods
+func (i *Identity) MfaListMethods(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/mfa/method"
+
+	requestQueryParameters := make(url.Values)
+	requestQueryParameters.Set("list", "true")
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// MfaListOktaMethods List MFA method configurations for the given MFA method
+func (i *Identity) MfaListOktaMethods(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1160,8 +1256,8 @@ func (i *Identity) MFAMethodListOkta(ctx context.Context, options ...RequestOpti
 	)
 }
 
-// MFAMethodListPingID List MFA method configurations for the given MFA method
-func (i *Identity) MFAMethodListPingID(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// MfaListPingIdMethods List MFA method configurations for the given MFA method
+func (i *Identity) MfaListPingIdMethods(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1183,8 +1279,8 @@ func (i *Identity) MFAMethodListPingID(ctx context.Context, options ...RequestOp
 	)
 }
 
-// MFAMethodListTOTP List MFA method configurations for the given MFA method
-func (i *Identity) MFAMethodListTOTP(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// MfaListTotpMethods List MFA method configurations for the given MFA method
+func (i *Identity) MfaListTotpMethods(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1206,9 +1302,57 @@ func (i *Identity) MFAMethodListTOTP(ctx context.Context, options ...RequestOpti
 	)
 }
 
-// MFAMethodRead Read the current configuration for the given ID regardless of the MFA method type
+// MfaReadDuoMethodConfiguration Read the current configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
-func (i *Identity) MFAMethodRead(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) MfaReadDuoMethodConfiguration(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/mfa/method/duo/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// MfaReadLoginEnforcement Read the current login enforcement
+// name: Name for this login enforcement configuration
+func (i *Identity) MfaReadLoginEnforcement(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/mfa/login-enforcement/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// MfaReadMethodConfiguration Read the current configuration for the given ID regardless of the MFA method type
+// methodId: The unique identifier for this MFA method.
+func (i *Identity) MfaReadMethodConfiguration(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1230,33 +1374,9 @@ func (i *Identity) MFAMethodRead(ctx context.Context, methodId string, options .
 	)
 }
 
-// MFAMethodReadDuo Read the current configuration for the given MFA method
+// MfaReadOktaMethodConfiguration Read the current configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
-func (i *Identity) MFAMethodReadDuo(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/mfa/method/duo/{method_id}"
-	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// MFAMethodReadOkta Read the current configuration for the given MFA method
-// methodId: The unique identifier for this MFA method.
-func (i *Identity) MFAMethodReadOkta(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) MfaReadOktaMethodConfiguration(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1278,9 +1398,9 @@ func (i *Identity) MFAMethodReadOkta(ctx context.Context, methodId string, optio
 	)
 }
 
-// MFAMethodReadPingID Read the current configuration for the given MFA method
+// MfaReadPingIdMethodConfiguration Read the current configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
-func (i *Identity) MFAMethodReadPingID(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) MfaReadPingIdMethodConfiguration(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1302,9 +1422,9 @@ func (i *Identity) MFAMethodReadPingID(ctx context.Context, methodId string, opt
 	)
 }
 
-// MFAMethodReadTOTP Read the current configuration for the given MFA method
+// MfaReadTotpMethodConfiguration Read the current configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
-func (i *Identity) MFAMethodReadTOTP(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) MfaReadTotpMethodConfiguration(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1326,129 +1446,9 @@ func (i *Identity) MFAMethodReadTOTP(ctx context.Context, methodId string, optio
 	)
 }
 
-// MFAMethodWriteDuo Update or create a configuration for the given MFA method
-// methodId: The unique identifier for this MFA method.
-func (i *Identity) MFAMethodWriteDuo(ctx context.Context, methodId string, request schema.MFAMethodWriteDuoRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/mfa/method/duo/{method_id}"
-	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// MFAMethodWriteOkta Update or create a configuration for the given MFA method
-// methodId: The unique identifier for this MFA method.
-func (i *Identity) MFAMethodWriteOkta(ctx context.Context, methodId string, request schema.MFAMethodWriteOktaRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/mfa/method/okta/{method_id}"
-	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// MFAMethodWritePingID Update or create a configuration for the given MFA method
-// methodId: The unique identifier for this MFA method.
-func (i *Identity) MFAMethodWritePingID(ctx context.Context, methodId string, request schema.MFAMethodWritePingIDRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/mfa/method/pingid/{method_id}"
-	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// MFAMethodWriteTOTP Update or create a configuration for the given MFA method
-// methodId: The unique identifier for this MFA method.
-func (i *Identity) MFAMethodWriteTOTP(ctx context.Context, methodId string, request schema.MFAMethodWriteTOTPRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/mfa/method/totp/{method_id}"
-	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// MFAReadLoginEnforcement Read the current login enforcement
+// MfaWriteLoginEnforcement Create or update a login enforcement
 // name: Name for this login enforcement configuration
-func (i *Identity) MFAReadLoginEnforcement(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/mfa/login-enforcement/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// MFAWriteLoginEnforcement Create or update a login enforcement
-// name: Name for this login enforcement configuration
-func (i *Identity) MFAWriteLoginEnforcement(ctx context.Context, name string, request schema.MFAWriteLoginEnforcementRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) MfaWriteLoginEnforcement(ctx context.Context, name string, request schema.MfaWriteLoginEnforcementRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1470,9 +1470,31 @@ func (i *Identity) MFAWriteLoginEnforcement(ctx context.Context, name string, re
 	)
 }
 
-// OIDCDeleteAssignment
+// OidcConfigure
+func (i *Identity) OidcConfigure(ctx context.Context, request schema.OidcConfigureRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/oidc/config"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// OidcDeleteAssignment
 // name: Name of the assignment
-func (i *Identity) OIDCDeleteAssignment(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) OidcDeleteAssignment(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1494,9 +1516,9 @@ func (i *Identity) OIDCDeleteAssignment(ctx context.Context, name string, option
 	)
 }
 
-// OIDCDeleteClient
+// OidcDeleteClient
 // name: Name of the client.
-func (i *Identity) OIDCDeleteClient(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) OidcDeleteClient(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1518,9 +1540,9 @@ func (i *Identity) OIDCDeleteClient(ctx context.Context, name string, options ..
 	)
 }
 
-// OIDCDeleteKey CRUD operations for OIDC keys.
+// OidcDeleteKey CRUD operations for OIDC keys.
 // name: Name of the key
-func (i *Identity) OIDCDeleteKey(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) OidcDeleteKey(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1542,9 +1564,9 @@ func (i *Identity) OIDCDeleteKey(ctx context.Context, name string, options ...Re
 	)
 }
 
-// OIDCDeleteProvider
+// OidcDeleteProvider
 // name: Name of the provider
-func (i *Identity) OIDCDeleteProvider(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) OidcDeleteProvider(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1566,9 +1588,9 @@ func (i *Identity) OIDCDeleteProvider(ctx context.Context, name string, options 
 	)
 }
 
-// OIDCDeleteRole CRUD operations on OIDC Roles
+// OidcDeleteRole CRUD operations on OIDC Roles
 // name: Name of the role
-func (i *Identity) OIDCDeleteRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) OidcDeleteRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1590,9 +1612,9 @@ func (i *Identity) OIDCDeleteRole(ctx context.Context, name string, options ...R
 	)
 }
 
-// OIDCDeleteScope
+// OidcDeleteScope
 // name: Name of the scope
-func (i *Identity) OIDCDeleteScope(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) OidcDeleteScope(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1614,8 +1636,32 @@ func (i *Identity) OIDCDeleteScope(ctx context.Context, name string, options ...
 	)
 }
 
-// OIDCIntrospect Verify the authenticity of an OIDC token
-func (i *Identity) OIDCIntrospect(ctx context.Context, request schema.OIDCIntrospectRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// OidcGenerateToken Generate an OIDC token
+// name: Name of the role
+func (i *Identity) OidcGenerateToken(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/oidc/token/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// OidcIntrospect Verify the authenticity of an OIDC token
+func (i *Identity) OidcIntrospect(ctx context.Context, request schema.OidcIntrospectRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1636,8 +1682,8 @@ func (i *Identity) OIDCIntrospect(ctx context.Context, request schema.OIDCIntros
 	)
 }
 
-// OIDCListAssignments
-func (i *Identity) OIDCListAssignments(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// OidcListAssignments
+func (i *Identity) OidcListAssignments(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1659,8 +1705,8 @@ func (i *Identity) OIDCListAssignments(ctx context.Context, options ...RequestOp
 	)
 }
 
-// OIDCListClients
-func (i *Identity) OIDCListClients(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// OidcListClients
+func (i *Identity) OidcListClients(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1682,8 +1728,8 @@ func (i *Identity) OIDCListClients(ctx context.Context, options ...RequestOption
 	)
 }
 
-// OIDCListKeys List OIDC keys
-func (i *Identity) OIDCListKeys(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// OidcListKeys List OIDC keys
+func (i *Identity) OidcListKeys(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1705,9 +1751,9 @@ func (i *Identity) OIDCListKeys(ctx context.Context, options ...RequestOption) (
 	)
 }
 
-// OIDCListProviders
+// OidcListProviders
 // allowedClientId: Filters the list of OIDC providers to those that allow the given client ID in their set of allowed_client_ids.
-func (i *Identity) OIDCListProviders(ctx context.Context, allowedClientId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) OidcListProviders(ctx context.Context, allowedClientId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1730,8 +1776,8 @@ func (i *Identity) OIDCListProviders(ctx context.Context, allowedClientId string
 	)
 }
 
-// OIDCListRoles List configured OIDC roles
-func (i *Identity) OIDCListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// OidcListRoles List configured OIDC roles
+func (i *Identity) OidcListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1753,8 +1799,8 @@ func (i *Identity) OIDCListRoles(ctx context.Context, options ...RequestOption) 
 	)
 }
 
-// OIDCListScopes
-func (i *Identity) OIDCListScopes(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// OidcListScopes
+func (i *Identity) OidcListScopes(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1776,127 +1822,9 @@ func (i *Identity) OIDCListScopes(ctx context.Context, options ...RequestOption)
 	)
 }
 
-// OIDCReadAssignment
-// name: Name of the assignment
-func (i *Identity) OIDCReadAssignment(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/oidc/assignment/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// OIDCReadClient
-// name: Name of the client.
-func (i *Identity) OIDCReadClient(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/oidc/client/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// OIDCReadConfig OIDC configuration
-func (i *Identity) OIDCReadConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/oidc/config"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// OIDCReadKey CRUD operations for OIDC keys.
-// name: Name of the key
-func (i *Identity) OIDCReadKey(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/oidc/key/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// OIDCReadProvider
+// OidcProviderAuthorize
 // name: Name of the provider
-func (i *Identity) OIDCReadProvider(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/oidc/provider/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// OIDCReadProviderAuthorize
-// name: Name of the provider
-func (i *Identity) OIDCReadProviderAuthorize(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) OidcProviderAuthorize(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1918,339 +1846,9 @@ func (i *Identity) OIDCReadProviderAuthorize(ctx context.Context, name string, o
 	)
 }
 
-// OIDCReadProviderUserInfo
+// OidcProviderAuthorize2
 // name: Name of the provider
-func (i *Identity) OIDCReadProviderUserInfo(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/oidc/provider/{name}/userinfo"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// OIDCReadProviderWellKnownKeys
-// name: Name of the provider
-func (i *Identity) OIDCReadProviderWellKnownKeys(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/oidc/provider/{name}/.well-known/keys"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// OIDCReadProviderWellKnownOpenIDConfiguration
-// name: Name of the provider
-func (i *Identity) OIDCReadProviderWellKnownOpenIDConfiguration(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/oidc/provider/{name}/.well-known/openid-configuration"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// OIDCReadRole CRUD operations on OIDC Roles
-// name: Name of the role
-func (i *Identity) OIDCReadRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/oidc/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// OIDCReadScope
-// name: Name of the scope
-func (i *Identity) OIDCReadScope(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/oidc/scope/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// OIDCReadToken Generate an OIDC token
-// name: Name of the role
-func (i *Identity) OIDCReadToken(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/oidc/token/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// OIDCReadWellKnownKeys Retrieve public keys
-func (i *Identity) OIDCReadWellKnownKeys(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/oidc/.well-known/keys"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// OIDCReadWellKnownOpenIDConfiguration Query OIDC configurations
-func (i *Identity) OIDCReadWellKnownOpenIDConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/oidc/.well-known/openid-configuration"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// OIDCRotateKey Rotate a named OIDC key.
-// name: Name of the key
-func (i *Identity) OIDCRotateKey(ctx context.Context, name string, request schema.OIDCRotateKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/oidc/key/{name}/rotate"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// OIDCWriteAssignment
-// name: Name of the assignment
-func (i *Identity) OIDCWriteAssignment(ctx context.Context, name string, request schema.OIDCWriteAssignmentRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/oidc/assignment/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// OIDCWriteClient
-// name: Name of the client.
-func (i *Identity) OIDCWriteClient(ctx context.Context, name string, request schema.OIDCWriteClientRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/oidc/client/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// OIDCWriteConfig OIDC configuration
-func (i *Identity) OIDCWriteConfig(ctx context.Context, request schema.OIDCWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/oidc/config"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// OIDCWriteKey CRUD operations for OIDC keys.
-// name: Name of the key
-func (i *Identity) OIDCWriteKey(ctx context.Context, name string, request schema.OIDCWriteKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/oidc/key/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// OIDCWriteProvider
-// name: Name of the provider
-func (i *Identity) OIDCWriteProvider(ctx context.Context, name string, request schema.OIDCWriteProviderRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/oidc/provider/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// OIDCWriteProviderAuthorize
-// name: Name of the provider
-func (i *Identity) OIDCWriteProviderAuthorize(ctx context.Context, name string, request schema.OIDCWriteProviderAuthorizeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) OidcProviderAuthorize2(ctx context.Context, name string, request schema.OidcProviderAuthorize2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2272,9 +1870,9 @@ func (i *Identity) OIDCWriteProviderAuthorize(ctx context.Context, name string, 
 	)
 }
 
-// OIDCWriteProviderToken
+// OidcProviderToken
 // name: Name of the provider
-func (i *Identity) OIDCWriteProviderToken(ctx context.Context, name string, request schema.OIDCWriteProviderTokenRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) OidcProviderToken(ctx context.Context, name string, request schema.OidcProviderTokenRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2296,9 +1894,33 @@ func (i *Identity) OIDCWriteProviderToken(ctx context.Context, name string, requ
 	)
 }
 
-// OIDCWriteProviderUserInfo
+// OidcProviderUserInfo
 // name: Name of the provider
-func (i *Identity) OIDCWriteProviderUserInfo(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) OidcProviderUserInfo(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/oidc/provider/{name}/userinfo"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// OidcProviderUserInfo2
+// name: Name of the provider
+func (i *Identity) OidcProviderUserInfo2(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2320,9 +1942,387 @@ func (i *Identity) OIDCWriteProviderUserInfo(ctx context.Context, name string, o
 	)
 }
 
-// OIDCWriteRole CRUD operations on OIDC Roles
+// OidcReadAssignment
+// name: Name of the assignment
+func (i *Identity) OidcReadAssignment(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/oidc/assignment/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// OidcReadClient
+// name: Name of the client.
+func (i *Identity) OidcReadClient(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/oidc/client/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// OidcReadConfiguration
+func (i *Identity) OidcReadConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/oidc/config"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// OidcReadKey CRUD operations for OIDC keys.
+// name: Name of the key
+func (i *Identity) OidcReadKey(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/oidc/key/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// OidcReadOpenIdConfiguration Query OIDC configurations
+func (i *Identity) OidcReadOpenIdConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/oidc/.well-known/openid-configuration"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// OidcReadProvider
+// name: Name of the provider
+func (i *Identity) OidcReadProvider(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/oidc/provider/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// OidcReadProviderOpenIdConfiguration
+// name: Name of the provider
+func (i *Identity) OidcReadProviderOpenIdConfiguration(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/oidc/provider/{name}/.well-known/openid-configuration"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// OidcReadProviderPublicKeys
+// name: Name of the provider
+func (i *Identity) OidcReadProviderPublicKeys(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/oidc/provider/{name}/.well-known/keys"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// OidcReadPublicKeys Retrieve public keys
+func (i *Identity) OidcReadPublicKeys(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/oidc/.well-known/keys"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// OidcReadRole CRUD operations on OIDC Roles
 // name: Name of the role
-func (i *Identity) OIDCWriteRole(ctx context.Context, name string, request schema.OIDCWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) OidcReadRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/oidc/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// OidcReadScope
+// name: Name of the scope
+func (i *Identity) OidcReadScope(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/oidc/scope/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// OidcRotateKey Rotate a named OIDC key.
+// name: Name of the key
+func (i *Identity) OidcRotateKey(ctx context.Context, name string, request schema.OidcRotateKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/oidc/key/{name}/rotate"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// OidcWriteAssignment
+// name: Name of the assignment
+func (i *Identity) OidcWriteAssignment(ctx context.Context, name string, request schema.OidcWriteAssignmentRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/oidc/assignment/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// OidcWriteClient
+// name: Name of the client.
+func (i *Identity) OidcWriteClient(ctx context.Context, name string, request schema.OidcWriteClientRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/oidc/client/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// OidcWriteKey CRUD operations for OIDC keys.
+// name: Name of the key
+func (i *Identity) OidcWriteKey(ctx context.Context, name string, request schema.OidcWriteKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/oidc/key/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// OidcWriteProvider
+// name: Name of the provider
+func (i *Identity) OidcWriteProvider(ctx context.Context, name string, request schema.OidcWriteProviderRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/oidc/provider/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// OidcWriteRole CRUD operations on OIDC Roles
+// name: Name of the role
+func (i *Identity) OidcWriteRole(ctx context.Context, name string, request schema.OidcWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2344,9 +2344,9 @@ func (i *Identity) OIDCWriteRole(ctx context.Context, name string, request schem
 	)
 }
 
-// OIDCWriteScope
+// OidcWriteScope
 // name: Name of the scope
-func (i *Identity) OIDCWriteScope(ctx context.Context, name string, request schema.OIDCWriteScopeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) OidcWriteScope(ctx context.Context, name string, request schema.OidcWriteScopeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2368,9 +2368,31 @@ func (i *Identity) OIDCWriteScope(ctx context.Context, name string, request sche
 	)
 }
 
-// PersonaIDDeleteByID Update, read or delete an alias ID.
+// PersonaCreate Create a new alias.
+func (i *Identity) PersonaCreate(ctx context.Context, request schema.PersonaCreateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/persona"
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PersonaDeleteById
 // id: ID of the persona
-func (i *Identity) PersonaIDDeleteByID(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) PersonaDeleteById(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2392,56 +2414,8 @@ func (i *Identity) PersonaIDDeleteByID(ctx context.Context, id string, options .
 	)
 }
 
-// PersonaIDReadByID Update, read or delete an alias ID.
-// id: ID of the persona
-func (i *Identity) PersonaIDReadByID(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/persona/id/{id}"
-	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// PersonaIDWriteByID Update, read or delete an alias ID.
-// id: ID of the persona
-func (i *Identity) PersonaIDWriteByID(ctx context.Context, id string, request schema.PersonaIDWriteByIDRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/persona/id/{id}"
-	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// PersonaListByID List all the alias IDs.
-func (i *Identity) PersonaListByID(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// PersonaListById List all the alias IDs.
+func (i *Identity) PersonaListById(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2463,14 +2437,40 @@ func (i *Identity) PersonaListByID(ctx context.Context, options ...RequestOption
 	)
 }
 
-// PersonaWrite Create a new alias.
-func (i *Identity) PersonaWrite(ctx context.Context, request schema.PersonaWriteRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// PersonaReadById
+// id: ID of the persona
+func (i *Identity) PersonaReadById(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/persona"
+	requestPath := "/v1/identity/persona/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PersonaUpdateById
+// id: ID of the persona
+func (i *Identity) PersonaUpdateById(ctx context.Context, id string, request schema.PersonaUpdateByIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/persona/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
 	requestQueryParameters := make(url.Values)
 

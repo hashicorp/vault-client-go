@@ -8,11 +8,7 @@ Method | HTTP request | Description
 {{/endsWith}}{{/endsWith}}{{/each}}{{/with}}
 
 {{#with operations}}
-{{#each operation}}
-{{#endsWith operationId "2"}}
-{{else}}
-{{#endsWith operationId "3"}}
-{{else}}
+{{#each operation}}{{#endsWith operationId "2"}}{{else}}{{#endsWith operationId "3"}}{{else}}
 
 ## {{{operationId}}}
 
@@ -80,7 +76,5 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-{{/endsWith}}
-{{/endsWith}}
-{{/each}}
+{{/endsWith}}{{/endsWith}}{{/each}}
 {{/with}}

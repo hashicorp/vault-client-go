@@ -4763,71 +4763,6 @@ Name | Type | Description  | Notes
 
 
 
-## OidcProviderAuthorize2
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-	"github.com/hashicorp/vault-client-go/schema"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the provider
-	request := schema.NewOidcProviderAuthorize2RequestWithDefaults()
-	resp, err := client.Identity.OidcProviderAuthorize2(
-		context.Background(),
-		name,
-		request,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the provider | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **oidcProviderAuthorize2Request** | [**OidcProviderAuthorize2Request**](OidcProviderAuthorize2Request.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
 ## OidcProviderToken
 
 
@@ -4920,67 +4855,6 @@ func main() {
 
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcProviderUserInfo(
-		context.Background(),
-		name,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the provider | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
-## OidcProviderUserInfo2
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the provider
-	resp, err := client.Identity.OidcProviderUserInfo2(
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),

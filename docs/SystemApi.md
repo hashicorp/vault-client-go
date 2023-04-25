@@ -2466,67 +2466,6 @@ Name | Type | Description  | Notes
 
 
 
-## InternalGenerateOpenApiDocument2
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-	"github.com/hashicorp/vault-client-go/schema"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	request := schema.NewInternalGenerateOpenApiDocument2RequestWithDefaults()
-	genericMountPaths := true // bool | Use generic mount paths (defaults to false)
-	resp, err := client.System.InternalGenerateOpenApiDocument2(
-		context.Background(),
-		request,
-		genericMountPaths,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **internalGenerateOpenApiDocument2Request** | [**InternalGenerateOpenApiDocument2Request**](InternalGenerateOpenApiDocument2Request.md) |  | 
- **genericMountPaths** | **bool** | Use generic mount paths | [default to false]
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
 ## InternalInspectRouter
 
 Expose the route entry and mount entry tables present in the router
@@ -3024,69 +2963,6 @@ Name | Type | Description  | Notes
 
 
 
-## LeasesForceRevokeLeaseWithPrefix2
-
-Revokes all secrets or tokens generated under a given prefix immediately
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
-	resp, err := client.System.LeasesForceRevokeLeaseWithPrefix2(
-		context.Background(),
-		prefix,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**prefix** | **string** | The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot; | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
 ## LeasesList
 
 
@@ -3372,64 +3248,6 @@ Name | Type | Description  | Notes
 
 
 
-## LeasesRenewLease2
-
-Renews a lease, requesting to extend the lease.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-	"github.com/hashicorp/vault-client-go/schema"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	request := schema.NewLeasesRenewLease2RequestWithDefaults()
-	resp, err := client.System.LeasesRenewLease2(
-		context.Background(),
-		request,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **leasesRenewLease2Request** | [**LeasesRenewLease2Request**](LeasesRenewLease2Request.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
 ## LeasesRenewLeaseWithId
 
 Renews a lease, requesting to extend the lease.
@@ -3495,71 +3313,6 @@ Name | Type | Description  | Notes
 
 
 
-## LeasesRenewLeaseWithId2
-
-Renews a lease, requesting to extend the lease.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-	"github.com/hashicorp/vault-client-go/schema"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
-	request := schema.NewLeasesRenewLeaseWithId2RequestWithDefaults()
-	resp, err := client.System.LeasesRenewLeaseWithId2(
-		context.Background(),
-		urlLeaseId,
-		request,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**urlLeaseId** | **string** | The lease identifier to renew. This is included with a lease. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **leasesRenewLeaseWithId2Request** | [**LeasesRenewLeaseWithId2Request**](LeasesRenewLeaseWithId2Request.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
 ## LeasesRevokeLease
 
 Revokes a lease immediately.
@@ -3610,64 +3363,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **leasesRevokeLeaseRequest** | [**LeasesRevokeLeaseRequest**](LeasesRevokeLeaseRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
-## LeasesRevokeLease2
-
-Revokes a lease immediately.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-	"github.com/hashicorp/vault-client-go/schema"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	request := schema.NewLeasesRevokeLease2RequestWithDefaults()
-	resp, err := client.System.LeasesRevokeLease2(
-		context.Background(),
-		request,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **leasesRevokeLease2Request** | [**LeasesRevokeLease2Request**](LeasesRevokeLease2Request.md) |  | 
 
  (empty response body)
 
@@ -3741,71 +3436,6 @@ Name | Type | Description  | Notes
 
 
 
-## LeasesRevokeLeaseWithId2
-
-Revokes a lease immediately.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-	"github.com/hashicorp/vault-client-go/schema"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
-	request := schema.NewLeasesRevokeLeaseWithId2RequestWithDefaults()
-	resp, err := client.System.LeasesRevokeLeaseWithId2(
-		context.Background(),
-		urlLeaseId,
-		request,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**urlLeaseId** | **string** | The lease identifier to renew. This is included with a lease. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **leasesRevokeLeaseWithId2Request** | [**LeasesRevokeLeaseWithId2Request**](LeasesRevokeLeaseWithId2Request.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
 ## LeasesRevokeLeaseWithPrefix
 
 Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
@@ -3863,71 +3493,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **leasesRevokeLeaseWithPrefixRequest** | [**LeasesRevokeLeaseWithPrefixRequest**](LeasesRevokeLeaseWithPrefixRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
-## LeasesRevokeLeaseWithPrefix2
-
-Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-	"github.com/hashicorp/vault-client-go/schema"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
-	request := schema.NewLeasesRevokeLeaseWithPrefix2RequestWithDefaults()
-	resp, err := client.System.LeasesRevokeLeaseWithPrefix2(
-		context.Background(),
-		prefix,
-		request,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**prefix** | **string** | The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot; | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **leasesRevokeLeaseWithPrefix2Request** | [**LeasesRevokeLeaseWithPrefix2Request**](LeasesRevokeLeaseWithPrefix2Request.md) |  | 
 
  (empty response body)
 
@@ -5667,67 +5232,6 @@ Name | Type | Description  | Notes
 
 
 
-## PoliciesDeleteAclPolicy2
-
-Delete the policy with the given name.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | The name of the policy. Example: \"ops\"
-	resp, err := client.System.PoliciesDeleteAclPolicy2(
-		context.Background(),
-		name,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | The name of the policy. Example: \&quot;ops\&quot; | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
 ## PoliciesDeletePasswordPolicy
 
 Delete a password policy.
@@ -6076,67 +5580,6 @@ Name | Type | Description  | Notes
 
 
 
-## PoliciesReadAclPolicy2
-
-Retrieve the policy body for the named policy.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | The name of the policy. Example: \"ops\"
-	resp, err := client.System.PoliciesReadAclPolicy2(
-		context.Background(),
-		name,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | The name of the policy. Example: \&quot;ops\&quot; | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-[**PoliciesReadAclPolicy2Response**](PoliciesReadAclPolicy2Response.md)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
 ## PoliciesReadPasswordPolicy
 
 Retrieve an existing password policy.
@@ -6255,71 +5698,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **policiesWriteAclPolicyRequest** | [**PoliciesWriteAclPolicyRequest**](PoliciesWriteAclPolicyRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
-## PoliciesWriteAclPolicy2
-
-Add a new or update an existing policy.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-	"github.com/hashicorp/vault-client-go/schema"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | The name of the policy. Example: \"ops\"
-	request := schema.NewPoliciesWriteAclPolicy2RequestWithDefaults()
-	resp, err := client.System.PoliciesWriteAclPolicy2(
-		context.Background(),
-		name,
-		request,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | The name of the policy. Example: \&quot;ops\&quot; | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **policiesWriteAclPolicy2Request** | [**PoliciesWriteAclPolicy2Request**](PoliciesWriteAclPolicy2Request.md) |  | 
 
  (empty response body)
 
@@ -7729,58 +7107,6 @@ Name | Type | Description  | Notes
 
 
 
-## ReadWrappingProperties2
-
-Look up wrapping properties for the requester's token.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	resp, err := client.System.ReadWrappingProperties2(
-		context.Background(),
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
-[**ReadWrappingProperties2Response**](ReadWrappingProperties2Response.md)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
 ## RekeyAttemptCancel
 
 Cancels any in-progress rekey.
@@ -8719,58 +8045,6 @@ This endpoint does not require any parameters.
 
 
 
-## RootTokenGenerationCancel2
-
-Cancels any in-progress root generation attempt.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	resp, err := client.System.RootTokenGenerationCancel2(
-		context.Background(),
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
 ## RootTokenGenerationInitialize
 
 Initializes a new root generation attempt.
@@ -8831,66 +8105,6 @@ Name | Type | Description  | Notes
 
 
 
-## RootTokenGenerationInitialize2
-
-Initializes a new root generation attempt.
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-	"github.com/hashicorp/vault-client-go/schema"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	request := schema.NewRootTokenGenerationInitialize2RequestWithDefaults()
-	resp, err := client.System.RootTokenGenerationInitialize2(
-		context.Background(),
-		request,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **rootTokenGenerationInitialize2Request** | [**RootTokenGenerationInitialize2Request**](RootTokenGenerationInitialize2Request.md) |  | 
-
-[**RootTokenGenerationInitialize2Response**](RootTokenGenerationInitialize2Response.md)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
 ## RootTokenGenerationReadProgress
 
 Read the configuration and progress of the current root generation attempt.
@@ -8937,58 +8151,6 @@ This endpoint does not require any parameters.
 
 
 [**RootTokenGenerationReadProgressResponse**](RootTokenGenerationReadProgressResponse.md)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
-## RootTokenGenerationReadProgress2
-
-Read the configuration and progress of the current root generation attempt.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	resp, err := client.System.RootTokenGenerationReadProgress2(
-		context.Background(),
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
-[**RootTokenGenerationReadProgress2Response**](RootTokenGenerationReadProgress2Response.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)

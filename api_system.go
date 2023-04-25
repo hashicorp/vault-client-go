@@ -937,30 +937,6 @@ func (s *System) InternalGenerateOpenApiDocument(ctx context.Context, genericMou
 	)
 }
 
-// InternalGenerateOpenApiDocument2
-// genericMountPaths: Use generic mount paths
-func (s *System) InternalGenerateOpenApiDocument2(ctx context.Context, request schema.InternalGenerateOpenApiDocument2Request, genericMountPaths bool, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/internal/specs/openapi"
-
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("genericMountPaths", url.QueryEscape(parameterToString(genericMountPaths)))
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // InternalInspectRouter Expose the route entry and mount entry tables present in the router
 // tag: Name of subtree being observed
 func (s *System) InternalInspectRouter(ctx context.Context, tag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
@@ -1166,31 +1142,6 @@ func (s *System) LeasesForceRevokeLeaseWithPrefix(ctx context.Context, prefix st
 	)
 }
 
-// LeasesForceRevokeLeaseWithPrefix2 Revokes all secrets or tokens generated under a given prefix immediately
-// Unlike `/sys/leases/revoke-prefix`, this path ignores backend errors encountered during revocation. This is potentially very dangerous and should only be used in specific emergency situations where errors in the backend or the connected backend service prevent normal revocation.  By ignoring these errors, Vault abdicates responsibility for ensuring that the issued credentials or secrets are properly revoked and/or cleaned up. Access to this endpoint should be tightly controlled.
-// prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
-func (s *System) LeasesForceRevokeLeaseWithPrefix2(ctx context.Context, prefix string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/revoke-force/{prefix}"
-	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // LeasesList
 func (s *System) LeasesList(ctx context.Context, options ...RequestOption) (*Response[schema.LeasesListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
@@ -1305,28 +1256,6 @@ func (s *System) LeasesRenewLease(ctx context.Context, request schema.LeasesRene
 	)
 }
 
-// LeasesRenewLease2 Renews a lease, requesting to extend the lease.
-func (s *System) LeasesRenewLease2(ctx context.Context, request schema.LeasesRenewLease2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/renew"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // LeasesRenewLeaseWithId Renews a lease, requesting to extend the lease.
 // urlLeaseId: The lease identifier to renew. This is included with a lease.
 func (s *System) LeasesRenewLeaseWithId(ctx context.Context, urlLeaseId string, request schema.LeasesRenewLeaseWithIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
@@ -1351,30 +1280,6 @@ func (s *System) LeasesRenewLeaseWithId(ctx context.Context, urlLeaseId string, 
 	)
 }
 
-// LeasesRenewLeaseWithId2 Renews a lease, requesting to extend the lease.
-// urlLeaseId: The lease identifier to renew. This is included with a lease.
-func (s *System) LeasesRenewLeaseWithId2(ctx context.Context, urlLeaseId string, request schema.LeasesRenewLeaseWithId2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/renew/{url_lease_id}"
-	requestPath = strings.Replace(requestPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // LeasesRevokeLease Revokes a lease immediately.
 func (s *System) LeasesRevokeLease(ctx context.Context, request schema.LeasesRevokeLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
@@ -1383,28 +1288,6 @@ func (s *System) LeasesRevokeLease(ctx context.Context, request schema.LeasesRev
 	}
 
 	requestPath := "/v1/sys/leases/revoke"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// LeasesRevokeLease2 Revokes a lease immediately.
-func (s *System) LeasesRevokeLease2(ctx context.Context, request schema.LeasesRevokeLease2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/revoke"
 
 	requestQueryParameters := make(url.Values)
 
@@ -1443,30 +1326,6 @@ func (s *System) LeasesRevokeLeaseWithId(ctx context.Context, urlLeaseId string,
 	)
 }
 
-// LeasesRevokeLeaseWithId2 Revokes a lease immediately.
-// urlLeaseId: The lease identifier to renew. This is included with a lease.
-func (s *System) LeasesRevokeLeaseWithId2(ctx context.Context, urlLeaseId string, request schema.LeasesRevokeLeaseWithId2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/revoke/{url_lease_id}"
-	requestPath = strings.Replace(requestPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // LeasesRevokeLeaseWithPrefix Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
 // prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
 func (s *System) LeasesRevokeLeaseWithPrefix(ctx context.Context, prefix string, request schema.LeasesRevokeLeaseWithPrefixRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
@@ -1476,30 +1335,6 @@ func (s *System) LeasesRevokeLeaseWithPrefix(ctx context.Context, prefix string,
 	}
 
 	requestPath := "/v1/sys/leases/revoke-prefix/{prefix}"
-	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// LeasesRevokeLeaseWithPrefix2 Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
-// prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
-func (s *System) LeasesRevokeLeaseWithPrefix2(ctx context.Context, prefix string, request schema.LeasesRevokeLeaseWithPrefix2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/revoke-prefix/{prefix}"
 	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
 
 	requestQueryParameters := make(url.Values)
@@ -2203,30 +2038,6 @@ func (s *System) PoliciesDeleteAclPolicy(ctx context.Context, name string, optio
 	)
 }
 
-// PoliciesDeleteAclPolicy2 Delete the policy with the given name.
-// name: The name of the policy. Example: \&quot;ops\&quot;
-func (s *System) PoliciesDeleteAclPolicy2(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/policy/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodDelete,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // PoliciesDeletePasswordPolicy Delete a password policy.
 // name: The name of the password policy.
 func (s *System) PoliciesDeletePasswordPolicy(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
@@ -2368,30 +2179,6 @@ func (s *System) PoliciesReadAclPolicy(ctx context.Context, name string, options
 	)
 }
 
-// PoliciesReadAclPolicy2 Retrieve the policy body for the named policy.
-// name: The name of the policy. Example: \&quot;ops\&quot;
-func (s *System) PoliciesReadAclPolicy2(ctx context.Context, name string, options ...RequestOption) (*Response[schema.PoliciesReadAclPolicy2Response], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/policy/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[schema.PoliciesReadAclPolicy2Response](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // PoliciesReadPasswordPolicy Retrieve an existing password policy.
 // name: The name of the password policy.
 func (s *System) PoliciesReadPasswordPolicy(ctx context.Context, name string, options ...RequestOption) (*Response[schema.PoliciesReadPasswordPolicyResponse], error) {
@@ -2425,30 +2212,6 @@ func (s *System) PoliciesWriteAclPolicy(ctx context.Context, name string, reques
 	}
 
 	requestPath := "/v1/sys/policies/acl/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// PoliciesWriteAclPolicy2 Add a new or update an existing policy.
-// name: The name of the policy. Example: \&quot;ops\&quot;
-func (s *System) PoliciesWriteAclPolicy2(ctx context.Context, name string, request schema.PoliciesWriteAclPolicy2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/policy/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	requestQueryParameters := make(url.Values)
@@ -3035,28 +2798,6 @@ func (s *System) ReadWrappingProperties(ctx context.Context, request schema.Read
 	)
 }
 
-// ReadWrappingProperties2 Look up wrapping properties for the requester's token.
-func (s *System) ReadWrappingProperties2(ctx context.Context, options ...RequestOption) (*Response[schema.ReadWrappingProperties2Response], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/wrapping/lookup"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[schema.ReadWrappingProperties2Response](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // RekeyAttemptCancel Cancels any in-progress rekey.
 // This clears the rekey settings as well as any progress made. This must be called to change the parameters of the rekey. Note: verification is still a part of a rekey. If rekeying is canceled during the verification flow, the current unseal keys remain valid.
 func (s *System) RekeyAttemptCancel(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
@@ -3437,28 +3178,6 @@ func (s *System) RootTokenGenerationCancel(ctx context.Context, options ...Reque
 	)
 }
 
-// RootTokenGenerationCancel2 Cancels any in-progress root generation attempt.
-func (s *System) RootTokenGenerationCancel2(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/generate-root"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodDelete,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // RootTokenGenerationInitialize Initializes a new root generation attempt.
 // Only a single root generation attempt can take place at a time. One (and only one) of otp or pgp_key are required.
 func (s *System) RootTokenGenerationInitialize(ctx context.Context, request schema.RootTokenGenerationInitializeRequest, options ...RequestOption) (*Response[schema.RootTokenGenerationInitializeResponse], error) {
@@ -3482,29 +3201,6 @@ func (s *System) RootTokenGenerationInitialize(ctx context.Context, request sche
 	)
 }
 
-// RootTokenGenerationInitialize2 Initializes a new root generation attempt.
-// Only a single root generation attempt can take place at a time. One (and only one) of otp or pgp_key are required.
-func (s *System) RootTokenGenerationInitialize2(ctx context.Context, request schema.RootTokenGenerationInitialize2Request, options ...RequestOption) (*Response[schema.RootTokenGenerationInitialize2Response], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/generate-root"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[schema.RootTokenGenerationInitialize2Response](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // RootTokenGenerationReadProgress Read the configuration and progress of the current root generation attempt.
 func (s *System) RootTokenGenerationReadProgress(ctx context.Context, options ...RequestOption) (*Response[schema.RootTokenGenerationReadProgressResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
@@ -3517,28 +3213,6 @@ func (s *System) RootTokenGenerationReadProgress(ctx context.Context, options ..
 	requestQueryParameters := make(url.Values)
 
 	return sendRequestParseResponse[schema.RootTokenGenerationReadProgressResponse](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// RootTokenGenerationReadProgress2 Read the configuration and progress of the current root generation attempt.
-func (s *System) RootTokenGenerationReadProgress2(ctx context.Context, options ...RequestOption) (*Response[schema.RootTokenGenerationReadProgress2Response], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/generate-root"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[schema.RootTokenGenerationReadProgress2Response](
 		ctx,
 		s.client,
 		http.MethodGet,

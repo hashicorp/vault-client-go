@@ -1846,30 +1846,6 @@ func (i *Identity) OidcProviderAuthorize(ctx context.Context, name string, optio
 	)
 }
 
-// OidcProviderAuthorize2
-// name: Name of the provider
-func (i *Identity) OidcProviderAuthorize2(ctx context.Context, name string, request schema.OidcProviderAuthorize2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/oidc/provider/{name}/authorize"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // OidcProviderToken
 // name: Name of the provider
 func (i *Identity) OidcProviderToken(ctx context.Context, name string, request schema.OidcProviderTokenRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
@@ -1911,30 +1887,6 @@ func (i *Identity) OidcProviderUserInfo(ctx context.Context, name string, option
 		ctx,
 		i.client,
 		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// OidcProviderUserInfo2
-// name: Name of the provider
-func (i *Identity) OidcProviderUserInfo2(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/identity/oidc/provider/{name}/userinfo"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		i.client,
-		http.MethodPost,
 		requestPath,
 		nil, // request body
 		requestQueryParameters,

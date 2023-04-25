@@ -14,9 +14,7 @@ Method | HTTP request | Description
 [**AwsConfigureRootIamCredentials**](SecretsApi.md#AwsConfigureRootIamCredentials) | **Post** /{aws_mount_path}/config/root | 
 [**AwsDeleteRole**](SecretsApi.md#AwsDeleteRole) | **Delete** /{aws_mount_path}/roles/{name} | Read, write and reference IAM policies that access keys can be made for.
 [**AwsGenerateCredentials**](SecretsApi.md#AwsGenerateCredentials) | **Get** /{aws_mount_path}/creds/{name} | 
-[**AwsGenerateCredentials2**](SecretsApi.md#AwsGenerateCredentials2) | **Post** /{aws_mount_path}/creds/{name} | 
 [**AwsGenerateStsCredentials**](SecretsApi.md#AwsGenerateStsCredentials) | **Get** /{aws_mount_path}/sts/{name} | 
-[**AwsGenerateStsCredentials2**](SecretsApi.md#AwsGenerateStsCredentials2) | **Post** /{aws_mount_path}/sts/{name} | 
 [**AwsListRoles**](SecretsApi.md#AwsListRoles) | **Get** /{aws_mount_path}/roles | List the existing roles in this backend
 [**AwsReadLeaseConfiguration**](SecretsApi.md#AwsReadLeaseConfiguration) | **Get** /{aws_mount_path}/config/lease | 
 [**AwsReadRole**](SecretsApi.md#AwsReadRole) | **Get** /{aws_mount_path}/roles/{name} | Read, write and reference IAM policies that access keys can be made for.
@@ -64,15 +62,10 @@ Method | HTTP request | Description
 [**GoogleCloudDeleteRoleset**](SecretsApi.md#GoogleCloudDeleteRoleset) | **Delete** /{gcp_mount_path}/roleset/{name} | 
 [**GoogleCloudDeleteStaticAccount**](SecretsApi.md#GoogleCloudDeleteStaticAccount) | **Delete** /{gcp_mount_path}/static-account/{name} | 
 [**GoogleCloudGenerateImpersonatedAccountAccessToken**](SecretsApi.md#GoogleCloudGenerateImpersonatedAccountAccessToken) | **Get** /{gcp_mount_path}/impersonated-account/{name}/token | 
-[**GoogleCloudGenerateImpersonatedAccountAccessToken2**](SecretsApi.md#GoogleCloudGenerateImpersonatedAccountAccessToken2) | **Post** /{gcp_mount_path}/impersonated-account/{name}/token | 
 [**GoogleCloudGenerateRolesetAccessToken**](SecretsApi.md#GoogleCloudGenerateRolesetAccessToken) | **Get** /{gcp_mount_path}/roleset/{roleset}/token | 
-[**GoogleCloudGenerateRolesetAccessToken2**](SecretsApi.md#GoogleCloudGenerateRolesetAccessToken2) | **Get** /{gcp_mount_path}/token/{roleset} | 
 [**GoogleCloudGenerateRolesetAccessTokenWithParameters**](SecretsApi.md#GoogleCloudGenerateRolesetAccessTokenWithParameters) | **Post** /{gcp_mount_path}/roleset/{roleset}/token | 
-[**GoogleCloudGenerateRolesetAccessTokenWithParameters2**](SecretsApi.md#GoogleCloudGenerateRolesetAccessTokenWithParameters2) | **Post** /{gcp_mount_path}/token/{roleset} | 
 [**GoogleCloudGenerateRolesetKey**](SecretsApi.md#GoogleCloudGenerateRolesetKey) | **Get** /{gcp_mount_path}/roleset/{roleset}/key | 
-[**GoogleCloudGenerateRolesetKey2**](SecretsApi.md#GoogleCloudGenerateRolesetKey2) | **Get** /{gcp_mount_path}/key/{roleset} | 
 [**GoogleCloudGenerateRolesetKeyWithParameters**](SecretsApi.md#GoogleCloudGenerateRolesetKeyWithParameters) | **Post** /{gcp_mount_path}/roleset/{roleset}/key | 
-[**GoogleCloudGenerateRolesetKeyWithParameters2**](SecretsApi.md#GoogleCloudGenerateRolesetKeyWithParameters2) | **Post** /{gcp_mount_path}/key/{roleset} | 
 [**GoogleCloudGenerateStaticAccountAccessToken**](SecretsApi.md#GoogleCloudGenerateStaticAccountAccessToken) | **Get** /{gcp_mount_path}/static-account/{name}/token | 
 [**GoogleCloudGenerateStaticAccountAccessTokenWithParameters**](SecretsApi.md#GoogleCloudGenerateStaticAccountAccessTokenWithParameters) | **Post** /{gcp_mount_path}/static-account/{name}/token | 
 [**GoogleCloudGenerateStaticAccountKey**](SecretsApi.md#GoogleCloudGenerateStaticAccountKey) | **Get** /{gcp_mount_path}/static-account/{name}/key | 
@@ -83,7 +76,6 @@ Method | HTTP request | Description
 [**GoogleCloudKmsDeleteConfiguration**](SecretsApi.md#GoogleCloudKmsDeleteConfiguration) | **Delete** /{gcpkms_mount_path}/config | 
 [**GoogleCloudKmsDeleteKey**](SecretsApi.md#GoogleCloudKmsDeleteKey) | **Delete** /{gcpkms_mount_path}/keys/{key} | Interact with crypto keys in Vault and Google Cloud KMS
 [**GoogleCloudKmsDeregisterKey**](SecretsApi.md#GoogleCloudKmsDeregisterKey) | **Post** /{gcpkms_mount_path}/keys/deregister/{key} | 
-[**GoogleCloudKmsDeregisterKey2**](SecretsApi.md#GoogleCloudKmsDeregisterKey2) | **Delete** /{gcpkms_mount_path}/keys/deregister/{key} | 
 [**GoogleCloudKmsEncrypt**](SecretsApi.md#GoogleCloudKmsEncrypt) | **Post** /{gcpkms_mount_path}/encrypt/{key} | Encrypt a plaintext value using a named key
 [**GoogleCloudKmsListKeys**](SecretsApi.md#GoogleCloudKmsListKeys) | **Get** /{gcpkms_mount_path}/keys | List named keys
 [**GoogleCloudKmsReadConfiguration**](SecretsApi.md#GoogleCloudKmsReadConfiguration) | **Get** /{gcpkms_mount_path}/config | 
@@ -95,15 +87,11 @@ Method | HTTP request | Description
 [**GoogleCloudKmsRotateKey**](SecretsApi.md#GoogleCloudKmsRotateKey) | **Post** /{gcpkms_mount_path}/keys/rotate/{key} | Rotate a crypto key to a new primary version
 [**GoogleCloudKmsSign**](SecretsApi.md#GoogleCloudKmsSign) | **Post** /{gcpkms_mount_path}/sign/{key} | Signs a message or digest using a named key
 [**GoogleCloudKmsTrimKeyVersions**](SecretsApi.md#GoogleCloudKmsTrimKeyVersions) | **Post** /{gcpkms_mount_path}/keys/trim/{key} | 
-[**GoogleCloudKmsTrimKeyVersions2**](SecretsApi.md#GoogleCloudKmsTrimKeyVersions2) | **Delete** /{gcpkms_mount_path}/keys/trim/{key} | 
 [**GoogleCloudKmsVerify**](SecretsApi.md#GoogleCloudKmsVerify) | **Post** /{gcpkms_mount_path}/verify/{key} | Verify a signature using a named key
 [**GoogleCloudKmsWriteKey**](SecretsApi.md#GoogleCloudKmsWriteKey) | **Post** /{gcpkms_mount_path}/keys/{key} | Interact with crypto keys in Vault and Google Cloud KMS
 [**GoogleCloudListImpersonatedAccounts**](SecretsApi.md#GoogleCloudListImpersonatedAccounts) | **Get** /{gcp_mount_path}/impersonated-account | 
-[**GoogleCloudListImpersonatedAccounts2**](SecretsApi.md#GoogleCloudListImpersonatedAccounts2) | **Get** /{gcp_mount_path}/impersonated-accounts | 
 [**GoogleCloudListRolesets**](SecretsApi.md#GoogleCloudListRolesets) | **Get** /{gcp_mount_path}/roleset | 
-[**GoogleCloudListRolesets2**](SecretsApi.md#GoogleCloudListRolesets2) | **Get** /{gcp_mount_path}/rolesets | 
 [**GoogleCloudListStaticAccounts**](SecretsApi.md#GoogleCloudListStaticAccounts) | **Get** /{gcp_mount_path}/static-account | 
-[**GoogleCloudListStaticAccounts2**](SecretsApi.md#GoogleCloudListStaticAccounts2) | **Get** /{gcp_mount_path}/static-accounts | 
 [**GoogleCloudReadConfiguration**](SecretsApi.md#GoogleCloudReadConfiguration) | **Get** /{gcp_mount_path}/config | 
 [**GoogleCloudReadImpersonatedAccount**](SecretsApi.md#GoogleCloudReadImpersonatedAccount) | **Get** /{gcp_mount_path}/impersonated-account/{name} | 
 [**GoogleCloudReadRoleset**](SecretsApi.md#GoogleCloudReadRoleset) | **Get** /{gcp_mount_path}/roleset/{name} | 
@@ -165,7 +153,6 @@ Method | HTTP request | Description
 [**MongoDbAtlasConfigure**](SecretsApi.md#MongoDbAtlasConfigure) | **Post** /{mongodbatlas_mount_path}/config | 
 [**MongoDbAtlasDeleteRole**](SecretsApi.md#MongoDbAtlasDeleteRole) | **Delete** /{mongodbatlas_mount_path}/roles/{name} | Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
 [**MongoDbAtlasGenerateCredentials**](SecretsApi.md#MongoDbAtlasGenerateCredentials) | **Get** /{mongodbatlas_mount_path}/creds/{name} | 
-[**MongoDbAtlasGenerateCredentials2**](SecretsApi.md#MongoDbAtlasGenerateCredentials2) | **Post** /{mongodbatlas_mount_path}/creds/{name} | 
 [**MongoDbAtlasListRoles**](SecretsApi.md#MongoDbAtlasListRoles) | **Get** /{mongodbatlas_mount_path}/roles | List the existing roles in this backend
 [**MongoDbAtlasReadConfiguration**](SecretsApi.md#MongoDbAtlasReadConfiguration) | **Get** /{mongodbatlas_mount_path}/config | 
 [**MongoDbAtlasReadRole**](SecretsApi.md#MongoDbAtlasReadRole) | **Get** /{mongodbatlas_mount_path}/roles/{name} | Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
@@ -298,7 +285,6 @@ Method | HTTP request | Description
 [**TerraformCloudDeleteConfiguration**](SecretsApi.md#TerraformCloudDeleteConfiguration) | **Delete** /{terraform_mount_path}/config | 
 [**TerraformCloudDeleteRole**](SecretsApi.md#TerraformCloudDeleteRole) | **Delete** /{terraform_mount_path}/role/{name} | 
 [**TerraformCloudGenerateCredentials**](SecretsApi.md#TerraformCloudGenerateCredentials) | **Get** /{terraform_mount_path}/creds/{name} | 
-[**TerraformCloudGenerateCredentials2**](SecretsApi.md#TerraformCloudGenerateCredentials2) | **Post** /{terraform_mount_path}/creds/{name} | 
 [**TerraformCloudListRoles**](SecretsApi.md#TerraformCloudListRoles) | **Get** /{terraform_mount_path}/role | 
 [**TerraformCloudReadConfiguration**](SecretsApi.md#TerraformCloudReadConfiguration) | **Get** /{terraform_mount_path}/config | 
 [**TerraformCloudReadRole**](SecretsApi.md#TerraformCloudReadRole) | **Get** /{terraform_mount_path}/role/{name} | 

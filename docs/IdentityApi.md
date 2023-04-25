@@ -80,10 +80,8 @@ Method | HTTP request | Description
 [**OidcListRoles**](IdentityApi.md#OidcListRoles) | **Get** /identity/oidc/role | List configured OIDC roles
 [**OidcListScopes**](IdentityApi.md#OidcListScopes) | **Get** /identity/oidc/scope | 
 [**OidcProviderAuthorize**](IdentityApi.md#OidcProviderAuthorize) | **Get** /identity/oidc/provider/{name}/authorize | 
-[**OidcProviderAuthorize2**](IdentityApi.md#OidcProviderAuthorize2) | **Post** /identity/oidc/provider/{name}/authorize | 
 [**OidcProviderToken**](IdentityApi.md#OidcProviderToken) | **Post** /identity/oidc/provider/{name}/token | 
 [**OidcProviderUserInfo**](IdentityApi.md#OidcProviderUserInfo) | **Get** /identity/oidc/provider/{name}/userinfo | 
-[**OidcProviderUserInfo2**](IdentityApi.md#OidcProviderUserInfo2) | **Post** /identity/oidc/provider/{name}/userinfo | 
 [**OidcReadAssignment**](IdentityApi.md#OidcReadAssignment) | **Get** /identity/oidc/assignment/{name} | 
 [**OidcReadClient**](IdentityApi.md#OidcReadClient) | **Get** /identity/oidc/client/{name} | 
 [**OidcReadConfiguration**](IdentityApi.md#OidcReadConfiguration) | **Get** /identity/oidc/config | 

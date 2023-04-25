@@ -180,8 +180,8 @@ client.Identity // identity-related methods
 client.System   // various system-wide calls
 ```
 
-Below is an example of accessing the generated `MountsListSecretsEngines`
-method (equivalent to `vault secrets list` or `GET /v1/sys/mounts`):
+Below is an example of accessing the generated `MountsListSecretsEngines` method
+(equivalent to `vault secrets list` or `GET /v1/sys/mounts`):
 
 ```go
 resp, err := client.System.MountsListSecretsEngines(ctx)

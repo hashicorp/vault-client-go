@@ -4,6 +4,11 @@ api/openapi.yaml
 
 README.md
 
+model_*2_request.go
+model_*2_response.go
+model_*3_request.go
+model_*3_response.go
+
 configuration.go
 response.go
 utils.go

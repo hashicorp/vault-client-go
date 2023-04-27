@@ -11,7 +11,6 @@ regen: bootstrap generate format tidy clean
 bootstrap:
 	go install mvdan.cc/gofumpt@latest
 
-# --api-name-suffix does not allow empty strings; "REPLACE~ME" is a workaround
 generate:
 	docker run \
 		--rm \

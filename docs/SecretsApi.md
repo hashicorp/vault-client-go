@@ -14,9 +14,7 @@ Method | HTTP request | Description
 [**AwsConfigureRootIamCredentials**](SecretsApi.md#AwsConfigureRootIamCredentials) | **Post** /{aws_mount_path}/config/root | 
 [**AwsDeleteRole**](SecretsApi.md#AwsDeleteRole) | **Delete** /{aws_mount_path}/roles/{name} | Read, write and reference IAM policies that access keys can be made for.
 [**AwsGenerateCredentials**](SecretsApi.md#AwsGenerateCredentials) | **Get** /{aws_mount_path}/creds/{name} | 
-[**AwsGenerateCredentials2**](SecretsApi.md#AwsGenerateCredentials2) | **Post** /{aws_mount_path}/creds/{name} | 
 [**AwsGenerateStsCredentials**](SecretsApi.md#AwsGenerateStsCredentials) | **Get** /{aws_mount_path}/sts/{name} | 
-[**AwsGenerateStsCredentials2**](SecretsApi.md#AwsGenerateStsCredentials2) | **Post** /{aws_mount_path}/sts/{name} | 
 [**AwsListRoles**](SecretsApi.md#AwsListRoles) | **Get** /{aws_mount_path}/roles | List the existing roles in this backend
 [**AwsReadLeaseConfiguration**](SecretsApi.md#AwsReadLeaseConfiguration) | **Get** /{aws_mount_path}/config/lease | 
 [**AwsReadRole**](SecretsApi.md#AwsReadRole) | **Get** /{aws_mount_path}/roles/{name} | Read, write and reference IAM policies that access keys can be made for.
@@ -64,15 +62,10 @@ Method | HTTP request | Description
 [**GoogleCloudDeleteRoleset**](SecretsApi.md#GoogleCloudDeleteRoleset) | **Delete** /{gcp_mount_path}/roleset/{name} | 
 [**GoogleCloudDeleteStaticAccount**](SecretsApi.md#GoogleCloudDeleteStaticAccount) | **Delete** /{gcp_mount_path}/static-account/{name} | 
 [**GoogleCloudGenerateImpersonatedAccountAccessToken**](SecretsApi.md#GoogleCloudGenerateImpersonatedAccountAccessToken) | **Get** /{gcp_mount_path}/impersonated-account/{name}/token | 
-[**GoogleCloudGenerateImpersonatedAccountAccessToken2**](SecretsApi.md#GoogleCloudGenerateImpersonatedAccountAccessToken2) | **Post** /{gcp_mount_path}/impersonated-account/{name}/token | 
 [**GoogleCloudGenerateRolesetAccessToken**](SecretsApi.md#GoogleCloudGenerateRolesetAccessToken) | **Get** /{gcp_mount_path}/roleset/{roleset}/token | 
-[**GoogleCloudGenerateRolesetAccessToken2**](SecretsApi.md#GoogleCloudGenerateRolesetAccessToken2) | **Get** /{gcp_mount_path}/token/{roleset} | 
 [**GoogleCloudGenerateRolesetAccessTokenWithParameters**](SecretsApi.md#GoogleCloudGenerateRolesetAccessTokenWithParameters) | **Post** /{gcp_mount_path}/roleset/{roleset}/token | 
-[**GoogleCloudGenerateRolesetAccessTokenWithParameters2**](SecretsApi.md#GoogleCloudGenerateRolesetAccessTokenWithParameters2) | **Post** /{gcp_mount_path}/token/{roleset} | 
 [**GoogleCloudGenerateRolesetKey**](SecretsApi.md#GoogleCloudGenerateRolesetKey) | **Get** /{gcp_mount_path}/roleset/{roleset}/key | 
-[**GoogleCloudGenerateRolesetKey2**](SecretsApi.md#GoogleCloudGenerateRolesetKey2) | **Get** /{gcp_mount_path}/key/{roleset} | 
 [**GoogleCloudGenerateRolesetKeyWithParameters**](SecretsApi.md#GoogleCloudGenerateRolesetKeyWithParameters) | **Post** /{gcp_mount_path}/roleset/{roleset}/key | 
-[**GoogleCloudGenerateRolesetKeyWithParameters2**](SecretsApi.md#GoogleCloudGenerateRolesetKeyWithParameters2) | **Post** /{gcp_mount_path}/key/{roleset} | 
 [**GoogleCloudGenerateStaticAccountAccessToken**](SecretsApi.md#GoogleCloudGenerateStaticAccountAccessToken) | **Get** /{gcp_mount_path}/static-account/{name}/token | 
 [**GoogleCloudGenerateStaticAccountAccessTokenWithParameters**](SecretsApi.md#GoogleCloudGenerateStaticAccountAccessTokenWithParameters) | **Post** /{gcp_mount_path}/static-account/{name}/token | 
 [**GoogleCloudGenerateStaticAccountKey**](SecretsApi.md#GoogleCloudGenerateStaticAccountKey) | **Get** /{gcp_mount_path}/static-account/{name}/key | 
@@ -83,7 +76,6 @@ Method | HTTP request | Description
 [**GoogleCloudKmsDeleteConfiguration**](SecretsApi.md#GoogleCloudKmsDeleteConfiguration) | **Delete** /{gcpkms_mount_path}/config | 
 [**GoogleCloudKmsDeleteKey**](SecretsApi.md#GoogleCloudKmsDeleteKey) | **Delete** /{gcpkms_mount_path}/keys/{key} | Interact with crypto keys in Vault and Google Cloud KMS
 [**GoogleCloudKmsDeregisterKey**](SecretsApi.md#GoogleCloudKmsDeregisterKey) | **Post** /{gcpkms_mount_path}/keys/deregister/{key} | 
-[**GoogleCloudKmsDeregisterKey2**](SecretsApi.md#GoogleCloudKmsDeregisterKey2) | **Delete** /{gcpkms_mount_path}/keys/deregister/{key} | 
 [**GoogleCloudKmsEncrypt**](SecretsApi.md#GoogleCloudKmsEncrypt) | **Post** /{gcpkms_mount_path}/encrypt/{key} | Encrypt a plaintext value using a named key
 [**GoogleCloudKmsListKeys**](SecretsApi.md#GoogleCloudKmsListKeys) | **Get** /{gcpkms_mount_path}/keys | List named keys
 [**GoogleCloudKmsReadConfiguration**](SecretsApi.md#GoogleCloudKmsReadConfiguration) | **Get** /{gcpkms_mount_path}/config | 
@@ -95,15 +87,11 @@ Method | HTTP request | Description
 [**GoogleCloudKmsRotateKey**](SecretsApi.md#GoogleCloudKmsRotateKey) | **Post** /{gcpkms_mount_path}/keys/rotate/{key} | Rotate a crypto key to a new primary version
 [**GoogleCloudKmsSign**](SecretsApi.md#GoogleCloudKmsSign) | **Post** /{gcpkms_mount_path}/sign/{key} | Signs a message or digest using a named key
 [**GoogleCloudKmsTrimKeyVersions**](SecretsApi.md#GoogleCloudKmsTrimKeyVersions) | **Post** /{gcpkms_mount_path}/keys/trim/{key} | 
-[**GoogleCloudKmsTrimKeyVersions2**](SecretsApi.md#GoogleCloudKmsTrimKeyVersions2) | **Delete** /{gcpkms_mount_path}/keys/trim/{key} | 
 [**GoogleCloudKmsVerify**](SecretsApi.md#GoogleCloudKmsVerify) | **Post** /{gcpkms_mount_path}/verify/{key} | Verify a signature using a named key
 [**GoogleCloudKmsWriteKey**](SecretsApi.md#GoogleCloudKmsWriteKey) | **Post** /{gcpkms_mount_path}/keys/{key} | Interact with crypto keys in Vault and Google Cloud KMS
 [**GoogleCloudListImpersonatedAccounts**](SecretsApi.md#GoogleCloudListImpersonatedAccounts) | **Get** /{gcp_mount_path}/impersonated-account | 
-[**GoogleCloudListImpersonatedAccounts2**](SecretsApi.md#GoogleCloudListImpersonatedAccounts2) | **Get** /{gcp_mount_path}/impersonated-accounts | 
 [**GoogleCloudListRolesets**](SecretsApi.md#GoogleCloudListRolesets) | **Get** /{gcp_mount_path}/roleset | 
-[**GoogleCloudListRolesets2**](SecretsApi.md#GoogleCloudListRolesets2) | **Get** /{gcp_mount_path}/rolesets | 
 [**GoogleCloudListStaticAccounts**](SecretsApi.md#GoogleCloudListStaticAccounts) | **Get** /{gcp_mount_path}/static-account | 
-[**GoogleCloudListStaticAccounts2**](SecretsApi.md#GoogleCloudListStaticAccounts2) | **Get** /{gcp_mount_path}/static-accounts | 
 [**GoogleCloudReadConfiguration**](SecretsApi.md#GoogleCloudReadConfiguration) | **Get** /{gcp_mount_path}/config | 
 [**GoogleCloudReadImpersonatedAccount**](SecretsApi.md#GoogleCloudReadImpersonatedAccount) | **Get** /{gcp_mount_path}/impersonated-account/{name} | 
 [**GoogleCloudReadRoleset**](SecretsApi.md#GoogleCloudReadRoleset) | **Get** /{gcp_mount_path}/roleset/{name} | 
@@ -165,7 +153,6 @@ Method | HTTP request | Description
 [**MongoDbAtlasConfigure**](SecretsApi.md#MongoDbAtlasConfigure) | **Post** /{mongodbatlas_mount_path}/config | 
 [**MongoDbAtlasDeleteRole**](SecretsApi.md#MongoDbAtlasDeleteRole) | **Delete** /{mongodbatlas_mount_path}/roles/{name} | Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
 [**MongoDbAtlasGenerateCredentials**](SecretsApi.md#MongoDbAtlasGenerateCredentials) | **Get** /{mongodbatlas_mount_path}/creds/{name} | 
-[**MongoDbAtlasGenerateCredentials2**](SecretsApi.md#MongoDbAtlasGenerateCredentials2) | **Post** /{mongodbatlas_mount_path}/creds/{name} | 
 [**MongoDbAtlasListRoles**](SecretsApi.md#MongoDbAtlasListRoles) | **Get** /{mongodbatlas_mount_path}/roles | List the existing roles in this backend
 [**MongoDbAtlasReadConfiguration**](SecretsApi.md#MongoDbAtlasReadConfiguration) | **Get** /{mongodbatlas_mount_path}/config | 
 [**MongoDbAtlasReadRole**](SecretsApi.md#MongoDbAtlasReadRole) | **Get** /{mongodbatlas_mount_path}/roles/{name} | Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
@@ -298,7 +285,6 @@ Method | HTTP request | Description
 [**TerraformCloudDeleteConfiguration**](SecretsApi.md#TerraformCloudDeleteConfiguration) | **Delete** /{terraform_mount_path}/config | 
 [**TerraformCloudDeleteRole**](SecretsApi.md#TerraformCloudDeleteRole) | **Delete** /{terraform_mount_path}/role/{name} | 
 [**TerraformCloudGenerateCredentials**](SecretsApi.md#TerraformCloudGenerateCredentials) | **Get** /{terraform_mount_path}/creds/{name} | 
-[**TerraformCloudGenerateCredentials2**](SecretsApi.md#TerraformCloudGenerateCredentials2) | **Post** /{terraform_mount_path}/creds/{name} | 
 [**TerraformCloudListRoles**](SecretsApi.md#TerraformCloudListRoles) | **Get** /{terraform_mount_path}/role | 
 [**TerraformCloudReadConfiguration**](SecretsApi.md#TerraformCloudReadConfiguration) | **Get** /{terraform_mount_path}/config | 
 [**TerraformCloudReadRole**](SecretsApi.md#TerraformCloudReadRole) | **Get** /{terraform_mount_path}/role/{name} | 
@@ -1123,75 +1109,6 @@ Name | Type | Description  | Notes
 
 
 
-## AwsGenerateCredentials2
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-	"github.com/hashicorp/vault-client-go/schema"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
-	request := schema.NewAwsGenerateCredentials2RequestWithDefaults()
-	resp, err := client.Secrets.AwsGenerateCredentials2(
-		context.Background(),
-		name,
-		awsMountPath,
-		request,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
-**awsMountPath** | **string** | Path that the backend was mounted at | [default to &quot;aws&quot;]
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **awsGenerateCredentials2Request** | [**AwsGenerateCredentials2Request**](AwsGenerateCredentials2Request.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
 ## AwsGenerateStsCredentials
 
 
@@ -1249,75 +1166,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
-## AwsGenerateStsCredentials2
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-	"github.com/hashicorp/vault-client-go/schema"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
-	request := schema.NewAwsGenerateStsCredentials2RequestWithDefaults()
-	resp, err := client.Secrets.AwsGenerateStsCredentials2(
-		context.Background(),
-		name,
-		awsMountPath,
-		request,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
-**awsMountPath** | **string** | Path that the backend was mounted at | [default to &quot;aws&quot;]
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **awsGenerateStsCredentials2Request** | [**AwsGenerateStsCredentials2Request**](AwsGenerateStsCredentials2Request.md) |  | 
 
  (empty response body)
 
@@ -4348,71 +4196,6 @@ Name | Type | Description  | Notes
 
 
 
-## GoogleCloudGenerateImpersonatedAccountAccessToken2
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Required. Name of the impersonated account.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
-	resp, err := client.Secrets.GoogleCloudGenerateImpersonatedAccountAccessToken2(
-		context.Background(),
-		name,
-		gcpMountPath,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Required. Name of the impersonated account. | 
-**gcpMountPath** | **string** | Path that the backend was mounted at | [default to &quot;gcp&quot;]
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
 ## GoogleCloudGenerateRolesetAccessToken
 
 
@@ -4441,71 +4224,6 @@ func main() {
 	roleset := "roleset_example" // string | Required. Name of the role set.
 	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Secrets.GoogleCloudGenerateRolesetAccessToken(
-		context.Background(),
-		roleset,
-		gcpMountPath,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**roleset** | **string** | Required. Name of the role set. | 
-**gcpMountPath** | **string** | Path that the backend was mounted at | [default to &quot;gcp&quot;]
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
-## GoogleCloudGenerateRolesetAccessToken2
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	roleset := "roleset_example" // string | Required. Name of the role set.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
-	resp, err := client.Secrets.GoogleCloudGenerateRolesetAccessToken2(
 		context.Background(),
 		roleset,
 		gcpMountPath,
@@ -4608,71 +4326,6 @@ Name | Type | Description  | Notes
 
 
 
-## GoogleCloudGenerateRolesetAccessTokenWithParameters2
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	roleset := "roleset_example" // string | Required. Name of the role set.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
-	resp, err := client.Secrets.GoogleCloudGenerateRolesetAccessTokenWithParameters2(
-		context.Background(),
-		roleset,
-		gcpMountPath,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**roleset** | **string** | Required. Name of the role set. | 
-**gcpMountPath** | **string** | Path that the backend was mounted at | [default to &quot;gcp&quot;]
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
 ## GoogleCloudGenerateRolesetKey
 
 
@@ -4701,71 +4354,6 @@ func main() {
 	roleset := "roleset_example" // string | Required. Name of the role set.
 	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Secrets.GoogleCloudGenerateRolesetKey(
-		context.Background(),
-		roleset,
-		gcpMountPath,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**roleset** | **string** | Required. Name of the role set. | 
-**gcpMountPath** | **string** | Path that the backend was mounted at | [default to &quot;gcp&quot;]
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
-## GoogleCloudGenerateRolesetKey2
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	roleset := "roleset_example" // string | Required. Name of the role set.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
-	resp, err := client.Secrets.GoogleCloudGenerateRolesetKey2(
 		context.Background(),
 		roleset,
 		gcpMountPath,
@@ -4864,75 +4452,6 @@ Name | Type | Description  | Notes
 
 
  **googleCloudGenerateRolesetKeyWithParametersRequest** | [**GoogleCloudGenerateRolesetKeyWithParametersRequest**](GoogleCloudGenerateRolesetKeyWithParametersRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
-## GoogleCloudGenerateRolesetKeyWithParameters2
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-	"github.com/hashicorp/vault-client-go/schema"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	roleset := "roleset_example" // string | Required. Name of the role set.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
-	request := schema.NewGoogleCloudGenerateRolesetKeyWithParameters2RequestWithDefaults()
-	resp, err := client.Secrets.GoogleCloudGenerateRolesetKeyWithParameters2(
-		context.Background(),
-		roleset,
-		gcpMountPath,
-		request,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**roleset** | **string** | Required. Name of the role set. | 
-**gcpMountPath** | **string** | Path that the backend was mounted at | [default to &quot;gcp&quot;]
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **googleCloudGenerateRolesetKeyWithParameters2Request** | [**GoogleCloudGenerateRolesetKeyWithParameters2Request**](GoogleCloudGenerateRolesetKeyWithParameters2Request.md) |  | 
 
  (empty response body)
 
@@ -5562,71 +5081,6 @@ func main() {
 	key := "key_example" // string | Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
 	gcpkmsMountPath := "gcpkmsMountPath_example" // string | Path that the backend was mounted at (defaults to "gcpkms")
 	resp, err := client.Secrets.GoogleCloudKmsDeregisterKey(
-		context.Background(),
-		key,
-		gcpkmsMountPath,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**key** | **string** | Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched. | 
-**gcpkmsMountPath** | **string** | Path that the backend was mounted at | [default to &quot;gcpkms&quot;]
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
-## GoogleCloudKmsDeregisterKey2
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	key := "key_example" // string | Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
-	gcpkmsMountPath := "gcpkmsMountPath_example" // string | Path that the backend was mounted at (defaults to "gcpkms")
-	resp, err := client.Secrets.GoogleCloudKmsDeregisterKey2(
 		context.Background(),
 		key,
 		gcpkmsMountPath,
@@ -6388,71 +5842,6 @@ Name | Type | Description  | Notes
 
 
 
-## GoogleCloudKmsTrimKeyVersions2
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	key := "key_example" // string | Name of the key in Vault.
-	gcpkmsMountPath := "gcpkmsMountPath_example" // string | Path that the backend was mounted at (defaults to "gcpkms")
-	resp, err := client.Secrets.GoogleCloudKmsTrimKeyVersions2(
-		context.Background(),
-		key,
-		gcpkmsMountPath,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**key** | **string** | Name of the key in Vault. | 
-**gcpkmsMountPath** | **string** | Path that the backend was mounted at | [default to &quot;gcpkms&quot;]
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
 ## GoogleCloudKmsVerify
 
 Verify a signature using a named key
@@ -6653,68 +6042,6 @@ Name | Type | Description  | Notes
 
 
 
-## GoogleCloudListImpersonatedAccounts2
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
-	resp, err := client.Secrets.GoogleCloudListImpersonatedAccounts2(
-		context.Background(),
-		gcpMountPath,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**gcpMountPath** | **string** | Path that the backend was mounted at | [default to &quot;gcp&quot;]
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
 ## GoogleCloudListRolesets
 
 
@@ -6777,68 +6104,6 @@ Name | Type | Description  | Notes
 
 
 
-## GoogleCloudListRolesets2
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
-	resp, err := client.Secrets.GoogleCloudListRolesets2(
-		context.Background(),
-		gcpMountPath,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**gcpMountPath** | **string** | Path that the backend was mounted at | [default to &quot;gcp&quot;]
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
 ## GoogleCloudListStaticAccounts
 
 
@@ -6866,68 +6131,6 @@ func main() {
 
 	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Secrets.GoogleCloudListStaticAccounts(
-		context.Background(),
-		gcpMountPath,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**gcpMountPath** | **string** | Path that the backend was mounted at | [default to &quot;gcp&quot;]
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
-## GoogleCloudListStaticAccounts2
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
-	resp, err := client.Secrets.GoogleCloudListStaticAccounts2(
 		context.Background(),
 		gcpMountPath,
 		vault.WithToken("my-token"),
@@ -10909,71 +10112,6 @@ func main() {
 	name := "name_example" // string | Name of the role
 	mongodbatlasMountPath := "mongodbatlasMountPath_example" // string | Path that the backend was mounted at (defaults to "mongodbatlas")
 	resp, err := client.Secrets.MongoDbAtlasGenerateCredentials(
-		context.Background(),
-		name,
-		mongodbatlasMountPath,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
-**mongodbatlasMountPath** | **string** | Path that the backend was mounted at | [default to &quot;mongodbatlas&quot;]
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
-## MongoDbAtlasGenerateCredentials2
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-	mongodbatlasMountPath := "mongodbatlasMountPath_example" // string | Path that the backend was mounted at (defaults to "mongodbatlas")
-	resp, err := client.Secrets.MongoDbAtlasGenerateCredentials2(
 		context.Background(),
 		name,
 		mongodbatlasMountPath,
@@ -19503,71 +18641,6 @@ func main() {
 	name := "name_example" // string | Name of the role
 	terraformMountPath := "terraformMountPath_example" // string | Path that the backend was mounted at (defaults to "terraform")
 	resp, err := client.Secrets.TerraformCloudGenerateCredentials(
-		context.Background(),
-		name,
-		terraformMountPath,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
-**terraformMountPath** | **string** | Path that the backend was mounted at | [default to &quot;terraform&quot;]
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
-## TerraformCloudGenerateCredentials2
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-	terraformMountPath := "terraformMountPath_example" // string | Path that the backend was mounted at (defaults to "terraform")
-	resp, err := client.Secrets.TerraformCloudGenerateCredentials2(
 		context.Background(),
 		name,
 		terraformMountPath,

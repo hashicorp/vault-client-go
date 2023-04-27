@@ -308,31 +308,6 @@ func (s *Secrets) AwsGenerateCredentials(ctx context.Context, name string, optio
 	)
 }
 
-// AwsGenerateCredentials2
-// name: Name of the role
-func (s *Secrets) AwsGenerateCredentials2(ctx context.Context, name string, request schema.AwsGenerateCredentials2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{aws_mount_path}/creds/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // AwsGenerateStsCredentials
 // name: Name of the role
 func (s *Secrets) AwsGenerateStsCredentials(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
@@ -353,31 +328,6 @@ func (s *Secrets) AwsGenerateStsCredentials(ctx context.Context, name string, op
 		http.MethodGet,
 		requestPath,
 		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// AwsGenerateStsCredentials2
-// name: Name of the role
-func (s *Secrets) AwsGenerateStsCredentials2(ctx context.Context, name string, request schema.AwsGenerateStsCredentials2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{aws_mount_path}/sts/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
 		requestQueryParameters,
 		requestModifiers,
 	)
@@ -1530,31 +1480,6 @@ func (s *Secrets) GoogleCloudGenerateImpersonatedAccountAccessToken(ctx context.
 	)
 }
 
-// GoogleCloudGenerateImpersonatedAccountAccessToken2
-// name: Required. Name of the impersonated account.
-func (s *Secrets) GoogleCloudGenerateImpersonatedAccountAccessToken2(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{gcp_mount_path}/impersonated-account/{name}/token"
-	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // GoogleCloudGenerateRolesetAccessToken
 // roleset: Required. Name of the role set.
 func (s *Secrets) GoogleCloudGenerateRolesetAccessToken(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
@@ -1564,31 +1489,6 @@ func (s *Secrets) GoogleCloudGenerateRolesetAccessToken(ctx context.Context, rol
 	}
 
 	requestPath := "/v1/{gcp_mount_path}/roleset/{roleset}/token"
-	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// GoogleCloudGenerateRolesetAccessToken2
-// roleset: Required. Name of the role set.
-func (s *Secrets) GoogleCloudGenerateRolesetAccessToken2(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{gcp_mount_path}/token/{roleset}"
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
@@ -1630,31 +1530,6 @@ func (s *Secrets) GoogleCloudGenerateRolesetAccessTokenWithParameters(ctx contex
 	)
 }
 
-// GoogleCloudGenerateRolesetAccessTokenWithParameters2
-// roleset: Required. Name of the role set.
-func (s *Secrets) GoogleCloudGenerateRolesetAccessTokenWithParameters2(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{gcp_mount_path}/token/{roleset}"
-	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // GoogleCloudGenerateRolesetKey
 // roleset: Required. Name of the role set.
 func (s *Secrets) GoogleCloudGenerateRolesetKey(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
@@ -1680,31 +1555,6 @@ func (s *Secrets) GoogleCloudGenerateRolesetKey(ctx context.Context, roleset str
 	)
 }
 
-// GoogleCloudGenerateRolesetKey2
-// roleset: Required. Name of the role set.
-func (s *Secrets) GoogleCloudGenerateRolesetKey2(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{gcp_mount_path}/key/{roleset}"
-	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // GoogleCloudGenerateRolesetKeyWithParameters
 // roleset: Required. Name of the role set.
 func (s *Secrets) GoogleCloudGenerateRolesetKeyWithParameters(ctx context.Context, roleset string, request schema.GoogleCloudGenerateRolesetKeyWithParametersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
@@ -1714,31 +1564,6 @@ func (s *Secrets) GoogleCloudGenerateRolesetKeyWithParameters(ctx context.Contex
 	}
 
 	requestPath := "/v1/{gcp_mount_path}/roleset/{roleset}/key"
-	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// GoogleCloudGenerateRolesetKeyWithParameters2
-// roleset: Required. Name of the role set.
-func (s *Secrets) GoogleCloudGenerateRolesetKeyWithParameters2(ctx context.Context, roleset string, request schema.GoogleCloudGenerateRolesetKeyWithParameters2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{gcp_mount_path}/key/{roleset}"
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
@@ -1994,31 +1819,6 @@ func (s *Secrets) GoogleCloudKmsDeregisterKey(ctx context.Context, key string, o
 		ctx,
 		s.client,
 		http.MethodPost,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// GoogleCloudKmsDeregisterKey2
-// key: Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
-func (s *Secrets) GoogleCloudKmsDeregisterKey2(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{gcpkms_mount_path}/keys/deregister/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcpkms")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodDelete,
 		requestPath,
 		nil, // request body
 		requestQueryParameters,
@@ -2298,31 +2098,6 @@ func (s *Secrets) GoogleCloudKmsTrimKeyVersions(ctx context.Context, key string,
 	)
 }
 
-// GoogleCloudKmsTrimKeyVersions2
-// key: Name of the key in Vault.
-func (s *Secrets) GoogleCloudKmsTrimKeyVersions2(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{gcpkms_mount_path}/keys/trim/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcpkms")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodDelete,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // GoogleCloudKmsVerify Verify a signature using a named key
 // key: Name of the key in Vault to use for verification. This key must already exist in Vault and must map back to a Google Cloud KMS key.
 func (s *Secrets) GoogleCloudKmsVerify(ctx context.Context, key string, request schema.GoogleCloudKmsVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
@@ -2397,30 +2172,6 @@ func (s *Secrets) GoogleCloudListImpersonatedAccounts(ctx context.Context, optio
 	)
 }
 
-// GoogleCloudListImpersonatedAccounts2
-func (s *Secrets) GoogleCloudListImpersonatedAccounts2(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{gcp_mount_path}/impersonated-accounts"
-	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
-
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // GoogleCloudListRolesets
 func (s *Secrets) GoogleCloudListRolesets(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
@@ -2445,30 +2196,6 @@ func (s *Secrets) GoogleCloudListRolesets(ctx context.Context, options ...Reques
 	)
 }
 
-// GoogleCloudListRolesets2
-func (s *Secrets) GoogleCloudListRolesets2(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{gcp_mount_path}/rolesets"
-	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
-
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // GoogleCloudListStaticAccounts
 func (s *Secrets) GoogleCloudListStaticAccounts(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
@@ -2477,30 +2204,6 @@ func (s *Secrets) GoogleCloudListStaticAccounts(ctx context.Context, options ...
 	}
 
 	requestPath := "/v1/{gcp_mount_path}/static-account"
-	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
-
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// GoogleCloudListStaticAccounts2
-func (s *Secrets) GoogleCloudListStaticAccounts2(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{gcp_mount_path}/static-accounts"
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
 
 	requestQueryParameters := make(url.Values)
@@ -4007,31 +3710,6 @@ func (s *Secrets) MongoDbAtlasGenerateCredentials(ctx context.Context, name stri
 		ctx,
 		s.client,
 		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// MongoDbAtlasGenerateCredentials2
-// name: Name of the role
-func (s *Secrets) MongoDbAtlasGenerateCredentials2(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{mongodbatlas_mount_path}/creds/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"mongodbatlas_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("mongodbatlas")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
 		requestPath,
 		nil, // request body
 		requestQueryParameters,
@@ -7197,31 +6875,6 @@ func (s *Secrets) TerraformCloudGenerateCredentials(ctx context.Context, name st
 		ctx,
 		s.client,
 		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// TerraformCloudGenerateCredentials2
-// name: Name of the role
-func (s *Secrets) TerraformCloudGenerateCredentials2(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{terraform_mount_path}/creds/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"terraform_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("terraform")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
 		requestPath,
 		nil, // request body
 		requestQueryParameters,

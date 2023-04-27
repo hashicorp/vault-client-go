@@ -68,30 +68,6 @@ func (a *Auth) AliCloudListAuthRoles(ctx context.Context, options ...RequestOpti
 	)
 }
 
-// AliCloudListAuthRoles2 Lists all the roles that are registered with Vault.
-func (a *Auth) AliCloudListAuthRoles2(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/auth/{alicloud_mount_path}/roles"
-	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("alicloud")), -1)
-
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // AliCloudLogin Authenticates an RAM entity with Vault.
 func (a *Auth) AliCloudLogin(ctx context.Context, request schema.AliCloudLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
@@ -490,31 +466,6 @@ func (a *Auth) AppRoleDestroySecretId(ctx context.Context, roleName string, requ
 	)
 }
 
-// AppRoleDestroySecretId2
-// roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleDestroySecretId2(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id/destroy"
-	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodDelete,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // AppRoleDestroySecretIdByAccessor
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) AppRoleDestroySecretIdByAccessor(ctx context.Context, roleName string, request schema.AppRoleDestroySecretIdByAccessorRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
@@ -535,31 +486,6 @@ func (a *Auth) AppRoleDestroySecretIdByAccessor(ctx context.Context, roleName st
 		http.MethodPost,
 		requestPath,
 		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// AppRoleDestroySecretIdByAccessor2
-// roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleDestroySecretIdByAccessor2(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/destroy"
-	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodDelete,
-		requestPath,
-		nil, // request body
 		requestQueryParameters,
 		requestModifiers,
 	)
@@ -2017,30 +1943,6 @@ func (a *Auth) AwsListRoleTagDenyLists(ctx context.Context, options ...RequestOp
 	}
 
 	requestPath := "/v1/auth/{aws_mount_path}/roletag-denylist"
-	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
-
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// AwsListRoles2
-func (a *Auth) AwsListRoles2(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/auth/{aws_mount_path}/roles"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
 	requestQueryParameters := make(url.Values)
@@ -3787,30 +3689,6 @@ func (a *Auth) GoogleCloudListRoles(ctx context.Context, options ...RequestOptio
 	)
 }
 
-// GoogleCloudListRoles2 Lists all the roles that are registered with Vault.
-func (a *Auth) GoogleCloudListRoles2(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/auth/{gcp_mount_path}/roles"
-	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
-
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // GoogleCloudLogin
 func (a *Auth) GoogleCloudLogin(ctx context.Context, request schema.GoogleCloudLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
@@ -4260,29 +4138,6 @@ func (a *Auth) KerberosLogin(ctx context.Context, request schema.KerberosLoginRe
 		http.MethodPost,
 		requestPath,
 		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// KerberosLogin2
-func (a *Auth) KerberosLogin2(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/auth/{kerberos_mount_path}/login"
-	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kerberos")), -1)
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
 		requestQueryParameters,
 		requestModifiers,
 	)
@@ -5697,50 +5552,6 @@ func (a *Auth) TokenLookUpSelf(ctx context.Context, options ...RequestOption) (*
 	}
 
 	requestPath := "/v1/auth/token/lookup-self"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// TokenLookUpSelf2
-func (a *Auth) TokenLookUpSelf2(ctx context.Context, request schema.TokenLookUpSelf2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/auth/token/lookup-self"
-
-	requestQueryParameters := make(url.Values)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// TokenLookUpSelf3
-func (a *Auth) TokenLookUpSelf3(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/auth/token/lookup"
 
 	requestQueryParameters := make(url.Values)
 

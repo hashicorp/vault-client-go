@@ -8,6 +8,32 @@ and this project adheres to
 
 ## Unreleased ([diff][unreleased-diff])
 
+## [0.3.0][] ([diff][0.3.0-diff]) - 2023-05-04
+
+### Added
+
+- Added response structures for many endpoints (`sys`, `kv-v1`, `kv-v2`, `pki`, `approle`).
+- Added support for non-string query parameters.
+- Added prettier README formatter to the Makefile and GitHub actions.
+- Added security note to README.
+
+### Removed
+
+- Removed redundant methods (e.g. `TokenLookupSelf2`, `TokenLookupSelf3`, etc).
+- Removed endpoints for `ad` (consolidated into `ldap`).
+- Removed endpoints for `openldap` (alias of `ldap`).
+- Removed endpoints for `oidc` (consolidated into `jwt`).
+- Removed endpoints for `pfc` (deprecated plugin).
+
+### Changed
+
+- Regenerated with latest OpenAPI specification, resulting in new method names,
+  request names, and response names. This change is not backwards compatible!
+
+### Fixed
+
+- Fixed mount path logic in method signatures.
+
 ## [0.2.0][] ([diff][0.2.0-diff]) - 2023-03-01
 
 ### Changed

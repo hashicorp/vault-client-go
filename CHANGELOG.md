@@ -12,7 +12,7 @@ and this project adheres to
 
 ### Added
 
-- Added response structures for many endpoints (`sys`, `kv-v1`, `kv-v2`, `pki`, `approle`).
+- Added response structures for `sys`, `kv-v1`, `kv-v2`, `pki`, and `approle`.
 - Added support for non-string query parameters.
 - Added prettier README formatter to the Makefile and GitHub actions.
 - Added security note to README.
@@ -27,8 +27,7 @@ and this project adheres to
 
 ### Changed
 
-- Regenerated with latest OpenAPI specification, resulting in new method names,
-  request names, and response names. This change is not backwards compatible!
+- Regenerated with new method names, request names, and response names.
 
 ### Fixed
 

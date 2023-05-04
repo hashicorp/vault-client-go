@@ -69,7 +69,9 @@ and this project adheres to
 <!-- diffs -->
 
 [unreleased-diff]:
-  https://github.com/hashicorp/vault-client-go/compare/v0.2.0...HEAD
+  https://github.com/hashicorp/vault-client-go/compare/v0.3.0...HEAD
+[0.3.0-diff]:
+  https://github.com/hashicorp/vault-client-go/compare/v0.2.0...v0.3.0
 [0.2.0-diff]:
   https://github.com/hashicorp/vault-client-go/compare/v0.1.0...v0.2.0
 [0.1.0-diff]:
@@ -79,6 +81,8 @@ and this project adheres to
 
 <!-- releases -->
 
+[0.3.0]:
+  https://github.com/hashicorp/vault-client-go/releases/tag/v0.3.0
 [0.2.0]:
   https://github.com/hashicorp/vault-client-go/releases/tag/v0.2.0
 [0.1.0]:

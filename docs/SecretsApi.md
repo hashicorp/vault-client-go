@@ -362,13 +362,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	alicloudMountPath := "alicloudMountPath_example" // string | Path that the backend was mounted at (defaults to "alicloud")
 	request := schema.NewAliCloudConfigureRequestWithDefaults()
 	resp, err := client.Secrets.AliCloudConfigure(
 		context.Background(),
-		alicloudMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -426,11 +425,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	alicloudMountPath := "alicloudMountPath_example" // string | Path that the backend was mounted at (defaults to "alicloud")
 	resp, err := client.Secrets.AliCloudDeleteConfiguration(
 		context.Background(),
-		alicloudMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -488,12 +486,11 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the role.
-	alicloudMountPath := "alicloudMountPath_example" // string | Path that the backend was mounted at (defaults to "alicloud")
 	resp, err := client.Secrets.AliCloudDeleteRole(
 		context.Background(),
 		name,
-		alicloudMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -553,12 +550,11 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the role.
-	alicloudMountPath := "alicloudMountPath_example" // string | Path that the backend was mounted at (defaults to "alicloud")
 	resp, err := client.Secrets.AliCloudGenerateCredentials(
 		context.Background(),
 		name,
-		alicloudMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -617,11 +613,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	alicloudMountPath := "alicloudMountPath_example" // string | Path that the backend was mounted at (defaults to "alicloud")
 	resp, err := client.Secrets.AliCloudListRoles(
 		context.Background(),
-		alicloudMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -679,11 +674,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	alicloudMountPath := "alicloudMountPath_example" // string | Path that the backend was mounted at (defaults to "alicloud")
 	resp, err := client.Secrets.AliCloudReadConfiguration(
 		context.Background(),
-		alicloudMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -741,12 +735,11 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the role.
-	alicloudMountPath := "alicloudMountPath_example" // string | Path that the backend was mounted at (defaults to "alicloud")
 	resp, err := client.Secrets.AliCloudReadRole(
 		context.Background(),
 		name,
-		alicloudMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -807,14 +800,13 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the role.
-	alicloudMountPath := "alicloudMountPath_example" // string | Path that the backend was mounted at (defaults to "alicloud")
 	request := schema.NewAliCloudWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.AliCloudWriteRole(
 		context.Background(),
 		name,
-		alicloudMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -875,13 +867,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	request := schema.NewAwsConfigureLeaseRequestWithDefaults()
 	resp, err := client.Secrets.AwsConfigureLease(
 		context.Background(),
-		awsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -940,13 +931,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	request := schema.NewAwsConfigureRootIamCredentialsRequestWithDefaults()
 	resp, err := client.Secrets.AwsConfigureRootIamCredentials(
 		context.Background(),
-		awsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1005,12 +995,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the policy
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Secrets.AwsDeleteRole(
 		context.Background(),
 		name,
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1070,12 +1059,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Secrets.AwsGenerateCredentials(
 		context.Background(),
 		name,
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1135,12 +1123,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Secrets.AwsGenerateStsCredentials(
 		context.Background(),
 		name,
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1199,11 +1186,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Secrets.AwsListRoles(
 		context.Background(),
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1261,11 +1247,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Secrets.AwsReadLeaseConfiguration(
 		context.Background(),
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1323,12 +1308,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the policy
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Secrets.AwsReadRole(
 		context.Background(),
 		name,
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1387,11 +1371,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Secrets.AwsReadRootIamCredentialsConfiguration(
 		context.Background(),
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1448,11 +1431,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Secrets.AwsRotateRootIamCredentials(
 		context.Background(),
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1511,14 +1493,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the policy
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	request := schema.NewAwsWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.AwsWriteRole(
 		context.Background(),
 		name,
-		awsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1579,13 +1560,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	azureMountPath := "azureMountPath_example" // string | Path that the backend was mounted at (defaults to "azure")
 	request := schema.NewAzureConfigureRequestWithDefaults()
 	resp, err := client.Secrets.AzureConfigure(
 		context.Background(),
-		azureMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1643,11 +1623,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	azureMountPath := "azureMountPath_example" // string | Path that the backend was mounted at (defaults to "azure")
 	resp, err := client.Secrets.AzureDeleteConfiguration(
 		context.Background(),
-		azureMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1705,12 +1684,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	azureMountPath := "azureMountPath_example" // string | Path that the backend was mounted at (defaults to "azure")
 	resp, err := client.Secrets.AzureDeleteRole(
 		context.Background(),
 		name,
-		azureMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1769,11 +1747,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	azureMountPath := "azureMountPath_example" // string | Path that the backend was mounted at (defaults to "azure")
 	resp, err := client.Secrets.AzureListRoles(
 		context.Background(),
-		azureMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1831,11 +1808,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	azureMountPath := "azureMountPath_example" // string | Path that the backend was mounted at (defaults to "azure")
 	resp, err := client.Secrets.AzureReadConfiguration(
 		context.Background(),
-		azureMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1893,12 +1869,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	azureMountPath := "azureMountPath_example" // string | Path that the backend was mounted at (defaults to "azure")
 	resp, err := client.Secrets.AzureReadRole(
 		context.Background(),
 		name,
-		azureMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1958,12 +1933,11 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the Vault role
-	azureMountPath := "azureMountPath_example" // string | Path that the backend was mounted at (defaults to "azure")
 	resp, err := client.Secrets.AzureRequestServicePrincipalCredentials(
 		context.Background(),
 		role,
-		azureMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2022,11 +1996,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	azureMountPath := "azureMountPath_example" // string | Path that the backend was mounted at (defaults to "azure")
 	resp, err := client.Secrets.AzureRotateRoot(
 		context.Background(),
-		azureMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2085,14 +2058,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	azureMountPath := "azureMountPath_example" // string | Path that the backend was mounted at (defaults to "azure")
 	request := schema.NewAzureWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.AzureWriteRole(
 		context.Background(),
 		name,
-		azureMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2153,13 +2125,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	consulMountPath := "consulMountPath_example" // string | Path that the backend was mounted at (defaults to "consul")
 	request := schema.NewConsulConfigureAccessRequestWithDefaults()
 	resp, err := client.Secrets.ConsulConfigureAccess(
 		context.Background(),
-		consulMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("consul"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2218,12 +2189,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	consulMountPath := "consulMountPath_example" // string | Path that the backend was mounted at (defaults to "consul")
 	resp, err := client.Secrets.ConsulDeleteRole(
 		context.Background(),
 		name,
-		consulMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("consul"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2283,12 +2253,11 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-	consulMountPath := "consulMountPath_example" // string | Path that the backend was mounted at (defaults to "consul")
 	resp, err := client.Secrets.ConsulGenerateCredentials(
 		context.Background(),
 		role,
-		consulMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("consul"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2347,11 +2316,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	consulMountPath := "consulMountPath_example" // string | Path that the backend was mounted at (defaults to "consul")
 	resp, err := client.Secrets.ConsulListRoles(
 		context.Background(),
-		consulMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("consul"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2409,11 +2377,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	consulMountPath := "consulMountPath_example" // string | Path that the backend was mounted at (defaults to "consul")
 	resp, err := client.Secrets.ConsulReadAccessConfiguration(
 		context.Background(),
-		consulMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("consul"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2471,12 +2438,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	consulMountPath := "consulMountPath_example" // string | Path that the backend was mounted at (defaults to "consul")
 	resp, err := client.Secrets.ConsulReadRole(
 		context.Background(),
 		name,
-		consulMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("consul"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2537,14 +2503,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	consulMountPath := "consulMountPath_example" // string | Path that the backend was mounted at (defaults to "consul")
 	request := schema.NewConsulWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.ConsulWriteRole(
 		context.Background(),
 		name,
-		consulMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("consul"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2790,14 +2755,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of this database connection
-	databaseMountPath := "databaseMountPath_example" // string | Path that the backend was mounted at (defaults to "database")
 	request := schema.NewDatabaseConfigureConnectionRequestWithDefaults()
 	resp, err := client.Secrets.DatabaseConfigureConnection(
 		context.Background(),
 		name,
-		databaseMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2858,12 +2822,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of this database connection
-	databaseMountPath := "databaseMountPath_example" // string | Path that the backend was mounted at (defaults to "database")
 	resp, err := client.Secrets.DatabaseDeleteConnectionConfiguration(
 		context.Background(),
 		name,
-		databaseMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2923,12 +2886,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	databaseMountPath := "databaseMountPath_example" // string | Path that the backend was mounted at (defaults to "database")
 	resp, err := client.Secrets.DatabaseDeleteRole(
 		context.Background(),
 		name,
-		databaseMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2988,12 +2950,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	databaseMountPath := "databaseMountPath_example" // string | Path that the backend was mounted at (defaults to "database")
 	resp, err := client.Secrets.DatabaseDeleteStaticRole(
 		context.Background(),
 		name,
-		databaseMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3053,12 +3014,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	databaseMountPath := "databaseMountPath_example" // string | Path that the backend was mounted at (defaults to "database")
 	resp, err := client.Secrets.DatabaseGenerateCredentials(
 		context.Background(),
 		name,
-		databaseMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3117,11 +3077,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	databaseMountPath := "databaseMountPath_example" // string | Path that the backend was mounted at (defaults to "database")
 	resp, err := client.Secrets.DatabaseListConnections(
 		context.Background(),
-		databaseMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3179,11 +3138,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	databaseMountPath := "databaseMountPath_example" // string | Path that the backend was mounted at (defaults to "database")
 	resp, err := client.Secrets.DatabaseListRoles(
 		context.Background(),
-		databaseMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3241,11 +3199,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	databaseMountPath := "databaseMountPath_example" // string | Path that the backend was mounted at (defaults to "database")
 	resp, err := client.Secrets.DatabaseListStaticRoles(
 		context.Background(),
-		databaseMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3304,12 +3261,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of this database connection
-	databaseMountPath := "databaseMountPath_example" // string | Path that the backend was mounted at (defaults to "database")
 	resp, err := client.Secrets.DatabaseReadConnectionConfiguration(
 		context.Background(),
 		name,
-		databaseMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3369,12 +3325,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	databaseMountPath := "databaseMountPath_example" // string | Path that the backend was mounted at (defaults to "database")
 	resp, err := client.Secrets.DatabaseReadRole(
 		context.Background(),
 		name,
-		databaseMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3434,12 +3389,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	databaseMountPath := "databaseMountPath_example" // string | Path that the backend was mounted at (defaults to "database")
 	resp, err := client.Secrets.DatabaseReadStaticRole(
 		context.Background(),
 		name,
-		databaseMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3499,12 +3453,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the static role.
-	databaseMountPath := "databaseMountPath_example" // string | Path that the backend was mounted at (defaults to "database")
 	resp, err := client.Secrets.DatabaseReadStaticRoleCredentials(
 		context.Background(),
 		name,
-		databaseMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3564,12 +3517,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of this database connection
-	databaseMountPath := "databaseMountPath_example" // string | Path that the backend was mounted at (defaults to "database")
 	resp, err := client.Secrets.DatabaseResetConnection(
 		context.Background(),
 		name,
-		databaseMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3629,12 +3581,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of this database connection
-	databaseMountPath := "databaseMountPath_example" // string | Path that the backend was mounted at (defaults to "database")
 	resp, err := client.Secrets.DatabaseRotateRootCredentials(
 		context.Background(),
 		name,
-		databaseMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3694,12 +3645,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the static role
-	databaseMountPath := "databaseMountPath_example" // string | Path that the backend was mounted at (defaults to "database")
 	resp, err := client.Secrets.DatabaseRotateStaticRoleCredentials(
 		context.Background(),
 		name,
-		databaseMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3760,14 +3710,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	databaseMountPath := "databaseMountPath_example" // string | Path that the backend was mounted at (defaults to "database")
 	request := schema.NewDatabaseWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.DatabaseWriteRole(
 		context.Background(),
 		name,
-		databaseMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3829,14 +3778,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	databaseMountPath := "databaseMountPath_example" // string | Path that the backend was mounted at (defaults to "database")
 	request := schema.NewDatabaseWriteStaticRoleRequestWithDefaults()
 	resp, err := client.Secrets.DatabaseWriteStaticRole(
 		context.Background(),
 		name,
-		databaseMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3897,13 +3845,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	request := schema.NewGoogleCloudConfigureRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudConfigure(
 		context.Background(),
-		gcpMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3962,12 +3909,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name to refer to this impersonated account in Vault. Cannot be updated.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Secrets.GoogleCloudDeleteImpersonatedAccount(
 		context.Background(),
 		name,
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4027,12 +3973,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the role.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Secrets.GoogleCloudDeleteRoleset(
 		context.Background(),
 		name,
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4092,12 +4037,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Secrets.GoogleCloudDeleteStaticAccount(
 		context.Background(),
 		name,
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4157,12 +4101,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the impersonated account.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Secrets.GoogleCloudGenerateImpersonatedAccountAccessToken(
 		context.Background(),
 		name,
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4222,12 +4165,11 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Secrets.GoogleCloudGenerateRolesetAccessToken(
 		context.Background(),
 		roleset,
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4287,12 +4229,11 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Secrets.GoogleCloudGenerateRolesetAccessTokenWithParameters(
 		context.Background(),
 		roleset,
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4352,12 +4293,11 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Secrets.GoogleCloudGenerateRolesetKey(
 		context.Background(),
 		roleset,
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4418,14 +4358,13 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	request := schema.NewGoogleCloudGenerateRolesetKeyWithParametersRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudGenerateRolesetKeyWithParameters(
 		context.Background(),
 		roleset,
-		gcpMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4486,12 +4425,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the static account.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Secrets.GoogleCloudGenerateStaticAccountAccessToken(
 		context.Background(),
 		name,
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4551,12 +4489,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the static account.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Secrets.GoogleCloudGenerateStaticAccountAccessTokenWithParameters(
 		context.Background(),
 		name,
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4616,12 +4553,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the static account.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Secrets.GoogleCloudGenerateStaticAccountKey(
 		context.Background(),
 		name,
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4682,14 +4618,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the static account.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	request := schema.NewGoogleCloudGenerateStaticAccountKeyWithParametersRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudGenerateStaticAccountKeyWithParameters(
 		context.Background(),
 		name,
-		gcpMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4750,13 +4685,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	gcpkmsMountPath := "gcpkmsMountPath_example" // string | Path that the backend was mounted at (defaults to "gcpkms")
 	request := schema.NewGoogleCloudKmsConfigureRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKmsConfigure(
 		context.Background(),
-		gcpkmsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4816,14 +4750,13 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
-	gcpkmsMountPath := "gcpkmsMountPath_example" // string | Path that the backend was mounted at (defaults to "gcpkms")
 	request := schema.NewGoogleCloudKmsConfigureKeyRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKmsConfigureKey(
 		context.Background(),
 		key,
-		gcpkmsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4885,14 +4818,13 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault to use for decryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-	gcpkmsMountPath := "gcpkmsMountPath_example" // string | Path that the backend was mounted at (defaults to "gcpkms")
 	request := schema.NewGoogleCloudKmsDecryptRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKmsDecrypt(
 		context.Background(),
 		key,
-		gcpkmsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4952,11 +4884,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	gcpkmsMountPath := "gcpkmsMountPath_example" // string | Path that the backend was mounted at (defaults to "gcpkms")
 	resp, err := client.Secrets.GoogleCloudKmsDeleteConfiguration(
 		context.Background(),
-		gcpkmsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5014,12 +4945,11 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
-	gcpkmsMountPath := "gcpkmsMountPath_example" // string | Path that the backend was mounted at (defaults to "gcpkms")
 	resp, err := client.Secrets.GoogleCloudKmsDeleteKey(
 		context.Background(),
 		key,
-		gcpkmsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5079,12 +5009,11 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
-	gcpkmsMountPath := "gcpkmsMountPath_example" // string | Path that the backend was mounted at (defaults to "gcpkms")
 	resp, err := client.Secrets.GoogleCloudKmsDeregisterKey(
 		context.Background(),
 		key,
-		gcpkmsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5145,14 +5074,13 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault to use for encryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-	gcpkmsMountPath := "gcpkmsMountPath_example" // string | Path that the backend was mounted at (defaults to "gcpkms")
 	request := schema.NewGoogleCloudKmsEncryptRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKmsEncrypt(
 		context.Background(),
 		key,
-		gcpkmsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5212,11 +5140,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	gcpkmsMountPath := "gcpkmsMountPath_example" // string | Path that the backend was mounted at (defaults to "gcpkms")
 	resp, err := client.Secrets.GoogleCloudKmsListKeys(
 		context.Background(),
-		gcpkmsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5274,11 +5201,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	gcpkmsMountPath := "gcpkmsMountPath_example" // string | Path that the backend was mounted at (defaults to "gcpkms")
 	resp, err := client.Secrets.GoogleCloudKmsReadConfiguration(
 		context.Background(),
-		gcpkmsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5336,12 +5262,11 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
-	gcpkmsMountPath := "gcpkmsMountPath_example" // string | Path that the backend was mounted at (defaults to "gcpkms")
 	resp, err := client.Secrets.GoogleCloudKmsReadKey(
 		context.Background(),
 		key,
-		gcpkmsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5401,12 +5326,11 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
-	gcpkmsMountPath := "gcpkmsMountPath_example" // string | Path that the backend was mounted at (defaults to "gcpkms")
 	resp, err := client.Secrets.GoogleCloudKmsReadKeyConfiguration(
 		context.Background(),
 		key,
-		gcpkmsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5467,14 +5391,13 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key to use for encryption. This key must already exist in Vault and Google Cloud KMS.
-	gcpkmsMountPath := "gcpkmsMountPath_example" // string | Path that the backend was mounted at (defaults to "gcpkms")
 	request := schema.NewGoogleCloudKmsReencryptRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKmsReencrypt(
 		context.Background(),
 		key,
-		gcpkmsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5536,14 +5459,13 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key to register in Vault. This will be the named used to refer to the underlying crypto key when encrypting or decrypting data.
-	gcpkmsMountPath := "gcpkmsMountPath_example" // string | Path that the backend was mounted at (defaults to "gcpkms")
 	request := schema.NewGoogleCloudKmsRegisterKeyRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKmsRegisterKey(
 		context.Background(),
 		key,
-		gcpkmsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5604,12 +5526,11 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key for which to get the public key. This key must already exist in Vault and Google Cloud KMS.
-	gcpkmsMountPath := "gcpkmsMountPath_example" // string | Path that the backend was mounted at (defaults to "gcpkms")
 	resp, err := client.Secrets.GoogleCloudKmsRetrievePublicKey(
 		context.Background(),
 		key,
-		gcpkmsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5669,12 +5590,11 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key to rotate. This key must already be registered with Vault and point to a valid Google Cloud KMS crypto key.
-	gcpkmsMountPath := "gcpkmsMountPath_example" // string | Path that the backend was mounted at (defaults to "gcpkms")
 	resp, err := client.Secrets.GoogleCloudKmsRotateKey(
 		context.Background(),
 		key,
-		gcpkmsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5735,14 +5655,13 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault to use for signing. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-	gcpkmsMountPath := "gcpkmsMountPath_example" // string | Path that the backend was mounted at (defaults to "gcpkms")
 	request := schema.NewGoogleCloudKmsSignRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKmsSign(
 		context.Background(),
 		key,
-		gcpkmsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5803,12 +5722,11 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
-	gcpkmsMountPath := "gcpkmsMountPath_example" // string | Path that the backend was mounted at (defaults to "gcpkms")
 	resp, err := client.Secrets.GoogleCloudKmsTrimKeyVersions(
 		context.Background(),
 		key,
-		gcpkmsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5869,14 +5787,13 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault to use for verification. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-	gcpkmsMountPath := "gcpkmsMountPath_example" // string | Path that the backend was mounted at (defaults to "gcpkms")
 	request := schema.NewGoogleCloudKmsVerifyRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKmsVerify(
 		context.Background(),
 		key,
-		gcpkmsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5938,14 +5855,13 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
-	gcpkmsMountPath := "gcpkmsMountPath_example" // string | Path that the backend was mounted at (defaults to "gcpkms")
 	request := schema.NewGoogleCloudKmsWriteKeyRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKmsWriteKey(
 		context.Background(),
 		key,
-		gcpkmsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6005,11 +5921,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Secrets.GoogleCloudListImpersonatedAccounts(
 		context.Background(),
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6067,11 +5982,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Secrets.GoogleCloudListRolesets(
 		context.Background(),
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6129,11 +6043,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Secrets.GoogleCloudListStaticAccounts(
 		context.Background(),
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6191,11 +6104,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Secrets.GoogleCloudReadConfiguration(
 		context.Background(),
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6253,12 +6165,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name to refer to this impersonated account in Vault. Cannot be updated.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Secrets.GoogleCloudReadImpersonatedAccount(
 		context.Background(),
 		name,
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6318,12 +6229,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the role.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Secrets.GoogleCloudReadRoleset(
 		context.Background(),
 		name,
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6383,12 +6293,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Secrets.GoogleCloudReadStaticAccount(
 		context.Background(),
 		name,
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6448,12 +6357,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Secrets.GoogleCloudRotateRoleset(
 		context.Background(),
 		name,
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6513,12 +6421,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Secrets.GoogleCloudRotateRolesetKey(
 		context.Background(),
 		name,
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6577,11 +6484,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Secrets.GoogleCloudRotateRootCredentials(
 		context.Background(),
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6639,12 +6545,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the account.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Secrets.GoogleCloudRotateStaticAccountKey(
 		context.Background(),
 		name,
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6705,14 +6610,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name to refer to this impersonated account in Vault. Cannot be updated.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	request := schema.NewGoogleCloudWriteImpersonatedAccountRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudWriteImpersonatedAccount(
 		context.Background(),
 		name,
-		gcpMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6774,14 +6678,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the role.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	request := schema.NewGoogleCloudWriteRolesetRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudWriteRoleset(
 		context.Background(),
 		name,
-		gcpMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6843,14 +6746,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	request := schema.NewGoogleCloudWriteStaticAccountRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudWriteStaticAccount(
 		context.Background(),
 		name,
-		gcpMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6910,11 +6812,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	kubernetesMountPath := "kubernetesMountPath_example" // string | Path that the backend was mounted at (defaults to "kubernetes")
 	resp, err := client.Secrets.KubernetesCheckConfiguration(
 		context.Background(),
-		kubernetesMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6972,13 +6873,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	kubernetesMountPath := "kubernetesMountPath_example" // string | Path that the backend was mounted at (defaults to "kubernetes")
 	request := schema.NewKubernetesConfigureRequestWithDefaults()
 	resp, err := client.Secrets.KubernetesConfigure(
 		context.Background(),
-		kubernetesMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7036,11 +6936,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	kubernetesMountPath := "kubernetesMountPath_example" // string | Path that the backend was mounted at (defaults to "kubernetes")
 	resp, err := client.Secrets.KubernetesDeleteConfiguration(
 		context.Background(),
-		kubernetesMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7098,12 +6997,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	kubernetesMountPath := "kubernetesMountPath_example" // string | Path that the backend was mounted at (defaults to "kubernetes")
 	resp, err := client.Secrets.KubernetesDeleteRole(
 		context.Background(),
 		name,
-		kubernetesMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7164,14 +7062,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Vault role
-	kubernetesMountPath := "kubernetesMountPath_example" // string | Path that the backend was mounted at (defaults to "kubernetes")
 	request := schema.NewKubernetesGenerateCredentialsRequestWithDefaults()
 	resp, err := client.Secrets.KubernetesGenerateCredentials(
 		context.Background(),
 		name,
-		kubernetesMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7231,11 +7128,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	kubernetesMountPath := "kubernetesMountPath_example" // string | Path that the backend was mounted at (defaults to "kubernetes")
 	resp, err := client.Secrets.KubernetesListRoles(
 		context.Background(),
-		kubernetesMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7293,11 +7189,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	kubernetesMountPath := "kubernetesMountPath_example" // string | Path that the backend was mounted at (defaults to "kubernetes")
 	resp, err := client.Secrets.KubernetesReadConfiguration(
 		context.Background(),
-		kubernetesMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7355,12 +7250,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	kubernetesMountPath := "kubernetesMountPath_example" // string | Path that the backend was mounted at (defaults to "kubernetes")
 	resp, err := client.Secrets.KubernetesReadRole(
 		context.Background(),
 		name,
-		kubernetesMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7421,14 +7315,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	kubernetesMountPath := "kubernetesMountPath_example" // string | Path that the backend was mounted at (defaults to "kubernetes")
 	request := schema.NewKubernetesWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.KubernetesWriteRole(
 		context.Background(),
 		name,
-		kubernetesMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7489,12 +7382,11 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-	kvV1MountPath := "kvV1MountPath_example" // string | Path that the backend was mounted at (defaults to "kv-v1")
 	resp, err := client.Secrets.KvV1Delete(
 		context.Background(),
 		path,
-		kvV1MountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kv-v1"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7554,12 +7446,11 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-	kvV1MountPath := "kvV1MountPath_example" // string | Path that the backend was mounted at (defaults to "kv-v1")
 	resp, err := client.Secrets.KvV1Read(
 		context.Background(),
 		path,
-		kvV1MountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kv-v1"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7620,12 +7511,11 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-	kvV1MountPath := "kvV1MountPath_example" // string | Path that the backend was mounted at (defaults to "kv-v1")
 	resp, err := client.Secrets.KvV1Write(
 		context.Background(),
 		path,
-		kvV1MountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kv-v1"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7685,13 +7575,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	kvV2MountPath := "kvV2MountPath_example" // string | Path that the backend was mounted at (defaults to "kv-v2")
 	request := schema.NewKvV2ConfigureRequestWithDefaults()
 	resp, err := client.Secrets.KvV2Configure(
 		context.Background(),
-		kvV2MountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7750,12 +7639,11 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-	kvV2MountPath := "kvV2MountPath_example" // string | Path that the backend was mounted at (defaults to "kv-v2")
 	resp, err := client.Secrets.KvV2Delete(
 		context.Background(),
 		path,
-		kvV2MountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7815,12 +7703,11 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-	kvV2MountPath := "kvV2MountPath_example" // string | Path that the backend was mounted at (defaults to "kv-v2")
 	resp, err := client.Secrets.KvV2DeleteMetadata(
 		context.Background(),
 		path,
-		kvV2MountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7881,14 +7768,13 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-	kvV2MountPath := "kvV2MountPath_example" // string | Path that the backend was mounted at (defaults to "kv-v2")
 	request := schema.NewKvV2DeleteVersionsRequestWithDefaults()
 	resp, err := client.Secrets.KvV2DeleteVersions(
 		context.Background(),
 		path,
-		kvV2MountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7950,14 +7836,13 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-	kvV2MountPath := "kvV2MountPath_example" // string | Path that the backend was mounted at (defaults to "kv-v2")
 	request := schema.NewKvV2DestroyVersionsRequestWithDefaults()
 	resp, err := client.Secrets.KvV2DestroyVersions(
 		context.Background(),
 		path,
-		kvV2MountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8018,12 +7903,11 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-	kvV2MountPath := "kvV2MountPath_example" // string | Path that the backend was mounted at (defaults to "kv-v2")
 	resp, err := client.Secrets.KvV2Read(
 		context.Background(),
 		path,
-		kvV2MountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8082,11 +7966,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	kvV2MountPath := "kvV2MountPath_example" // string | Path that the backend was mounted at (defaults to "kv-v2")
 	resp, err := client.Secrets.KvV2ReadConfiguration(
 		context.Background(),
-		kvV2MountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8144,12 +8027,11 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-	kvV2MountPath := "kvV2MountPath_example" // string | Path that the backend was mounted at (defaults to "kv-v2")
 	resp, err := client.Secrets.KvV2ReadMetadata(
 		context.Background(),
 		path,
-		kvV2MountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8210,12 +8092,11 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-	kvV2MountPath := "kvV2MountPath_example" // string | Path that the backend was mounted at (defaults to "kv-v2")
 	resp, err := client.Secrets.KvV2ReadSubkeys(
 		context.Background(),
 		path,
-		kvV2MountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8276,14 +8157,13 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-	kvV2MountPath := "kvV2MountPath_example" // string | Path that the backend was mounted at (defaults to "kv-v2")
 	request := schema.NewKvV2UndeleteVersionsRequestWithDefaults()
 	resp, err := client.Secrets.KvV2UndeleteVersions(
 		context.Background(),
 		path,
-		kvV2MountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8345,14 +8225,13 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-	kvV2MountPath := "kvV2MountPath_example" // string | Path that the backend was mounted at (defaults to "kv-v2")
 	request := schema.NewKvV2WriteRequestWithDefaults()
 	resp, err := client.Secrets.KvV2Write(
 		context.Background(),
 		path,
-		kvV2MountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8414,14 +8293,13 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-	kvV2MountPath := "kvV2MountPath_example" // string | Path that the backend was mounted at (defaults to "kv-v2")
 	request := schema.NewKvV2WriteMetadataRequestWithDefaults()
 	resp, err := client.Secrets.KvV2WriteMetadata(
 		context.Background(),
 		path,
-		kvV2MountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8482,13 +8360,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	request := schema.NewLdapConfigureRequestWithDefaults()
 	resp, err := client.Secrets.LdapConfigure(
 		context.Background(),
-		ldapMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8546,11 +8423,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	resp, err := client.Secrets.LdapDeleteConfiguration(
 		context.Background(),
-		ldapMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8608,12 +8484,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role (lowercase)
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	resp, err := client.Secrets.LdapDeleteDynamicRole(
 		context.Background(),
 		name,
-		ldapMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8673,12 +8548,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	resp, err := client.Secrets.LdapDeleteStaticRole(
 		context.Background(),
 		name,
-		ldapMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8739,14 +8613,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	request := schema.NewLdapLibraryCheckInRequestWithDefaults()
 	resp, err := client.Secrets.LdapLibraryCheckIn(
 		context.Background(),
 		name,
-		ldapMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8808,14 +8681,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	request := schema.NewLdapLibraryCheckOutRequestWithDefaults()
 	resp, err := client.Secrets.LdapLibraryCheckOut(
 		context.Background(),
 		name,
-		ldapMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8876,12 +8748,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	resp, err := client.Secrets.LdapLibraryCheckStatus(
 		context.Background(),
 		name,
-		ldapMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8942,14 +8813,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	request := schema.NewLdapLibraryConfigureRequestWithDefaults()
 	resp, err := client.Secrets.LdapLibraryConfigure(
 		context.Background(),
 		name,
-		ldapMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9010,12 +8880,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	resp, err := client.Secrets.LdapLibraryDelete(
 		context.Background(),
 		name,
-		ldapMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9076,14 +8945,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	request := schema.NewLdapLibraryForceCheckInRequestWithDefaults()
 	resp, err := client.Secrets.LdapLibraryForceCheckIn(
 		context.Background(),
 		name,
-		ldapMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9143,11 +9011,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	resp, err := client.Secrets.LdapLibraryList(
 		context.Background(),
-		ldapMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9206,12 +9073,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	resp, err := client.Secrets.LdapLibraryRead(
 		context.Background(),
 		name,
-		ldapMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9270,11 +9136,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	resp, err := client.Secrets.LdapListDynamicRoles(
 		context.Background(),
-		ldapMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9332,11 +9197,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	resp, err := client.Secrets.LdapListStaticRoles(
 		context.Background(),
-		ldapMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9394,11 +9258,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	resp, err := client.Secrets.LdapReadConfiguration(
 		context.Background(),
-		ldapMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9456,12 +9319,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role (lowercase)
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	resp, err := client.Secrets.LdapReadDynamicRole(
 		context.Background(),
 		name,
-		ldapMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9521,12 +9383,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	resp, err := client.Secrets.LdapReadStaticRole(
 		context.Background(),
 		name,
-		ldapMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9586,12 +9447,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the dynamic role.
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	resp, err := client.Secrets.LdapRequestDynamicRoleCredentials(
 		context.Background(),
 		name,
-		ldapMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9651,12 +9511,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the static role.
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	resp, err := client.Secrets.LdapRequestStaticRoleCredentials(
 		context.Background(),
 		name,
-		ldapMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9715,11 +9574,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	resp, err := client.Secrets.LdapRotateRootCredentials(
 		context.Background(),
-		ldapMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9777,12 +9635,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the static role
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	resp, err := client.Secrets.LdapRotateStaticRole(
 		context.Background(),
 		name,
-		ldapMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9843,14 +9700,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role (lowercase)
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	request := schema.NewLdapWriteDynamicRoleRequestWithDefaults()
 	resp, err := client.Secrets.LdapWriteDynamicRole(
 		context.Background(),
 		name,
-		ldapMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9912,14 +9768,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	request := schema.NewLdapWriteStaticRoleRequestWithDefaults()
 	resp, err := client.Secrets.LdapWriteStaticRole(
 		context.Background(),
 		name,
-		ldapMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9980,13 +9835,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	mongodbatlasMountPath := "mongodbatlasMountPath_example" // string | Path that the backend was mounted at (defaults to "mongodbatlas")
 	request := schema.NewMongoDbAtlasConfigureRequestWithDefaults()
 	resp, err := client.Secrets.MongoDbAtlasConfigure(
 		context.Background(),
-		mongodbatlasMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("mongodbatlas"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10045,12 +9899,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Roles
-	mongodbatlasMountPath := "mongodbatlasMountPath_example" // string | Path that the backend was mounted at (defaults to "mongodbatlas")
 	resp, err := client.Secrets.MongoDbAtlasDeleteRole(
 		context.Background(),
 		name,
-		mongodbatlasMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("mongodbatlas"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10110,12 +9963,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	mongodbatlasMountPath := "mongodbatlasMountPath_example" // string | Path that the backend was mounted at (defaults to "mongodbatlas")
 	resp, err := client.Secrets.MongoDbAtlasGenerateCredentials(
 		context.Background(),
 		name,
-		mongodbatlasMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("mongodbatlas"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10174,11 +10026,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	mongodbatlasMountPath := "mongodbatlasMountPath_example" // string | Path that the backend was mounted at (defaults to "mongodbatlas")
 	resp, err := client.Secrets.MongoDbAtlasListRoles(
 		context.Background(),
-		mongodbatlasMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("mongodbatlas"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10236,11 +10087,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	mongodbatlasMountPath := "mongodbatlasMountPath_example" // string | Path that the backend was mounted at (defaults to "mongodbatlas")
 	resp, err := client.Secrets.MongoDbAtlasReadConfiguration(
 		context.Background(),
-		mongodbatlasMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("mongodbatlas"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10298,12 +10148,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Roles
-	mongodbatlasMountPath := "mongodbatlasMountPath_example" // string | Path that the backend was mounted at (defaults to "mongodbatlas")
 	resp, err := client.Secrets.MongoDbAtlasReadRole(
 		context.Background(),
 		name,
-		mongodbatlasMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("mongodbatlas"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10364,14 +10213,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Roles
-	mongodbatlasMountPath := "mongodbatlasMountPath_example" // string | Path that the backend was mounted at (defaults to "mongodbatlas")
 	request := schema.NewMongoDbAtlasWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.MongoDbAtlasWriteRole(
 		context.Background(),
 		name,
-		mongodbatlasMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("mongodbatlas"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10432,13 +10280,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	nomadMountPath := "nomadMountPath_example" // string | Path that the backend was mounted at (defaults to "nomad")
 	request := schema.NewNomadConfigureAccessRequestWithDefaults()
 	resp, err := client.Secrets.NomadConfigureAccess(
 		context.Background(),
-		nomadMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("nomad"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10497,13 +10344,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	nomadMountPath := "nomadMountPath_example" // string | Path that the backend was mounted at (defaults to "nomad")
 	request := schema.NewNomadConfigureLeaseRequestWithDefaults()
 	resp, err := client.Secrets.NomadConfigureLease(
 		context.Background(),
-		nomadMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("nomad"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10561,11 +10407,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	nomadMountPath := "nomadMountPath_example" // string | Path that the backend was mounted at (defaults to "nomad")
 	resp, err := client.Secrets.NomadDeleteAccessConfiguration(
 		context.Background(),
-		nomadMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("nomad"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10622,11 +10467,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	nomadMountPath := "nomadMountPath_example" // string | Path that the backend was mounted at (defaults to "nomad")
 	resp, err := client.Secrets.NomadDeleteLeaseConfiguration(
 		context.Background(),
-		nomadMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("nomad"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10684,12 +10528,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	nomadMountPath := "nomadMountPath_example" // string | Path that the backend was mounted at (defaults to "nomad")
 	resp, err := client.Secrets.NomadDeleteRole(
 		context.Background(),
 		name,
-		nomadMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("nomad"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10749,12 +10592,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	nomadMountPath := "nomadMountPath_example" // string | Path that the backend was mounted at (defaults to "nomad")
 	resp, err := client.Secrets.NomadGenerateCredentials(
 		context.Background(),
 		name,
-		nomadMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("nomad"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10813,11 +10655,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	nomadMountPath := "nomadMountPath_example" // string | Path that the backend was mounted at (defaults to "nomad")
 	resp, err := client.Secrets.NomadListRoles(
 		context.Background(),
-		nomadMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("nomad"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10875,11 +10716,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	nomadMountPath := "nomadMountPath_example" // string | Path that the backend was mounted at (defaults to "nomad")
 	resp, err := client.Secrets.NomadReadAccessConfiguration(
 		context.Background(),
-		nomadMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("nomad"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10936,11 +10776,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	nomadMountPath := "nomadMountPath_example" // string | Path that the backend was mounted at (defaults to "nomad")
 	resp, err := client.Secrets.NomadReadLeaseConfiguration(
 		context.Background(),
-		nomadMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("nomad"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10998,12 +10837,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	nomadMountPath := "nomadMountPath_example" // string | Path that the backend was mounted at (defaults to "nomad")
 	resp, err := client.Secrets.NomadReadRole(
 		context.Background(),
 		name,
-		nomadMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("nomad"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11064,14 +10902,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	nomadMountPath := "nomadMountPath_example" // string | Path that the backend was mounted at (defaults to "nomad")
 	request := schema.NewNomadWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.NomadWriteRole(
 		context.Background(),
 		name,
-		nomadMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("nomad"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11132,13 +10969,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiConfigureAutoTidyRequestWithDefaults()
 	resp, err := client.Secrets.PkiConfigureAutoTidy(
 		context.Background(),
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11197,13 +11033,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiConfigureCaRequestWithDefaults()
 	resp, err := client.Secrets.PkiConfigureCa(
 		context.Background(),
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11262,13 +11097,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiConfigureClusterRequestWithDefaults()
 	resp, err := client.Secrets.PkiConfigureCluster(
 		context.Background(),
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11327,13 +11161,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiConfigureCrlRequestWithDefaults()
 	resp, err := client.Secrets.PkiConfigureCrl(
 		context.Background(),
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11392,13 +11225,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiConfigureIssuersRequestWithDefaults()
 	resp, err := client.Secrets.PkiConfigureIssuers(
 		context.Background(),
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11457,13 +11289,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiConfigureKeysRequestWithDefaults()
 	resp, err := client.Secrets.PkiConfigureKeys(
 		context.Background(),
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11522,13 +11353,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiConfigureUrlsRequestWithDefaults()
 	resp, err := client.Secrets.PkiConfigureUrls(
 		context.Background(),
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11587,13 +11417,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiCrossSignIntermediateRequestWithDefaults()
 	resp, err := client.Secrets.PkiCrossSignIntermediate(
 		context.Background(),
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11652,12 +11481,11 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiDeleteIssuer(
 		context.Background(),
 		issuerRef,
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11717,12 +11545,11 @@ func main() {
 	}
 
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiDeleteKey(
 		context.Background(),
 		keyRef,
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11782,12 +11609,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiDeleteRole(
 		context.Background(),
 		name,
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11846,11 +11672,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiDeleteRoot(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11908,13 +11733,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiGenerateExportedKeyRequestWithDefaults()
 	resp, err := client.Secrets.PkiGenerateExportedKey(
 		context.Background(),
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11974,14 +11798,13 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiGenerateIntermediateRequestWithDefaults()
 	resp, err := client.Secrets.PkiGenerateIntermediate(
 		context.Background(),
 		exported,
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12042,13 +11865,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiGenerateInternalKeyRequestWithDefaults()
 	resp, err := client.Secrets.PkiGenerateInternalKey(
 		context.Background(),
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12107,13 +11929,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiGenerateKmsKeyRequestWithDefaults()
 	resp, err := client.Secrets.PkiGenerateKmsKey(
 		context.Background(),
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12173,14 +11994,13 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiGenerateRootRequestWithDefaults()
 	resp, err := client.Secrets.PkiGenerateRoot(
 		context.Background(),
 		exported,
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12241,13 +12061,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiImportKeyRequestWithDefaults()
 	resp, err := client.Secrets.PkiImportKey(
 		context.Background(),
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12307,14 +12126,13 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role with configuration for this request
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiIssueWithRoleRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssueWithRole(
 		context.Background(),
 		role,
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12377,15 +12195,14 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiIssuerIssueWithRoleRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuerIssueWithRole(
 		context.Background(),
 		issuerRef,
 		role,
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12448,12 +12265,11 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiIssuerReadCrl(
 		context.Background(),
 		issuerRef,
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12513,12 +12329,11 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiIssuerReadCrlDelta(
 		context.Background(),
 		issuerRef,
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12578,12 +12393,11 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiIssuerReadCrlDeltaDer(
 		context.Background(),
 		issuerRef,
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12643,12 +12457,11 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiIssuerReadCrlDeltaPem(
 		context.Background(),
 		issuerRef,
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12708,12 +12521,11 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiIssuerReadCrlDer(
 		context.Background(),
 		issuerRef,
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12773,12 +12585,11 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiIssuerReadCrlPem(
 		context.Background(),
 		issuerRef,
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12839,14 +12650,13 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiIssuerResignCrlsRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuerResignCrls(
 		context.Background(),
 		issuerRef,
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12908,14 +12718,13 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiIssuerSignIntermediateRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuerSignIntermediate(
 		context.Background(),
 		issuerRef,
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12977,14 +12786,13 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiIssuerSignRevocationListRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuerSignRevocationList(
 		context.Background(),
 		issuerRef,
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13046,14 +12854,13 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiIssuerSignSelfIssuedRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuerSignSelfIssued(
 		context.Background(),
 		issuerRef,
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13115,14 +12922,13 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiIssuerSignVerbatimRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuerSignVerbatim(
 		context.Background(),
 		issuerRef,
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13185,15 +12991,14 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiIssuerSignVerbatimWithRoleRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuerSignVerbatimWithRole(
 		context.Background(),
 		issuerRef,
 		role,
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13258,15 +13063,14 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiIssuerSignWithRoleRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuerSignWithRole(
 		context.Background(),
 		issuerRef,
 		role,
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13330,14 +13134,13 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiIssuersGenerateIntermediateRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuersGenerateIntermediate(
 		context.Background(),
 		exported,
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13399,14 +13202,13 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiIssuersGenerateRootRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuersGenerateRoot(
 		context.Background(),
 		exported,
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13467,13 +13269,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiIssuersImportBundleRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuersImportBundle(
 		context.Background(),
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13532,13 +13333,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiIssuersImportCertRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuersImportCert(
 		context.Background(),
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13598,14 +13398,13 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiIssuersRotateRootRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuersRotateRoot(
 		context.Background(),
 		exported,
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13665,11 +13464,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiListCerts(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13727,11 +13525,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiListIssuers(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13789,11 +13586,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiListKeys(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13851,11 +13647,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiListRevokedCerts(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13913,11 +13708,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiListRoles(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13975,11 +13769,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiQueryOcsp(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14037,12 +13830,11 @@ func main() {
 	}
 
 	req := "req_example" // string | base-64 encoded ocsp request
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiQueryOcspWithGetReq(
 		context.Background(),
 		req,
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14101,11 +13893,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadAutoTidyConfiguration(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14162,11 +13953,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadCaChainPem(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14223,11 +14013,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadCaDer(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14284,11 +14073,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadCaPem(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14346,12 +14134,11 @@ func main() {
 	}
 
 	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadCert(
 		context.Background(),
 		serial,
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14410,11 +14197,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadCertCaChain(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14471,11 +14257,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadCertCrl(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14532,11 +14317,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadCertDeltaCrl(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14594,12 +14378,11 @@ func main() {
 	}
 
 	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadCertRawDer(
 		context.Background(),
 		serial,
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14659,12 +14442,11 @@ func main() {
 	}
 
 	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadCertRawPem(
 		context.Background(),
 		serial,
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14723,11 +14505,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadClusterConfiguration(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14784,11 +14565,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadCrlConfiguration(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14845,11 +14625,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadCrlDelta(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14906,11 +14685,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadCrlDeltaPem(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14967,11 +14745,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadCrlDer(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15028,11 +14805,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadCrlPem(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15090,12 +14866,11 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadIssuer(
 		context.Background(),
 		issuerRef,
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15155,12 +14930,11 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadIssuerDer(
 		context.Background(),
 		issuerRef,
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15220,12 +14994,11 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadIssuerJson(
 		context.Background(),
 		issuerRef,
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15285,12 +15058,11 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadIssuerPem(
 		context.Background(),
 		issuerRef,
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15349,11 +15121,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadIssuersConfiguration(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15411,12 +15182,11 @@ func main() {
 	}
 
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadKey(
 		context.Background(),
 		keyRef,
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15475,11 +15245,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadKeysConfiguration(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15537,12 +15306,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadRole(
 		context.Background(),
 		name,
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15601,11 +15369,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiReadUrlsConfiguration(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15663,13 +15430,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiReplaceRootRequestWithDefaults()
 	resp, err := client.Secrets.PkiReplaceRoot(
 		context.Background(),
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15728,13 +15494,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiRevokeRequestWithDefaults()
 	resp, err := client.Secrets.PkiRevoke(
 		context.Background(),
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15793,12 +15558,11 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiRevokeIssuer(
 		context.Background(),
 		issuerRef,
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15858,13 +15622,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiRevokeWithKeyRequestWithDefaults()
 	resp, err := client.Secrets.PkiRevokeWithKey(
 		context.Background(),
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15923,13 +15686,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiRootSignIntermediateRequestWithDefaults()
 	resp, err := client.Secrets.PkiRootSignIntermediate(
 		context.Background(),
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15988,13 +15750,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiRootSignSelfIssuedRequestWithDefaults()
 	resp, err := client.Secrets.PkiRootSignSelfIssued(
 		context.Background(),
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16052,11 +15813,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiRotateCrl(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16113,11 +15873,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiRotateDeltaCrl(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16175,13 +15934,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiSetSignedIntermediateRequestWithDefaults()
 	resp, err := client.Secrets.PkiSetSignedIntermediate(
 		context.Background(),
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16240,13 +15998,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiSignVerbatimRequestWithDefaults()
 	resp, err := client.Secrets.PkiSignVerbatim(
 		context.Background(),
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16306,14 +16063,13 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role with configuration for this request
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiSignVerbatimWithRoleRequestWithDefaults()
 	resp, err := client.Secrets.PkiSignVerbatimWithRole(
 		context.Background(),
 		role,
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16375,14 +16131,13 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role with configuration for this request
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiSignWithRoleRequestWithDefaults()
 	resp, err := client.Secrets.PkiSignWithRole(
 		context.Background(),
 		role,
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16443,13 +16198,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiTidyRequestWithDefaults()
 	resp, err := client.Secrets.PkiTidy(
 		context.Background(),
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16507,11 +16261,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiTidyCancel(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16568,11 +16321,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	resp, err := client.Secrets.PkiTidyStatus(
 		context.Background(),
-		pkiMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16631,14 +16383,13 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiWriteIssuerRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteIssuer(
 		context.Background(),
 		issuerRef,
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16700,14 +16451,13 @@ func main() {
 	}
 
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiWriteKeyRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteKey(
 		context.Background(),
 		keyRef,
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16769,14 +16519,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	pkiMountPath := "pkiMountPath_example" // string | Path that the backend was mounted at (defaults to "pki")
 	request := schema.NewPkiWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteRole(
 		context.Background(),
 		name,
-		pkiMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16837,13 +16586,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	rabbitmqMountPath := "rabbitmqMountPath_example" // string | Path that the backend was mounted at (defaults to "rabbitmq")
 	request := schema.NewRabbitMqConfigureConnectionRequestWithDefaults()
 	resp, err := client.Secrets.RabbitMqConfigureConnection(
 		context.Background(),
-		rabbitmqMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("rabbitmq"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16902,13 +16650,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	rabbitmqMountPath := "rabbitmqMountPath_example" // string | Path that the backend was mounted at (defaults to "rabbitmq")
 	request := schema.NewRabbitMqConfigureLeaseRequestWithDefaults()
 	resp, err := client.Secrets.RabbitMqConfigureLease(
 		context.Background(),
-		rabbitmqMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("rabbitmq"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16967,12 +16714,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	rabbitmqMountPath := "rabbitmqMountPath_example" // string | Path that the backend was mounted at (defaults to "rabbitmq")
 	resp, err := client.Secrets.RabbitMqDeleteRole(
 		context.Background(),
 		name,
-		rabbitmqMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("rabbitmq"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17031,11 +16777,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	rabbitmqMountPath := "rabbitmqMountPath_example" // string | Path that the backend was mounted at (defaults to "rabbitmq")
 	resp, err := client.Secrets.RabbitMqListRoles(
 		context.Background(),
-		rabbitmqMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("rabbitmq"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17093,11 +16838,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	rabbitmqMountPath := "rabbitmqMountPath_example" // string | Path that the backend was mounted at (defaults to "rabbitmq")
 	resp, err := client.Secrets.RabbitMqReadLeaseConfiguration(
 		context.Background(),
-		rabbitmqMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("rabbitmq"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17155,12 +16899,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	rabbitmqMountPath := "rabbitmqMountPath_example" // string | Path that the backend was mounted at (defaults to "rabbitmq")
 	resp, err := client.Secrets.RabbitMqReadRole(
 		context.Background(),
 		name,
-		rabbitmqMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("rabbitmq"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17220,12 +16963,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	rabbitmqMountPath := "rabbitmqMountPath_example" // string | Path that the backend was mounted at (defaults to "rabbitmq")
 	resp, err := client.Secrets.RabbitMqRequestCredentials(
 		context.Background(),
 		name,
-		rabbitmqMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("rabbitmq"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17286,14 +17028,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	rabbitmqMountPath := "rabbitmqMountPath_example" // string | Path that the backend was mounted at (defaults to "rabbitmq")
 	request := schema.NewRabbitMqWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.RabbitMqWriteRole(
 		context.Background(),
 		name,
-		rabbitmqMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("rabbitmq"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17354,13 +17095,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	sshMountPath := "sshMountPath_example" // string | Path that the backend was mounted at (defaults to "ssh")
 	request := schema.NewSshConfigureCaRequestWithDefaults()
 	resp, err := client.Secrets.SshConfigureCa(
 		context.Background(),
-		sshMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17419,13 +17159,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	sshMountPath := "sshMountPath_example" // string | Path that the backend was mounted at (defaults to "ssh")
 	request := schema.NewSshConfigureZeroAddressRequestWithDefaults()
 	resp, err := client.Secrets.SshConfigureZeroAddress(
 		context.Background(),
-		sshMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17483,11 +17222,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	sshMountPath := "sshMountPath_example" // string | Path that the backend was mounted at (defaults to "ssh")
 	resp, err := client.Secrets.SshDeleteCaConfiguration(
 		context.Background(),
-		sshMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17545,12 +17283,11 @@ func main() {
 	}
 
 	role := "role_example" // string | [Required for all types] Name of the role being created.
-	sshMountPath := "sshMountPath_example" // string | Path that the backend was mounted at (defaults to "ssh")
 	resp, err := client.Secrets.SshDeleteRole(
 		context.Background(),
 		role,
-		sshMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17609,11 +17346,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	sshMountPath := "sshMountPath_example" // string | Path that the backend was mounted at (defaults to "ssh")
 	resp, err := client.Secrets.SshDeleteZeroAddressConfiguration(
 		context.Background(),
-		sshMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17672,14 +17408,13 @@ func main() {
 	}
 
 	role := "role_example" // string | [Required] Name of the role
-	sshMountPath := "sshMountPath_example" // string | Path that the backend was mounted at (defaults to "ssh")
 	request := schema.NewSshGenerateCredentialsRequestWithDefaults()
 	resp, err := client.Secrets.SshGenerateCredentials(
 		context.Background(),
 		role,
-		sshMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17741,14 +17476,13 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role with configuration for this request.
-	sshMountPath := "sshMountPath_example" // string | Path that the backend was mounted at (defaults to "ssh")
 	request := schema.NewSshIssueCertificateRequestWithDefaults()
 	resp, err := client.Secrets.SshIssueCertificate(
 		context.Background(),
 		role,
-		sshMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17808,11 +17542,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	sshMountPath := "sshMountPath_example" // string | Path that the backend was mounted at (defaults to "ssh")
 	resp, err := client.Secrets.SshListRoles(
 		context.Background(),
-		sshMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17871,13 +17604,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	sshMountPath := "sshMountPath_example" // string | Path that the backend was mounted at (defaults to "ssh")
 	request := schema.NewSshListRolesByIpRequestWithDefaults()
 	resp, err := client.Secrets.SshListRolesByIp(
 		context.Background(),
-		sshMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17935,11 +17667,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	sshMountPath := "sshMountPath_example" // string | Path that the backend was mounted at (defaults to "ssh")
 	resp, err := client.Secrets.SshReadCaConfiguration(
 		context.Background(),
-		sshMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17996,11 +17727,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	sshMountPath := "sshMountPath_example" // string | Path that the backend was mounted at (defaults to "ssh")
 	resp, err := client.Secrets.SshReadPublicKey(
 		context.Background(),
-		sshMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18058,12 +17788,11 @@ func main() {
 	}
 
 	role := "role_example" // string | [Required for all types] Name of the role being created.
-	sshMountPath := "sshMountPath_example" // string | Path that the backend was mounted at (defaults to "ssh")
 	resp, err := client.Secrets.SshReadRole(
 		context.Background(),
 		role,
-		sshMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18122,11 +17851,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	sshMountPath := "sshMountPath_example" // string | Path that the backend was mounted at (defaults to "ssh")
 	resp, err := client.Secrets.SshReadZeroAddressConfiguration(
 		context.Background(),
-		sshMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18185,14 +17913,13 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role with configuration for this request.
-	sshMountPath := "sshMountPath_example" // string | Path that the backend was mounted at (defaults to "ssh")
 	request := schema.NewSshSignCertificateRequestWithDefaults()
 	resp, err := client.Secrets.SshSignCertificate(
 		context.Background(),
 		role,
-		sshMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18252,11 +17979,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	sshMountPath := "sshMountPath_example" // string | Path that the backend was mounted at (defaults to "ssh")
 	resp, err := client.Secrets.SshTidyDynamicHostKeys(
 		context.Background(),
-		sshMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18314,13 +18040,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	sshMountPath := "sshMountPath_example" // string | Path that the backend was mounted at (defaults to "ssh")
 	request := schema.NewSshVerifyOtpRequestWithDefaults()
 	resp, err := client.Secrets.SshVerifyOtp(
 		context.Background(),
-		sshMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18380,14 +18105,13 @@ func main() {
 	}
 
 	role := "role_example" // string | [Required for all types] Name of the role being created.
-	sshMountPath := "sshMountPath_example" // string | Path that the backend was mounted at (defaults to "ssh")
 	request := schema.NewSshWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.SshWriteRole(
 		context.Background(),
 		role,
-		sshMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18448,13 +18172,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	terraformMountPath := "terraformMountPath_example" // string | Path that the backend was mounted at (defaults to "terraform")
 	request := schema.NewTerraformCloudConfigureRequestWithDefaults()
 	resp, err := client.Secrets.TerraformCloudConfigure(
 		context.Background(),
-		terraformMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("terraform"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18512,11 +18235,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	terraformMountPath := "terraformMountPath_example" // string | Path that the backend was mounted at (defaults to "terraform")
 	resp, err := client.Secrets.TerraformCloudDeleteConfiguration(
 		context.Background(),
-		terraformMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("terraform"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18574,12 +18296,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	terraformMountPath := "terraformMountPath_example" // string | Path that the backend was mounted at (defaults to "terraform")
 	resp, err := client.Secrets.TerraformCloudDeleteRole(
 		context.Background(),
 		name,
-		terraformMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("terraform"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18639,12 +18360,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	terraformMountPath := "terraformMountPath_example" // string | Path that the backend was mounted at (defaults to "terraform")
 	resp, err := client.Secrets.TerraformCloudGenerateCredentials(
 		context.Background(),
 		name,
-		terraformMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("terraform"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18703,11 +18423,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	terraformMountPath := "terraformMountPath_example" // string | Path that the backend was mounted at (defaults to "terraform")
 	resp, err := client.Secrets.TerraformCloudListRoles(
 		context.Background(),
-		terraformMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("terraform"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18765,11 +18484,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	terraformMountPath := "terraformMountPath_example" // string | Path that the backend was mounted at (defaults to "terraform")
 	resp, err := client.Secrets.TerraformCloudReadConfiguration(
 		context.Background(),
-		terraformMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("terraform"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18827,12 +18545,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	terraformMountPath := "terraformMountPath_example" // string | Path that the backend was mounted at (defaults to "terraform")
 	resp, err := client.Secrets.TerraformCloudReadRole(
 		context.Background(),
 		name,
-		terraformMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("terraform"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18892,12 +18609,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the team or organization role
-	terraformMountPath := "terraformMountPath_example" // string | Path that the backend was mounted at (defaults to "terraform")
 	resp, err := client.Secrets.TerraformCloudRotateRole(
 		context.Background(),
 		name,
-		terraformMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("terraform"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18958,14 +18674,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	terraformMountPath := "terraformMountPath_example" // string | Path that the backend was mounted at (defaults to "terraform")
 	request := schema.NewTerraformCloudWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.TerraformCloudWriteRole(
 		context.Background(),
 		name,
-		terraformMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("terraform"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19027,14 +18742,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
-	totpMountPath := "totpMountPath_example" // string | Path that the backend was mounted at (defaults to "totp")
 	request := schema.NewTotpCreateKeyRequestWithDefaults()
 	resp, err := client.Secrets.TotpCreateKey(
 		context.Background(),
 		name,
-		totpMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("totp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19095,12 +18809,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
-	totpMountPath := "totpMountPath_example" // string | Path that the backend was mounted at (defaults to "totp")
 	resp, err := client.Secrets.TotpDeleteKey(
 		context.Background(),
 		name,
-		totpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("totp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19160,12 +18873,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
-	totpMountPath := "totpMountPath_example" // string | Path that the backend was mounted at (defaults to "totp")
 	resp, err := client.Secrets.TotpGenerateCode(
 		context.Background(),
 		name,
-		totpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("totp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19224,11 +18936,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	totpMountPath := "totpMountPath_example" // string | Path that the backend was mounted at (defaults to "totp")
 	resp, err := client.Secrets.TotpListKeys(
 		context.Background(),
-		totpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("totp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19287,12 +18998,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
-	totpMountPath := "totpMountPath_example" // string | Path that the backend was mounted at (defaults to "totp")
 	resp, err := client.Secrets.TotpReadKey(
 		context.Background(),
 		name,
-		totpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("totp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19353,14 +19063,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
-	totpMountPath := "totpMountPath_example" // string | Path that the backend was mounted at (defaults to "totp")
 	request := schema.NewTotpValidateCodeRequestWithDefaults()
 	resp, err := client.Secrets.TotpValidateCode(
 		context.Background(),
 		name,
-		totpMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("totp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19421,12 +19130,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	resp, err := client.Secrets.TransitBackUpKey(
 		context.Background(),
 		name,
-		transitMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19486,13 +19194,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitConfigureCacheRequestWithDefaults()
 	resp, err := client.Secrets.TransitConfigureCache(
 		context.Background(),
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19552,14 +19259,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitConfigureKeyRequestWithDefaults()
 	resp, err := client.Secrets.TransitConfigureKey(
 		context.Background(),
 		name,
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19620,13 +19326,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitConfigureKeysRequestWithDefaults()
 	resp, err := client.Secrets.TransitConfigureKeys(
 		context.Background(),
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19686,14 +19391,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitCreateKeyRequestWithDefaults()
 	resp, err := client.Secrets.TransitCreateKey(
 		context.Background(),
 		name,
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19755,14 +19459,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitDecryptRequestWithDefaults()
 	resp, err := client.Secrets.TransitDecrypt(
 		context.Background(),
 		name,
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19823,12 +19526,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	resp, err := client.Secrets.TransitDeleteKey(
 		context.Background(),
 		name,
-		transitMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19889,14 +19591,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitEncryptRequestWithDefaults()
 	resp, err := client.Secrets.TransitEncrypt(
 		context.Background(),
 		name,
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19958,13 +19659,12 @@ func main() {
 
 	name := "name_example" // string | Name of the key
 	type_ := "type__example" // string | Type of key to export (encryption-key, signing-key, hmac-key)
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	resp, err := client.Secrets.TransitExportKey(
 		context.Background(),
 		name,
 		type_,
-		transitMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20028,14 +19728,13 @@ func main() {
 	name := "name_example" // string | Name of the key
 	type_ := "type__example" // string | Type of key to export (encryption-key, signing-key, hmac-key)
 	version := "version_example" // string | Version of the key
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	resp, err := client.Secrets.TransitExportKeyVersion(
 		context.Background(),
 		name,
 		type_,
 		version,
-		transitMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20101,15 +19800,14 @@ func main() {
 
 	name := "name_example" // string | The backend key used for encrypting the data key
 	plaintext := "plaintext_example" // string | \"plaintext\" will return the key in both plaintext and ciphertext; \"wrapped\" will return the ciphertext only.
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitGenerateDataKeyRequestWithDefaults()
 	resp, err := client.Secrets.TransitGenerateDataKey(
 		context.Background(),
 		name,
 		plaintext,
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20173,14 +19871,13 @@ func main() {
 	}
 
 	name := "name_example" // string | The key to use for the HMAC function
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitGenerateHmacRequestWithDefaults()
 	resp, err := client.Secrets.TransitGenerateHmac(
 		context.Background(),
 		name,
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20243,15 +19940,14 @@ func main() {
 
 	name := "name_example" // string | The key to use for the HMAC function
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitGenerateHmacWithAlgorithmRequestWithDefaults()
 	resp, err := client.Secrets.TransitGenerateHmacWithAlgorithm(
 		context.Background(),
 		name,
 		urlalgorithm,
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20314,13 +20010,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitGenerateRandomRequestWithDefaults()
 	resp, err := client.Secrets.TransitGenerateRandom(
 		context.Background(),
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20380,14 +20075,13 @@ func main() {
 	}
 
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitGenerateRandomWithBytesRequestWithDefaults()
 	resp, err := client.Secrets.TransitGenerateRandomWithBytes(
 		context.Background(),
 		urlbytes,
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20449,14 +20143,13 @@ func main() {
 	}
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitGenerateRandomWithSourceRequestWithDefaults()
 	resp, err := client.Secrets.TransitGenerateRandomWithSource(
 		context.Background(),
 		source,
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20519,15 +20212,14 @@ func main() {
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitGenerateRandomWithSourceAndBytesRequestWithDefaults()
 	resp, err := client.Secrets.TransitGenerateRandomWithSourceAndBytes(
 		context.Background(),
 		source,
 		urlbytes,
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20590,13 +20282,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitHashRequestWithDefaults()
 	resp, err := client.Secrets.TransitHash(
 		context.Background(),
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20656,14 +20347,13 @@ func main() {
 	}
 
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitHashWithAlgorithmRequestWithDefaults()
 	resp, err := client.Secrets.TransitHashWithAlgorithm(
 		context.Background(),
 		urlalgorithm,
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20725,14 +20415,13 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the key
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitImportKeyRequestWithDefaults()
 	resp, err := client.Secrets.TransitImportKey(
 		context.Background(),
 		name,
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20794,14 +20483,13 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the key
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitImportKeyVersionRequestWithDefaults()
 	resp, err := client.Secrets.TransitImportKeyVersion(
 		context.Background(),
 		name,
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20861,11 +20549,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	resp, err := client.Secrets.TransitListKeys(
 		context.Background(),
-		transitMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20923,11 +20610,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	resp, err := client.Secrets.TransitReadCacheConfiguration(
 		context.Background(),
-		transitMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20985,12 +20671,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	resp, err := client.Secrets.TransitReadKey(
 		context.Background(),
 		name,
-		transitMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -21049,11 +20734,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	resp, err := client.Secrets.TransitReadKeysConfiguration(
 		context.Background(),
-		transitMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -21110,11 +20794,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	resp, err := client.Secrets.TransitReadWrappingKey(
 		context.Background(),
-		transitMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -21173,14 +20856,13 @@ func main() {
 	}
 
 	name := "name_example" // string | If set, this will be the name of the restored key.
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitRestoreAndRenameKeyRequestWithDefaults()
 	resp, err := client.Secrets.TransitRestoreAndRenameKey(
 		context.Background(),
 		name,
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -21241,13 +20923,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitRestoreKeyRequestWithDefaults()
 	resp, err := client.Secrets.TransitRestoreKey(
 		context.Background(),
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -21307,14 +20988,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitRewrapRequestWithDefaults()
 	resp, err := client.Secrets.TransitRewrap(
 		context.Background(),
 		name,
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -21376,14 +21056,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitRotateKeyRequestWithDefaults()
 	resp, err := client.Secrets.TransitRotateKey(
 		context.Background(),
 		name,
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -21445,14 +21124,13 @@ func main() {
 	}
 
 	name := "name_example" // string | The key to use
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitSignRequestWithDefaults()
 	resp, err := client.Secrets.TransitSign(
 		context.Background(),
 		name,
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -21515,15 +21193,14 @@ func main() {
 
 	name := "name_example" // string | The key to use
 	urlalgorithm := "urlalgorithm_example" // string | Hash algorithm to use (POST URL parameter)
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitSignWithAlgorithmRequestWithDefaults()
 	resp, err := client.Secrets.TransitSignWithAlgorithm(
 		context.Background(),
 		name,
 		urlalgorithm,
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -21587,14 +21264,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitTrimKeyRequestWithDefaults()
 	resp, err := client.Secrets.TransitTrimKey(
 		context.Background(),
 		name,
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -21656,14 +21332,13 @@ func main() {
 	}
 
 	name := "name_example" // string | The key to use
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitVerifyRequestWithDefaults()
 	resp, err := client.Secrets.TransitVerify(
 		context.Background(),
 		name,
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -21726,15 +21401,14 @@ func main() {
 
 	name := "name_example" // string | The key to use
 	urlalgorithm := "urlalgorithm_example" // string | Hash algorithm to use (POST URL parameter)
-	transitMountPath := "transitMountPath_example" // string | Path that the backend was mounted at (defaults to "transit")
 	request := schema.NewTransitVerifyWithAlgorithmRequestWithDefaults()
 	resp, err := client.Secrets.TransitVerifyWithAlgorithm(
 		context.Background(),
 		name,
 		urlalgorithm,
-		transitMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)

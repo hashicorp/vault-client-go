@@ -279,12 +279,11 @@ func main() {
 	}
 
 	role := "role_example" // string | The name of the role as it should appear in Vault.
-	alicloudMountPath := "alicloudMountPath_example" // string | Path that the backend was mounted at (defaults to "alicloud")
 	resp, err := client.Auth.AliCloudDeleteAuthRole(
 		context.Background(),
 		role,
-		alicloudMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -343,11 +342,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	alicloudMountPath := "alicloudMountPath_example" // string | Path that the backend was mounted at (defaults to "alicloud")
 	resp, err := client.Auth.AliCloudListAuthRoles(
 		context.Background(),
-		alicloudMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -406,13 +404,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	alicloudMountPath := "alicloudMountPath_example" // string | Path that the backend was mounted at (defaults to "alicloud")
 	request := schema.NewAliCloudLoginRequestWithDefaults()
 	resp, err := client.Auth.AliCloudLogin(
 		context.Background(),
-		alicloudMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -471,12 +468,11 @@ func main() {
 	}
 
 	role := "role_example" // string | The name of the role as it should appear in Vault.
-	alicloudMountPath := "alicloudMountPath_example" // string | Path that the backend was mounted at (defaults to "alicloud")
 	resp, err := client.Auth.AliCloudReadAuthRole(
 		context.Background(),
 		role,
-		alicloudMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -537,14 +533,13 @@ func main() {
 	}
 
 	role := "role_example" // string | The name of the role as it should appear in Vault.
-	alicloudMountPath := "alicloudMountPath_example" // string | Path that the backend was mounted at (defaults to "alicloud")
 	request := schema.NewAliCloudWriteAuthRoleRequestWithDefaults()
 	resp, err := client.Auth.AliCloudWriteAuthRole(
 		context.Background(),
 		role,
-		alicloudMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -605,12 +600,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleDeleteBindSecretId(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -670,12 +664,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleDeleteBoundCidrList(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -735,12 +728,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleDeletePeriod(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -800,12 +792,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleDeletePolicies(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -865,12 +856,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleDeleteRole(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -930,12 +920,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleDeleteSecretIdBoundCidrs(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -995,12 +984,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleDeleteSecretIdNumUses(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1060,12 +1048,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleDeleteSecretIdTtl(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1125,12 +1112,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleDeleteTokenBoundCidrs(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1190,12 +1176,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleDeleteTokenMaxTtl(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1255,12 +1240,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleDeleteTokenNumUses(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1320,12 +1304,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleDeleteTokenTtl(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1386,14 +1369,13 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	request := schema.NewAppRoleDestroySecretIdRequestWithDefaults()
 	resp, err := client.Auth.AppRoleDestroySecretId(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1455,14 +1437,13 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	request := schema.NewAppRoleDestroySecretIdByAccessorRequestWithDefaults()
 	resp, err := client.Auth.AppRoleDestroySecretIdByAccessor(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1522,11 +1503,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleListRoles(
 		context.Background(),
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1585,12 +1565,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleListSecretIds(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1651,13 +1630,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	request := schema.NewAppRoleLoginRequestWithDefaults()
 	resp, err := client.Auth.AppRoleLogin(
 		context.Background(),
-		approleMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1717,14 +1695,13 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	request := schema.NewAppRoleLookUpSecretIdRequestWithDefaults()
 	resp, err := client.Auth.AppRoleLookUpSecretId(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1786,14 +1763,13 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	request := schema.NewAppRoleLookUpSecretIdByAccessorRequestWithDefaults()
 	resp, err := client.Auth.AppRoleLookUpSecretIdByAccessor(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1854,12 +1830,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleReadBindSecretId(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1919,12 +1894,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleReadBoundCidrList(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1984,12 +1958,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleReadLocalSecretIds(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2049,12 +2022,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleReadPeriod(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2114,12 +2086,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleReadPolicies(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2179,12 +2150,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleReadRole(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2244,12 +2214,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleReadRoleId(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2309,12 +2278,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleReadSecretIdBoundCidrs(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2374,12 +2342,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleReadSecretIdNumUses(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2439,12 +2406,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleReadSecretIdTtl(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2504,12 +2470,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleReadTokenBoundCidrs(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2569,12 +2534,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleReadTokenMaxTtl(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2634,12 +2598,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleReadTokenNumUses(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2699,12 +2662,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleReadTokenTtl(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2763,11 +2725,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	resp, err := client.Auth.AppRoleTidySecretId(
 		context.Background(),
-		approleMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2826,14 +2787,13 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	request := schema.NewAppRoleWriteBindSecretIdRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteBindSecretId(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2895,14 +2855,13 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	request := schema.NewAppRoleWriteBoundCidrListRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteBoundCidrList(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2964,14 +2923,13 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	request := schema.NewAppRoleWriteCustomSecretIdRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteCustomSecretId(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3033,14 +2991,13 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	request := schema.NewAppRoleWritePeriodRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWritePeriod(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3102,14 +3059,13 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	request := schema.NewAppRoleWritePoliciesRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWritePolicies(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3171,14 +3127,13 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	request := schema.NewAppRoleWriteRoleRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteRole(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3240,14 +3195,13 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	request := schema.NewAppRoleWriteRoleIdRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteRoleId(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3309,14 +3263,13 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	request := schema.NewAppRoleWriteSecretIdRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteSecretId(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3378,14 +3331,13 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	request := schema.NewAppRoleWriteSecretIdBoundCidrsRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteSecretIdBoundCidrs(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3447,14 +3399,13 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	request := schema.NewAppRoleWriteSecretIdNumUsesRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteSecretIdNumUses(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3516,14 +3467,13 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	request := schema.NewAppRoleWriteSecretIdTtlRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteSecretIdTtl(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3585,14 +3535,13 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	request := schema.NewAppRoleWriteTokenBoundCidrsRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteTokenBoundCidrs(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3654,14 +3603,13 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	request := schema.NewAppRoleWriteTokenMaxTtlRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteTokenMaxTtl(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3723,14 +3671,13 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	request := schema.NewAppRoleWriteTokenNumUsesRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteTokenNumUses(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3792,14 +3739,13 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path that the backend was mounted at (defaults to "approle")
 	request := schema.NewAppRoleWriteTokenTtlRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteTokenTtl(
 		context.Background(),
 		roleName,
-		approleMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("approle"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3861,14 +3807,13 @@ func main() {
 	}
 
 	certName := "certName_example" // string | Name of the certificate.
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	request := schema.NewAwsConfigureCertificateRequestWithDefaults()
 	resp, err := client.Auth.AwsConfigureCertificate(
 		context.Background(),
 		certName,
-		awsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3929,13 +3874,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	request := schema.NewAwsConfigureClientRequestWithDefaults()
 	resp, err := client.Auth.AwsConfigureClient(
 		context.Background(),
-		awsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3994,13 +3938,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	request := schema.NewAwsConfigureIdentityAccessListTidyOperationRequestWithDefaults()
 	resp, err := client.Auth.AwsConfigureIdentityAccessListTidyOperation(
 		context.Background(),
-		awsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4059,13 +4002,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	request := schema.NewAwsConfigureIdentityIntegrationRequestWithDefaults()
 	resp, err := client.Auth.AwsConfigureIdentityIntegration(
 		context.Background(),
-		awsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4124,13 +4066,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	request := schema.NewAwsConfigureIdentityWhitelistTidyOperationRequestWithDefaults()
 	resp, err := client.Auth.AwsConfigureIdentityWhitelistTidyOperation(
 		context.Background(),
-		awsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4189,13 +4130,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	request := schema.NewAwsConfigureRoleTagBlacklistTidyOperationRequestWithDefaults()
 	resp, err := client.Auth.AwsConfigureRoleTagBlacklistTidyOperation(
 		context.Background(),
-		awsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4254,13 +4194,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	request := schema.NewAwsConfigureRoleTagDenyListTidyOperationRequestWithDefaults()
 	resp, err := client.Auth.AwsConfigureRoleTagDenyListTidyOperation(
 		context.Background(),
-		awsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4319,12 +4258,11 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsDeleteAuthRole(
 		context.Background(),
 		role,
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4384,12 +4322,11 @@ func main() {
 	}
 
 	certName := "certName_example" // string | Name of the certificate.
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsDeleteCertificateConfiguration(
 		context.Background(),
 		certName,
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4448,11 +4385,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsDeleteClientConfiguration(
 		context.Background(),
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4510,12 +4446,11 @@ func main() {
 	}
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsDeleteIdentityAccessList(
 		context.Background(),
 		instanceId,
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4574,11 +4509,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsDeleteIdentityAccessListTidySettings(
 		context.Background(),
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4636,12 +4570,11 @@ func main() {
 	}
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsDeleteIdentityWhitelist(
 		context.Background(),
 		instanceId,
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4700,11 +4633,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsDeleteIdentityWhitelistTidySettings(
 		context.Background(),
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4762,12 +4694,11 @@ func main() {
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsDeleteRoleTagBlacklist(
 		context.Background(),
 		roleTag,
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4826,11 +4757,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsDeleteRoleTagBlacklistTidySettings(
 		context.Background(),
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4888,12 +4818,11 @@ func main() {
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsDeleteRoleTagDenyList(
 		context.Background(),
 		roleTag,
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4952,11 +4881,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsDeleteRoleTagDenyListTidySettings(
 		context.Background(),
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5014,12 +4942,11 @@ func main() {
 	}
 
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsDeleteStsRole(
 		context.Background(),
 		accountId,
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5078,11 +5005,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsListAuthRoles(
 		context.Background(),
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5140,11 +5066,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsListCertificateConfigurations(
 		context.Background(),
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5202,11 +5127,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsListIdentityAccessList(
 		context.Background(),
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5264,11 +5188,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsListIdentityWhitelist(
 		context.Background(),
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5326,11 +5249,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsListRoleTagBlacklists(
 		context.Background(),
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5388,11 +5310,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsListRoleTagDenyLists(
 		context.Background(),
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5450,11 +5371,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsListStsRoleRelationships(
 		context.Background(),
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5513,13 +5433,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	request := schema.NewAwsLoginRequestWithDefaults()
 	resp, err := client.Auth.AwsLogin(
 		context.Background(),
-		awsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5578,12 +5497,11 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsReadAuthRole(
 		context.Background(),
 		role,
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5643,12 +5561,11 @@ func main() {
 	}
 
 	certName := "certName_example" // string | Name of the certificate.
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsReadCertificateConfiguration(
 		context.Background(),
 		certName,
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5707,11 +5624,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsReadClientConfiguration(
 		context.Background(),
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5769,12 +5685,11 @@ func main() {
 	}
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsReadIdentityAccessList(
 		context.Background(),
 		instanceId,
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5833,11 +5748,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsReadIdentityAccessListTidySettings(
 		context.Background(),
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5894,11 +5808,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsReadIdentityIntegrationConfiguration(
 		context.Background(),
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5956,12 +5869,11 @@ func main() {
 	}
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsReadIdentityWhitelist(
 		context.Background(),
 		instanceId,
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6020,11 +5932,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsReadIdentityWhitelistTidySettings(
 		context.Background(),
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6082,12 +5993,11 @@ func main() {
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsReadRoleTagBlacklist(
 		context.Background(),
 		roleTag,
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6146,11 +6056,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsReadRoleTagBlacklistTidySettings(
 		context.Background(),
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6208,12 +6117,11 @@ func main() {
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsReadRoleTagDenyList(
 		context.Background(),
 		roleTag,
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6272,11 +6180,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsReadRoleTagDenyListTidySettings(
 		context.Background(),
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6334,12 +6241,11 @@ func main() {
 	}
 
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsReadStsRole(
 		context.Background(),
 		accountId,
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6398,11 +6304,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsRotateRootCredentials(
 		context.Background(),
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6460,13 +6365,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	request := schema.NewAwsTidyIdentityAccessListRequestWithDefaults()
 	resp, err := client.Auth.AwsTidyIdentityAccessList(
 		context.Background(),
-		awsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6525,13 +6429,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	request := schema.NewAwsTidyIdentityWhitelistRequestWithDefaults()
 	resp, err := client.Auth.AwsTidyIdentityWhitelist(
 		context.Background(),
-		awsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6590,13 +6493,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	request := schema.NewAwsTidyRoleTagBlacklistRequestWithDefaults()
 	resp, err := client.Auth.AwsTidyRoleTagBlacklist(
 		context.Background(),
-		awsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6655,13 +6557,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	request := schema.NewAwsTidyRoleTagDenyListRequestWithDefaults()
 	resp, err := client.Auth.AwsTidyRoleTagDenyList(
 		context.Background(),
-		awsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6721,14 +6622,13 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	request := schema.NewAwsWriteAuthRoleRequestWithDefaults()
 	resp, err := client.Auth.AwsWriteAuthRole(
 		context.Background(),
 		role,
-		awsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6790,14 +6690,13 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	request := schema.NewAwsWriteRoleTagRequestWithDefaults()
 	resp, err := client.Auth.AwsWriteRoleTag(
 		context.Background(),
 		role,
-		awsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6858,12 +6757,11 @@ func main() {
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsWriteRoleTagBlacklist(
 		context.Background(),
 		roleTag,
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6923,12 +6821,11 @@ func main() {
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	resp, err := client.Auth.AwsWriteRoleTagDenyList(
 		context.Background(),
 		roleTag,
-		awsMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6989,14 +6886,13 @@ func main() {
 	}
 
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-	awsMountPath := "awsMountPath_example" // string | Path that the backend was mounted at (defaults to "aws")
 	request := schema.NewAwsWriteStsRoleRequestWithDefaults()
 	resp, err := client.Auth.AwsWriteStsRole(
 		context.Background(),
 		accountId,
-		awsMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7057,13 +6953,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	azureMountPath := "azureMountPath_example" // string | Path that the backend was mounted at (defaults to "azure")
 	request := schema.NewAzureConfigureAuthRequestWithDefaults()
 	resp, err := client.Auth.AzureConfigureAuth(
 		context.Background(),
-		azureMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7121,11 +7016,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	azureMountPath := "azureMountPath_example" // string | Path that the backend was mounted at (defaults to "azure")
 	resp, err := client.Auth.AzureDeleteAuthConfiguration(
 		context.Background(),
-		azureMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7183,12 +7077,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	azureMountPath := "azureMountPath_example" // string | Path that the backend was mounted at (defaults to "azure")
 	resp, err := client.Auth.AzureDeleteAuthRole(
 		context.Background(),
 		name,
-		azureMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7247,11 +7140,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	azureMountPath := "azureMountPath_example" // string | Path that the backend was mounted at (defaults to "azure")
 	resp, err := client.Auth.AzureListAuthRoles(
 		context.Background(),
-		azureMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7310,13 +7202,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	azureMountPath := "azureMountPath_example" // string | Path that the backend was mounted at (defaults to "azure")
 	request := schema.NewAzureLoginRequestWithDefaults()
 	resp, err := client.Auth.AzureLogin(
 		context.Background(),
-		azureMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7374,11 +7265,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	azureMountPath := "azureMountPath_example" // string | Path that the backend was mounted at (defaults to "azure")
 	resp, err := client.Auth.AzureReadAuthConfiguration(
 		context.Background(),
-		azureMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7436,12 +7326,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	azureMountPath := "azureMountPath_example" // string | Path that the backend was mounted at (defaults to "azure")
 	resp, err := client.Auth.AzureReadAuthRole(
 		context.Background(),
 		name,
-		azureMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7500,11 +7389,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	azureMountPath := "azureMountPath_example" // string | Path that the backend was mounted at (defaults to "azure")
 	resp, err := client.Auth.AzureRotateRootCredentials(
 		context.Background(),
-		azureMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7563,14 +7451,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	azureMountPath := "azureMountPath_example" // string | Path that the backend was mounted at (defaults to "azure")
 	request := schema.NewAzureWriteAuthRoleRequestWithDefaults()
 	resp, err := client.Auth.AzureWriteAuthRole(
 		context.Background(),
 		name,
-		azureMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7631,13 +7518,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	centrifyMountPath := "centrifyMountPath_example" // string | Path that the backend was mounted at (defaults to "centrify")
 	request := schema.NewCentrifyConfigureRequestWithDefaults()
 	resp, err := client.Auth.CentrifyConfigure(
 		context.Background(),
-		centrifyMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("centrify"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7696,13 +7582,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	centrifyMountPath := "centrifyMountPath_example" // string | Path that the backend was mounted at (defaults to "centrify")
 	request := schema.NewCentrifyLoginRequestWithDefaults()
 	resp, err := client.Auth.CentrifyLogin(
 		context.Background(),
-		centrifyMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("centrify"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7760,11 +7645,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	centrifyMountPath := "centrifyMountPath_example" // string | Path that the backend was mounted at (defaults to "centrify")
 	resp, err := client.Auth.CentrifyReadConfiguration(
 		context.Background(),
-		centrifyMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("centrify"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7822,13 +7706,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	certMountPath := "certMountPath_example" // string | Path that the backend was mounted at (defaults to "cert")
 	request := schema.NewCertConfigureRequestWithDefaults()
 	resp, err := client.Auth.CertConfigure(
 		context.Background(),
-		certMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("cert"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7887,12 +7770,11 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the certificate
-	certMountPath := "certMountPath_example" // string | Path that the backend was mounted at (defaults to "cert")
 	resp, err := client.Auth.CertDeleteCertificate(
 		context.Background(),
 		name,
-		certMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("cert"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7952,12 +7834,11 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the certificate
-	certMountPath := "certMountPath_example" // string | Path that the backend was mounted at (defaults to "cert")
 	resp, err := client.Auth.CertDeleteCrl(
 		context.Background(),
 		name,
-		certMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("cert"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8016,11 +7897,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	certMountPath := "certMountPath_example" // string | Path that the backend was mounted at (defaults to "cert")
 	resp, err := client.Auth.CertListCertificates(
 		context.Background(),
-		certMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("cert"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8078,11 +7958,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	certMountPath := "certMountPath_example" // string | Path that the backend was mounted at (defaults to "cert")
 	resp, err := client.Auth.CertListCrls(
 		context.Background(),
-		certMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("cert"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8141,13 +8020,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	certMountPath := "certMountPath_example" // string | Path that the backend was mounted at (defaults to "cert")
 	request := schema.NewCertLoginRequestWithDefaults()
 	resp, err := client.Auth.CertLogin(
 		context.Background(),
-		certMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("cert"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8206,12 +8084,11 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the certificate
-	certMountPath := "certMountPath_example" // string | Path that the backend was mounted at (defaults to "cert")
 	resp, err := client.Auth.CertReadCertificate(
 		context.Background(),
 		name,
-		certMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("cert"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8270,11 +8147,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	certMountPath := "certMountPath_example" // string | Path that the backend was mounted at (defaults to "cert")
 	resp, err := client.Auth.CertReadConfiguration(
 		context.Background(),
-		certMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("cert"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8332,12 +8208,11 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the certificate
-	certMountPath := "certMountPath_example" // string | Path that the backend was mounted at (defaults to "cert")
 	resp, err := client.Auth.CertReadCrl(
 		context.Background(),
 		name,
-		certMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("cert"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8398,14 +8273,13 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the certificate
-	certMountPath := "certMountPath_example" // string | Path that the backend was mounted at (defaults to "cert")
 	request := schema.NewCertWriteCertificateRequestWithDefaults()
 	resp, err := client.Auth.CertWriteCertificate(
 		context.Background(),
 		name,
-		certMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("cert"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8467,14 +8341,13 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the certificate
-	certMountPath := "certMountPath_example" // string | Path that the backend was mounted at (defaults to "cert")
 	request := schema.NewCertWriteCrlRequestWithDefaults()
 	resp, err := client.Auth.CertWriteCrl(
 		context.Background(),
 		name,
-		certMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("cert"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8535,13 +8408,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	cfMountPath := "cfMountPath_example" // string | Path that the backend was mounted at (defaults to "cf")
 	request := schema.NewCloudFoundryConfigureRequestWithDefaults()
 	resp, err := client.Auth.CloudFoundryConfigure(
 		context.Background(),
-		cfMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("cf"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8599,11 +8471,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	cfMountPath := "cfMountPath_example" // string | Path that the backend was mounted at (defaults to "cf")
 	resp, err := client.Auth.CloudFoundryDeleteConfiguration(
 		context.Background(),
-		cfMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("cf"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8661,12 +8532,11 @@ func main() {
 	}
 
 	role := "role_example" // string | The name of the role.
-	cfMountPath := "cfMountPath_example" // string | Path that the backend was mounted at (defaults to "cf")
 	resp, err := client.Auth.CloudFoundryDeleteRole(
 		context.Background(),
 		role,
-		cfMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("cf"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8725,11 +8595,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	cfMountPath := "cfMountPath_example" // string | Path that the backend was mounted at (defaults to "cf")
 	resp, err := client.Auth.CloudFoundryListRoles(
 		context.Background(),
-		cfMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("cf"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8788,13 +8657,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	cfMountPath := "cfMountPath_example" // string | Path that the backend was mounted at (defaults to "cf")
 	request := schema.NewCloudFoundryLoginRequestWithDefaults()
 	resp, err := client.Auth.CloudFoundryLogin(
 		context.Background(),
-		cfMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("cf"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8852,11 +8720,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	cfMountPath := "cfMountPath_example" // string | Path that the backend was mounted at (defaults to "cf")
 	resp, err := client.Auth.CloudFoundryReadConfiguration(
 		context.Background(),
-		cfMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("cf"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8914,12 +8781,11 @@ func main() {
 	}
 
 	role := "role_example" // string | The name of the role.
-	cfMountPath := "cfMountPath_example" // string | Path that the backend was mounted at (defaults to "cf")
 	resp, err := client.Auth.CloudFoundryReadRole(
 		context.Background(),
 		role,
-		cfMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("cf"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8980,14 +8846,13 @@ func main() {
 	}
 
 	role := "role_example" // string | The name of the role.
-	cfMountPath := "cfMountPath_example" // string | Path that the backend was mounted at (defaults to "cf")
 	request := schema.NewCloudFoundryWriteRoleRequestWithDefaults()
 	resp, err := client.Auth.CloudFoundryWriteRole(
 		context.Background(),
 		role,
-		cfMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("cf"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9048,13 +8913,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	githubMountPath := "githubMountPath_example" // string | Path that the backend was mounted at (defaults to "github")
 	request := schema.NewGithubConfigureRequestWithDefaults()
 	resp, err := client.Auth.GithubConfigure(
 		context.Background(),
-		githubMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("github"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9113,12 +8977,11 @@ func main() {
 	}
 
 	key := "key_example" // string | Key for the teams mapping
-	githubMountPath := "githubMountPath_example" // string | Path that the backend was mounted at (defaults to "github")
 	resp, err := client.Auth.GithubDeleteTeamMapping(
 		context.Background(),
 		key,
-		githubMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("github"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9178,12 +9041,11 @@ func main() {
 	}
 
 	key := "key_example" // string | Key for the users mapping
-	githubMountPath := "githubMountPath_example" // string | Path that the backend was mounted at (defaults to "github")
 	resp, err := client.Auth.GithubDeleteUserMapping(
 		context.Background(),
 		key,
-		githubMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("github"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9243,13 +9105,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	githubMountPath := "githubMountPath_example" // string | Path that the backend was mounted at (defaults to "github")
 	request := schema.NewGithubLoginRequestWithDefaults()
 	resp, err := client.Auth.GithubLogin(
 		context.Background(),
-		githubMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("github"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9307,11 +9168,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	githubMountPath := "githubMountPath_example" // string | Path that the backend was mounted at (defaults to "github")
 	resp, err := client.Auth.GithubReadConfiguration(
 		context.Background(),
-		githubMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("github"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9369,12 +9229,11 @@ func main() {
 	}
 
 	key := "key_example" // string | Key for the teams mapping
-	githubMountPath := "githubMountPath_example" // string | Path that the backend was mounted at (defaults to "github")
 	resp, err := client.Auth.GithubReadTeamMapping(
 		context.Background(),
 		key,
-		githubMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("github"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9433,11 +9292,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	githubMountPath := "githubMountPath_example" // string | Path that the backend was mounted at (defaults to "github")
 	resp, err := client.Auth.GithubReadTeams(
 		context.Background(),
-		githubMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("github"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9496,12 +9354,11 @@ func main() {
 	}
 
 	key := "key_example" // string | Key for the users mapping
-	githubMountPath := "githubMountPath_example" // string | Path that the backend was mounted at (defaults to "github")
 	resp, err := client.Auth.GithubReadUserMapping(
 		context.Background(),
 		key,
-		githubMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("github"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9560,11 +9417,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	githubMountPath := "githubMountPath_example" // string | Path that the backend was mounted at (defaults to "github")
 	resp, err := client.Auth.GithubReadUsers(
 		context.Background(),
-		githubMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("github"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9624,14 +9480,13 @@ func main() {
 	}
 
 	key := "key_example" // string | Key for the teams mapping
-	githubMountPath := "githubMountPath_example" // string | Path that the backend was mounted at (defaults to "github")
 	request := schema.NewGithubWriteTeamMappingRequestWithDefaults()
 	resp, err := client.Auth.GithubWriteTeamMapping(
 		context.Background(),
 		key,
-		githubMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("github"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9693,14 +9548,13 @@ func main() {
 	}
 
 	key := "key_example" // string | Key for the users mapping
-	githubMountPath := "githubMountPath_example" // string | Path that the backend was mounted at (defaults to "github")
 	request := schema.NewGithubWriteUserMappingRequestWithDefaults()
 	resp, err := client.Auth.GithubWriteUserMapping(
 		context.Background(),
 		key,
-		githubMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("github"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9761,13 +9615,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	request := schema.NewGoogleCloudConfigureAuthRequestWithDefaults()
 	resp, err := client.Auth.GoogleCloudConfigureAuth(
 		context.Background(),
-		gcpMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9826,12 +9679,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Auth.GoogleCloudDeleteRole(
 		context.Background(),
 		name,
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9892,14 +9744,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	request := schema.NewGoogleCloudEditLabelsForRoleRequestWithDefaults()
 	resp, err := client.Auth.GoogleCloudEditLabelsForRole(
 		context.Background(),
 		name,
-		gcpMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9961,14 +9812,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	request := schema.NewGoogleCloudEditServiceAccountsForRoleRequestWithDefaults()
 	resp, err := client.Auth.GoogleCloudEditServiceAccountsForRole(
 		context.Background(),
 		name,
-		gcpMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10028,11 +9878,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Auth.GoogleCloudListRoles(
 		context.Background(),
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10091,13 +9940,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	request := schema.NewGoogleCloudLoginRequestWithDefaults()
 	resp, err := client.Auth.GoogleCloudLogin(
 		context.Background(),
-		gcpMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10155,11 +10003,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Auth.GoogleCloudReadAuthConfiguration(
 		context.Background(),
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10217,12 +10064,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	resp, err := client.Auth.GoogleCloudReadRole(
 		context.Background(),
 		name,
-		gcpMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10283,14 +10129,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	gcpMountPath := "gcpMountPath_example" // string | Path that the backend was mounted at (defaults to "gcp")
 	request := schema.NewGoogleCloudWriteRoleRequestWithDefaults()
 	resp, err := client.Auth.GoogleCloudWriteRole(
 		context.Background(),
 		name,
-		gcpMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10353,13 +10198,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	jwtMountPath := "jwtMountPath_example" // string | Path that the backend was mounted at (defaults to "jwt")
 	request := schema.NewJwtConfigureRequestWithDefaults()
 	resp, err := client.Auth.JwtConfigure(
 		context.Background(),
-		jwtMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("jwt"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10418,12 +10262,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	jwtMountPath := "jwtMountPath_example" // string | Path that the backend was mounted at (defaults to "jwt")
 	resp, err := client.Auth.JwtDeleteRole(
 		context.Background(),
 		name,
-		jwtMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("jwt"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10484,11 +10327,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	jwtMountPath := "jwtMountPath_example" // string | Path that the backend was mounted at (defaults to "jwt")
 	resp, err := client.Auth.JwtListRoles(
 		context.Background(),
-		jwtMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("jwt"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10547,13 +10389,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	jwtMountPath := "jwtMountPath_example" // string | Path that the backend was mounted at (defaults to "jwt")
 	request := schema.NewJwtLoginRequestWithDefaults()
 	resp, err := client.Auth.JwtLogin(
 		context.Background(),
-		jwtMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("jwt"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10611,11 +10452,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	jwtMountPath := "jwtMountPath_example" // string | Path that the backend was mounted at (defaults to "jwt")
 	resp, err := client.Auth.JwtOidcCallback(
 		context.Background(),
-		jwtMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("jwt"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10673,13 +10513,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	jwtMountPath := "jwtMountPath_example" // string | Path that the backend was mounted at (defaults to "jwt")
 	request := schema.NewJwtOidcCallbackWithParametersRequestWithDefaults()
 	resp, err := client.Auth.JwtOidcCallbackWithParameters(
 		context.Background(),
-		jwtMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("jwt"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10738,13 +10577,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	jwtMountPath := "jwtMountPath_example" // string | Path that the backend was mounted at (defaults to "jwt")
 	request := schema.NewJwtOidcRequestAuthorizationUrlRequestWithDefaults()
 	resp, err := client.Auth.JwtOidcRequestAuthorizationUrl(
 		context.Background(),
-		jwtMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("jwt"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10802,11 +10640,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	jwtMountPath := "jwtMountPath_example" // string | Path that the backend was mounted at (defaults to "jwt")
 	resp, err := client.Auth.JwtReadConfiguration(
 		context.Background(),
-		jwtMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("jwt"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10864,12 +10701,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	jwtMountPath := "jwtMountPath_example" // string | Path that the backend was mounted at (defaults to "jwt")
 	resp, err := client.Auth.JwtReadRole(
 		context.Background(),
 		name,
-		jwtMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("jwt"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10932,14 +10768,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	jwtMountPath := "jwtMountPath_example" // string | Path that the backend was mounted at (defaults to "jwt")
 	request := schema.NewJwtWriteRoleRequestWithDefaults()
 	resp, err := client.Auth.JwtWriteRole(
 		context.Background(),
 		name,
-		jwtMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("jwt"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11000,13 +10835,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	kerberosMountPath := "kerberosMountPath_example" // string | Path that the backend was mounted at (defaults to "kerberos")
 	request := schema.NewKerberosConfigureRequestWithDefaults()
 	resp, err := client.Auth.KerberosConfigure(
 		context.Background(),
-		kerberosMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11065,13 +10899,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	kerberosMountPath := "kerberosMountPath_example" // string | Path that the backend was mounted at (defaults to "kerberos")
 	request := schema.NewKerberosConfigureLdapRequestWithDefaults()
 	resp, err := client.Auth.KerberosConfigureLdap(
 		context.Background(),
-		kerberosMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11130,12 +10963,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
-	kerberosMountPath := "kerberosMountPath_example" // string | Path that the backend was mounted at (defaults to "kerberos")
 	resp, err := client.Auth.KerberosDeleteGroup(
 		context.Background(),
 		name,
-		kerberosMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11194,11 +11026,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	kerberosMountPath := "kerberosMountPath_example" // string | Path that the backend was mounted at (defaults to "kerberos")
 	resp, err := client.Auth.KerberosListGroups(
 		context.Background(),
-		kerberosMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11257,13 +11088,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	kerberosMountPath := "kerberosMountPath_example" // string | Path that the backend was mounted at (defaults to "kerberos")
 	request := schema.NewKerberosLoginRequestWithDefaults()
 	resp, err := client.Auth.KerberosLogin(
 		context.Background(),
-		kerberosMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11321,11 +11151,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	kerberosMountPath := "kerberosMountPath_example" // string | Path that the backend was mounted at (defaults to "kerberos")
 	resp, err := client.Auth.KerberosReadConfiguration(
 		context.Background(),
-		kerberosMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11383,12 +11212,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
-	kerberosMountPath := "kerberosMountPath_example" // string | Path that the backend was mounted at (defaults to "kerberos")
 	resp, err := client.Auth.KerberosReadGroup(
 		context.Background(),
 		name,
-		kerberosMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11447,11 +11275,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	kerberosMountPath := "kerberosMountPath_example" // string | Path that the backend was mounted at (defaults to "kerberos")
 	resp, err := client.Auth.KerberosReadLdapConfiguration(
 		context.Background(),
-		kerberosMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11510,14 +11337,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
-	kerberosMountPath := "kerberosMountPath_example" // string | Path that the backend was mounted at (defaults to "kerberos")
 	request := schema.NewKerberosWriteGroupRequestWithDefaults()
 	resp, err := client.Auth.KerberosWriteGroup(
 		context.Background(),
 		name,
-		kerberosMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11578,13 +11404,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	kubernetesMountPath := "kubernetesMountPath_example" // string | Path that the backend was mounted at (defaults to "kubernetes")
 	request := schema.NewKubernetesConfigureAuthRequestWithDefaults()
 	resp, err := client.Auth.KubernetesConfigureAuth(
 		context.Background(),
-		kubernetesMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11643,12 +11468,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	kubernetesMountPath := "kubernetesMountPath_example" // string | Path that the backend was mounted at (defaults to "kubernetes")
 	resp, err := client.Auth.KubernetesDeleteAuthRole(
 		context.Background(),
 		name,
-		kubernetesMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11707,11 +11531,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	kubernetesMountPath := "kubernetesMountPath_example" // string | Path that the backend was mounted at (defaults to "kubernetes")
 	resp, err := client.Auth.KubernetesListAuthRoles(
 		context.Background(),
-		kubernetesMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11770,13 +11593,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	kubernetesMountPath := "kubernetesMountPath_example" // string | Path that the backend was mounted at (defaults to "kubernetes")
 	request := schema.NewKubernetesLoginRequestWithDefaults()
 	resp, err := client.Auth.KubernetesLogin(
 		context.Background(),
-		kubernetesMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11834,11 +11656,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	kubernetesMountPath := "kubernetesMountPath_example" // string | Path that the backend was mounted at (defaults to "kubernetes")
 	resp, err := client.Auth.KubernetesReadAuthConfiguration(
 		context.Background(),
-		kubernetesMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11896,12 +11717,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	kubernetesMountPath := "kubernetesMountPath_example" // string | Path that the backend was mounted at (defaults to "kubernetes")
 	resp, err := client.Auth.KubernetesReadAuthRole(
 		context.Background(),
 		name,
-		kubernetesMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11962,14 +11782,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	kubernetesMountPath := "kubernetesMountPath_example" // string | Path that the backend was mounted at (defaults to "kubernetes")
 	request := schema.NewKubernetesWriteAuthRoleRequestWithDefaults()
 	resp, err := client.Auth.KubernetesWriteAuthRole(
 		context.Background(),
 		name,
-		kubernetesMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12030,13 +11849,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	request := schema.NewLdapConfigureAuthRequestWithDefaults()
 	resp, err := client.Auth.LdapConfigureAuth(
 		context.Background(),
-		ldapMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12095,12 +11913,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	resp, err := client.Auth.LdapDeleteGroup(
 		context.Background(),
 		name,
-		ldapMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12160,12 +11977,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP user.
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	resp, err := client.Auth.LdapDeleteUser(
 		context.Background(),
 		name,
-		ldapMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12224,11 +12040,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	resp, err := client.Auth.LdapListGroups(
 		context.Background(),
-		ldapMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12286,11 +12101,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	resp, err := client.Auth.LdapListUsers(
 		context.Background(),
-		ldapMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12350,14 +12164,13 @@ func main() {
 	}
 
 	username := "username_example" // string | DN (distinguished name) to be used for login.
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	request := schema.NewLdapLoginRequestWithDefaults()
 	resp, err := client.Auth.LdapLogin(
 		context.Background(),
 		username,
-		ldapMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12417,11 +12230,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	resp, err := client.Auth.LdapReadAuthConfiguration(
 		context.Background(),
-		ldapMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12479,12 +12291,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	resp, err := client.Auth.LdapReadGroup(
 		context.Background(),
 		name,
-		ldapMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12544,12 +12355,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP user.
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	resp, err := client.Auth.LdapReadUser(
 		context.Background(),
 		name,
-		ldapMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12610,14 +12420,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	request := schema.NewLdapWriteGroupRequestWithDefaults()
 	resp, err := client.Auth.LdapWriteGroup(
 		context.Background(),
 		name,
-		ldapMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12679,14 +12488,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP user.
-	ldapMountPath := "ldapMountPath_example" // string | Path that the backend was mounted at (defaults to "ldap")
 	request := schema.NewLdapWriteUserRequestWithDefaults()
 	resp, err := client.Auth.LdapWriteUser(
 		context.Background(),
 		name,
-		ldapMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12747,13 +12555,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	ociMountPath := "ociMountPath_example" // string | Path that the backend was mounted at (defaults to "oci")
 	request := schema.NewOciConfigureRequestWithDefaults()
 	resp, err := client.Auth.OciConfigure(
 		context.Background(),
-		ociMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("oci"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12811,11 +12618,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	ociMountPath := "ociMountPath_example" // string | Path that the backend was mounted at (defaults to "oci")
 	resp, err := client.Auth.OciDeleteConfiguration(
 		context.Background(),
-		ociMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("oci"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12873,12 +12679,11 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-	ociMountPath := "ociMountPath_example" // string | Path that the backend was mounted at (defaults to "oci")
 	resp, err := client.Auth.OciDeleteRole(
 		context.Background(),
 		role,
-		ociMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("oci"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12937,11 +12742,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	ociMountPath := "ociMountPath_example" // string | Path that the backend was mounted at (defaults to "oci")
 	resp, err := client.Auth.OciListRoles(
 		context.Background(),
-		ociMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("oci"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13001,14 +12805,13 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-	ociMountPath := "ociMountPath_example" // string | Path that the backend was mounted at (defaults to "oci")
 	request := schema.NewOciLoginRequestWithDefaults()
 	resp, err := client.Auth.OciLogin(
 		context.Background(),
 		role,
-		ociMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("oci"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13068,11 +12871,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	ociMountPath := "ociMountPath_example" // string | Path that the backend was mounted at (defaults to "oci")
 	resp, err := client.Auth.OciReadConfiguration(
 		context.Background(),
-		ociMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("oci"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13130,12 +12932,11 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-	ociMountPath := "ociMountPath_example" // string | Path that the backend was mounted at (defaults to "oci")
 	resp, err := client.Auth.OciReadRole(
 		context.Background(),
 		role,
-		ociMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("oci"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13196,14 +12997,13 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-	ociMountPath := "ociMountPath_example" // string | Path that the backend was mounted at (defaults to "oci")
 	request := schema.NewOciWriteRoleRequestWithDefaults()
 	resp, err := client.Auth.OciWriteRole(
 		context.Background(),
 		role,
-		ociMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("oci"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13264,13 +13064,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	oktaMountPath := "oktaMountPath_example" // string | Path that the backend was mounted at (defaults to "okta")
 	request := schema.NewOktaConfigureRequestWithDefaults()
 	resp, err := client.Auth.OktaConfigure(
 		context.Background(),
-		oktaMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("okta"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13329,12 +13128,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Okta group.
-	oktaMountPath := "oktaMountPath_example" // string | Path that the backend was mounted at (defaults to "okta")
 	resp, err := client.Auth.OktaDeleteGroup(
 		context.Background(),
 		name,
-		oktaMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("okta"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13394,12 +13192,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the user.
-	oktaMountPath := "oktaMountPath_example" // string | Path that the backend was mounted at (defaults to "okta")
 	resp, err := client.Auth.OktaDeleteUser(
 		context.Background(),
 		name,
-		oktaMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("okta"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13458,11 +13255,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	oktaMountPath := "oktaMountPath_example" // string | Path that the backend was mounted at (defaults to "okta")
 	resp, err := client.Auth.OktaListGroups(
 		context.Background(),
-		oktaMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("okta"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13520,11 +13316,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	oktaMountPath := "oktaMountPath_example" // string | Path that the backend was mounted at (defaults to "okta")
 	resp, err := client.Auth.OktaListUsers(
 		context.Background(),
-		oktaMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("okta"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13584,14 +13379,13 @@ func main() {
 	}
 
 	username := "username_example" // string | Username to be used for login.
-	oktaMountPath := "oktaMountPath_example" // string | Path that the backend was mounted at (defaults to "okta")
 	request := schema.NewOktaLoginRequestWithDefaults()
 	resp, err := client.Auth.OktaLogin(
 		context.Background(),
 		username,
-		oktaMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("okta"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13651,11 +13445,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	oktaMountPath := "oktaMountPath_example" // string | Path that the backend was mounted at (defaults to "okta")
 	resp, err := client.Auth.OktaReadConfiguration(
 		context.Background(),
-		oktaMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("okta"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13713,12 +13506,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Okta group.
-	oktaMountPath := "oktaMountPath_example" // string | Path that the backend was mounted at (defaults to "okta")
 	resp, err := client.Auth.OktaReadGroup(
 		context.Background(),
 		name,
-		oktaMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("okta"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13778,12 +13570,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the user.
-	oktaMountPath := "oktaMountPath_example" // string | Path that the backend was mounted at (defaults to "okta")
 	resp, err := client.Auth.OktaReadUser(
 		context.Background(),
 		name,
-		oktaMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("okta"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13843,12 +13634,11 @@ func main() {
 	}
 
 	nonce := "nonce_example" // string | Nonce provided during a login request to retrieve the number verification challenge for the matching request.
-	oktaMountPath := "oktaMountPath_example" // string | Path that the backend was mounted at (defaults to "okta")
 	resp, err := client.Auth.OktaVerify(
 		context.Background(),
 		nonce,
-		oktaMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("okta"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13909,14 +13699,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Okta group.
-	oktaMountPath := "oktaMountPath_example" // string | Path that the backend was mounted at (defaults to "okta")
 	request := schema.NewOktaWriteGroupRequestWithDefaults()
 	resp, err := client.Auth.OktaWriteGroup(
 		context.Background(),
 		name,
-		oktaMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("okta"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13978,14 +13767,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the user.
-	oktaMountPath := "oktaMountPath_example" // string | Path that the backend was mounted at (defaults to "okta")
 	request := schema.NewOktaWriteUserRequestWithDefaults()
 	resp, err := client.Auth.OktaWriteUser(
 		context.Background(),
 		name,
-		oktaMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("okta"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14046,13 +13834,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	radiusMountPath := "radiusMountPath_example" // string | Path that the backend was mounted at (defaults to "radius")
 	request := schema.NewRadiusConfigureRequestWithDefaults()
 	resp, err := client.Auth.RadiusConfigure(
 		context.Background(),
-		radiusMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("radius"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14111,12 +13898,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the RADIUS user.
-	radiusMountPath := "radiusMountPath_example" // string | Path that the backend was mounted at (defaults to "radius")
 	resp, err := client.Auth.RadiusDeleteUser(
 		context.Background(),
 		name,
-		radiusMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("radius"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14175,11 +13961,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	radiusMountPath := "radiusMountPath_example" // string | Path that the backend was mounted at (defaults to "radius")
 	resp, err := client.Auth.RadiusListUsers(
 		context.Background(),
-		radiusMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("radius"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14238,13 +14023,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	radiusMountPath := "radiusMountPath_example" // string | Path that the backend was mounted at (defaults to "radius")
 	request := schema.NewRadiusLoginRequestWithDefaults()
 	resp, err := client.Auth.RadiusLogin(
 		context.Background(),
-		radiusMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("radius"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14304,14 +14088,13 @@ func main() {
 	}
 
 	urlusername := "urlusername_example" // string | Username to be used for login. (URL parameter)
-	radiusMountPath := "radiusMountPath_example" // string | Path that the backend was mounted at (defaults to "radius")
 	request := schema.NewRadiusLoginWithUsernameRequestWithDefaults()
 	resp, err := client.Auth.RadiusLoginWithUsername(
 		context.Background(),
 		urlusername,
-		radiusMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("radius"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14371,11 +14154,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	radiusMountPath := "radiusMountPath_example" // string | Path that the backend was mounted at (defaults to "radius")
 	resp, err := client.Auth.RadiusReadConfiguration(
 		context.Background(),
-		radiusMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("radius"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14433,12 +14215,11 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the RADIUS user.
-	radiusMountPath := "radiusMountPath_example" // string | Path that the backend was mounted at (defaults to "radius")
 	resp, err := client.Auth.RadiusReadUser(
 		context.Background(),
 		name,
-		radiusMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("radius"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14499,14 +14280,13 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the RADIUS user.
-	radiusMountPath := "radiusMountPath_example" // string | Path that the backend was mounted at (defaults to "radius")
 	request := schema.NewRadiusWriteUserRequestWithDefaults()
 	resp, err := client.Auth.RadiusWriteUser(
 		context.Background(),
 		name,
-		radiusMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("radius"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15674,12 +15454,11 @@ func main() {
 	}
 
 	username := "username_example" // string | Username for this user.
-	userpassMountPath := "userpassMountPath_example" // string | Path that the backend was mounted at (defaults to "userpass")
 	resp, err := client.Auth.UserpassDeleteUser(
 		context.Background(),
 		username,
-		userpassMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("userpass"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15738,11 +15517,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	userpassMountPath := "userpassMountPath_example" // string | Path that the backend was mounted at (defaults to "userpass")
 	resp, err := client.Auth.UserpassListUsers(
 		context.Background(),
-		userpassMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("userpass"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15802,14 +15580,13 @@ func main() {
 	}
 
 	username := "username_example" // string | Username of the user.
-	userpassMountPath := "userpassMountPath_example" // string | Path that the backend was mounted at (defaults to "userpass")
 	request := schema.NewUserpassLoginRequestWithDefaults()
 	resp, err := client.Auth.UserpassLogin(
 		context.Background(),
 		username,
-		userpassMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("userpass"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15870,12 +15647,11 @@ func main() {
 	}
 
 	username := "username_example" // string | Username for this user.
-	userpassMountPath := "userpassMountPath_example" // string | Path that the backend was mounted at (defaults to "userpass")
 	resp, err := client.Auth.UserpassReadUser(
 		context.Background(),
 		username,
-		userpassMountPath,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("userpass"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15936,14 +15712,13 @@ func main() {
 	}
 
 	username := "username_example" // string | Username for this user.
-	userpassMountPath := "userpassMountPath_example" // string | Path that the backend was mounted at (defaults to "userpass")
 	request := schema.NewUserpassResetPasswordRequestWithDefaults()
 	resp, err := client.Auth.UserpassResetPassword(
 		context.Background(),
 		username,
-		userpassMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("userpass"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16005,14 +15780,13 @@ func main() {
 	}
 
 	username := "username_example" // string | Username for this user.
-	userpassMountPath := "userpassMountPath_example" // string | Path that the backend was mounted at (defaults to "userpass")
 	request := schema.NewUserpassUpdatePoliciesRequestWithDefaults()
 	resp, err := client.Auth.UserpassUpdatePolicies(
 		context.Background(),
 		username,
-		userpassMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("userpass"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16074,14 +15848,13 @@ func main() {
 	}
 
 	username := "username_example" // string | Username for this user.
-	userpassMountPath := "userpassMountPath_example" // string | Path that the backend was mounted at (defaults to "userpass")
 	request := schema.NewUserpassWriteUserRequestWithDefaults()
 	resp, err := client.Auth.UserpassWriteUser(
 		context.Background(),
 		username,
-		userpassMountPath,
 		request,
 		vault.WithToken("my-token"),
+        vault.WithMountPath("userpass"),
 	)
 	if err != nil {
 		log.Fatal(err)

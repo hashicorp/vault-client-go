@@ -37,16 +37,17 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-{{#each allParams}}{{#if isPathParam}}{{#with required}}
-	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{{description}}}{{#with defaultValue}} (defaults to {{{.}}}){{/with}}{{/with}}{{/if}}{{/each}}{{#each bodyParams}}
+{{#each allParams}}{{#if isPathParam}}{{#endsWith baseName "_mount_path"}}{{else}}
+	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{{description}}}{{#with defaultValue}} (defaults to {{{.}}}){{/with}}{{/endsWith}}{{/if}}{{/each}}{{#each bodyParams}}
 	request := schema.New{{{dataType}}}WithDefaults(){{/each}}{{#each allParams}}{{#if isQueryParam}}{{#neq paramName "list"}}
 	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{{description}}}{{#with defaultValue}} (defaults to {{{.}}}){{/with}}{{/neq}}{{/if}}{{/each}}
 	resp, err := client.{{cut classname "Api"}}.{{operationId}}(
-		context.Background(),{{#each pathParams}}{{#with required}}
-		{{paramName}},{{/with}}{{/each}}{{#each bodyParams}}
+		context.Background(),{{#each pathParams}}{{#endsWith baseName "_mount_path"}}{{else}}
+		{{paramName}},{{/endsWith}}{{/each}}{{#each bodyParams}}
 		request,{{/each}}{{#each queryParams}}{{#neq paramName "list"}}
 		{{paramName}},{{/neq}}{{/each}}
-		vault.WithToken("my-token"),
+		vault.WithToken("my-token"),{{#each pathParams}}{{#endsWith baseName "_mount_path"}}
+		vault.WithMountPath({{#with defaultValue}}{{{.}}}{{/with}}),{{/endsWith}}{{/each}}
 	)
 	if err != nil {
 		log.Fatal(err)

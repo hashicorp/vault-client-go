@@ -47,7 +47,7 @@ func main() {
 		request,{{/each}}{{#each queryParams}}{{#neq paramName "list"}}
 		{{paramName}},{{/neq}}{{/each}}
 		vault.WithToken("my-token"),{{#each pathParams}}{{#endsWith baseName "_mount_path"}}
-        vault.WithMountPath({{#with defaultValue}}{{{.}}}{{/with}}),{{/endsWith}}{{/each}}
+		vault.WithMountPath({{#with defaultValue}}{{{.}}}{{/with}}),{{/endsWith}}{{/each}}
 	)
 	if err != nil {
 		log.Fatal(err)

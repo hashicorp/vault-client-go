@@ -367,7 +367,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("alicloud"),
+		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -428,7 +428,7 @@ func main() {
 	resp, err := client.Secrets.AliCloudDeleteConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("alicloud"),
+		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -490,7 +490,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("alicloud"),
+		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -554,7 +554,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("alicloud"),
+		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -616,7 +616,7 @@ func main() {
 	resp, err := client.Secrets.AliCloudListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("alicloud"),
+		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -677,7 +677,7 @@ func main() {
 	resp, err := client.Secrets.AliCloudReadConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("alicloud"),
+		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -739,7 +739,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("alicloud"),
+		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -806,7 +806,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("alicloud"),
+		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -872,7 +872,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("aws"),
+		vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -936,7 +936,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("aws"),
+		vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -999,7 +999,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("aws"),
+		vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1063,7 +1063,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("aws"),
+		vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1127,7 +1127,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("aws"),
+		vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1189,7 +1189,7 @@ func main() {
 	resp, err := client.Secrets.AwsListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("aws"),
+		vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1250,7 +1250,7 @@ func main() {
 	resp, err := client.Secrets.AwsReadLeaseConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("aws"),
+		vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1312,7 +1312,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("aws"),
+		vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1374,7 +1374,7 @@ func main() {
 	resp, err := client.Secrets.AwsReadRootIamCredentialsConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("aws"),
+		vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1434,7 +1434,7 @@ func main() {
 	resp, err := client.Secrets.AwsRotateRootIamCredentials(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("aws"),
+		vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1499,7 +1499,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("aws"),
+		vault.WithMountPath("aws"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1565,7 +1565,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("azure"),
+		vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1626,7 +1626,7 @@ func main() {
 	resp, err := client.Secrets.AzureDeleteConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("azure"),
+		vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1688,7 +1688,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("azure"),
+		vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1750,7 +1750,7 @@ func main() {
 	resp, err := client.Secrets.AzureListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("azure"),
+		vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1811,7 +1811,7 @@ func main() {
 	resp, err := client.Secrets.AzureReadConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("azure"),
+		vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1873,7 +1873,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("azure"),
+		vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1937,7 +1937,7 @@ func main() {
 		context.Background(),
 		role,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("azure"),
+		vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1999,7 +1999,7 @@ func main() {
 	resp, err := client.Secrets.AzureRotateRoot(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("azure"),
+		vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2064,7 +2064,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("azure"),
+		vault.WithMountPath("azure"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2130,7 +2130,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("consul"),
+		vault.WithMountPath("consul"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2193,7 +2193,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("consul"),
+		vault.WithMountPath("consul"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2257,7 +2257,7 @@ func main() {
 		context.Background(),
 		role,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("consul"),
+		vault.WithMountPath("consul"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2319,7 +2319,7 @@ func main() {
 	resp, err := client.Secrets.ConsulListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("consul"),
+		vault.WithMountPath("consul"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2380,7 +2380,7 @@ func main() {
 	resp, err := client.Secrets.ConsulReadAccessConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("consul"),
+		vault.WithMountPath("consul"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2442,7 +2442,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("consul"),
+		vault.WithMountPath("consul"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2509,7 +2509,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("consul"),
+		vault.WithMountPath("consul"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2761,7 +2761,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("database"),
+		vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2826,7 +2826,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("database"),
+		vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2890,7 +2890,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("database"),
+		vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2954,7 +2954,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("database"),
+		vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3018,7 +3018,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("database"),
+		vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3080,7 +3080,7 @@ func main() {
 	resp, err := client.Secrets.DatabaseListConnections(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("database"),
+		vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3141,7 +3141,7 @@ func main() {
 	resp, err := client.Secrets.DatabaseListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("database"),
+		vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3202,7 +3202,7 @@ func main() {
 	resp, err := client.Secrets.DatabaseListStaticRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("database"),
+		vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3265,7 +3265,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("database"),
+		vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3329,7 +3329,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("database"),
+		vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3393,7 +3393,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("database"),
+		vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3457,7 +3457,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("database"),
+		vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3521,7 +3521,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("database"),
+		vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3585,7 +3585,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("database"),
+		vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3649,7 +3649,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("database"),
+		vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3716,7 +3716,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("database"),
+		vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3784,7 +3784,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("database"),
+		vault.WithMountPath("database"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3850,7 +3850,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3913,7 +3913,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3977,7 +3977,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4041,7 +4041,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4105,7 +4105,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4169,7 +4169,7 @@ func main() {
 		context.Background(),
 		roleset,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4233,7 +4233,7 @@ func main() {
 		context.Background(),
 		roleset,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4297,7 +4297,7 @@ func main() {
 		context.Background(),
 		roleset,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4364,7 +4364,7 @@ func main() {
 		roleset,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4429,7 +4429,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4493,7 +4493,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4557,7 +4557,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4624,7 +4624,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4690,7 +4690,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcpkms"),
+		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4756,7 +4756,7 @@ func main() {
 		key,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcpkms"),
+		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4824,7 +4824,7 @@ func main() {
 		key,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcpkms"),
+		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4887,7 +4887,7 @@ func main() {
 	resp, err := client.Secrets.GoogleCloudKmsDeleteConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcpkms"),
+		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4949,7 +4949,7 @@ func main() {
 		context.Background(),
 		key,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcpkms"),
+		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5013,7 +5013,7 @@ func main() {
 		context.Background(),
 		key,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcpkms"),
+		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5080,7 +5080,7 @@ func main() {
 		key,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcpkms"),
+		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5143,7 +5143,7 @@ func main() {
 	resp, err := client.Secrets.GoogleCloudKmsListKeys(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcpkms"),
+		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5204,7 +5204,7 @@ func main() {
 	resp, err := client.Secrets.GoogleCloudKmsReadConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcpkms"),
+		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5266,7 +5266,7 @@ func main() {
 		context.Background(),
 		key,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcpkms"),
+		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5330,7 +5330,7 @@ func main() {
 		context.Background(),
 		key,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcpkms"),
+		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5397,7 +5397,7 @@ func main() {
 		key,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcpkms"),
+		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5465,7 +5465,7 @@ func main() {
 		key,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcpkms"),
+		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5530,7 +5530,7 @@ func main() {
 		context.Background(),
 		key,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcpkms"),
+		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5594,7 +5594,7 @@ func main() {
 		context.Background(),
 		key,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcpkms"),
+		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5661,7 +5661,7 @@ func main() {
 		key,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcpkms"),
+		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5726,7 +5726,7 @@ func main() {
 		context.Background(),
 		key,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcpkms"),
+		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5793,7 +5793,7 @@ func main() {
 		key,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcpkms"),
+		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5861,7 +5861,7 @@ func main() {
 		key,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcpkms"),
+		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5924,7 +5924,7 @@ func main() {
 	resp, err := client.Secrets.GoogleCloudListImpersonatedAccounts(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5985,7 +5985,7 @@ func main() {
 	resp, err := client.Secrets.GoogleCloudListRolesets(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6046,7 +6046,7 @@ func main() {
 	resp, err := client.Secrets.GoogleCloudListStaticAccounts(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6107,7 +6107,7 @@ func main() {
 	resp, err := client.Secrets.GoogleCloudReadConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6169,7 +6169,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6233,7 +6233,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6297,7 +6297,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6361,7 +6361,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6425,7 +6425,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6487,7 +6487,7 @@ func main() {
 	resp, err := client.Secrets.GoogleCloudRotateRootCredentials(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6549,7 +6549,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6616,7 +6616,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6684,7 +6684,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6752,7 +6752,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("gcp"),
+		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6815,7 +6815,7 @@ func main() {
 	resp, err := client.Secrets.KubernetesCheckConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("kubernetes"),
+		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6878,7 +6878,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("kubernetes"),
+		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6939,7 +6939,7 @@ func main() {
 	resp, err := client.Secrets.KubernetesDeleteConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("kubernetes"),
+		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7001,7 +7001,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("kubernetes"),
+		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7068,7 +7068,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("kubernetes"),
+		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7131,7 +7131,7 @@ func main() {
 	resp, err := client.Secrets.KubernetesListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("kubernetes"),
+		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7192,7 +7192,7 @@ func main() {
 	resp, err := client.Secrets.KubernetesReadConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("kubernetes"),
+		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7254,7 +7254,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("kubernetes"),
+		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7321,7 +7321,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("kubernetes"),
+		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7386,7 +7386,7 @@ func main() {
 		context.Background(),
 		path,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("kv-v1"),
+		vault.WithMountPath("kv-v1"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7450,7 +7450,7 @@ func main() {
 		context.Background(),
 		path,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("kv-v1"),
+		vault.WithMountPath("kv-v1"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7515,7 +7515,7 @@ func main() {
 		context.Background(),
 		path,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("kv-v1"),
+		vault.WithMountPath("kv-v1"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7580,7 +7580,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("kv-v2"),
+		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7643,7 +7643,7 @@ func main() {
 		context.Background(),
 		path,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("kv-v2"),
+		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7707,7 +7707,7 @@ func main() {
 		context.Background(),
 		path,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("kv-v2"),
+		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7774,7 +7774,7 @@ func main() {
 		path,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("kv-v2"),
+		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7842,7 +7842,7 @@ func main() {
 		path,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("kv-v2"),
+		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7907,7 +7907,7 @@ func main() {
 		context.Background(),
 		path,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("kv-v2"),
+		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7969,7 +7969,7 @@ func main() {
 	resp, err := client.Secrets.KvV2ReadConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("kv-v2"),
+		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8031,7 +8031,7 @@ func main() {
 		context.Background(),
 		path,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("kv-v2"),
+		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8096,7 +8096,7 @@ func main() {
 		context.Background(),
 		path,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("kv-v2"),
+		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8163,7 +8163,7 @@ func main() {
 		path,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("kv-v2"),
+		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8231,7 +8231,7 @@ func main() {
 		path,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("kv-v2"),
+		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8299,7 +8299,7 @@ func main() {
 		path,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("kv-v2"),
+		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8365,7 +8365,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ldap"),
+		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8426,7 +8426,7 @@ func main() {
 	resp, err := client.Secrets.LdapDeleteConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ldap"),
+		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8488,7 +8488,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ldap"),
+		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8552,7 +8552,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ldap"),
+		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8619,7 +8619,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ldap"),
+		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8687,7 +8687,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ldap"),
+		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8752,7 +8752,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ldap"),
+		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8819,7 +8819,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ldap"),
+		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8884,7 +8884,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ldap"),
+		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8951,7 +8951,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ldap"),
+		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9014,7 +9014,7 @@ func main() {
 	resp, err := client.Secrets.LdapLibraryList(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ldap"),
+		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9077,7 +9077,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ldap"),
+		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9139,7 +9139,7 @@ func main() {
 	resp, err := client.Secrets.LdapListDynamicRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ldap"),
+		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9200,7 +9200,7 @@ func main() {
 	resp, err := client.Secrets.LdapListStaticRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ldap"),
+		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9261,7 +9261,7 @@ func main() {
 	resp, err := client.Secrets.LdapReadConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ldap"),
+		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9323,7 +9323,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ldap"),
+		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9387,7 +9387,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ldap"),
+		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9451,7 +9451,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ldap"),
+		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9515,7 +9515,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ldap"),
+		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9577,7 +9577,7 @@ func main() {
 	resp, err := client.Secrets.LdapRotateRootCredentials(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ldap"),
+		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9639,7 +9639,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ldap"),
+		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9706,7 +9706,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ldap"),
+		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9774,7 +9774,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ldap"),
+		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9840,7 +9840,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("mongodbatlas"),
+		vault.WithMountPath("mongodbatlas"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9903,7 +9903,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("mongodbatlas"),
+		vault.WithMountPath("mongodbatlas"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9967,7 +9967,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("mongodbatlas"),
+		vault.WithMountPath("mongodbatlas"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10029,7 +10029,7 @@ func main() {
 	resp, err := client.Secrets.MongoDbAtlasListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("mongodbatlas"),
+		vault.WithMountPath("mongodbatlas"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10090,7 +10090,7 @@ func main() {
 	resp, err := client.Secrets.MongoDbAtlasReadConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("mongodbatlas"),
+		vault.WithMountPath("mongodbatlas"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10152,7 +10152,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("mongodbatlas"),
+		vault.WithMountPath("mongodbatlas"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10219,7 +10219,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("mongodbatlas"),
+		vault.WithMountPath("mongodbatlas"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10285,7 +10285,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("nomad"),
+		vault.WithMountPath("nomad"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10349,7 +10349,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("nomad"),
+		vault.WithMountPath("nomad"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10410,7 +10410,7 @@ func main() {
 	resp, err := client.Secrets.NomadDeleteAccessConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("nomad"),
+		vault.WithMountPath("nomad"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10470,7 +10470,7 @@ func main() {
 	resp, err := client.Secrets.NomadDeleteLeaseConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("nomad"),
+		vault.WithMountPath("nomad"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10532,7 +10532,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("nomad"),
+		vault.WithMountPath("nomad"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10596,7 +10596,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("nomad"),
+		vault.WithMountPath("nomad"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10658,7 +10658,7 @@ func main() {
 	resp, err := client.Secrets.NomadListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("nomad"),
+		vault.WithMountPath("nomad"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10719,7 +10719,7 @@ func main() {
 	resp, err := client.Secrets.NomadReadAccessConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("nomad"),
+		vault.WithMountPath("nomad"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10779,7 +10779,7 @@ func main() {
 	resp, err := client.Secrets.NomadReadLeaseConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("nomad"),
+		vault.WithMountPath("nomad"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10841,7 +10841,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("nomad"),
+		vault.WithMountPath("nomad"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10908,7 +10908,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("nomad"),
+		vault.WithMountPath("nomad"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -10974,7 +10974,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11038,7 +11038,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11102,7 +11102,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11166,7 +11166,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11230,7 +11230,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11294,7 +11294,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11358,7 +11358,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11422,7 +11422,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11485,7 +11485,7 @@ func main() {
 		context.Background(),
 		issuerRef,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11549,7 +11549,7 @@ func main() {
 		context.Background(),
 		keyRef,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11613,7 +11613,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11675,7 +11675,7 @@ func main() {
 	resp, err := client.Secrets.PkiDeleteRoot(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11738,7 +11738,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11804,7 +11804,7 @@ func main() {
 		exported,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11870,7 +11870,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -11934,7 +11934,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12000,7 +12000,7 @@ func main() {
 		exported,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12066,7 +12066,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12132,7 +12132,7 @@ func main() {
 		role,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12202,7 +12202,7 @@ func main() {
 		role,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12269,7 +12269,7 @@ func main() {
 		context.Background(),
 		issuerRef,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12333,7 +12333,7 @@ func main() {
 		context.Background(),
 		issuerRef,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12397,7 +12397,7 @@ func main() {
 		context.Background(),
 		issuerRef,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12461,7 +12461,7 @@ func main() {
 		context.Background(),
 		issuerRef,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12525,7 +12525,7 @@ func main() {
 		context.Background(),
 		issuerRef,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12589,7 +12589,7 @@ func main() {
 		context.Background(),
 		issuerRef,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12656,7 +12656,7 @@ func main() {
 		issuerRef,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12724,7 +12724,7 @@ func main() {
 		issuerRef,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12792,7 +12792,7 @@ func main() {
 		issuerRef,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12860,7 +12860,7 @@ func main() {
 		issuerRef,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12928,7 +12928,7 @@ func main() {
 		issuerRef,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -12998,7 +12998,7 @@ func main() {
 		role,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13070,7 +13070,7 @@ func main() {
 		role,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13140,7 +13140,7 @@ func main() {
 		exported,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13208,7 +13208,7 @@ func main() {
 		exported,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13274,7 +13274,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13338,7 +13338,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13404,7 +13404,7 @@ func main() {
 		exported,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13467,7 +13467,7 @@ func main() {
 	resp, err := client.Secrets.PkiListCerts(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13528,7 +13528,7 @@ func main() {
 	resp, err := client.Secrets.PkiListIssuers(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13589,7 +13589,7 @@ func main() {
 	resp, err := client.Secrets.PkiListKeys(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13650,7 +13650,7 @@ func main() {
 	resp, err := client.Secrets.PkiListRevokedCerts(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13711,7 +13711,7 @@ func main() {
 	resp, err := client.Secrets.PkiListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13772,7 +13772,7 @@ func main() {
 	resp, err := client.Secrets.PkiQueryOcsp(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13834,7 +13834,7 @@ func main() {
 		context.Background(),
 		req,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13896,7 +13896,7 @@ func main() {
 	resp, err := client.Secrets.PkiReadAutoTidyConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13956,7 +13956,7 @@ func main() {
 	resp, err := client.Secrets.PkiReadCaChainPem(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14016,7 +14016,7 @@ func main() {
 	resp, err := client.Secrets.PkiReadCaDer(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14076,7 +14076,7 @@ func main() {
 	resp, err := client.Secrets.PkiReadCaPem(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14138,7 +14138,7 @@ func main() {
 		context.Background(),
 		serial,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14200,7 +14200,7 @@ func main() {
 	resp, err := client.Secrets.PkiReadCertCaChain(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14260,7 +14260,7 @@ func main() {
 	resp, err := client.Secrets.PkiReadCertCrl(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14320,7 +14320,7 @@ func main() {
 	resp, err := client.Secrets.PkiReadCertDeltaCrl(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14382,7 +14382,7 @@ func main() {
 		context.Background(),
 		serial,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14446,7 +14446,7 @@ func main() {
 		context.Background(),
 		serial,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14508,7 +14508,7 @@ func main() {
 	resp, err := client.Secrets.PkiReadClusterConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14568,7 +14568,7 @@ func main() {
 	resp, err := client.Secrets.PkiReadCrlConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14628,7 +14628,7 @@ func main() {
 	resp, err := client.Secrets.PkiReadCrlDelta(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14688,7 +14688,7 @@ func main() {
 	resp, err := client.Secrets.PkiReadCrlDeltaPem(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14748,7 +14748,7 @@ func main() {
 	resp, err := client.Secrets.PkiReadCrlDer(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14808,7 +14808,7 @@ func main() {
 	resp, err := client.Secrets.PkiReadCrlPem(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14870,7 +14870,7 @@ func main() {
 		context.Background(),
 		issuerRef,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14934,7 +14934,7 @@ func main() {
 		context.Background(),
 		issuerRef,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14998,7 +14998,7 @@ func main() {
 		context.Background(),
 		issuerRef,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15062,7 +15062,7 @@ func main() {
 		context.Background(),
 		issuerRef,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15124,7 +15124,7 @@ func main() {
 	resp, err := client.Secrets.PkiReadIssuersConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15186,7 +15186,7 @@ func main() {
 		context.Background(),
 		keyRef,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15248,7 +15248,7 @@ func main() {
 	resp, err := client.Secrets.PkiReadKeysConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15310,7 +15310,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15372,7 +15372,7 @@ func main() {
 	resp, err := client.Secrets.PkiReadUrlsConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15435,7 +15435,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15499,7 +15499,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15562,7 +15562,7 @@ func main() {
 		context.Background(),
 		issuerRef,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15627,7 +15627,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15691,7 +15691,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15755,7 +15755,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15816,7 +15816,7 @@ func main() {
 	resp, err := client.Secrets.PkiRotateCrl(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15876,7 +15876,7 @@ func main() {
 	resp, err := client.Secrets.PkiRotateDeltaCrl(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15939,7 +15939,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16003,7 +16003,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16069,7 +16069,7 @@ func main() {
 		role,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16137,7 +16137,7 @@ func main() {
 		role,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16203,7 +16203,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16264,7 +16264,7 @@ func main() {
 	resp, err := client.Secrets.PkiTidyCancel(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16324,7 +16324,7 @@ func main() {
 	resp, err := client.Secrets.PkiTidyStatus(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16389,7 +16389,7 @@ func main() {
 		issuerRef,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16457,7 +16457,7 @@ func main() {
 		keyRef,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16525,7 +16525,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("pki"),
+		vault.WithMountPath("pki"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16591,7 +16591,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("rabbitmq"),
+		vault.WithMountPath("rabbitmq"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16655,7 +16655,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("rabbitmq"),
+		vault.WithMountPath("rabbitmq"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16718,7 +16718,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("rabbitmq"),
+		vault.WithMountPath("rabbitmq"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16780,7 +16780,7 @@ func main() {
 	resp, err := client.Secrets.RabbitMqListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("rabbitmq"),
+		vault.WithMountPath("rabbitmq"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16841,7 +16841,7 @@ func main() {
 	resp, err := client.Secrets.RabbitMqReadLeaseConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("rabbitmq"),
+		vault.WithMountPath("rabbitmq"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16903,7 +16903,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("rabbitmq"),
+		vault.WithMountPath("rabbitmq"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -16967,7 +16967,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("rabbitmq"),
+		vault.WithMountPath("rabbitmq"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17034,7 +17034,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("rabbitmq"),
+		vault.WithMountPath("rabbitmq"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17100,7 +17100,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ssh"),
+		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17164,7 +17164,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ssh"),
+		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17225,7 +17225,7 @@ func main() {
 	resp, err := client.Secrets.SshDeleteCaConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ssh"),
+		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17287,7 +17287,7 @@ func main() {
 		context.Background(),
 		role,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ssh"),
+		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17349,7 +17349,7 @@ func main() {
 	resp, err := client.Secrets.SshDeleteZeroAddressConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ssh"),
+		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17414,7 +17414,7 @@ func main() {
 		role,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ssh"),
+		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17482,7 +17482,7 @@ func main() {
 		role,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ssh"),
+		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17545,7 +17545,7 @@ func main() {
 	resp, err := client.Secrets.SshListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ssh"),
+		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17609,7 +17609,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ssh"),
+		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17670,7 +17670,7 @@ func main() {
 	resp, err := client.Secrets.SshReadCaConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ssh"),
+		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17730,7 +17730,7 @@ func main() {
 	resp, err := client.Secrets.SshReadPublicKey(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ssh"),
+		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17792,7 +17792,7 @@ func main() {
 		context.Background(),
 		role,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ssh"),
+		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17854,7 +17854,7 @@ func main() {
 	resp, err := client.Secrets.SshReadZeroAddressConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ssh"),
+		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17919,7 +17919,7 @@ func main() {
 		role,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ssh"),
+		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -17982,7 +17982,7 @@ func main() {
 	resp, err := client.Secrets.SshTidyDynamicHostKeys(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ssh"),
+		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18045,7 +18045,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ssh"),
+		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18111,7 +18111,7 @@ func main() {
 		role,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("ssh"),
+		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18177,7 +18177,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("terraform"),
+		vault.WithMountPath("terraform"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18238,7 +18238,7 @@ func main() {
 	resp, err := client.Secrets.TerraformCloudDeleteConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("terraform"),
+		vault.WithMountPath("terraform"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18300,7 +18300,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("terraform"),
+		vault.WithMountPath("terraform"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18364,7 +18364,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("terraform"),
+		vault.WithMountPath("terraform"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18426,7 +18426,7 @@ func main() {
 	resp, err := client.Secrets.TerraformCloudListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("terraform"),
+		vault.WithMountPath("terraform"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18487,7 +18487,7 @@ func main() {
 	resp, err := client.Secrets.TerraformCloudReadConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("terraform"),
+		vault.WithMountPath("terraform"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18549,7 +18549,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("terraform"),
+		vault.WithMountPath("terraform"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18613,7 +18613,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("terraform"),
+		vault.WithMountPath("terraform"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18680,7 +18680,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("terraform"),
+		vault.WithMountPath("terraform"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18748,7 +18748,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("totp"),
+		vault.WithMountPath("totp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18813,7 +18813,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("totp"),
+		vault.WithMountPath("totp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18877,7 +18877,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("totp"),
+		vault.WithMountPath("totp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -18939,7 +18939,7 @@ func main() {
 	resp, err := client.Secrets.TotpListKeys(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("totp"),
+		vault.WithMountPath("totp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19002,7 +19002,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("totp"),
+		vault.WithMountPath("totp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19069,7 +19069,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("totp"),
+		vault.WithMountPath("totp"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19134,7 +19134,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19199,7 +19199,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19265,7 +19265,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19331,7 +19331,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19397,7 +19397,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19465,7 +19465,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19530,7 +19530,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19597,7 +19597,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19664,7 +19664,7 @@ func main() {
 		name,
 		type_,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19734,7 +19734,7 @@ func main() {
 		type_,
 		version,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19807,7 +19807,7 @@ func main() {
 		plaintext,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19877,7 +19877,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -19947,7 +19947,7 @@ func main() {
 		urlalgorithm,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20015,7 +20015,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20081,7 +20081,7 @@ func main() {
 		urlbytes,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20149,7 +20149,7 @@ func main() {
 		source,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20219,7 +20219,7 @@ func main() {
 		urlbytes,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20287,7 +20287,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20353,7 +20353,7 @@ func main() {
 		urlalgorithm,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20421,7 +20421,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20489,7 +20489,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20552,7 +20552,7 @@ func main() {
 	resp, err := client.Secrets.TransitListKeys(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20613,7 +20613,7 @@ func main() {
 	resp, err := client.Secrets.TransitReadCacheConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20675,7 +20675,7 @@ func main() {
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20737,7 +20737,7 @@ func main() {
 	resp, err := client.Secrets.TransitReadKeysConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20797,7 +20797,7 @@ func main() {
 	resp, err := client.Secrets.TransitReadWrappingKey(
 		context.Background(),
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20862,7 +20862,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20928,7 +20928,7 @@ func main() {
 		context.Background(),
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -20994,7 +20994,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -21062,7 +21062,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -21130,7 +21130,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -21200,7 +21200,7 @@ func main() {
 		urlalgorithm,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -21270,7 +21270,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -21338,7 +21338,7 @@ func main() {
 		name,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -21408,7 +21408,7 @@ func main() {
 		urlalgorithm,
 		request,
 		vault.WithToken("my-token"),
-        vault.WithMountPath("transit"),
+		vault.WithMountPath("transit"),
 	)
 	if err != nil {
 		log.Fatal(err)

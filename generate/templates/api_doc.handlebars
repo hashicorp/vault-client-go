@@ -62,8 +62,8 @@ func main() {
 {{#unless allParams}}This endpoint does not require any parameters.{{/unless}}{{#each pathParams}}{{#if @last}}
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation {{/if}}{{/each}}{{#each pathParams}}{{#with required}}
-**{{paramName}}** | {{#unless isPrimitiveType}}{{#unless isFile}}[{{/unless}}{{/unless}}**{{dataType}}**{{#unless isPrimitiveType}}{{#unless isFile}}]({{baseType}}.md){{/unless}}{{/unless}} | {{description}} | {{#with defaultValue}}[default to {{.}}]{{/with}}{{/with}}{{/each}}
+**ctx** | **context.Context** | context for request cancellation {{/if}}{{/each}}{{#each pathParams}}{{#endsWith baseName "_mount_path"}}{{else}}
+**{{paramName}}** | {{#unless isPrimitiveType}}{{#unless isFile}}[{{/unless}}{{/unless}}**{{dataType}}**{{#unless isPrimitiveType}}{{#unless isFile}}]({{baseType}}.md){{/unless}}{{/unless}} | {{description}} | {{#with defaultValue}}[default to {{.}}]{{/with}}{{/endsWith}}{{/each}}
 
 ### Other Parameters
 

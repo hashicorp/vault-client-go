@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AwsTidyRoleTagDenyListRequest struct for AwsTidyRoleTagDenyListRequest
 type AwsTidyRoleTagDenyListRequest struct {
 	// The amount of extra time that must have passed beyond the roletag expiration, before it is removed from the backend storage.
-	SafetyBuffer int32 `json:"safety_buffer"`
+	SafetyBuffer int32 `json:"safety_buffer,omitempty"`
 }
 
 // NewAwsTidyRoleTagDenyListRequestWithDefaults instantiates a new AwsTidyRoleTagDenyListRequest object
@@ -24,12 +20,4 @@ func NewAwsTidyRoleTagDenyListRequestWithDefaults() *AwsTidyRoleTagDenyListReque
 	this.SafetyBuffer = 259200
 
 	return &this
-}
-
-func (o AwsTidyRoleTagDenyListRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["safety_buffer"] = o.SafetyBuffer
-
-	return json.Marshal(toSerialize)
 }

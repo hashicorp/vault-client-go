@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RateLimitQuotasReadConfigurationResponse struct for RateLimitQuotasReadConfigurationResponse
 type RateLimitQuotasReadConfigurationResponse struct {
-	EnableRateLimitAuditLogging bool `json:"enable_rate_limit_audit_logging"`
+	EnableRateLimitAuditLogging bool `json:"enable_rate_limit_audit_logging,omitempty"`
 
-	EnableRateLimitResponseHeaders bool `json:"enable_rate_limit_response_headers"`
+	EnableRateLimitResponseHeaders bool `json:"enable_rate_limit_response_headers,omitempty"`
 
-	RateLimitExemptPaths []string `json:"rate_limit_exempt_paths"`
+	RateLimitExemptPaths []string `json:"rate_limit_exempt_paths,omitempty"`
 }
 
 // NewRateLimitQuotasReadConfigurationResponseWithDefaults instantiates a new RateLimitQuotasReadConfigurationResponse object
@@ -25,14 +21,4 @@ func NewRateLimitQuotasReadConfigurationResponseWithDefaults() *RateLimitQuotasR
 	var this RateLimitQuotasReadConfigurationResponse
 
 	return &this
-}
-
-func (o RateLimitQuotasReadConfigurationResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["enable_rate_limit_audit_logging"] = o.EnableRateLimitAuditLogging
-	toSerialize["enable_rate_limit_response_headers"] = o.EnableRateLimitResponseHeaders
-	toSerialize["rate_limit_exempt_paths"] = o.RateLimitExemptPaths
-
-	return json.Marshal(toSerialize)
 }

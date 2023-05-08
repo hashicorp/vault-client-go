@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RootTokenGenerationUpdateRequest struct for RootTokenGenerationUpdateRequest
 type RootTokenGenerationUpdateRequest struct {
 	// Specifies a single unseal key share.
-	Key string `json:"key"`
+	Key string `json:"key,omitempty"`
 
 	// Specifies the nonce of the attempt.
-	Nonce string `json:"nonce"`
+	Nonce string `json:"nonce,omitempty"`
 }
 
 // NewRootTokenGenerationUpdateRequestWithDefaults instantiates a new RootTokenGenerationUpdateRequest object
@@ -25,13 +21,4 @@ func NewRootTokenGenerationUpdateRequestWithDefaults() *RootTokenGenerationUpdat
 	var this RootTokenGenerationUpdateRequest
 
 	return &this
-}
-
-func (o RootTokenGenerationUpdateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["key"] = o.Key
-	toSerialize["nonce"] = o.Nonce
-
-	return json.Marshal(toSerialize)
 }

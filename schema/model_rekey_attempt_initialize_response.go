@@ -5,31 +5,27 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RekeyAttemptInitializeResponse struct for RekeyAttemptInitializeResponse
 type RekeyAttemptInitializeResponse struct {
-	Backup bool `json:"backup"`
+	Backup bool `json:"backup,omitempty"`
 
-	N int32 `json:"n"`
+	N int32 `json:"n,omitempty"`
 
-	Nounce string `json:"nounce"`
+	Nounce string `json:"nounce,omitempty"`
 
-	PgpFingerprints []string `json:"pgp_fingerprints"`
+	PgpFingerprints []string `json:"pgp_fingerprints,omitempty"`
 
-	Progress int32 `json:"progress"`
+	Progress int32 `json:"progress,omitempty"`
 
-	Required int32 `json:"required"`
+	Required int32 `json:"required,omitempty"`
 
-	Started string `json:"started"`
+	Started string `json:"started,omitempty"`
 
-	T int32 `json:"t"`
+	T int32 `json:"t,omitempty"`
 
-	VerificationNonce string `json:"verification_nonce"`
+	VerificationNonce string `json:"verification_nonce,omitempty"`
 
-	VerificationRequired bool `json:"verification_required"`
+	VerificationRequired bool `json:"verification_required,omitempty"`
 }
 
 // NewRekeyAttemptInitializeResponseWithDefaults instantiates a new RekeyAttemptInitializeResponse object
@@ -39,21 +35,4 @@ func NewRekeyAttemptInitializeResponseWithDefaults() *RekeyAttemptInitializeResp
 	var this RekeyAttemptInitializeResponse
 
 	return &this
-}
-
-func (o RekeyAttemptInitializeResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["backup"] = o.Backup
-	toSerialize["n"] = o.N
-	toSerialize["nounce"] = o.Nounce
-	toSerialize["pgp_fingerprints"] = o.PgpFingerprints
-	toSerialize["progress"] = o.Progress
-	toSerialize["required"] = o.Required
-	toSerialize["started"] = o.Started
-	toSerialize["t"] = o.T
-	toSerialize["verification_nonce"] = o.VerificationNonce
-	toSerialize["verification_required"] = o.VerificationRequired
-
-	return json.Marshal(toSerialize)
 }

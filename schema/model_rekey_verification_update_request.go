@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RekeyVerificationUpdateRequest struct for RekeyVerificationUpdateRequest
 type RekeyVerificationUpdateRequest struct {
 	// Specifies a single unseal share key from the new set of shares.
-	Key string `json:"key"`
+	Key string `json:"key,omitempty"`
 
 	// Specifies the nonce of the rekey verification operation.
-	Nonce string `json:"nonce"`
+	Nonce string `json:"nonce,omitempty"`
 }
 
 // NewRekeyVerificationUpdateRequestWithDefaults instantiates a new RekeyVerificationUpdateRequest object
@@ -25,13 +21,4 @@ func NewRekeyVerificationUpdateRequestWithDefaults() *RekeyVerificationUpdateReq
 	var this RekeyVerificationUpdateRequest
 
 	return &this
-}
-
-func (o RekeyVerificationUpdateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["key"] = o.Key
-	toSerialize["nonce"] = o.Nonce
-
-	return json.Marshal(toSerialize)
 }

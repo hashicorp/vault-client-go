@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // InternalUiListNamespacesResponse struct for InternalUiListNamespacesResponse
 type InternalUiListNamespacesResponse struct {
 	// field is only returned if there are one or more namespaces
-	Keys []string `json:"keys"`
+	Keys []string `json:"keys,omitempty"`
 }
 
 // NewInternalUiListNamespacesResponseWithDefaults instantiates a new InternalUiListNamespacesResponse object
@@ -22,12 +18,4 @@ func NewInternalUiListNamespacesResponseWithDefaults() *InternalUiListNamespaces
 	var this InternalUiListNamespacesResponse
 
 	return &this
-}
-
-func (o InternalUiListNamespacesResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["keys"] = o.Keys
-
-	return json.Marshal(toSerialize)
 }

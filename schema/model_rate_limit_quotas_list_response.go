@@ -5,13 +5,9 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RateLimitQuotasListResponse struct for RateLimitQuotasListResponse
 type RateLimitQuotasListResponse struct {
-	Keys []string `json:"keys"`
+	Keys []string `json:"keys,omitempty"`
 }
 
 // NewRateLimitQuotasListResponseWithDefaults instantiates a new RateLimitQuotasListResponse object
@@ -21,12 +17,4 @@ func NewRateLimitQuotasListResponseWithDefaults() *RateLimitQuotasListResponse {
 	var this RateLimitQuotasListResponse
 
 	return &this
-}
-
-func (o RateLimitQuotasListResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["keys"] = o.Keys
-
-	return json.Marshal(toSerialize)
 }

@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AwsConfigureRoleTagDenyListTidyOperationRequest struct for AwsConfigureRoleTagDenyListTidyOperationRequest
 type AwsConfigureRoleTagDenyListTidyOperationRequest struct {
 	// If set to 'true', disables the periodic tidying of deny listed entries.
-	DisablePeriodicTidy bool `json:"disable_periodic_tidy"`
+	DisablePeriodicTidy bool `json:"disable_periodic_tidy,omitempty"`
 
 	// The amount of extra time that must have passed beyond the roletag expiration, before it is removed from the backend storage. Defaults to 4320h (180 days).
-	SafetyBuffer int32 `json:"safety_buffer"`
+	SafetyBuffer int32 `json:"safety_buffer,omitempty"`
 }
 
 // NewAwsConfigureRoleTagDenyListTidyOperationRequestWithDefaults instantiates a new AwsConfigureRoleTagDenyListTidyOperationRequest object
@@ -28,13 +24,4 @@ func NewAwsConfigureRoleTagDenyListTidyOperationRequestWithDefaults() *AwsConfig
 	this.SafetyBuffer = 15552000
 
 	return &this
-}
-
-func (o AwsConfigureRoleTagDenyListTidyOperationRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["disable_periodic_tidy"] = o.DisablePeriodicTidy
-	toSerialize["safety_buffer"] = o.SafetyBuffer
-
-	return json.Marshal(toSerialize)
 }

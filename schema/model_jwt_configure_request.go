@@ -5,53 +5,49 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // JwtConfigureRequest struct for JwtConfigureRequest
 type JwtConfigureRequest struct {
 	// The value against which to match the 'iss' claim in a JWT. Optional.
-	BoundIssuer string `json:"bound_issuer"`
+	BoundIssuer string `json:"bound_issuer,omitempty"`
 
 	// The default role to use if none is provided during login. If not set, a role is required during login.
-	DefaultRole string `json:"default_role"`
+	DefaultRole string `json:"default_role,omitempty"`
 
 	// The CA certificate or chain of certificates, in PEM format, to use to validate connections to the JWKS URL. If not set, system certificates are used.
-	JwksCaPem string `json:"jwks_ca_pem"`
+	JwksCaPem string `json:"jwks_ca_pem,omitempty"`
 
 	// JWKS URL to use to authenticate signatures. Cannot be used with \"oidc_discovery_url\" or \"jwt_validation_pubkeys\".
-	JwksUrl string `json:"jwks_url"`
+	JwksUrl string `json:"jwks_url,omitempty"`
 
 	// A list of supported signing algorithms. Defaults to RS256.
-	JwtSupportedAlgs []string `json:"jwt_supported_algs"`
+	JwtSupportedAlgs []string `json:"jwt_supported_algs,omitempty"`
 
 	// A list of PEM-encoded public keys to use to authenticate signatures locally. Cannot be used with \"jwks_url\" or \"oidc_discovery_url\".
-	JwtValidationPubkeys []string `json:"jwt_validation_pubkeys"`
+	JwtValidationPubkeys []string `json:"jwt_validation_pubkeys,omitempty"`
 
 	// Pass namespace in the OIDC state parameter instead of as a separate query parameter. With this setting, the allowed redirect URL(s) in Vault and on the provider side should not contain a namespace query parameter. This means only one redirect URL entry needs to be maintained on the provider side for all vault namespaces that will be authenticating against it. Defaults to true for new configs.
-	NamespaceInState bool `json:"namespace_in_state"`
+	NamespaceInState bool `json:"namespace_in_state,omitempty"`
 
 	// The OAuth Client ID configured with your OIDC provider.
-	OidcClientId string `json:"oidc_client_id"`
+	OidcClientId string `json:"oidc_client_id,omitempty"`
 
 	// The OAuth Client Secret configured with your OIDC provider.
-	OidcClientSecret string `json:"oidc_client_secret"`
+	OidcClientSecret string `json:"oidc_client_secret,omitempty"`
 
 	// The CA certificate or chain of certificates, in PEM format, to use to validate connections to the OIDC Discovery URL. If not set, system certificates are used.
-	OidcDiscoveryCaPem string `json:"oidc_discovery_ca_pem"`
+	OidcDiscoveryCaPem string `json:"oidc_discovery_ca_pem,omitempty"`
 
 	// OIDC Discovery URL, without any .well-known component (base path). Cannot be used with \"jwks_url\" or \"jwt_validation_pubkeys\".
-	OidcDiscoveryUrl string `json:"oidc_discovery_url"`
+	OidcDiscoveryUrl string `json:"oidc_discovery_url,omitempty"`
 
 	// The response mode to be used in the OAuth2 request. Allowed values are 'query' and 'form_post'.
-	OidcResponseMode string `json:"oidc_response_mode"`
+	OidcResponseMode string `json:"oidc_response_mode,omitempty"`
 
 	// The response types to request. Allowed values are 'code' and 'id_token'. Defaults to 'code'.
-	OidcResponseTypes []string `json:"oidc_response_types"`
+	OidcResponseTypes []string `json:"oidc_response_types,omitempty"`
 
 	// Provider-specific configuration. Optional.
-	ProviderConfig map[string]interface{} `json:"provider_config"`
+	ProviderConfig map[string]interface{} `json:"provider_config,omitempty"`
 }
 
 // NewJwtConfigureRequestWithDefaults instantiates a new JwtConfigureRequest object
@@ -61,25 +57,4 @@ func NewJwtConfigureRequestWithDefaults() *JwtConfigureRequest {
 	var this JwtConfigureRequest
 
 	return &this
-}
-
-func (o JwtConfigureRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["bound_issuer"] = o.BoundIssuer
-	toSerialize["default_role"] = o.DefaultRole
-	toSerialize["jwks_ca_pem"] = o.JwksCaPem
-	toSerialize["jwks_url"] = o.JwksUrl
-	toSerialize["jwt_supported_algs"] = o.JwtSupportedAlgs
-	toSerialize["jwt_validation_pubkeys"] = o.JwtValidationPubkeys
-	toSerialize["namespace_in_state"] = o.NamespaceInState
-	toSerialize["oidc_client_id"] = o.OidcClientId
-	toSerialize["oidc_client_secret"] = o.OidcClientSecret
-	toSerialize["oidc_discovery_ca_pem"] = o.OidcDiscoveryCaPem
-	toSerialize["oidc_discovery_url"] = o.OidcDiscoveryUrl
-	toSerialize["oidc_response_mode"] = o.OidcResponseMode
-	toSerialize["oidc_response_types"] = o.OidcResponseTypes
-	toSerialize["provider_config"] = o.ProviderConfig
-
-	return json.Marshal(toSerialize)
 }

@@ -5,32 +5,29 @@
 
 package schema
 
-import (
-	"encoding/json"
-	"time"
-)
+import "time"
 
 // LeaderStatusResponse struct for LeaderStatusResponse
 type LeaderStatusResponse struct {
-	ActiveTime time.Time `json:"active_time"`
+	ActiveTime time.Time `json:"active_time,omitempty"`
 
-	HaEnabled bool `json:"ha_enabled"`
+	HaEnabled bool `json:"ha_enabled,omitempty"`
 
-	IsSelf bool `json:"is_self"`
+	IsSelf bool `json:"is_self,omitempty"`
 
-	LastWal int64 `json:"last_wal"`
+	LastWal int64 `json:"last_wal,omitempty"`
 
-	LeaderAddress string `json:"leader_address"`
+	LeaderAddress string `json:"leader_address,omitempty"`
 
-	LeaderClusterAddress string `json:"leader_cluster_address"`
+	LeaderClusterAddress string `json:"leader_cluster_address,omitempty"`
 
-	PerformanceStandby bool `json:"performance_standby"`
+	PerformanceStandby bool `json:"performance_standby,omitempty"`
 
-	PerformanceStandbyLastRemoteWal int64 `json:"performance_standby_last_remote_wal"`
+	PerformanceStandbyLastRemoteWal int64 `json:"performance_standby_last_remote_wal,omitempty"`
 
-	RaftAppliedIndex int64 `json:"raft_applied_index"`
+	RaftAppliedIndex int64 `json:"raft_applied_index,omitempty"`
 
-	RaftCommittedIndex int64 `json:"raft_committed_index"`
+	RaftCommittedIndex int64 `json:"raft_committed_index,omitempty"`
 }
 
 // NewLeaderStatusResponseWithDefaults instantiates a new LeaderStatusResponse object
@@ -40,21 +37,4 @@ func NewLeaderStatusResponseWithDefaults() *LeaderStatusResponse {
 	var this LeaderStatusResponse
 
 	return &this
-}
-
-func (o LeaderStatusResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["active_time"] = o.ActiveTime
-	toSerialize["ha_enabled"] = o.HaEnabled
-	toSerialize["is_self"] = o.IsSelf
-	toSerialize["last_wal"] = o.LastWal
-	toSerialize["leader_address"] = o.LeaderAddress
-	toSerialize["leader_cluster_address"] = o.LeaderClusterAddress
-	toSerialize["performance_standby"] = o.PerformanceStandby
-	toSerialize["performance_standby_last_remote_wal"] = o.PerformanceStandbyLastRemoteWal
-	toSerialize["raft_applied_index"] = o.RaftAppliedIndex
-	toSerialize["raft_committed_index"] = o.RaftCommittedIndex
-
-	return json.Marshal(toSerialize)
 }

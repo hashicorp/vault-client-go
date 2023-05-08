@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // TotpValidateCodeRequest struct for TotpValidateCodeRequest
 type TotpValidateCodeRequest struct {
 	// TOTP code to be validated.
-	Code string `json:"code"`
+	Code string `json:"code,omitempty"`
 }
 
 // NewTotpValidateCodeRequestWithDefaults instantiates a new TotpValidateCodeRequest object
@@ -22,12 +18,4 @@ func NewTotpValidateCodeRequestWithDefaults() *TotpValidateCodeRequest {
 	var this TotpValidateCodeRequest
 
 	return &this
-}
-
-func (o TotpValidateCodeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["code"] = o.Code
-
-	return json.Marshal(toSerialize)
 }

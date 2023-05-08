@@ -5,15 +5,11 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleReadBoundCidrListResponse struct for AppRoleReadBoundCidrListResponse
 type AppRoleReadBoundCidrListResponse struct {
 	// Deprecated: Please use \"secret_id_bound_cidrs\" instead. Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can perform the login operation.
 	// Deprecated
-	BoundCidrList []string `json:"bound_cidr_list"`
+	BoundCidrList []string `json:"bound_cidr_list,omitempty"`
 }
 
 // NewAppRoleReadBoundCidrListResponseWithDefaults instantiates a new AppRoleReadBoundCidrListResponse object
@@ -23,12 +19,4 @@ func NewAppRoleReadBoundCidrListResponseWithDefaults() *AppRoleReadBoundCidrList
 	var this AppRoleReadBoundCidrListResponse
 
 	return &this
-}
-
-func (o AppRoleReadBoundCidrListResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["bound_cidr_list"] = o.BoundCidrList
-
-	return json.Marshal(toSerialize)
 }

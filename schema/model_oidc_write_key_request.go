@@ -5,23 +5,19 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // OidcWriteKeyRequest struct for OidcWriteKeyRequest
 type OidcWriteKeyRequest struct {
 	// Signing algorithm to use. This will default to RS256.
-	Algorithm string `json:"algorithm"`
+	Algorithm string `json:"algorithm,omitempty"`
 
 	// Comma separated string or array of role client ids allowed to use this key for signing. If empty no roles are allowed. If \"*\" all roles are allowed.
-	AllowedClientIds []string `json:"allowed_client_ids"`
+	AllowedClientIds []string `json:"allowed_client_ids,omitempty"`
 
 	// How often to generate a new keypair.
-	RotationPeriod int32 `json:"rotation_period"`
+	RotationPeriod int32 `json:"rotation_period,omitempty"`
 
 	// Controls how long the public portion of a key will be available for verification after being rotated.
-	VerificationTtl int32 `json:"verification_ttl"`
+	VerificationTtl int32 `json:"verification_ttl,omitempty"`
 }
 
 // NewOidcWriteKeyRequestWithDefaults instantiates a new OidcWriteKeyRequest object
@@ -33,15 +29,4 @@ func NewOidcWriteKeyRequestWithDefaults() *OidcWriteKeyRequest {
 	this.Algorithm = "RS256"
 
 	return &this
-}
-
-func (o OidcWriteKeyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["algorithm"] = o.Algorithm
-	toSerialize["allowed_client_ids"] = o.AllowedClientIds
-	toSerialize["rotation_period"] = o.RotationPeriod
-	toSerialize["verification_ttl"] = o.VerificationTtl
-
-	return json.Marshal(toSerialize)
 }

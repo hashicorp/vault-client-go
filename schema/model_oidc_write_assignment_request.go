@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // OidcWriteAssignmentRequest struct for OidcWriteAssignmentRequest
 type OidcWriteAssignmentRequest struct {
 	// Comma separated string or array of identity entity IDs
-	EntityIds []string `json:"entity_ids"`
+	EntityIds []string `json:"entity_ids,omitempty"`
 
 	// Comma separated string or array of identity group IDs
-	GroupIds []string `json:"group_ids"`
+	GroupIds []string `json:"group_ids,omitempty"`
 }
 
 // NewOidcWriteAssignmentRequestWithDefaults instantiates a new OidcWriteAssignmentRequest object
@@ -25,13 +21,4 @@ func NewOidcWriteAssignmentRequestWithDefaults() *OidcWriteAssignmentRequest {
 	var this OidcWriteAssignmentRequest
 
 	return &this
-}
-
-func (o OidcWriteAssignmentRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["entity_ids"] = o.EntityIds
-	toSerialize["group_ids"] = o.GroupIds
-
-	return json.Marshal(toSerialize)
 }

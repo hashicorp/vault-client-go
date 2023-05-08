@@ -5,13 +5,9 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleLoginResponse struct for AppRoleLoginResponse
 type AppRoleLoginResponse struct {
-	Role string `json:"role"`
+	Role string `json:"role,omitempty"`
 }
 
 // NewAppRoleLoginResponseWithDefaults instantiates a new AppRoleLoginResponse object
@@ -21,12 +17,4 @@ func NewAppRoleLoginResponseWithDefaults() *AppRoleLoginResponse {
 	var this AppRoleLoginResponse
 
 	return &this
-}
-
-func (o AppRoleLoginResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["role"] = o.Role
-
-	return json.Marshal(toSerialize)
 }

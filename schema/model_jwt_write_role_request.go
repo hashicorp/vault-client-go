@@ -5,110 +5,106 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // JwtWriteRoleRequest struct for JwtWriteRoleRequest
 type JwtWriteRoleRequest struct {
 	// Comma-separated list of allowed values for redirect_uri
-	AllowedRedirectUris []string `json:"allowed_redirect_uris"`
+	AllowedRedirectUris []string `json:"allowed_redirect_uris,omitempty"`
 
 	// Comma-separated list of 'aud' claims that are valid for login; any match is sufficient
-	BoundAudiences []string `json:"bound_audiences"`
+	BoundAudiences []string `json:"bound_audiences,omitempty"`
 
 	// Use \"token_bound_cidrs\" instead. If this and \"token_bound_cidrs\" are both specified, only \"token_bound_cidrs\" will be used.
 	// Deprecated
-	BoundCidrs []string `json:"bound_cidrs"`
+	BoundCidrs []string `json:"bound_cidrs,omitempty"`
 
 	// Map of claims/values which must match for login
-	BoundClaims map[string]interface{} `json:"bound_claims"`
+	BoundClaims map[string]interface{} `json:"bound_claims,omitempty"`
 
 	// How to interpret values in the map of claims/values (which must match for login): allowed values are 'string' or 'glob'
-	BoundClaimsType string `json:"bound_claims_type"`
+	BoundClaimsType string `json:"bound_claims_type,omitempty"`
 
 	// The 'sub' claim that is valid for login. Optional.
-	BoundSubject string `json:"bound_subject"`
+	BoundSubject string `json:"bound_subject,omitempty"`
 
 	// Mappings of claims (key) that will be copied to a metadata field (value)
-	ClaimMappings map[string]interface{} `json:"claim_mappings"`
+	ClaimMappings map[string]interface{} `json:"claim_mappings,omitempty"`
 
 	// Duration in seconds of leeway when validating all claims to account for clock skew. Defaults to 60 (1 minute) if set to 0 and can be disabled if set to -1.
-	ClockSkewLeeway int32 `json:"clock_skew_leeway"`
+	ClockSkewLeeway int32 `json:"clock_skew_leeway,omitempty"`
 
 	// Duration in seconds of leeway when validating expiration of a token to account for clock skew. Defaults to 150 (2.5 minutes) if set to 0 and can be disabled if set to -1.
-	ExpirationLeeway int32 `json:"expiration_leeway"`
+	ExpirationLeeway int32 `json:"expiration_leeway,omitempty"`
 
 	// The claim to use for the Identity group alias names
-	GroupsClaim string `json:"groups_claim"`
+	GroupsClaim string `json:"groups_claim,omitempty"`
 
 	// Specifies the allowable elapsed time in seconds since the last time the user was actively authenticated.
-	MaxAge int32 `json:"max_age"`
+	MaxAge int32 `json:"max_age,omitempty"`
 
 	// Use \"token_max_ttl\" instead. If this and \"token_max_ttl\" are both specified, only \"token_max_ttl\" will be used.
 	// Deprecated
-	MaxTtl int32 `json:"max_ttl"`
+	MaxTtl int32 `json:"max_ttl,omitempty"`
 
 	// Duration in seconds of leeway when validating not before values of a token to account for clock skew. Defaults to 150 (2.5 minutes) if set to 0 and can be disabled if set to -1.
-	NotBeforeLeeway int32 `json:"not_before_leeway"`
+	NotBeforeLeeway int32 `json:"not_before_leeway,omitempty"`
 
 	// Use \"token_num_uses\" instead. If this and \"token_num_uses\" are both specified, only \"token_num_uses\" will be used.
 	// Deprecated
-	NumUses int32 `json:"num_uses"`
+	NumUses int32 `json:"num_uses,omitempty"`
 
 	// Comma-separated list of OIDC scopes
-	OidcScopes []string `json:"oidc_scopes"`
+	OidcScopes []string `json:"oidc_scopes,omitempty"`
 
 	// Use \"token_period\" instead. If this and \"token_period\" are both specified, only \"token_period\" will be used.
 	// Deprecated
-	Period int32 `json:"period"`
+	Period int32 `json:"period,omitempty"`
 
 	// Use \"token_policies\" instead. If this and \"token_policies\" are both specified, only \"token_policies\" will be used.
 	// Deprecated
-	Policies []string `json:"policies"`
+	Policies []string `json:"policies,omitempty"`
 
 	// Type of the role, either 'jwt' or 'oidc'.
-	RoleType string `json:"role_type"`
+	RoleType string `json:"role_type,omitempty"`
 
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
-	TokenBoundCidrs []string `json:"token_bound_cidrs"`
+	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
 
 	// If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
-	TokenExplicitMaxTtl int32 `json:"token_explicit_max_ttl"`
+	TokenExplicitMaxTtl int32 `json:"token_explicit_max_ttl,omitempty"`
 
 	// The maximum lifetime of the generated token
-	TokenMaxTtl int32 `json:"token_max_ttl"`
+	TokenMaxTtl int32 `json:"token_max_ttl,omitempty"`
 
 	// If true, the 'default' policy will not automatically be added to generated tokens
-	TokenNoDefaultPolicy bool `json:"token_no_default_policy"`
+	TokenNoDefaultPolicy bool `json:"token_no_default_policy,omitempty"`
 
 	// The maximum number of times a token may be used, a value of zero means unlimited
-	TokenNumUses int32 `json:"token_num_uses"`
+	TokenNumUses int32 `json:"token_num_uses,omitempty"`
 
 	// If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").
-	TokenPeriod int32 `json:"token_period"`
+	TokenPeriod int32 `json:"token_period,omitempty"`
 
 	// Comma-separated list of policies
-	TokenPolicies []string `json:"token_policies"`
+	TokenPolicies []string `json:"token_policies,omitempty"`
 
 	// The initial ttl of the token to generate
-	TokenTtl int32 `json:"token_ttl"`
+	TokenTtl int32 `json:"token_ttl,omitempty"`
 
 	// The type of token to generate, service or batch
-	TokenType string `json:"token_type"`
+	TokenType string `json:"token_type,omitempty"`
 
 	// Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.
 	// Deprecated
-	Ttl int32 `json:"ttl"`
+	Ttl int32 `json:"ttl,omitempty"`
 
 	// The claim to use for the Identity entity alias name
-	UserClaim string `json:"user_claim"`
+	UserClaim string `json:"user_claim,omitempty"`
 
 	// If true, the user_claim value will use JSON pointer syntax for referencing claims.
-	UserClaimJsonPointer bool `json:"user_claim_json_pointer"`
+	UserClaimJsonPointer bool `json:"user_claim_json_pointer,omitempty"`
 
 	// Log received OIDC tokens and claims when debug-level logging is active. Not recommended in production since sensitive information may be present in OIDC responses.
-	VerboseOidcLogging bool `json:"verbose_oidc_logging"`
+	VerboseOidcLogging bool `json:"verbose_oidc_logging,omitempty"`
 }
 
 // NewJwtWriteRoleRequestWithDefaults instantiates a new JwtWriteRoleRequest object
@@ -123,42 +119,4 @@ func NewJwtWriteRoleRequestWithDefaults() *JwtWriteRoleRequest {
 	this.TokenType = "default-service"
 
 	return &this
-}
-
-func (o JwtWriteRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["allowed_redirect_uris"] = o.AllowedRedirectUris
-	toSerialize["bound_audiences"] = o.BoundAudiences
-	toSerialize["bound_cidrs"] = o.BoundCidrs
-	toSerialize["bound_claims"] = o.BoundClaims
-	toSerialize["bound_claims_type"] = o.BoundClaimsType
-	toSerialize["bound_subject"] = o.BoundSubject
-	toSerialize["claim_mappings"] = o.ClaimMappings
-	toSerialize["clock_skew_leeway"] = o.ClockSkewLeeway
-	toSerialize["expiration_leeway"] = o.ExpirationLeeway
-	toSerialize["groups_claim"] = o.GroupsClaim
-	toSerialize["max_age"] = o.MaxAge
-	toSerialize["max_ttl"] = o.MaxTtl
-	toSerialize["not_before_leeway"] = o.NotBeforeLeeway
-	toSerialize["num_uses"] = o.NumUses
-	toSerialize["oidc_scopes"] = o.OidcScopes
-	toSerialize["period"] = o.Period
-	toSerialize["policies"] = o.Policies
-	toSerialize["role_type"] = o.RoleType
-	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
-	toSerialize["token_max_ttl"] = o.TokenMaxTtl
-	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
-	toSerialize["token_num_uses"] = o.TokenNumUses
-	toSerialize["token_period"] = o.TokenPeriod
-	toSerialize["token_policies"] = o.TokenPolicies
-	toSerialize["token_ttl"] = o.TokenTtl
-	toSerialize["token_type"] = o.TokenType
-	toSerialize["ttl"] = o.Ttl
-	toSerialize["user_claim"] = o.UserClaim
-	toSerialize["user_claim_json_pointer"] = o.UserClaimJsonPointer
-	toSerialize["verbose_oidc_logging"] = o.VerboseOidcLogging
-
-	return json.Marshal(toSerialize)
 }

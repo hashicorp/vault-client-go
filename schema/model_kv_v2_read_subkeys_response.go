@@ -5,15 +5,11 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // KvV2ReadSubkeysResponse struct for KvV2ReadSubkeysResponse
 type KvV2ReadSubkeysResponse struct {
-	Metadata map[string]interface{} `json:"metadata"`
+	Metadata map[string]interface{} `json:"metadata,omitempty"`
 
-	Subkeys map[string]interface{} `json:"subkeys"`
+	Subkeys map[string]interface{} `json:"subkeys,omitempty"`
 }
 
 // NewKvV2ReadSubkeysResponseWithDefaults instantiates a new KvV2ReadSubkeysResponse object
@@ -23,13 +19,4 @@ func NewKvV2ReadSubkeysResponseWithDefaults() *KvV2ReadSubkeysResponse {
 	var this KvV2ReadSubkeysResponse
 
 	return &this
-}
-
-func (o KvV2ReadSubkeysResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["metadata"] = o.Metadata
-	toSerialize["subkeys"] = o.Subkeys
-
-	return json.Marshal(toSerialize)
 }

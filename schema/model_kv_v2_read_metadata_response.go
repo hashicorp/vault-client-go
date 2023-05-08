@@ -5,33 +5,30 @@
 
 package schema
 
-import (
-	"encoding/json"
-	"time"
-)
+import "time"
 
 // KvV2ReadMetadataResponse struct for KvV2ReadMetadataResponse
 type KvV2ReadMetadataResponse struct {
-	CasRequired bool `json:"cas_required"`
+	CasRequired bool `json:"cas_required,omitempty"`
 
-	CreatedTime time.Time `json:"created_time"`
+	CreatedTime time.Time `json:"created_time,omitempty"`
 
-	CurrentVersion int64 `json:"current_version"`
+	CurrentVersion int64 `json:"current_version,omitempty"`
 
 	// User-provided key-value pairs that are used to describe arbitrary and version-agnostic information about a secret.
-	CustomMetadata map[string]interface{} `json:"custom_metadata"`
+	CustomMetadata map[string]interface{} `json:"custom_metadata,omitempty"`
 
 	// The length of time before a version is deleted.
-	DeleteVersionAfter int32 `json:"delete_version_after"`
+	DeleteVersionAfter int32 `json:"delete_version_after,omitempty"`
 
 	// The number of versions to keep
-	MaxVersions int64 `json:"max_versions"`
+	MaxVersions int64 `json:"max_versions,omitempty"`
 
-	OldestVersion int64 `json:"oldest_version"`
+	OldestVersion int64 `json:"oldest_version,omitempty"`
 
-	UpdatedTime time.Time `json:"updated_time"`
+	UpdatedTime time.Time `json:"updated_time,omitempty"`
 
-	Versions map[string]interface{} `json:"versions"`
+	Versions map[string]interface{} `json:"versions,omitempty"`
 }
 
 // NewKvV2ReadMetadataResponseWithDefaults instantiates a new KvV2ReadMetadataResponse object
@@ -41,20 +38,4 @@ func NewKvV2ReadMetadataResponseWithDefaults() *KvV2ReadMetadataResponse {
 	var this KvV2ReadMetadataResponse
 
 	return &this
-}
-
-func (o KvV2ReadMetadataResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["cas_required"] = o.CasRequired
-	toSerialize["created_time"] = o.CreatedTime
-	toSerialize["current_version"] = o.CurrentVersion
-	toSerialize["custom_metadata"] = o.CustomMetadata
-	toSerialize["delete_version_after"] = o.DeleteVersionAfter
-	toSerialize["max_versions"] = o.MaxVersions
-	toSerialize["oldest_version"] = o.OldestVersion
-	toSerialize["updated_time"] = o.UpdatedTime
-	toSerialize["versions"] = o.Versions
-
-	return json.Marshal(toSerialize)
 }

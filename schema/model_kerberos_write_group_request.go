@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // KerberosWriteGroupRequest struct for KerberosWriteGroupRequest
 type KerberosWriteGroupRequest struct {
 	// Comma-separated list of policies associated to the group.
-	Policies []string `json:"policies"`
+	Policies []string `json:"policies,omitempty"`
 }
 
 // NewKerberosWriteGroupRequestWithDefaults instantiates a new KerberosWriteGroupRequest object
@@ -22,12 +18,4 @@ func NewKerberosWriteGroupRequestWithDefaults() *KerberosWriteGroupRequest {
 	var this KerberosWriteGroupRequest
 
 	return &this
-}
-
-func (o KerberosWriteGroupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["policies"] = o.Policies
-
-	return json.Marshal(toSerialize)
 }

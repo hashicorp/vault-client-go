@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleReadTokenNumUsesResponse struct for AppRoleReadTokenNumUsesResponse
 type AppRoleReadTokenNumUsesResponse struct {
 	// The maximum number of times a token may be used, a value of zero means unlimited
-	TokenNumUses int32 `json:"token_num_uses"`
+	TokenNumUses int32 `json:"token_num_uses,omitempty"`
 }
 
 // NewAppRoleReadTokenNumUsesResponseWithDefaults instantiates a new AppRoleReadTokenNumUsesResponse object
@@ -22,12 +18,4 @@ func NewAppRoleReadTokenNumUsesResponseWithDefaults() *AppRoleReadTokenNumUsesRe
 	var this AppRoleReadTokenNumUsesResponse
 
 	return &this
-}
-
-func (o AppRoleReadTokenNumUsesResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["token_num_uses"] = o.TokenNumUses
-
-	return json.Marshal(toSerialize)
 }

@@ -5,13 +5,9 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // ReadWrappingPropertiesRequest struct for ReadWrappingPropertiesRequest
 type ReadWrappingPropertiesRequest struct {
-	Token string `json:"token"`
+	Token string `json:"token,omitempty"`
 }
 
 // NewReadWrappingPropertiesRequestWithDefaults instantiates a new ReadWrappingPropertiesRequest object
@@ -21,12 +17,4 @@ func NewReadWrappingPropertiesRequestWithDefaults() *ReadWrappingPropertiesReque
 	var this ReadWrappingPropertiesRequest
 
 	return &this
-}
-
-func (o ReadWrappingPropertiesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["token"] = o.Token
-
-	return json.Marshal(toSerialize)
 }

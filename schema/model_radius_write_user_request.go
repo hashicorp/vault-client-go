@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RadiusWriteUserRequest struct for RadiusWriteUserRequest
 type RadiusWriteUserRequest struct {
 	// Comma-separated list of policies associated to the user.
-	Policies []string `json:"policies"`
+	Policies []string `json:"policies,omitempty"`
 }
 
 // NewRadiusWriteUserRequestWithDefaults instantiates a new RadiusWriteUserRequest object
@@ -22,12 +18,4 @@ func NewRadiusWriteUserRequestWithDefaults() *RadiusWriteUserRequest {
 	var this RadiusWriteUserRequest
 
 	return &this
-}
-
-func (o RadiusWriteUserRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["policies"] = o.Policies
-
-	return json.Marshal(toSerialize)
 }

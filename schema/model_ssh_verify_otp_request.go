@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // SshVerifyOtpRequest struct for SshVerifyOtpRequest
 type SshVerifyOtpRequest struct {
 	// [Required] One-Time-Key that needs to be validated
-	Otp string `json:"otp"`
+	Otp string `json:"otp,omitempty"`
 }
 
 // NewSshVerifyOtpRequestWithDefaults instantiates a new SshVerifyOtpRequest object
@@ -22,12 +18,4 @@ func NewSshVerifyOtpRequestWithDefaults() *SshVerifyOtpRequest {
 	var this SshVerifyOtpRequest
 
 	return &this
-}
-
-func (o SshVerifyOtpRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["otp"] = o.Otp
-
-	return json.Marshal(toSerialize)
 }

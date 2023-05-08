@@ -5,13 +5,9 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AuditingListRequestHeadersResponse struct for AuditingListRequestHeadersResponse
 type AuditingListRequestHeadersResponse struct {
-	Headers map[string]interface{} `json:"headers"`
+	Headers map[string]interface{} `json:"headers,omitempty"`
 }
 
 // NewAuditingListRequestHeadersResponseWithDefaults instantiates a new AuditingListRequestHeadersResponse object
@@ -21,12 +17,4 @@ func NewAuditingListRequestHeadersResponseWithDefaults() *AuditingListRequestHea
 	var this AuditingListRequestHeadersResponse
 
 	return &this
-}
-
-func (o AuditingListRequestHeadersResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["headers"] = o.Headers
-
-	return json.Marshal(toSerialize)
 }

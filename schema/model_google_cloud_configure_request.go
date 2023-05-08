@@ -5,20 +5,16 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GoogleCloudConfigureRequest struct for GoogleCloudConfigureRequest
 type GoogleCloudConfigureRequest struct {
 	// GCP IAM service account credentials JSON with permissions to create new service accounts and set IAM policies
-	Credentials string `json:"credentials"`
+	Credentials string `json:"credentials,omitempty"`
 
 	// Maximum time a service account key is valid for. If <= 0, will use system default.
-	MaxTtl int32 `json:"max_ttl"`
+	MaxTtl int32 `json:"max_ttl,omitempty"`
 
 	// Default lease for generated keys. If <= 0, will use system default.
-	Ttl int32 `json:"ttl"`
+	Ttl int32 `json:"ttl,omitempty"`
 }
 
 // NewGoogleCloudConfigureRequestWithDefaults instantiates a new GoogleCloudConfigureRequest object
@@ -28,14 +24,4 @@ func NewGoogleCloudConfigureRequestWithDefaults() *GoogleCloudConfigureRequest {
 	var this GoogleCloudConfigureRequest
 
 	return &this
-}
-
-func (o GoogleCloudConfigureRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["credentials"] = o.Credentials
-	toSerialize["max_ttl"] = o.MaxTtl
-	toSerialize["ttl"] = o.Ttl
-
-	return json.Marshal(toSerialize)
 }

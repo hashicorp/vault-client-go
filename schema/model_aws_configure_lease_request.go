@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AwsConfigureLeaseRequest struct for AwsConfigureLeaseRequest
 type AwsConfigureLeaseRequest struct {
 	// Default lease for roles.
-	Lease string `json:"lease"`
+	Lease string `json:"lease,omitempty"`
 
 	// Maximum time a credential is valid for.
-	LeaseMax string `json:"lease_max"`
+	LeaseMax string `json:"lease_max,omitempty"`
 }
 
 // NewAwsConfigureLeaseRequestWithDefaults instantiates a new AwsConfigureLeaseRequest object
@@ -25,13 +21,4 @@ func NewAwsConfigureLeaseRequestWithDefaults() *AwsConfigureLeaseRequest {
 	var this AwsConfigureLeaseRequest
 
 	return &this
-}
-
-func (o AwsConfigureLeaseRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["lease"] = o.Lease
-	toSerialize["lease_max"] = o.LeaseMax
-
-	return json.Marshal(toSerialize)
 }

@@ -5,32 +5,28 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiIssuerIssueWithRoleResponse struct for PkiIssuerIssueWithRoleResponse
 type PkiIssuerIssueWithRoleResponse struct {
 	// Certificate Chain
-	CaChain []string `json:"ca_chain"`
+	CaChain []string `json:"ca_chain,omitempty"`
 
 	// Certificate
-	Certificate string `json:"certificate"`
+	Certificate string `json:"certificate,omitempty"`
 
 	// Time of expiration
-	Expiration string `json:"expiration"`
+	Expiration string `json:"expiration,omitempty"`
 
 	// Issuing Certificate Authority
-	IssuingCa string `json:"issuing_ca"`
+	IssuingCa string `json:"issuing_ca,omitempty"`
 
 	// Private key
-	PrivateKey string `json:"private_key"`
+	PrivateKey string `json:"private_key,omitempty"`
 
 	// Private key type
-	PrivateKeyType string `json:"private_key_type"`
+	PrivateKeyType string `json:"private_key_type,omitempty"`
 
 	// Serial Number
-	SerialNumber string `json:"serial_number"`
+	SerialNumber string `json:"serial_number,omitempty"`
 }
 
 // NewPkiIssuerIssueWithRoleResponseWithDefaults instantiates a new PkiIssuerIssueWithRoleResponse object
@@ -40,18 +36,4 @@ func NewPkiIssuerIssueWithRoleResponseWithDefaults() *PkiIssuerIssueWithRoleResp
 	var this PkiIssuerIssueWithRoleResponse
 
 	return &this
-}
-
-func (o PkiIssuerIssueWithRoleResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["ca_chain"] = o.CaChain
-	toSerialize["certificate"] = o.Certificate
-	toSerialize["expiration"] = o.Expiration
-	toSerialize["issuing_ca"] = o.IssuingCa
-	toSerialize["private_key"] = o.PrivateKey
-	toSerialize["private_key_type"] = o.PrivateKeyType
-	toSerialize["serial_number"] = o.SerialNumber
-
-	return json.Marshal(toSerialize)
 }

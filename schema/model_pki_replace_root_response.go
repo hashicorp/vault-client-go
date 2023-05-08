@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiReplaceRootResponse struct for PkiReplaceRootResponse
 type PkiReplaceRootResponse struct {
 	// Reference (name or identifier) to the default issuer.
-	Default string `json:"default"`
+	Default string `json:"default,omitempty"`
 
 	// Whether the default issuer should automatically follow the latest generated or imported issuer. Defaults to false.
-	DefaultFollowsLatestIssuer bool `json:"default_follows_latest_issuer"`
+	DefaultFollowsLatestIssuer bool `json:"default_follows_latest_issuer,omitempty"`
 }
 
 // NewPkiReplaceRootResponseWithDefaults instantiates a new PkiReplaceRootResponse object
@@ -25,13 +21,4 @@ func NewPkiReplaceRootResponseWithDefaults() *PkiReplaceRootResponse {
 	var this PkiReplaceRootResponse
 
 	return &this
-}
-
-func (o PkiReplaceRootResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["default"] = o.Default
-	toSerialize["default_follows_latest_issuer"] = o.DefaultFollowsLatestIssuer
-
-	return json.Marshal(toSerialize)
 }

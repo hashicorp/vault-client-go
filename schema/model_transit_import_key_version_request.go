@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // TransitImportKeyVersionRequest struct for TransitImportKeyVersionRequest
 type TransitImportKeyVersionRequest struct {
 	// The base64-encoded ciphertext of the keys. The AES key should be encrypted using OAEP with the wrapping key and then concatenated with the import key, wrapped by the AES key.
-	Ciphertext string `json:"ciphertext"`
+	Ciphertext string `json:"ciphertext,omitempty"`
 
 	// The hash function used as a random oracle in the OAEP wrapping of the user-generated, ephemeral AES key. Can be one of \"SHA1\", \"SHA224\", \"SHA256\" (default), \"SHA384\", or \"SHA512\"
-	HashFunction string `json:"hash_function"`
+	HashFunction string `json:"hash_function,omitempty"`
 }
 
 // NewTransitImportKeyVersionRequestWithDefaults instantiates a new TransitImportKeyVersionRequest object
@@ -27,13 +23,4 @@ func NewTransitImportKeyVersionRequestWithDefaults() *TransitImportKeyVersionReq
 	this.HashFunction = "SHA256"
 
 	return &this
-}
-
-func (o TransitImportKeyVersionRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["ciphertext"] = o.Ciphertext
-	toSerialize["hash_function"] = o.HashFunction
-
-	return json.Marshal(toSerialize)
 }

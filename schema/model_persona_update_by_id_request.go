@@ -5,23 +5,19 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PersonaUpdateByIdRequest struct for PersonaUpdateByIdRequest
 type PersonaUpdateByIdRequest struct {
 	// Entity ID to which this persona should be tied to
-	EntityId string `json:"entity_id"`
+	EntityId string `json:"entity_id,omitempty"`
 
 	// Metadata to be associated with the persona. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault <command> <path> metadata=key1=value1 metadata=key2=value2
-	Metadata map[string]interface{} `json:"metadata"`
+	Metadata map[string]interface{} `json:"metadata,omitempty"`
 
 	// Mount accessor to which this persona belongs to
-	MountAccessor string `json:"mount_accessor"`
+	MountAccessor string `json:"mount_accessor,omitempty"`
 
 	// Name of the persona
-	Name string `json:"name"`
+	Name string `json:"name,omitempty"`
 }
 
 // NewPersonaUpdateByIdRequestWithDefaults instantiates a new PersonaUpdateByIdRequest object
@@ -31,15 +27,4 @@ func NewPersonaUpdateByIdRequestWithDefaults() *PersonaUpdateByIdRequest {
 	var this PersonaUpdateByIdRequest
 
 	return &this
-}
-
-func (o PersonaUpdateByIdRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["entity_id"] = o.EntityId
-	toSerialize["metadata"] = o.Metadata
-	toSerialize["mount_accessor"] = o.MountAccessor
-	toSerialize["name"] = o.Name
-
-	return json.Marshal(toSerialize)
 }

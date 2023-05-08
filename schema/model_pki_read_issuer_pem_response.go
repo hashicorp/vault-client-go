@@ -5,23 +5,19 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiReadIssuerPemResponse struct for PkiReadIssuerPemResponse
 type PkiReadIssuerPemResponse struct {
 	// CA Chain
-	CaChain []string `json:"ca_chain"`
+	CaChain []string `json:"ca_chain,omitempty"`
 
 	// Certificate
-	Certificate string `json:"certificate"`
+	Certificate string `json:"certificate,omitempty"`
 
 	// Issuer Id
-	IssuerId string `json:"issuer_id"`
+	IssuerId string `json:"issuer_id,omitempty"`
 
 	// Issuer Name
-	IssuerName string `json:"issuer_name"`
+	IssuerName string `json:"issuer_name,omitempty"`
 }
 
 // NewPkiReadIssuerPemResponseWithDefaults instantiates a new PkiReadIssuerPemResponse object
@@ -31,15 +27,4 @@ func NewPkiReadIssuerPemResponseWithDefaults() *PkiReadIssuerPemResponse {
 	var this PkiReadIssuerPemResponse
 
 	return &this
-}
-
-func (o PkiReadIssuerPemResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["ca_chain"] = o.CaChain
-	toSerialize["certificate"] = o.Certificate
-	toSerialize["issuer_id"] = o.IssuerId
-	toSerialize["issuer_name"] = o.IssuerName
-
-	return json.Marshal(toSerialize)
 }

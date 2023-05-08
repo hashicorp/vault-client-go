@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RadiusLoginWithUsernameRequest struct for RadiusLoginWithUsernameRequest
 type RadiusLoginWithUsernameRequest struct {
 	// Password for this user.
-	Password string `json:"password"`
+	Password string `json:"password,omitempty"`
 
 	// Username to be used for login. (POST request body)
-	Username string `json:"username"`
+	Username string `json:"username,omitempty"`
 }
 
 // NewRadiusLoginWithUsernameRequestWithDefaults instantiates a new RadiusLoginWithUsernameRequest object
@@ -25,13 +21,4 @@ func NewRadiusLoginWithUsernameRequestWithDefaults() *RadiusLoginWithUsernameReq
 	var this RadiusLoginWithUsernameRequest
 
 	return &this
-}
-
-func (o RadiusLoginWithUsernameRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["password"] = o.Password
-	toSerialize["username"] = o.Username
-
-	return json.Marshal(toSerialize)
 }

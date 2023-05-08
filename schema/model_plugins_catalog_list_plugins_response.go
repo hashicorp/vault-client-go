@@ -5,13 +5,9 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PluginsCatalogListPluginsResponse struct for PluginsCatalogListPluginsResponse
 type PluginsCatalogListPluginsResponse struct {
-	Detailed map[string]interface{} `json:"detailed"`
+	Detailed map[string]interface{} `json:"detailed,omitempty"`
 }
 
 // NewPluginsCatalogListPluginsResponseWithDefaults instantiates a new PluginsCatalogListPluginsResponse object
@@ -21,12 +17,4 @@ func NewPluginsCatalogListPluginsResponseWithDefaults() *PluginsCatalogListPlugi
 	var this PluginsCatalogListPluginsResponse
 
 	return &this
-}
-
-func (o PluginsCatalogListPluginsResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["detailed"] = o.Detailed
-
-	return json.Marshal(toSerialize)
 }

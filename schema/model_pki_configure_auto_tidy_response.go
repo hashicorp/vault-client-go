@@ -5,46 +5,42 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiConfigureAutoTidyResponse struct for PkiConfigureAutoTidyResponse
 type PkiConfigureAutoTidyResponse struct {
 	// Specifies whether automatic tidy is enabled or not
-	Enabled bool `json:"enabled"`
+	Enabled bool `json:"enabled,omitempty"`
 
 	// Specifies the duration between automatic tidy operation
-	IntervalDuration int32 `json:"interval_duration"`
+	IntervalDuration int32 `json:"interval_duration,omitempty"`
 
 	// Issuer safety buffer
-	IssuerSafetyBuffer int32 `json:"issuer_safety_buffer"`
+	IssuerSafetyBuffer int32 `json:"issuer_safety_buffer,omitempty"`
 
 	// Duration to pause between tidying certificates
-	PauseDuration string `json:"pause_duration"`
+	PauseDuration string `json:"pause_duration,omitempty"`
 
-	RevocationQueueSafetyBuffer int32 `json:"revocation_queue_safety_buffer"`
+	RevocationQueueSafetyBuffer int32 `json:"revocation_queue_safety_buffer,omitempty"`
 
 	// Safety buffer time duration
-	SafetyBuffer int32 `json:"safety_buffer"`
+	SafetyBuffer int32 `json:"safety_buffer,omitempty"`
 
 	// Specifies whether to tidy up the certificate store
-	TidyCertStore bool `json:"tidy_cert_store"`
+	TidyCertStore bool `json:"tidy_cert_store,omitempty"`
 
-	TidyCrossClusterRevokedCerts bool `json:"tidy_cross_cluster_revoked_certs"`
+	TidyCrossClusterRevokedCerts bool `json:"tidy_cross_cluster_revoked_certs,omitempty"`
 
 	// Specifies whether tidy expired issuers
-	TidyExpiredIssuers bool `json:"tidy_expired_issuers"`
+	TidyExpiredIssuers bool `json:"tidy_expired_issuers,omitempty"`
 
-	TidyMoveLegacyCaBundle bool `json:"tidy_move_legacy_ca_bundle"`
+	TidyMoveLegacyCaBundle bool `json:"tidy_move_legacy_ca_bundle,omitempty"`
 
-	TidyRevocationQueue bool `json:"tidy_revocation_queue"`
+	TidyRevocationQueue bool `json:"tidy_revocation_queue,omitempty"`
 
 	// Specifies whether to associate revoked certificates with their corresponding issuers
-	TidyRevokedCertIssuerAssociations bool `json:"tidy_revoked_cert_issuer_associations"`
+	TidyRevokedCertIssuerAssociations bool `json:"tidy_revoked_cert_issuer_associations,omitempty"`
 
 	// Specifies whether to remove all invalid and expired certificates from storage
-	TidyRevokedCerts bool `json:"tidy_revoked_certs"`
+	TidyRevokedCerts bool `json:"tidy_revoked_certs,omitempty"`
 }
 
 // NewPkiConfigureAutoTidyResponseWithDefaults instantiates a new PkiConfigureAutoTidyResponse object
@@ -54,24 +50,4 @@ func NewPkiConfigureAutoTidyResponseWithDefaults() *PkiConfigureAutoTidyResponse
 	var this PkiConfigureAutoTidyResponse
 
 	return &this
-}
-
-func (o PkiConfigureAutoTidyResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["enabled"] = o.Enabled
-	toSerialize["interval_duration"] = o.IntervalDuration
-	toSerialize["issuer_safety_buffer"] = o.IssuerSafetyBuffer
-	toSerialize["pause_duration"] = o.PauseDuration
-	toSerialize["revocation_queue_safety_buffer"] = o.RevocationQueueSafetyBuffer
-	toSerialize["safety_buffer"] = o.SafetyBuffer
-	toSerialize["tidy_cert_store"] = o.TidyCertStore
-	toSerialize["tidy_cross_cluster_revoked_certs"] = o.TidyCrossClusterRevokedCerts
-	toSerialize["tidy_expired_issuers"] = o.TidyExpiredIssuers
-	toSerialize["tidy_move_legacy_ca_bundle"] = o.TidyMoveLegacyCaBundle
-	toSerialize["tidy_revocation_queue"] = o.TidyRevocationQueue
-	toSerialize["tidy_revoked_cert_issuer_associations"] = o.TidyRevokedCertIssuerAssociations
-	toSerialize["tidy_revoked_certs"] = o.TidyRevokedCerts
-
-	return json.Marshal(toSerialize)
 }

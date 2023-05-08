@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // TokenLookUpRequest struct for TokenLookUpRequest
 type TokenLookUpRequest struct {
 	// Token to lookup (POST request body)
-	Token string `json:"token"`
+	Token string `json:"token,omitempty"`
 }
 
 // NewTokenLookUpRequestWithDefaults instantiates a new TokenLookUpRequest object
@@ -22,12 +18,4 @@ func NewTokenLookUpRequestWithDefaults() *TokenLookUpRequest {
 	var this TokenLookUpRequest
 
 	return &this
-}
-
-func (o TokenLookUpRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["token"] = o.Token
-
-	return json.Marshal(toSerialize)
 }

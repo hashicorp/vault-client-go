@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // EncryptionKeyReadRotationConfigurationResponse struct for EncryptionKeyReadRotationConfigurationResponse
 type EncryptionKeyReadRotationConfigurationResponse struct {
-	Enabled bool `json:"enabled"`
+	Enabled bool `json:"enabled,omitempty"`
 
-	Interval int32 `json:"interval"`
+	Interval int32 `json:"interval,omitempty"`
 
-	MaxOperations int64 `json:"max_operations"`
+	MaxOperations int64 `json:"max_operations,omitempty"`
 }
 
 // NewEncryptionKeyReadRotationConfigurationResponseWithDefaults instantiates a new EncryptionKeyReadRotationConfigurationResponse object
@@ -25,14 +21,4 @@ func NewEncryptionKeyReadRotationConfigurationResponseWithDefaults() *Encryption
 	var this EncryptionKeyReadRotationConfigurationResponse
 
 	return &this
-}
-
-func (o EncryptionKeyReadRotationConfigurationResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["enabled"] = o.Enabled
-	toSerialize["interval"] = o.Interval
-	toSerialize["max_operations"] = o.MaxOperations
-
-	return json.Marshal(toSerialize)
 }

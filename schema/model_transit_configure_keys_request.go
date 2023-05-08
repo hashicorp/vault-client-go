@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // TransitConfigureKeysRequest struct for TransitConfigureKeysRequest
 type TransitConfigureKeysRequest struct {
 	// Whether to allow automatic upserting (creation) of keys on the encrypt endpoint.
-	DisableUpsert bool `json:"disable_upsert"`
+	DisableUpsert bool `json:"disable_upsert,omitempty"`
 }
 
 // NewTransitConfigureKeysRequestWithDefaults instantiates a new TransitConfigureKeysRequest object
@@ -22,12 +18,4 @@ func NewTransitConfigureKeysRequestWithDefaults() *TransitConfigureKeysRequest {
 	var this TransitConfigureKeysRequest
 
 	return &this
-}
-
-func (o TransitConfigureKeysRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["disable_upsert"] = o.DisableUpsert
-
-	return json.Marshal(toSerialize)
 }

@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // LeasesLookUpWithPrefixResponse struct for LeasesLookUpWithPrefixResponse
 type LeasesLookUpWithPrefixResponse struct {
 	// A list of lease ids
-	Keys []string `json:"keys"`
+	Keys []string `json:"keys,omitempty"`
 }
 
 // NewLeasesLookUpWithPrefixResponseWithDefaults instantiates a new LeasesLookUpWithPrefixResponse object
@@ -22,12 +18,4 @@ func NewLeasesLookUpWithPrefixResponseWithDefaults() *LeasesLookUpWithPrefixResp
 	var this LeasesLookUpWithPrefixResponse
 
 	return &this
-}
-
-func (o LeasesLookUpWithPrefixResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["keys"] = o.Keys
-
-	return json.Marshal(toSerialize)
 }

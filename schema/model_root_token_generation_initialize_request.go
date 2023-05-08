@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RootTokenGenerationInitializeRequest struct for RootTokenGenerationInitializeRequest
 type RootTokenGenerationInitializeRequest struct {
 	// Specifies a base64-encoded PGP public key.
-	PgpKey string `json:"pgp_key"`
+	PgpKey string `json:"pgp_key,omitempty"`
 }
 
 // NewRootTokenGenerationInitializeRequestWithDefaults instantiates a new RootTokenGenerationInitializeRequest object
@@ -22,12 +18,4 @@ func NewRootTokenGenerationInitializeRequestWithDefaults() *RootTokenGenerationI
 	var this RootTokenGenerationInitializeRequest
 
 	return &this
-}
-
-func (o RootTokenGenerationInitializeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["pgp_key"] = o.PgpKey
-
-	return json.Marshal(toSerialize)
 }

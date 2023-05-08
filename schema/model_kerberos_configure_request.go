@@ -5,23 +5,19 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // KerberosConfigureRequest struct for KerberosConfigureRequest
 type KerberosConfigureRequest struct {
 	// If set to true, returns any groups found in LDAP as a group alias.
-	AddGroupAliases bool `json:"add_group_aliases"`
+	AddGroupAliases bool `json:"add_group_aliases,omitempty"`
 
 	// Base64 encoded keytab
-	Keytab string `json:"keytab"`
+	Keytab string `json:"keytab,omitempty"`
 
 	// Remove instance/FQDN from keytab principal names.
-	RemoveInstanceName bool `json:"remove_instance_name"`
+	RemoveInstanceName bool `json:"remove_instance_name,omitempty"`
 
 	// Service Account
-	ServiceAccount string `json:"service_account"`
+	ServiceAccount string `json:"service_account,omitempty"`
 }
 
 // NewKerberosConfigureRequestWithDefaults instantiates a new KerberosConfigureRequest object
@@ -31,15 +27,4 @@ func NewKerberosConfigureRequestWithDefaults() *KerberosConfigureRequest {
 	var this KerberosConfigureRequest
 
 	return &this
-}
-
-func (o KerberosConfigureRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["add_group_aliases"] = o.AddGroupAliases
-	toSerialize["keytab"] = o.Keytab
-	toSerialize["remove_instance_name"] = o.RemoveInstanceName
-	toSerialize["service_account"] = o.ServiceAccount
-
-	return json.Marshal(toSerialize)
 }

@@ -5,44 +5,40 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // MountsReadConfigurationResponse struct for MountsReadConfigurationResponse
 type MountsReadConfigurationResponse struct {
-	Accessor string `json:"accessor"`
+	Accessor string `json:"accessor,omitempty"`
 
 	// Configuration for this mount, such as default_lease_ttl and max_lease_ttl.
-	Config map[string]interface{} `json:"config"`
+	Config map[string]interface{} `json:"config,omitempty"`
 
-	DeprecationStatus string `json:"deprecation_status"`
+	DeprecationStatus string `json:"deprecation_status,omitempty"`
 
 	// User-friendly description for this mount.
-	Description string `json:"description"`
+	Description string `json:"description,omitempty"`
 
-	ExternalEntropyAccess bool `json:"external_entropy_access"`
+	ExternalEntropyAccess bool `json:"external_entropy_access,omitempty"`
 
 	// Mark the mount as a local mount, which is not replicated and is unaffected by replication.
-	Local bool `json:"local"`
+	Local bool `json:"local,omitempty"`
 
 	// The options to pass into the backend. Should be a json object with string keys and values.
-	Options map[string]interface{} `json:"options"`
+	Options map[string]interface{} `json:"options,omitempty"`
 
 	// The semantic version of the plugin to use.
-	PluginVersion string `json:"plugin_version"`
+	PluginVersion string `json:"plugin_version,omitempty"`
 
-	RunningPluginVersion string `json:"running_plugin_version"`
+	RunningPluginVersion string `json:"running_plugin_version,omitempty"`
 
-	RunningSha256 string `json:"running_sha256"`
+	RunningSha256 string `json:"running_sha256,omitempty"`
 
 	// Whether to turn on seal wrapping for the mount.
-	SealWrap bool `json:"seal_wrap"`
+	SealWrap bool `json:"seal_wrap,omitempty"`
 
 	// The type of the backend. Example: \"passthrough\"
-	Type string `json:"type"`
+	Type string `json:"type,omitempty"`
 
-	Uuid string `json:"uuid"`
+	Uuid string `json:"uuid,omitempty"`
 }
 
 // NewMountsReadConfigurationResponseWithDefaults instantiates a new MountsReadConfigurationResponse object
@@ -55,24 +51,4 @@ func NewMountsReadConfigurationResponseWithDefaults() *MountsReadConfigurationRe
 	this.SealWrap = false
 
 	return &this
-}
-
-func (o MountsReadConfigurationResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["accessor"] = o.Accessor
-	toSerialize["config"] = o.Config
-	toSerialize["deprecation_status"] = o.DeprecationStatus
-	toSerialize["description"] = o.Description
-	toSerialize["external_entropy_access"] = o.ExternalEntropyAccess
-	toSerialize["local"] = o.Local
-	toSerialize["options"] = o.Options
-	toSerialize["plugin_version"] = o.PluginVersion
-	toSerialize["running_plugin_version"] = o.RunningPluginVersion
-	toSerialize["running_sha256"] = o.RunningSha256
-	toSerialize["seal_wrap"] = o.SealWrap
-	toSerialize["type"] = o.Type
-	toSerialize["uuid"] = o.Uuid
-
-	return json.Marshal(toSerialize)
 }

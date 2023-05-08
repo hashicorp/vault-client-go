@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiListRolesResponse struct for PkiListRolesResponse
 type PkiListRolesResponse struct {
 	// List of keys
-	Keys map[string]interface{} `json:"keys"`
+	Keys map[string]interface{} `json:"keys,omitempty"`
 }
 
 // NewPkiListRolesResponseWithDefaults instantiates a new PkiListRolesResponse object
@@ -22,12 +18,4 @@ func NewPkiListRolesResponseWithDefaults() *PkiListRolesResponse {
 	var this PkiListRolesResponse
 
 	return &this
-}
-
-func (o PkiListRolesResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["keys"] = o.Keys
-
-	return json.Marshal(toSerialize)
 }

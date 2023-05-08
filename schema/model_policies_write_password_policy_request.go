@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PoliciesWritePasswordPolicyRequest struct for PoliciesWritePasswordPolicyRequest
 type PoliciesWritePasswordPolicyRequest struct {
 	// The password policy
-	Policy string `json:"policy"`
+	Policy string `json:"policy,omitempty"`
 }
 
 // NewPoliciesWritePasswordPolicyRequestWithDefaults instantiates a new PoliciesWritePasswordPolicyRequest object
@@ -22,12 +18,4 @@ func NewPoliciesWritePasswordPolicyRequestWithDefaults() *PoliciesWritePasswordP
 	var this PoliciesWritePasswordPolicyRequest
 
 	return &this
-}
-
-func (o PoliciesWritePasswordPolicyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["policy"] = o.Policy
-
-	return json.Marshal(toSerialize)
 }

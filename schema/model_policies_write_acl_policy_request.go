@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PoliciesWriteAclPolicyRequest struct for PoliciesWriteAclPolicyRequest
 type PoliciesWriteAclPolicyRequest struct {
 	// The rules of the policy.
-	Policy string `json:"policy"`
+	Policy string `json:"policy,omitempty"`
 }
 
 // NewPoliciesWriteAclPolicyRequestWithDefaults instantiates a new PoliciesWriteAclPolicyRequest object
@@ -22,12 +18,4 @@ func NewPoliciesWriteAclPolicyRequestWithDefaults() *PoliciesWriteAclPolicyReque
 	var this PoliciesWriteAclPolicyRequest
 
 	return &this
-}
-
-func (o PoliciesWriteAclPolicyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["policy"] = o.Policy
-
-	return json.Marshal(toSerialize)
 }

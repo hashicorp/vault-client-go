@@ -5,22 +5,19 @@
 
 package schema
 
-import (
-	"encoding/json"
-	"time"
-)
+import "time"
 
 // KvV2PatchResponse struct for KvV2PatchResponse
 type KvV2PatchResponse struct {
-	CreatedTime time.Time `json:"created_time"`
+	CreatedTime time.Time `json:"created_time,omitempty"`
 
-	CustomMetadata map[string]interface{} `json:"custom_metadata"`
+	CustomMetadata map[string]interface{} `json:"custom_metadata,omitempty"`
 
-	DeletionTime string `json:"deletion_time"`
+	DeletionTime string `json:"deletion_time,omitempty"`
 
-	Destroyed bool `json:"destroyed"`
+	Destroyed bool `json:"destroyed,omitempty"`
 
-	Version int64 `json:"version"`
+	Version int64 `json:"version,omitempty"`
 }
 
 // NewKvV2PatchResponseWithDefaults instantiates a new KvV2PatchResponse object
@@ -30,16 +27,4 @@ func NewKvV2PatchResponseWithDefaults() *KvV2PatchResponse {
 	var this KvV2PatchResponse
 
 	return &this
-}
-
-func (o KvV2PatchResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["created_time"] = o.CreatedTime
-	toSerialize["custom_metadata"] = o.CustomMetadata
-	toSerialize["deletion_time"] = o.DeletionTime
-	toSerialize["destroyed"] = o.Destroyed
-	toSerialize["version"] = o.Version
-
-	return json.Marshal(toSerialize)
 }

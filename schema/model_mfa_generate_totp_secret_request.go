@@ -5,10 +5,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // MfaGenerateTotpSecretRequest struct for MfaGenerateTotpSecretRequest
 type MfaGenerateTotpSecretRequest struct {
 	// The unique identifier for this MFA method.
@@ -22,12 +18,4 @@ func NewMfaGenerateTotpSecretRequestWithDefaults() *MfaGenerateTotpSecretRequest
 	var this MfaGenerateTotpSecretRequest
 
 	return &this
-}
-
-func (o MfaGenerateTotpSecretRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["method_id"] = o.MethodId
-
-	return json.Marshal(toSerialize)
 }

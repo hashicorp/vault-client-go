@@ -5,20 +5,16 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RabbitMqWriteRoleRequest struct for RabbitMqWriteRoleRequest
 type RabbitMqWriteRoleRequest struct {
 	// Comma-separated list of tags for this role.
-	Tags string `json:"tags"`
+	Tags string `json:"tags,omitempty"`
 
 	// A nested map of virtual hosts and exchanges to topic permissions.
-	VhostTopics string `json:"vhost_topics"`
+	VhostTopics string `json:"vhost_topics,omitempty"`
 
 	// A map of virtual hosts to permissions.
-	Vhosts string `json:"vhosts"`
+	Vhosts string `json:"vhosts,omitempty"`
 }
 
 // NewRabbitMqWriteRoleRequestWithDefaults instantiates a new RabbitMqWriteRoleRequest object
@@ -28,14 +24,4 @@ func NewRabbitMqWriteRoleRequestWithDefaults() *RabbitMqWriteRoleRequest {
 	var this RabbitMqWriteRoleRequest
 
 	return &this
-}
-
-func (o RabbitMqWriteRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["tags"] = o.Tags
-	toSerialize["vhost_topics"] = o.VhostTopics
-	toSerialize["vhosts"] = o.Vhosts
-
-	return json.Marshal(toSerialize)
 }

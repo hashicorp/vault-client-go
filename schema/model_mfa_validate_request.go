@@ -5,10 +5,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // MfaValidateRequest struct for MfaValidateRequest
 type MfaValidateRequest struct {
 	// A map from MFA method ID to a slice of passcodes or an empty slice if the method does not use passcodes
@@ -25,13 +21,4 @@ func NewMfaValidateRequestWithDefaults() *MfaValidateRequest {
 	var this MfaValidateRequest
 
 	return &this
-}
-
-func (o MfaValidateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["mfa_payload"] = o.MfaPayload
-	toSerialize["mfa_request_id"] = o.MfaRequestId
-
-	return json.Marshal(toSerialize)
 }

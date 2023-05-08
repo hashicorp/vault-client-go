@@ -5,29 +5,25 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RabbitMqConfigureConnectionRequest struct for RabbitMqConfigureConnectionRequest
 type RabbitMqConfigureConnectionRequest struct {
 	// RabbitMQ Management URI
-	ConnectionUri string `json:"connection_uri"`
+	ConnectionUri string `json:"connection_uri,omitempty"`
 
 	// Password of the provided RabbitMQ management user
-	Password string `json:"password"`
+	Password string `json:"password,omitempty"`
 
 	// Name of the password policy to use to generate passwords for dynamic credentials.
-	PasswordPolicy string `json:"password_policy"`
+	PasswordPolicy string `json:"password_policy,omitempty"`
 
 	// Username of a RabbitMQ management administrator
-	Username string `json:"username"`
+	Username string `json:"username,omitempty"`
 
 	// Template describing how dynamic usernames are generated.
-	UsernameTemplate string `json:"username_template"`
+	UsernameTemplate string `json:"username_template,omitempty"`
 
 	// If set, connection_uri is verified by actually connecting to the RabbitMQ management API
-	VerifyConnection bool `json:"verify_connection"`
+	VerifyConnection bool `json:"verify_connection,omitempty"`
 }
 
 // NewRabbitMqConfigureConnectionRequestWithDefaults instantiates a new RabbitMqConfigureConnectionRequest object
@@ -39,17 +35,4 @@ func NewRabbitMqConfigureConnectionRequestWithDefaults() *RabbitMqConfigureConne
 	this.VerifyConnection = true
 
 	return &this
-}
-
-func (o RabbitMqConfigureConnectionRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["connection_uri"] = o.ConnectionUri
-	toSerialize["password"] = o.Password
-	toSerialize["password_policy"] = o.PasswordPolicy
-	toSerialize["username"] = o.Username
-	toSerialize["username_template"] = o.UsernameTemplate
-	toSerialize["verify_connection"] = o.VerifyConnection
-
-	return json.Marshal(toSerialize)
 }

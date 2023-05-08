@@ -5,20 +5,16 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GoogleCloudKmsEncryptRequest struct for GoogleCloudKmsEncryptRequest
 type GoogleCloudKmsEncryptRequest struct {
 	// Optional base64-encoded data that, if specified, must also be provided to decrypt this payload.
-	AdditionalAuthenticatedData string `json:"additional_authenticated_data"`
+	AdditionalAuthenticatedData string `json:"additional_authenticated_data,omitempty"`
 
 	// Integer version of the crypto key version to use for encryption. If unspecified, this defaults to the latest active crypto key version.
-	KeyVersion int32 `json:"key_version"`
+	KeyVersion int32 `json:"key_version,omitempty"`
 
 	// Plaintext value to be encrypted. This can be a string or binary, but the size is limited. See the Google Cloud KMS documentation for information on size limitations by key types.
-	Plaintext string `json:"plaintext"`
+	Plaintext string `json:"plaintext,omitempty"`
 }
 
 // NewGoogleCloudKmsEncryptRequestWithDefaults instantiates a new GoogleCloudKmsEncryptRequest object
@@ -28,14 +24,4 @@ func NewGoogleCloudKmsEncryptRequestWithDefaults() *GoogleCloudKmsEncryptRequest
 	var this GoogleCloudKmsEncryptRequest
 
 	return &this
-}
-
-func (o GoogleCloudKmsEncryptRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["additional_authenticated_data"] = o.AdditionalAuthenticatedData
-	toSerialize["key_version"] = o.KeyVersion
-	toSerialize["plaintext"] = o.Plaintext
-
-	return json.Marshal(toSerialize)
 }

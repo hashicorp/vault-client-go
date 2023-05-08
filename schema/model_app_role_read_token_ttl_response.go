@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleReadTokenTtlResponse struct for AppRoleReadTokenTtlResponse
 type AppRoleReadTokenTtlResponse struct {
 	// The initial ttl of the token to generate
-	TokenTtl int32 `json:"token_ttl"`
+	TokenTtl int32 `json:"token_ttl,omitempty"`
 }
 
 // NewAppRoleReadTokenTtlResponseWithDefaults instantiates a new AppRoleReadTokenTtlResponse object
@@ -22,12 +18,4 @@ func NewAppRoleReadTokenTtlResponseWithDefaults() *AppRoleReadTokenTtlResponse {
 	var this AppRoleReadTokenTtlResponse
 
 	return &this
-}
-
-func (o AppRoleReadTokenTtlResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["token_ttl"] = o.TokenTtl
-
-	return json.Marshal(toSerialize)
 }

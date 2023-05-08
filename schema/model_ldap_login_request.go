@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // LdapLoginRequest struct for LdapLoginRequest
 type LdapLoginRequest struct {
 	// Password for this user.
-	Password string `json:"password"`
+	Password string `json:"password,omitempty"`
 }
 
 // NewLdapLoginRequestWithDefaults instantiates a new LdapLoginRequest object
@@ -22,12 +18,4 @@ func NewLdapLoginRequestWithDefaults() *LdapLoginRequest {
 	var this LdapLoginRequest
 
 	return &this
-}
-
-func (o LdapLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["password"] = o.Password
-
-	return json.Marshal(toSerialize)
 }

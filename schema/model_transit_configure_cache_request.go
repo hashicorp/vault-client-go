@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // TransitConfigureCacheRequest struct for TransitConfigureCacheRequest
 type TransitConfigureCacheRequest struct {
 	// Size of cache, use 0 for an unlimited cache size, defaults to 0
-	Size int32 `json:"size"`
+	Size int32 `json:"size,omitempty"`
 }
 
 // NewTransitConfigureCacheRequestWithDefaults instantiates a new TransitConfigureCacheRequest object
@@ -24,12 +20,4 @@ func NewTransitConfigureCacheRequestWithDefaults() *TransitConfigureCacheRequest
 	this.Size = 0
 
 	return &this
-}
-
-func (o TransitConfigureCacheRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["size"] = o.Size
-
-	return json.Marshal(toSerialize)
 }

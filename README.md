@@ -240,6 +240,8 @@ secret, err := client.Secrets.KvV2Read(
 
 #### Adding Custom Headers and Custom Query Parameters
 
+The library allows adding custom headers and query parameters to all requests:
+
 ```go
 resp, err := client.Read(
     ctx,

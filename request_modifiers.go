@@ -31,9 +31,9 @@ type requestModifiers struct {
 	// client.Auth & client.Secrets requests
 	mountPath string
 
-	// queryParameters, if specified will be appended to the list of query
-	// parameters included with the request
-	queryParameters url.Values
+	// customQueryParameters, if specified will be appended to the list of
+	// query parameters included with the request
+	customQueryParameters url.Values
 }
 
 // requestHeaders contains headers that will be added to requests
@@ -237,12 +237,12 @@ func (m *requestModifiers) mountPathOr(defaultMountPath string) string {
 	return m.mountPath
 }
 
-// queryParametersOrDefault returns object's query parameters or an empty map.
-func (m *requestModifiers) queryParametersOrDefault() url.Values {
-	if m.queryParameters == nil {
+// customQueryParametersOrDefault returns object's query parameters or an empty map.
+func (m *requestModifiers) customQueryParametersOrDefault() url.Values {
+	if m.customQueryParameters == nil {
 		return make(url.Values)
 	}
-	return m.queryParameters
+	return m.customQueryParameters
 }
 
 // mergeRequestModifiers merges the two objects, preferring the per-request modifiers

@@ -115,10 +115,10 @@ func WithMountPath(path string) RequestOption {
 	}
 }
 
-// WithQueryParameters appends the given list of query parameters to the request.
-func WithQueryParameters(parameters url.Values) RequestOption {
+// WithCustomQueryParameters appends the given list of query parameters to the request.
+func WithCustomQueryParameters(parameters url.Values) RequestOption {
 	return func(m *requestModifiers) error {
-		m.queryParameters = parameters
+		m.customQueryParameters = parameters
 		return nil
 	}
 }

@@ -5,18 +5,14 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // UserpassUpdatePoliciesRequest struct for UserpassUpdatePoliciesRequest
 type UserpassUpdatePoliciesRequest struct {
 	// Use \"token_policies\" instead. If this and \"token_policies\" are both specified, only \"token_policies\" will be used.
 	// Deprecated
-	Policies []string `json:"policies"`
+	Policies []string `json:"policies,omitempty"`
 
 	// Comma-separated list of policies
-	TokenPolicies []string `json:"token_policies"`
+	TokenPolicies []string `json:"token_policies,omitempty"`
 }
 
 // NewUserpassUpdatePoliciesRequestWithDefaults instantiates a new UserpassUpdatePoliciesRequest object
@@ -26,13 +22,4 @@ func NewUserpassUpdatePoliciesRequestWithDefaults() *UserpassUpdatePoliciesReque
 	var this UserpassUpdatePoliciesRequest
 
 	return &this
-}
-
-func (o UserpassUpdatePoliciesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["policies"] = o.Policies
-	toSerialize["token_policies"] = o.TokenPolicies
-
-	return json.Marshal(toSerialize)
 }

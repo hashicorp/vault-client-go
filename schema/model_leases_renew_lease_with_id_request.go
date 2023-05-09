@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // LeasesRenewLeaseWithIdRequest struct for LeasesRenewLeaseWithIdRequest
 type LeasesRenewLeaseWithIdRequest struct {
 	// The desired increment in seconds to the lease
-	Increment int32 `json:"increment"`
+	Increment int32 `json:"increment,omitempty"`
 
 	// The lease identifier to renew. This is included with a lease.
-	LeaseId string `json:"lease_id"`
+	LeaseId string `json:"lease_id,omitempty"`
 }
 
 // NewLeasesRenewLeaseWithIdRequestWithDefaults instantiates a new LeasesRenewLeaseWithIdRequest object
@@ -25,13 +21,4 @@ func NewLeasesRenewLeaseWithIdRequestWithDefaults() *LeasesRenewLeaseWithIdReque
 	var this LeasesRenewLeaseWithIdRequest
 
 	return &this
-}
-
-func (o LeasesRenewLeaseWithIdRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["increment"] = o.Increment
-	toSerialize["lease_id"] = o.LeaseId
-
-	return json.Marshal(toSerialize)
 }

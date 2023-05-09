@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // SshGenerateCredentialsRequest struct for SshGenerateCredentialsRequest
 type SshGenerateCredentialsRequest struct {
 	// [Required] IP of the remote host
-	Ip string `json:"ip"`
+	Ip string `json:"ip,omitempty"`
 
 	// [Optional] Username in remote host
-	Username string `json:"username"`
+	Username string `json:"username,omitempty"`
 }
 
 // NewSshGenerateCredentialsRequestWithDefaults instantiates a new SshGenerateCredentialsRequest object
@@ -25,13 +21,4 @@ func NewSshGenerateCredentialsRequestWithDefaults() *SshGenerateCredentialsReque
 	var this SshGenerateCredentialsRequest
 
 	return &this
-}
-
-func (o SshGenerateCredentialsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["ip"] = o.Ip
-	toSerialize["username"] = o.Username
-
-	return json.Marshal(toSerialize)
 }

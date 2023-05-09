@@ -5,23 +5,19 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiConfigureUrlsResponse struct for PkiConfigureUrlsResponse
 type PkiConfigureUrlsResponse struct {
 	// Comma-separated list of URLs to be used for the CRL distribution points attribute. See also RFC 5280 Section 4.2.1.13.
-	CrlDistributionPoints []string `json:"crl_distribution_points"`
+	CrlDistributionPoints []string `json:"crl_distribution_points,omitempty"`
 
 	// Whether or not to enabling templating of the above AIA fields. When templating is enabled the special values '{{issuer_id}}' and '{{cluster_path}}' are available, but the addresses are not checked for URI validity until issuance time. This requires /config/cluster's path to be set on all PR Secondary clusters.
-	EnableTemplating bool `json:"enable_templating"`
+	EnableTemplating bool `json:"enable_templating,omitempty"`
 
 	// Comma-separated list of URLs to be used for the issuing certificate attribute. See also RFC 5280 Section 4.2.2.1.
-	IssuingCertificates []string `json:"issuing_certificates"`
+	IssuingCertificates []string `json:"issuing_certificates,omitempty"`
 
 	// Comma-separated list of URLs to be used for the OCSP servers attribute. See also RFC 5280 Section 4.2.2.1.
-	OcspServers []string `json:"ocsp_servers"`
+	OcspServers []string `json:"ocsp_servers,omitempty"`
 }
 
 // NewPkiConfigureUrlsResponseWithDefaults instantiates a new PkiConfigureUrlsResponse object
@@ -33,15 +29,4 @@ func NewPkiConfigureUrlsResponseWithDefaults() *PkiConfigureUrlsResponse {
 	this.EnableTemplating = false
 
 	return &this
-}
-
-func (o PkiConfigureUrlsResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["crl_distribution_points"] = o.CrlDistributionPoints
-	toSerialize["enable_templating"] = o.EnableTemplating
-	toSerialize["issuing_certificates"] = o.IssuingCertificates
-	toSerialize["ocsp_servers"] = o.OcspServers
-
-	return json.Marshal(toSerialize)
 }

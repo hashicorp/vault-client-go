@@ -5,19 +5,15 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PluginsReloadBackendsRequest struct for PluginsReloadBackendsRequest
 type PluginsReloadBackendsRequest struct {
 	// The mount paths of the plugin backends to reload.
-	Mounts []string `json:"mounts"`
+	Mounts []string `json:"mounts,omitempty"`
 
 	// The name of the plugin to reload, as registered in the plugin catalog.
-	Plugin string `json:"plugin"`
+	Plugin string `json:"plugin,omitempty"`
 
-	Scope string `json:"scope"`
+	Scope string `json:"scope,omitempty"`
 }
 
 // NewPluginsReloadBackendsRequestWithDefaults instantiates a new PluginsReloadBackendsRequest object
@@ -27,14 +23,4 @@ func NewPluginsReloadBackendsRequestWithDefaults() *PluginsReloadBackendsRequest
 	var this PluginsReloadBackendsRequest
 
 	return &this
-}
-
-func (o PluginsReloadBackendsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["mounts"] = o.Mounts
-	toSerialize["plugin"] = o.Plugin
-	toSerialize["scope"] = o.Scope
-
-	return json.Marshal(toSerialize)
 }

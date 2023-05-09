@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GithubWriteTeamMappingRequest struct for GithubWriteTeamMappingRequest
 type GithubWriteTeamMappingRequest struct {
 	// Value for teams mapping
-	Value string `json:"value"`
+	Value string `json:"value,omitempty"`
 }
 
 // NewGithubWriteTeamMappingRequestWithDefaults instantiates a new GithubWriteTeamMappingRequest object
@@ -22,12 +18,4 @@ func NewGithubWriteTeamMappingRequestWithDefaults() *GithubWriteTeamMappingReque
 	var this GithubWriteTeamMappingRequest
 
 	return &this
-}
-
-func (o GithubWriteTeamMappingRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["value"] = o.Value
-
-	return json.Marshal(toSerialize)
 }

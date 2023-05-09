@@ -5,23 +5,19 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AuditingEnableDeviceRequest struct for AuditingEnableDeviceRequest
 type AuditingEnableDeviceRequest struct {
 	// User-friendly description for this audit backend.
-	Description string `json:"description"`
+	Description string `json:"description,omitempty"`
 
 	// Mark the mount as a local mount, which is not replicated and is unaffected by replication.
-	Local bool `json:"local"`
+	Local bool `json:"local,omitempty"`
 
 	// Configuration options for the audit backend.
-	Options map[string]interface{} `json:"options"`
+	Options map[string]interface{} `json:"options,omitempty"`
 
 	// The type of the backend. Example: \"mysql\"
-	Type string `json:"type"`
+	Type string `json:"type,omitempty"`
 }
 
 // NewAuditingEnableDeviceRequestWithDefaults instantiates a new AuditingEnableDeviceRequest object
@@ -33,15 +29,4 @@ func NewAuditingEnableDeviceRequestWithDefaults() *AuditingEnableDeviceRequest {
 	this.Local = false
 
 	return &this
-}
-
-func (o AuditingEnableDeviceRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["description"] = o.Description
-	toSerialize["local"] = o.Local
-	toSerialize["options"] = o.Options
-	toSerialize["type"] = o.Type
-
-	return json.Marshal(toSerialize)
 }

@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleWriteTokenTtlRequest struct for AppRoleWriteTokenTtlRequest
 type AppRoleWriteTokenTtlRequest struct {
 	// The initial ttl of the token to generate
-	TokenTtl int32 `json:"token_ttl"`
+	TokenTtl int32 `json:"token_ttl,omitempty"`
 }
 
 // NewAppRoleWriteTokenTtlRequestWithDefaults instantiates a new AppRoleWriteTokenTtlRequest object
@@ -22,12 +18,4 @@ func NewAppRoleWriteTokenTtlRequestWithDefaults() *AppRoleWriteTokenTtlRequest {
 	var this AppRoleWriteTokenTtlRequest
 
 	return &this
-}
-
-func (o AppRoleWriteTokenTtlRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["token_ttl"] = o.TokenTtl
-
-	return json.Marshal(toSerialize)
 }

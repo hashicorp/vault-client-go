@@ -5,23 +5,19 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GroupCreateAliasRequest struct for GroupCreateAliasRequest
 type GroupCreateAliasRequest struct {
 	// ID of the group to which this is an alias.
-	CanonicalId string `json:"canonical_id"`
+	CanonicalId string `json:"canonical_id,omitempty"`
 
 	// ID of the group alias.
-	Id string `json:"id"`
+	Id string `json:"id,omitempty"`
 
 	// Mount accessor to which this alias belongs to.
-	MountAccessor string `json:"mount_accessor"`
+	MountAccessor string `json:"mount_accessor,omitempty"`
 
 	// Alias of the group.
-	Name string `json:"name"`
+	Name string `json:"name,omitempty"`
 }
 
 // NewGroupCreateAliasRequestWithDefaults instantiates a new GroupCreateAliasRequest object
@@ -31,15 +27,4 @@ func NewGroupCreateAliasRequestWithDefaults() *GroupCreateAliasRequest {
 	var this GroupCreateAliasRequest
 
 	return &this
-}
-
-func (o GroupCreateAliasRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["canonical_id"] = o.CanonicalId
-	toSerialize["id"] = o.Id
-	toSerialize["mount_accessor"] = o.MountAccessor
-	toSerialize["name"] = o.Name
-
-	return json.Marshal(toSerialize)
 }

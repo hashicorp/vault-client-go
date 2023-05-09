@@ -5,10 +5,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // MongoDbAtlasConfigureRequest struct for MongoDbAtlasConfigureRequest
 type MongoDbAtlasConfigureRequest struct {
 	// MongoDB Atlas Programmatic Private Key
@@ -25,13 +21,4 @@ func NewMongoDbAtlasConfigureRequestWithDefaults() *MongoDbAtlasConfigureRequest
 	var this MongoDbAtlasConfigureRequest
 
 	return &this
-}
-
-func (o MongoDbAtlasConfigureRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["private_key"] = o.PrivateKey
-	toSerialize["public_key"] = o.PublicKey
-
-	return json.Marshal(toSerialize)
 }

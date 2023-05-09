@@ -5,13 +5,9 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // InternalUiListEnabledFeatureFlagsResponse struct for InternalUiListEnabledFeatureFlagsResponse
 type InternalUiListEnabledFeatureFlagsResponse struct {
-	FeatureFlags []string `json:"feature_flags"`
+	FeatureFlags []string `json:"feature_flags,omitempty"`
 }
 
 // NewInternalUiListEnabledFeatureFlagsResponseWithDefaults instantiates a new InternalUiListEnabledFeatureFlagsResponse object
@@ -21,12 +17,4 @@ func NewInternalUiListEnabledFeatureFlagsResponseWithDefaults() *InternalUiListE
 	var this InternalUiListEnabledFeatureFlagsResponse
 
 	return &this
-}
-
-func (o InternalUiListEnabledFeatureFlagsResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["feature_flags"] = o.FeatureFlags
-
-	return json.Marshal(toSerialize)
 }

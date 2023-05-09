@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // UiHeadersConfigureRequest struct for UiHeadersConfigureRequest
 type UiHeadersConfigureRequest struct {
 	// Returns multiple values if true
-	Multivalue bool `json:"multivalue"`
+	Multivalue bool `json:"multivalue,omitempty"`
 
 	// The values to set the header.
-	Values []string `json:"values"`
+	Values []string `json:"values,omitempty"`
 }
 
 // NewUiHeadersConfigureRequestWithDefaults instantiates a new UiHeadersConfigureRequest object
@@ -25,13 +21,4 @@ func NewUiHeadersConfigureRequestWithDefaults() *UiHeadersConfigureRequest {
 	var this UiHeadersConfigureRequest
 
 	return &this
-}
-
-func (o UiHeadersConfigureRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["multivalue"] = o.Multivalue
-	toSerialize["values"] = o.Values
-
-	return json.Marshal(toSerialize)
 }

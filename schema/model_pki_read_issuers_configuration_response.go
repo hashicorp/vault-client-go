@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiReadIssuersConfigurationResponse struct for PkiReadIssuersConfigurationResponse
 type PkiReadIssuersConfigurationResponse struct {
 	// Reference (name or identifier) to the default issuer.
-	Default string `json:"default"`
+	Default string `json:"default,omitempty"`
 
 	// Whether the default issuer should automatically follow the latest generated or imported issuer. Defaults to false.
-	DefaultFollowsLatestIssuer bool `json:"default_follows_latest_issuer"`
+	DefaultFollowsLatestIssuer bool `json:"default_follows_latest_issuer,omitempty"`
 }
 
 // NewPkiReadIssuersConfigurationResponseWithDefaults instantiates a new PkiReadIssuersConfigurationResponse object
@@ -25,13 +21,4 @@ func NewPkiReadIssuersConfigurationResponseWithDefaults() *PkiReadIssuersConfigu
 	var this PkiReadIssuersConfigurationResponse
 
 	return &this
-}
-
-func (o PkiReadIssuersConfigurationResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["default"] = o.Default
-	toSerialize["default_follows_latest_issuer"] = o.DefaultFollowsLatestIssuer
-
-	return json.Marshal(toSerialize)
 }

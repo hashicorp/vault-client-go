@@ -5,26 +5,22 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiReadCrlDeltaPemResponse struct for PkiReadCrlDeltaPemResponse
 type PkiReadCrlDeltaPemResponse struct {
 	// Issuing CA Chain
-	CaChain []string `json:"ca_chain"`
+	CaChain []string `json:"ca_chain,omitempty"`
 
 	// Certificate
-	Certificate string `json:"certificate"`
+	Certificate string `json:"certificate,omitempty"`
 
 	// ID of the issuer
-	IssuerId string `json:"issuer_id"`
+	IssuerId string `json:"issuer_id,omitempty"`
 
 	// Revocation time
-	RevocationTime string `json:"revocation_time"`
+	RevocationTime string `json:"revocation_time,omitempty"`
 
 	// Revocation time RFC 3339 formatted
-	RevocationTimeRfc3339 string `json:"revocation_time_rfc3339"`
+	RevocationTimeRfc3339 string `json:"revocation_time_rfc3339,omitempty"`
 }
 
 // NewPkiReadCrlDeltaPemResponseWithDefaults instantiates a new PkiReadCrlDeltaPemResponse object
@@ -34,16 +30,4 @@ func NewPkiReadCrlDeltaPemResponseWithDefaults() *PkiReadCrlDeltaPemResponse {
 	var this PkiReadCrlDeltaPemResponse
 
 	return &this
-}
-
-func (o PkiReadCrlDeltaPemResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["ca_chain"] = o.CaChain
-	toSerialize["certificate"] = o.Certificate
-	toSerialize["issuer_id"] = o.IssuerId
-	toSerialize["revocation_time"] = o.RevocationTime
-	toSerialize["revocation_time_rfc3339"] = o.RevocationTimeRfc3339
-
-	return json.Marshal(toSerialize)
 }

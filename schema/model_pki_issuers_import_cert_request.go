@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiIssuersImportCertRequest struct for PkiIssuersImportCertRequest
 type PkiIssuersImportCertRequest struct {
 	// PEM-format, concatenated unencrypted secret-key (optional) and certificates.
-	PemBundle string `json:"pem_bundle"`
+	PemBundle string `json:"pem_bundle,omitempty"`
 }
 
 // NewPkiIssuersImportCertRequestWithDefaults instantiates a new PkiIssuersImportCertRequest object
@@ -22,12 +18,4 @@ func NewPkiIssuersImportCertRequestWithDefaults() *PkiIssuersImportCertRequest {
 	var this PkiIssuersImportCertRequest
 
 	return &this
-}
-
-func (o PkiIssuersImportCertRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["pem_bundle"] = o.PemBundle
-
-	return json.Marshal(toSerialize)
 }

@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiRootSignSelfIssuedResponse struct for PkiRootSignSelfIssuedResponse
 type PkiRootSignSelfIssuedResponse struct {
 	// Certificate
-	Certificate string `json:"certificate"`
+	Certificate string `json:"certificate,omitempty"`
 
 	// Issuing CA
-	IssuingCa string `json:"issuing_ca"`
+	IssuingCa string `json:"issuing_ca,omitempty"`
 }
 
 // NewPkiRootSignSelfIssuedResponseWithDefaults instantiates a new PkiRootSignSelfIssuedResponse object
@@ -25,13 +21,4 @@ func NewPkiRootSignSelfIssuedResponseWithDefaults() *PkiRootSignSelfIssuedRespon
 	var this PkiRootSignSelfIssuedResponse
 
 	return &this
-}
-
-func (o PkiRootSignSelfIssuedResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["certificate"] = o.Certificate
-	toSerialize["issuing_ca"] = o.IssuingCa
-
-	return json.Marshal(toSerialize)
 }

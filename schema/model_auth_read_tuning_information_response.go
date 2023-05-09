@@ -5,47 +5,43 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AuthReadTuningInformationResponse struct for AuthReadTuningInformationResponse
 type AuthReadTuningInformationResponse struct {
-	AllowedManagedKeys []string `json:"allowed_managed_keys"`
+	AllowedManagedKeys []string `json:"allowed_managed_keys,omitempty"`
 
-	AllowedResponseHeaders []string `json:"allowed_response_headers"`
+	AllowedResponseHeaders []string `json:"allowed_response_headers,omitempty"`
 
-	AuditNonHmacRequestKeys []string `json:"audit_non_hmac_request_keys"`
+	AuditNonHmacRequestKeys []string `json:"audit_non_hmac_request_keys,omitempty"`
 
-	AuditNonHmacResponseKeys []string `json:"audit_non_hmac_response_keys"`
+	AuditNonHmacResponseKeys []string `json:"audit_non_hmac_response_keys,omitempty"`
 
-	DefaultLeaseTtl int32 `json:"default_lease_ttl"`
+	DefaultLeaseTtl int32 `json:"default_lease_ttl,omitempty"`
 
-	Description string `json:"description"`
+	Description string `json:"description,omitempty"`
 
-	ExternalEntropyAccess bool `json:"external_entropy_access"`
+	ExternalEntropyAccess bool `json:"external_entropy_access,omitempty"`
 
-	ForceNoCache bool `json:"force_no_cache"`
+	ForceNoCache bool `json:"force_no_cache,omitempty"`
 
-	ListingVisibility string `json:"listing_visibility"`
+	ListingVisibility string `json:"listing_visibility,omitempty"`
 
-	MaxLeaseTtl int32 `json:"max_lease_ttl"`
+	MaxLeaseTtl int32 `json:"max_lease_ttl,omitempty"`
 
-	Options map[string]interface{} `json:"options"`
+	Options map[string]interface{} `json:"options,omitempty"`
 
-	PassthroughRequestHeaders []string `json:"passthrough_request_headers"`
+	PassthroughRequestHeaders []string `json:"passthrough_request_headers,omitempty"`
 
-	PluginVersion string `json:"plugin_version"`
+	PluginVersion string `json:"plugin_version,omitempty"`
 
-	TokenType string `json:"token_type"`
+	TokenType string `json:"token_type,omitempty"`
 
-	UserLockoutCounterResetDuration int64 `json:"user_lockout_counter_reset_duration"`
+	UserLockoutCounterResetDuration int64 `json:"user_lockout_counter_reset_duration,omitempty"`
 
-	UserLockoutDisable bool `json:"user_lockout_disable"`
+	UserLockoutDisable bool `json:"user_lockout_disable,omitempty"`
 
-	UserLockoutDuration int64 `json:"user_lockout_duration"`
+	UserLockoutDuration int64 `json:"user_lockout_duration,omitempty"`
 
-	UserLockoutThreshold int64 `json:"user_lockout_threshold"`
+	UserLockoutThreshold int64 `json:"user_lockout_threshold,omitempty"`
 }
 
 // NewAuthReadTuningInformationResponseWithDefaults instantiates a new AuthReadTuningInformationResponse object
@@ -55,29 +51,4 @@ func NewAuthReadTuningInformationResponseWithDefaults() *AuthReadTuningInformati
 	var this AuthReadTuningInformationResponse
 
 	return &this
-}
-
-func (o AuthReadTuningInformationResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["allowed_managed_keys"] = o.AllowedManagedKeys
-	toSerialize["allowed_response_headers"] = o.AllowedResponseHeaders
-	toSerialize["audit_non_hmac_request_keys"] = o.AuditNonHmacRequestKeys
-	toSerialize["audit_non_hmac_response_keys"] = o.AuditNonHmacResponseKeys
-	toSerialize["default_lease_ttl"] = o.DefaultLeaseTtl
-	toSerialize["description"] = o.Description
-	toSerialize["external_entropy_access"] = o.ExternalEntropyAccess
-	toSerialize["force_no_cache"] = o.ForceNoCache
-	toSerialize["listing_visibility"] = o.ListingVisibility
-	toSerialize["max_lease_ttl"] = o.MaxLeaseTtl
-	toSerialize["options"] = o.Options
-	toSerialize["passthrough_request_headers"] = o.PassthroughRequestHeaders
-	toSerialize["plugin_version"] = o.PluginVersion
-	toSerialize["token_type"] = o.TokenType
-	toSerialize["user_lockout_counter_reset_duration"] = o.UserLockoutCounterResetDuration
-	toSerialize["user_lockout_disable"] = o.UserLockoutDisable
-	toSerialize["user_lockout_duration"] = o.UserLockoutDuration
-	toSerialize["user_lockout_threshold"] = o.UserLockoutThreshold
-
-	return json.Marshal(toSerialize)
 }

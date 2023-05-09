@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // InternalUiListEnabledVisibleMountsResponse struct for InternalUiListEnabledVisibleMountsResponse
 type InternalUiListEnabledVisibleMountsResponse struct {
 	// auth mounts
-	Auth map[string]interface{} `json:"auth"`
+	Auth map[string]interface{} `json:"auth,omitempty"`
 
 	// secret mounts
-	Secret map[string]interface{} `json:"secret"`
+	Secret map[string]interface{} `json:"secret,omitempty"`
 }
 
 // NewInternalUiListEnabledVisibleMountsResponseWithDefaults instantiates a new InternalUiListEnabledVisibleMountsResponse object
@@ -25,13 +21,4 @@ func NewInternalUiListEnabledVisibleMountsResponseWithDefaults() *InternalUiList
 	var this InternalUiListEnabledVisibleMountsResponse
 
 	return &this
-}
-
-func (o InternalUiListEnabledVisibleMountsResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["auth"] = o.Auth
-	toSerialize["secret"] = o.Secret
-
-	return json.Marshal(toSerialize)
 }

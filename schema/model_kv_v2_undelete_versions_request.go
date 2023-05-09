@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // KvV2UndeleteVersionsRequest struct for KvV2UndeleteVersionsRequest
 type KvV2UndeleteVersionsRequest struct {
 	// The versions to unarchive. The versions will be restored and their data will be returned on normal get requests.
-	Versions []int32 `json:"versions"`
+	Versions []int32 `json:"versions,omitempty"`
 }
 
 // NewKvV2UndeleteVersionsRequestWithDefaults instantiates a new KvV2UndeleteVersionsRequest object
@@ -22,12 +18,4 @@ func NewKvV2UndeleteVersionsRequestWithDefaults() *KvV2UndeleteVersionsRequest {
 	var this KvV2UndeleteVersionsRequest
 
 	return &this
-}
-
-func (o KvV2UndeleteVersionsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["versions"] = o.Versions
-
-	return json.Marshal(toSerialize)
 }

@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // UnsealRequest struct for UnsealRequest
 type UnsealRequest struct {
 	// Specifies a single unseal key share. This is required unless reset is true.
-	Key string `json:"key"`
+	Key string `json:"key,omitempty"`
 
 	// Specifies if previously-provided unseal keys are discarded and the unseal process is reset.
-	Reset bool `json:"reset"`
+	Reset bool `json:"reset,omitempty"`
 }
 
 // NewUnsealRequestWithDefaults instantiates a new UnsealRequest object
@@ -25,13 +21,4 @@ func NewUnsealRequestWithDefaults() *UnsealRequest {
 	var this UnsealRequest
 
 	return &this
-}
-
-func (o UnsealRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["key"] = o.Key
-	toSerialize["reset"] = o.Reset
-
-	return json.Marshal(toSerialize)
 }

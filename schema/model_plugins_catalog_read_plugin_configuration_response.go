@@ -5,30 +5,26 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PluginsCatalogReadPluginConfigurationResponse struct for PluginsCatalogReadPluginConfigurationResponse
 type PluginsCatalogReadPluginConfigurationResponse struct {
 	// The args passed to plugin command.
-	Args []string `json:"args"`
+	Args []string `json:"args,omitempty"`
 
-	Builtin bool `json:"builtin"`
+	Builtin bool `json:"builtin,omitempty"`
 
 	// The command used to start the plugin. The executable defined in this command must exist in vault's plugin directory.
-	Command string `json:"command"`
+	Command string `json:"command,omitempty"`
 
-	DeprecationStatus string `json:"deprecation_status"`
+	DeprecationStatus string `json:"deprecation_status,omitempty"`
 
 	// The name of the plugin
-	Name string `json:"name"`
+	Name string `json:"name,omitempty"`
 
 	// The SHA256 sum of the executable used in the command field. This should be HEX encoded.
-	Sha256 string `json:"sha256"`
+	Sha256 string `json:"sha256,omitempty"`
 
 	// The semantic version of the plugin to use.
-	Version string `json:"version"`
+	Version string `json:"version,omitempty"`
 }
 
 // NewPluginsCatalogReadPluginConfigurationResponseWithDefaults instantiates a new PluginsCatalogReadPluginConfigurationResponse object
@@ -38,18 +34,4 @@ func NewPluginsCatalogReadPluginConfigurationResponseWithDefaults() *PluginsCata
 	var this PluginsCatalogReadPluginConfigurationResponse
 
 	return &this
-}
-
-func (o PluginsCatalogReadPluginConfigurationResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["args"] = o.Args
-	toSerialize["builtin"] = o.Builtin
-	toSerialize["command"] = o.Command
-	toSerialize["deprecation_status"] = o.DeprecationStatus
-	toSerialize["name"] = o.Name
-	toSerialize["sha256"] = o.Sha256
-	toSerialize["version"] = o.Version
-
-	return json.Marshal(toSerialize)
 }

@@ -5,20 +5,16 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiIssuersImportCertResponse struct for PkiIssuersImportCertResponse
 type PkiIssuersImportCertResponse struct {
 	// Net-new issuers imported as a part of this request
-	ImportedIssuers []string `json:"imported_issuers"`
+	ImportedIssuers []string `json:"imported_issuers,omitempty"`
 
 	// Net-new keys imported as a part of this request
-	ImportedKeys []string `json:"imported_keys"`
+	ImportedKeys []string `json:"imported_keys,omitempty"`
 
 	// A mapping of issuer_id to key_id for all issuers included in this request
-	Mapping map[string]interface{} `json:"mapping"`
+	Mapping map[string]interface{} `json:"mapping,omitempty"`
 }
 
 // NewPkiIssuersImportCertResponseWithDefaults instantiates a new PkiIssuersImportCertResponse object
@@ -28,14 +24,4 @@ func NewPkiIssuersImportCertResponseWithDefaults() *PkiIssuersImportCertResponse
 	var this PkiIssuersImportCertResponse
 
 	return &this
-}
-
-func (o PkiIssuersImportCertResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["imported_issuers"] = o.ImportedIssuers
-	toSerialize["imported_keys"] = o.ImportedKeys
-	toSerialize["mapping"] = o.Mapping
-
-	return json.Marshal(toSerialize)
 }

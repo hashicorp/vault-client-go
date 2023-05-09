@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // OciLoginRequest struct for OciLoginRequest
 type OciLoginRequest struct {
 	// The signed headers of the client
-	RequestHeaders string `json:"request_headers"`
+	RequestHeaders string `json:"request_headers,omitempty"`
 }
 
 // NewOciLoginRequestWithDefaults instantiates a new OciLoginRequest object
@@ -22,12 +18,4 @@ func NewOciLoginRequestWithDefaults() *OciLoginRequest {
 	var this OciLoginRequest
 
 	return &this
-}
-
-func (o OciLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["request_headers"] = o.RequestHeaders
-
-	return json.Marshal(toSerialize)
 }

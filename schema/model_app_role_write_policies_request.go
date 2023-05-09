@@ -5,18 +5,14 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleWritePoliciesRequest struct for AppRoleWritePoliciesRequest
 type AppRoleWritePoliciesRequest struct {
 	// Use \"token_policies\" instead. If this and \"token_policies\" are both specified, only \"token_policies\" will be used.
 	// Deprecated
-	Policies []string `json:"policies"`
+	Policies []string `json:"policies,omitempty"`
 
 	// Comma-separated list of policies
-	TokenPolicies []string `json:"token_policies"`
+	TokenPolicies []string `json:"token_policies,omitempty"`
 }
 
 // NewAppRoleWritePoliciesRequestWithDefaults instantiates a new AppRoleWritePoliciesRequest object
@@ -26,13 +22,4 @@ func NewAppRoleWritePoliciesRequestWithDefaults() *AppRoleWritePoliciesRequest {
 	var this AppRoleWritePoliciesRequest
 
 	return &this
-}
-
-func (o AppRoleWritePoliciesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["policies"] = o.Policies
-	toSerialize["token_policies"] = o.TokenPolicies
-
-	return json.Marshal(toSerialize)
 }

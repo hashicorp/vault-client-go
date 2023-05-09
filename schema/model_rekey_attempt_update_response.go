@@ -5,37 +5,33 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RekeyAttemptUpdateResponse struct for RekeyAttemptUpdateResponse
 type RekeyAttemptUpdateResponse struct {
-	Backup bool `json:"backup"`
+	Backup bool `json:"backup,omitempty"`
 
-	Complete bool `json:"complete"`
+	Complete bool `json:"complete,omitempty"`
 
-	Keys []string `json:"keys"`
+	Keys []string `json:"keys,omitempty"`
 
-	KeysBase64 []string `json:"keys_base64"`
+	KeysBase64 []string `json:"keys_base64,omitempty"`
 
-	N int32 `json:"n"`
+	N int32 `json:"n,omitempty"`
 
-	Nounce string `json:"nounce"`
+	Nounce string `json:"nounce,omitempty"`
 
-	PgpFingerprints []string `json:"pgp_fingerprints"`
+	PgpFingerprints []string `json:"pgp_fingerprints,omitempty"`
 
-	Progress int32 `json:"progress"`
+	Progress int32 `json:"progress,omitempty"`
 
-	Required int32 `json:"required"`
+	Required int32 `json:"required,omitempty"`
 
-	Started string `json:"started"`
+	Started string `json:"started,omitempty"`
 
-	T int32 `json:"t"`
+	T int32 `json:"t,omitempty"`
 
-	VerificationNonce string `json:"verification_nonce"`
+	VerificationNonce string `json:"verification_nonce,omitempty"`
 
-	VerificationRequired bool `json:"verification_required"`
+	VerificationRequired bool `json:"verification_required,omitempty"`
 }
 
 // NewRekeyAttemptUpdateResponseWithDefaults instantiates a new RekeyAttemptUpdateResponse object
@@ -45,24 +41,4 @@ func NewRekeyAttemptUpdateResponseWithDefaults() *RekeyAttemptUpdateResponse {
 	var this RekeyAttemptUpdateResponse
 
 	return &this
-}
-
-func (o RekeyAttemptUpdateResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["backup"] = o.Backup
-	toSerialize["complete"] = o.Complete
-	toSerialize["keys"] = o.Keys
-	toSerialize["keys_base64"] = o.KeysBase64
-	toSerialize["n"] = o.N
-	toSerialize["nounce"] = o.Nounce
-	toSerialize["pgp_fingerprints"] = o.PgpFingerprints
-	toSerialize["progress"] = o.Progress
-	toSerialize["required"] = o.Required
-	toSerialize["started"] = o.Started
-	toSerialize["t"] = o.T
-	toSerialize["verification_nonce"] = o.VerificationNonce
-	toSerialize["verification_required"] = o.VerificationRequired
-
-	return json.Marshal(toSerialize)
 }

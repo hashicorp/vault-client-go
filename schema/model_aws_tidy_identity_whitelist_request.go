@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AwsTidyIdentityWhitelistRequest struct for AwsTidyIdentityWhitelistRequest
 type AwsTidyIdentityWhitelistRequest struct {
 	// The amount of extra time that must have passed beyond the identity's expiration, before it is removed from the backend storage.
-	SafetyBuffer int32 `json:"safety_buffer"`
+	SafetyBuffer int32 `json:"safety_buffer,omitempty"`
 }
 
 // NewAwsTidyIdentityWhitelistRequestWithDefaults instantiates a new AwsTidyIdentityWhitelistRequest object
@@ -24,12 +20,4 @@ func NewAwsTidyIdentityWhitelistRequestWithDefaults() *AwsTidyIdentityWhitelistR
 	this.SafetyBuffer = 259200
 
 	return &this
-}
-
-func (o AwsTidyIdentityWhitelistRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["safety_buffer"] = o.SafetyBuffer
-
-	return json.Marshal(toSerialize)
 }

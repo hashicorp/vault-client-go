@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AliCloudLoginRequest struct for AliCloudLoginRequest
 type AliCloudLoginRequest struct {
 	// The request headers. This must include the headers over which AliCloud has included a signature.
-	IdentityRequestHeaders string `json:"identity_request_headers"`
+	IdentityRequestHeaders string `json:"identity_request_headers,omitempty"`
 
 	// Base64-encoded full URL against which to make the AliCloud request.
-	IdentityRequestUrl string `json:"identity_request_url"`
+	IdentityRequestUrl string `json:"identity_request_url,omitempty"`
 
 	// Name of the role against which the login is being attempted. If 'role' is not specified, then the login endpoint looks for a role name in the ARN returned by the GetCallerIdentity request. If a matching role is not found, login fails.
 	Role string `json:"role"`
@@ -28,14 +24,4 @@ func NewAliCloudLoginRequestWithDefaults() *AliCloudLoginRequest {
 	var this AliCloudLoginRequest
 
 	return &this
-}
-
-func (o AliCloudLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["identity_request_headers"] = o.IdentityRequestHeaders
-	toSerialize["identity_request_url"] = o.IdentityRequestUrl
-	toSerialize["role"] = o.Role
-
-	return json.Marshal(toSerialize)
 }

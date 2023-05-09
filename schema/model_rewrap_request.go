@@ -5,13 +5,9 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RewrapRequest struct for RewrapRequest
 type RewrapRequest struct {
-	Token string `json:"token"`
+	Token string `json:"token,omitempty"`
 }
 
 // NewRewrapRequestWithDefaults instantiates a new RewrapRequest object
@@ -21,12 +17,4 @@ func NewRewrapRequestWithDefaults() *RewrapRequest {
 	var this RewrapRequest
 
 	return &this
-}
-
-func (o RewrapRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["token"] = o.Token
-
-	return json.Marshal(toSerialize)
 }

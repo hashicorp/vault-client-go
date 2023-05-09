@@ -5,26 +5,22 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiRootSignIntermediateResponse struct for PkiRootSignIntermediateResponse
 type PkiRootSignIntermediateResponse struct {
 	// CA Chain
-	CaChain []string `json:"ca_chain"`
+	CaChain []string `json:"ca_chain,omitempty"`
 
 	// Certificate
-	Certificate string `json:"certificate"`
+	Certificate string `json:"certificate,omitempty"`
 
 	// Expiration Time
-	Expiration int64 `json:"expiration"`
+	Expiration int64 `json:"expiration,omitempty"`
 
 	// Issuing CA
-	IssuingCa string `json:"issuing_ca"`
+	IssuingCa string `json:"issuing_ca,omitempty"`
 
 	// Serial Number
-	SerialNumber string `json:"serial_number"`
+	SerialNumber string `json:"serial_number,omitempty"`
 }
 
 // NewPkiRootSignIntermediateResponseWithDefaults instantiates a new PkiRootSignIntermediateResponse object
@@ -34,16 +30,4 @@ func NewPkiRootSignIntermediateResponseWithDefaults() *PkiRootSignIntermediateRe
 	var this PkiRootSignIntermediateResponse
 
 	return &this
-}
-
-func (o PkiRootSignIntermediateResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["ca_chain"] = o.CaChain
-	toSerialize["certificate"] = o.Certificate
-	toSerialize["expiration"] = o.Expiration
-	toSerialize["issuing_ca"] = o.IssuingCa
-	toSerialize["serial_number"] = o.SerialNumber
-
-	return json.Marshal(toSerialize)
 }

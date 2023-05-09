@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // LoggersUpdateVerbosityLevelRequest struct for LoggersUpdateVerbosityLevelRequest
 type LoggersUpdateVerbosityLevelRequest struct {
 	// Log verbosity level. Supported values (in order of detail) are \"trace\", \"debug\", \"info\", \"warn\", and \"error\".
-	Level string `json:"level"`
+	Level string `json:"level,omitempty"`
 }
 
 // NewLoggersUpdateVerbosityLevelRequestWithDefaults instantiates a new LoggersUpdateVerbosityLevelRequest object
@@ -22,12 +18,4 @@ func NewLoggersUpdateVerbosityLevelRequestWithDefaults() *LoggersUpdateVerbosity
 	var this LoggersUpdateVerbosityLevelRequest
 
 	return &this
-}
-
-func (o LoggersUpdateVerbosityLevelRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["level"] = o.Level
-
-	return json.Marshal(toSerialize)
 }

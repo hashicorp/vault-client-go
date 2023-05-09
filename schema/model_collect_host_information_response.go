@@ -5,24 +5,21 @@
 
 package schema
 
-import (
-	"encoding/json"
-	"time"
-)
+import "time"
 
 // CollectHostInformationResponse struct for CollectHostInformationResponse
 type CollectHostInformationResponse struct {
-	Cpu []map[string]interface{} `json:"cpu"`
+	Cpu []map[string]interface{} `json:"cpu,omitempty"`
 
-	CpuTimes []map[string]interface{} `json:"cpu_times"`
+	CpuTimes []map[string]interface{} `json:"cpu_times,omitempty"`
 
-	Disk []map[string]interface{} `json:"disk"`
+	Disk []map[string]interface{} `json:"disk,omitempty"`
 
-	Host map[string]interface{} `json:"host"`
+	Host map[string]interface{} `json:"host,omitempty"`
 
-	Memory map[string]interface{} `json:"memory"`
+	Memory map[string]interface{} `json:"memory,omitempty"`
 
-	Timestamp time.Time `json:"timestamp"`
+	Timestamp time.Time `json:"timestamp,omitempty"`
 }
 
 // NewCollectHostInformationResponseWithDefaults instantiates a new CollectHostInformationResponse object
@@ -32,17 +29,4 @@ func NewCollectHostInformationResponseWithDefaults() *CollectHostInformationResp
 	var this CollectHostInformationResponse
 
 	return &this
-}
-
-func (o CollectHostInformationResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["cpu"] = o.Cpu
-	toSerialize["cpu_times"] = o.CpuTimes
-	toSerialize["disk"] = o.Disk
-	toSerialize["host"] = o.Host
-	toSerialize["memory"] = o.Memory
-	toSerialize["timestamp"] = o.Timestamp
-
-	return json.Marshal(toSerialize)
 }

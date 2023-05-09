@@ -5,23 +5,19 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AliasUpdateByIdRequest struct for AliasUpdateByIdRequest
 type AliasUpdateByIdRequest struct {
 	// Entity ID to which this alias should be tied to
-	CanonicalId string `json:"canonical_id"`
+	CanonicalId string `json:"canonical_id,omitempty"`
 
 	// Entity ID to which this alias should be tied to. This field is deprecated in favor of 'canonical_id'.
-	EntityId string `json:"entity_id"`
+	EntityId string `json:"entity_id,omitempty"`
 
 	// Mount accessor to which this alias belongs to
-	MountAccessor string `json:"mount_accessor"`
+	MountAccessor string `json:"mount_accessor,omitempty"`
 
 	// Name of the alias
-	Name string `json:"name"`
+	Name string `json:"name,omitempty"`
 }
 
 // NewAliasUpdateByIdRequestWithDefaults instantiates a new AliasUpdateByIdRequest object
@@ -31,15 +27,4 @@ func NewAliasUpdateByIdRequestWithDefaults() *AliasUpdateByIdRequest {
 	var this AliasUpdateByIdRequest
 
 	return &this
-}
-
-func (o AliasUpdateByIdRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["canonical_id"] = o.CanonicalId
-	toSerialize["entity_id"] = o.EntityId
-	toSerialize["mount_accessor"] = o.MountAccessor
-	toSerialize["name"] = o.Name
-
-	return json.Marshal(toSerialize)
 }

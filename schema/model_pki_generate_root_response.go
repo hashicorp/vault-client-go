@@ -5,38 +5,34 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiGenerateRootResponse struct for PkiGenerateRootResponse
 type PkiGenerateRootResponse struct {
 	// The generated self-signed CA certificate.
-	Certificate string `json:"certificate"`
+	Certificate string `json:"certificate,omitempty"`
 
 	// The expiration of the given.
-	Expiration string `json:"expiration"`
+	Expiration string `json:"expiration,omitempty"`
 
 	// The ID of the issuer
-	IssuerId string `json:"issuer_id"`
+	IssuerId string `json:"issuer_id,omitempty"`
 
 	// The name of the issuer.
-	IssuerName string `json:"issuer_name"`
+	IssuerName string `json:"issuer_name,omitempty"`
 
 	// The issuing certificate authority.
-	IssuingCa string `json:"issuing_ca"`
+	IssuingCa string `json:"issuing_ca,omitempty"`
 
 	// The ID of the key.
-	KeyId string `json:"key_id"`
+	KeyId string `json:"key_id,omitempty"`
 
 	// The key name if given.
-	KeyName string `json:"key_name"`
+	KeyName string `json:"key_name,omitempty"`
 
 	// The private key if exported was specified.
-	PrivateKey string `json:"private_key"`
+	PrivateKey string `json:"private_key,omitempty"`
 
 	// The requested Subject's named serial number.
-	SerialNumber string `json:"serial_number"`
+	SerialNumber string `json:"serial_number,omitempty"`
 }
 
 // NewPkiGenerateRootResponseWithDefaults instantiates a new PkiGenerateRootResponse object
@@ -46,20 +42,4 @@ func NewPkiGenerateRootResponseWithDefaults() *PkiGenerateRootResponse {
 	var this PkiGenerateRootResponse
 
 	return &this
-}
-
-func (o PkiGenerateRootResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["certificate"] = o.Certificate
-	toSerialize["expiration"] = o.Expiration
-	toSerialize["issuer_id"] = o.IssuerId
-	toSerialize["issuer_name"] = o.IssuerName
-	toSerialize["issuing_ca"] = o.IssuingCa
-	toSerialize["key_id"] = o.KeyId
-	toSerialize["key_name"] = o.KeyName
-	toSerialize["private_key"] = o.PrivateKey
-	toSerialize["serial_number"] = o.SerialNumber
-
-	return json.Marshal(toSerialize)
 }

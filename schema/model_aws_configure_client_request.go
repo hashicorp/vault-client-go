@@ -5,38 +5,34 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AwsConfigureClientRequest struct for AwsConfigureClientRequest
 type AwsConfigureClientRequest struct {
 	// AWS Access Key ID for the account used to make AWS API requests.
-	AccessKey string `json:"access_key"`
+	AccessKey string `json:"access_key,omitempty"`
 
 	// List of additional headers that are allowed to be in AWS STS request headers
-	AllowedStsHeaderValues []string `json:"allowed_sts_header_values"`
+	AllowedStsHeaderValues []string `json:"allowed_sts_header_values,omitempty"`
 
 	// URL to override the default generated endpoint for making AWS EC2 API calls.
-	Endpoint string `json:"endpoint"`
+	Endpoint string `json:"endpoint,omitempty"`
 
 	// URL to override the default generated endpoint for making AWS IAM API calls.
-	IamEndpoint string `json:"iam_endpoint"`
+	IamEndpoint string `json:"iam_endpoint,omitempty"`
 
 	// Value to require in the X-Vault-AWS-IAM-Server-ID request header
-	IamServerIdHeaderValue string `json:"iam_server_id_header_value"`
+	IamServerIdHeaderValue string `json:"iam_server_id_header_value,omitempty"`
 
 	// Maximum number of retries for recoverable exceptions of AWS APIs
-	MaxRetries int32 `json:"max_retries"`
+	MaxRetries int32 `json:"max_retries,omitempty"`
 
 	// AWS Secret Access Key for the account used to make AWS API requests.
-	SecretKey string `json:"secret_key"`
+	SecretKey string `json:"secret_key,omitempty"`
 
 	// URL to override the default generated endpoint for making AWS STS API calls.
-	StsEndpoint string `json:"sts_endpoint"`
+	StsEndpoint string `json:"sts_endpoint,omitempty"`
 
 	// The region ID for the sts_endpoint, if set.
-	StsRegion string `json:"sts_region"`
+	StsRegion string `json:"sts_region,omitempty"`
 }
 
 // NewAwsConfigureClientRequestWithDefaults instantiates a new AwsConfigureClientRequest object
@@ -55,20 +51,4 @@ func NewAwsConfigureClientRequestWithDefaults() *AwsConfigureClientRequest {
 	this.StsRegion = ""
 
 	return &this
-}
-
-func (o AwsConfigureClientRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["access_key"] = o.AccessKey
-	toSerialize["allowed_sts_header_values"] = o.AllowedStsHeaderValues
-	toSerialize["endpoint"] = o.Endpoint
-	toSerialize["iam_endpoint"] = o.IamEndpoint
-	toSerialize["iam_server_id_header_value"] = o.IamServerIdHeaderValue
-	toSerialize["max_retries"] = o.MaxRetries
-	toSerialize["secret_key"] = o.SecretKey
-	toSerialize["sts_endpoint"] = o.StsEndpoint
-	toSerialize["sts_region"] = o.StsRegion
-
-	return json.Marshal(toSerialize)
 }

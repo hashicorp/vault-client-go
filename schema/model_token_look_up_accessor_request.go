@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // TokenLookUpAccessorRequest struct for TokenLookUpAccessorRequest
 type TokenLookUpAccessorRequest struct {
 	// Accessor of the token to look up (request body)
-	Accessor string `json:"accessor"`
+	Accessor string `json:"accessor,omitempty"`
 }
 
 // NewTokenLookUpAccessorRequestWithDefaults instantiates a new TokenLookUpAccessorRequest object
@@ -22,12 +18,4 @@ func NewTokenLookUpAccessorRequestWithDefaults() *TokenLookUpAccessorRequest {
 	var this TokenLookUpAccessorRequest
 
 	return &this
-}
-
-func (o TokenLookUpAccessorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["accessor"] = o.Accessor
-
-	return json.Marshal(toSerialize)
 }

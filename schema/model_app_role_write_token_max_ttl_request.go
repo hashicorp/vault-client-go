@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleWriteTokenMaxTtlRequest struct for AppRoleWriteTokenMaxTtlRequest
 type AppRoleWriteTokenMaxTtlRequest struct {
 	// The maximum lifetime of the generated token
-	TokenMaxTtl int32 `json:"token_max_ttl"`
+	TokenMaxTtl int32 `json:"token_max_ttl,omitempty"`
 }
 
 // NewAppRoleWriteTokenMaxTtlRequestWithDefaults instantiates a new AppRoleWriteTokenMaxTtlRequest object
@@ -22,12 +18,4 @@ func NewAppRoleWriteTokenMaxTtlRequestWithDefaults() *AppRoleWriteTokenMaxTtlReq
 	var this AppRoleWriteTokenMaxTtlRequest
 
 	return &this
-}
-
-func (o AppRoleWriteTokenMaxTtlRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["token_max_ttl"] = o.TokenMaxTtl
-
-	return json.Marshal(toSerialize)
 }

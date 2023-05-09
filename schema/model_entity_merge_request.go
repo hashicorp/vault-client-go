@@ -5,23 +5,19 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // EntityMergeRequest struct for EntityMergeRequest
 type EntityMergeRequest struct {
 	// Alias IDs to keep in case of conflicting aliases. Ignored if no conflicting aliases found
-	ConflictingAliasIdsToKeep []string `json:"conflicting_alias_ids_to_keep"`
+	ConflictingAliasIdsToKeep []string `json:"conflicting_alias_ids_to_keep,omitempty"`
 
 	// Setting this will follow the 'mine' strategy for merging MFA secrets. If there are secrets of the same type both in entities that are merged from and in entity into which all others are getting merged, secrets in the destination will be unaltered. If not set, this API will throw an error containing all the conflicts.
-	Force bool `json:"force"`
+	Force bool `json:"force,omitempty"`
 
 	// Entity IDs which need to get merged
-	FromEntityIds []string `json:"from_entity_ids"`
+	FromEntityIds []string `json:"from_entity_ids,omitempty"`
 
 	// Entity ID into which all the other entities need to get merged
-	ToEntityId string `json:"to_entity_id"`
+	ToEntityId string `json:"to_entity_id,omitempty"`
 }
 
 // NewEntityMergeRequestWithDefaults instantiates a new EntityMergeRequest object
@@ -31,15 +27,4 @@ func NewEntityMergeRequestWithDefaults() *EntityMergeRequest {
 	var this EntityMergeRequest
 
 	return &this
-}
-
-func (o EntityMergeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["conflicting_alias_ids_to_keep"] = o.ConflictingAliasIdsToKeep
-	toSerialize["force"] = o.Force
-	toSerialize["from_entity_ids"] = o.FromEntityIds
-	toSerialize["to_entity_id"] = o.ToEntityId
-
-	return json.Marshal(toSerialize)
 }

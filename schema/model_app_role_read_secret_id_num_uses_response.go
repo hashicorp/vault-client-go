@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleReadSecretIdNumUsesResponse struct for AppRoleReadSecretIdNumUsesResponse
 type AppRoleReadSecretIdNumUsesResponse struct {
 	// Number of times a secret ID can access the role, after which the SecretID will expire. Defaults to 0 meaning that the secret ID is of unlimited use.
-	SecretIdNumUses int32 `json:"secret_id_num_uses"`
+	SecretIdNumUses int32 `json:"secret_id_num_uses,omitempty"`
 }
 
 // NewAppRoleReadSecretIdNumUsesResponseWithDefaults instantiates a new AppRoleReadSecretIdNumUsesResponse object
@@ -22,12 +18,4 @@ func NewAppRoleReadSecretIdNumUsesResponseWithDefaults() *AppRoleReadSecretIdNum
 	var this AppRoleReadSecretIdNumUsesResponse
 
 	return &this
-}
-
-func (o AppRoleReadSecretIdNumUsesResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["secret_id_num_uses"] = o.SecretIdNumUses
-
-	return json.Marshal(toSerialize)
 }

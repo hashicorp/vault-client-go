@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // LeasesRevokeLeaseWithPrefixRequest struct for LeasesRevokeLeaseWithPrefixRequest
 type LeasesRevokeLeaseWithPrefixRequest struct {
 	// Whether or not to perform the revocation synchronously
-	Sync bool `json:"sync"`
+	Sync bool `json:"sync,omitempty"`
 }
 
 // NewLeasesRevokeLeaseWithPrefixRequestWithDefaults instantiates a new LeasesRevokeLeaseWithPrefixRequest object
@@ -24,12 +20,4 @@ func NewLeasesRevokeLeaseWithPrefixRequestWithDefaults() *LeasesRevokeLeaseWithP
 	this.Sync = true
 
 	return &this
-}
-
-func (o LeasesRevokeLeaseWithPrefixRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["sync"] = o.Sync
-
-	return json.Marshal(toSerialize)
 }

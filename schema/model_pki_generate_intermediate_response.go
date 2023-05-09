@@ -5,23 +5,19 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiGenerateIntermediateResponse struct for PkiGenerateIntermediateResponse
 type PkiGenerateIntermediateResponse struct {
 	// Certificate signing request.
-	Csr string `json:"csr"`
+	Csr string `json:"csr,omitempty"`
 
 	// Id of the key.
-	KeyId string `json:"key_id"`
+	KeyId string `json:"key_id,omitempty"`
 
 	// Generated private key.
-	PrivateKey string `json:"private_key"`
+	PrivateKey string `json:"private_key,omitempty"`
 
 	// Specifies the format used for marshaling the private key.
-	PrivateKeyType string `json:"private_key_type"`
+	PrivateKeyType string `json:"private_key_type,omitempty"`
 }
 
 // NewPkiGenerateIntermediateResponseWithDefaults instantiates a new PkiGenerateIntermediateResponse object
@@ -31,15 +27,4 @@ func NewPkiGenerateIntermediateResponseWithDefaults() *PkiGenerateIntermediateRe
 	var this PkiGenerateIntermediateResponse
 
 	return &this
-}
-
-func (o PkiGenerateIntermediateResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["csr"] = o.Csr
-	toSerialize["key_id"] = o.KeyId
-	toSerialize["private_key"] = o.PrivateKey
-	toSerialize["private_key_type"] = o.PrivateKeyType
-
-	return json.Marshal(toSerialize)
 }

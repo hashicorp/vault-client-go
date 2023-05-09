@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // InternalUiReadResultantAclResponse struct for InternalUiReadResultantAclResponse
 type InternalUiReadResultantAclResponse struct {
-	ExactPaths map[string]interface{} `json:"exact_paths"`
+	ExactPaths map[string]interface{} `json:"exact_paths,omitempty"`
 
-	GlobPaths map[string]interface{} `json:"glob_paths"`
+	GlobPaths map[string]interface{} `json:"glob_paths,omitempty"`
 
-	Root bool `json:"root"`
+	Root bool `json:"root,omitempty"`
 }
 
 // NewInternalUiReadResultantAclResponseWithDefaults instantiates a new InternalUiReadResultantAclResponse object
@@ -25,14 +21,4 @@ func NewInternalUiReadResultantAclResponseWithDefaults() *InternalUiReadResultan
 	var this InternalUiReadResultantAclResponse
 
 	return &this
-}
-
-func (o InternalUiReadResultantAclResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["exact_paths"] = o.ExactPaths
-	toSerialize["glob_paths"] = o.GlobPaths
-	toSerialize["root"] = o.Root
-
-	return json.Marshal(toSerialize)
 }

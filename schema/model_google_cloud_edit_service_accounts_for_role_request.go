@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GoogleCloudEditServiceAccountsForRoleRequest struct for GoogleCloudEditServiceAccountsForRoleRequest
 type GoogleCloudEditServiceAccountsForRoleRequest struct {
 	// Service-account emails or IDs to add.
-	Add []string `json:"add"`
+	Add []string `json:"add,omitempty"`
 
 	// Service-account emails or IDs to remove.
-	Remove []string `json:"remove"`
+	Remove []string `json:"remove,omitempty"`
 }
 
 // NewGoogleCloudEditServiceAccountsForRoleRequestWithDefaults instantiates a new GoogleCloudEditServiceAccountsForRoleRequest object
@@ -25,13 +21,4 @@ func NewGoogleCloudEditServiceAccountsForRoleRequestWithDefaults() *GoogleCloudE
 	var this GoogleCloudEditServiceAccountsForRoleRequest
 
 	return &this
-}
-
-func (o GoogleCloudEditServiceAccountsForRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["add"] = o.Add
-	toSerialize["remove"] = o.Remove
-
-	return json.Marshal(toSerialize)
 }

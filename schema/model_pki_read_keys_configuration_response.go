@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiReadKeysConfigurationResponse struct for PkiReadKeysConfigurationResponse
 type PkiReadKeysConfigurationResponse struct {
 	// Reference (name or identifier) to the default issuer.
-	Default string `json:"default"`
+	Default string `json:"default,omitempty"`
 }
 
 // NewPkiReadKeysConfigurationResponseWithDefaults instantiates a new PkiReadKeysConfigurationResponse object
@@ -22,12 +18,4 @@ func NewPkiReadKeysConfigurationResponseWithDefaults() *PkiReadKeysConfiguration
 	var this PkiReadKeysConfigurationResponse
 
 	return &this
-}
-
-func (o PkiReadKeysConfigurationResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["default"] = o.Default
-
-	return json.Marshal(toSerialize)
 }

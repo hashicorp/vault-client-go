@@ -5,60 +5,56 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // CloudFoundryConfigureRequest struct for CloudFoundryConfigureRequest
 type CloudFoundryConfigureRequest struct {
 	// CF’s API address.
-	CfApiAddr string `json:"cf_api_addr"`
+	CfApiAddr string `json:"cf_api_addr,omitempty"`
 
 	// The PEM-format certificates that are presented for mutual TLS with the CloudFoundry API. If not set, mutual TLS is not used
-	CfApiMutualTlsCertificate string `json:"cf_api_mutual_tls_certificate"`
+	CfApiMutualTlsCertificate string `json:"cf_api_mutual_tls_certificate,omitempty"`
 
 	// The PEM-format private key that are used for mutual TLS with the CloudFoundry API. If not set, mutual TLS is not used
-	CfApiMutualTlsKey string `json:"cf_api_mutual_tls_key"`
+	CfApiMutualTlsKey string `json:"cf_api_mutual_tls_key,omitempty"`
 
 	// The PEM-format CA certificates that are acceptable for the CF API to present.
-	CfApiTrustedCertificates []string `json:"cf_api_trusted_certificates"`
+	CfApiTrustedCertificates []string `json:"cf_api_trusted_certificates,omitempty"`
 
 	// The client id for CF’s API.
-	CfClientId string `json:"cf_client_id"`
+	CfClientId string `json:"cf_client_id,omitempty"`
 
 	// The client secret for CF’s API.
-	CfClientSecret string `json:"cf_client_secret"`
+	CfClientSecret string `json:"cf_client_secret,omitempty"`
 
 	// The password for CF’s API.
-	CfPassword string `json:"cf_password"`
+	CfPassword string `json:"cf_password,omitempty"`
 
 	// The username for CF’s API.
-	CfUsername string `json:"cf_username"`
+	CfUsername string `json:"cf_username,omitempty"`
 
 	// The PEM-format CA certificates that are required to have issued the instance certificates presented for logging in.
-	IdentityCaCertificates []string `json:"identity_ca_certificates"`
+	IdentityCaCertificates []string `json:"identity_ca_certificates,omitempty"`
 
 	// Duration in seconds for the maximum acceptable length in the future a \"signing_time\" can be. Useful for clock drift. Set low to reduce the opportunity for replay attacks.
-	LoginMaxSecondsNotAfter int32 `json:"login_max_seconds_not_after"`
+	LoginMaxSecondsNotAfter int32 `json:"login_max_seconds_not_after,omitempty"`
 
 	// Duration in seconds for the maximum acceptable age of a \"signing_time\". Useful for clock drift. Set low to reduce the opportunity for replay attacks.
-	LoginMaxSecondsNotBefore int32 `json:"login_max_seconds_not_before"`
+	LoginMaxSecondsNotBefore int32 `json:"login_max_seconds_not_before,omitempty"`
 
 	// Deprecated. Please use \"cf_api_addr\".
 	// Deprecated
-	PcfApiAddr string `json:"pcf_api_addr"`
+	PcfApiAddr string `json:"pcf_api_addr,omitempty"`
 
 	// Deprecated. Please use \"cf_api_trusted_certificates\".
 	// Deprecated
-	PcfApiTrustedCertificates []string `json:"pcf_api_trusted_certificates"`
+	PcfApiTrustedCertificates []string `json:"pcf_api_trusted_certificates,omitempty"`
 
 	// Deprecated. Please use \"cf_password\".
 	// Deprecated
-	PcfPassword string `json:"pcf_password"`
+	PcfPassword string `json:"pcf_password,omitempty"`
 
 	// Deprecated. Please use \"cf_username\".
 	// Deprecated
-	PcfUsername string `json:"pcf_username"`
+	PcfUsername string `json:"pcf_username,omitempty"`
 }
 
 // NewCloudFoundryConfigureRequestWithDefaults instantiates a new CloudFoundryConfigureRequest object
@@ -71,26 +67,4 @@ func NewCloudFoundryConfigureRequestWithDefaults() *CloudFoundryConfigureRequest
 	this.LoginMaxSecondsNotBefore = 300
 
 	return &this
-}
-
-func (o CloudFoundryConfigureRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["cf_api_addr"] = o.CfApiAddr
-	toSerialize["cf_api_mutual_tls_certificate"] = o.CfApiMutualTlsCertificate
-	toSerialize["cf_api_mutual_tls_key"] = o.CfApiMutualTlsKey
-	toSerialize["cf_api_trusted_certificates"] = o.CfApiTrustedCertificates
-	toSerialize["cf_client_id"] = o.CfClientId
-	toSerialize["cf_client_secret"] = o.CfClientSecret
-	toSerialize["cf_password"] = o.CfPassword
-	toSerialize["cf_username"] = o.CfUsername
-	toSerialize["identity_ca_certificates"] = o.IdentityCaCertificates
-	toSerialize["login_max_seconds_not_after"] = o.LoginMaxSecondsNotAfter
-	toSerialize["login_max_seconds_not_before"] = o.LoginMaxSecondsNotBefore
-	toSerialize["pcf_api_addr"] = o.PcfApiAddr
-	toSerialize["pcf_api_trusted_certificates"] = o.PcfApiTrustedCertificates
-	toSerialize["pcf_password"] = o.PcfPassword
-	toSerialize["pcf_username"] = o.PcfUsername
-
-	return json.Marshal(toSerialize)
 }

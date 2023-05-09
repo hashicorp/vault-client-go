@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // OidcIntrospectRequest struct for OidcIntrospectRequest
 type OidcIntrospectRequest struct {
 	// Optional client_id to verify
-	ClientId string `json:"client_id"`
+	ClientId string `json:"client_id,omitempty"`
 
 	// Token to verify
-	Token string `json:"token"`
+	Token string `json:"token,omitempty"`
 }
 
 // NewOidcIntrospectRequestWithDefaults instantiates a new OidcIntrospectRequest object
@@ -25,13 +21,4 @@ func NewOidcIntrospectRequestWithDefaults() *OidcIntrospectRequest {
 	var this OidcIntrospectRequest
 
 	return &this
-}
-
-func (o OidcIntrospectRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["client_id"] = o.ClientId
-	toSerialize["token"] = o.Token
-
-	return json.Marshal(toSerialize)
 }

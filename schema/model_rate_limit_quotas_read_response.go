@@ -5,25 +5,21 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RateLimitQuotasReadResponse struct for RateLimitQuotasReadResponse
 type RateLimitQuotasReadResponse struct {
-	BlockInterval int32 `json:"block_interval"`
+	BlockInterval int32 `json:"block_interval,omitempty"`
 
-	Interval int32 `json:"interval"`
+	Interval int32 `json:"interval,omitempty"`
 
-	Name string `json:"name"`
+	Name string `json:"name,omitempty"`
 
-	Path string `json:"path"`
+	Path string `json:"path,omitempty"`
 
-	Rate float32 `json:"rate"`
+	Rate float32 `json:"rate,omitempty"`
 
-	Role string `json:"role"`
+	Role string `json:"role,omitempty"`
 
-	Type string `json:"type"`
+	Type string `json:"type,omitempty"`
 }
 
 // NewRateLimitQuotasReadResponseWithDefaults instantiates a new RateLimitQuotasReadResponse object
@@ -33,18 +29,4 @@ func NewRateLimitQuotasReadResponseWithDefaults() *RateLimitQuotasReadResponse {
 	var this RateLimitQuotasReadResponse
 
 	return &this
-}
-
-func (o RateLimitQuotasReadResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["block_interval"] = o.BlockInterval
-	toSerialize["interval"] = o.Interval
-	toSerialize["name"] = o.Name
-	toSerialize["path"] = o.Path
-	toSerialize["rate"] = o.Rate
-	toSerialize["role"] = o.Role
-	toSerialize["type"] = o.Type
-
-	return json.Marshal(toSerialize)
 }

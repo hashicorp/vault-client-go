@@ -5,31 +5,27 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RootTokenGenerationReadProgressResponse struct for RootTokenGenerationReadProgressResponse
 type RootTokenGenerationReadProgressResponse struct {
-	Complete bool `json:"complete"`
+	Complete bool `json:"complete,omitempty"`
 
-	EncodedRootToken string `json:"encoded_root_token"`
+	EncodedRootToken string `json:"encoded_root_token,omitempty"`
 
-	EncodedToken string `json:"encoded_token"`
+	EncodedToken string `json:"encoded_token,omitempty"`
 
-	Nonce string `json:"nonce"`
+	Nonce string `json:"nonce,omitempty"`
 
-	Otp string `json:"otp"`
+	Otp string `json:"otp,omitempty"`
 
-	OtpLength int32 `json:"otp_length"`
+	OtpLength int32 `json:"otp_length,omitempty"`
 
-	PgpFingerprint string `json:"pgp_fingerprint"`
+	PgpFingerprint string `json:"pgp_fingerprint,omitempty"`
 
-	Progress int32 `json:"progress"`
+	Progress int32 `json:"progress,omitempty"`
 
-	Required int32 `json:"required"`
+	Required int32 `json:"required,omitempty"`
 
-	Started bool `json:"started"`
+	Started bool `json:"started,omitempty"`
 }
 
 // NewRootTokenGenerationReadProgressResponseWithDefaults instantiates a new RootTokenGenerationReadProgressResponse object
@@ -39,21 +35,4 @@ func NewRootTokenGenerationReadProgressResponseWithDefaults() *RootTokenGenerati
 	var this RootTokenGenerationReadProgressResponse
 
 	return &this
-}
-
-func (o RootTokenGenerationReadProgressResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["complete"] = o.Complete
-	toSerialize["encoded_root_token"] = o.EncodedRootToken
-	toSerialize["encoded_token"] = o.EncodedToken
-	toSerialize["nonce"] = o.Nonce
-	toSerialize["otp"] = o.Otp
-	toSerialize["otp_length"] = o.OtpLength
-	toSerialize["pgp_fingerprint"] = o.PgpFingerprint
-	toSerialize["progress"] = o.Progress
-	toSerialize["required"] = o.Required
-	toSerialize["started"] = o.Started
-
-	return json.Marshal(toSerialize)
 }

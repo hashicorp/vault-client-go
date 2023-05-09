@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleLookUpSecretIdRequest struct for AppRoleLookUpSecretIdRequest
 type AppRoleLookUpSecretIdRequest struct {
 	// SecretID attached to the role.
-	SecretId string `json:"secret_id"`
+	SecretId string `json:"secret_id,omitempty"`
 }
 
 // NewAppRoleLookUpSecretIdRequestWithDefaults instantiates a new AppRoleLookUpSecretIdRequest object
@@ -22,12 +18,4 @@ func NewAppRoleLookUpSecretIdRequestWithDefaults() *AppRoleLookUpSecretIdRequest
 	var this AppRoleLookUpSecretIdRequest
 
 	return &this
-}
-
-func (o AppRoleLookUpSecretIdRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["secret_id"] = o.SecretId
-
-	return json.Marshal(toSerialize)
 }

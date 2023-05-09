@@ -5,15 +5,11 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RekeyVerificationUpdateResponse struct for RekeyVerificationUpdateResponse
 type RekeyVerificationUpdateResponse struct {
-	Complete bool `json:"complete"`
+	Complete bool `json:"complete,omitempty"`
 
-	Nounce string `json:"nounce"`
+	Nounce string `json:"nounce,omitempty"`
 }
 
 // NewRekeyVerificationUpdateResponseWithDefaults instantiates a new RekeyVerificationUpdateResponse object
@@ -23,13 +19,4 @@ func NewRekeyVerificationUpdateResponseWithDefaults() *RekeyVerificationUpdateRe
 	var this RekeyVerificationUpdateResponse
 
 	return &this
-}
-
-func (o RekeyVerificationUpdateResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["complete"] = o.Complete
-	toSerialize["nounce"] = o.Nounce
-
-	return json.Marshal(toSerialize)
 }

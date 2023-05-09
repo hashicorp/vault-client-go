@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // OktaWriteUserRequest struct for OktaWriteUserRequest
 type OktaWriteUserRequest struct {
 	// List of groups associated with the user.
-	Groups []string `json:"groups"`
+	Groups []string `json:"groups,omitempty"`
 
 	// List of policies associated with the user.
-	Policies []string `json:"policies"`
+	Policies []string `json:"policies,omitempty"`
 }
 
 // NewOktaWriteUserRequestWithDefaults instantiates a new OktaWriteUserRequest object
@@ -25,13 +21,4 @@ func NewOktaWriteUserRequestWithDefaults() *OktaWriteUserRequest {
 	var this OktaWriteUserRequest
 
 	return &this
-}
-
-func (o OktaWriteUserRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["groups"] = o.Groups
-	toSerialize["policies"] = o.Policies
-
-	return json.Marshal(toSerialize)
 }

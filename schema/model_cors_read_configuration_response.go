@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // CorsReadConfigurationResponse struct for CorsReadConfigurationResponse
 type CorsReadConfigurationResponse struct {
-	AllowedHeaders []string `json:"allowed_headers"`
+	AllowedHeaders []string `json:"allowed_headers,omitempty"`
 
-	AllowedOrigins []string `json:"allowed_origins"`
+	AllowedOrigins []string `json:"allowed_origins,omitempty"`
 
-	Enabled bool `json:"enabled"`
+	Enabled bool `json:"enabled,omitempty"`
 }
 
 // NewCorsReadConfigurationResponseWithDefaults instantiates a new CorsReadConfigurationResponse object
@@ -25,14 +21,4 @@ func NewCorsReadConfigurationResponseWithDefaults() *CorsReadConfigurationRespon
 	var this CorsReadConfigurationResponse
 
 	return &this
-}
-
-func (o CorsReadConfigurationResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["allowed_headers"] = o.AllowedHeaders
-	toSerialize["allowed_origins"] = o.AllowedOrigins
-	toSerialize["enabled"] = o.Enabled
-
-	return json.Marshal(toSerialize)
 }

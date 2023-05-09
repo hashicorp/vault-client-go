@@ -5,13 +5,9 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GenerateRandomWithSourceResponse struct for GenerateRandomWithSourceResponse
 type GenerateRandomWithSourceResponse struct {
-	RandomBytes string `json:"random_bytes"`
+	RandomBytes string `json:"random_bytes,omitempty"`
 }
 
 // NewGenerateRandomWithSourceResponseWithDefaults instantiates a new GenerateRandomWithSourceResponse object
@@ -21,12 +17,4 @@ func NewGenerateRandomWithSourceResponseWithDefaults() *GenerateRandomWithSource
 	var this GenerateRandomWithSourceResponse
 
 	return &this
-}
-
-func (o GenerateRandomWithSourceResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["random_bytes"] = o.RandomBytes
-
-	return json.Marshal(toSerialize)
 }

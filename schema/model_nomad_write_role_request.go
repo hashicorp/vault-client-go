@@ -5,20 +5,16 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // NomadWriteRoleRequest struct for NomadWriteRoleRequest
 type NomadWriteRoleRequest struct {
 	// Boolean value describing if the token should be global or not. Defaults to false.
-	Global bool `json:"global"`
+	Global bool `json:"global,omitempty"`
 
 	// Comma-separated string or list of policies as previously created in Nomad. Required for 'client' token.
-	Policies []string `json:"policies"`
+	Policies []string `json:"policies,omitempty"`
 
 	// Which type of token to create: 'client' or 'management'. If a 'management' token, the \"policies\" parameter is not required. Defaults to 'client'.
-	Type string `json:"type"`
+	Type string `json:"type,omitempty"`
 }
 
 // NewNomadWriteRoleRequestWithDefaults instantiates a new NomadWriteRoleRequest object
@@ -30,14 +26,4 @@ func NewNomadWriteRoleRequestWithDefaults() *NomadWriteRoleRequest {
 	this.Type = "client"
 
 	return &this
-}
-
-func (o NomadWriteRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["global"] = o.Global
-	toSerialize["policies"] = o.Policies
-	toSerialize["type"] = o.Type
-
-	return json.Marshal(toSerialize)
 }

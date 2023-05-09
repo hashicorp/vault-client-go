@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GoogleCloudKmsSignRequest struct for GoogleCloudKmsSignRequest
 type GoogleCloudKmsSignRequest struct {
 	// Digest to sign. This digest must use the same SHA algorithm as the underlying Cloud KMS key. The digest must be the base64-encoded binary value. This field is required.
-	Digest string `json:"digest"`
+	Digest string `json:"digest,omitempty"`
 
 	// Integer version of the crypto key version to use for signing. This field is required.
-	KeyVersion int32 `json:"key_version"`
+	KeyVersion int32 `json:"key_version,omitempty"`
 }
 
 // NewGoogleCloudKmsSignRequestWithDefaults instantiates a new GoogleCloudKmsSignRequest object
@@ -25,13 +21,4 @@ func NewGoogleCloudKmsSignRequestWithDefaults() *GoogleCloudKmsSignRequest {
 	var this GoogleCloudKmsSignRequest
 
 	return &this
-}
-
-func (o GoogleCloudKmsSignRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["digest"] = o.Digest
-	toSerialize["key_version"] = o.KeyVersion
-
-	return json.Marshal(toSerialize)
 }

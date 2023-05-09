@@ -5,21 +5,17 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RekeyVerificationCancelResponse struct for RekeyVerificationCancelResponse
 type RekeyVerificationCancelResponse struct {
-	N int32 `json:"n"`
+	N int32 `json:"n,omitempty"`
 
-	Nounce string `json:"nounce"`
+	Nounce string `json:"nounce,omitempty"`
 
-	Progress int32 `json:"progress"`
+	Progress int32 `json:"progress,omitempty"`
 
-	Started string `json:"started"`
+	Started string `json:"started,omitempty"`
 
-	T int32 `json:"t"`
+	T int32 `json:"t,omitempty"`
 }
 
 // NewRekeyVerificationCancelResponseWithDefaults instantiates a new RekeyVerificationCancelResponse object
@@ -29,16 +25,4 @@ func NewRekeyVerificationCancelResponseWithDefaults() *RekeyVerificationCancelRe
 	var this RekeyVerificationCancelResponse
 
 	return &this
-}
-
-func (o RekeyVerificationCancelResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["n"] = o.N
-	toSerialize["nounce"] = o.Nounce
-	toSerialize["progress"] = o.Progress
-	toSerialize["started"] = o.Started
-	toSerialize["t"] = o.T
-
-	return json.Marshal(toSerialize)
 }

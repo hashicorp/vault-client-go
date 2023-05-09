@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleWriteRoleIdRequest struct for AppRoleWriteRoleIdRequest
 type AppRoleWriteRoleIdRequest struct {
 	// Identifier of the role. Defaults to a UUID.
-	RoleId string `json:"role_id"`
+	RoleId string `json:"role_id,omitempty"`
 }
 
 // NewAppRoleWriteRoleIdRequestWithDefaults instantiates a new AppRoleWriteRoleIdRequest object
@@ -22,12 +18,4 @@ func NewAppRoleWriteRoleIdRequestWithDefaults() *AppRoleWriteRoleIdRequest {
 	var this AppRoleWriteRoleIdRequest
 
 	return &this
-}
-
-func (o AppRoleWriteRoleIdRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["role_id"] = o.RoleId
-
-	return json.Marshal(toSerialize)
 }

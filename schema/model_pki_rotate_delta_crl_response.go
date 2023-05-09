@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiRotateDeltaCrlResponse struct for PkiRotateDeltaCrlResponse
 type PkiRotateDeltaCrlResponse struct {
 	// Whether rotation was successful
-	Success bool `json:"success"`
+	Success bool `json:"success,omitempty"`
 }
 
 // NewPkiRotateDeltaCrlResponseWithDefaults instantiates a new PkiRotateDeltaCrlResponse object
@@ -22,12 +18,4 @@ func NewPkiRotateDeltaCrlResponseWithDefaults() *PkiRotateDeltaCrlResponse {
 	var this PkiRotateDeltaCrlResponse
 
 	return &this
-}
-
-func (o PkiRotateDeltaCrlResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["success"] = o.Success
-
-	return json.Marshal(toSerialize)
 }

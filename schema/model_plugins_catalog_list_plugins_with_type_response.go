@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PluginsCatalogListPluginsWithTypeResponse struct for PluginsCatalogListPluginsWithTypeResponse
 type PluginsCatalogListPluginsWithTypeResponse struct {
 	// List of plugin names in the catalog
-	Keys []string `json:"keys"`
+	Keys []string `json:"keys,omitempty"`
 }
 
 // NewPluginsCatalogListPluginsWithTypeResponseWithDefaults instantiates a new PluginsCatalogListPluginsWithTypeResponse object
@@ -22,12 +18,4 @@ func NewPluginsCatalogListPluginsWithTypeResponseWithDefaults() *PluginsCatalogL
 	var this PluginsCatalogListPluginsWithTypeResponse
 
 	return &this
-}
-
-func (o PluginsCatalogListPluginsWithTypeResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["keys"] = o.Keys
-
-	return json.Marshal(toSerialize)
 }

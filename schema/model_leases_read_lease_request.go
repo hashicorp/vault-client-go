@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // LeasesReadLeaseRequest struct for LeasesReadLeaseRequest
 type LeasesReadLeaseRequest struct {
 	// The lease identifier to renew. This is included with a lease.
-	LeaseId string `json:"lease_id"`
+	LeaseId string `json:"lease_id,omitempty"`
 }
 
 // NewLeasesReadLeaseRequestWithDefaults instantiates a new LeasesReadLeaseRequest object
@@ -22,12 +18,4 @@ func NewLeasesReadLeaseRequestWithDefaults() *LeasesReadLeaseRequest {
 	var this LeasesReadLeaseRequest
 
 	return &this
-}
-
-func (o LeasesReadLeaseRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["lease_id"] = o.LeaseId
-
-	return json.Marshal(toSerialize)
 }

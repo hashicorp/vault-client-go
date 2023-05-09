@@ -5,20 +5,16 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // TransitGenerateRandomWithSourceRequest struct for TransitGenerateRandomWithSourceRequest
 type TransitGenerateRandomWithSourceRequest struct {
 	// The number of bytes to generate (POST body parameter). Defaults to 32 (256 bits).
-	Bytes int32 `json:"bytes"`
+	Bytes int32 `json:"bytes,omitempty"`
 
 	// Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".
-	Format string `json:"format"`
+	Format string `json:"format,omitempty"`
 
 	// The number of bytes to generate (POST URL parameter)
-	Urlbytes string `json:"urlbytes"`
+	Urlbytes string `json:"urlbytes,omitempty"`
 }
 
 // NewTransitGenerateRandomWithSourceRequestWithDefaults instantiates a new TransitGenerateRandomWithSourceRequest object
@@ -31,14 +27,4 @@ func NewTransitGenerateRandomWithSourceRequestWithDefaults() *TransitGenerateRan
 	this.Format = "base64"
 
 	return &this
-}
-
-func (o TransitGenerateRandomWithSourceRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["bytes"] = o.Bytes
-	toSerialize["format"] = o.Format
-	toSerialize["urlbytes"] = o.Urlbytes
-
-	return json.Marshal(toSerialize)
 }

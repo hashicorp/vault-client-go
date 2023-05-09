@@ -5,18 +5,15 @@
 
 package schema
 
-import (
-	"encoding/json"
-	"time"
-)
+import "time"
 
 // ReadWrappingPropertiesResponse struct for ReadWrappingPropertiesResponse
 type ReadWrappingPropertiesResponse struct {
-	CreationPath string `json:"creation_path"`
+	CreationPath string `json:"creation_path,omitempty"`
 
-	CreationTime time.Time `json:"creation_time"`
+	CreationTime time.Time `json:"creation_time,omitempty"`
 
-	CreationTtl int32 `json:"creation_ttl"`
+	CreationTtl int32 `json:"creation_ttl,omitempty"`
 }
 
 // NewReadWrappingPropertiesResponseWithDefaults instantiates a new ReadWrappingPropertiesResponse object
@@ -26,14 +23,4 @@ func NewReadWrappingPropertiesResponseWithDefaults() *ReadWrappingPropertiesResp
 	var this ReadWrappingPropertiesResponse
 
 	return &this
-}
-
-func (o ReadWrappingPropertiesResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["creation_path"] = o.CreationPath
-	toSerialize["creation_time"] = o.CreationTime
-	toSerialize["creation_ttl"] = o.CreationTtl
-
-	return json.Marshal(toSerialize)
 }

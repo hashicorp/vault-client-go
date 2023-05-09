@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiWriteKeyRequest struct for PkiWriteKeyRequest
 type PkiWriteKeyRequest struct {
 	// Human-readable name for this key.
-	KeyName string `json:"key_name"`
+	KeyName string `json:"key_name,omitempty"`
 }
 
 // NewPkiWriteKeyRequestWithDefaults instantiates a new PkiWriteKeyRequest object
@@ -22,12 +18,4 @@ func NewPkiWriteKeyRequestWithDefaults() *PkiWriteKeyRequest {
 	var this PkiWriteKeyRequest
 
 	return &this
-}
-
-func (o PkiWriteKeyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["key_name"] = o.KeyName
-
-	return json.Marshal(toSerialize)
 }

@@ -5,23 +5,19 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // MfaWriteLoginEnforcementRequest struct for MfaWriteLoginEnforcementRequest
 type MfaWriteLoginEnforcementRequest struct {
 	// Array of auth mount accessor IDs
-	AuthMethodAccessors []string `json:"auth_method_accessors"`
+	AuthMethodAccessors []string `json:"auth_method_accessors,omitempty"`
 
 	// Array of auth mount types
-	AuthMethodTypes []string `json:"auth_method_types"`
+	AuthMethodTypes []string `json:"auth_method_types,omitempty"`
 
 	// Array of identity entity IDs
-	IdentityEntityIds []string `json:"identity_entity_ids"`
+	IdentityEntityIds []string `json:"identity_entity_ids,omitempty"`
 
 	// Array of identity group IDs
-	IdentityGroupIds []string `json:"identity_group_ids"`
+	IdentityGroupIds []string `json:"identity_group_ids,omitempty"`
 
 	// Array of Method IDs that determine what methods will be enforced
 	MfaMethodIds []string `json:"mfa_method_ids"`
@@ -34,16 +30,4 @@ func NewMfaWriteLoginEnforcementRequestWithDefaults() *MfaWriteLoginEnforcementR
 	var this MfaWriteLoginEnforcementRequest
 
 	return &this
-}
-
-func (o MfaWriteLoginEnforcementRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["auth_method_accessors"] = o.AuthMethodAccessors
-	toSerialize["auth_method_types"] = o.AuthMethodTypes
-	toSerialize["identity_entity_ids"] = o.IdentityEntityIds
-	toSerialize["identity_group_ids"] = o.IdentityGroupIds
-	toSerialize["mfa_method_ids"] = o.MfaMethodIds
-
-	return json.Marshal(toSerialize)
 }

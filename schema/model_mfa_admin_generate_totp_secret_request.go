@@ -5,10 +5,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // MfaAdminGenerateTotpSecretRequest struct for MfaAdminGenerateTotpSecretRequest
 type MfaAdminGenerateTotpSecretRequest struct {
 	// Entity ID on which the generated secret needs to get stored.
@@ -25,13 +21,4 @@ func NewMfaAdminGenerateTotpSecretRequestWithDefaults() *MfaAdminGenerateTotpSec
 	var this MfaAdminGenerateTotpSecretRequest
 
 	return &this
-}
-
-func (o MfaAdminGenerateTotpSecretRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["entity_id"] = o.EntityId
-	toSerialize["method_id"] = o.MethodId
-
-	return json.Marshal(toSerialize)
 }

@@ -5,29 +5,25 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // NomadConfigureAccessRequest struct for NomadConfigureAccessRequest
 type NomadConfigureAccessRequest struct {
 	// Nomad server address
-	Address string `json:"address"`
+	Address string `json:"address,omitempty"`
 
 	// CA certificate to use when verifying Nomad server certificate, must be x509 PEM encoded.
-	CaCert string `json:"ca_cert"`
+	CaCert string `json:"ca_cert,omitempty"`
 
 	// Client certificate used for Nomad's TLS communication, must be x509 PEM encoded and if this is set you need to also set client_key.
-	ClientCert string `json:"client_cert"`
+	ClientCert string `json:"client_cert,omitempty"`
 
 	// Client key used for Nomad's TLS communication, must be x509 PEM encoded and if this is set you need to also set client_cert.
-	ClientKey string `json:"client_key"`
+	ClientKey string `json:"client_key,omitempty"`
 
 	// Max length for name of generated Nomad tokens
-	MaxTokenNameLength int32 `json:"max_token_name_length"`
+	MaxTokenNameLength int32 `json:"max_token_name_length,omitempty"`
 
 	// Token for API calls
-	Token string `json:"token"`
+	Token string `json:"token,omitempty"`
 }
 
 // NewNomadConfigureAccessRequestWithDefaults instantiates a new NomadConfigureAccessRequest object
@@ -37,17 +33,4 @@ func NewNomadConfigureAccessRequestWithDefaults() *NomadConfigureAccessRequest {
 	var this NomadConfigureAccessRequest
 
 	return &this
-}
-
-func (o NomadConfigureAccessRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["address"] = o.Address
-	toSerialize["ca_cert"] = o.CaCert
-	toSerialize["client_cert"] = o.ClientCert
-	toSerialize["client_key"] = o.ClientKey
-	toSerialize["max_token_name_length"] = o.MaxTokenNameLength
-	toSerialize["token"] = o.Token
-
-	return json.Marshal(toSerialize)
 }

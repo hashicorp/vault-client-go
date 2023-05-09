@@ -5,13 +5,9 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AuditingCalculateHashRequest struct for AuditingCalculateHashRequest
 type AuditingCalculateHashRequest struct {
-	Input string `json:"input"`
+	Input string `json:"input,omitempty"`
 }
 
 // NewAuditingCalculateHashRequestWithDefaults instantiates a new AuditingCalculateHashRequest object
@@ -21,12 +17,4 @@ func NewAuditingCalculateHashRequestWithDefaults() *AuditingCalculateHashRequest
 	var this AuditingCalculateHashRequest
 
 	return &this
-}
-
-func (o AuditingCalculateHashRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["input"] = o.Input
-
-	return json.Marshal(toSerialize)
 }

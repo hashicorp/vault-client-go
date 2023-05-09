@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AwsConfigureIdentityWhitelistTidyOperationRequest struct for AwsConfigureIdentityWhitelistTidyOperationRequest
 type AwsConfigureIdentityWhitelistTidyOperationRequest struct {
 	// If set to 'true', disables the periodic tidying of the 'identity-accesslist/<instance_id>' entries.
-	DisablePeriodicTidy bool `json:"disable_periodic_tidy"`
+	DisablePeriodicTidy bool `json:"disable_periodic_tidy,omitempty"`
 
 	// The amount of extra time that must have passed beyond the identity's expiration, before it is removed from the backend storage.
-	SafetyBuffer int32 `json:"safety_buffer"`
+	SafetyBuffer int32 `json:"safety_buffer,omitempty"`
 }
 
 // NewAwsConfigureIdentityWhitelistTidyOperationRequestWithDefaults instantiates a new AwsConfigureIdentityWhitelistTidyOperationRequest object
@@ -28,13 +24,4 @@ func NewAwsConfigureIdentityWhitelistTidyOperationRequestWithDefaults() *AwsConf
 	this.SafetyBuffer = 259200
 
 	return &this
-}
-
-func (o AwsConfigureIdentityWhitelistTidyOperationRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["disable_periodic_tidy"] = o.DisablePeriodicTidy
-	toSerialize["safety_buffer"] = o.SafetyBuffer
-
-	return json.Marshal(toSerialize)
 }

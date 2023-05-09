@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // JwtLoginRequest struct for JwtLoginRequest
 type JwtLoginRequest struct {
 	// The signed JWT to validate.
-	Jwt string `json:"jwt"`
+	Jwt string `json:"jwt,omitempty"`
 
 	// The role to log in against.
-	Role string `json:"role"`
+	Role string `json:"role,omitempty"`
 }
 
 // NewJwtLoginRequestWithDefaults instantiates a new JwtLoginRequest object
@@ -25,13 +21,4 @@ func NewJwtLoginRequestWithDefaults() *JwtLoginRequest {
 	var this JwtLoginRequest
 
 	return &this
-}
-
-func (o JwtLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["jwt"] = o.Jwt
-	toSerialize["role"] = o.Role
-
-	return json.Marshal(toSerialize)
 }

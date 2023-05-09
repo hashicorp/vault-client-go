@@ -5,10 +5,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // CloudFoundryLoginRequest struct for CloudFoundryLoginRequest
 type CloudFoundryLoginRequest struct {
 	// The full body of the file available at the CF_INSTANCE_CERT path on the CF instance.
@@ -31,15 +27,4 @@ func NewCloudFoundryLoginRequestWithDefaults() *CloudFoundryLoginRequest {
 	var this CloudFoundryLoginRequest
 
 	return &this
-}
-
-func (o CloudFoundryLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["cf_instance_cert"] = o.CfInstanceCert
-	toSerialize["role"] = o.Role
-	toSerialize["signature"] = o.Signature
-	toSerialize["signing_time"] = o.SigningTime
-
-	return json.Marshal(toSerialize)
 }

@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleReadBindSecretIdResponse struct for AppRoleReadBindSecretIdResponse
 type AppRoleReadBindSecretIdResponse struct {
 	// Impose secret_id to be presented when logging in using this role. Defaults to 'true'.
-	BindSecretId bool `json:"bind_secret_id"`
+	BindSecretId bool `json:"bind_secret_id,omitempty"`
 }
 
 // NewAppRoleReadBindSecretIdResponseWithDefaults instantiates a new AppRoleReadBindSecretIdResponse object
@@ -22,12 +18,4 @@ func NewAppRoleReadBindSecretIdResponseWithDefaults() *AppRoleReadBindSecretIdRe
 	var this AppRoleReadBindSecretIdResponse
 
 	return &this
-}
-
-func (o AppRoleReadBindSecretIdResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["bind_secret_id"] = o.BindSecretId
-
-	return json.Marshal(toSerialize)
 }

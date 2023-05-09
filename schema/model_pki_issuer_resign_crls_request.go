@@ -5,26 +5,22 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiIssuerResignCrlsRequest struct for PkiIssuerResignCrlsRequest
 type PkiIssuerResignCrlsRequest struct {
 	// The sequence number to be written within the CRL Number extension.
-	CrlNumber int32 `json:"crl_number"`
+	CrlNumber int32 `json:"crl_number,omitempty"`
 
 	// A list of PEM encoded CRLs to combine, originally signed by the requested issuer.
-	Crls []string `json:"crls"`
+	Crls []string `json:"crls,omitempty"`
 
 	// Using a zero or greater value specifies the base CRL revision number to encode within a Delta CRL indicator extension, otherwise the extension will not be added.
-	DeltaCrlBaseNumber int32 `json:"delta_crl_base_number"`
+	DeltaCrlBaseNumber int32 `json:"delta_crl_base_number,omitempty"`
 
 	// The format of the combined CRL, can be \"pem\" or \"der\". If \"der\", the value will be base64 encoded. Defaults to \"pem\".
-	Format string `json:"format"`
+	Format string `json:"format,omitempty"`
 
 	// The amount of time the generated CRL should be valid; defaults to 72 hours.
-	NextUpdate string `json:"next_update"`
+	NextUpdate string `json:"next_update,omitempty"`
 }
 
 // NewPkiIssuerResignCrlsRequestWithDefaults instantiates a new PkiIssuerResignCrlsRequest object
@@ -38,16 +34,4 @@ func NewPkiIssuerResignCrlsRequestWithDefaults() *PkiIssuerResignCrlsRequest {
 	this.NextUpdate = "72h"
 
 	return &this
-}
-
-func (o PkiIssuerResignCrlsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["crl_number"] = o.CrlNumber
-	toSerialize["crls"] = o.Crls
-	toSerialize["delta_crl_base_number"] = o.DeltaCrlBaseNumber
-	toSerialize["format"] = o.Format
-	toSerialize["next_update"] = o.NextUpdate
-
-	return json.Marshal(toSerialize)
 }

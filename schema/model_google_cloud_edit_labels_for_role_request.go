@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GoogleCloudEditLabelsForRoleRequest struct for GoogleCloudEditLabelsForRoleRequest
 type GoogleCloudEditLabelsForRoleRequest struct {
 	// BoundLabels to add (in $key:$value)
-	Add []string `json:"add"`
+	Add []string `json:"add,omitempty"`
 
 	// Label key values to remove
-	Remove []string `json:"remove"`
+	Remove []string `json:"remove,omitempty"`
 }
 
 // NewGoogleCloudEditLabelsForRoleRequestWithDefaults instantiates a new GoogleCloudEditLabelsForRoleRequest object
@@ -25,13 +21,4 @@ func NewGoogleCloudEditLabelsForRoleRequestWithDefaults() *GoogleCloudEditLabels
 	var this GoogleCloudEditLabelsForRoleRequest
 
 	return &this
-}
-
-func (o GoogleCloudEditLabelsForRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["add"] = o.Add
-	toSerialize["remove"] = o.Remove
-
-	return json.Marshal(toSerialize)
 }

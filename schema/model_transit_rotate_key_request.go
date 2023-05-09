@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // TransitRotateKeyRequest struct for TransitRotateKeyRequest
 type TransitRotateKeyRequest struct {
 	// The UUID of the managed key to use for the new version of this transit key
-	ManagedKeyId string `json:"managed_key_id"`
+	ManagedKeyId string `json:"managed_key_id,omitempty"`
 
 	// The name of the managed key to use for the new version of this transit key
-	ManagedKeyName string `json:"managed_key_name"`
+	ManagedKeyName string `json:"managed_key_name,omitempty"`
 }
 
 // NewTransitRotateKeyRequestWithDefaults instantiates a new TransitRotateKeyRequest object
@@ -25,13 +21,4 @@ func NewTransitRotateKeyRequestWithDefaults() *TransitRotateKeyRequest {
 	var this TransitRotateKeyRequest
 
 	return &this
-}
-
-func (o TransitRotateKeyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["managed_key_id"] = o.ManagedKeyId
-	toSerialize["managed_key_name"] = o.ManagedKeyName
-
-	return json.Marshal(toSerialize)
 }

@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // KvV2DestroyVersionsRequest struct for KvV2DestroyVersionsRequest
 type KvV2DestroyVersionsRequest struct {
 	// The versions to destroy. Their data will be permanently deleted.
-	Versions []int32 `json:"versions"`
+	Versions []int32 `json:"versions,omitempty"`
 }
 
 // NewKvV2DestroyVersionsRequestWithDefaults instantiates a new KvV2DestroyVersionsRequest object
@@ -22,12 +18,4 @@ func NewKvV2DestroyVersionsRequestWithDefaults() *KvV2DestroyVersionsRequest {
 	var this KvV2DestroyVersionsRequest
 
 	return &this
-}
-
-func (o KvV2DestroyVersionsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["versions"] = o.Versions
-
-	return json.Marshal(toSerialize)
 }

@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleWriteSecretIdTtlRequest struct for AppRoleWriteSecretIdTtlRequest
 type AppRoleWriteSecretIdTtlRequest struct {
 	// Duration in seconds after which the issued SecretID should expire. Defaults to 0, meaning no expiration.
-	SecretIdTtl int32 `json:"secret_id_ttl"`
+	SecretIdTtl int32 `json:"secret_id_ttl,omitempty"`
 }
 
 // NewAppRoleWriteSecretIdTtlRequestWithDefaults instantiates a new AppRoleWriteSecretIdTtlRequest object
@@ -22,12 +18,4 @@ func NewAppRoleWriteSecretIdTtlRequestWithDefaults() *AppRoleWriteSecretIdTtlReq
 	var this AppRoleWriteSecretIdTtlRequest
 
 	return &this
-}
-
-func (o AppRoleWriteSecretIdTtlRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["secret_id_ttl"] = o.SecretIdTtl
-
-	return json.Marshal(toSerialize)
 }

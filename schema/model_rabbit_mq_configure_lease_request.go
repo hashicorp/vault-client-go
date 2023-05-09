@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RabbitMqConfigureLeaseRequest struct for RabbitMqConfigureLeaseRequest
 type RabbitMqConfigureLeaseRequest struct {
 	// Duration after which the issued credentials should not be allowed to be renewed
-	MaxTtl int32 `json:"max_ttl"`
+	MaxTtl int32 `json:"max_ttl,omitempty"`
 
 	// Duration before which the issued credentials needs renewal
-	Ttl int32 `json:"ttl"`
+	Ttl int32 `json:"ttl,omitempty"`
 }
 
 // NewRabbitMqConfigureLeaseRequestWithDefaults instantiates a new RabbitMqConfigureLeaseRequest object
@@ -28,13 +24,4 @@ func NewRabbitMqConfigureLeaseRequestWithDefaults() *RabbitMqConfigureLeaseReque
 	this.Ttl = 0
 
 	return &this
-}
-
-func (o RabbitMqConfigureLeaseRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["max_ttl"] = o.MaxTtl
-	toSerialize["ttl"] = o.Ttl
-
-	return json.Marshal(toSerialize)
 }

@@ -171,7 +171,7 @@ _, err = client.Write(ctx, "/secret/data/my-secret", map[string]any{
 ### Using Generated Methods
 
 The library has a number of generated methods corresponding to the known Vault
-API endpoints. They are organized in four catagories:
+API endpoints. They are organized in four categories:
 
 ```go
 client.Auth     // authentication-related methods
@@ -225,7 +225,7 @@ Vault [plugins][doc-plugins] can be mounted at arbitrary mount paths using
 vault secrets enable -path=my/mount/path kv-v2
 ```
 
-To accomodate this behavior, the requests defined under `client.Auth` and
+To accommodate this behavior, the requests defined under `client.Auth` and
 `client.Secrets` can be offset with mount path overrides using the following
 syntax:
 

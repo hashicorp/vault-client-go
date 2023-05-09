@@ -21,7 +21,7 @@ import (
 
 // Read attempts to read the value stored at the given Vault path.
 func (c *Client) Read(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	modifiers, err := requestOptionsToRequestModifiers(options)
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
@@ -31,9 +31,9 @@ func (c *Client) Read(ctx context.Context, path string, options ...RequestOption
 		c,
 		http.MethodGet,
 		v1Path(path),
-		nil,                             // request body
-		modifiers.customQueryParameters, // request query parameters
-		modifiers,                       // request modifiers (headers & callbacks)
+		nil,                                    // request body
+		requestModifiers.customQueryParameters, // request query parameters
+		requestModifiers,                       // request modifiers (headers & callbacks)
 	)
 }
 
@@ -42,7 +42,7 @@ func (c *Client) Read(ctx context.Context, path string, options ...RequestOption
 //
 // Deprecated: use Read(..., vault.WithQueryParameters(...))
 func (c *Client) ReadWithParameters(ctx context.Context, path string, parameters url.Values, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	modifiers, err := requestOptionsToRequestModifiers(options)
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
@@ -52,9 +52,9 @@ func (c *Client) ReadWithParameters(ctx context.Context, path string, parameters
 		c,
 		http.MethodGet,
 		v1Path(path),
-		nil,        // request body
-		parameters, // request query parameters
-		modifiers,  // request modifiers (headers & callbacks)
+		nil,              // request body
+		parameters,       // request query parameters
+		requestModifiers, // request modifiers (headers & callbacks)
 	)
 }
 
@@ -64,7 +64,7 @@ func (c *Client) ReadWithParameters(ctx context.Context, path string, parameters
 //   - does not check the response for errors
 //   - does not apply the client-level request timeout
 func (c *Client) ReadRaw(ctx context.Context, path string, options ...RequestOption) (*http.Response, error) {
-	modifiers, err := requestOptionsToRequestModifiers(options)
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
@@ -74,9 +74,9 @@ func (c *Client) ReadRaw(ctx context.Context, path string, options ...RequestOpt
 		c,
 		http.MethodGet,
 		v1Path(path),
-		nil,                             // request body
-		modifiers.customQueryParameters, // request query parameters
-		modifiers,                       // request modifiers (headers & callbacks)
+		nil,                                    // request body
+		requestModifiers.customQueryParameters, // request query parameters
+		requestModifiers,                       // request modifiers (headers & callbacks)
 	)
 }
 
@@ -89,7 +89,7 @@ func (c *Client) ReadRaw(ctx context.Context, path string, options ...RequestOpt
 //
 // Deprecated: use ReadRaw(..., vault.WithQueryParameters(...))
 func (c *Client) ReadRawWithParameters(ctx context.Context, path string, parameters url.Values, options ...RequestOption) (*http.Response, error) {
-	modifiers, err := requestOptionsToRequestModifiers(options)
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
@@ -99,9 +99,9 @@ func (c *Client) ReadRawWithParameters(ctx context.Context, path string, paramet
 		c,
 		http.MethodGet,
 		v1Path(path),
-		nil,        // request body
-		parameters, // request query parameters
-		modifiers,  // request modifiers (headers & callbacks)
+		nil,              // request body
+		parameters,       // request query parameters
+		requestModifiers, // request modifiers (headers & callbacks)
 	)
 }
 
@@ -123,7 +123,7 @@ func (c *Client) WriteFromBytes(ctx context.Context, path string, body []byte, o
 
 // WriteFromReader attempts to write the given io.Reader data to the given Vault path.
 func (c *Client) WriteFromReader(ctx context.Context, path string, body io.Reader, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	modifiers, err := requestOptionsToRequestModifiers(options)
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
@@ -133,20 +133,20 @@ func (c *Client) WriteFromReader(ctx context.Context, path string, body io.Reade
 		c,
 		http.MethodPost,
 		v1Path(path),
-		body,                            // request body
-		modifiers.customQueryParameters, // request query parameters
-		modifiers,                       // request modifiers (headers & callbacks)
+		body,                                   // request body
+		requestModifiers.customQueryParameters, // request query parameters
+		requestModifiers,                       // request modifiers (headers & callbacks)
 	)
 }
 
 // List attempts to list the keys stored at the given Vault path.
 func (c *Client) List(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	modifiers, err := requestOptionsToRequestModifiers(options)
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestQueryParameters := modifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
 	return sendRequestParseResponse[map[string]interface{}](
@@ -156,13 +156,13 @@ func (c *Client) List(ctx context.Context, path string, options ...RequestOption
 		v1Path(path),
 		nil,                    // request body
 		requestQueryParameters, // request query parameters
-		modifiers,              // request modifiers (headers & callbacks)
+		requestModifiers,       // request modifiers (headers & callbacks)
 	)
 }
 
 // Delete attempts to delete the value stored at the given Vault path.
 func (c *Client) Delete(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	modifiers, err := requestOptionsToRequestModifiers(options)
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
@@ -172,9 +172,9 @@ func (c *Client) Delete(ctx context.Context, path string, options ...RequestOpti
 		c,
 		http.MethodDelete,
 		v1Path(path),
-		nil,                             // request body
-		modifiers.customQueryParameters, // request query parameters
-		modifiers,                       // request modifiers (headers & callbacks)
+		nil,                                    // request body
+		requestModifiers.customQueryParameters, // request query parameters
+		requestModifiers,                       // request modifiers (headers & callbacks)
 	)
 }
 
@@ -183,7 +183,7 @@ func (c *Client) Delete(ctx context.Context, path string, options ...RequestOpti
 //
 // Deprecated: use Delete(..., vault.WithQueryParameters(...))
 func (c *Client) DeleteWithParameters(ctx context.Context, path string, parameters url.Values, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	modifiers, err := requestOptionsToRequestModifiers(options)
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
@@ -193,9 +193,9 @@ func (c *Client) DeleteWithParameters(ctx context.Context, path string, paramete
 		c,
 		http.MethodDelete,
 		v1Path(path),
-		nil,        // request body
-		parameters, // request query parameters
-		modifiers,  // request modifiers (headers & callbacks)
+		nil,              // request body
+		parameters,       // request query parameters
+		requestModifiers, // request modifiers (headers & callbacks)
 	)
 }
 

@@ -30,7 +30,7 @@ func (s *System) AuditingCalculateHash(ctx context.Context, path string, request
 	requestPath := "/v1/sys/audit-hash/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[schema.AuditingCalculateHashResponse](
 		ctx,
@@ -54,7 +54,7 @@ func (s *System) AuditingDisableDevice(ctx context.Context, path string, options
 	requestPath := "/v1/sys/audit/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -77,7 +77,7 @@ func (s *System) AuditingDisableRequestHeader(ctx context.Context, header string
 	requestPath := "/v1/sys/config/auditing/request-headers/{header}"
 	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -101,7 +101,7 @@ func (s *System) AuditingEnableDevice(ctx context.Context, path string, request 
 	requestPath := "/v1/sys/audit/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -124,7 +124,7 @@ func (s *System) AuditingEnableRequestHeader(ctx context.Context, header string,
 	requestPath := "/v1/sys/config/auditing/request-headers/{header}"
 	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -146,7 +146,7 @@ func (s *System) AuditingListEnabledDevices(ctx context.Context, options ...Requ
 
 	requestPath := "/v1/sys/audit"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -168,7 +168,7 @@ func (s *System) AuditingListRequestHeaders(ctx context.Context, options ...Requ
 
 	requestPath := "/v1/sys/config/auditing/request-headers"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.AuditingListRequestHeadersResponse](
 		ctx,
@@ -191,7 +191,7 @@ func (s *System) AuditingReadRequestHeaderInformation(ctx context.Context, heade
 	requestPath := "/v1/sys/config/auditing/request-headers/{header}"
 	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -215,7 +215,7 @@ func (s *System) AuthDisableMethod(ctx context.Context, path string, options ...
 	requestPath := "/v1/sys/auth/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -240,7 +240,7 @@ func (s *System) AuthEnableMethod(ctx context.Context, path string, request sche
 	requestPath := "/v1/sys/auth/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -262,7 +262,7 @@ func (s *System) AuthListEnabledMethods(ctx context.Context, options ...RequestO
 
 	requestPath := "/v1/sys/auth"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -286,7 +286,7 @@ func (s *System) AuthReadConfiguration(ctx context.Context, path string, options
 	requestPath := "/v1/sys/auth/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.AuthReadConfigurationResponse](
 		ctx,
@@ -311,7 +311,7 @@ func (s *System) AuthReadTuningInformation(ctx context.Context, path string, opt
 	requestPath := "/v1/sys/auth/{path}/tune"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.AuthReadTuningInformationResponse](
 		ctx,
@@ -336,7 +336,7 @@ func (s *System) AuthTuneConfigurationParameters(ctx context.Context, path strin
 	requestPath := "/v1/sys/auth/{path}/tune"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -359,7 +359,7 @@ func (s *System) CollectHostInformation(ctx context.Context, options ...RequestO
 
 	requestPath := "/v1/sys/host-info"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.CollectHostInformationResponse](
 		ctx,
@@ -382,7 +382,7 @@ func (s *System) CollectInFlightRequestInformation(ctx context.Context, options 
 
 	requestPath := "/v1/sys/in-flight-req"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -404,7 +404,7 @@ func (s *System) CorsConfigure(ctx context.Context, request schema.CorsConfigure
 
 	requestPath := "/v1/sys/config/cors"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -426,7 +426,7 @@ func (s *System) CorsDeleteConfiguration(ctx context.Context, options ...Request
 
 	requestPath := "/v1/sys/config/cors"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -448,7 +448,7 @@ func (s *System) CorsReadConfiguration(ctx context.Context, options ...RequestOp
 
 	requestPath := "/v1/sys/config/cors"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.CorsReadConfigurationResponse](
 		ctx,
@@ -470,7 +470,7 @@ func (s *System) EncryptionKeyConfigureRotation(ctx context.Context, request sch
 
 	requestPath := "/v1/sys/rotate/config"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -492,7 +492,7 @@ func (s *System) EncryptionKeyReadRotationConfiguration(ctx context.Context, opt
 
 	requestPath := "/v1/sys/rotate/config"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.EncryptionKeyReadRotationConfigurationResponse](
 		ctx,
@@ -514,7 +514,7 @@ func (s *System) EncryptionKeyRotate(ctx context.Context, options ...RequestOpti
 
 	requestPath := "/v1/sys/rotate"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -536,7 +536,7 @@ func (s *System) EncryptionKeyStatus(ctx context.Context, options ...RequestOpti
 
 	requestPath := "/v1/sys/key-status"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -558,7 +558,7 @@ func (s *System) GenerateHash(ctx context.Context, request schema.GenerateHashRe
 
 	requestPath := "/v1/sys/tools/hash"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[schema.GenerateHashResponse](
 		ctx,
@@ -582,7 +582,7 @@ func (s *System) GenerateHashWithAlgorithm(ctx context.Context, urlalgorithm str
 	requestPath := "/v1/sys/tools/hash/{urlalgorithm}"
 	requestPath = strings.Replace(requestPath, "{"+"urlalgorithm"+"}", url.PathEscape(urlalgorithm), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[schema.GenerateHashWithAlgorithmResponse](
 		ctx,
@@ -604,7 +604,7 @@ func (s *System) GenerateRandom(ctx context.Context, request schema.GenerateRand
 
 	requestPath := "/v1/sys/tools/random"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[schema.GenerateRandomResponse](
 		ctx,
@@ -628,7 +628,7 @@ func (s *System) GenerateRandomWithBytes(ctx context.Context, urlbytes string, r
 	requestPath := "/v1/sys/tools/random/{urlbytes}"
 	requestPath = strings.Replace(requestPath, "{"+"urlbytes"+"}", url.PathEscape(urlbytes), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[schema.GenerateRandomWithBytesResponse](
 		ctx,
@@ -652,7 +652,7 @@ func (s *System) GenerateRandomWithSource(ctx context.Context, source string, re
 	requestPath := "/v1/sys/tools/random/{source}"
 	requestPath = strings.Replace(requestPath, "{"+"source"+"}", url.PathEscape(source), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[schema.GenerateRandomWithSourceResponse](
 		ctx,
@@ -678,7 +678,7 @@ func (s *System) GenerateRandomWithSourceAndBytes(ctx context.Context, source st
 	requestPath = strings.Replace(requestPath, "{"+"source"+"}", url.PathEscape(source), -1)
 	requestPath = strings.Replace(requestPath, "{"+"urlbytes"+"}", url.PathEscape(urlbytes), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[schema.GenerateRandomWithSourceAndBytesResponse](
 		ctx,
@@ -700,7 +700,7 @@ func (s *System) HaStatus(ctx context.Context, options ...RequestOption) (*Respo
 
 	requestPath := "/v1/sys/ha-status"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.HaStatusResponse](
 		ctx,
@@ -723,7 +723,7 @@ func (s *System) Initialize(ctx context.Context, request schema.InitializeReques
 
 	requestPath := "/v1/sys/init"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -745,7 +745,7 @@ func (s *System) InternalClientActivityConfigure(ctx context.Context, request sc
 
 	requestPath := "/v1/sys/internal/counters/config"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -767,7 +767,7 @@ func (s *System) InternalClientActivityExport(ctx context.Context, options ...Re
 
 	requestPath := "/v1/sys/internal/counters/activity/export"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -789,7 +789,7 @@ func (s *System) InternalClientActivityReadConfiguration(ctx context.Context, op
 
 	requestPath := "/v1/sys/internal/counters/config"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -811,7 +811,7 @@ func (s *System) InternalClientActivityReportCounts(ctx context.Context, options
 
 	requestPath := "/v1/sys/internal/counters/activity"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -833,7 +833,7 @@ func (s *System) InternalClientActivityReportCountsThisMonth(ctx context.Context
 
 	requestPath := "/v1/sys/internal/counters/activity/monthly"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -855,7 +855,7 @@ func (s *System) InternalCountEntities(ctx context.Context, options ...RequestOp
 
 	requestPath := "/v1/sys/internal/counters/entities"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.InternalCountEntitiesResponse](
 		ctx,
@@ -878,7 +878,7 @@ func (s *System) InternalCountRequests(ctx context.Context, options ...RequestOp
 
 	requestPath := "/v1/sys/internal/counters/requests"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -900,7 +900,7 @@ func (s *System) InternalCountTokens(ctx context.Context, options ...RequestOpti
 
 	requestPath := "/v1/sys/internal/counters/tokens"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.InternalCountTokensResponse](
 		ctx,
@@ -923,8 +923,8 @@ func (s *System) InternalGenerateOpenApiDocument(ctx context.Context, genericMou
 
 	requestPath := "/v1/sys/internal/specs/openapi"
 
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("genericMountPaths", url.QueryEscape(parameterToString(genericMountPaths)))
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("genericMountPaths", url.QueryEscape(parameterToString(genericMountPaths)))
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -948,7 +948,7 @@ func (s *System) InternalInspectRouter(ctx context.Context, tag string, options 
 	requestPath := "/v1/sys/internal/inspect/router/{tag}"
 	requestPath = strings.Replace(requestPath, "{"+"tag"+"}", url.PathEscape(tag), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -970,7 +970,7 @@ func (s *System) InternalUiListEnabledFeatureFlags(ctx context.Context, options 
 
 	requestPath := "/v1/sys/internal/ui/feature-flags"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.InternalUiListEnabledFeatureFlagsResponse](
 		ctx,
@@ -992,7 +992,7 @@ func (s *System) InternalUiListEnabledVisibleMounts(ctx context.Context, options
 
 	requestPath := "/v1/sys/internal/ui/mounts"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.InternalUiListEnabledVisibleMountsResponse](
 		ctx,
@@ -1014,7 +1014,7 @@ func (s *System) InternalUiListNamespaces(ctx context.Context, options ...Reques
 
 	requestPath := "/v1/sys/internal/ui/namespaces"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.InternalUiListNamespacesResponse](
 		ctx,
@@ -1038,7 +1038,7 @@ func (s *System) InternalUiReadMountInformation(ctx context.Context, path string
 	requestPath := "/v1/sys/internal/ui/mounts/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.InternalUiReadMountInformationResponse](
 		ctx,
@@ -1060,7 +1060,7 @@ func (s *System) InternalUiReadResultantAcl(ctx context.Context, options ...Requ
 
 	requestPath := "/v1/sys/internal/ui/resultant-acl"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.InternalUiReadResultantAclResponse](
 		ctx,
@@ -1082,7 +1082,7 @@ func (s *System) LeaderStatus(ctx context.Context, options ...RequestOption) (*R
 
 	requestPath := "/v1/sys/leader"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.LeaderStatusResponse](
 		ctx,
@@ -1104,7 +1104,7 @@ func (s *System) LeasesCount(ctx context.Context, options ...RequestOption) (*Re
 
 	requestPath := "/v1/sys/leases/count"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.LeasesCountResponse](
 		ctx,
@@ -1129,7 +1129,7 @@ func (s *System) LeasesForceRevokeLeaseWithPrefix(ctx context.Context, prefix st
 	requestPath := "/v1/sys/leases/revoke-force/{prefix}"
 	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1151,7 +1151,7 @@ func (s *System) LeasesList(ctx context.Context, options ...RequestOption) (*Res
 
 	requestPath := "/v1/sys/leases"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.LeasesListResponse](
 		ctx,
@@ -1173,8 +1173,8 @@ func (s *System) LeasesLookUp(ctx context.Context, options ...RequestOption) (*R
 
 	requestPath := "/v1/sys/leases/lookup/"
 
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("list", "true")
 
 	return sendRequestParseResponse[schema.LeasesLookUpResponse](
 		ctx,
@@ -1198,8 +1198,8 @@ func (s *System) LeasesLookUpWithPrefix(ctx context.Context, prefix string, opti
 	requestPath := "/v1/sys/leases/lookup/{prefix}"
 	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
 
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("list", "true")
 
 	return sendRequestParseResponse[schema.LeasesLookUpWithPrefixResponse](
 		ctx,
@@ -1221,7 +1221,7 @@ func (s *System) LeasesReadLease(ctx context.Context, request schema.LeasesReadL
 
 	requestPath := "/v1/sys/leases/lookup"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[schema.LeasesReadLeaseResponse](
 		ctx,
@@ -1243,7 +1243,7 @@ func (s *System) LeasesRenewLease(ctx context.Context, request schema.LeasesRene
 
 	requestPath := "/v1/sys/leases/renew"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1267,7 +1267,7 @@ func (s *System) LeasesRenewLeaseWithId(ctx context.Context, urlLeaseId string, 
 	requestPath := "/v1/sys/leases/renew/{url_lease_id}"
 	requestPath = strings.Replace(requestPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1289,7 +1289,7 @@ func (s *System) LeasesRevokeLease(ctx context.Context, request schema.LeasesRev
 
 	requestPath := "/v1/sys/leases/revoke"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1313,7 +1313,7 @@ func (s *System) LeasesRevokeLeaseWithId(ctx context.Context, urlLeaseId string,
 	requestPath := "/v1/sys/leases/revoke/{url_lease_id}"
 	requestPath = strings.Replace(requestPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1337,7 +1337,7 @@ func (s *System) LeasesRevokeLeaseWithPrefix(ctx context.Context, prefix string,
 	requestPath := "/v1/sys/leases/revoke-prefix/{prefix}"
 	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1359,7 +1359,7 @@ func (s *System) LeasesTidy(ctx context.Context, options ...RequestOption) (*Res
 
 	requestPath := "/v1/sys/leases/tidy"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1381,7 +1381,7 @@ func (s *System) ListExperimentalFeatures(ctx context.Context, options ...Reques
 
 	requestPath := "/v1/sys/experiments"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1403,7 +1403,7 @@ func (s *System) LockedUsersList(ctx context.Context, options ...RequestOption) 
 
 	requestPath := "/v1/sys/locked-users"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1429,7 +1429,7 @@ func (s *System) LockedUsersUnlock(ctx context.Context, aliasIdentifier string, 
 	requestPath = strings.Replace(requestPath, "{"+"alias_identifier"+"}", url.PathEscape(aliasIdentifier), -1)
 	requestPath = strings.Replace(requestPath, "{"+"mount_accessor"+"}", url.PathEscape(mountAccessor), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1451,7 +1451,7 @@ func (s *System) LoggersReadVerbosityLevel(ctx context.Context, options ...Reque
 
 	requestPath := "/v1/sys/loggers"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1475,7 +1475,7 @@ func (s *System) LoggersReadVerbosityLevelFor(ctx context.Context, name string, 
 	requestPath := "/v1/sys/loggers/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1497,7 +1497,7 @@ func (s *System) LoggersRevertVerbosityLevel(ctx context.Context, options ...Req
 
 	requestPath := "/v1/sys/loggers"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1521,7 +1521,7 @@ func (s *System) LoggersRevertVerbosityLevelFor(ctx context.Context, name string
 	requestPath := "/v1/sys/loggers/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1543,7 +1543,7 @@ func (s *System) LoggersUpdateVerbosityLevel(ctx context.Context, request schema
 
 	requestPath := "/v1/sys/loggers"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1567,7 +1567,7 @@ func (s *System) LoggersUpdateVerbosityLevelFor(ctx context.Context, name string
 	requestPath := "/v1/sys/loggers/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1590,8 +1590,8 @@ func (s *System) Metrics(ctx context.Context, format string, options ...RequestO
 
 	requestPath := "/v1/sys/metrics"
 
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("format", url.QueryEscape(parameterToString(format)))
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("format", url.QueryEscape(parameterToString(format)))
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1613,7 +1613,7 @@ func (s *System) MfaValidate(ctx context.Context, request schema.MfaValidateRequ
 
 	requestPath := "/v1/sys/mfa/validate"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1637,9 +1637,9 @@ func (s *System) Monitor(ctx context.Context, logFormat string, logLevel string,
 
 	requestPath := "/v1/sys/monitor"
 
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("logFormat", url.QueryEscape(parameterToString(logFormat)))
-	requestQueryParameters.Set("logLevel", url.QueryEscape(parameterToString(logLevel)))
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("logFormat", url.QueryEscape(parameterToString(logFormat)))
+	requestQueryParameters.Add("logLevel", url.QueryEscape(parameterToString(logLevel)))
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1663,7 +1663,7 @@ func (s *System) MountsDisableSecretsEngine(ctx context.Context, path string, op
 	requestPath := "/v1/sys/mounts/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1687,7 +1687,7 @@ func (s *System) MountsEnableSecretsEngine(ctx context.Context, path string, req
 	requestPath := "/v1/sys/mounts/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1709,7 +1709,7 @@ func (s *System) MountsListSecretsEngines(ctx context.Context, options ...Reques
 
 	requestPath := "/v1/sys/mounts"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1733,7 +1733,7 @@ func (s *System) MountsReadConfiguration(ctx context.Context, path string, optio
 	requestPath := "/v1/sys/mounts/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.MountsReadConfigurationResponse](
 		ctx,
@@ -1757,7 +1757,7 @@ func (s *System) MountsReadTuningInformation(ctx context.Context, path string, o
 	requestPath := "/v1/sys/mounts/{path}/tune"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.MountsReadTuningInformationResponse](
 		ctx,
@@ -1781,7 +1781,7 @@ func (s *System) MountsTuneConfigurationParameters(ctx context.Context, path str
 	requestPath := "/v1/sys/mounts/{path}/tune"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1803,7 +1803,7 @@ func (s *System) PluginsCatalogListPlugins(ctx context.Context, options ...Reque
 
 	requestPath := "/v1/sys/plugins/catalog"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.PluginsCatalogListPluginsResponse](
 		ctx,
@@ -1827,8 +1827,8 @@ func (s *System) PluginsCatalogListPluginsWithType(ctx context.Context, type_ st
 	requestPath := "/v1/sys/plugins/catalog/{type}"
 	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
 
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("list", "true")
 
 	return sendRequestParseResponse[schema.PluginsCatalogListPluginsWithTypeResponse](
 		ctx,
@@ -1852,7 +1852,7 @@ func (s *System) PluginsCatalogReadPluginConfiguration(ctx context.Context, name
 	requestPath := "/v1/sys/plugins/catalog/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.PluginsCatalogReadPluginConfigurationResponse](
 		ctx,
@@ -1878,7 +1878,7 @@ func (s *System) PluginsCatalogReadPluginConfigurationWithType(ctx context.Conte
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.PluginsCatalogReadPluginConfigurationWithTypeResponse](
 		ctx,
@@ -1902,7 +1902,7 @@ func (s *System) PluginsCatalogRegisterPlugin(ctx context.Context, name string, 
 	requestPath := "/v1/sys/plugins/catalog/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1928,7 +1928,7 @@ func (s *System) PluginsCatalogRegisterPluginWithType(ctx context.Context, name 
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1952,7 +1952,7 @@ func (s *System) PluginsCatalogRemovePlugin(ctx context.Context, name string, op
 	requestPath := "/v1/sys/plugins/catalog/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1978,7 +1978,7 @@ func (s *System) PluginsCatalogRemovePluginWithType(ctx context.Context, name st
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2001,7 +2001,7 @@ func (s *System) PluginsReloadBackends(ctx context.Context, request schema.Plugi
 
 	requestPath := "/v1/sys/plugins/reload/backend"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[schema.PluginsReloadBackendsResponse](
 		ctx,
@@ -2025,7 +2025,7 @@ func (s *System) PoliciesDeleteAclPolicy(ctx context.Context, name string, optio
 	requestPath := "/v1/sys/policies/acl/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2049,7 +2049,7 @@ func (s *System) PoliciesDeletePasswordPolicy(ctx context.Context, name string, 
 	requestPath := "/v1/sys/policies/password/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2073,7 +2073,7 @@ func (s *System) PoliciesGeneratePasswordFromPasswordPolicy(ctx context.Context,
 	requestPath := "/v1/sys/policies/password/{name}/generate"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.PoliciesGeneratePasswordFromPasswordPolicyResponse](
 		ctx,
@@ -2095,8 +2095,8 @@ func (s *System) PoliciesList(ctx context.Context, options ...RequestOption) (*R
 
 	requestPath := "/v1/sys/policy"
 
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("list", "true")
 
 	return sendRequestParseResponse[schema.PoliciesListResponse](
 		ctx,
@@ -2118,8 +2118,8 @@ func (s *System) PoliciesListAclPolicies(ctx context.Context, options ...Request
 
 	requestPath := "/v1/sys/policies/acl"
 
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("list", "true")
 
 	return sendRequestParseResponse[schema.PoliciesListAclPoliciesResponse](
 		ctx,
@@ -2141,8 +2141,8 @@ func (s *System) PoliciesListPasswordPolicies(ctx context.Context, options ...Re
 
 	requestPath := "/v1/sys/policies/password"
 
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("list", "true")
 
 	return sendRequestParseResponse[schema.PoliciesListPasswordPoliciesResponse](
 		ctx,
@@ -2166,7 +2166,7 @@ func (s *System) PoliciesReadAclPolicy(ctx context.Context, name string, options
 	requestPath := "/v1/sys/policies/acl/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.PoliciesReadAclPolicyResponse](
 		ctx,
@@ -2190,7 +2190,7 @@ func (s *System) PoliciesReadPasswordPolicy(ctx context.Context, name string, op
 	requestPath := "/v1/sys/policies/password/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.PoliciesReadPasswordPolicyResponse](
 		ctx,
@@ -2214,7 +2214,7 @@ func (s *System) PoliciesWriteAclPolicy(ctx context.Context, name string, reques
 	requestPath := "/v1/sys/policies/acl/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2238,7 +2238,7 @@ func (s *System) PoliciesWritePasswordPolicy(ctx context.Context, name string, r
 	requestPath := "/v1/sys/policies/password/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2261,7 +2261,7 @@ func (s *System) PprofBlocking(ctx context.Context, options ...RequestOption) (*
 
 	requestPath := "/v1/sys/pprof/block"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2284,7 +2284,7 @@ func (s *System) PprofCommandLine(ctx context.Context, options ...RequestOption)
 
 	requestPath := "/v1/sys/pprof/cmdline"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2307,7 +2307,7 @@ func (s *System) PprofCpuProfile(ctx context.Context, options ...RequestOption) 
 
 	requestPath := "/v1/sys/pprof/profile"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2330,7 +2330,7 @@ func (s *System) PprofExecutionTrace(ctx context.Context, options ...RequestOpti
 
 	requestPath := "/v1/sys/pprof/trace"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2353,7 +2353,7 @@ func (s *System) PprofGoroutines(ctx context.Context, options ...RequestOption) 
 
 	requestPath := "/v1/sys/pprof/goroutine"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2376,7 +2376,7 @@ func (s *System) PprofIndex(ctx context.Context, options ...RequestOption) (*Res
 
 	requestPath := "/v1/sys/pprof/"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2399,7 +2399,7 @@ func (s *System) PprofMemoryAllocations(ctx context.Context, options ...RequestO
 
 	requestPath := "/v1/sys/pprof/allocs"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2422,7 +2422,7 @@ func (s *System) PprofMemoryAllocationsLive(ctx context.Context, options ...Requ
 
 	requestPath := "/v1/sys/pprof/heap"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2445,7 +2445,7 @@ func (s *System) PprofMutexes(ctx context.Context, options ...RequestOption) (*R
 
 	requestPath := "/v1/sys/pprof/mutex"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2468,7 +2468,7 @@ func (s *System) PprofSymbols(ctx context.Context, options ...RequestOption) (*R
 
 	requestPath := "/v1/sys/pprof/symbol"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2491,7 +2491,7 @@ func (s *System) PprofThreadCreations(ctx context.Context, options ...RequestOpt
 
 	requestPath := "/v1/sys/pprof/threadcreate"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2513,7 +2513,7 @@ func (s *System) QueryTokenAccessorCapabilities(ctx context.Context, request sch
 
 	requestPath := "/v1/sys/capabilities-accessor"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2535,7 +2535,7 @@ func (s *System) QueryTokenCapabilities(ctx context.Context, request schema.Quer
 
 	requestPath := "/v1/sys/capabilities"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2557,7 +2557,7 @@ func (s *System) QueryTokenSelfCapabilities(ctx context.Context, request schema.
 
 	requestPath := "/v1/sys/capabilities-self"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2579,7 +2579,7 @@ func (s *System) RateLimitQuotasConfigure(ctx context.Context, request schema.Ra
 
 	requestPath := "/v1/sys/quotas/config"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2603,7 +2603,7 @@ func (s *System) RateLimitQuotasDelete(ctx context.Context, name string, options
 	requestPath := "/v1/sys/quotas/rate-limit/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2625,8 +2625,8 @@ func (s *System) RateLimitQuotasList(ctx context.Context, options ...RequestOpti
 
 	requestPath := "/v1/sys/quotas/rate-limit"
 
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("list", "true")
 
 	return sendRequestParseResponse[schema.RateLimitQuotasListResponse](
 		ctx,
@@ -2650,7 +2650,7 @@ func (s *System) RateLimitQuotasRead(ctx context.Context, name string, options .
 	requestPath := "/v1/sys/quotas/rate-limit/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.RateLimitQuotasReadResponse](
 		ctx,
@@ -2672,7 +2672,7 @@ func (s *System) RateLimitQuotasReadConfiguration(ctx context.Context, options .
 
 	requestPath := "/v1/sys/quotas/config"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.RateLimitQuotasReadConfigurationResponse](
 		ctx,
@@ -2696,7 +2696,7 @@ func (s *System) RateLimitQuotasWrite(ctx context.Context, name string, request 
 	requestPath := "/v1/sys/quotas/rate-limit/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2718,7 +2718,7 @@ func (s *System) ReadHealthStatus(ctx context.Context, options ...RequestOption)
 
 	requestPath := "/v1/sys/health"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2740,7 +2740,7 @@ func (s *System) ReadInitializationStatus(ctx context.Context, options ...Reques
 
 	requestPath := "/v1/sys/init"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2763,7 +2763,7 @@ func (s *System) ReadSanitizedConfigurationState(ctx context.Context, options ..
 
 	requestPath := "/v1/sys/config/state/sanitized"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2785,7 +2785,7 @@ func (s *System) ReadWrappingProperties(ctx context.Context, request schema.Read
 
 	requestPath := "/v1/sys/wrapping/lookup"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[schema.ReadWrappingPropertiesResponse](
 		ctx,
@@ -2808,7 +2808,7 @@ func (s *System) RekeyAttemptCancel(ctx context.Context, options ...RequestOptio
 
 	requestPath := "/v1/sys/rekey/init"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2831,7 +2831,7 @@ func (s *System) RekeyAttemptInitialize(ctx context.Context, request schema.Reke
 
 	requestPath := "/v1/sys/rekey/init"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[schema.RekeyAttemptInitializeResponse](
 		ctx,
@@ -2853,7 +2853,7 @@ func (s *System) RekeyAttemptReadProgress(ctx context.Context, options ...Reques
 
 	requestPath := "/v1/sys/rekey/init"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.RekeyAttemptReadProgressResponse](
 		ctx,
@@ -2875,7 +2875,7 @@ func (s *System) RekeyAttemptUpdate(ctx context.Context, request schema.RekeyAtt
 
 	requestPath := "/v1/sys/rekey/update"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[schema.RekeyAttemptUpdateResponse](
 		ctx,
@@ -2897,7 +2897,7 @@ func (s *System) RekeyDeleteBackupKey(ctx context.Context, options ...RequestOpt
 
 	requestPath := "/v1/sys/rekey/backup"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2919,7 +2919,7 @@ func (s *System) RekeyDeleteBackupRecoveryKey(ctx context.Context, options ...Re
 
 	requestPath := "/v1/sys/rekey/recovery-key-backup"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2941,7 +2941,7 @@ func (s *System) RekeyReadBackupKey(ctx context.Context, options ...RequestOptio
 
 	requestPath := "/v1/sys/rekey/backup"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.RekeyReadBackupKeyResponse](
 		ctx,
@@ -2963,7 +2963,7 @@ func (s *System) RekeyReadBackupRecoveryKey(ctx context.Context, options ...Requ
 
 	requestPath := "/v1/sys/rekey/recovery-key-backup"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.RekeyReadBackupRecoveryKeyResponse](
 		ctx,
@@ -2986,7 +2986,7 @@ func (s *System) RekeyVerificationCancel(ctx context.Context, options ...Request
 
 	requestPath := "/v1/sys/rekey/verify"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.RekeyVerificationCancelResponse](
 		ctx,
@@ -3008,7 +3008,7 @@ func (s *System) RekeyVerificationReadProgress(ctx context.Context, options ...R
 
 	requestPath := "/v1/sys/rekey/verify"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.RekeyVerificationReadProgressResponse](
 		ctx,
@@ -3030,7 +3030,7 @@ func (s *System) RekeyVerificationUpdate(ctx context.Context, request schema.Rek
 
 	requestPath := "/v1/sys/rekey/verify"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[schema.RekeyVerificationUpdateResponse](
 		ctx,
@@ -3053,7 +3053,7 @@ func (s *System) ReloadSubsystem(ctx context.Context, subsystem string, options 
 	requestPath := "/v1/sys/config/reload/{subsystem}"
 	requestPath = strings.Replace(requestPath, "{"+"subsystem"+"}", url.PathEscape(subsystem), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3075,7 +3075,7 @@ func (s *System) Remount(ctx context.Context, request schema.RemountRequest, opt
 
 	requestPath := "/v1/sys/remount"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[schema.RemountResponse](
 		ctx,
@@ -3099,7 +3099,7 @@ func (s *System) RemountStatus(ctx context.Context, migrationId string, options 
 	requestPath := "/v1/sys/remount/status/{migration_id}"
 	requestPath = strings.Replace(requestPath, "{"+"migration_id"+"}", url.PathEscape(migrationId), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.RemountStatusResponse](
 		ctx,
@@ -3121,7 +3121,7 @@ func (s *System) ReplicationStatus(ctx context.Context, options ...RequestOption
 
 	requestPath := "/v1/sys/replication/status"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3143,7 +3143,7 @@ func (s *System) Rewrap(ctx context.Context, request schema.RewrapRequest, optio
 
 	requestPath := "/v1/sys/wrapping/rewrap"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3165,7 +3165,7 @@ func (s *System) RootTokenGenerationCancel(ctx context.Context, options ...Reque
 
 	requestPath := "/v1/sys/generate-root/attempt"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3188,7 +3188,7 @@ func (s *System) RootTokenGenerationInitialize(ctx context.Context, request sche
 
 	requestPath := "/v1/sys/generate-root/attempt"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[schema.RootTokenGenerationInitializeResponse](
 		ctx,
@@ -3210,7 +3210,7 @@ func (s *System) RootTokenGenerationReadProgress(ctx context.Context, options ..
 
 	requestPath := "/v1/sys/generate-root/attempt"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.RootTokenGenerationReadProgressResponse](
 		ctx,
@@ -3233,7 +3233,7 @@ func (s *System) RootTokenGenerationUpdate(ctx context.Context, request schema.R
 
 	requestPath := "/v1/sys/generate-root/update"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[schema.RootTokenGenerationUpdateResponse](
 		ctx,
@@ -3255,7 +3255,7 @@ func (s *System) Seal(ctx context.Context, options ...RequestOption) (*Response[
 
 	requestPath := "/v1/sys/seal"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3277,7 +3277,7 @@ func (s *System) SealStatus(ctx context.Context, options ...RequestOption) (*Res
 
 	requestPath := "/v1/sys/seal-status"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.SealStatusResponse](
 		ctx,
@@ -3300,7 +3300,7 @@ func (s *System) StepDownLeader(ctx context.Context, options ...RequestOption) (
 
 	requestPath := "/v1/sys/step-down"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3324,7 +3324,7 @@ func (s *System) UiHeadersConfigure(ctx context.Context, header string, request 
 	requestPath := "/v1/sys/config/ui/headers/{header}"
 	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3348,7 +3348,7 @@ func (s *System) UiHeadersDeleteConfiguration(ctx context.Context, header string
 	requestPath := "/v1/sys/config/ui/headers/{header}"
 	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3370,8 +3370,8 @@ func (s *System) UiHeadersList(ctx context.Context, options ...RequestOption) (*
 
 	requestPath := "/v1/sys/config/ui/headers/"
 
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("list", "true")
 
 	return sendRequestParseResponse[schema.UiHeadersListResponse](
 		ctx,
@@ -3395,7 +3395,7 @@ func (s *System) UiHeadersReadConfiguration(ctx context.Context, header string, 
 	requestPath := "/v1/sys/config/ui/headers/{header}"
 	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.UiHeadersReadConfigurationResponse](
 		ctx,
@@ -3417,7 +3417,7 @@ func (s *System) Unseal(ctx context.Context, request schema.UnsealRequest, optio
 
 	requestPath := "/v1/sys/unseal"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[schema.UnsealResponse](
 		ctx,
@@ -3439,7 +3439,7 @@ func (s *System) Unwrap(ctx context.Context, request schema.UnwrapRequest, optio
 
 	requestPath := "/v1/sys/wrapping/unwrap"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3461,8 +3461,8 @@ func (s *System) VersionHistory(ctx context.Context, options ...RequestOption) (
 
 	requestPath := "/v1/sys/version-history/"
 
-	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", "true")
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("list", "true")
 
 	return sendRequestParseResponse[schema.VersionHistoryResponse](
 		ctx,
@@ -3484,7 +3484,7 @@ func (s *System) Wrap(ctx context.Context, options ...RequestOption) (*Response[
 
 	requestPath := "/v1/sys/wrapping/wrap"
 
-	requestQueryParameters := make(url.Values)
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,

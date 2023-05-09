@@ -229,12 +229,20 @@ func (c *Client) ClearReplicationForwardingMode() {
 	c.clientRequestModifiersLock.Unlock()
 }
 
-// mountPathOr returns object's mount path or the given default value
+// mountPathOr returns object's mount path or the given default value.
 func (m *requestModifiers) mountPathOr(defaultMountPath string) string {
 	if m.mountPath == "" {
 		return defaultMountPath
 	}
 	return m.mountPath
+}
+
+// queryParametersOrDefault returns object's query parameters or an empty map.
+func (m *requestModifiers) queryParametersOrDefault() url.Values {
+	if m.queryParameters == nil {
+		return make(url.Values)
+	}
+	return m.queryParameters
 }
 
 // mergeRequestModifiers merges the two objects, preferring the per-request modifiers

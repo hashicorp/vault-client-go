@@ -141,9 +141,9 @@ and delete an arbitrary path within Vault:
 
 ```go
 client.Read(...)
-client.ReadWithParameters(...)
+client.ReadWithParameters(...)      // deprecated
 client.ReadRaw(...)
-client.ReadRawWithParameters(...)
+client.ReadRawWithParameters(...)   // deprecated
 
 client.Write(...)
 client.WriteFromBytes(...)
@@ -152,7 +152,7 @@ client.WriteFromReader(...)
 client.List(...)
 
 client.Delete(...)
-client.DeleteWithParameters(...)
+client.DeleteWithParameters(...)    // deprecated
 ```
 
 For example, `client.Secrets.KvV2Write(...)` from
@@ -235,6 +235,23 @@ secret, err := client.Secrets.KvV2Read(
 	ctx,
 	"my-secret",
 	vault.WithMountPath("my/mount/path"),
+)
+```
+
+#### Adding Custom Headers and Custom Query Parameters
+
+```go
+resp, err := client.Read(
+    ctx,
+    "/path/to/my/secret",
+    vault.WithCustomHeaders(http.Header{
+        "x-test-header1": {"a", "b"},
+        "x-test-header2": {"c", "d"},
+    }),
+    vault.WithCustomQueryParameters(url.Values{
+        "param1": {"a"},
+        "param2": {"b"},
+    }),
 )
 ```
 

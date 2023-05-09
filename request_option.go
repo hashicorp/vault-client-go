@@ -5,6 +5,7 @@ package vault
 
 import (
 	"net/http"
+	"net/url"
 	"strings"
 	"time"
 
@@ -110,6 +111,14 @@ func WithMountPath(path string) RequestOption {
 	return func(m *requestModifiers) error {
 		// the mount path is expected to have no leading/trailing "/" characters
 		m.mountPath = strings.Trim(path, "/")
+		return nil
+	}
+}
+
+// WithQueryParameters appends the given list of query parameters to the request.
+func WithQueryParameters(parameters url.Values) RequestOption {
+	return func(m *requestModifiers) error {
+		m.queryParameters = parameters
 		return nil
 	}
 }

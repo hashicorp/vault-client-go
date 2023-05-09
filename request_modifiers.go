@@ -6,6 +6,7 @@ package vault
 import (
 	"fmt"
 	"net/http"
+	"net/url"
 	"strings"
 	"time"
 	"unicode"
@@ -29,6 +30,10 @@ type requestModifiers struct {
 	// mountPath, if specified, will overwrite the default mount path used in
 	// client.Auth & client.Secrets requests
 	mountPath string
+
+	// queryParameters, if specified will be appended to the list of query
+	// parameters included with the request
+	queryParameters url.Values
 }
 
 // requestHeaders contains headers that will be added to requests

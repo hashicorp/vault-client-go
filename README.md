@@ -171,7 +171,7 @@ _, err = client.Write(ctx, "/secret/data/my-secret", map[string]any{
 ### Using Generated Methods
 
 The library has a number of generated methods corresponding to the known Vault
-API endpoints. They are organized in four catagories:
+API endpoints. They are organized in four categories:
 
 ```go
 client.Auth     // authentication-related methods
@@ -208,7 +208,7 @@ _ = client.SetToken("my-token")
 _ = client.SetNamespace("my-namespace")
 
 // per-request decorators take precedence over the client-level settings
-resp, _ = client.Secrets.KvV2Read(
+resp, err := client.Secrets.KvV2Read(
 	ctx,
 	"my-secret",
 	vault.WithToken("request-specific-token"),
@@ -225,7 +225,7 @@ Vault [plugins][doc-plugins] can be mounted at arbitrary mount paths using
 vault secrets enable -path=my/mount/path kv-v2
 ```
 
-To accomodate this behavior, the requests defined under `client.Auth` and
+To accommodate this behavior, the requests defined under `client.Auth` and
 `client.Secrets` can be offset with mount path overrides using the following
 syntax:
 
@@ -264,7 +264,7 @@ more background information.
 
 ```go
 // wrap the response with a 5 minute TTL
-resp, _ := client.Secrets.KvV2Read(
+resp, err := client.Secrets.KvV2Read(
 	ctx,
 	"my-secret",
 	vault.WithResponseWrapping(5*time.Minute),
@@ -272,7 +272,7 @@ resp, _ := client.Secrets.KvV2Read(
 wrapped := resp.WrapInfo.Token
 
 // unwrap the response (usually done elsewhere)
-unwrapped, _ := vault.Unwrap[map[string]any](ctx, client, wrapped)
+unwrapped, err := vault.Unwrap[map[string]any](ctx, client, wrapped)
 ```
 
 ### Error Handling
@@ -377,16 +377,29 @@ go run main.go
 
 ```go
 client.SetRequestCallbacks(func(req *http.Request) {
-	// log req
+	log.Println("request:", *req)
 })
 client.SetResponseCallbacks(func(req *http.Request, resp *http.Response) {
-	// log req, resp
+	log.Println("response:", *resp)
 })
 ```
 
 Alternatively, `vault.WithRequestCallbacks(..)` /
-`vault.WithResponseCallbacks(..)` may be used to inject callbacks for individual
-requests.
+`vault.WithResponseCallbacks(..)` can be used to inject callbacks for individual
+requests:
+
+```go
+resp, err := client.Secrets.KvV2Read(
+	ctx,
+	"my-secret",
+	vault.WithRequestCallbacks(func(req *http.Request) {
+		log.Println("request:", *req)
+	}),
+	vault.WithResponseCallbacks(func(req *http.Request, resp *http.Response) {
+		log.Println("response:", *resp)
+	}),
+)
+```
 
 ### Enforcing Read-your-writes Replication Semantics
 

@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GoogleCloudKmsConfigureRequest struct for GoogleCloudKmsConfigureRequest
 type GoogleCloudKmsConfigureRequest struct {
 	// The credentials to use for authenticating to Google Cloud. Leave this blank to use the Default Application Credentials or instance metadata authentication.
-	Credentials string `json:"credentials"`
+	Credentials string `json:"credentials,omitempty"`
 
 	// The list of full-URL scopes to request when authenticating. By default, this requests https://www.googleapis.com/auth/cloudkms.
-	Scopes []string `json:"scopes"`
+	Scopes []string `json:"scopes,omitempty"`
 }
 
 // NewGoogleCloudKmsConfigureRequestWithDefaults instantiates a new GoogleCloudKmsConfigureRequest object
@@ -25,13 +21,4 @@ func NewGoogleCloudKmsConfigureRequestWithDefaults() *GoogleCloudKmsConfigureReq
 	var this GoogleCloudKmsConfigureRequest
 
 	return &this
-}
-
-func (o GoogleCloudKmsConfigureRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["credentials"] = o.Credentials
-	toSerialize["scopes"] = o.Scopes
-
-	return json.Marshal(toSerialize)
 }

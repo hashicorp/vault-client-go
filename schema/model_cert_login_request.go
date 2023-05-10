@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // CertLoginRequest struct for CertLoginRequest
 type CertLoginRequest struct {
 	// The name of the certificate role to authenticate against.
-	Name string `json:"name"`
+	Name string `json:"name,omitempty"`
 }
 
 // NewCertLoginRequestWithDefaults instantiates a new CertLoginRequest object
@@ -22,12 +18,4 @@ func NewCertLoginRequestWithDefaults() *CertLoginRequest {
 	var this CertLoginRequest
 
 	return &this
-}
-
-func (o CertLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["name"] = o.Name
-
-	return json.Marshal(toSerialize)
 }

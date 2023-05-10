@@ -5,26 +5,22 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AliCloudWriteRoleRequest struct for AliCloudWriteRoleRequest
 type AliCloudWriteRoleRequest struct {
 	// JSON of policies to be dynamically applied to users of this role.
-	InlinePolicies string `json:"inline_policies"`
+	InlinePolicies string `json:"inline_policies,omitempty"`
 
 	// The maximum allowed lifetime of tokens issued using this role.
-	MaxTtl int32 `json:"max_ttl"`
+	MaxTtl int32 `json:"max_ttl,omitempty"`
 
 	// The name and type of each remote policy to be applied. Example: \"name:AliyunRDSReadOnlyAccess,type:System\".
-	RemotePolicies []string `json:"remote_policies"`
+	RemotePolicies []string `json:"remote_policies,omitempty"`
 
 	// ARN of the role to be assumed. If provided, inline_policies and remote_policies should be blank. At creation time, this role must have configured trusted actors, and the access key and secret that will be used to assume the role (in /config) must qualify as a trusted actor.
-	RoleArn string `json:"role_arn"`
+	RoleArn string `json:"role_arn,omitempty"`
 
 	// Duration in seconds after which the issued token should expire. Defaults to 0, in which case the value will fallback to the system/mount defaults.
-	Ttl int32 `json:"ttl"`
+	Ttl int32 `json:"ttl,omitempty"`
 }
 
 // NewAliCloudWriteRoleRequestWithDefaults instantiates a new AliCloudWriteRoleRequest object
@@ -34,16 +30,4 @@ func NewAliCloudWriteRoleRequestWithDefaults() *AliCloudWriteRoleRequest {
 	var this AliCloudWriteRoleRequest
 
 	return &this
-}
-
-func (o AliCloudWriteRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["inline_policies"] = o.InlinePolicies
-	toSerialize["max_ttl"] = o.MaxTtl
-	toSerialize["remote_policies"] = o.RemotePolicies
-	toSerialize["role_arn"] = o.RoleArn
-	toSerialize["ttl"] = o.Ttl
-
-	return json.Marshal(toSerialize)
 }

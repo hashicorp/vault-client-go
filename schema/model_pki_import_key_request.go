@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiImportKeyRequest struct for PkiImportKeyRequest
 type PkiImportKeyRequest struct {
 	// Optional name to be used for this key
-	KeyName string `json:"key_name"`
+	KeyName string `json:"key_name,omitempty"`
 
 	// PEM-format, unencrypted secret key
-	PemBundle string `json:"pem_bundle"`
+	PemBundle string `json:"pem_bundle,omitempty"`
 }
 
 // NewPkiImportKeyRequestWithDefaults instantiates a new PkiImportKeyRequest object
@@ -25,13 +21,4 @@ func NewPkiImportKeyRequestWithDefaults() *PkiImportKeyRequest {
 	var this PkiImportKeyRequest
 
 	return &this
-}
-
-func (o PkiImportKeyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["key_name"] = o.KeyName
-	toSerialize["pem_bundle"] = o.PemBundle
-
-	return json.Marshal(toSerialize)
 }

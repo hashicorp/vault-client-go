@@ -5,13 +5,9 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleListRolesResponse struct for AppRoleListRolesResponse
 type AppRoleListRolesResponse struct {
-	Keys []string `json:"keys"`
+	Keys []string `json:"keys,omitempty"`
 }
 
 // NewAppRoleListRolesResponseWithDefaults instantiates a new AppRoleListRolesResponse object
@@ -21,12 +17,4 @@ func NewAppRoleListRolesResponseWithDefaults() *AppRoleListRolesResponse {
 	var this AppRoleListRolesResponse
 
 	return &this
-}
-
-func (o AppRoleListRolesResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["keys"] = o.Keys
-
-	return json.Marshal(toSerialize)
 }

@@ -5,23 +5,19 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // KubernetesGenerateCredentialsRequest struct for KubernetesGenerateCredentialsRequest
 type KubernetesGenerateCredentialsRequest struct {
 	// The intended audiences of the generated credentials
-	Audiences []string `json:"audiences"`
+	Audiences []string `json:"audiences,omitempty"`
 
 	// If true, generate a ClusterRoleBinding to grant permissions across the whole cluster instead of within a namespace. Requires the Vault role to have kubernetes_role_type set to ClusterRole.
-	ClusterRoleBinding bool `json:"cluster_role_binding"`
+	ClusterRoleBinding bool `json:"cluster_role_binding,omitempty"`
 
 	// The name of the Kubernetes namespace in which to generate the credentials
 	KubernetesNamespace string `json:"kubernetes_namespace"`
 
 	// The TTL of the generated credentials
-	Ttl int32 `json:"ttl"`
+	Ttl int32 `json:"ttl,omitempty"`
 }
 
 // NewKubernetesGenerateCredentialsRequestWithDefaults instantiates a new KubernetesGenerateCredentialsRequest object
@@ -31,15 +27,4 @@ func NewKubernetesGenerateCredentialsRequestWithDefaults() *KubernetesGenerateCr
 	var this KubernetesGenerateCredentialsRequest
 
 	return &this
-}
-
-func (o KubernetesGenerateCredentialsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["audiences"] = o.Audiences
-	toSerialize["cluster_role_binding"] = o.ClusterRoleBinding
-	toSerialize["kubernetes_namespace"] = o.KubernetesNamespace
-	toSerialize["ttl"] = o.Ttl
-
-	return json.Marshal(toSerialize)
 }

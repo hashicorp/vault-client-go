@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleDestroySecretIdByAccessorRequest struct for AppRoleDestroySecretIdByAccessorRequest
 type AppRoleDestroySecretIdByAccessorRequest struct {
 	// Accessor of the SecretID
-	SecretIdAccessor string `json:"secret_id_accessor"`
+	SecretIdAccessor string `json:"secret_id_accessor,omitempty"`
 }
 
 // NewAppRoleDestroySecretIdByAccessorRequestWithDefaults instantiates a new AppRoleDestroySecretIdByAccessorRequest object
@@ -22,12 +18,4 @@ func NewAppRoleDestroySecretIdByAccessorRequestWithDefaults() *AppRoleDestroySec
 	var this AppRoleDestroySecretIdByAccessorRequest
 
 	return &this
-}
-
-func (o AppRoleDestroySecretIdByAccessorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["secret_id_accessor"] = o.SecretIdAccessor
-
-	return json.Marshal(toSerialize)
 }

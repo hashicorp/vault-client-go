@@ -5,13 +5,9 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiIssuerReadCrlDerResponse struct for PkiIssuerReadCrlDerResponse
 type PkiIssuerReadCrlDerResponse struct {
-	Crl string `json:"crl"`
+	Crl string `json:"crl,omitempty"`
 }
 
 // NewPkiIssuerReadCrlDerResponseWithDefaults instantiates a new PkiIssuerReadCrlDerResponse object
@@ -21,12 +17,4 @@ func NewPkiIssuerReadCrlDerResponseWithDefaults() *PkiIssuerReadCrlDerResponse {
 	var this PkiIssuerReadCrlDerResponse
 
 	return &this
-}
-
-func (o PkiIssuerReadCrlDerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["crl"] = o.Crl
-
-	return json.Marshal(toSerialize)
 }

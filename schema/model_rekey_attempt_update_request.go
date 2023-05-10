@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RekeyAttemptUpdateRequest struct for RekeyAttemptUpdateRequest
 type RekeyAttemptUpdateRequest struct {
 	// Specifies a single unseal key share.
-	Key string `json:"key"`
+	Key string `json:"key,omitempty"`
 
 	// Specifies the nonce of the rekey attempt.
-	Nonce string `json:"nonce"`
+	Nonce string `json:"nonce,omitempty"`
 }
 
 // NewRekeyAttemptUpdateRequestWithDefaults instantiates a new RekeyAttemptUpdateRequest object
@@ -25,13 +21,4 @@ func NewRekeyAttemptUpdateRequestWithDefaults() *RekeyAttemptUpdateRequest {
 	var this RekeyAttemptUpdateRequest
 
 	return &this
-}
-
-func (o RekeyAttemptUpdateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["key"] = o.Key
-	toSerialize["nonce"] = o.Nonce
-
-	return json.Marshal(toSerialize)
 }

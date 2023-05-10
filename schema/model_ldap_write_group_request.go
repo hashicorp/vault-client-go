@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // LdapWriteGroupRequest struct for LdapWriteGroupRequest
 type LdapWriteGroupRequest struct {
 	// Comma-separated list of policies associated to the group.
-	Policies []string `json:"policies"`
+	Policies []string `json:"policies,omitempty"`
 }
 
 // NewLdapWriteGroupRequestWithDefaults instantiates a new LdapWriteGroupRequest object
@@ -22,12 +18,4 @@ func NewLdapWriteGroupRequestWithDefaults() *LdapWriteGroupRequest {
 	var this LdapWriteGroupRequest
 
 	return &this
-}
-
-func (o LdapWriteGroupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["policies"] = o.Policies
-
-	return json.Marshal(toSerialize)
 }

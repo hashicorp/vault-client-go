@@ -5,20 +5,16 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // JwtOidcRequestAuthorizationUrlRequest struct for JwtOidcRequestAuthorizationUrlRequest
 type JwtOidcRequestAuthorizationUrlRequest struct {
 	// Optional client-provided nonce that must match during callback, if present.
-	ClientNonce string `json:"client_nonce"`
+	ClientNonce string `json:"client_nonce,omitempty"`
 
 	// The OAuth redirect_uri to use in the authorization URL.
-	RedirectUri string `json:"redirect_uri"`
+	RedirectUri string `json:"redirect_uri,omitempty"`
 
 	// The role to issue an OIDC authorization URL against.
-	Role string `json:"role"`
+	Role string `json:"role,omitempty"`
 }
 
 // NewJwtOidcRequestAuthorizationUrlRequestWithDefaults instantiates a new JwtOidcRequestAuthorizationUrlRequest object
@@ -28,14 +24,4 @@ func NewJwtOidcRequestAuthorizationUrlRequestWithDefaults() *JwtOidcRequestAutho
 	var this JwtOidcRequestAuthorizationUrlRequest
 
 	return &this
-}
-
-func (o JwtOidcRequestAuthorizationUrlRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["client_nonce"] = o.ClientNonce
-	toSerialize["redirect_uri"] = o.RedirectUri
-	toSerialize["role"] = o.Role
-
-	return json.Marshal(toSerialize)
 }

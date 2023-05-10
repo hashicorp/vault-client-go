@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RekeyReadBackupKeyResponse struct for RekeyReadBackupKeyResponse
 type RekeyReadBackupKeyResponse struct {
-	Keys map[string]interface{} `json:"keys"`
+	Keys map[string]interface{} `json:"keys,omitempty"`
 
-	KeysBase64 map[string]interface{} `json:"keys_base64"`
+	KeysBase64 map[string]interface{} `json:"keys_base64,omitempty"`
 
-	Nonce string `json:"nonce"`
+	Nonce string `json:"nonce,omitempty"`
 }
 
 // NewRekeyReadBackupKeyResponseWithDefaults instantiates a new RekeyReadBackupKeyResponse object
@@ -25,14 +21,4 @@ func NewRekeyReadBackupKeyResponseWithDefaults() *RekeyReadBackupKeyResponse {
 	var this RekeyReadBackupKeyResponse
 
 	return &this
-}
-
-func (o RekeyReadBackupKeyResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["keys"] = o.Keys
-	toSerialize["keys_base64"] = o.KeysBase64
-	toSerialize["nonce"] = o.Nonce
-
-	return json.Marshal(toSerialize)
 }

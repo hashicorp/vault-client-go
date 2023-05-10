@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiReplaceRootRequest struct for PkiReplaceRootRequest
 type PkiReplaceRootRequest struct {
 	// Reference (name or identifier) to the default issuer.
-	Default string `json:"default"`
+	Default string `json:"default,omitempty"`
 }
 
 // NewPkiReplaceRootRequestWithDefaults instantiates a new PkiReplaceRootRequest object
@@ -24,12 +20,4 @@ func NewPkiReplaceRootRequestWithDefaults() *PkiReplaceRootRequest {
 	this.Default = "next"
 
 	return &this
-}
-
-func (o PkiReplaceRootRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["default"] = o.Default
-
-	return json.Marshal(toSerialize)
 }

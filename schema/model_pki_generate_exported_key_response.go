@@ -5,23 +5,19 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiGenerateExportedKeyResponse struct for PkiGenerateExportedKeyResponse
 type PkiGenerateExportedKeyResponse struct {
 	// ID assigned to this key.
-	KeyId string `json:"key_id"`
+	KeyId string `json:"key_id,omitempty"`
 
 	// Name assigned to this key.
-	KeyName string `json:"key_name"`
+	KeyName string `json:"key_name,omitempty"`
 
 	// The type of key to use; defaults to RSA. \"rsa\" \"ec\" and \"ed25519\" are the only valid values.
-	KeyType string `json:"key_type"`
+	KeyType string `json:"key_type,omitempty"`
 
 	// The private key string
-	PrivateKey string `json:"private_key"`
+	PrivateKey string `json:"private_key,omitempty"`
 }
 
 // NewPkiGenerateExportedKeyResponseWithDefaults instantiates a new PkiGenerateExportedKeyResponse object
@@ -31,15 +27,4 @@ func NewPkiGenerateExportedKeyResponseWithDefaults() *PkiGenerateExportedKeyResp
 	var this PkiGenerateExportedKeyResponse
 
 	return &this
-}
-
-func (o PkiGenerateExportedKeyResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["key_id"] = o.KeyId
-	toSerialize["key_name"] = o.KeyName
-	toSerialize["key_type"] = o.KeyType
-	toSerialize["private_key"] = o.PrivateKey
-
-	return json.Marshal(toSerialize)
 }

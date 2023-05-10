@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // OciConfigureRequest struct for OciConfigureRequest
 type OciConfigureRequest struct {
 	// The tenancy id of the account.
-	HomeTenancyId string `json:"home_tenancy_id"`
+	HomeTenancyId string `json:"home_tenancy_id,omitempty"`
 }
 
 // NewOciConfigureRequestWithDefaults instantiates a new OciConfigureRequest object
@@ -22,12 +18,4 @@ func NewOciConfigureRequestWithDefaults() *OciConfigureRequest {
 	var this OciConfigureRequest
 
 	return &this
-}
-
-func (o OciConfigureRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["home_tenancy_id"] = o.HomeTenancyId
-
-	return json.Marshal(toSerialize)
 }

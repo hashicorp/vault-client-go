@@ -5,13 +5,9 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // HaStatusResponse struct for HaStatusResponse
 type HaStatusResponse struct {
-	Nodes []map[string]interface{} `json:"nodes"`
+	Nodes []map[string]interface{} `json:"nodes,omitempty"`
 }
 
 // NewHaStatusResponseWithDefaults instantiates a new HaStatusResponse object
@@ -21,12 +17,4 @@ func NewHaStatusResponseWithDefaults() *HaStatusResponse {
 	var this HaStatusResponse
 
 	return &this
-}
-
-func (o HaStatusResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["nodes"] = o.Nodes
-
-	return json.Marshal(toSerialize)
 }

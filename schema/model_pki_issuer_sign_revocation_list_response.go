@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiIssuerSignRevocationListResponse struct for PkiIssuerSignRevocationListResponse
 type PkiIssuerSignRevocationListResponse struct {
 	// CRL
-	Crl string `json:"crl"`
+	Crl string `json:"crl,omitempty"`
 }
 
 // NewPkiIssuerSignRevocationListResponseWithDefaults instantiates a new PkiIssuerSignRevocationListResponse object
@@ -22,12 +18,4 @@ func NewPkiIssuerSignRevocationListResponseWithDefaults() *PkiIssuerSignRevocati
 	var this PkiIssuerSignRevocationListResponse
 
 	return &this
-}
-
-func (o PkiIssuerSignRevocationListResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["crl"] = o.Crl
-
-	return json.Marshal(toSerialize)
 }

@@ -5,19 +5,15 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // JwtOidcCallbackWithParametersRequest struct for JwtOidcCallbackWithParametersRequest
 type JwtOidcCallbackWithParametersRequest struct {
-	ClientNonce string `json:"client_nonce"`
+	ClientNonce string `json:"client_nonce,omitempty"`
 
-	Code string `json:"code"`
+	Code string `json:"code,omitempty"`
 
-	IdToken string `json:"id_token"`
+	IdToken string `json:"id_token,omitempty"`
 
-	State string `json:"state"`
+	State string `json:"state,omitempty"`
 }
 
 // NewJwtOidcCallbackWithParametersRequestWithDefaults instantiates a new JwtOidcCallbackWithParametersRequest object
@@ -27,15 +23,4 @@ func NewJwtOidcCallbackWithParametersRequestWithDefaults() *JwtOidcCallbackWithP
 	var this JwtOidcCallbackWithParametersRequest
 
 	return &this
-}
-
-func (o JwtOidcCallbackWithParametersRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["client_nonce"] = o.ClientNonce
-	toSerialize["code"] = o.Code
-	toSerialize["id_token"] = o.IdToken
-	toSerialize["state"] = o.State
-
-	return json.Marshal(toSerialize)
 }

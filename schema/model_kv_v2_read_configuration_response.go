@@ -5,20 +5,16 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // KvV2ReadConfigurationResponse struct for KvV2ReadConfigurationResponse
 type KvV2ReadConfigurationResponse struct {
 	// If true, the backend will require the cas parameter to be set for each write
-	CasRequired bool `json:"cas_required"`
+	CasRequired bool `json:"cas_required,omitempty"`
 
 	// The length of time before a version is deleted.
-	DeleteVersionAfter int32 `json:"delete_version_after"`
+	DeleteVersionAfter int32 `json:"delete_version_after,omitempty"`
 
 	// The number of versions to keep for each key.
-	MaxVersions int32 `json:"max_versions"`
+	MaxVersions int32 `json:"max_versions,omitempty"`
 }
 
 // NewKvV2ReadConfigurationResponseWithDefaults instantiates a new KvV2ReadConfigurationResponse object
@@ -28,14 +24,4 @@ func NewKvV2ReadConfigurationResponseWithDefaults() *KvV2ReadConfigurationRespon
 	var this KvV2ReadConfigurationResponse
 
 	return &this
-}
-
-func (o KvV2ReadConfigurationResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["cas_required"] = o.CasRequired
-	toSerialize["delete_version_after"] = o.DeleteVersionAfter
-	toSerialize["max_versions"] = o.MaxVersions
-
-	return json.Marshal(toSerialize)
 }

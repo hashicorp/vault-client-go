@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // TerraformCloudConfigureRequest struct for TerraformCloudConfigureRequest
 type TerraformCloudConfigureRequest struct {
 	// The address to access Terraform Cloud or Enterprise. Default is \"https://app.terraform.io\".
-	Address string `json:"address"`
+	Address string `json:"address,omitempty"`
 
 	// The base path for the Terraform Cloud or Enterprise API. Default is \"/api/v2/\".
-	BasePath string `json:"base_path"`
+	BasePath string `json:"base_path,omitempty"`
 
 	// The token to access Terraform Cloud
 	Token string `json:"token"`
@@ -31,14 +27,4 @@ func NewTerraformCloudConfigureRequestWithDefaults() *TerraformCloudConfigureReq
 	this.BasePath = "/api/v2/"
 
 	return &this
-}
-
-func (o TerraformCloudConfigureRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["address"] = o.Address
-	toSerialize["base_path"] = o.BasePath
-	toSerialize["token"] = o.Token
-
-	return json.Marshal(toSerialize)
 }

@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiSetSignedIntermediateRequest struct for PkiSetSignedIntermediateRequest
 type PkiSetSignedIntermediateRequest struct {
 	// PEM-format certificate. This must be a CA certificate with a public key matching the previously-generated key from the generation endpoint. Additional parent CAs may be optionally appended to the bundle.
-	Certificate string `json:"certificate"`
+	Certificate string `json:"certificate,omitempty"`
 }
 
 // NewPkiSetSignedIntermediateRequestWithDefaults instantiates a new PkiSetSignedIntermediateRequest object
@@ -22,12 +18,4 @@ func NewPkiSetSignedIntermediateRequestWithDefaults() *PkiSetSignedIntermediateR
 	var this PkiSetSignedIntermediateRequest
 
 	return &this
-}
-
-func (o PkiSetSignedIntermediateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["certificate"] = o.Certificate
-
-	return json.Marshal(toSerialize)
 }

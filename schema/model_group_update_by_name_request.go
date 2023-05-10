@@ -5,29 +5,25 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GroupUpdateByNameRequest struct for GroupUpdateByNameRequest
 type GroupUpdateByNameRequest struct {
 	// ID of the group. If set, updates the corresponding existing group.
-	Id string `json:"id"`
+	Id string `json:"id,omitempty"`
 
 	// Entity IDs to be assigned as group members.
-	MemberEntityIds []string `json:"member_entity_ids"`
+	MemberEntityIds []string `json:"member_entity_ids,omitempty"`
 
 	// Group IDs to be assigned as group members.
-	MemberGroupIds []string `json:"member_group_ids"`
+	MemberGroupIds []string `json:"member_group_ids,omitempty"`
 
 	// Metadata to be associated with the group. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault <command> <path> metadata=key1=value1 metadata=key2=value2
-	Metadata map[string]interface{} `json:"metadata"`
+	Metadata map[string]interface{} `json:"metadata,omitempty"`
 
 	// Policies to be tied to the group.
-	Policies []string `json:"policies"`
+	Policies []string `json:"policies,omitempty"`
 
 	// Type of the group, 'internal' or 'external'. Defaults to 'internal'
-	Type string `json:"type"`
+	Type string `json:"type,omitempty"`
 }
 
 // NewGroupUpdateByNameRequestWithDefaults instantiates a new GroupUpdateByNameRequest object
@@ -37,17 +33,4 @@ func NewGroupUpdateByNameRequestWithDefaults() *GroupUpdateByNameRequest {
 	var this GroupUpdateByNameRequest
 
 	return &this
-}
-
-func (o GroupUpdateByNameRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["id"] = o.Id
-	toSerialize["member_entity_ids"] = o.MemberEntityIds
-	toSerialize["member_group_ids"] = o.MemberGroupIds
-	toSerialize["metadata"] = o.Metadata
-	toSerialize["policies"] = o.Policies
-	toSerialize["type"] = o.Type
-
-	return json.Marshal(toSerialize)
 }

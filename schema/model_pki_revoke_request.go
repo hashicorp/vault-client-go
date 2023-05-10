@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiRevokeRequest struct for PkiRevokeRequest
 type PkiRevokeRequest struct {
 	// Certificate to revoke in PEM format; must be signed by an issuer in this mount.
-	Certificate string `json:"certificate"`
+	Certificate string `json:"certificate,omitempty"`
 
 	// Certificate serial number, in colon- or hyphen-separated octal
-	SerialNumber string `json:"serial_number"`
+	SerialNumber string `json:"serial_number,omitempty"`
 }
 
 // NewPkiRevokeRequestWithDefaults instantiates a new PkiRevokeRequest object
@@ -25,13 +21,4 @@ func NewPkiRevokeRequestWithDefaults() *PkiRevokeRequest {
 	var this PkiRevokeRequest
 
 	return &this
-}
-
-func (o PkiRevokeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["certificate"] = o.Certificate
-	toSerialize["serial_number"] = o.SerialNumber
-
-	return json.Marshal(toSerialize)
 }

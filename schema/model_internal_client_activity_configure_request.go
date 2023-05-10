@@ -5,20 +5,16 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // InternalClientActivityConfigureRequest struct for InternalClientActivityConfigureRequest
 type InternalClientActivityConfigureRequest struct {
 	// Number of months to report if no start date specified.
-	DefaultReportMonths int32 `json:"default_report_months"`
+	DefaultReportMonths int32 `json:"default_report_months,omitempty"`
 
 	// Enable or disable collection of client count: enable, disable, or default.
-	Enabled string `json:"enabled"`
+	Enabled string `json:"enabled,omitempty"`
 
 	// Number of months of client data to retain. Setting to 0 will clear all existing data.
-	RetentionMonths int32 `json:"retention_months"`
+	RetentionMonths int32 `json:"retention_months,omitempty"`
 }
 
 // NewInternalClientActivityConfigureRequestWithDefaults instantiates a new InternalClientActivityConfigureRequest object
@@ -32,14 +28,4 @@ func NewInternalClientActivityConfigureRequestWithDefaults() *InternalClientActi
 	this.RetentionMonths = 24
 
 	return &this
-}
-
-func (o InternalClientActivityConfigureRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["default_report_months"] = o.DefaultReportMonths
-	toSerialize["enabled"] = o.Enabled
-	toSerialize["retention_months"] = o.RetentionMonths
-
-	return json.Marshal(toSerialize)
 }

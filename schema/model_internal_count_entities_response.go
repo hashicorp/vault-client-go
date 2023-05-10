@@ -5,13 +5,9 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // InternalCountEntitiesResponse struct for InternalCountEntitiesResponse
 type InternalCountEntitiesResponse struct {
-	Counters map[string]interface{} `json:"counters"`
+	Counters map[string]interface{} `json:"counters,omitempty"`
 }
 
 // NewInternalCountEntitiesResponseWithDefaults instantiates a new InternalCountEntitiesResponse object
@@ -21,12 +17,4 @@ func NewInternalCountEntitiesResponseWithDefaults() *InternalCountEntitiesRespon
 	var this InternalCountEntitiesResponse
 
 	return &this
-}
-
-func (o InternalCountEntitiesResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["counters"] = o.Counters
-
-	return json.Marshal(toSerialize)
 }

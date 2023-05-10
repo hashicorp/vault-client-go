@@ -5,26 +5,22 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiReadKeyResponse struct for PkiReadKeyResponse
 type PkiReadKeyResponse struct {
 	// Key Id
-	KeyId string `json:"key_id"`
+	KeyId string `json:"key_id,omitempty"`
 
 	// Key Name
-	KeyName string `json:"key_name"`
+	KeyName string `json:"key_name,omitempty"`
 
 	// Key Type
-	KeyType string `json:"key_type"`
+	KeyType string `json:"key_type,omitempty"`
 
 	// Managed Key Id
-	ManagedKeyId string `json:"managed_key_id"`
+	ManagedKeyId string `json:"managed_key_id,omitempty"`
 
 	// Managed Key Name
-	ManagedKeyName string `json:"managed_key_name"`
+	ManagedKeyName string `json:"managed_key_name,omitempty"`
 }
 
 // NewPkiReadKeyResponseWithDefaults instantiates a new PkiReadKeyResponse object
@@ -34,16 +30,4 @@ func NewPkiReadKeyResponseWithDefaults() *PkiReadKeyResponse {
 	var this PkiReadKeyResponse
 
 	return &this
-}
-
-func (o PkiReadKeyResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["key_id"] = o.KeyId
-	toSerialize["key_name"] = o.KeyName
-	toSerialize["key_type"] = o.KeyType
-	toSerialize["managed_key_id"] = o.ManagedKeyId
-	toSerialize["managed_key_name"] = o.ManagedKeyName
-
-	return json.Marshal(toSerialize)
 }

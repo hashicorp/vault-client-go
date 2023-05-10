@@ -5,13 +5,9 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GenerateHashResponse struct for GenerateHashResponse
 type GenerateHashResponse struct {
-	Sum string `json:"sum"`
+	Sum string `json:"sum,omitempty"`
 }
 
 // NewGenerateHashResponseWithDefaults instantiates a new GenerateHashResponse object
@@ -21,12 +17,4 @@ func NewGenerateHashResponseWithDefaults() *GenerateHashResponse {
 	var this GenerateHashResponse
 
 	return &this
-}
-
-func (o GenerateHashResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["sum"] = o.Sum
-
-	return json.Marshal(toSerialize)
 }

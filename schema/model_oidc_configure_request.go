@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // OidcConfigureRequest struct for OidcConfigureRequest
 type OidcConfigureRequest struct {
 	// Issuer URL to be used in the iss claim of the token. If not set, Vault's app_addr will be used.
-	Issuer string `json:"issuer"`
+	Issuer string `json:"issuer,omitempty"`
 }
 
 // NewOidcConfigureRequestWithDefaults instantiates a new OidcConfigureRequest object
@@ -22,12 +18,4 @@ func NewOidcConfigureRequestWithDefaults() *OidcConfigureRequest {
 	var this OidcConfigureRequest
 
 	return &this
-}
-
-func (o OidcConfigureRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["issuer"] = o.Issuer
-
-	return json.Marshal(toSerialize)
 }

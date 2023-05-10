@@ -5,26 +5,22 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // EntityLookUpRequest struct for EntityLookUpRequest
 type EntityLookUpRequest struct {
 	// ID of the alias.
-	AliasId string `json:"alias_id"`
+	AliasId string `json:"alias_id,omitempty"`
 
 	// Accessor of the mount to which the alias belongs to. This should be supplied in conjunction with 'alias_name'.
-	AliasMountAccessor string `json:"alias_mount_accessor"`
+	AliasMountAccessor string `json:"alias_mount_accessor,omitempty"`
 
 	// Name of the alias. This should be supplied in conjunction with 'alias_mount_accessor'.
-	AliasName string `json:"alias_name"`
+	AliasName string `json:"alias_name,omitempty"`
 
 	// ID of the entity.
-	Id string `json:"id"`
+	Id string `json:"id,omitempty"`
 
 	// Name of the entity.
-	Name string `json:"name"`
+	Name string `json:"name,omitempty"`
 }
 
 // NewEntityLookUpRequestWithDefaults instantiates a new EntityLookUpRequest object
@@ -34,16 +30,4 @@ func NewEntityLookUpRequestWithDefaults() *EntityLookUpRequest {
 	var this EntityLookUpRequest
 
 	return &this
-}
-
-func (o EntityLookUpRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["alias_id"] = o.AliasId
-	toSerialize["alias_mount_accessor"] = o.AliasMountAccessor
-	toSerialize["alias_name"] = o.AliasName
-	toSerialize["id"] = o.Id
-	toSerialize["name"] = o.Name
-
-	return json.Marshal(toSerialize)
 }

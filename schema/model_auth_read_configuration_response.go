@@ -5,37 +5,33 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AuthReadConfigurationResponse struct for AuthReadConfigurationResponse
 type AuthReadConfigurationResponse struct {
-	Accessor string `json:"accessor"`
+	Accessor string `json:"accessor,omitempty"`
 
-	Config map[string]interface{} `json:"config"`
+	Config map[string]interface{} `json:"config,omitempty"`
 
-	DeprecationStatus string `json:"deprecation_status"`
+	DeprecationStatus string `json:"deprecation_status,omitempty"`
 
-	Description string `json:"description"`
+	Description string `json:"description,omitempty"`
 
-	ExternalEntropyAccess bool `json:"external_entropy_access"`
+	ExternalEntropyAccess bool `json:"external_entropy_access,omitempty"`
 
-	Local bool `json:"local"`
+	Local bool `json:"local,omitempty"`
 
-	Options map[string]interface{} `json:"options"`
+	Options map[string]interface{} `json:"options,omitempty"`
 
-	PluginVersion string `json:"plugin_version"`
+	PluginVersion string `json:"plugin_version,omitempty"`
 
-	RunningPluginVersion string `json:"running_plugin_version"`
+	RunningPluginVersion string `json:"running_plugin_version,omitempty"`
 
-	RunningSha256 string `json:"running_sha256"`
+	RunningSha256 string `json:"running_sha256,omitempty"`
 
-	SealWrap bool `json:"seal_wrap"`
+	SealWrap bool `json:"seal_wrap,omitempty"`
 
-	Type string `json:"type"`
+	Type string `json:"type,omitempty"`
 
-	Uuid string `json:"uuid"`
+	Uuid string `json:"uuid,omitempty"`
 }
 
 // NewAuthReadConfigurationResponseWithDefaults instantiates a new AuthReadConfigurationResponse object
@@ -45,24 +41,4 @@ func NewAuthReadConfigurationResponseWithDefaults() *AuthReadConfigurationRespon
 	var this AuthReadConfigurationResponse
 
 	return &this
-}
-
-func (o AuthReadConfigurationResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["accessor"] = o.Accessor
-	toSerialize["config"] = o.Config
-	toSerialize["deprecation_status"] = o.DeprecationStatus
-	toSerialize["description"] = o.Description
-	toSerialize["external_entropy_access"] = o.ExternalEntropyAccess
-	toSerialize["local"] = o.Local
-	toSerialize["options"] = o.Options
-	toSerialize["plugin_version"] = o.PluginVersion
-	toSerialize["running_plugin_version"] = o.RunningPluginVersion
-	toSerialize["running_sha256"] = o.RunningSha256
-	toSerialize["seal_wrap"] = o.SealWrap
-	toSerialize["type"] = o.Type
-	toSerialize["uuid"] = o.Uuid
-
-	return json.Marshal(toSerialize)
 }

@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // UserpassResetPasswordRequest struct for UserpassResetPasswordRequest
 type UserpassResetPasswordRequest struct {
 	// Password for this user.
-	Password string `json:"password"`
+	Password string `json:"password,omitempty"`
 }
 
 // NewUserpassResetPasswordRequestWithDefaults instantiates a new UserpassResetPasswordRequest object
@@ -22,12 +18,4 @@ func NewUserpassResetPasswordRequestWithDefaults() *UserpassResetPasswordRequest
 	var this UserpassResetPasswordRequest
 
 	return &this
-}
-
-func (o UserpassResetPasswordRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["password"] = o.Password
-
-	return json.Marshal(toSerialize)
 }

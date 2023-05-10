@@ -5,15 +5,11 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // VersionHistoryResponse struct for VersionHistoryResponse
 type VersionHistoryResponse struct {
-	KeyInfo map[string]interface{} `json:"key_info"`
+	KeyInfo map[string]interface{} `json:"key_info,omitempty"`
 
-	Keys []string `json:"keys"`
+	Keys []string `json:"keys,omitempty"`
 }
 
 // NewVersionHistoryResponseWithDefaults instantiates a new VersionHistoryResponse object
@@ -23,13 +19,4 @@ func NewVersionHistoryResponseWithDefaults() *VersionHistoryResponse {
 	var this VersionHistoryResponse
 
 	return &this
-}
-
-func (o VersionHistoryResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["key_info"] = o.KeyInfo
-	toSerialize["keys"] = o.Keys
-
-	return json.Marshal(toSerialize)
 }

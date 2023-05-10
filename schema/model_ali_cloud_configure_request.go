@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AliCloudConfigureRequest struct for AliCloudConfigureRequest
 type AliCloudConfigureRequest struct {
 	// Access key with appropriate permissions.
-	AccessKey string `json:"access_key"`
+	AccessKey string `json:"access_key,omitempty"`
 
 	// Secret key with appropriate permissions.
-	SecretKey string `json:"secret_key"`
+	SecretKey string `json:"secret_key,omitempty"`
 }
 
 // NewAliCloudConfigureRequestWithDefaults instantiates a new AliCloudConfigureRequest object
@@ -25,13 +21,4 @@ func NewAliCloudConfigureRequestWithDefaults() *AliCloudConfigureRequest {
 	var this AliCloudConfigureRequest
 
 	return &this
-}
-
-func (o AliCloudConfigureRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["access_key"] = o.AccessKey
-	toSerialize["secret_key"] = o.SecretKey
-
-	return json.Marshal(toSerialize)
 }

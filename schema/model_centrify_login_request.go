@@ -5,20 +5,16 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // CentrifyLoginRequest struct for CentrifyLoginRequest
 type CentrifyLoginRequest struct {
 	// Auth mode ('ro' for resource owner, 'cc' for credential client).
-	Mode string `json:"mode"`
+	Mode string `json:"mode,omitempty"`
 
 	// Password for this user.
-	Password string `json:"password"`
+	Password string `json:"password,omitempty"`
 
 	// Username of the user.
-	Username string `json:"username"`
+	Username string `json:"username,omitempty"`
 }
 
 // NewCentrifyLoginRequestWithDefaults instantiates a new CentrifyLoginRequest object
@@ -30,14 +26,4 @@ func NewCentrifyLoginRequestWithDefaults() *CentrifyLoginRequest {
 	this.Mode = "ro"
 
 	return &this
-}
-
-func (o CentrifyLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["mode"] = o.Mode
-	toSerialize["password"] = o.Password
-	toSerialize["username"] = o.Username
-
-	return json.Marshal(toSerialize)
 }

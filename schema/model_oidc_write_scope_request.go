@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // OidcWriteScopeRequest struct for OidcWriteScopeRequest
 type OidcWriteScopeRequest struct {
 	// The description of the scope
-	Description string `json:"description"`
+	Description string `json:"description,omitempty"`
 
 	// The template string to use for the scope. This may be in string-ified JSON or base64 format.
-	Template string `json:"template"`
+	Template string `json:"template,omitempty"`
 }
 
 // NewOidcWriteScopeRequestWithDefaults instantiates a new OidcWriteScopeRequest object
@@ -25,13 +21,4 @@ func NewOidcWriteScopeRequestWithDefaults() *OidcWriteScopeRequest {
 	var this OidcWriteScopeRequest
 
 	return &this
-}
-
-func (o OidcWriteScopeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["description"] = o.Description
-	toSerialize["template"] = o.Template
-
-	return json.Marshal(toSerialize)
 }

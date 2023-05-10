@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiIssuerSignSelfIssuedRequest struct for PkiIssuerSignSelfIssuedRequest
 type PkiIssuerSignSelfIssuedRequest struct {
 	// PEM-format self-issued certificate to be signed.
-	Certificate string `json:"certificate"`
+	Certificate string `json:"certificate,omitempty"`
 
 	// If true, require the public key algorithm of the signer to match that of the self issued certificate.
-	RequireMatchingCertificateAlgorithms bool `json:"require_matching_certificate_algorithms"`
+	RequireMatchingCertificateAlgorithms bool `json:"require_matching_certificate_algorithms,omitempty"`
 }
 
 // NewPkiIssuerSignSelfIssuedRequestWithDefaults instantiates a new PkiIssuerSignSelfIssuedRequest object
@@ -27,13 +23,4 @@ func NewPkiIssuerSignSelfIssuedRequestWithDefaults() *PkiIssuerSignSelfIssuedReq
 	this.RequireMatchingCertificateAlgorithms = false
 
 	return &this
-}
-
-func (o PkiIssuerSignSelfIssuedRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["certificate"] = o.Certificate
-	toSerialize["require_matching_certificate_algorithms"] = o.RequireMatchingCertificateAlgorithms
-
-	return json.Marshal(toSerialize)
 }

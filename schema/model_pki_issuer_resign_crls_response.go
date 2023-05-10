@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiIssuerResignCrlsResponse struct for PkiIssuerResignCrlsResponse
 type PkiIssuerResignCrlsResponse struct {
 	// CRL
-	Crl string `json:"crl"`
+	Crl string `json:"crl,omitempty"`
 }
 
 // NewPkiIssuerResignCrlsResponseWithDefaults instantiates a new PkiIssuerResignCrlsResponse object
@@ -22,12 +18,4 @@ func NewPkiIssuerResignCrlsResponseWithDefaults() *PkiIssuerResignCrlsResponse {
 	var this PkiIssuerResignCrlsResponse
 
 	return &this
-}
-
-func (o PkiIssuerResignCrlsResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["crl"] = o.Crl
-
-	return json.Marshal(toSerialize)
 }

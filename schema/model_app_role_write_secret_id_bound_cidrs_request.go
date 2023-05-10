@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleWriteSecretIdBoundCidrsRequest struct for AppRoleWriteSecretIdBoundCidrsRequest
 type AppRoleWriteSecretIdBoundCidrsRequest struct {
 	// Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can perform the login operation.
-	SecretIdBoundCidrs []string `json:"secret_id_bound_cidrs"`
+	SecretIdBoundCidrs []string `json:"secret_id_bound_cidrs,omitempty"`
 }
 
 // NewAppRoleWriteSecretIdBoundCidrsRequestWithDefaults instantiates a new AppRoleWriteSecretIdBoundCidrsRequest object
@@ -22,12 +18,4 @@ func NewAppRoleWriteSecretIdBoundCidrsRequestWithDefaults() *AppRoleWriteSecretI
 	var this AppRoleWriteSecretIdBoundCidrsRequest
 
 	return &this
-}
-
-func (o AppRoleWriteSecretIdBoundCidrsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["secret_id_bound_cidrs"] = o.SecretIdBoundCidrs
-
-	return json.Marshal(toSerialize)
 }

@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // SshConfigureZeroAddressRequest struct for SshConfigureZeroAddressRequest
 type SshConfigureZeroAddressRequest struct {
 	// [Required] Comma separated list of role names which allows credentials to be requested for any IP address. CIDR blocks previously registered under these roles will be ignored.
-	Roles []string `json:"roles"`
+	Roles []string `json:"roles,omitempty"`
 }
 
 // NewSshConfigureZeroAddressRequestWithDefaults instantiates a new SshConfigureZeroAddressRequest object
@@ -22,12 +18,4 @@ func NewSshConfigureZeroAddressRequestWithDefaults() *SshConfigureZeroAddressReq
 	var this SshConfigureZeroAddressRequest
 
 	return &this
-}
-
-func (o SshConfigureZeroAddressRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["roles"] = o.Roles
-
-	return json.Marshal(toSerialize)
 }

@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GenerateRandomWithSourceAndBytesRequest struct for GenerateRandomWithSourceAndBytesRequest
 type GenerateRandomWithSourceAndBytesRequest struct {
 	// The number of bytes to generate (POST body parameter). Defaults to 32 (256 bits).
-	Bytes int32 `json:"bytes"`
+	Bytes int32 `json:"bytes,omitempty"`
 
 	// Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".
-	Format string `json:"format"`
+	Format string `json:"format,omitempty"`
 }
 
 // NewGenerateRandomWithSourceAndBytesRequestWithDefaults instantiates a new GenerateRandomWithSourceAndBytesRequest object
@@ -28,13 +24,4 @@ func NewGenerateRandomWithSourceAndBytesRequestWithDefaults() *GenerateRandomWit
 	this.Format = "base64"
 
 	return &this
-}
-
-func (o GenerateRandomWithSourceAndBytesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["bytes"] = o.Bytes
-	toSerialize["format"] = o.Format
-
-	return json.Marshal(toSerialize)
 }

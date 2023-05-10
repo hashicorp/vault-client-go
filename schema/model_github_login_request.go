@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GithubLoginRequest struct for GithubLoginRequest
 type GithubLoginRequest struct {
 	// GitHub personal API token
-	Token string `json:"token"`
+	Token string `json:"token,omitempty"`
 }
 
 // NewGithubLoginRequestWithDefaults instantiates a new GithubLoginRequest object
@@ -22,12 +18,4 @@ func NewGithubLoginRequestWithDefaults() *GithubLoginRequest {
 	var this GithubLoginRequest
 
 	return &this
-}
-
-func (o GithubLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["token"] = o.Token
-
-	return json.Marshal(toSerialize)
 }

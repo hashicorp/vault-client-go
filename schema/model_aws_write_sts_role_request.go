@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AwsWriteStsRoleRequest struct for AwsWriteStsRoleRequest
 type AwsWriteStsRoleRequest struct {
 	// AWS ARN for STS role to be assumed when interacting with the account specified. The Vault server must have permissions to assume this role.
-	StsRole string `json:"sts_role"`
+	StsRole string `json:"sts_role,omitempty"`
 }
 
 // NewAwsWriteStsRoleRequestWithDefaults instantiates a new AwsWriteStsRoleRequest object
@@ -22,12 +18,4 @@ func NewAwsWriteStsRoleRequestWithDefaults() *AwsWriteStsRoleRequest {
 	var this AwsWriteStsRoleRequest
 
 	return &this
-}
-
-func (o AwsWriteStsRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["sts_role"] = o.StsRole
-
-	return json.Marshal(toSerialize)
 }

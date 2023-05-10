@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // UiHeadersListResponse struct for UiHeadersListResponse
 type UiHeadersListResponse struct {
 	// Lists of configured UI headers. Omitted if list is empty
-	Keys []string `json:"keys"`
+	Keys []string `json:"keys,omitempty"`
 }
 
 // NewUiHeadersListResponseWithDefaults instantiates a new UiHeadersListResponse object
@@ -22,12 +18,4 @@ func NewUiHeadersListResponseWithDefaults() *UiHeadersListResponse {
 	var this UiHeadersListResponse
 
 	return &this
-}
-
-func (o UiHeadersListResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["keys"] = o.Keys
-
-	return json.Marshal(toSerialize)
 }

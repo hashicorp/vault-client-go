@@ -5,13 +5,9 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // UnwrapRequest struct for UnwrapRequest
 type UnwrapRequest struct {
-	Token string `json:"token"`
+	Token string `json:"token,omitempty"`
 }
 
 // NewUnwrapRequestWithDefaults instantiates a new UnwrapRequest object
@@ -21,12 +17,4 @@ func NewUnwrapRequestWithDefaults() *UnwrapRequest {
 	var this UnwrapRequest
 
 	return &this
-}
-
-func (o UnwrapRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["token"] = o.Token
-
-	return json.Marshal(toSerialize)
 }

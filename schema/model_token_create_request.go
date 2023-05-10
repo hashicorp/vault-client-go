@@ -5,50 +5,46 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // TokenCreateRequest struct for TokenCreateRequest
 type TokenCreateRequest struct {
 	// Name to associate with this token
-	DisplayName string `json:"display_name"`
+	DisplayName string `json:"display_name,omitempty"`
 
 	// Name of the entity alias to associate with this token
-	EntityAlias string `json:"entity_alias"`
+	EntityAlias string `json:"entity_alias,omitempty"`
 
 	// Explicit Max TTL of this token
-	ExplicitMaxTtl string `json:"explicit_max_ttl"`
+	ExplicitMaxTtl string `json:"explicit_max_ttl,omitempty"`
 
 	// Value for the token
-	Id string `json:"id"`
+	Id string `json:"id,omitempty"`
 
 	// Arbitrary key=value metadata to associate with the token
-	Metadata map[string]interface{} `json:"metadata"`
+	Metadata map[string]interface{} `json:"metadata,omitempty"`
 
 	// Do not include default policy for this token
-	NoDefaultPolicy bool `json:"no_default_policy"`
+	NoDefaultPolicy bool `json:"no_default_policy,omitempty"`
 
 	// Create the token with no parent
-	NoParent bool `json:"no_parent"`
+	NoParent bool `json:"no_parent,omitempty"`
 
 	// Max number of uses for this token
-	NumUses int32 `json:"num_uses"`
+	NumUses int32 `json:"num_uses,omitempty"`
 
 	// Renew period
-	Period string `json:"period"`
+	Period string `json:"period,omitempty"`
 
 	// List of policies for the token
-	Policies []string `json:"policies"`
+	Policies []string `json:"policies,omitempty"`
 
 	// Allow token to be renewed past its initial TTL up to system/mount maximum TTL
-	Renewable bool `json:"renewable"`
+	Renewable bool `json:"renewable,omitempty"`
 
 	// Time to live for this token
-	Ttl string `json:"ttl"`
+	Ttl string `json:"ttl,omitempty"`
 
 	// Token type
-	Type string `json:"type"`
+	Type string `json:"type,omitempty"`
 }
 
 // NewTokenCreateRequestWithDefaults instantiates a new TokenCreateRequest object
@@ -58,24 +54,4 @@ func NewTokenCreateRequestWithDefaults() *TokenCreateRequest {
 	var this TokenCreateRequest
 
 	return &this
-}
-
-func (o TokenCreateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["display_name"] = o.DisplayName
-	toSerialize["entity_alias"] = o.EntityAlias
-	toSerialize["explicit_max_ttl"] = o.ExplicitMaxTtl
-	toSerialize["id"] = o.Id
-	toSerialize["metadata"] = o.Metadata
-	toSerialize["no_default_policy"] = o.NoDefaultPolicy
-	toSerialize["no_parent"] = o.NoParent
-	toSerialize["num_uses"] = o.NumUses
-	toSerialize["period"] = o.Period
-	toSerialize["policies"] = o.Policies
-	toSerialize["renewable"] = o.Renewable
-	toSerialize["ttl"] = o.Ttl
-	toSerialize["type"] = o.Type
-
-	return json.Marshal(toSerialize)
 }

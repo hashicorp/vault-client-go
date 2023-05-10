@@ -5,20 +5,16 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // OidcWriteProviderRequest struct for OidcWriteProviderRequest
 type OidcWriteProviderRequest struct {
 	// The client IDs that are permitted to use the provider
-	AllowedClientIds []string `json:"allowed_client_ids"`
+	AllowedClientIds []string `json:"allowed_client_ids,omitempty"`
 
 	// Specifies what will be used for the iss claim of ID tokens.
-	Issuer string `json:"issuer"`
+	Issuer string `json:"issuer,omitempty"`
 
 	// The scopes supported for requesting on the provider
-	ScopesSupported []string `json:"scopes_supported"`
+	ScopesSupported []string `json:"scopes_supported,omitempty"`
 }
 
 // NewOidcWriteProviderRequestWithDefaults instantiates a new OidcWriteProviderRequest object
@@ -28,14 +24,4 @@ func NewOidcWriteProviderRequestWithDefaults() *OidcWriteProviderRequest {
 	var this OidcWriteProviderRequest
 
 	return &this
-}
-
-func (o OidcWriteProviderRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["allowed_client_ids"] = o.AllowedClientIds
-	toSerialize["issuer"] = o.Issuer
-	toSerialize["scopes_supported"] = o.ScopesSupported
-
-	return json.Marshal(toSerialize)
 }

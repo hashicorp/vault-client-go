@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiConfigureKeysRequest struct for PkiConfigureKeysRequest
 type PkiConfigureKeysRequest struct {
 	// Reference (name or identifier) of the default key.
-	Default string `json:"default"`
+	Default string `json:"default,omitempty"`
 }
 
 // NewPkiConfigureKeysRequestWithDefaults instantiates a new PkiConfigureKeysRequest object
@@ -22,12 +18,4 @@ func NewPkiConfigureKeysRequestWithDefaults() *PkiConfigureKeysRequest {
 	var this PkiConfigureKeysRequest
 
 	return &this
-}
-
-func (o PkiConfigureKeysRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["default"] = o.Default
-
-	return json.Marshal(toSerialize)
 }

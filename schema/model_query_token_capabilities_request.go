@@ -5,21 +5,17 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // QueryTokenCapabilitiesRequest struct for QueryTokenCapabilitiesRequest
 type QueryTokenCapabilitiesRequest struct {
 	// Use 'paths' instead.
 	// Deprecated
-	Path []string `json:"path"`
+	Path []string `json:"path,omitempty"`
 
 	// Paths on which capabilities are being queried.
-	Paths []string `json:"paths"`
+	Paths []string `json:"paths,omitempty"`
 
 	// Token for which capabilities are being queried.
-	Token string `json:"token"`
+	Token string `json:"token,omitempty"`
 }
 
 // NewQueryTokenCapabilitiesRequestWithDefaults instantiates a new QueryTokenCapabilitiesRequest object
@@ -29,14 +25,4 @@ func NewQueryTokenCapabilitiesRequestWithDefaults() *QueryTokenCapabilitiesReque
 	var this QueryTokenCapabilitiesRequest
 
 	return &this
-}
-
-func (o QueryTokenCapabilitiesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["path"] = o.Path
-	toSerialize["paths"] = o.Paths
-	toSerialize["token"] = o.Token
-
-	return json.Marshal(toSerialize)
 }

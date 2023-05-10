@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleWriteTokenBoundCidrsRequest struct for AppRoleWriteTokenBoundCidrsRequest
 type AppRoleWriteTokenBoundCidrsRequest struct {
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
-	TokenBoundCidrs []string `json:"token_bound_cidrs"`
+	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
 }
 
 // NewAppRoleWriteTokenBoundCidrsRequestWithDefaults instantiates a new AppRoleWriteTokenBoundCidrsRequest object
@@ -22,12 +18,4 @@ func NewAppRoleWriteTokenBoundCidrsRequestWithDefaults() *AppRoleWriteTokenBound
 	var this AppRoleWriteTokenBoundCidrsRequest
 
 	return &this
-}
-
-func (o AppRoleWriteTokenBoundCidrsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-
-	return json.Marshal(toSerialize)
 }

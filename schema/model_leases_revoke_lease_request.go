@@ -5,20 +5,16 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // LeasesRevokeLeaseRequest struct for LeasesRevokeLeaseRequest
 type LeasesRevokeLeaseRequest struct {
 	// The lease identifier to renew. This is included with a lease.
-	LeaseId string `json:"lease_id"`
+	LeaseId string `json:"lease_id,omitempty"`
 
 	// Whether or not to perform the revocation synchronously
-	Sync bool `json:"sync"`
+	Sync bool `json:"sync,omitempty"`
 
 	// The lease identifier to renew. This is included with a lease.
-	UrlLeaseId string `json:"url_lease_id"`
+	UrlLeaseId string `json:"url_lease_id,omitempty"`
 }
 
 // NewLeasesRevokeLeaseRequestWithDefaults instantiates a new LeasesRevokeLeaseRequest object
@@ -30,14 +26,4 @@ func NewLeasesRevokeLeaseRequestWithDefaults() *LeasesRevokeLeaseRequest {
 	this.Sync = true
 
 	return &this
-}
-
-func (o LeasesRevokeLeaseRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["lease_id"] = o.LeaseId
-	toSerialize["sync"] = o.Sync
-	toSerialize["url_lease_id"] = o.UrlLeaseId
-
-	return json.Marshal(toSerialize)
 }

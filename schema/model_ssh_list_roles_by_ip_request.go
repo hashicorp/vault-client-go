@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // SshListRolesByIpRequest struct for SshListRolesByIpRequest
 type SshListRolesByIpRequest struct {
 	// [Required] IP address of remote host
-	Ip string `json:"ip"`
+	Ip string `json:"ip,omitempty"`
 }
 
 // NewSshListRolesByIpRequestWithDefaults instantiates a new SshListRolesByIpRequest object
@@ -22,12 +18,4 @@ func NewSshListRolesByIpRequestWithDefaults() *SshListRolesByIpRequest {
 	var this SshListRolesByIpRequest
 
 	return &this
-}
-
-func (o SshListRolesByIpRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["ip"] = o.Ip
-
-	return json.Marshal(toSerialize)
 }

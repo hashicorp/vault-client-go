@@ -5,29 +5,25 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // DatabaseConfigureConnectionRequest struct for DatabaseConfigureConnectionRequest
 type DatabaseConfigureConnectionRequest struct {
 	// Comma separated string or array of the role names allowed to get creds from this database connection. If empty no roles are allowed. If \"*\" all roles are allowed.
-	AllowedRoles []string `json:"allowed_roles"`
+	AllowedRoles []string `json:"allowed_roles,omitempty"`
 
 	// Password policy to use when generating passwords.
-	PasswordPolicy string `json:"password_policy"`
+	PasswordPolicy string `json:"password_policy,omitempty"`
 
 	// The name of a builtin or previously registered plugin known to vault. This endpoint will create an instance of that plugin type.
-	PluginName string `json:"plugin_name"`
+	PluginName string `json:"plugin_name,omitempty"`
 
 	// The version of the plugin to use.
-	PluginVersion string `json:"plugin_version"`
+	PluginVersion string `json:"plugin_version,omitempty"`
 
 	// Specifies the database statements to be executed to rotate the root user's credentials. See the plugin's API page for more information on support and formatting for this parameter.
-	RootRotationStatements []string `json:"root_rotation_statements"`
+	RootRotationStatements []string `json:"root_rotation_statements,omitempty"`
 
 	// If true, the connection details are verified by actually connecting to the database. Defaults to true.
-	VerifyConnection bool `json:"verify_connection"`
+	VerifyConnection bool `json:"verify_connection,omitempty"`
 }
 
 // NewDatabaseConfigureConnectionRequestWithDefaults instantiates a new DatabaseConfigureConnectionRequest object
@@ -39,17 +35,4 @@ func NewDatabaseConfigureConnectionRequestWithDefaults() *DatabaseConfigureConne
 	this.VerifyConnection = true
 
 	return &this
-}
-
-func (o DatabaseConfigureConnectionRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["allowed_roles"] = o.AllowedRoles
-	toSerialize["password_policy"] = o.PasswordPolicy
-	toSerialize["plugin_name"] = o.PluginName
-	toSerialize["plugin_version"] = o.PluginVersion
-	toSerialize["root_rotation_statements"] = o.RootRotationStatements
-	toSerialize["verify_connection"] = o.VerifyConnection
-
-	return json.Marshal(toSerialize)
 }

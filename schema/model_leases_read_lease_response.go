@@ -5,30 +5,27 @@
 
 package schema
 
-import (
-	"encoding/json"
-	"time"
-)
+import "time"
 
 // LeasesReadLeaseResponse struct for LeasesReadLeaseResponse
 type LeasesReadLeaseResponse struct {
 	// Optional lease expiry time
-	ExpireTime time.Time `json:"expire_time"`
+	ExpireTime time.Time `json:"expire_time,omitempty"`
 
 	// Lease id
-	Id string `json:"id"`
+	Id string `json:"id,omitempty"`
 
 	// Timestamp for the lease's issue time
-	IssueTime time.Time `json:"issue_time"`
+	IssueTime time.Time `json:"issue_time,omitempty"`
 
 	// Optional Timestamp of the last time the lease was renewed
-	LastRenewal time.Time `json:"last_renewal"`
+	LastRenewal time.Time `json:"last_renewal,omitempty"`
 
 	// True if the lease is able to be renewed
-	Renewable bool `json:"renewable"`
+	Renewable bool `json:"renewable,omitempty"`
 
 	// Time to Live set for the lease, returns 0 if unset
-	Ttl int32 `json:"ttl"`
+	Ttl int32 `json:"ttl,omitempty"`
 }
 
 // NewLeasesReadLeaseResponseWithDefaults instantiates a new LeasesReadLeaseResponse object
@@ -38,17 +35,4 @@ func NewLeasesReadLeaseResponseWithDefaults() *LeasesReadLeaseResponse {
 	var this LeasesReadLeaseResponse
 
 	return &this
-}
-
-func (o LeasesReadLeaseResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["expire_time"] = o.ExpireTime
-	toSerialize["id"] = o.Id
-	toSerialize["issue_time"] = o.IssueTime
-	toSerialize["last_renewal"] = o.LastRenewal
-	toSerialize["renewable"] = o.Renewable
-	toSerialize["ttl"] = o.Ttl
-
-	return json.Marshal(toSerialize)
 }

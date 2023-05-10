@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // LeasesListResponse struct for LeasesListResponse
 type LeasesListResponse struct {
 	// Number of matching leases per mount
-	Counts int32 `json:"counts"`
+	Counts int32 `json:"counts,omitempty"`
 
 	// Number of matching leases
-	LeaseCount int32 `json:"lease_count"`
+	LeaseCount int32 `json:"lease_count,omitempty"`
 }
 
 // NewLeasesListResponseWithDefaults instantiates a new LeasesListResponse object
@@ -25,13 +21,4 @@ func NewLeasesListResponseWithDefaults() *LeasesListResponse {
 	var this LeasesListResponse
 
 	return &this
-}
-
-func (o LeasesListResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["counts"] = o.Counts
-	toSerialize["lease_count"] = o.LeaseCount
-
-	return json.Marshal(toSerialize)
 }

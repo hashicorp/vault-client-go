@@ -157,7 +157,7 @@ func sendStructuredRequestParseResponse[ResponseT any](
 	client *Client,
 	method string,
 	path string,
-	body json.Marshaler,
+	body any,
 	parameters url.Values,
 	requestModifiersPerRequest requestModifiers,
 ) (*Response[ResponseT], error) {

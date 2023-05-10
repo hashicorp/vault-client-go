@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // UiHeadersReadConfigurationResponse struct for UiHeadersReadConfigurationResponse
 type UiHeadersReadConfigurationResponse struct {
 	// returns the first header value when `multivalue` request parameter is false
-	Value string `json:"value"`
+	Value string `json:"value,omitempty"`
 
 	// returns all header values when `multivalue` request parameter is true
-	Values []string `json:"values"`
+	Values []string `json:"values,omitempty"`
 }
 
 // NewUiHeadersReadConfigurationResponseWithDefaults instantiates a new UiHeadersReadConfigurationResponse object
@@ -25,13 +21,4 @@ func NewUiHeadersReadConfigurationResponseWithDefaults() *UiHeadersReadConfigura
 	var this UiHeadersReadConfigurationResponse
 
 	return &this
-}
-
-func (o UiHeadersReadConfigurationResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["value"] = o.Value
-	toSerialize["values"] = o.Values
-
-	return json.Marshal(toSerialize)
 }

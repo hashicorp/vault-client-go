@@ -5,21 +5,18 @@
 
 package schema
 
-import (
-	"encoding/json"
-	"time"
-)
+import "time"
 
 // PkiRevokeWithKeyResponse struct for PkiRevokeWithKeyResponse
 type PkiRevokeWithKeyResponse struct {
 	// Revocation Time
-	RevocationTime int32 `json:"revocation_time"`
+	RevocationTime int32 `json:"revocation_time,omitempty"`
 
 	// Revocation Time
-	RevocationTimeRfc3339 time.Time `json:"revocation_time_rfc3339"`
+	RevocationTimeRfc3339 time.Time `json:"revocation_time_rfc3339,omitempty"`
 
 	// Revocation State
-	State string `json:"state"`
+	State string `json:"state,omitempty"`
 }
 
 // NewPkiRevokeWithKeyResponseWithDefaults instantiates a new PkiRevokeWithKeyResponse object
@@ -29,14 +26,4 @@ func NewPkiRevokeWithKeyResponseWithDefaults() *PkiRevokeWithKeyResponse {
 	var this PkiRevokeWithKeyResponse
 
 	return &this
-}
-
-func (o PkiRevokeWithKeyResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["revocation_time"] = o.RevocationTime
-	toSerialize["revocation_time_rfc3339"] = o.RevocationTimeRfc3339
-	toSerialize["state"] = o.State
-
-	return json.Marshal(toSerialize)
 }

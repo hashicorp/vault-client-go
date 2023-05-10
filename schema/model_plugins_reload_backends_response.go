@@ -5,13 +5,9 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PluginsReloadBackendsResponse struct for PluginsReloadBackendsResponse
 type PluginsReloadBackendsResponse struct {
-	ReloadId string `json:"reload_id"`
+	ReloadId string `json:"reload_id,omitempty"`
 }
 
 // NewPluginsReloadBackendsResponseWithDefaults instantiates a new PluginsReloadBackendsResponse object
@@ -21,12 +17,4 @@ func NewPluginsReloadBackendsResponseWithDefaults() *PluginsReloadBackendsRespon
 	var this PluginsReloadBackendsResponse
 
 	return &this
-}
-
-func (o PluginsReloadBackendsResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["reload_id"] = o.ReloadId
-
-	return json.Marshal(toSerialize)
 }

@@ -5,13 +5,9 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AuditingEnableRequestHeaderRequest struct for AuditingEnableRequestHeaderRequest
 type AuditingEnableRequestHeaderRequest struct {
-	Hmac bool `json:"hmac"`
+	Hmac bool `json:"hmac,omitempty"`
 }
 
 // NewAuditingEnableRequestHeaderRequestWithDefaults instantiates a new AuditingEnableRequestHeaderRequest object
@@ -21,12 +17,4 @@ func NewAuditingEnableRequestHeaderRequestWithDefaults() *AuditingEnableRequestH
 	var this AuditingEnableRequestHeaderRequest
 
 	return &this
-}
-
-func (o AuditingEnableRequestHeaderRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["hmac"] = o.Hmac
-
-	return json.Marshal(toSerialize)
 }

@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // TokenRenewSelfRequest struct for TokenRenewSelfRequest
 type TokenRenewSelfRequest struct {
 	// The desired increment in seconds to the token expiration
-	Increment int32 `json:"increment"`
+	Increment int32 `json:"increment,omitempty"`
 
 	// Token to renew (unused, does not need to be set)
-	Token string `json:"token"`
+	Token string `json:"token,omitempty"`
 }
 
 // NewTokenRenewSelfRequestWithDefaults instantiates a new TokenRenewSelfRequest object
@@ -27,13 +23,4 @@ func NewTokenRenewSelfRequestWithDefaults() *TokenRenewSelfRequest {
 	this.Increment = 0
 
 	return &this
-}
-
-func (o TokenRenewSelfRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["increment"] = o.Increment
-	toSerialize["token"] = o.Token
-
-	return json.Marshal(toSerialize)
 }

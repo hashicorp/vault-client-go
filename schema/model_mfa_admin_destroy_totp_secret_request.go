@@ -5,10 +5,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // MfaAdminDestroyTotpSecretRequest struct for MfaAdminDestroyTotpSecretRequest
 type MfaAdminDestroyTotpSecretRequest struct {
 	// Identifier of the entity from which the MFA method secret needs to be removed.
@@ -25,13 +21,4 @@ func NewMfaAdminDestroyTotpSecretRequestWithDefaults() *MfaAdminDestroyTotpSecre
 	var this MfaAdminDestroyTotpSecretRequest
 
 	return &this
-}
-
-func (o MfaAdminDestroyTotpSecretRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["entity_id"] = o.EntityId
-	toSerialize["method_id"] = o.MethodId
-
-	return json.Marshal(toSerialize)
 }

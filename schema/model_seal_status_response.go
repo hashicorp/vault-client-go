@@ -5,43 +5,39 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // SealStatusResponse struct for SealStatusResponse
 type SealStatusResponse struct {
-	BuildDate string `json:"build_date"`
+	BuildDate string `json:"build_date,omitempty"`
 
-	ClusterId string `json:"cluster_id"`
+	ClusterId string `json:"cluster_id,omitempty"`
 
-	ClusterName string `json:"cluster_name"`
+	ClusterName string `json:"cluster_name,omitempty"`
 
-	HcpLinkResourceID string `json:"hcp_link_resource_ID"`
+	HcpLinkResourceID string `json:"hcp_link_resource_ID,omitempty"`
 
-	HcpLinkStatus string `json:"hcp_link_status"`
+	HcpLinkStatus string `json:"hcp_link_status,omitempty"`
 
-	Initialized bool `json:"initialized"`
+	Initialized bool `json:"initialized,omitempty"`
 
-	Migration bool `json:"migration"`
+	Migration bool `json:"migration,omitempty"`
 
-	N int32 `json:"n"`
+	N int32 `json:"n,omitempty"`
 
-	Nonce string `json:"nonce"`
+	Nonce string `json:"nonce,omitempty"`
 
-	Progress int32 `json:"progress"`
+	Progress int32 `json:"progress,omitempty"`
 
-	RecoverySeal bool `json:"recovery_seal"`
+	RecoverySeal bool `json:"recovery_seal,omitempty"`
 
-	Sealed bool `json:"sealed"`
+	Sealed bool `json:"sealed,omitempty"`
 
-	StorageType string `json:"storage_type"`
+	StorageType string `json:"storage_type,omitempty"`
 
-	T int32 `json:"t"`
+	T int32 `json:"t,omitempty"`
 
-	Type string `json:"type"`
+	Type string `json:"type,omitempty"`
 
-	Version string `json:"version"`
+	Version string `json:"version,omitempty"`
 }
 
 // NewSealStatusResponseWithDefaults instantiates a new SealStatusResponse object
@@ -51,27 +47,4 @@ func NewSealStatusResponseWithDefaults() *SealStatusResponse {
 	var this SealStatusResponse
 
 	return &this
-}
-
-func (o SealStatusResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["build_date"] = o.BuildDate
-	toSerialize["cluster_id"] = o.ClusterId
-	toSerialize["cluster_name"] = o.ClusterName
-	toSerialize["hcp_link_resource_ID"] = o.HcpLinkResourceID
-	toSerialize["hcp_link_status"] = o.HcpLinkStatus
-	toSerialize["initialized"] = o.Initialized
-	toSerialize["migration"] = o.Migration
-	toSerialize["n"] = o.N
-	toSerialize["nonce"] = o.Nonce
-	toSerialize["progress"] = o.Progress
-	toSerialize["recovery_seal"] = o.RecoverySeal
-	toSerialize["sealed"] = o.Sealed
-	toSerialize["storage_type"] = o.StorageType
-	toSerialize["t"] = o.T
-	toSerialize["type"] = o.Type
-	toSerialize["version"] = o.Version
-
-	return json.Marshal(toSerialize)
 }

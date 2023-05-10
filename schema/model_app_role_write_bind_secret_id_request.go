@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleWriteBindSecretIdRequest struct for AppRoleWriteBindSecretIdRequest
 type AppRoleWriteBindSecretIdRequest struct {
 	// Impose secret_id to be presented when logging in using this role.
-	BindSecretId bool `json:"bind_secret_id"`
+	BindSecretId bool `json:"bind_secret_id,omitempty"`
 }
 
 // NewAppRoleWriteBindSecretIdRequestWithDefaults instantiates a new AppRoleWriteBindSecretIdRequest object
@@ -24,12 +20,4 @@ func NewAppRoleWriteBindSecretIdRequestWithDefaults() *AppRoleWriteBindSecretIdR
 	this.BindSecretId = true
 
 	return &this
-}
-
-func (o AppRoleWriteBindSecretIdRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["bind_secret_id"] = o.BindSecretId
-
-	return json.Marshal(toSerialize)
 }

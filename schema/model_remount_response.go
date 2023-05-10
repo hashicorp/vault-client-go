@@ -5,13 +5,9 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RemountResponse struct for RemountResponse
 type RemountResponse struct {
-	MigrationId string `json:"migration_id"`
+	MigrationId string `json:"migration_id,omitempty"`
 }
 
 // NewRemountResponseWithDefaults instantiates a new RemountResponse object
@@ -21,12 +17,4 @@ func NewRemountResponseWithDefaults() *RemountResponse {
 	var this RemountResponse
 
 	return &this
-}
-
-func (o RemountResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["migration_id"] = o.MigrationId
-
-	return json.Marshal(toSerialize)
 }

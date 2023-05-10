@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RemountRequest struct for RemountRequest
 type RemountRequest struct {
 	// The previous mount point.
-	From string `json:"from"`
+	From string `json:"from,omitempty"`
 
 	// The new mount point.
-	To string `json:"to"`
+	To string `json:"to,omitempty"`
 }
 
 // NewRemountRequestWithDefaults instantiates a new RemountRequest object
@@ -25,13 +21,4 @@ func NewRemountRequestWithDefaults() *RemountRequest {
 	var this RemountRequest
 
 	return &this
-}
-
-func (o RemountRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["from"] = o.From
-	toSerialize["to"] = o.To
-
-	return json.Marshal(toSerialize)
 }

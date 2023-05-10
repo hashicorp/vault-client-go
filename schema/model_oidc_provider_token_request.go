@@ -5,23 +5,19 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // OidcProviderTokenRequest struct for OidcProviderTokenRequest
 type OidcProviderTokenRequest struct {
 	// The ID of the requesting client.
-	ClientId string `json:"client_id"`
+	ClientId string `json:"client_id,omitempty"`
 
 	// The secret of the requesting client.
-	ClientSecret string `json:"client_secret"`
+	ClientSecret string `json:"client_secret,omitempty"`
 
 	// The authorization code received from the provider's authorization endpoint.
 	Code string `json:"code"`
 
 	// The code verifier associated with the authorization code.
-	CodeVerifier string `json:"code_verifier"`
+	CodeVerifier string `json:"code_verifier,omitempty"`
 
 	// The authorization grant type. The following grant types are supported: 'authorization_code'.
 	GrantType string `json:"grant_type"`
@@ -37,17 +33,4 @@ func NewOidcProviderTokenRequestWithDefaults() *OidcProviderTokenRequest {
 	var this OidcProviderTokenRequest
 
 	return &this
-}
-
-func (o OidcProviderTokenRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["client_id"] = o.ClientId
-	toSerialize["client_secret"] = o.ClientSecret
-	toSerialize["code"] = o.Code
-	toSerialize["code_verifier"] = o.CodeVerifier
-	toSerialize["grant_type"] = o.GrantType
-	toSerialize["redirect_uri"] = o.RedirectUri
-
-	return json.Marshal(toSerialize)
 }

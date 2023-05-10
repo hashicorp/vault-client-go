@@ -5,20 +5,16 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GoogleCloudKmsReencryptRequest struct for GoogleCloudKmsReencryptRequest
 type GoogleCloudKmsReencryptRequest struct {
 	// Optional data that, if specified, must also be provided during decryption.
-	AdditionalAuthenticatedData string `json:"additional_authenticated_data"`
+	AdditionalAuthenticatedData string `json:"additional_authenticated_data,omitempty"`
 
 	// Ciphertext to be re-encrypted to the latest key version. This must be ciphertext that Vault previously generated for this named key.
-	Ciphertext string `json:"ciphertext"`
+	Ciphertext string `json:"ciphertext,omitempty"`
 
 	// Integer version of the crypto key version to use for the new encryption. If unspecified, this defaults to the latest active crypto key version.
-	KeyVersion int32 `json:"key_version"`
+	KeyVersion int32 `json:"key_version,omitempty"`
 }
 
 // NewGoogleCloudKmsReencryptRequestWithDefaults instantiates a new GoogleCloudKmsReencryptRequest object
@@ -28,14 +24,4 @@ func NewGoogleCloudKmsReencryptRequestWithDefaults() *GoogleCloudKmsReencryptReq
 	var this GoogleCloudKmsReencryptRequest
 
 	return &this
-}
-
-func (o GoogleCloudKmsReencryptRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["additional_authenticated_data"] = o.AdditionalAuthenticatedData
-	toSerialize["ciphertext"] = o.Ciphertext
-	toSerialize["key_version"] = o.KeyVersion
-
-	return json.Marshal(toSerialize)
 }

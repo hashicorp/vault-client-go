@@ -5,13 +5,9 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PoliciesReadPasswordPolicyResponse struct for PoliciesReadPasswordPolicyResponse
 type PoliciesReadPasswordPolicyResponse struct {
-	Policy string `json:"policy"`
+	Policy string `json:"policy,omitempty"`
 }
 
 // NewPoliciesReadPasswordPolicyResponseWithDefaults instantiates a new PoliciesReadPasswordPolicyResponse object
@@ -21,12 +17,4 @@ func NewPoliciesReadPasswordPolicyResponseWithDefaults() *PoliciesReadPasswordPo
 	var this PoliciesReadPasswordPolicyResponse
 
 	return &this
-}
-
-func (o PoliciesReadPasswordPolicyResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["policy"] = o.Policy
-
-	return json.Marshal(toSerialize)
 }

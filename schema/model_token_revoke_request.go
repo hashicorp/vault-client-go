@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // TokenRevokeRequest struct for TokenRevokeRequest
 type TokenRevokeRequest struct {
 	// Token to revoke (request body)
-	Token string `json:"token"`
+	Token string `json:"token,omitempty"`
 }
 
 // NewTokenRevokeRequestWithDefaults instantiates a new TokenRevokeRequest object
@@ -22,12 +18,4 @@ func NewTokenRevokeRequestWithDefaults() *TokenRevokeRequest {
 	var this TokenRevokeRequest
 
 	return &this
-}
-
-func (o TokenRevokeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["token"] = o.Token
-
-	return json.Marshal(toSerialize)
 }

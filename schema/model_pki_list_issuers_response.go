@@ -5,17 +5,13 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PkiListIssuersResponse struct for PkiListIssuersResponse
 type PkiListIssuersResponse struct {
 	// Key info with issuer name
-	KeyInfo map[string]interface{} `json:"key_info"`
+	KeyInfo map[string]interface{} `json:"key_info,omitempty"`
 
 	// A list of keys
-	Keys []string `json:"keys"`
+	Keys []string `json:"keys,omitempty"`
 }
 
 // NewPkiListIssuersResponseWithDefaults instantiates a new PkiListIssuersResponse object
@@ -25,13 +21,4 @@ func NewPkiListIssuersResponseWithDefaults() *PkiListIssuersResponse {
 	var this PkiListIssuersResponse
 
 	return &this
-}
-
-func (o PkiListIssuersResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["key_info"] = o.KeyInfo
-	toSerialize["keys"] = o.Keys
-
-	return json.Marshal(toSerialize)
 }

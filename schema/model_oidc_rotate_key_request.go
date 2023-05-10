@@ -5,14 +5,10 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // OidcRotateKeyRequest struct for OidcRotateKeyRequest
 type OidcRotateKeyRequest struct {
 	// Controls how long the public portion of a key will be available for verification after being rotated. Setting verification_ttl here will override the verification_ttl set on the key.
-	VerificationTtl int32 `json:"verification_ttl"`
+	VerificationTtl int32 `json:"verification_ttl,omitempty"`
 }
 
 // NewOidcRotateKeyRequestWithDefaults instantiates a new OidcRotateKeyRequest object
@@ -22,12 +18,4 @@ func NewOidcRotateKeyRequestWithDefaults() *OidcRotateKeyRequest {
 	var this OidcRotateKeyRequest
 
 	return &this
-}
-
-func (o OidcRotateKeyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["verification_ttl"] = o.VerificationTtl
-
-	return json.Marshal(toSerialize)
 }

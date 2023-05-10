@@ -4,12 +4,22 @@ GENERATE_CONFIG_PATH        ?= generate/config.yaml
 GENERATE_TEMPLATES_PATH     ?= generate/templates
 OUTPUT_PATH                 ?= .
 
-.PHONY: regen bootstrap generate format tidy clean format-readme
+.PHONY: regen bootstrap delete-generated generate format tidy clean format-readme
 
-regen: bootstrap generate format tidy clean
+regen: bootstrap delete-generated generate format tidy clean
 
 bootstrap:
 	go install mvdan.cc/gofumpt@latest
+
+delete-generated:
+	rm -rf \
+		api_auth.go \
+		api_identity.go \
+		api_secrets.go \
+		api_system.go \
+		client.go \
+		docs \
+		schema
 
 generate:
 	docker run \

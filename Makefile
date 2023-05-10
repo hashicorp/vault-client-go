@@ -4,9 +4,9 @@ GENERATE_CONFIG_PATH        ?= generate/config.yaml
 GENERATE_TEMPLATES_PATH     ?= generate/templates
 OUTPUT_PATH                 ?= .
 
-.PHONY: regen bootstrap delete-generated generate format tidy format-readme
+.PHONY: regen bootstrap delete-generated generate format tidy clean format-readme
 
-regen: bootstrap delete-generated generate format tidy
+regen: bootstrap delete-generated generate format tidy clean
 
 bootstrap:
 	go install mvdan.cc/gofumpt@latest
@@ -42,6 +42,9 @@ format:
 
 tidy:
 	go mod tidy
+
+clean:
+	rm -rf .openapi-generator
 
 format-readme:
 	prettier --write README.md

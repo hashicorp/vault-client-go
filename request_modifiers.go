@@ -6,6 +6,7 @@ package vault
 import (
 	"fmt"
 	"net/http"
+	"net/url"
 	"strings"
 	"time"
 	"unicode"
@@ -29,6 +30,10 @@ type requestModifiers struct {
 	// mountPath, if specified, will overwrite the default mount path used in
 	// client.Auth & client.Secrets requests
 	mountPath string
+
+	// customQueryParameters, if specified will be appended to the list of
+	// query parameters included with the request
+	customQueryParameters url.Values
 }
 
 // requestHeaders contains headers that will be added to requests
@@ -224,12 +229,20 @@ func (c *Client) ClearReplicationForwardingMode() {
 	c.clientRequestModifiersLock.Unlock()
 }
 
-// mountPathOr returns object's mount path or the given default value
+// mountPathOr returns object's mount path or the given default value.
 func (m *requestModifiers) mountPathOr(defaultMountPath string) string {
 	if m.mountPath == "" {
 		return defaultMountPath
 	}
 	return m.mountPath
+}
+
+// customQueryParametersOrDefault returns object's query parameters or an empty map.
+func (m *requestModifiers) customQueryParametersOrDefault() url.Values {
+	if m.customQueryParameters == nil {
+		return make(url.Values)
+	}
+	return m.customQueryParameters
 }
 
 // mergeRequestModifiers merges the two objects, preferring the per-request modifiers

@@ -137,13 +137,11 @@ should unwrap it first as demonstrated [here](#response-wrapping--unwrapping).
 ### Using Generic Accessors
 
 The library provides the following generic accessors which let you read, modify,
-and delete an arbitrary path within Vault:
+list, and delete an arbitrary path within Vault:
 
 ```go
 client.Read(...)
-client.ReadWithParameters(...)
 client.ReadRaw(...)
-client.ReadRawWithParameters(...)
 
 client.Write(...)
 client.WriteFromBytes(...)
@@ -152,7 +150,6 @@ client.WriteFromReader(...)
 client.List(...)
 
 client.Delete(...)
-client.DeleteWithParameters(...)
 ```
 
 For example, `client.Secrets.KvV2Write(...)` from
@@ -235,6 +232,25 @@ secret, err := client.Secrets.KvV2Read(
 	ctx,
 	"my-secret",
 	vault.WithMountPath("my/mount/path"),
+)
+```
+
+#### Adding Custom Headers and Custom Query Parameters
+
+The library allows adding custom headers and query parameters to all requests:
+
+```go
+resp, err := client.Read(
+    ctx,
+    "/path/to/my/secret",
+    vault.WithCustomHeaders(http.Header{
+        "x-test-header1": {"a", "b"},
+        "x-test-header2": {"c", "d"},
+    }),
+    vault.WithCustomQueryParameters(url.Values{
+        "param1": {"a"},
+        "param2": {"b"},
+    }),
 )
 ```
 

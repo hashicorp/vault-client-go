@@ -8,6 +8,18 @@ and this project adheres to
 
 ## Unreleased ([diff][unreleased-diff])
 
+## [0.3.1][] ([diff][0.3.1-diff]) - 2023-05-10
+
+### Changed
+
+- Improved documentation for request logging in README.
+
+### Fixed
+
+- Fixed bug #147 -- the empty generated fields are now properly omitted.
+- Fixed mount path examples in the generated documentation.
+- Fixed the Makefile to properly clean up before regeneration.
+
 ## [0.3.0][] ([diff][0.3.0-diff]) - 2023-05-04
 
 ### Added
@@ -69,7 +81,9 @@ and this project adheres to
 <!-- diffs -->
 
 [unreleased-diff]:
-  https://github.com/hashicorp/vault-client-go/compare/v0.3.0...HEAD
+  https://github.com/hashicorp/vault-client-go/compare/v0.3.1...HEAD
+[0.3.1-diff]:
+  https://github.com/hashicorp/vault-client-go/compare/v0.3.0...v0.3.1
 [0.3.0-diff]:
   https://github.com/hashicorp/vault-client-go/compare/v0.2.0...v0.3.0
 [0.2.0-diff]:
@@ -81,11 +95,9 @@ and this project adheres to
 
 <!-- releases -->
 
-[0.3.0]:
-  https://github.com/hashicorp/vault-client-go/releases/tag/v0.3.0
-[0.2.0]:
-  https://github.com/hashicorp/vault-client-go/releases/tag/v0.2.0
-[0.1.0]:
-  https://github.com/hashicorp/vault-client-go/releases/tag/v0.1.0
+[0.3.1]: https://github.com/hashicorp/vault-client-go/releases/tag/v0.3.1
+[0.3.0]: https://github.com/hashicorp/vault-client-go/releases/tag/v0.3.0
+[0.2.0]: https://github.com/hashicorp/vault-client-go/releases/tag/v0.2.0
+[0.1.0]: https://github.com/hashicorp/vault-client-go/releases/tag/v0.1.0
 [0.1.0-beta]:
   https://github.com/hashicorp/vault-client-go/releases/tag/v0.1.0-beta

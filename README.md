@@ -137,13 +137,11 @@ should unwrap it first as demonstrated [here](#response-wrapping--unwrapping).
 ### Using Generic Accessors
 
 The library provides the following generic accessors which let you read, modify,
-and delete an arbitrary path within Vault:
+list, and delete an arbitrary path within Vault:
 
 ```go
 client.Read(...)
-client.ReadWithParameters(...)      // deprecated
 client.ReadRaw(...)
-client.ReadRawWithParameters(...)   // deprecated
 
 client.Write(...)
 client.WriteFromBytes(...)
@@ -152,7 +150,6 @@ client.WriteFromReader(...)
 client.List(...)
 
 client.Delete(...)
-client.DeleteWithParameters(...)    // deprecated
 ```
 
 For example, `client.Secrets.KvV2Write(...)` from

@@ -3,5 +3,5 @@
 
 additionalProperties:
   packageName: vault
-  packageVersion: 0.3.1
+  packageVersion: 0.3.2
 

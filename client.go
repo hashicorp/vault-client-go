@@ -17,7 +17,7 @@ import (
 	"github.com/hashicorp/go-retryablehttp"
 )
 
-const ClientVersion = "0.3.1"
+const ClientVersion = "0.3.2"
 
 // Client manages communication with Vault, initialize it with vault.New(...)
 type Client struct {

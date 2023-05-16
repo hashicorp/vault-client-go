@@ -40,7 +40,7 @@ func (c *Client) Read(ctx context.Context, path string, options ...RequestOption
 // ReadWithParameters attempts to read the value stored at the given Vault
 // path, adding the given query parameters to the request.
 //
-// Deprecated: use Read(..., vault.WithQueryParameters(...))
+// Deprecated: use Read(..., vault.WithCustomQueryParameters(...))
 func (c *Client) ReadWithParameters(ctx context.Context, path string, parameters url.Values, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -87,7 +87,7 @@ func (c *Client) ReadRaw(ctx context.Context, path string, options ...RequestOpt
 //   - does not check the response for errors
 //   - does not apply the client-level request timeout
 //
-// Deprecated: use ReadRaw(..., vault.WithQueryParameters(...))
+// Deprecated: use ReadRaw(..., vault.WithCustomQueryParameters(...))
 func (c *Client) ReadRawWithParameters(ctx context.Context, path string, parameters url.Values, options ...RequestOption) (*http.Response, error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -181,7 +181,7 @@ func (c *Client) Delete(ctx context.Context, path string, options ...RequestOpti
 // Delete attempts to delete the value stored at the given Vault path, adding
 // the given query parameters to the request.
 //
-// Deprecated: use Delete(..., vault.WithQueryParameters(...))
+// Deprecated: use Delete(..., vault.WithCustomQueryParameters(...))
 func (c *Client) DeleteWithParameters(ctx context.Context, path string, parameters url.Values, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {

@@ -23,6 +23,7 @@ A simple [HashiCorp Vault][vault] Go client library.
    - [Using Generated Methods](#using-generated-methods)
    - [Modifying Requests](#modifying-requests)
      - [Overriding Default Mount Path](#overriding-default-mount-path)
+     - [Adding Custom Headers and Custom Query Parameters](#adding-custom-headers-and-custom-query-parameters)
      - [Response Wrapping \& Unwrapping](#response-wrapping--unwrapping)
    - [Error Handling](#error-handling)
    - [Using TLS](#using-tls)
@@ -171,10 +172,10 @@ The library has a number of generated methods corresponding to the known Vault
 API endpoints. They are organized in four categories:
 
 ```go
-client.Auth     // authentication-related methods
-client.Secrets  // methods dealing with secrets engines
-client.Identity // identity-related methods
-client.System   // various system-wide calls
+client.Auth     // methods related to authentication
+client.Secrets  // methods related to various secrets engines
+client.Identity // methods related to identities, entities, and aliases
+client.System   // various system-wide methods
 ```
 
 Below is an example of accessing the generated `MountsListSecretsEngines` method
@@ -190,9 +191,6 @@ for engine := range resp.Data {
 	log.Println(engine)
 }
 ```
-
-> _**Note**_: the `response.Data` is currently returned as simple
-> `map[string]any` maps. Structured (strongly typed) responses are coming soon!
 
 ### Modifying Requests
 
@@ -449,6 +447,9 @@ client, err := vault.New(
 )
 ```
 
+> _**Note**_: careful consideration should be made prior to enabling this
+> setting since there will be a performance penalty paid upon each request.
+
 ## Building the Library
 
 The vast majority of the code (including the client's endpoint-related methods,
@@ -461,8 +462,9 @@ please make sure to regenerate the files by running the following:
 make regen && go build ./... && go test ./...
 ```
 
-> _**Warning**_: The [openapi.json][openapi-json] file included in this
-> repository is **NOT** the official Vault's OpenAPI specification.
+> _**Warning**_: Vault does not yet provide an official OpenAPI specification.
+> The [openapi.json][openapi-json] file included in this repository may change
+> in non-backwards compatible ways.
 
 ## Under Development
 
@@ -482,13 +484,14 @@ high-level features that have been implemented:
 - Thread-safe cloning and client modifications
 - Response wrapping & unwrapping
 - CI/CD pipelines
+- Structured responses for core requests
 
 The following features are coming soon:
 
-- Structured responses (as part of [openapi.json][openapi-json])
 - Testing framework
 - Authentication wrappers
-- Other helpers & wrappers (KV, SSH, Monitor, Plugins, LifetimeWatcher, etc.)
+- Automatic renewal of tokens and leases
+- More structured responses
 
 ## Documentation for API Endpoints
 

@@ -36715,9 +36715,11 @@
         "type": "object",
         "properties": {
           "keys": {
-            "type": "object",
-            "description": "List of keys",
-            "format": "map"
+            "type": "array",
+            "description": "List of roles",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },

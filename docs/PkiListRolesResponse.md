@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Keys** | Pointer to **map[string]interface{}** | List of keys | [optional] 
+**Keys** | Pointer to **[]string** | List of roles | [optional] 
 
 
 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetKeys
 
-`func (o *PkiListRolesResponse) GetKeys() map[string]interface{}`
+`func (o *PkiListRolesResponse) GetKeys() []string`
 
 GetKeys returns the Keys field if non-nil, zero value otherwise.
 
 ### GetKeysOk
 
-`func (o *PkiListRolesResponse) GetKeysOk() (*map[string]interface{}, bool)`
+`func (o *PkiListRolesResponse) GetKeysOk() (*[]string, bool)`
 
 GetKeysOk returns a tuple with the Keys field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeys
 
-`func (o *PkiListRolesResponse) SetKeys(v map[string]interface{})`
+`func (o *PkiListRolesResponse) SetKeys(v []string)`
 
 SetKeys sets Keys field to given value.
 

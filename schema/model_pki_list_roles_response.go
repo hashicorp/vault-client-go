@@ -7,8 +7,8 @@ package schema
 
 // PkiListRolesResponse struct for PkiListRolesResponse
 type PkiListRolesResponse struct {
-	// List of keys
-	Keys map[string]interface{} `json:"keys,omitempty"`
+	// List of roles
+	Keys []string `json:"keys,omitempty"`
 }
 
 // NewPkiListRolesResponseWithDefaults instantiates a new PkiListRolesResponse object

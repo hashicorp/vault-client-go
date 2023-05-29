@@ -705,7 +705,9 @@ Name | Type | Description  | Notes
 
 Enables a new auth method.
 
+After enabling, the auth method can be accessed and configured via the auth path specified as part of the URL. This auth path will be nested under the auth prefix.
 
+For example, enable the "foo" auth method will make it accessible at /auth/foo.
 
 ### Example
 
@@ -885,7 +887,7 @@ Name | Type | Description  | Notes
 
 Reads the given auth path's configuration.
 
-
+This endpoint requires sudo capability on the final path, but the same functionality can be achieved without sudo via `sys/mounts/auth/[auth-path]/tune`.
 
 ### Example
 
@@ -948,7 +950,7 @@ Name | Type | Description  | Notes
 
 Tune configuration parameters for a given auth path.
 
-
+This endpoint requires sudo capability on the final path, but the same functionality can be achieved without sudo via `sys/mounts/auth/[auth-path]/tune`.
 
 ### Example
 
@@ -1015,7 +1017,9 @@ Name | Type | Description  | Notes
 
 Information about the host instance that this Vault server is running on.
 
-
+Information about the host instance that this Vault server is running on.
+		The information that gets collected includes host hardware information, and CPU,
+		disk, and memory utilization
 
 ### Example
 
@@ -1069,7 +1073,9 @@ This endpoint does not require any parameters.
 
 reports in-flight requests
 
-
+This path responds to the following HTTP methods.
+		GET /
+			Returns a map of in-flight requests.
 
 ### Example
 
@@ -1931,7 +1937,7 @@ This endpoint does not require any parameters.
 
 Initialize a new Vault.
 
-
+The Vault must not have been previously initialized. The recovery options, as well as the stored shares option, are only available when using Vault HSM.
 
 ### Example
 
@@ -2904,7 +2910,9 @@ This endpoint does not require any parameters.
 
 Revokes all secrets or tokens generated under a given prefix immediately
 
+Unlike `/sys/leases/revoke-prefix`, this path ignores backend errors encountered during revocation. This is potentially very dangerous and should only be used in specific emergency situations where errors in the backend or the connected backend service prevent normal revocation.
 
+By ignoring these errors, Vault abdicates responsibility for ensuring that the issued credentials or secrets are properly revoked and/or cleaned up. Access to this endpoint should be tightly controlled.
 
 ### Example
 
@@ -5115,7 +5123,7 @@ Name | Type | Description  | Notes
 
 Reload mounted plugin backends.
 
-
+Either the plugin name (`plugin`) or the desired plugin backend mounts (`mounts`) must be provided, but not both. In the case that the plugin name is provided, all mounted paths that use that plugin backend will be reloaded.  If (`scope`) is provided and is (`global`), the plugin(s) are reloaded globally.
 
 ### Example
 
@@ -5775,7 +5783,7 @@ Name | Type | Description  | Notes
 
 Returns stack traces that led to blocking on synchronization primitives
 
-
+Returns stack traces that led to blocking on synchronization primitives
 
 ### Example
 
@@ -5829,7 +5837,7 @@ This endpoint does not require any parameters.
 
 Returns the running program's command line.
 
-
+Returns the running program's command line, with arguments separated by NUL bytes.
 
 ### Example
 
@@ -5883,7 +5891,7 @@ This endpoint does not require any parameters.
 
 Returns a pprof-formatted cpu profile payload.
 
-
+Returns a pprof-formatted cpu profile payload. Profiling lasts for duration specified in seconds GET parameter, or for 30 seconds if not specified.
 
 ### Example
 
@@ -5937,7 +5945,7 @@ This endpoint does not require any parameters.
 
 Returns the execution trace in binary form.
 
-
+Returns  the execution trace in binary form. Tracing lasts for duration specified in seconds GET parameter, or for 1 second if not specified.
 
 ### Example
 
@@ -5991,7 +5999,7 @@ This endpoint does not require any parameters.
 
 Returns stack traces of all current goroutines.
 
-
+Returns stack traces of all current goroutines.
 
 ### Example
 
@@ -6045,7 +6053,9 @@ This endpoint does not require any parameters.
 
 Returns an HTML page listing the available profiles.
 
-
+Returns an HTML page listing the available 
+profiles. This should be mainly accessed via browsers or applications that can 
+render pages.
 
 ### Example
 
@@ -6099,7 +6109,7 @@ This endpoint does not require any parameters.
 
 Returns a sampling of all past memory allocations.
 
-
+Returns a sampling of all past memory allocations.
 
 ### Example
 
@@ -6153,7 +6163,7 @@ This endpoint does not require any parameters.
 
 Returns a sampling of memory allocations of live object.
 
-
+Returns a sampling of memory allocations of live object.
 
 ### Example
 
@@ -6207,7 +6217,7 @@ This endpoint does not require any parameters.
 
 Returns stack traces of holders of contended mutexes
 
-
+Returns stack traces of holders of contended mutexes
 
 ### Example
 
@@ -6261,7 +6271,7 @@ This endpoint does not require any parameters.
 
 Returns the program counters listed in the request.
 
-
+Returns the program counters listed in the request.
 
 ### Example
 
@@ -6315,7 +6325,7 @@ This endpoint does not require any parameters.
 
 Returns stack traces that led to the creation of new OS threads
 
-
+Returns stack traces that led to the creation of new OS threads
 
 ### Example
 
@@ -6999,7 +7009,7 @@ This endpoint does not require any parameters.
 
 Return a sanitized version of the Vault server configuration.
 
-
+The sanitized output strips configuration values in the storage, HA storage, and seals stanzas, which may contain sensitive values such as API tokens. It also removes any token or secret fields in other stanzas, such as the circonus_api_token from telemetry.
 
 ### Example
 
@@ -7111,7 +7121,7 @@ Name | Type | Description  | Notes
 
 Cancels any in-progress rekey.
 
-
+This clears the rekey settings as well as any progress made. This must be called to change the parameters of the rekey. Note: verification is still a part of a rekey. If rekeying is canceled during the verification flow, the current unseal keys remain valid.
 
 ### Example
 
@@ -7165,7 +7175,7 @@ This endpoint does not require any parameters.
 
 Initializes a new rekey attempt.
 
-
+Only a single rekey attempt can take place at a time, and changing the parameters of a rekey requires canceling and starting a new rekey, which will also provide a new nonce.
 
 ### Example
 
@@ -7543,7 +7553,7 @@ This endpoint does not require any parameters.
 
 Cancel any in-progress rekey verification operation.
 
-
+This clears any progress made and resets the nonce. Unlike a `DELETE` against `sys/rekey/init`, this only resets the current verification operation, not the entire rekey atttempt.
 
 ### Example
 
@@ -8049,7 +8059,7 @@ This endpoint does not require any parameters.
 
 Initializes a new root generation attempt.
 
-
+Only a single root generation attempt can take place at a time. One (and only one) of otp or pgp_key are required.
 
 ### Example
 
@@ -8161,7 +8171,7 @@ This endpoint does not require any parameters.
 
 Enter a single unseal key share to progress the root generation attempt.
 
-
+If the threshold number of unseal key shares is reached, Vault will complete the root generation and issue the new token. Otherwise, this API must be called multiple times until that threshold is met. The attempt nonce must be provided with each call.
 
 ### Example
 
@@ -8325,7 +8335,7 @@ This endpoint does not require any parameters.
 
 Cause the node to give up active status.
 
-
+This endpoint forces the node to give up active status. If the node does not have active status, this endpoint does nothing. Note that the node will sleep for ten seconds before attempting to grab the active lock again, but if no standby nodes grab the active lock in the interim, the same node may become the active node again.
 
 ### Example
 

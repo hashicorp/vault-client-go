@@ -27,7 +27,7 @@ jobs:
       - name: FuzzTest
         run: go test -fuzz=./... -fuzztime=3s
 
-  check-regen:
+  check-code-regeneration:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3.5.0
@@ -42,7 +42,7 @@ jobs:
           make regen
           readonly changed_files="$(git diff --stat)"
           if [[ "${changed_files}" != "" ]]; then
-            echo "Found diffs after running 'make regen'"
+            echo "Found differences after running 'make regen'"
             echo "Please run 'make regen' & commit the changed files:"
             echo "${changed_files}"
             exit 1
@@ -54,7 +54,6 @@ jobs:
       - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3.5.0
         with:
           fetch-depth: 0
-          ref: ${{ github.head_ref }}
           persist-credentials: false
 
       - name: Ensure the readme is formatted (make format-readme)

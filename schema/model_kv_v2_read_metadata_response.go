@@ -19,7 +19,7 @@ type KvV2ReadMetadataResponse struct {
 	CustomMetadata map[string]interface{} `json:"custom_metadata,omitempty"`
 
 	// The length of time before a version is deleted.
-	DeleteVersionAfter int32 `json:"delete_version_after,omitempty"`
+	DeleteVersionAfter string `json:"delete_version_after,omitempty"`
 
 	// The number of versions to keep
 	MaxVersions int64 `json:"max_versions,omitempty"`

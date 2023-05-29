@@ -30816,9 +30816,9 @@
             "format": "map"
           },
           "delete_version_after": {
-            "type": "integer",
+            "type": "string",
             "description": "The length of time before a version is deleted.",
-            "format": "seconds"
+            "format": "duration"
           },
           "max_versions": {
             "type": "integer",

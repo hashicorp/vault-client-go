@@ -4,7 +4,7 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-{{#with operations}}{{#each operation}}{{#endsWith operationId "2"}}{{else}}{{#endsWith operationId "3"}}{{else}}[**{{operationId}}**]({{classname}}.md#{{operationId}}) | **{{httpMethod}}** {{path}} | {{summary}}
+{{#with operations}}{{#each operation}}{{#endsWith operationId "2"}}{{else}}{{#endsWith operationId "3"}}{{else}}[**{{operationId}}**]({{classname}}.md#{{operationId}}) | **{{httpMethod}}** {{path}} | {{#if summary}}{{summary}}{{/if}}
 {{/endsWith}}{{/endsWith}}{{/each}}{{/with}}
 
 {{#with operations}}
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## {{{operationId}}}
 
-{{{summary}}}{{#if notes}}
+{{#if summary}}{{{summary}}}{{/if}}{{#if notes}}
 
 {{{unescapedNotes}}}{{/if}}
 
@@ -38,7 +38,7 @@ func main() {
 		log.Fatal(err)
 	}
 {{#each allParams}}{{#if isPathParam}}{{#endsWith baseName "_mount_path"}}{{else}}
-	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{{description}}}{{#with defaultValue}} (defaults to {{{.}}}){{/with}}{{/endsWith}}{{/if}}{{/each}}{{#each bodyParams}}
+	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{#if description}}{{{description}}}{{/if}}{{#with defaultValue}} (defaults to {{{.}}}){{/with}}{{/endsWith}}{{/if}}{{/each}}{{#each bodyParams}}
 	request := schema.New{{{dataType}}}WithDefaults(){{/each}}{{#each allParams}}{{#if isQueryParam}}{{#neq paramName "list"}}
 	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{{description}}}{{#with defaultValue}} (defaults to {{{.}}}){{/with}}{{/neq}}{{/if}}{{/each}}
 	resp, err := client.{{cut classname "Api"}}.{{operationId}}(
@@ -63,14 +63,14 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation {{/if}}{{/each}}{{#each pathParams}}{{#endsWith baseName "_mount_path"}}{{else}}
-**{{paramName}}** | {{#unless isPrimitiveType}}{{#unless isFile}}[{{/unless}}{{/unless}}**{{dataType}}**{{#unless isPrimitiveType}}{{#unless isFile}}]({{baseType}}.md){{/unless}}{{/unless}} | {{description}} | {{#with defaultValue}}[default to {{.}}]{{/with}}{{/endsWith}}{{/each}}
+**{{paramName}}** | {{#unless isPrimitiveType}}{{#unless isFile}}[{{/unless}}{{/unless}}**{{dataType}}**{{#unless isPrimitiveType}}{{#unless isFile}}]({{baseType}}.md){{/unless}}{{/unless}} | {{#if description}}{{description}}{{/if}} | {{#with defaultValue}}[default to {{.}}]{{/with}}{{/endsWith}}{{/each}}
 
 ### Other Parameters
 
 {{#each allParams}}{{#if @last}}
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------{{/if}}{{/each}}{{#each allParams}}
-{{#unless isPathParam}} **{{paramName}}** | {{#if isContainer}}{{#if isArray}}{{#with items}}{{#unless isPrimitiveType}}{{#unless isFile}}[{{/unless}}{{/unless}}**[]{{dataType}}**{{#unless isPrimitiveType}}{{#unless isFile}}]({{#unless baseType}}{{dataType}}{{/unless}}{{baseType}}.md){{/unless}}{{/unless}}{{/with}}{{/if}}{{#if isMap}}{{#with items}}{{#unless isPrimitiveType}}{{#unless isFile}}[{{/unless}}{{/unless}}**map[string]{{dataType}}**{{#unless isPrimitiveType}}{{#unless isFile}}]({{#unless baseType}}{{dataType}}{{/unless}}{{baseType}}.md){{/unless}}{{/unless}}{{/with}}{{/if}}{{/if}}{{#unless isContainer}}{{#unless isPrimitiveType}}{{#unless isFile}}[{{/unless}}{{/unless}}**{{dataType}}**{{#unless isPrimitiveType}}{{#unless isFile}}]({{#unless baseType}}{{dataType}}{{/unless}}{{baseType}}.md){{/unless}}{{/unless}}{{/unless}} | {{description}} | {{#with defaultValue}}[default to {{.}}]{{/with}}{{/unless}}{{/each}}
+{{#unless isPathParam}} **{{paramName}}** | {{#if isContainer}}{{#if isArray}}{{#with items}}{{#unless isPrimitiveType}}{{#unless isFile}}[{{/unless}}{{/unless}}**[]{{dataType}}**{{#unless isPrimitiveType}}{{#unless isFile}}]({{#unless baseType}}{{dataType}}{{/unless}}{{baseType}}.md){{/unless}}{{/unless}}{{/with}}{{/if}}{{#if isMap}}{{#with items}}{{#unless isPrimitiveType}}{{#unless isFile}}[{{/unless}}{{/unless}}**map[string]{{dataType}}**{{#unless isPrimitiveType}}{{#unless isFile}}]({{#unless baseType}}{{dataType}}{{/unless}}{{baseType}}.md){{/unless}}{{/unless}}{{/with}}{{/if}}{{/if}}{{#unless isContainer}}{{#unless isPrimitiveType}}{{#unless isFile}}[{{/unless}}{{/unless}}**{{dataType}}**{{#unless isPrimitiveType}}{{#unless isFile}}]({{#unless baseType}}{{dataType}}{{/unless}}{{baseType}}.md){{/unless}}{{/unless}}{{/unless}} | {{#if description}}{{description}}{{/if}} | {{#with defaultValue}}[default to {{.}}]{{/with}}{{/unless}}{{/each}}
 
 {{#with returnType}}{{#with returnTypeIsPrimitive}}**{{{returnType}}}**{{/with}}{{#unless returnTypeIsPrimitive}}[**{{{returnType}}}**]({{returnBaseType}}.md){{/unless}}{{/with}}{{#unless returnType}} (empty response body){{/unless}}
 

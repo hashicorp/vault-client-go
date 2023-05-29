@@ -1,4 +1,4 @@
-// {{classname}} {{{description}}}{{#unless description}}struct for {{{classname}}}{{/unless}}
+// {{classname}} {{#if description}}{{{description}}}{{else}}struct for {{{classname}}}{{/if}}
 type {{classname}} struct {
 {{#with parent}}
 {{#unless isMap}}

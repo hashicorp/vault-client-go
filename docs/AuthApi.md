@@ -10019,7 +10019,10 @@ Name | Type | Description  | Notes
 
 Configure the JWT authentication backend.
 
-
+The JWT authentication backend validates JWTs (or OIDC) using the configured
+credentials. If using OIDC Discovery, the URL must be provided, along
+with (optionally) the CA cert to use for the connection. If performing JWT
+validation locally, a set of public keys must be provided.
 
 ### Example
 
@@ -10147,7 +10150,7 @@ Name | Type | Description  | Notes
 
 Lists all the roles registered with the backend.
 
-
+The list will contain the names of the roles.
 
 ### Example
 
@@ -10579,7 +10582,10 @@ Name | Type | Description  | Notes
 
 Register an role with the backend.
 
-
+A role is required to authenticate with this backend. The role binds
+		JWT token information with token policies and settings.
+		The bindings, token polices and token settings can all be configured
+		using this endpoint
 
 ### Example
 

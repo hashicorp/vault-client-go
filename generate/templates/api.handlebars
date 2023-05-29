@@ -24,7 +24,7 @@ type {{cut classname "Api"}} struct {
 
 {{#if isDeprecated}}
 // Deprecated{{/if}}
-// {{operationId}} {{{summary}}}{{#if notes}}
+// {{operationId}} {{#if summary}}{{{summary}}}{{/if}}{{#if notes}}
 // {{{notes}}}{{/if}}{{#each pathParams}}{{#endsWith baseName "_mount_path"}}{{else}}{{#with description}}
 // {{paramName}}: {{.}}{{/with}}{{/endsWith}}{{/each}}{{#each bodyParams}}{{#with description}}
 // {{paramName}}: {{.}}{{/with}}{{/each}}{{#each queryParams}}{{#neq paramName "list"}}{{#with description}}

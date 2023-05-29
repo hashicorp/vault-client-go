@@ -120,6 +120,7 @@ Method | HTTP request | Description
 [**KvV2DeleteMetadata**](SecretsApi.md#KvV2DeleteMetadata) | **Delete** /{kv-v2_mount_path}/metadata/{path} | 
 [**KvV2DeleteVersions**](SecretsApi.md#KvV2DeleteVersions) | **Post** /{kv-v2_mount_path}/delete/{path} | 
 [**KvV2DestroyVersions**](SecretsApi.md#KvV2DestroyVersions) | **Post** /{kv-v2_mount_path}/destroy/{path} | 
+[**KvV2List**](SecretsApi.md#KvV2List) | **Get** /{kv-v2_mount_path}/metadata/{path}/ | 
 [**KvV2Read**](SecretsApi.md#KvV2Read) | **Get** /{kv-v2_mount_path}/data/{path} | 
 [**KvV2ReadConfiguration**](SecretsApi.md#KvV2ReadConfiguration) | **Get** /{kv-v2_mount_path}/config | Read the backend level settings.
 [**KvV2ReadMetadata**](SecretsApi.md#KvV2ReadMetadata) | **Get** /{kv-v2_mount_path}/metadata/{path} | 
@@ -7762,6 +7763,70 @@ Name | Type | Description  | Notes
 
 
 
+## KvV2List
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | Location of the secret.
+	resp, err := client.Secrets.KvV2List(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("kv-v2"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** | Location of the secret. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **list** | **string** | Return a list if &#x60;true&#x60; | 
+
+[**KvV2ListResponse**](KvV2ListResponse.md)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
 ## KvV2Read
 
 
@@ -7939,7 +8004,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **list** | **string** | Return a list if &#x60;true&#x60; | 
 
 [**KvV2ReadMetadataResponse**](KvV2ReadMetadataResponse.md)
 

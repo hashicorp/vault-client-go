@@ -17176,6 +17176,60 @@
         }
       }
     },
+    "/{kv-v2_mount_path}/metadata/{path}/": {
+      "description": "Configures settings for the KV store",
+      "parameters": [
+        {
+          "name": "path",
+          "description": "Location of the secret.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "kv-v2_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "kv-v2"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-createSupported": true,
+      "get": {
+        "operationId": "kv-v2-list",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Return a list if `true`",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KvV2ListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/{kv-v2_mount_path}/metadata/{path}": {
       "description": "Configures settings for the KV store",
       "parameters": [
@@ -17204,16 +17258,6 @@
         "operationId": "kv-v2-read-metadata",
         "tags": [
           "secrets"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Return a list if `true`",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -30738,6 +30782,17 @@
           "max_versions": {
             "type": "integer",
             "description": "The number of versions to keep for each key."
+          }
+        }
+      },
+      "KvV2ListResponse": {
+        "type": "object",
+        "properties": {
+          "keys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },

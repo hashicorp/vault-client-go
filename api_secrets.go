@@ -2906,6 +2906,32 @@ func (s *Secrets) KvV2DestroyVersions(ctx context.Context, path string, request 
 	)
 }
 
+// KvV2List
+// path: Location of the secret.
+func (s *Secrets) KvV2List(ctx context.Context, path string, options ...RequestOption) (*Response[schema.KvV2ListResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{kv-v2_mount_path}/metadata/{path}/"
+	requestPath = strings.Replace(requestPath, "{"+"kv-v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("list", "true")
+
+	return sendRequestParseResponse[schema.KvV2ListResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
 // KvV2Read
 // path: Location of the secret.
 func (s *Secrets) KvV2Read(ctx context.Context, path string, options ...RequestOption) (*Response[schema.KvV2ReadResponse], error) {
@@ -2967,7 +2993,6 @@ func (s *Secrets) KvV2ReadMetadata(ctx context.Context, path string, options ...
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("list", "true")
 
 	return sendRequestParseResponse[schema.KvV2ReadMetadataResponse](
 		ctx,

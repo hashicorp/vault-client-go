@@ -8,7 +8,7 @@ package schema
 // TerraformCloudWriteRoleRequest struct for TerraformCloudWriteRoleRequest
 type TerraformCloudWriteRoleRequest struct {
 	// Maximum time for role. If not set or set to 0, will use system default.
-	MaxTtl int32 `json:"max_ttl,omitempty"`
+	MaxTtl string `json:"max_ttl,omitempty"`
 
 	// Name of the Terraform Cloud or Enterprise organization
 	Organization string `json:"organization,omitempty"`
@@ -17,7 +17,7 @@ type TerraformCloudWriteRoleRequest struct {
 	TeamId string `json:"team_id,omitempty"`
 
 	// Default lease for generated credentials. If not set or set to 0, will use system default.
-	Ttl int32 `json:"ttl,omitempty"`
+	Ttl string `json:"ttl,omitempty"`
 
 	// ID of the Terraform Cloud or Enterprise user (e.g., user-xxxxxxxxxxxxxxxx)
 	UserId string `json:"user_id,omitempty"`

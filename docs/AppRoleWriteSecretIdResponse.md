@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **SecretId** | Pointer to **string** | Secret ID attached to the role. | [optional] 
 **SecretIdAccessor** | Pointer to **string** | Accessor of the secret ID | [optional] 
 **SecretIdNumUses** | Pointer to **int32** | Number of times a secret ID can access the role, after which the secret ID will expire. | [optional] 
-**SecretIdTtl** | Pointer to **int32** | Duration in seconds after which the issued secret ID expires. | [optional] 
+**SecretIdTtl** | Pointer to **string** | Duration in seconds after which the issued secret ID expires. | [optional] 
 
 
 
@@ -122,20 +122,20 @@ HasSecretIdNumUses returns a boolean if a field has been set.
 
 ### GetSecretIdTtl
 
-`func (o *AppRoleWriteSecretIdResponse) GetSecretIdTtl() int32`
+`func (o *AppRoleWriteSecretIdResponse) GetSecretIdTtl() string`
 
 GetSecretIdTtl returns the SecretIdTtl field if non-nil, zero value otherwise.
 
 ### GetSecretIdTtlOk
 
-`func (o *AppRoleWriteSecretIdResponse) GetSecretIdTtlOk() (*int32, bool)`
+`func (o *AppRoleWriteSecretIdResponse) GetSecretIdTtlOk() (*string, bool)`
 
 GetSecretIdTtlOk returns a tuple with the SecretIdTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecretIdTtl
 
-`func (o *AppRoleWriteSecretIdResponse) SetSecretIdTtl(v int32)`
+`func (o *AppRoleWriteSecretIdResponse) SetSecretIdTtl(v string)`
 
 SetSecretIdTtl sets SecretIdTtl field to given value.
 

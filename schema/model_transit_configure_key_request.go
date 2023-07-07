@@ -11,7 +11,7 @@ type TransitConfigureKeyRequest struct {
 	AllowPlaintextBackup bool `json:"allow_plaintext_backup,omitempty"`
 
 	// Amount of time the key should live before being automatically rotated. A value of 0 disables automatic rotation for the key.
-	AutoRotatePeriod int32 `json:"auto_rotate_period,omitempty"`
+	AutoRotatePeriod string `json:"auto_rotate_period,omitempty"`
 
 	// Whether to allow deletion of the key
 	DeletionAllowed bool `json:"deletion_allowed,omitempty"`

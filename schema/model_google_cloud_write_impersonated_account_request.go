@@ -14,7 +14,7 @@ type GoogleCloudWriteImpersonatedAccountRequest struct {
 	TokenScopes []string `json:"token_scopes,omitempty"`
 
 	// Lifetime of the token for the impersonated account.
-	Ttl int32 `json:"ttl,omitempty"`
+	Ttl string `json:"ttl,omitempty"`
 }
 
 // NewGoogleCloudWriteImpersonatedAccountRequestWithDefaults instantiates a new GoogleCloudWriteImpersonatedAccountRequest object

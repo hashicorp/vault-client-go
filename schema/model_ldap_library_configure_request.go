@@ -11,13 +11,13 @@ type LdapLibraryConfigureRequest struct {
 	DisableCheckInEnforcement bool `json:"disable_check_in_enforcement,omitempty"`
 
 	// In seconds, the max amount of time a check-out's renewals should last. Defaults to 24 hours.
-	MaxTtl int32 `json:"max_ttl,omitempty"`
+	MaxTtl string `json:"max_ttl,omitempty"`
 
 	// The username/logon name for the service accounts with which this set will be associated.
 	ServiceAccountNames []string `json:"service_account_names,omitempty"`
 
 	// In seconds, the amount of time a check-out should last. Defaults to 24 hours.
-	Ttl int32 `json:"ttl,omitempty"`
+	Ttl string `json:"ttl,omitempty"`
 }
 
 // NewLdapLibraryConfigureRequestWithDefaults instantiates a new LdapLibraryConfigureRequest object
@@ -27,8 +27,8 @@ func NewLdapLibraryConfigureRequestWithDefaults() *LdapLibraryConfigureRequest {
 	var this LdapLibraryConfigureRequest
 
 	this.DisableCheckInEnforcement = false
-	this.MaxTtl = 86400
-	this.Ttl = 86400
+	this.MaxTtl = "86400"
+	this.Ttl = "86400"
 
 	return &this
 }

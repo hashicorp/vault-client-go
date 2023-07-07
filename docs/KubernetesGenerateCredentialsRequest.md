@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Audiences** | Pointer to **[]string** | The intended audiences of the generated credentials | [optional] 
 **ClusterRoleBinding** | Pointer to **bool** | If true, generate a ClusterRoleBinding to grant permissions across the whole cluster instead of within a namespace. Requires the Vault role to have kubernetes_role_type set to ClusterRole. | [optional] 
 **KubernetesNamespace** | **string** | The name of the Kubernetes namespace in which to generate the credentials | 
-**Ttl** | Pointer to **int32** | The TTL of the generated credentials | [optional] 
+**Ttl** | Pointer to **string** | The TTL of the generated credentials | [optional] 
 
 
 
@@ -116,20 +116,20 @@ SetKubernetesNamespace sets KubernetesNamespace field to given value.
 
 ### GetTtl
 
-`func (o *KubernetesGenerateCredentialsRequest) GetTtl() int32`
+`func (o *KubernetesGenerateCredentialsRequest) GetTtl() string`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *KubernetesGenerateCredentialsRequest) GetTtlOk() (*int32, bool)`
+`func (o *KubernetesGenerateCredentialsRequest) GetTtlOk() (*string, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *KubernetesGenerateCredentialsRequest) SetTtl(v int32)`
+`func (o *KubernetesGenerateCredentialsRequest) SetTtl(v string)`
 
 SetTtl sets Ttl field to given value.
 

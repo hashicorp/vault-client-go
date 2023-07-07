@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Metadata** | Pointer to **string** | Metadata to be tied to the SecretID. This should be a JSON formatted string containing the metadata in key value pairs. | [optional] 
 **NumUses** | Pointer to **int32** | Number of times this SecretID can be used, after which the SecretID expires. Overrides secret_id_num_uses role option when supplied. May not be higher than role&#x27;s secret_id_num_uses. | [optional] 
 **TokenBoundCidrs** | Pointer to **[]string** | Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token. | [optional] 
-**Ttl** | Pointer to **int32** | Duration in seconds after which this SecretID expires. Overrides secret_id_ttl role option when supplied. May not be longer than role&#x27;s secret_id_ttl. | [optional] 
+**Ttl** | Pointer to **string** | Duration in seconds after which this SecretID expires. Overrides secret_id_ttl role option when supplied. May not be longer than role&#x27;s secret_id_ttl. | [optional] 
 
 
 
@@ -152,20 +152,20 @@ HasTokenBoundCidrs returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *AppRoleWriteSecretIdRequest) GetTtl() int32`
+`func (o *AppRoleWriteSecretIdRequest) GetTtl() string`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *AppRoleWriteSecretIdRequest) GetTtlOk() (*int32, bool)`
+`func (o *AppRoleWriteSecretIdRequest) GetTtlOk() (*string, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *AppRoleWriteSecretIdRequest) SetTtl(v int32)`
+`func (o *AppRoleWriteSecretIdRequest) SetTtl(v string)`
 
 SetTtl sets Ttl field to given value.
 

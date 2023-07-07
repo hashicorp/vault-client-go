@@ -8,7 +8,7 @@ package schema
 // AwsTidyRoleTagDenyListRequest struct for AwsTidyRoleTagDenyListRequest
 type AwsTidyRoleTagDenyListRequest struct {
 	// The amount of extra time that must have passed beyond the roletag expiration, before it is removed from the backend storage.
-	SafetyBuffer int32 `json:"safety_buffer,omitempty"`
+	SafetyBuffer string `json:"safety_buffer,omitempty"`
 }
 
 // NewAwsTidyRoleTagDenyListRequestWithDefaults instantiates a new AwsTidyRoleTagDenyListRequest object
@@ -17,7 +17,7 @@ type AwsTidyRoleTagDenyListRequest struct {
 func NewAwsTidyRoleTagDenyListRequestWithDefaults() *AwsTidyRoleTagDenyListRequest {
 	var this AwsTidyRoleTagDenyListRequest
 
-	this.SafetyBuffer = 259200
+	this.SafetyBuffer = "259200"
 
 	return &this
 }

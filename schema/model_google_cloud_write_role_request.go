@@ -41,15 +41,15 @@ type GoogleCloudWriteRoleRequest struct {
 	BoundZones []string `json:"bound_zones,omitempty"`
 
 	// Currently enabled for 'iam' only. Duration in seconds from time of validation that a JWT must expire within.
-	MaxJwtExp int32 `json:"max_jwt_exp,omitempty"`
+	MaxJwtExp string `json:"max_jwt_exp,omitempty"`
 
 	// Use \"token_max_ttl\" instead. If this and \"token_max_ttl\" are both specified, only \"token_max_ttl\" will be used.
 	// Deprecated
-	MaxTtl int32 `json:"max_ttl,omitempty"`
+	MaxTtl string `json:"max_ttl,omitempty"`
 
 	// Use \"token_period\" instead. If this and \"token_period\" are both specified, only \"token_period\" will be used.
 	// Deprecated
-	Period int32 `json:"period,omitempty"`
+	Period string `json:"period,omitempty"`
 
 	// Use \"token_policies\" instead. If this and \"token_policies\" are both specified, only \"token_policies\" will be used.
 	// Deprecated
@@ -65,10 +65,10 @@ type GoogleCloudWriteRoleRequest struct {
 	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
 
 	// If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
-	TokenExplicitMaxTtl int32 `json:"token_explicit_max_ttl,omitempty"`
+	TokenExplicitMaxTtl string `json:"token_explicit_max_ttl,omitempty"`
 
 	// The maximum lifetime of the generated token
-	TokenMaxTtl int32 `json:"token_max_ttl,omitempty"`
+	TokenMaxTtl string `json:"token_max_ttl,omitempty"`
 
 	// If true, the 'default' policy will not automatically be added to generated tokens
 	TokenNoDefaultPolicy bool `json:"token_no_default_policy,omitempty"`
@@ -77,20 +77,20 @@ type GoogleCloudWriteRoleRequest struct {
 	TokenNumUses int32 `json:"token_num_uses,omitempty"`
 
 	// If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").
-	TokenPeriod int32 `json:"token_period,omitempty"`
+	TokenPeriod string `json:"token_period,omitempty"`
 
 	// Comma-separated list of policies
 	TokenPolicies []string `json:"token_policies,omitempty"`
 
 	// The initial ttl of the token to generate
-	TokenTtl int32 `json:"token_ttl,omitempty"`
+	TokenTtl string `json:"token_ttl,omitempty"`
 
 	// The type of token to generate, service or batch
 	TokenType string `json:"token_type,omitempty"`
 
 	// Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.
 	// Deprecated
-	Ttl int32 `json:"ttl,omitempty"`
+	Ttl string `json:"ttl,omitempty"`
 
 	// Type of the role. Currently supported: iam, gce
 	Type string `json:"type,omitempty"`
@@ -104,7 +104,7 @@ func NewGoogleCloudWriteRoleRequestWithDefaults() *GoogleCloudWriteRoleRequest {
 
 	this.AddGroupAliases = false
 	this.AllowGceInference = true
-	this.MaxJwtExp = 900
+	this.MaxJwtExp = "900"
 	this.TokenType = "default-service"
 
 	return &this

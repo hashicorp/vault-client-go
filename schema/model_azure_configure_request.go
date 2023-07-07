@@ -20,7 +20,7 @@ type AzureConfigureRequest struct {
 	PasswordPolicy string `json:"password_policy,omitempty"`
 
 	// The TTL of the root password in Azure. This can be either a number of seconds or a time formatted duration (ex: 24h, 48ds)
-	RootPasswordTtl int32 `json:"root_password_ttl,omitempty"`
+	RootPasswordTtl string `json:"root_password_ttl,omitempty"`
 
 	// The subscription id for the Azure Active Directory. This value can also be provided with the AZURE_SUBSCRIPTION_ID environment variable.
 	SubscriptionId string `json:"subscription_id,omitempty"`
@@ -34,6 +34,8 @@ type AzureConfigureRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAzureConfigureRequestWithDefaults() *AzureConfigureRequest {
 	var this AzureConfigureRequest
+
+	this.RootPasswordTtl = "15768000000000000"
 
 	return &this
 }

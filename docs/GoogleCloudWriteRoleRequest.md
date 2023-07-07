@@ -16,22 +16,22 @@ Name | Type | Description | Notes
 **BoundServiceAccounts** | Pointer to **[]string** | Can be set for both &#x27;iam&#x27; and &#x27;gce&#x27; roles (required for &#x27;iam&#x27;). A comma-seperated list of authorized service accounts. If the single value \&quot;*\&quot; is given, this is assumed to be all service accounts under the role&#x27;s project. If this is set on a GCE role, the inferred service account from the instance metadata token will be used. | [optional] 
 **BoundZone** | Pointer to **string** | Deprecated: use \&quot;bound_zones\&quot; instead. | [optional] 
 **BoundZones** | Pointer to **[]string** | Comma-separated list of permitted zones to which the GCE instance must belong. If a group is provided, it is assumed to be a zonal group. This can be a self-link or zone name. This option only applies to \&quot;gce\&quot; roles. | [optional] 
-**MaxJwtExp** | Pointer to **int32** | Currently enabled for &#x27;iam&#x27; only. Duration in seconds from time of validation that a JWT must expire within. | [optional] [default to 900]
-**MaxTtl** | Pointer to **int32** | Use \&quot;token_max_ttl\&quot; instead. If this and \&quot;token_max_ttl\&quot; are both specified, only \&quot;token_max_ttl\&quot; will be used. | [optional] 
-**Period** | Pointer to **int32** | Use \&quot;token_period\&quot; instead. If this and \&quot;token_period\&quot; are both specified, only \&quot;token_period\&quot; will be used. | [optional] 
+**MaxJwtExp** | Pointer to **string** | Currently enabled for &#x27;iam&#x27; only. Duration in seconds from time of validation that a JWT must expire within. | [optional] [default to "900"]
+**MaxTtl** | Pointer to **string** | Use \&quot;token_max_ttl\&quot; instead. If this and \&quot;token_max_ttl\&quot; are both specified, only \&quot;token_max_ttl\&quot; will be used. | [optional] 
+**Period** | Pointer to **string** | Use \&quot;token_period\&quot; instead. If this and \&quot;token_period\&quot; are both specified, only \&quot;token_period\&quot; will be used. | [optional] 
 **Policies** | Pointer to **[]string** | Use \&quot;token_policies\&quot; instead. If this and \&quot;token_policies\&quot; are both specified, only \&quot;token_policies\&quot; will be used. | [optional] 
 **ProjectId** | Pointer to **string** | Deprecated: use \&quot;bound_projects\&quot; instead | [optional] 
 **ServiceAccounts** | Pointer to **[]string** | Deprecated: use \&quot;bound_service_accounts\&quot; instead. | [optional] 
 **TokenBoundCidrs** | Pointer to **[]string** | Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token. | [optional] 
-**TokenExplicitMaxTtl** | Pointer to **int32** | If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed. | [optional] 
-**TokenMaxTtl** | Pointer to **int32** | The maximum lifetime of the generated token | [optional] 
+**TokenExplicitMaxTtl** | Pointer to **string** | If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed. | [optional] 
+**TokenMaxTtl** | Pointer to **string** | The maximum lifetime of the generated token | [optional] 
 **TokenNoDefaultPolicy** | Pointer to **bool** | If true, the &#x27;default&#x27; policy will not automatically be added to generated tokens | [optional] 
 **TokenNumUses** | Pointer to **int32** | The maximum number of times a token may be used, a value of zero means unlimited | [optional] 
-**TokenPeriod** | Pointer to **int32** | If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \&quot;24h\&quot;). | [optional] 
+**TokenPeriod** | Pointer to **string** | If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \&quot;24h\&quot;). | [optional] 
 **TokenPolicies** | Pointer to **[]string** | Comma-separated list of policies | [optional] 
-**TokenTtl** | Pointer to **int32** | The initial ttl of the token to generate | [optional] 
+**TokenTtl** | Pointer to **string** | The initial ttl of the token to generate | [optional] 
 **TokenType** | Pointer to **string** | The type of token to generate, service or batch | [optional] [default to "default-service"]
-**Ttl** | Pointer to **int32** | Use \&quot;token_ttl\&quot; instead. If this and \&quot;token_ttl\&quot; are both specified, only \&quot;token_ttl\&quot; will be used. | [optional] 
+**Ttl** | Pointer to **string** | Use \&quot;token_ttl\&quot; instead. If this and \&quot;token_ttl\&quot; are both specified, only \&quot;token_ttl\&quot; will be used. | [optional] 
 **Type** | Pointer to **string** | Type of the role. Currently supported: iam, gce | [optional] 
 
 
@@ -378,20 +378,20 @@ HasBoundZones returns a boolean if a field has been set.
 
 ### GetMaxJwtExp
 
-`func (o *GoogleCloudWriteRoleRequest) GetMaxJwtExp() int32`
+`func (o *GoogleCloudWriteRoleRequest) GetMaxJwtExp() string`
 
 GetMaxJwtExp returns the MaxJwtExp field if non-nil, zero value otherwise.
 
 ### GetMaxJwtExpOk
 
-`func (o *GoogleCloudWriteRoleRequest) GetMaxJwtExpOk() (*int32, bool)`
+`func (o *GoogleCloudWriteRoleRequest) GetMaxJwtExpOk() (*string, bool)`
 
 GetMaxJwtExpOk returns a tuple with the MaxJwtExp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxJwtExp
 
-`func (o *GoogleCloudWriteRoleRequest) SetMaxJwtExp(v int32)`
+`func (o *GoogleCloudWriteRoleRequest) SetMaxJwtExp(v string)`
 
 SetMaxJwtExp sets MaxJwtExp field to given value.
 
@@ -407,20 +407,20 @@ HasMaxJwtExp returns a boolean if a field has been set.
 
 ### GetMaxTtl
 
-`func (o *GoogleCloudWriteRoleRequest) GetMaxTtl() int32`
+`func (o *GoogleCloudWriteRoleRequest) GetMaxTtl() string`
 
 GetMaxTtl returns the MaxTtl field if non-nil, zero value otherwise.
 
 ### GetMaxTtlOk
 
-`func (o *GoogleCloudWriteRoleRequest) GetMaxTtlOk() (*int32, bool)`
+`func (o *GoogleCloudWriteRoleRequest) GetMaxTtlOk() (*string, bool)`
 
 GetMaxTtlOk returns a tuple with the MaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxTtl
 
-`func (o *GoogleCloudWriteRoleRequest) SetMaxTtl(v int32)`
+`func (o *GoogleCloudWriteRoleRequest) SetMaxTtl(v string)`
 
 SetMaxTtl sets MaxTtl field to given value.
 
@@ -436,20 +436,20 @@ HasMaxTtl returns a boolean if a field has been set.
 
 ### GetPeriod
 
-`func (o *GoogleCloudWriteRoleRequest) GetPeriod() int32`
+`func (o *GoogleCloudWriteRoleRequest) GetPeriod() string`
 
 GetPeriod returns the Period field if non-nil, zero value otherwise.
 
 ### GetPeriodOk
 
-`func (o *GoogleCloudWriteRoleRequest) GetPeriodOk() (*int32, bool)`
+`func (o *GoogleCloudWriteRoleRequest) GetPeriodOk() (*string, bool)`
 
 GetPeriodOk returns a tuple with the Period field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPeriod
 
-`func (o *GoogleCloudWriteRoleRequest) SetPeriod(v int32)`
+`func (o *GoogleCloudWriteRoleRequest) SetPeriod(v string)`
 
 SetPeriod sets Period field to given value.
 
@@ -581,20 +581,20 @@ HasTokenBoundCidrs returns a boolean if a field has been set.
 
 ### GetTokenExplicitMaxTtl
 
-`func (o *GoogleCloudWriteRoleRequest) GetTokenExplicitMaxTtl() int32`
+`func (o *GoogleCloudWriteRoleRequest) GetTokenExplicitMaxTtl() string`
 
 GetTokenExplicitMaxTtl returns the TokenExplicitMaxTtl field if non-nil, zero value otherwise.
 
 ### GetTokenExplicitMaxTtlOk
 
-`func (o *GoogleCloudWriteRoleRequest) GetTokenExplicitMaxTtlOk() (*int32, bool)`
+`func (o *GoogleCloudWriteRoleRequest) GetTokenExplicitMaxTtlOk() (*string, bool)`
 
 GetTokenExplicitMaxTtlOk returns a tuple with the TokenExplicitMaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenExplicitMaxTtl
 
-`func (o *GoogleCloudWriteRoleRequest) SetTokenExplicitMaxTtl(v int32)`
+`func (o *GoogleCloudWriteRoleRequest) SetTokenExplicitMaxTtl(v string)`
 
 SetTokenExplicitMaxTtl sets TokenExplicitMaxTtl field to given value.
 
@@ -610,20 +610,20 @@ HasTokenExplicitMaxTtl returns a boolean if a field has been set.
 
 ### GetTokenMaxTtl
 
-`func (o *GoogleCloudWriteRoleRequest) GetTokenMaxTtl() int32`
+`func (o *GoogleCloudWriteRoleRequest) GetTokenMaxTtl() string`
 
 GetTokenMaxTtl returns the TokenMaxTtl field if non-nil, zero value otherwise.
 
 ### GetTokenMaxTtlOk
 
-`func (o *GoogleCloudWriteRoleRequest) GetTokenMaxTtlOk() (*int32, bool)`
+`func (o *GoogleCloudWriteRoleRequest) GetTokenMaxTtlOk() (*string, bool)`
 
 GetTokenMaxTtlOk returns a tuple with the TokenMaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenMaxTtl
 
-`func (o *GoogleCloudWriteRoleRequest) SetTokenMaxTtl(v int32)`
+`func (o *GoogleCloudWriteRoleRequest) SetTokenMaxTtl(v string)`
 
 SetTokenMaxTtl sets TokenMaxTtl field to given value.
 
@@ -697,20 +697,20 @@ HasTokenNumUses returns a boolean if a field has been set.
 
 ### GetTokenPeriod
 
-`func (o *GoogleCloudWriteRoleRequest) GetTokenPeriod() int32`
+`func (o *GoogleCloudWriteRoleRequest) GetTokenPeriod() string`
 
 GetTokenPeriod returns the TokenPeriod field if non-nil, zero value otherwise.
 
 ### GetTokenPeriodOk
 
-`func (o *GoogleCloudWriteRoleRequest) GetTokenPeriodOk() (*int32, bool)`
+`func (o *GoogleCloudWriteRoleRequest) GetTokenPeriodOk() (*string, bool)`
 
 GetTokenPeriodOk returns a tuple with the TokenPeriod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenPeriod
 
-`func (o *GoogleCloudWriteRoleRequest) SetTokenPeriod(v int32)`
+`func (o *GoogleCloudWriteRoleRequest) SetTokenPeriod(v string)`
 
 SetTokenPeriod sets TokenPeriod field to given value.
 
@@ -755,20 +755,20 @@ HasTokenPolicies returns a boolean if a field has been set.
 
 ### GetTokenTtl
 
-`func (o *GoogleCloudWriteRoleRequest) GetTokenTtl() int32`
+`func (o *GoogleCloudWriteRoleRequest) GetTokenTtl() string`
 
 GetTokenTtl returns the TokenTtl field if non-nil, zero value otherwise.
 
 ### GetTokenTtlOk
 
-`func (o *GoogleCloudWriteRoleRequest) GetTokenTtlOk() (*int32, bool)`
+`func (o *GoogleCloudWriteRoleRequest) GetTokenTtlOk() (*string, bool)`
 
 GetTokenTtlOk returns a tuple with the TokenTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenTtl
 
-`func (o *GoogleCloudWriteRoleRequest) SetTokenTtl(v int32)`
+`func (o *GoogleCloudWriteRoleRequest) SetTokenTtl(v string)`
 
 SetTokenTtl sets TokenTtl field to given value.
 
@@ -813,20 +813,20 @@ HasTokenType returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *GoogleCloudWriteRoleRequest) GetTtl() int32`
+`func (o *GoogleCloudWriteRoleRequest) GetTtl() string`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *GoogleCloudWriteRoleRequest) GetTtlOk() (*int32, bool)`
+`func (o *GoogleCloudWriteRoleRequest) GetTtlOk() (*string, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *GoogleCloudWriteRoleRequest) SetTtl(v int32)`
+`func (o *GoogleCloudWriteRoleRequest) SetTtl(v string)`
 
 SetTtl sets Ttl field to given value.
 

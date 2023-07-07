@@ -14,7 +14,7 @@ type TransitImportKeyRequest struct {
 	AllowRotation bool `json:"allow_rotation,omitempty"`
 
 	// Amount of time the key should live before being automatically rotated. A value of 0 (default) disables automatic rotation for the key.
-	AutoRotatePeriod int32 `json:"auto_rotate_period,omitempty"`
+	AutoRotatePeriod string `json:"auto_rotate_period,omitempty"`
 
 	// The base64-encoded ciphertext of the keys. The AES key should be encrypted using OAEP with the wrapping key and then concatenated with the import key, wrapped by the AES key.
 	Ciphertext string `json:"ciphertext,omitempty"`
@@ -31,6 +31,9 @@ type TransitImportKeyRequest struct {
 	// The hash function used as a random oracle in the OAEP wrapping of the user-generated, ephemeral AES key. Can be one of \"SHA1\", \"SHA224\", \"SHA256\" (default), \"SHA384\", or \"SHA512\"
 	HashFunction string `json:"hash_function,omitempty"`
 
+	// The plaintext PEM public key to be imported. If \"ciphertext\" is set, this field is ignored.
+	PublicKey string `json:"public_key,omitempty"`
+
 	// The type of key being imported. Currently, \"aes128-gcm96\" (symmetric), \"aes256-gcm96\" (symmetric), \"ecdsa-p256\" (asymmetric), \"ecdsa-p384\" (asymmetric), \"ecdsa-p521\" (asymmetric), \"ed25519\" (asymmetric), \"rsa-2048\" (asymmetric), \"rsa-3072\" (asymmetric), \"rsa-4096\" (asymmetric) are supported. Defaults to \"aes256-gcm96\".
 	Type string `json:"type,omitempty"`
 }
@@ -41,7 +44,7 @@ type TransitImportKeyRequest struct {
 func NewTransitImportKeyRequestWithDefaults() *TransitImportKeyRequest {
 	var this TransitImportKeyRequest
 
-	this.AutoRotatePeriod = 0
+	this.AutoRotatePeriod = "0"
 	this.HashFunction = "SHA256"
 	this.Type = "aes256-gcm96"
 

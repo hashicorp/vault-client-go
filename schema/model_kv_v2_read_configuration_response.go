@@ -11,7 +11,7 @@ type KvV2ReadConfigurationResponse struct {
 	CasRequired bool `json:"cas_required,omitempty"`
 
 	// The length of time before a version is deleted.
-	DeleteVersionAfter int32 `json:"delete_version_after,omitempty"`
+	DeleteVersionAfter string `json:"delete_version_after,omitempty"`
 
 	// The number of versions to keep for each key.
 	MaxVersions int32 `json:"max_versions,omitempty"`

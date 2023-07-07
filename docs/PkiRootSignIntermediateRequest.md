@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **Locality** | Pointer to **[]string** | If set, Locality will be set to this value. | [optional] 
 **MaxPathLength** | Pointer to **int32** | The maximum allowable path length | [optional] [default to -1]
 **NotAfter** | Pointer to **string** | Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ | [optional] 
-**NotBeforeDuration** | Pointer to **int32** | The duration before now which the certificate needs to be backdated by. | [optional] [default to 30]
+**NotBeforeDuration** | Pointer to **string** | The duration before now which the certificate needs to be backdated by. | [optional] [default to "30"]
 **Organization** | Pointer to **[]string** | If set, O (Organization) will be set to this value. | [optional] 
 **OtherSans** | Pointer to **[]string** | Requested other SANs, in an array with the format &lt;oid&gt;;UTF8:&lt;utf8 string value&gt; for each entry. | [optional] 
 **Ou** | Pointer to **[]string** | If set, OU (OrganizationalUnit) will be set to this value. | [optional] 
@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **SignatureBits** | Pointer to **int32** | The number of bits to use in the signature algorithm; accepts 256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults to 0 to automatically detect based on key length (SHA-2-256 for RSA keys, and matching the curve size for NIST P-Curves). | [optional] [default to 0]
 **Skid** | Pointer to **string** | Value for the Subject Key Identifier field (RFC 5280 Section 4.2.1.2). This value should ONLY be used when cross-signing to mimic the existing certificate&#x27;s SKID value; this is necessary to allow certain TLS implementations (such as OpenSSL) which use SKID/AKID matches in chain building to restrict possible valid chains. Specified as a string in hex format. Default is empty, allowing Vault to automatically calculate the SKID according to method one in the above RFC section. | [optional] [default to ""]
 **StreetAddress** | Pointer to **[]string** | If set, Street Address will be set to this value. | [optional] 
-**Ttl** | Pointer to **int32** | The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the mount max TTL. Note: this only has an effect when generating a CA cert or signing a CA cert, not when generating a CSR for an intermediate CA. | [optional] 
+**Ttl** | Pointer to **string** | The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the mount max TTL. Note: this only has an effect when generating a CA cert or signing a CA cert, not when generating a CSR for an intermediate CA. | [optional] 
 **UriSans** | Pointer to **[]string** | The requested URI SANs, if any, in a comma-delimited list. | [optional] 
 **UseCsrValues** | Pointer to **bool** | If true, then: 1) Subject information, including names and alternate names, will be preserved from the CSR rather than using values provided in the other parameters to this path; 2) Any key usages requested in the CSR will be added to the basic set of key usages used for CA certs signed by this path; for instance, the non-repudiation flag; 3) Extensions requested in the CSR will be copied into the issued certificate. | [optional] [default to false]
 **UsePss** | Pointer to **bool** | Whether or not to use PSS signatures when using a RSA key-type issuer. Defaults to false. | [optional] [default to false]
@@ -407,20 +407,20 @@ HasNotAfter returns a boolean if a field has been set.
 
 ### GetNotBeforeDuration
 
-`func (o *PkiRootSignIntermediateRequest) GetNotBeforeDuration() int32`
+`func (o *PkiRootSignIntermediateRequest) GetNotBeforeDuration() string`
 
 GetNotBeforeDuration returns the NotBeforeDuration field if non-nil, zero value otherwise.
 
 ### GetNotBeforeDurationOk
 
-`func (o *PkiRootSignIntermediateRequest) GetNotBeforeDurationOk() (*int32, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetNotBeforeDurationOk() (*string, bool)`
 
 GetNotBeforeDurationOk returns a tuple with the NotBeforeDuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNotBeforeDuration
 
-`func (o *PkiRootSignIntermediateRequest) SetNotBeforeDuration(v int32)`
+`func (o *PkiRootSignIntermediateRequest) SetNotBeforeDuration(v string)`
 
 SetNotBeforeDuration sets NotBeforeDuration field to given value.
 
@@ -755,20 +755,20 @@ HasStreetAddress returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *PkiRootSignIntermediateRequest) GetTtl() int32`
+`func (o *PkiRootSignIntermediateRequest) GetTtl() string`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *PkiRootSignIntermediateRequest) GetTtlOk() (*int32, bool)`
+`func (o *PkiRootSignIntermediateRequest) GetTtlOk() (*string, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *PkiRootSignIntermediateRequest) SetTtl(v int32)`
+`func (o *PkiRootSignIntermediateRequest) SetTtl(v string)`
 
 SetTtl sets Ttl field to given value.
 

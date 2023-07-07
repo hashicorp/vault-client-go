@@ -35,10 +35,10 @@ Name | Type | Description | Notes
 **KeyType** | Pointer to **string** | The type of key to use; defaults to RSA. \&quot;rsa\&quot; \&quot;ec\&quot;, \&quot;ed25519\&quot; and \&quot;any\&quot; are the only valid values. | [optional] [default to "rsa"]
 **KeyUsage** | Pointer to **[]string** | A comma-separated string or list of key usages (not extended key usages). Valid values can be found at https://golang.org/pkg/crypto/x509/#KeyUsage -- simply drop the \&quot;KeyUsage\&quot; part of the name. To remove all key usages from being set, set this value to an empty list. See also RFC 5280 Section 4.2.1.3. | [optional] [default to ["DigitalSignature","KeyAgreement","KeyEncipherment"]]
 **Locality** | Pointer to **[]string** | If set, Locality will be set to this value in certificates issued by this role. | [optional] 
-**MaxTtl** | Pointer to **int32** | The maximum allowed lease duration. If not set, defaults to the system maximum lease TTL. | [optional] 
+**MaxTtl** | Pointer to **string** | The maximum allowed lease duration. If not set, defaults to the system maximum lease TTL. | [optional] 
 **NoStore** | Pointer to **bool** | If set, certificates issued/signed against this role will not be stored in the storage backend. This can improve performance when issuing large numbers of certificates. However, certificates issued in this way cannot be enumerated or revoked, so this option is recommended only for certificates that are non-sensitive, or extremely short-lived. This option implies a value of \&quot;false\&quot; for \&quot;generate_lease\&quot;. | [optional] 
 **NotAfter** | Pointer to **string** | Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ. | [optional] 
-**NotBeforeDuration** | Pointer to **int32** | The duration before now which the certificate needs to be backdated by. | [optional] [default to 30]
+**NotBeforeDuration** | Pointer to **string** | The duration before now which the certificate needs to be backdated by. | [optional] [default to "30"]
 **Organization** | Pointer to **[]string** | If set, O (Organization) will be set to this value in certificates issued by this role. | [optional] 
 **Ou** | Pointer to **[]string** | If set, OU (OrganizationalUnit) will be set to this value in certificates issued by this role. | [optional] 
 **PolicyIdentifiers** | Pointer to **[]string** | A comma-separated string or list of policy OIDs, or a JSON list of qualified policy information, which must include an oid, and may include a notice and/or cps url, using the form [{\&quot;oid\&quot;&#x3D;\&quot;1.3.6.1.4.1.7.8\&quot;,\&quot;notice\&quot;&#x3D;\&quot;I am a user Notice\&quot;}, {\&quot;oid\&quot;&#x3D;\&quot;1.3.6.1.4.1.44947.1.2.4 \&quot;,\&quot;cps\&quot;&#x3D;\&quot;https://example.com\&quot;}]. | [optional] 
@@ -48,7 +48,7 @@ Name | Type | Description | Notes
 **ServerFlag** | Pointer to **bool** | If set, certificates are flagged for server auth use. Defaults to true. See also RFC 5280 Section 4.2.1.12. | [optional] [default to true]
 **SignatureBits** | Pointer to **int32** | The number of bits to use in the signature algorithm; accepts 256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults to 0 to automatically detect based on key length (SHA-2-256 for RSA keys, and matching the curve size for NIST P-Curves). | [optional] [default to 0]
 **StreetAddress** | Pointer to **[]string** | If set, Street Address will be set to this value in certificates issued by this role. | [optional] 
-**Ttl** | Pointer to **int32** | The lease duration (validity period of the certificate) if no specific lease duration is requested. The lease duration controls the expiration of certificates issued by this backend. Defaults to the system default value or the value of max_ttl, whichever is shorter. | [optional] 
+**Ttl** | Pointer to **string** | The lease duration (validity period of the certificate) if no specific lease duration is requested. The lease duration controls the expiration of certificates issued by this backend. Defaults to the system default value or the value of max_ttl, whichever is shorter. | [optional] 
 **UseCsrCommonName** | Pointer to **bool** | If set, when used with a signing profile, the common name in the CSR will be used. This does *not* include any requested Subject Alternative Names; use use_csr_sans for that. Defaults to true. | [optional] [default to true]
 **UseCsrSans** | Pointer to **bool** | If set, when used with a signing profile, the SANs in the CSR will be used. This does *not* include the Common Name (cn); use use_csr_common_name for that. Defaults to true. | [optional] [default to true]
 **UsePss** | Pointer to **bool** | Whether or not to use PSS signatures when using a RSA key-type issuer. Defaults to false. | [optional] [default to false]
@@ -948,20 +948,20 @@ HasLocality returns a boolean if a field has been set.
 
 ### GetMaxTtl
 
-`func (o *PkiWriteRoleRequest) GetMaxTtl() int32`
+`func (o *PkiWriteRoleRequest) GetMaxTtl() string`
 
 GetMaxTtl returns the MaxTtl field if non-nil, zero value otherwise.
 
 ### GetMaxTtlOk
 
-`func (o *PkiWriteRoleRequest) GetMaxTtlOk() (*int32, bool)`
+`func (o *PkiWriteRoleRequest) GetMaxTtlOk() (*string, bool)`
 
 GetMaxTtlOk returns a tuple with the MaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxTtl
 
-`func (o *PkiWriteRoleRequest) SetMaxTtl(v int32)`
+`func (o *PkiWriteRoleRequest) SetMaxTtl(v string)`
 
 SetMaxTtl sets MaxTtl field to given value.
 
@@ -1035,20 +1035,20 @@ HasNotAfter returns a boolean if a field has been set.
 
 ### GetNotBeforeDuration
 
-`func (o *PkiWriteRoleRequest) GetNotBeforeDuration() int32`
+`func (o *PkiWriteRoleRequest) GetNotBeforeDuration() string`
 
 GetNotBeforeDuration returns the NotBeforeDuration field if non-nil, zero value otherwise.
 
 ### GetNotBeforeDurationOk
 
-`func (o *PkiWriteRoleRequest) GetNotBeforeDurationOk() (*int32, bool)`
+`func (o *PkiWriteRoleRequest) GetNotBeforeDurationOk() (*string, bool)`
 
 GetNotBeforeDurationOk returns a tuple with the NotBeforeDuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNotBeforeDuration
 
-`func (o *PkiWriteRoleRequest) SetNotBeforeDuration(v int32)`
+`func (o *PkiWriteRoleRequest) SetNotBeforeDuration(v string)`
 
 SetNotBeforeDuration sets NotBeforeDuration field to given value.
 
@@ -1325,20 +1325,20 @@ HasStreetAddress returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *PkiWriteRoleRequest) GetTtl() int32`
+`func (o *PkiWriteRoleRequest) GetTtl() string`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *PkiWriteRoleRequest) GetTtlOk() (*int32, bool)`
+`func (o *PkiWriteRoleRequest) GetTtlOk() (*string, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *PkiWriteRoleRequest) SetTtl(v int32)`
+`func (o *PkiWriteRoleRequest) SetTtl(v string)`
 
 SetTtl sets Ttl field to given value.
 

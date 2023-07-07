@@ -5461,7 +5461,7 @@ func (a *Auth) TokenListAccessors(ctx context.Context, options ...RequestOption)
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/token/accessors/"
+	requestPath := "/v1/auth/token/accessors"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")

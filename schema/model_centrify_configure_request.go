@@ -39,7 +39,7 @@ type CentrifyConfigureRequest struct {
 	TokenPolicies []string `json:"token_policies,omitempty"`
 
 	// The initial ttl of the token to generate
-	TokenTtl int32 `json:"token_ttl,omitempty"`
+	TokenTtl string `json:"token_ttl,omitempty"`
 
 	// The type of token to generate, service or batch
 	TokenType string `json:"token_type,omitempty"`

@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Dn** | Pointer to **string** | The distinguished name of the entry to manage. | [optional] 
-**RotationPeriod** | Pointer to **int32** | Period for automatic credential rotation of the given entry. | [optional] 
+**RotationPeriod** | Pointer to **string** | Period for automatic credential rotation of the given entry. | [optional] 
 **Username** | Pointer to **string** | The username/logon name for the entry with which this role will be associated. | [optional] 
 
 
@@ -63,20 +63,20 @@ HasDn returns a boolean if a field has been set.
 
 ### GetRotationPeriod
 
-`func (o *LdapWriteStaticRoleRequest) GetRotationPeriod() int32`
+`func (o *LdapWriteStaticRoleRequest) GetRotationPeriod() string`
 
 GetRotationPeriod returns the RotationPeriod field if non-nil, zero value otherwise.
 
 ### GetRotationPeriodOk
 
-`func (o *LdapWriteStaticRoleRequest) GetRotationPeriodOk() (*int32, bool)`
+`func (o *LdapWriteStaticRoleRequest) GetRotationPeriodOk() (*string, bool)`
 
 GetRotationPeriodOk returns a tuple with the RotationPeriod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRotationPeriod
 
-`func (o *LdapWriteStaticRoleRequest) SetRotationPeriod(v int32)`
+`func (o *LdapWriteStaticRoleRequest) SetRotationPeriod(v string)`
 
 SetRotationPeriod sets RotationPeriod field to given value.
 

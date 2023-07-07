@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **CredentialConfig** | Pointer to **map[string]interface{}** | The configuration for the given credential_type. | [optional] 
 **CredentialType** | Pointer to **string** | The type of credential to manage. Options include: &#x27;password&#x27;, &#x27;rsa_private_key&#x27;. Defaults to &#x27;password&#x27;. | [optional] [default to "password"]
 **DbName** | Pointer to **string** | Name of the database this role acts on. | [optional] 
-**RotationPeriod** | Pointer to **int32** | Period for automatic credential rotation of the given username. Not valid unless used with \&quot;username\&quot;. | [optional] 
+**RotationPeriod** | Pointer to **string** | Period for automatic credential rotation of the given username. Not valid unless used with \&quot;username\&quot;. | [optional] 
 **RotationStatements** | Pointer to **[]string** | Specifies the database statements to be executed to rotate the accounts credentials. Not every plugin type will support this functionality. See the plugin&#x27;s API page for more information on support and formatting for this parameter. | [optional] 
 **Username** | Pointer to **string** | Name of the static user account for Vault to manage. Requires \&quot;rotation_period\&quot; to be specified | [optional] 
 
@@ -124,20 +124,20 @@ HasDbName returns a boolean if a field has been set.
 
 ### GetRotationPeriod
 
-`func (o *DatabaseWriteStaticRoleRequest) GetRotationPeriod() int32`
+`func (o *DatabaseWriteStaticRoleRequest) GetRotationPeriod() string`
 
 GetRotationPeriod returns the RotationPeriod field if non-nil, zero value otherwise.
 
 ### GetRotationPeriodOk
 
-`func (o *DatabaseWriteStaticRoleRequest) GetRotationPeriodOk() (*int32, bool)`
+`func (o *DatabaseWriteStaticRoleRequest) GetRotationPeriodOk() (*string, bool)`
 
 GetRotationPeriodOk returns a tuple with the RotationPeriod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRotationPeriod
 
-`func (o *DatabaseWriteStaticRoleRequest) SetRotationPeriod(v int32)`
+`func (o *DatabaseWriteStaticRoleRequest) SetRotationPeriod(v string)`
 
 SetRotationPeriod sets RotationPeriod field to given value.
 

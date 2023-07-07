@@ -18,13 +18,13 @@ type ConsulWriteRoleRequest struct {
 
 	// Use \"ttl\" instead.
 	// Deprecated
-	Lease int32 `json:"lease,omitempty"`
+	Lease string `json:"lease,omitempty"`
 
 	// Indicates that the token should not be replicated globally and instead be local to the current datacenter. Available in Consul 1.4 and above.
 	Local bool `json:"local,omitempty"`
 
 	// Max TTL for the Consul token created from the role.
-	MaxTtl int32 `json:"max_ttl,omitempty"`
+	MaxTtl string `json:"max_ttl,omitempty"`
 
 	// List of Node Identities to attach to the token. Available in Consul 1.8.1 or above.
 	NodeIdentities []string `json:"node_identities,omitempty"`
@@ -48,7 +48,7 @@ type ConsulWriteRoleRequest struct {
 	TokenType string `json:"token_type,omitempty"`
 
 	// TTL for the Consul token created from the role.
-	Ttl int32 `json:"ttl,omitempty"`
+	Ttl string `json:"ttl,omitempty"`
 }
 
 // NewConsulWriteRoleRequestWithDefaults instantiates a new ConsulWriteRoleRequest object

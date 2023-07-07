@@ -15,7 +15,7 @@ type AwsWriteRoleRequest struct {
 	CredentialType string `json:"credential_type,omitempty"`
 
 	// Default TTL for assumed_role and federation_token credential types when no TTL is explicitly requested with the credentials
-	DefaultStsTtl int32 `json:"default_sts_ttl,omitempty"`
+	DefaultStsTtl string `json:"default_sts_ttl,omitempty"`
 
 	// Names of IAM groups that generated IAM users will be added to. For a credential type of assumed_role or federation_token, the policies sent to the corresponding AWS call (sts:AssumeRole or sts:GetFederation) will be the policies from each group in iam_groups combined with the policy_document and policy_arns parameters.
 	IamGroups []string `json:"iam_groups,omitempty"`
@@ -24,7 +24,7 @@ type AwsWriteRoleRequest struct {
 	IamTags map[string]interface{} `json:"iam_tags,omitempty"`
 
 	// Max allowed TTL for assumed_role and federation_token credential types
-	MaxStsTtl int32 `json:"max_sts_ttl,omitempty"`
+	MaxStsTtl string `json:"max_sts_ttl,omitempty"`
 
 	// ARN of an IAM policy to attach as a permissions boundary on IAM user credentials; only valid when credential_type isiam_user
 	PermissionsBoundaryArn string `json:"permissions_boundary_arn,omitempty"`

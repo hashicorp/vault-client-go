@@ -8,10 +8,10 @@ package schema
 // NomadConfigureLeaseRequest struct for NomadConfigureLeaseRequest
 type NomadConfigureLeaseRequest struct {
 	// Duration after which the issued token should not be allowed to be renewed
-	MaxTtl int32 `json:"max_ttl,omitempty"`
+	MaxTtl string `json:"max_ttl,omitempty"`
 
 	// Duration before which the issued token needs renewal
-	Ttl int32 `json:"ttl,omitempty"`
+	Ttl string `json:"ttl,omitempty"`
 }
 
 // NewNomadConfigureLeaseRequestWithDefaults instantiates a new NomadConfigureLeaseRequest object

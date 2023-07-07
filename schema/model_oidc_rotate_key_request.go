@@ -8,7 +8,7 @@ package schema
 // OidcRotateKeyRequest struct for OidcRotateKeyRequest
 type OidcRotateKeyRequest struct {
 	// Controls how long the public portion of a key will be available for verification after being rotated. Setting verification_ttl here will override the verification_ttl set on the key.
-	VerificationTtl int32 `json:"verification_ttl,omitempty"`
+	VerificationTtl string `json:"verification_ttl,omitempty"`
 }
 
 // NewOidcRotateKeyRequestWithDefaults instantiates a new OidcRotateKeyRequest object

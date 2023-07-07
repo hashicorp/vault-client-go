@@ -98,7 +98,7 @@ type PkiReadRoleResponse struct {
 	Locality []string `json:"locality,omitempty"`
 
 	// The maximum allowed lease duration. If not set, defaults to the system maximum lease TTL.
-	MaxTtl int32 `json:"max_ttl,omitempty"`
+	MaxTtl int64 `json:"max_ttl,omitempty"`
 
 	// If set, certificates issued/signed against this role will not be stored in the storage backend. This can improve performance when issuing large numbers of certificates. However, certificates issued in this way cannot be enumerated or revoked, so this option is recommended only for certificates that are non-sensitive, or extremely short-lived. This option implies a value of \"false\" for \"generate_lease\".
 	NoStore bool `json:"no_store,omitempty"`
@@ -106,8 +106,8 @@ type PkiReadRoleResponse struct {
 	// Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ.
 	NotAfter string `json:"not_after,omitempty"`
 
-	// The duration before now which the certificate needs to be backdated by.
-	NotBeforeDuration int32 `json:"not_before_duration,omitempty"`
+	// The duration in seconds before now which the certificate needs to be backdated by.
+	NotBeforeDuration int64 `json:"not_before_duration,omitempty"`
 
 	// If set, O (Organization) will be set to this value in certificates issued by this role.
 	Organization []string `json:"organization,omitempty"`
@@ -137,7 +137,7 @@ type PkiReadRoleResponse struct {
 	StreetAddress []string `json:"street_address,omitempty"`
 
 	// The lease duration (validity period of the certificate) if no specific lease duration is requested. The lease duration controls the expiration of certificates issued by this backend. Defaults to the system default value or the value of max_ttl, whichever is shorter.
-	Ttl int32 `json:"ttl,omitempty"`
+	Ttl int64 `json:"ttl,omitempty"`
 
 	// If set, when used with a signing profile, the common name in the CSR will be used. This does *not* include any requested Subject Alternative Names; use use_csr_sans for that. Defaults to true.
 	UseCsrCommonName bool `json:"use_csr_common_name,omitempty"`

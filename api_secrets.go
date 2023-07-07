@@ -259,7 +259,7 @@ func (s *Secrets) AwsConfigureRootIamCredentials(ctx context.Context, request sc
 }
 
 // AwsDeleteRole Read, write and reference IAM policies that access keys can be made for.
-// name: Name of the policy
+// name: Name of the role
 func (s *Secrets) AwsDeleteRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -267,6 +267,31 @@ func (s *Secrets) AwsDeleteRole(ctx context.Context, name string, options ...Req
 	}
 
 	requestPath := "/v1/{aws_mount_path}/roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// AwsDeleteStaticRolesName
+// name: The name of this role.
+func (s *Secrets) AwsDeleteStaticRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{aws_mount_path}/static-roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
@@ -308,6 +333,31 @@ func (s *Secrets) AwsGenerateCredentials(ctx context.Context, name string, optio
 	)
 }
 
+// AwsGenerateCredentialsWithParameters
+// name: Name of the role
+func (s *Secrets) AwsGenerateCredentialsWithParameters(ctx context.Context, name string, request schema.AwsGenerateCredentialsWithParametersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{aws_mount_path}/creds/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
 // AwsGenerateStsCredentials
 // name: Name of the role
 func (s *Secrets) AwsGenerateStsCredentials(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
@@ -328,6 +378,31 @@ func (s *Secrets) AwsGenerateStsCredentials(ctx context.Context, name string, op
 		http.MethodGet,
 		requestPath,
 		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// AwsGenerateStsCredentialsWithParameters
+// name: Name of the role
+func (s *Secrets) AwsGenerateStsCredentialsWithParameters(ctx context.Context, name string, request schema.AwsGenerateStsCredentialsWithParametersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{aws_mount_path}/sts/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
 		requestQueryParameters,
 		requestModifiers,
 	)
@@ -381,7 +456,7 @@ func (s *Secrets) AwsReadLeaseConfiguration(ctx context.Context, options ...Requ
 }
 
 // AwsReadRole Read, write and reference IAM policies that access keys can be made for.
-// name: Name of the policy
+// name: Name of the role
 func (s *Secrets) AwsReadRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -428,6 +503,56 @@ func (s *Secrets) AwsReadRootIamCredentialsConfiguration(ctx context.Context, op
 	)
 }
 
+// AwsReadStaticCredsName
+// name: The name of this role.
+func (s *Secrets) AwsReadStaticCredsName(ctx context.Context, name string, options ...RequestOption) (*Response[schema.AwsReadStaticCredsNameResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{aws_mount_path}/static-creds/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendRequestParseResponse[schema.AwsReadStaticCredsNameResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// AwsReadStaticRolesName
+// name: The name of this role.
+func (s *Secrets) AwsReadStaticRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[schema.AwsReadStaticRolesNameResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{aws_mount_path}/static-roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendRequestParseResponse[schema.AwsReadStaticRolesNameResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
 // AwsRotateRootIamCredentials
 func (s *Secrets) AwsRotateRootIamCredentials(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
@@ -452,7 +577,7 @@ func (s *Secrets) AwsRotateRootIamCredentials(ctx context.Context, options ...Re
 }
 
 // AwsWriteRole Read, write and reference IAM policies that access keys can be made for.
-// name: Name of the policy
+// name: Name of the role
 func (s *Secrets) AwsWriteRole(ctx context.Context, name string, request schema.AwsWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -466,6 +591,31 @@ func (s *Secrets) AwsWriteRole(ctx context.Context, name string, request schema.
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// AwsWriteStaticRolesName
+// name: The name of this role.
+func (s *Secrets) AwsWriteStaticRolesName(ctx context.Context, name string, request schema.AwsWriteStaticRolesNameRequest, options ...RequestOption) (*Response[schema.AwsWriteStaticRolesNameResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{aws_mount_path}/static-roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[schema.AwsWriteStaticRolesNameResponse](
 		ctx,
 		s.client,
 		http.MethodPost,
@@ -2715,8 +2865,8 @@ func (s *Secrets) KvV1Delete(ctx context.Context, path string, options ...Reques
 		return nil, err
 	}
 
-	requestPath := "/v1/{kv-v1_mount_path}/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"kv-v1_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v1")), -1)
+	requestPath := "/v1/{kv_v1_mount_path}/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"kv_v1_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v1")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -2740,8 +2890,8 @@ func (s *Secrets) KvV1Read(ctx context.Context, path string, options ...RequestO
 		return nil, err
 	}
 
-	requestPath := "/v1/{kv-v1_mount_path}/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"kv-v1_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v1")), -1)
+	requestPath := "/v1/{kv_v1_mount_path}/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"kv_v1_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v1")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -2766,8 +2916,8 @@ func (s *Secrets) KvV1Write(ctx context.Context, path string, options ...Request
 		return nil, err
 	}
 
-	requestPath := "/v1/{kv-v1_mount_path}/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"kv-v1_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v1")), -1)
+	requestPath := "/v1/{kv_v1_mount_path}/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"kv_v1_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v1")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -2790,8 +2940,8 @@ func (s *Secrets) KvV2Configure(ctx context.Context, request schema.KvV2Configur
 		return nil, err
 	}
 
-	requestPath := "/v1/{kv-v2_mount_path}/config"
-	requestPath = strings.Replace(requestPath, "{"+"kv-v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
+	requestPath := "/v1/{kv_v2_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"kv_v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
@@ -2814,8 +2964,8 @@ func (s *Secrets) KvV2Delete(ctx context.Context, path string, options ...Reques
 		return nil, err
 	}
 
-	requestPath := "/v1/{kv-v2_mount_path}/data/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"kv-v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
+	requestPath := "/v1/{kv_v2_mount_path}/data/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"kv_v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -2839,8 +2989,8 @@ func (s *Secrets) KvV2DeleteMetadata(ctx context.Context, path string, options .
 		return nil, err
 	}
 
-	requestPath := "/v1/{kv-v2_mount_path}/metadata/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"kv-v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
+	requestPath := "/v1/{kv_v2_mount_path}/metadata/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"kv_v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -2864,8 +3014,8 @@ func (s *Secrets) KvV2DeleteVersions(ctx context.Context, path string, request s
 		return nil, err
 	}
 
-	requestPath := "/v1/{kv-v2_mount_path}/delete/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"kv-v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
+	requestPath := "/v1/{kv_v2_mount_path}/delete/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"kv_v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -2889,8 +3039,8 @@ func (s *Secrets) KvV2DestroyVersions(ctx context.Context, path string, request 
 		return nil, err
 	}
 
-	requestPath := "/v1/{kv-v2_mount_path}/destroy/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"kv-v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
+	requestPath := "/v1/{kv_v2_mount_path}/destroy/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"kv_v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -2914,8 +3064,8 @@ func (s *Secrets) KvV2Read(ctx context.Context, path string, options ...RequestO
 		return nil, err
 	}
 
-	requestPath := "/v1/{kv-v2_mount_path}/data/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"kv-v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
+	requestPath := "/v1/{kv_v2_mount_path}/data/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"kv_v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -2938,8 +3088,8 @@ func (s *Secrets) KvV2ReadConfiguration(ctx context.Context, options ...RequestO
 		return nil, err
 	}
 
-	requestPath := "/v1/{kv-v2_mount_path}/config"
-	requestPath = strings.Replace(requestPath, "{"+"kv-v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
+	requestPath := "/v1/{kv_v2_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"kv_v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
@@ -2962,8 +3112,8 @@ func (s *Secrets) KvV2ReadMetadata(ctx context.Context, path string, options ...
 		return nil, err
 	}
 
-	requestPath := "/v1/{kv-v2_mount_path}/metadata/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"kv-v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
+	requestPath := "/v1/{kv_v2_mount_path}/metadata/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"kv_v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -2988,8 +3138,8 @@ func (s *Secrets) KvV2ReadSubkeys(ctx context.Context, path string, options ...R
 		return nil, err
 	}
 
-	requestPath := "/v1/{kv-v2_mount_path}/subkeys/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"kv-v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
+	requestPath := "/v1/{kv_v2_mount_path}/subkeys/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"kv_v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -3013,8 +3163,8 @@ func (s *Secrets) KvV2UndeleteVersions(ctx context.Context, path string, request
 		return nil, err
 	}
 
-	requestPath := "/v1/{kv-v2_mount_path}/undelete/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"kv-v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
+	requestPath := "/v1/{kv_v2_mount_path}/undelete/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"kv_v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -3038,8 +3188,8 @@ func (s *Secrets) KvV2Write(ctx context.Context, path string, request schema.KvV
 		return nil, err
 	}
 
-	requestPath := "/v1/{kv-v2_mount_path}/data/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"kv-v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
+	requestPath := "/v1/{kv_v2_mount_path}/data/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"kv_v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -3063,8 +3213,8 @@ func (s *Secrets) KvV2WriteMetadata(ctx context.Context, path string, request sc
 		return nil, err
 	}
 
-	requestPath := "/v1/{kv-v2_mount_path}/metadata/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"kv-v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
+	requestPath := "/v1/{kv_v2_mount_path}/metadata/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"kv_v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -4076,6 +4226,29 @@ func (s *Secrets) NomadWriteRole(ctx context.Context, name string, request schem
 	)
 }
 
+// PkiConfigureAcme
+func (s *Secrets) PkiConfigureAcme(ctx context.Context, request schema.PkiConfigureAcmeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/config/acme"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
 // PkiConfigureAutoTidy
 func (s *Secrets) PkiConfigureAutoTidy(ctx context.Context, request schema.PkiConfigureAutoTidyRequest, options ...RequestOption) (*Response[schema.PkiConfigureAutoTidyResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
@@ -4260,6 +4433,31 @@ func (s *Secrets) PkiCrossSignIntermediate(ctx context.Context, request schema.P
 	)
 }
 
+// PkiDeleteEabKey
+// keyId: EAB key identifier
+func (s *Secrets) PkiDeleteEabKey(ctx context.Context, keyId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/eab/{key_id}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key_id"+"}", url.PathEscape(keyId), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
 // PkiDeleteIssuer
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 func (s *Secrets) PkiDeleteIssuer(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[map[string]interface{}], error) {
@@ -4351,6 +4549,106 @@ func (s *Secrets) PkiDeleteRoot(ctx context.Context, options ...RequestOption) (
 		ctx,
 		s.client,
 		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiGenerateEabKey
+func (s *Secrets) PkiGenerateEabKey(ctx context.Context, options ...RequestOption) (*Response[schema.PkiGenerateEabKeyResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/acme/new-eab"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendRequestParseResponse[schema.PkiGenerateEabKeyResponse](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiGenerateEabKeyForIssuer
+// issuerRef: Reference to an existing issuer name or issuer id
+func (s *Secrets) PkiGenerateEabKeyForIssuer(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[schema.PkiGenerateEabKeyForIssuerResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/acme/new-eab"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendRequestParseResponse[schema.PkiGenerateEabKeyForIssuerResponse](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiGenerateEabKeyForIssuerAndRole
+// issuerRef: Reference to an existing issuer name or issuer id
+// role: The desired role for the acme request
+func (s *Secrets) PkiGenerateEabKeyForIssuerAndRole(ctx context.Context, issuerRef string, role string, options ...RequestOption) (*Response[schema.PkiGenerateEabKeyForIssuerAndRoleResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/new-eab"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendRequestParseResponse[schema.PkiGenerateEabKeyForIssuerAndRoleResponse](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiGenerateEabKeyForRole
+// role: The desired role for the acme request
+func (s *Secrets) PkiGenerateEabKeyForRole(ctx context.Context, role string, options ...RequestOption) (*Response[schema.PkiGenerateEabKeyForRoleResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/roles/{role}/acme/new-eab"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendRequestParseResponse[schema.PkiGenerateEabKeyForRoleResponse](
+		ctx,
+		s.client,
+		http.MethodPost,
 		requestPath,
 		nil, // request body
 		requestQueryParameters,
@@ -4977,31 +5275,6 @@ func (s *Secrets) PkiIssuersImportCert(ctx context.Context, request schema.PkiIs
 	)
 }
 
-// PkiIssuersRotateRoot
-// exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-func (s *Secrets) PkiIssuersRotateRoot(ctx context.Context, exported string, request schema.PkiIssuersRotateRootRequest, options ...RequestOption) (*Response[schema.PkiIssuersRotateRootResponse], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{pki_mount_path}/root/rotate/{exported}"
-	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
-
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-
-	return sendStructuredRequestParseResponse[schema.PkiIssuersRotateRootResponse](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // PkiListCerts
 func (s *Secrets) PkiListCerts(ctx context.Context, options ...RequestOption) (*Response[schema.PkiListCertsResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
@@ -5016,6 +5289,30 @@ func (s *Secrets) PkiListCerts(ctx context.Context, options ...RequestOption) (*
 	requestQueryParameters.Add("list", "true")
 
 	return sendRequestParseResponse[schema.PkiListCertsResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiListEabKeys
+func (s *Secrets) PkiListEabKeys(ctx context.Context, options ...RequestOption) (*Response[schema.PkiListEabKeysResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/eab"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("list", "true")
+
+	return sendRequestParseResponse[schema.PkiListEabKeysResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -5156,6 +5453,75 @@ func (s *Secrets) PkiQueryOcspWithGetReq(ctx context.Context, req string, option
 	requestPath := "/v1/{pki_mount_path}/ocsp/{req}"
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"req"+"}", url.PathEscape(req), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiReadAcmeConfiguration
+func (s *Secrets) PkiReadAcmeConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/config/acme"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiReadAcmeDirectory
+func (s *Secrets) PkiReadAcmeDirectory(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/acme/directory"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiReadAcmeNewNonce
+func (s *Secrets) PkiReadAcmeNewNonce(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/acme/new-nonce"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
@@ -5594,6 +5960,110 @@ func (s *Secrets) PkiReadIssuerDer(ctx context.Context, issuerRef string, option
 	)
 }
 
+// PkiReadIssuerIssuerRefAcmeDirectory
+// issuerRef: Reference to an existing issuer name or issuer id
+func (s *Secrets) PkiReadIssuerIssuerRefAcmeDirectory(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/acme/directory"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiReadIssuerIssuerRefAcmeNewNonce
+// issuerRef: Reference to an existing issuer name or issuer id
+func (s *Secrets) PkiReadIssuerIssuerRefAcmeNewNonce(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/acme/new-nonce"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiReadIssuerIssuerRefRolesRoleAcmeDirectory
+// issuerRef: Reference to an existing issuer name or issuer id
+// role: The desired role for the acme request
+func (s *Secrets) PkiReadIssuerIssuerRefRolesRoleAcmeDirectory(ctx context.Context, issuerRef string, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/directory"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiReadIssuerIssuerRefRolesRoleAcmeNewNonce
+// issuerRef: Reference to an existing issuer name or issuer id
+// role: The desired role for the acme request
+func (s *Secrets) PkiReadIssuerIssuerRefRolesRoleAcmeNewNonce(ctx context.Context, issuerRef string, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/new-nonce"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
 // PkiReadIssuerJson
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 func (s *Secrets) PkiReadIssuerJson(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[schema.PkiReadIssuerJsonResponse], error) {
@@ -5730,6 +6200,56 @@ func (s *Secrets) PkiReadRole(ctx context.Context, name string, options ...Reque
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.PkiReadRoleResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiReadRolesRoleAcmeDirectory
+// role: The desired role for the acme request
+func (s *Secrets) PkiReadRolesRoleAcmeDirectory(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/roles/{role}/acme/directory"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiReadRolesRoleAcmeNewNonce
+// role: The desired role for the acme request
+func (s *Secrets) PkiReadRolesRoleAcmeNewNonce(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/roles/{role}/acme/new-nonce"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -5949,6 +6469,31 @@ func (s *Secrets) PkiRotateDeltaCrl(ctx context.Context, options ...RequestOptio
 	)
 }
 
+// PkiRotateRoot
+// exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
+func (s *Secrets) PkiRotateRoot(ctx context.Context, exported string, request schema.PkiRotateRootRequest, options ...RequestOption) (*Response[schema.PkiRotateRootResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/root/rotate/{exported}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[schema.PkiRotateRootResponse](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
 // PkiSetSignedIntermediate
 func (s *Secrets) PkiSetSignedIntermediate(ctx context.Context, request schema.PkiSetSignedIntermediateRequest, options ...RequestOption) (*Response[schema.PkiSetSignedIntermediateResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
@@ -6114,6 +6659,250 @@ func (s *Secrets) PkiTidyStatus(ctx context.Context, options ...RequestOption) (
 	)
 }
 
+// PkiWriteAcmeAccountKid
+// kid: The key identifier provided by the CA
+func (s *Secrets) PkiWriteAcmeAccountKid(ctx context.Context, kid string, request schema.PkiWriteAcmeAccountKidRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/acme/account/{kid}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"kid"+"}", url.PathEscape(kid), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteAcmeAuthorizationAuthId
+// authId: ACME authorization identifier value
+func (s *Secrets) PkiWriteAcmeAuthorizationAuthId(ctx context.Context, authId string, request schema.PkiWriteAcmeAuthorizationAuthIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/acme/authorization/{auth_id}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"auth_id"+"}", url.PathEscape(authId), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteAcmeChallengeAuthIdChallengeType
+// authId: ACME authorization identifier value
+// challengeType: ACME challenge type
+func (s *Secrets) PkiWriteAcmeChallengeAuthIdChallengeType(ctx context.Context, authId string, challengeType string, request schema.PkiWriteAcmeChallengeAuthIdChallengeTypeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/acme/challenge/{auth_id}/{challenge_type}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"auth_id"+"}", url.PathEscape(authId), -1)
+	requestPath = strings.Replace(requestPath, "{"+"challenge_type"+"}", url.PathEscape(challengeType), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteAcmeNewAccount
+func (s *Secrets) PkiWriteAcmeNewAccount(ctx context.Context, request schema.PkiWriteAcmeNewAccountRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/acme/new-account"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteAcmeNewOrder
+func (s *Secrets) PkiWriteAcmeNewOrder(ctx context.Context, request schema.PkiWriteAcmeNewOrderRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/acme/new-order"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteAcmeOrderOrderId
+// orderId: The ACME order identifier to fetch
+func (s *Secrets) PkiWriteAcmeOrderOrderId(ctx context.Context, orderId string, request schema.PkiWriteAcmeOrderOrderIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/acme/order/{order_id}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"order_id"+"}", url.PathEscape(orderId), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteAcmeOrderOrderIdCert
+// orderId: The ACME order identifier to fetch
+func (s *Secrets) PkiWriteAcmeOrderOrderIdCert(ctx context.Context, orderId string, request schema.PkiWriteAcmeOrderOrderIdCertRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/acme/order/{order_id}/cert"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"order_id"+"}", url.PathEscape(orderId), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteAcmeOrderOrderIdFinalize
+// orderId: The ACME order identifier to fetch
+func (s *Secrets) PkiWriteAcmeOrderOrderIdFinalize(ctx context.Context, orderId string, request schema.PkiWriteAcmeOrderOrderIdFinalizeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/acme/order/{order_id}/finalize"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"order_id"+"}", url.PathEscape(orderId), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteAcmeOrders
+func (s *Secrets) PkiWriteAcmeOrders(ctx context.Context, request schema.PkiWriteAcmeOrdersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/acme/orders"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteAcmeRevokeCert
+func (s *Secrets) PkiWriteAcmeRevokeCert(ctx context.Context, request schema.PkiWriteAcmeRevokeCertRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/acme/revoke-cert"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
 // PkiWriteIssuer
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 func (s *Secrets) PkiWriteIssuer(ctx context.Context, issuerRef string, request schema.PkiWriteIssuerRequest, options ...RequestOption) (*Response[schema.PkiWriteIssuerResponse], error) {
@@ -6129,6 +6918,554 @@ func (s *Secrets) PkiWriteIssuer(ctx context.Context, issuerRef string, request 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[schema.PkiWriteIssuerResponse](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteIssuerIssuerRefAcmeAccountKid
+// issuerRef: Reference to an existing issuer name or issuer id
+// kid: The key identifier provided by the CA
+func (s *Secrets) PkiWriteIssuerIssuerRefAcmeAccountKid(ctx context.Context, issuerRef string, kid string, request schema.PkiWriteIssuerIssuerRefAcmeAccountKidRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/acme/account/{kid}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"kid"+"}", url.PathEscape(kid), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteIssuerIssuerRefAcmeAuthorizationAuthId
+// authId: ACME authorization identifier value
+// issuerRef: Reference to an existing issuer name or issuer id
+func (s *Secrets) PkiWriteIssuerIssuerRefAcmeAuthorizationAuthId(ctx context.Context, authId string, issuerRef string, request schema.PkiWriteIssuerIssuerRefAcmeAuthorizationAuthIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/acme/authorization/{auth_id}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"auth_id"+"}", url.PathEscape(authId), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteIssuerIssuerRefAcmeChallengeAuthIdChallengeType
+// authId: ACME authorization identifier value
+// challengeType: ACME challenge type
+// issuerRef: Reference to an existing issuer name or issuer id
+func (s *Secrets) PkiWriteIssuerIssuerRefAcmeChallengeAuthIdChallengeType(ctx context.Context, authId string, challengeType string, issuerRef string, request schema.PkiWriteIssuerIssuerRefAcmeChallengeAuthIdChallengeTypeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/acme/challenge/{auth_id}/{challenge_type}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"auth_id"+"}", url.PathEscape(authId), -1)
+	requestPath = strings.Replace(requestPath, "{"+"challenge_type"+"}", url.PathEscape(challengeType), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteIssuerIssuerRefAcmeNewAccount
+// issuerRef: Reference to an existing issuer name or issuer id
+func (s *Secrets) PkiWriteIssuerIssuerRefAcmeNewAccount(ctx context.Context, issuerRef string, request schema.PkiWriteIssuerIssuerRefAcmeNewAccountRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/acme/new-account"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteIssuerIssuerRefAcmeNewOrder
+// issuerRef: Reference to an existing issuer name or issuer id
+func (s *Secrets) PkiWriteIssuerIssuerRefAcmeNewOrder(ctx context.Context, issuerRef string, request schema.PkiWriteIssuerIssuerRefAcmeNewOrderRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/acme/new-order"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteIssuerIssuerRefAcmeOrderOrderId
+// issuerRef: Reference to an existing issuer name or issuer id
+// orderId: The ACME order identifier to fetch
+func (s *Secrets) PkiWriteIssuerIssuerRefAcmeOrderOrderId(ctx context.Context, issuerRef string, orderId string, request schema.PkiWriteIssuerIssuerRefAcmeOrderOrderIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/acme/order/{order_id}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"order_id"+"}", url.PathEscape(orderId), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteIssuerIssuerRefAcmeOrderOrderIdCert
+// issuerRef: Reference to an existing issuer name or issuer id
+// orderId: The ACME order identifier to fetch
+func (s *Secrets) PkiWriteIssuerIssuerRefAcmeOrderOrderIdCert(ctx context.Context, issuerRef string, orderId string, request schema.PkiWriteIssuerIssuerRefAcmeOrderOrderIdCertRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/acme/order/{order_id}/cert"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"order_id"+"}", url.PathEscape(orderId), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteIssuerIssuerRefAcmeOrderOrderIdFinalize
+// issuerRef: Reference to an existing issuer name or issuer id
+// orderId: The ACME order identifier to fetch
+func (s *Secrets) PkiWriteIssuerIssuerRefAcmeOrderOrderIdFinalize(ctx context.Context, issuerRef string, orderId string, request schema.PkiWriteIssuerIssuerRefAcmeOrderOrderIdFinalizeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/acme/order/{order_id}/finalize"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"order_id"+"}", url.PathEscape(orderId), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteIssuerIssuerRefAcmeOrders
+// issuerRef: Reference to an existing issuer name or issuer id
+func (s *Secrets) PkiWriteIssuerIssuerRefAcmeOrders(ctx context.Context, issuerRef string, request schema.PkiWriteIssuerIssuerRefAcmeOrdersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/acme/orders"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteIssuerIssuerRefAcmeRevokeCert
+// issuerRef: Reference to an existing issuer name or issuer id
+func (s *Secrets) PkiWriteIssuerIssuerRefAcmeRevokeCert(ctx context.Context, issuerRef string, request schema.PkiWriteIssuerIssuerRefAcmeRevokeCertRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/acme/revoke-cert"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteIssuerIssuerRefRolesRoleAcmeAccountKid
+// issuerRef: Reference to an existing issuer name or issuer id
+// kid: The key identifier provided by the CA
+// role: The desired role for the acme request
+func (s *Secrets) PkiWriteIssuerIssuerRefRolesRoleAcmeAccountKid(ctx context.Context, issuerRef string, kid string, role string, request schema.PkiWriteIssuerIssuerRefRolesRoleAcmeAccountKidRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/account/{kid}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"kid"+"}", url.PathEscape(kid), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteIssuerIssuerRefRolesRoleAcmeAuthorizationAuthId
+// authId: ACME authorization identifier value
+// issuerRef: Reference to an existing issuer name or issuer id
+// role: The desired role for the acme request
+func (s *Secrets) PkiWriteIssuerIssuerRefRolesRoleAcmeAuthorizationAuthId(ctx context.Context, authId string, issuerRef string, role string, request schema.PkiWriteIssuerIssuerRefRolesRoleAcmeAuthorizationAuthIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/authorization/{auth_id}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"auth_id"+"}", url.PathEscape(authId), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteIssuerIssuerRefRolesRoleAcmeChallengeAuthIdChallengeType
+// authId: ACME authorization identifier value
+// challengeType: ACME challenge type
+// issuerRef: Reference to an existing issuer name or issuer id
+// role: The desired role for the acme request
+func (s *Secrets) PkiWriteIssuerIssuerRefRolesRoleAcmeChallengeAuthIdChallengeType(ctx context.Context, authId string, challengeType string, issuerRef string, role string, request schema.PkiWriteIssuerIssuerRefRolesRoleAcmeChallengeAuthIdChallengeTypeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/challenge/{auth_id}/{challenge_type}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"auth_id"+"}", url.PathEscape(authId), -1)
+	requestPath = strings.Replace(requestPath, "{"+"challenge_type"+"}", url.PathEscape(challengeType), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteIssuerIssuerRefRolesRoleAcmeNewAccount
+// issuerRef: Reference to an existing issuer name or issuer id
+// role: The desired role for the acme request
+func (s *Secrets) PkiWriteIssuerIssuerRefRolesRoleAcmeNewAccount(ctx context.Context, issuerRef string, role string, request schema.PkiWriteIssuerIssuerRefRolesRoleAcmeNewAccountRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/new-account"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteIssuerIssuerRefRolesRoleAcmeNewOrder
+// issuerRef: Reference to an existing issuer name or issuer id
+// role: The desired role for the acme request
+func (s *Secrets) PkiWriteIssuerIssuerRefRolesRoleAcmeNewOrder(ctx context.Context, issuerRef string, role string, request schema.PkiWriteIssuerIssuerRefRolesRoleAcmeNewOrderRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/new-order"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderId
+// issuerRef: Reference to an existing issuer name or issuer id
+// orderId: The ACME order identifier to fetch
+// role: The desired role for the acme request
+func (s *Secrets) PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderId(ctx context.Context, issuerRef string, orderId string, role string, request schema.PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/order/{order_id}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"order_id"+"}", url.PathEscape(orderId), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdCert
+// issuerRef: Reference to an existing issuer name or issuer id
+// orderId: The ACME order identifier to fetch
+// role: The desired role for the acme request
+func (s *Secrets) PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdCert(ctx context.Context, issuerRef string, orderId string, role string, request schema.PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdCertRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/order/{order_id}/cert"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"order_id"+"}", url.PathEscape(orderId), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdFinalize
+// issuerRef: Reference to an existing issuer name or issuer id
+// orderId: The ACME order identifier to fetch
+// role: The desired role for the acme request
+func (s *Secrets) PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdFinalize(ctx context.Context, issuerRef string, orderId string, role string, request schema.PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdFinalizeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/order/{order_id}/finalize"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"order_id"+"}", url.PathEscape(orderId), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteIssuerIssuerRefRolesRoleAcmeOrders
+// issuerRef: Reference to an existing issuer name or issuer id
+// role: The desired role for the acme request
+func (s *Secrets) PkiWriteIssuerIssuerRefRolesRoleAcmeOrders(ctx context.Context, issuerRef string, role string, request schema.PkiWriteIssuerIssuerRefRolesRoleAcmeOrdersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/orders"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteIssuerIssuerRefRolesRoleAcmeRevokeCert
+// issuerRef: Reference to an existing issuer name or issuer id
+// role: The desired role for the acme request
+func (s *Secrets) PkiWriteIssuerIssuerRefRolesRoleAcmeRevokeCert(ctx context.Context, issuerRef string, role string, request schema.PkiWriteIssuerIssuerRefRolesRoleAcmeRevokeCertRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/revoke-cert"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
 		s.client,
 		http.MethodPost,
@@ -6179,6 +7516,270 @@ func (s *Secrets) PkiWriteRole(ctx context.Context, name string, request schema.
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[schema.PkiWriteRoleResponse](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteRolesRoleAcmeAccountKid
+// kid: The key identifier provided by the CA
+// role: The desired role for the acme request
+func (s *Secrets) PkiWriteRolesRoleAcmeAccountKid(ctx context.Context, kid string, role string, request schema.PkiWriteRolesRoleAcmeAccountKidRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/roles/{role}/acme/account/{kid}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"kid"+"}", url.PathEscape(kid), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteRolesRoleAcmeAuthorizationAuthId
+// authId: ACME authorization identifier value
+// role: The desired role for the acme request
+func (s *Secrets) PkiWriteRolesRoleAcmeAuthorizationAuthId(ctx context.Context, authId string, role string, request schema.PkiWriteRolesRoleAcmeAuthorizationAuthIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/roles/{role}/acme/authorization/{auth_id}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"auth_id"+"}", url.PathEscape(authId), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteRolesRoleAcmeChallengeAuthIdChallengeType
+// authId: ACME authorization identifier value
+// challengeType: ACME challenge type
+// role: The desired role for the acme request
+func (s *Secrets) PkiWriteRolesRoleAcmeChallengeAuthIdChallengeType(ctx context.Context, authId string, challengeType string, role string, request schema.PkiWriteRolesRoleAcmeChallengeAuthIdChallengeTypeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/roles/{role}/acme/challenge/{auth_id}/{challenge_type}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"auth_id"+"}", url.PathEscape(authId), -1)
+	requestPath = strings.Replace(requestPath, "{"+"challenge_type"+"}", url.PathEscape(challengeType), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteRolesRoleAcmeNewAccount
+// role: The desired role for the acme request
+func (s *Secrets) PkiWriteRolesRoleAcmeNewAccount(ctx context.Context, role string, request schema.PkiWriteRolesRoleAcmeNewAccountRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/roles/{role}/acme/new-account"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteRolesRoleAcmeNewOrder
+// role: The desired role for the acme request
+func (s *Secrets) PkiWriteRolesRoleAcmeNewOrder(ctx context.Context, role string, request schema.PkiWriteRolesRoleAcmeNewOrderRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/roles/{role}/acme/new-order"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteRolesRoleAcmeOrderOrderId
+// orderId: The ACME order identifier to fetch
+// role: The desired role for the acme request
+func (s *Secrets) PkiWriteRolesRoleAcmeOrderOrderId(ctx context.Context, orderId string, role string, request schema.PkiWriteRolesRoleAcmeOrderOrderIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/roles/{role}/acme/order/{order_id}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"order_id"+"}", url.PathEscape(orderId), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteRolesRoleAcmeOrderOrderIdCert
+// orderId: The ACME order identifier to fetch
+// role: The desired role for the acme request
+func (s *Secrets) PkiWriteRolesRoleAcmeOrderOrderIdCert(ctx context.Context, orderId string, role string, request schema.PkiWriteRolesRoleAcmeOrderOrderIdCertRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/roles/{role}/acme/order/{order_id}/cert"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"order_id"+"}", url.PathEscape(orderId), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteRolesRoleAcmeOrderOrderIdFinalize
+// orderId: The ACME order identifier to fetch
+// role: The desired role for the acme request
+func (s *Secrets) PkiWriteRolesRoleAcmeOrderOrderIdFinalize(ctx context.Context, orderId string, role string, request schema.PkiWriteRolesRoleAcmeOrderOrderIdFinalizeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/roles/{role}/acme/order/{order_id}/finalize"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"order_id"+"}", url.PathEscape(orderId), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteRolesRoleAcmeOrders
+// role: The desired role for the acme request
+func (s *Secrets) PkiWriteRolesRoleAcmeOrders(ctx context.Context, role string, request schema.PkiWriteRolesRoleAcmeOrdersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/roles/{role}/acme/orders"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PkiWriteRolesRoleAcmeRevokeCert
+// role: The desired role for the acme request
+func (s *Secrets) PkiWriteRolesRoleAcmeRevokeCert(ctx context.Context, role string, request schema.PkiWriteRolesRoleAcmeRevokeCertRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/roles/{role}/acme/revoke-cert"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
 		s.client,
 		http.MethodPost,
@@ -7178,6 +8779,62 @@ func (s *Secrets) TransitBackUpKey(ctx context.Context, name string, options ...
 	)
 }
 
+// TransitByokKey Securely export named encryption or signing key
+// destination: Destination key to export to; usually the public wrapping key of another Transit instance.
+// source: Source key to export; could be any present key within Transit.
+func (s *Secrets) TransitByokKey(ctx context.Context, destination string, source string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{transit_mount_path}/byok-export/{destination}/{source}"
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("transit")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"destination"+"}", url.PathEscape(destination), -1)
+	requestPath = strings.Replace(requestPath, "{"+"source"+"}", url.PathEscape(source), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// TransitByokKeyVersion Securely export named encryption or signing key
+// destination: Destination key to export to; usually the public wrapping key of another Transit instance.
+// source: Source key to export; could be any present key within Transit.
+// version: Optional version of the key to export, else all key versions are exported.
+func (s *Secrets) TransitByokKeyVersion(ctx context.Context, destination string, source string, version string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{transit_mount_path}/byok-export/{destination}/{source}/{version}"
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("transit")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"destination"+"}", url.PathEscape(destination), -1)
+	requestPath = strings.Replace(requestPath, "{"+"source"+"}", url.PathEscape(source), -1)
+	requestPath = strings.Replace(requestPath, "{"+"version"+"}", url.PathEscape(version), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
 // TransitConfigureCache Configures a new cache of the specified size
 func (s *Secrets) TransitConfigureCache(ctx context.Context, request schema.TransitConfigureCacheRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
@@ -7351,7 +9008,7 @@ func (s *Secrets) TransitEncrypt(ctx context.Context, name string, request schem
 
 // TransitExportKey Export named encryption or signing key
 // name: Name of the key
-// type_: Type of key to export (encryption-key, signing-key, hmac-key)
+// type_: Type of key to export (encryption-key, signing-key, hmac-key, public-key)
 func (s *Secrets) TransitExportKey(ctx context.Context, name string, type_ string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -7378,7 +9035,7 @@ func (s *Secrets) TransitExportKey(ctx context.Context, name string, type_ strin
 
 // TransitExportKeyVersion Export named encryption or signing key
 // name: Name of the key
-// type_: Type of key to export (encryption-key, signing-key, hmac-key)
+// type_: Type of key to export (encryption-key, signing-key, hmac-key, public-key)
 // version: Version of the key
 func (s *Secrets) TransitExportKeyVersion(ctx context.Context, name string, type_ string, version string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)

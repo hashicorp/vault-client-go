@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxTtl** | Pointer to **int32** | Maximum time for role. If not set or set to 0, will use system default. | [optional] 
+**MaxTtl** | Pointer to **string** | Maximum time for role. If not set or set to 0, will use system default. | [optional] 
 **Organization** | Pointer to **string** | Name of the Terraform Cloud or Enterprise organization | [optional] 
 **TeamId** | Pointer to **string** | ID of the Terraform Cloud or Enterprise team under organization (e.g., settings/teams/team-xxxxxxxxxxxxx) | [optional] 
-**Ttl** | Pointer to **int32** | Default lease for generated credentials. If not set or set to 0, will use system default. | [optional] 
+**Ttl** | Pointer to **string** | Default lease for generated credentials. If not set or set to 0, will use system default. | [optional] 
 **UserId** | Pointer to **string** | ID of the Terraform Cloud or Enterprise user (e.g., user-xxxxxxxxxxxxxxxx) | [optional] 
 
 
@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMaxTtl
 
-`func (o *TerraformCloudWriteRoleRequest) GetMaxTtl() int32`
+`func (o *TerraformCloudWriteRoleRequest) GetMaxTtl() string`
 
 GetMaxTtl returns the MaxTtl field if non-nil, zero value otherwise.
 
 ### GetMaxTtlOk
 
-`func (o *TerraformCloudWriteRoleRequest) GetMaxTtlOk() (*int32, bool)`
+`func (o *TerraformCloudWriteRoleRequest) GetMaxTtlOk() (*string, bool)`
 
 GetMaxTtlOk returns a tuple with the MaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxTtl
 
-`func (o *TerraformCloudWriteRoleRequest) SetMaxTtl(v int32)`
+`func (o *TerraformCloudWriteRoleRequest) SetMaxTtl(v string)`
 
 SetMaxTtl sets MaxTtl field to given value.
 
@@ -123,20 +123,20 @@ HasTeamId returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *TerraformCloudWriteRoleRequest) GetTtl() int32`
+`func (o *TerraformCloudWriteRoleRequest) GetTtl() string`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *TerraformCloudWriteRoleRequest) GetTtlOk() (*int32, bool)`
+`func (o *TerraformCloudWriteRoleRequest) GetTtlOk() (*string, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *TerraformCloudWriteRoleRequest) SetTtl(v int32)`
+`func (o *TerraformCloudWriteRoleRequest) SetTtl(v string)`
 
 SetTtl sets Ttl field to given value.
 

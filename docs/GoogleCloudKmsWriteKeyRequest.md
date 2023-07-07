@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Labels** | Pointer to **map[string]interface{}** | Arbitrary key&#x3D;value label to apply to the crypto key. To specify multiple labels, specify this argument multiple times (e.g. labels&#x3D;\&quot;a&#x3D;b\&quot; labels&#x3D;\&quot;c&#x3D;d\&quot;). | [optional] 
 **ProtectionLevel** | Pointer to **string** | Level of protection to use for the key management. Valid values are \&quot;software\&quot; and \&quot;hsm\&quot;. The default value is \&quot;software\&quot;. The value cannot be changed after creation. | [optional] 
 **Purpose** | Pointer to **string** | Purpose of the key. Valid options are \&quot;asymmetric_decrypt\&quot;, \&quot;asymmetric_sign\&quot;, and \&quot;encrypt_decrypt\&quot;. The default value is \&quot;encrypt_decrypt\&quot;. The value cannot be changed after creation. | [optional] 
-**RotationPeriod** | Pointer to **int32** | Amount of time between crypto key version rotations. This is specified as a time duration value like 72h (72 hours). The smallest possible value is 24h. This value only applies to keys with a purpose of \&quot;encrypt_decrypt\&quot;. | [optional] 
+**RotationPeriod** | Pointer to **string** | Amount of time between crypto key version rotations. This is specified as a time duration value like 72h (72 hours). The smallest possible value is 24h. This value only applies to keys with a purpose of \&quot;encrypt_decrypt\&quot;. | [optional] 
 
 
 
@@ -212,20 +212,20 @@ HasPurpose returns a boolean if a field has been set.
 
 ### GetRotationPeriod
 
-`func (o *GoogleCloudKmsWriteKeyRequest) GetRotationPeriod() int32`
+`func (o *GoogleCloudKmsWriteKeyRequest) GetRotationPeriod() string`
 
 GetRotationPeriod returns the RotationPeriod field if non-nil, zero value otherwise.
 
 ### GetRotationPeriodOk
 
-`func (o *GoogleCloudKmsWriteKeyRequest) GetRotationPeriodOk() (*int32, bool)`
+`func (o *GoogleCloudKmsWriteKeyRequest) GetRotationPeriodOk() (*string, bool)`
 
 GetRotationPeriodOk returns a tuple with the RotationPeriod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRotationPeriod
 
-`func (o *GoogleCloudKmsWriteKeyRequest) SetRotationPeriod(v int32)`
+`func (o *GoogleCloudKmsWriteKeyRequest) SetRotationPeriod(v string)`
 
 SetRotationPeriod sets RotationPeriod field to given value.
 

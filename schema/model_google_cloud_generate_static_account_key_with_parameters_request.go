@@ -14,7 +14,7 @@ type GoogleCloudGenerateStaticAccountKeyWithParametersRequest struct {
 	KeyType string `json:"key_type,omitempty"`
 
 	// Lifetime of the service account key
-	Ttl int32 `json:"ttl,omitempty"`
+	Ttl string `json:"ttl,omitempty"`
 }
 
 // NewGoogleCloudGenerateStaticAccountKeyWithParametersRequestWithDefaults instantiates a new GoogleCloudGenerateStaticAccountKeyWithParametersRequest object

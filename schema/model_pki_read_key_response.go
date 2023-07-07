@@ -21,6 +21,9 @@ type PkiReadKeyResponse struct {
 
 	// Managed Key Name
 	ManagedKeyName string `json:"managed_key_name,omitempty"`
+
+	// RFC 5280 Subject Key Identifier of the public counterpart
+	SubjectKeyId string `json:"subject_key_id,omitempty"`
 }
 
 // NewPkiReadKeyResponseWithDefaults instantiates a new PkiReadKeyResponse object

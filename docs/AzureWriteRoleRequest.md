@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **ApplicationObjectId** | Pointer to **string** | Application Object ID to use for static service principal credentials. | [optional] 
 **AzureGroups** | Pointer to **string** | JSON list of Azure groups to add the service principal to. | [optional] 
 **AzureRoles** | Pointer to **string** | JSON list of Azure roles to assign. | [optional] 
-**MaxTtl** | Pointer to **int32** | Maximum time a service principal. If not set or set to 0, will use system default. | [optional] 
+**MaxTtl** | Pointer to **string** | Maximum time a service principal. If not set or set to 0, will use system default. | [optional] 
 **PermanentlyDelete** | Pointer to **bool** | Indicates whether new application objects should be permanently deleted. If not set, objects will not be permanently deleted. | [optional] [default to false]
 **PersistApp** | Pointer to **bool** | Persist the app between generated credentials. Useful if the app needs to maintain owner ship of resources it creates | [optional] [default to false]
-**Ttl** | Pointer to **int32** | Default lease for generated credentials. If not set or set to 0, will use system default. | [optional] 
+**Ttl** | Pointer to **string** | Default lease for generated credentials. If not set or set to 0, will use system default. | [optional] 
 
 
 
@@ -125,20 +125,20 @@ HasAzureRoles returns a boolean if a field has been set.
 
 ### GetMaxTtl
 
-`func (o *AzureWriteRoleRequest) GetMaxTtl() int32`
+`func (o *AzureWriteRoleRequest) GetMaxTtl() string`
 
 GetMaxTtl returns the MaxTtl field if non-nil, zero value otherwise.
 
 ### GetMaxTtlOk
 
-`func (o *AzureWriteRoleRequest) GetMaxTtlOk() (*int32, bool)`
+`func (o *AzureWriteRoleRequest) GetMaxTtlOk() (*string, bool)`
 
 GetMaxTtlOk returns a tuple with the MaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxTtl
 
-`func (o *AzureWriteRoleRequest) SetMaxTtl(v int32)`
+`func (o *AzureWriteRoleRequest) SetMaxTtl(v string)`
 
 SetMaxTtl sets MaxTtl field to given value.
 
@@ -212,20 +212,20 @@ HasPersistApp returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *AzureWriteRoleRequest) GetTtl() int32`
+`func (o *AzureWriteRoleRequest) GetTtl() string`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *AzureWriteRoleRequest) GetTtlOk() (*int32, bool)`
+`func (o *AzureWriteRoleRequest) GetTtlOk() (*string, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *AzureWriteRoleRequest) SetTtl(v int32)`
+`func (o *AzureWriteRoleRequest) SetTtl(v string)`
 
 SetTtl sets Ttl field to given value.
 

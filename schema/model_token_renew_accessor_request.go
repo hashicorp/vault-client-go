@@ -11,7 +11,7 @@ type TokenRenewAccessorRequest struct {
 	Accessor string `json:"accessor,omitempty"`
 
 	// The desired increment in seconds to the token expiration
-	Increment int32 `json:"increment,omitempty"`
+	Increment string `json:"increment,omitempty"`
 }
 
 // NewTokenRenewAccessorRequestWithDefaults instantiates a new TokenRenewAccessorRequest object
@@ -20,7 +20,7 @@ type TokenRenewAccessorRequest struct {
 func NewTokenRenewAccessorRequestWithDefaults() *TokenRenewAccessorRequest {
 	var this TokenRenewAccessorRequest
 
-	this.Increment = 0
+	this.Increment = "0"
 
 	return &this
 }

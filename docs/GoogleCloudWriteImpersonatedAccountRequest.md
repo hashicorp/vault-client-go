@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ServiceAccountEmail** | Pointer to **string** | Required. Email of the GCP service account to manage. Cannot be updated. | [optional] 
 **TokenScopes** | Pointer to **[]string** | List of OAuth scopes to assign to access tokens generated under this account. | [optional] 
-**Ttl** | Pointer to **int32** | Lifetime of the token for the impersonated account. | [optional] 
+**Ttl** | Pointer to **string** | Lifetime of the token for the impersonated account. | [optional] 
 
 
 
@@ -92,20 +92,20 @@ HasTokenScopes returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *GoogleCloudWriteImpersonatedAccountRequest) GetTtl() int32`
+`func (o *GoogleCloudWriteImpersonatedAccountRequest) GetTtl() string`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *GoogleCloudWriteImpersonatedAccountRequest) GetTtlOk() (*int32, bool)`
+`func (o *GoogleCloudWriteImpersonatedAccountRequest) GetTtlOk() (*string, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *GoogleCloudWriteImpersonatedAccountRequest) SetTtl(v int32)`
+`func (o *GoogleCloudWriteImpersonatedAccountRequest) SetTtl(v string)`
 
 SetTtl sets Ttl field to given value.
 

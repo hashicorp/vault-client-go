@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **NameTemplate** | Pointer to **string** | The name template to use when generating service accounts, roles and role bindings. If unset, a default template is used. | [optional] 
 **ServiceAccountName** | Pointer to **string** | The pre-existing service account to generate tokens for. Mutually exclusive with all role parameters. If set, only a Kubernetes service account token will be created. | [optional] 
 **TokenDefaultAudiences** | Pointer to **[]string** | The default audiences for generated Kubernetes service account tokens. If not set or set to \&quot;\&quot;, will use k8s cluster default. | [optional] 
-**TokenDefaultTtl** | Pointer to **int32** | The default ttl for generated Kubernetes service account tokens. If not set or set to 0, will use system default. | [optional] 
-**TokenMaxTtl** | Pointer to **int32** | The maximum ttl for generated Kubernetes service account tokens. If not set or set to 0, will use system default. | [optional] 
+**TokenDefaultTtl** | Pointer to **string** | The default ttl for generated Kubernetes service account tokens. If not set or set to 0, will use system default. | [optional] 
+**TokenMaxTtl** | Pointer to **string** | The maximum ttl for generated Kubernetes service account tokens. If not set or set to 0, will use system default. | [optional] 
 
 
 
@@ -333,20 +333,20 @@ HasTokenDefaultAudiences returns a boolean if a field has been set.
 
 ### GetTokenDefaultTtl
 
-`func (o *KubernetesWriteRoleRequest) GetTokenDefaultTtl() int32`
+`func (o *KubernetesWriteRoleRequest) GetTokenDefaultTtl() string`
 
 GetTokenDefaultTtl returns the TokenDefaultTtl field if non-nil, zero value otherwise.
 
 ### GetTokenDefaultTtlOk
 
-`func (o *KubernetesWriteRoleRequest) GetTokenDefaultTtlOk() (*int32, bool)`
+`func (o *KubernetesWriteRoleRequest) GetTokenDefaultTtlOk() (*string, bool)`
 
 GetTokenDefaultTtlOk returns a tuple with the TokenDefaultTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenDefaultTtl
 
-`func (o *KubernetesWriteRoleRequest) SetTokenDefaultTtl(v int32)`
+`func (o *KubernetesWriteRoleRequest) SetTokenDefaultTtl(v string)`
 
 SetTokenDefaultTtl sets TokenDefaultTtl field to given value.
 
@@ -362,20 +362,20 @@ HasTokenDefaultTtl returns a boolean if a field has been set.
 
 ### GetTokenMaxTtl
 
-`func (o *KubernetesWriteRoleRequest) GetTokenMaxTtl() int32`
+`func (o *KubernetesWriteRoleRequest) GetTokenMaxTtl() string`
 
 GetTokenMaxTtl returns the TokenMaxTtl field if non-nil, zero value otherwise.
 
 ### GetTokenMaxTtlOk
 
-`func (o *KubernetesWriteRoleRequest) GetTokenMaxTtlOk() (*int32, bool)`
+`func (o *KubernetesWriteRoleRequest) GetTokenMaxTtlOk() (*string, bool)`
 
 GetTokenMaxTtlOk returns a tuple with the TokenMaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenMaxTtl
 
-`func (o *KubernetesWriteRoleRequest) SetTokenMaxTtl(v int32)`
+`func (o *KubernetesWriteRoleRequest) SetTokenMaxTtl(v string)`
 
 SetTokenMaxTtl sets TokenMaxTtl field to given value.
 

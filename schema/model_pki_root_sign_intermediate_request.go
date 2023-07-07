@@ -44,7 +44,7 @@ type PkiRootSignIntermediateRequest struct {
 	NotAfter string `json:"not_after,omitempty"`
 
 	// The duration before now which the certificate needs to be backdated by.
-	NotBeforeDuration int32 `json:"not_before_duration,omitempty"`
+	NotBeforeDuration string `json:"not_before_duration,omitempty"`
 
 	// If set, O (Organization) will be set to this value.
 	Organization []string `json:"organization,omitempty"`
@@ -80,7 +80,7 @@ type PkiRootSignIntermediateRequest struct {
 	StreetAddress []string `json:"street_address,omitempty"`
 
 	// The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the mount max TTL. Note: this only has an effect when generating a CA cert or signing a CA cert, not when generating a CSR for an intermediate CA.
-	Ttl int32 `json:"ttl,omitempty"`
+	Ttl string `json:"ttl,omitempty"`
 
 	// The requested URI SANs, if any, in a comma-delimited list.
 	UriSans []string `json:"uri_sans,omitempty"`
@@ -103,7 +103,7 @@ func NewPkiRootSignIntermediateRequestWithDefaults() *PkiRootSignIntermediateReq
 	this.Format = "pem"
 	this.IssuerRef = "default"
 	this.MaxPathLength = -1
-	this.NotBeforeDuration = 30
+	this.NotBeforeDuration = "30"
 	this.PrivateKeyFormat = "der"
 	this.SignatureBits = 0
 	this.Skid = ""

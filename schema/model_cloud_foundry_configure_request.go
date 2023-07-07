@@ -38,7 +38,7 @@ type CloudFoundryConfigureRequest struct {
 	LoginMaxSecondsNotAfter int32 `json:"login_max_seconds_not_after,omitempty"`
 
 	// Duration in seconds for the maximum acceptable age of a \"signing_time\". Useful for clock drift. Set low to reduce the opportunity for replay attacks.
-	LoginMaxSecondsNotBefore int32 `json:"login_max_seconds_not_before,omitempty"`
+	LoginMaxSecondsNotBefore string `json:"login_max_seconds_not_before,omitempty"`
 
 	// Deprecated. Please use \"cf_api_addr\".
 	// Deprecated
@@ -64,7 +64,7 @@ func NewCloudFoundryConfigureRequestWithDefaults() *CloudFoundryConfigureRequest
 	var this CloudFoundryConfigureRequest
 
 	this.LoginMaxSecondsNotAfter = 60
-	this.LoginMaxSecondsNotBefore = 300
+	this.LoginMaxSecondsNotBefore = "300"
 
 	return &this
 }

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SafetyBuffer** | Pointer to **int32** | The amount of extra time that must have passed beyond the roletag expiration, before it is removed from the backend storage. | [optional] [default to 259200]
+**SafetyBuffer** | Pointer to **string** | The amount of extra time that must have passed beyond the roletag expiration, before it is removed from the backend storage. | [optional] [default to "259200"]
 
 
 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSafetyBuffer
 
-`func (o *AwsTidyRoleTagBlacklistRequest) GetSafetyBuffer() int32`
+`func (o *AwsTidyRoleTagBlacklistRequest) GetSafetyBuffer() string`
 
 GetSafetyBuffer returns the SafetyBuffer field if non-nil, zero value otherwise.
 
 ### GetSafetyBufferOk
 
-`func (o *AwsTidyRoleTagBlacklistRequest) GetSafetyBufferOk() (*int32, bool)`
+`func (o *AwsTidyRoleTagBlacklistRequest) GetSafetyBufferOk() (*string, bool)`
 
 GetSafetyBufferOk returns a tuple with the SafetyBuffer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSafetyBuffer
 
-`func (o *AwsTidyRoleTagBlacklistRequest) SetSafetyBuffer(v int32)`
+`func (o *AwsTidyRoleTagBlacklistRequest) SetSafetyBuffer(v string)`
 
 SetSafetyBuffer sets SafetyBuffer field to given value.
 

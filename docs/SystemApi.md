@@ -21,6 +21,7 @@ Method | HTTP request | Description
 [**CorsConfigure**](SystemApi.md#CorsConfigure) | **Post** /sys/config/cors | Configure the CORS settings.
 [**CorsDeleteConfiguration**](SystemApi.md#CorsDeleteConfiguration) | **Delete** /sys/config/cors | Remove any CORS settings.
 [**CorsReadConfiguration**](SystemApi.md#CorsReadConfiguration) | **Get** /sys/config/cors | Return the current CORS settings.
+[**Decode**](SystemApi.md#Decode) | **Post** /sys/decode-token | Decodes the encoded token with the otp.
 [**EncryptionKeyConfigureRotation**](SystemApi.md#EncryptionKeyConfigureRotation) | **Post** /sys/rotate/config | 
 [**EncryptionKeyReadRotationConfiguration**](SystemApi.md#EncryptionKeyReadRotationConfiguration) | **Get** /sys/rotate/config | 
 [**EncryptionKeyRotate**](SystemApi.md#EncryptionKeyRotate) | **Post** /sys/rotate | 
@@ -42,6 +43,7 @@ Method | HTTP request | Description
 [**InternalCountRequests**](SystemApi.md#InternalCountRequests) | **Get** /sys/internal/counters/requests | Backwards compatibility is not guaranteed for this API
 [**InternalCountTokens**](SystemApi.md#InternalCountTokens) | **Get** /sys/internal/counters/tokens | Backwards compatibility is not guaranteed for this API
 [**InternalGenerateOpenApiDocument**](SystemApi.md#InternalGenerateOpenApiDocument) | **Get** /sys/internal/specs/openapi | 
+[**InternalGenerateOpenApiDocumentWithParameters**](SystemApi.md#InternalGenerateOpenApiDocumentWithParameters) | **Post** /sys/internal/specs/openapi | 
 [**InternalInspectRouter**](SystemApi.md#InternalInspectRouter) | **Get** /sys/internal/inspect/router/{tag} | Expose the route entry and mount entry tables present in the router
 [**InternalUiListEnabledFeatureFlags**](SystemApi.md#InternalUiListEnabledFeatureFlags) | **Get** /sys/internal/ui/feature-flags | Lists enabled feature flags.
 [**InternalUiListEnabledVisibleMounts**](SystemApi.md#InternalUiListEnabledVisibleMounts) | **Get** /sys/internal/ui/mounts | Lists all enabled and visible auth and secrets mounts.
@@ -103,7 +105,7 @@ Method | HTTP request | Description
 [**PprofCpuProfile**](SystemApi.md#PprofCpuProfile) | **Get** /sys/pprof/profile | Returns a pprof-formatted cpu profile payload.
 [**PprofExecutionTrace**](SystemApi.md#PprofExecutionTrace) | **Get** /sys/pprof/trace | Returns the execution trace in binary form.
 [**PprofGoroutines**](SystemApi.md#PprofGoroutines) | **Get** /sys/pprof/goroutine | Returns stack traces of all current goroutines.
-[**PprofIndex**](SystemApi.md#PprofIndex) | **Get** /sys/pprof/ | Returns an HTML page listing the available profiles.
+[**PprofIndex**](SystemApi.md#PprofIndex) | **Get** /sys/pprof | Returns an HTML page listing the available profiles.
 [**PprofMemoryAllocations**](SystemApi.md#PprofMemoryAllocations) | **Get** /sys/pprof/allocs | Returns a sampling of all past memory allocations.
 [**PprofMemoryAllocationsLive**](SystemApi.md#PprofMemoryAllocationsLive) | **Get** /sys/pprof/heap | Returns a sampling of memory allocations of live object.
 [**PprofMutexes**](SystemApi.md#PprofMutexes) | **Get** /sys/pprof/mutex | Returns stack traces of holders of contended mutexes
@@ -118,6 +120,12 @@ Method | HTTP request | Description
 [**RateLimitQuotasRead**](SystemApi.md#RateLimitQuotasRead) | **Get** /sys/quotas/rate-limit/{name} | 
 [**RateLimitQuotasReadConfiguration**](SystemApi.md#RateLimitQuotasReadConfiguration) | **Get** /sys/quotas/config | 
 [**RateLimitQuotasWrite**](SystemApi.md#RateLimitQuotasWrite) | **Post** /sys/quotas/rate-limit/{name} | 
+[**RawDelete**](SystemApi.md#RawDelete) | **Delete** /sys/raw | Delete the key with given path.
+[**RawDeletePath**](SystemApi.md#RawDeletePath) | **Delete** /sys/raw/{path} | Delete the key with given path.
+[**RawRead**](SystemApi.md#RawRead) | **Get** /sys/raw | Read the value of the key at the given path.
+[**RawReadPath**](SystemApi.md#RawReadPath) | **Get** /sys/raw/{path} | Read the value of the key at the given path.
+[**RawWrite**](SystemApi.md#RawWrite) | **Post** /sys/raw | Update the value of the key at the given path.
+[**RawWritePath**](SystemApi.md#RawWritePath) | **Post** /sys/raw/{path} | Update the value of the key at the given path.
 [**ReadHealthStatus**](SystemApi.md#ReadHealthStatus) | **Get** /sys/health | Returns the health status of Vault.
 [**ReadInitializationStatus**](SystemApi.md#ReadInitializationStatus) | **Get** /sys/init | Returns the initialization status of Vault.
 [**ReadSanitizedConfigurationState**](SystemApi.md#ReadSanitizedConfigurationState) | **Get** /sys/config/state/sanitized | Return a sanitized version of the Vault server configuration.
@@ -136,7 +144,6 @@ Method | HTTP request | Description
 [**ReloadSubsystem**](SystemApi.md#ReloadSubsystem) | **Post** /sys/config/reload/{subsystem} | Reload the given subsystem
 [**Remount**](SystemApi.md#Remount) | **Post** /sys/remount | Initiate a mount migration
 [**RemountStatus**](SystemApi.md#RemountStatus) | **Get** /sys/remount/status/{migration_id} | Check status of a mount migration
-[**ReplicationStatus**](SystemApi.md#ReplicationStatus) | **Get** /sys/replication/status | 
 [**Rewrap**](SystemApi.md#Rewrap) | **Post** /sys/wrapping/rewrap | 
 [**RootTokenGenerationCancel**](SystemApi.md#RootTokenGenerationCancel) | **Delete** /sys/generate-root/attempt | Cancels any in-progress root generation attempt.
 [**RootTokenGenerationInitialize**](SystemApi.md#RootTokenGenerationInitialize) | **Post** /sys/generate-root/attempt | Initializes a new root generation attempt.
@@ -145,13 +152,114 @@ Method | HTTP request | Description
 [**Seal**](SystemApi.md#Seal) | **Post** /sys/seal | Seal the Vault.
 [**SealStatus**](SystemApi.md#SealStatus) | **Get** /sys/seal-status | Check the seal status of a Vault.
 [**StepDownLeader**](SystemApi.md#StepDownLeader) | **Post** /sys/step-down | Cause the node to give up active status.
+[**SystemDeleteConfigControlGroup**](SystemApi.md#SystemDeleteConfigControlGroup) | **Delete** /sys/config/control-group | 
+[**SystemDeleteManagedKeysTypeName**](SystemApi.md#SystemDeleteManagedKeysTypeName) | **Delete** /sys/managed-keys/{type}/{name} | 
+[**SystemDeleteMfaMethodDuoName**](SystemApi.md#SystemDeleteMfaMethodDuoName) | **Delete** /sys/mfa/method/duo/{name} | 
+[**SystemDeleteMfaMethodOktaName**](SystemApi.md#SystemDeleteMfaMethodOktaName) | **Delete** /sys/mfa/method/okta/{name} | 
+[**SystemDeleteMfaMethodPingidName**](SystemApi.md#SystemDeleteMfaMethodPingidName) | **Delete** /sys/mfa/method/pingid/{name} | 
+[**SystemDeleteMfaMethodTotpName**](SystemApi.md#SystemDeleteMfaMethodTotpName) | **Delete** /sys/mfa/method/totp/{name} | 
+[**SystemDeleteNamespacesPath**](SystemApi.md#SystemDeleteNamespacesPath) | **Delete** /sys/namespaces/{path} | 
+[**SystemDeletePoliciesEgpName**](SystemApi.md#SystemDeletePoliciesEgpName) | **Delete** /sys/policies/egp/{name} | 
+[**SystemDeletePoliciesRgpName**](SystemApi.md#SystemDeletePoliciesRgpName) | **Delete** /sys/policies/rgp/{name} | 
+[**SystemDeleteQuotasLeaseCountName**](SystemApi.md#SystemDeleteQuotasLeaseCountName) | **Delete** /sys/quotas/lease-count/{name} | 
+[**SystemDeleteReplicationPerformancePrimaryPathsFilterId**](SystemApi.md#SystemDeleteReplicationPerformancePrimaryPathsFilterId) | **Delete** /sys/replication/performance/primary/paths-filter/{id} | 
+[**SystemDeleteStorageRaftSnapshotAutoConfigName**](SystemApi.md#SystemDeleteStorageRaftSnapshotAutoConfigName) | **Delete** /sys/storage/raft/snapshot-auto/config/{name} | 
+[**SystemListManagedKeysType**](SystemApi.md#SystemListManagedKeysType) | **Get** /sys/managed-keys/{type} | 
+[**SystemListMfaMethod**](SystemApi.md#SystemListMfaMethod) | **Get** /sys/mfa/method | 
+[**SystemListNamespaces**](SystemApi.md#SystemListNamespaces) | **Get** /sys/namespaces | 
+[**SystemListPoliciesEgp**](SystemApi.md#SystemListPoliciesEgp) | **Get** /sys/policies/egp | 
+[**SystemListPoliciesRgp**](SystemApi.md#SystemListPoliciesRgp) | **Get** /sys/policies/rgp | 
+[**SystemListQuotasLeaseCount**](SystemApi.md#SystemListQuotasLeaseCount) | **Get** /sys/quotas/lease-count | 
+[**SystemListStorageRaftSnapshotAutoConfig**](SystemApi.md#SystemListStorageRaftSnapshotAutoConfig) | **Get** /sys/storage/raft/snapshot-auto/config/ | 
+[**SystemReadConfigControlGroup**](SystemApi.md#SystemReadConfigControlGroup) | **Get** /sys/config/control-group | 
+[**SystemReadConfigGroupPolicyApplication**](SystemApi.md#SystemReadConfigGroupPolicyApplication) | **Get** /sys/config/group-policy-application | 
+[**SystemReadLicenseStatus**](SystemApi.md#SystemReadLicenseStatus) | **Get** /sys/license/status | 
+[**SystemReadManagedKeysTypeName**](SystemApi.md#SystemReadManagedKeysTypeName) | **Get** /sys/managed-keys/{type}/{name} | 
+[**SystemReadMfaMethodDuoName**](SystemApi.md#SystemReadMfaMethodDuoName) | **Get** /sys/mfa/method/duo/{name} | 
+[**SystemReadMfaMethodOktaName**](SystemApi.md#SystemReadMfaMethodOktaName) | **Get** /sys/mfa/method/okta/{name} | 
+[**SystemReadMfaMethodPingidName**](SystemApi.md#SystemReadMfaMethodPingidName) | **Get** /sys/mfa/method/pingid/{name} | 
+[**SystemReadMfaMethodTotpName**](SystemApi.md#SystemReadMfaMethodTotpName) | **Get** /sys/mfa/method/totp/{name} | 
+[**SystemReadMfaMethodTotpNameGenerate**](SystemApi.md#SystemReadMfaMethodTotpNameGenerate) | **Get** /sys/mfa/method/totp/{name}/generate | 
+[**SystemReadNamespacesPath**](SystemApi.md#SystemReadNamespacesPath) | **Get** /sys/namespaces/{path} | 
+[**SystemReadPluginsReloadBackendStatus**](SystemApi.md#SystemReadPluginsReloadBackendStatus) | **Get** /sys/plugins/reload/backend/status | 
+[**SystemReadPoliciesEgpName**](SystemApi.md#SystemReadPoliciesEgpName) | **Get** /sys/policies/egp/{name} | 
+[**SystemReadPoliciesRgpName**](SystemApi.md#SystemReadPoliciesRgpName) | **Get** /sys/policies/rgp/{name} | 
+[**SystemReadQuotasLeaseCountName**](SystemApi.md#SystemReadQuotasLeaseCountName) | **Get** /sys/quotas/lease-count/{name} | 
+[**SystemReadReplicationDrSecondaryLicenseStatus**](SystemApi.md#SystemReadReplicationDrSecondaryLicenseStatus) | **Get** /sys/replication/dr/secondary/license/status | 
+[**SystemReadReplicationDrStatus**](SystemApi.md#SystemReadReplicationDrStatus) | **Get** /sys/replication/dr/status | 
+[**SystemReadReplicationPerformancePrimaryDynamicFilterId**](SystemApi.md#SystemReadReplicationPerformancePrimaryDynamicFilterId) | **Get** /sys/replication/performance/primary/dynamic-filter/{id} | 
+[**SystemReadReplicationPerformancePrimaryPathsFilterId**](SystemApi.md#SystemReadReplicationPerformancePrimaryPathsFilterId) | **Get** /sys/replication/performance/primary/paths-filter/{id} | 
+[**SystemReadReplicationPerformanceSecondaryDynamicFilterId**](SystemApi.md#SystemReadReplicationPerformanceSecondaryDynamicFilterId) | **Get** /sys/replication/performance/secondary/dynamic-filter/{id} | 
+[**SystemReadReplicationPerformanceStatus**](SystemApi.md#SystemReadReplicationPerformanceStatus) | **Get** /sys/replication/performance/status | 
+[**SystemReadReplicationStatus**](SystemApi.md#SystemReadReplicationStatus) | **Get** /sys/replication/status | 
+[**SystemReadSealwrapRewrap**](SystemApi.md#SystemReadSealwrapRewrap) | **Get** /sys/sealwrap/rewrap | 
+[**SystemReadStorageRaftSnapshotAutoConfigName**](SystemApi.md#SystemReadStorageRaftSnapshotAutoConfigName) | **Get** /sys/storage/raft/snapshot-auto/config/{name} | 
+[**SystemReadStorageRaftSnapshotAutoStatusName**](SystemApi.md#SystemReadStorageRaftSnapshotAutoStatusName) | **Get** /sys/storage/raft/snapshot-auto/status/{name} | 
+[**SystemWriteConfigControlGroup**](SystemApi.md#SystemWriteConfigControlGroup) | **Post** /sys/config/control-group | 
+[**SystemWriteConfigGroupPolicyApplication**](SystemApi.md#SystemWriteConfigGroupPolicyApplication) | **Post** /sys/config/group-policy-application | 
+[**SystemWriteControlGroupAuthorize**](SystemApi.md#SystemWriteControlGroupAuthorize) | **Post** /sys/control-group/authorize | 
+[**SystemWriteControlGroupRequest**](SystemApi.md#SystemWriteControlGroupRequest) | **Post** /sys/control-group/request | 
+[**SystemWriteManagedKeysTypeName**](SystemApi.md#SystemWriteManagedKeysTypeName) | **Post** /sys/managed-keys/{type}/{name} | 
+[**SystemWriteManagedKeysTypeNameTestSign**](SystemApi.md#SystemWriteManagedKeysTypeNameTestSign) | **Post** /sys/managed-keys/{type}/{name}/test/sign | 
+[**SystemWriteMfaMethodDuoName**](SystemApi.md#SystemWriteMfaMethodDuoName) | **Post** /sys/mfa/method/duo/{name} | 
+[**SystemWriteMfaMethodOktaName**](SystemApi.md#SystemWriteMfaMethodOktaName) | **Post** /sys/mfa/method/okta/{name} | 
+[**SystemWriteMfaMethodPingidName**](SystemApi.md#SystemWriteMfaMethodPingidName) | **Post** /sys/mfa/method/pingid/{name} | 
+[**SystemWriteMfaMethodTotpName**](SystemApi.md#SystemWriteMfaMethodTotpName) | **Post** /sys/mfa/method/totp/{name} | 
+[**SystemWriteMfaMethodTotpNameAdminDestroy**](SystemApi.md#SystemWriteMfaMethodTotpNameAdminDestroy) | **Post** /sys/mfa/method/totp/{name}/admin-destroy | 
+[**SystemWriteMfaMethodTotpNameAdminGenerate**](SystemApi.md#SystemWriteMfaMethodTotpNameAdminGenerate) | **Post** /sys/mfa/method/totp/{name}/admin-generate | 
+[**SystemWriteNamespacesApiLockLock**](SystemApi.md#SystemWriteNamespacesApiLockLock) | **Post** /sys/namespaces/api-lock/lock | 
+[**SystemWriteNamespacesApiLockLockPath**](SystemApi.md#SystemWriteNamespacesApiLockLockPath) | **Post** /sys/namespaces/api-lock/lock/{path} | 
+[**SystemWriteNamespacesApiLockUnlock**](SystemApi.md#SystemWriteNamespacesApiLockUnlock) | **Post** /sys/namespaces/api-lock/unlock | 
+[**SystemWriteNamespacesApiLockUnlockPath**](SystemApi.md#SystemWriteNamespacesApiLockUnlockPath) | **Post** /sys/namespaces/api-lock/unlock/{path} | 
+[**SystemWriteNamespacesPath**](SystemApi.md#SystemWriteNamespacesPath) | **Post** /sys/namespaces/{path} | 
+[**SystemWritePoliciesEgpName**](SystemApi.md#SystemWritePoliciesEgpName) | **Post** /sys/policies/egp/{name} | 
+[**SystemWritePoliciesRgpName**](SystemApi.md#SystemWritePoliciesRgpName) | **Post** /sys/policies/rgp/{name} | 
+[**SystemWriteQuotasLeaseCountName**](SystemApi.md#SystemWriteQuotasLeaseCountName) | **Post** /sys/quotas/lease-count/{name} | 
+[**SystemWriteReplicationDrPrimaryDemote**](SystemApi.md#SystemWriteReplicationDrPrimaryDemote) | **Post** /sys/replication/dr/primary/demote | 
+[**SystemWriteReplicationDrPrimaryDisable**](SystemApi.md#SystemWriteReplicationDrPrimaryDisable) | **Post** /sys/replication/dr/primary/disable | 
+[**SystemWriteReplicationDrPrimaryEnable**](SystemApi.md#SystemWriteReplicationDrPrimaryEnable) | **Post** /sys/replication/dr/primary/enable | 
+[**SystemWriteReplicationDrPrimaryRevokeSecondary**](SystemApi.md#SystemWriteReplicationDrPrimaryRevokeSecondary) | **Post** /sys/replication/dr/primary/revoke-secondary | 
+[**SystemWriteReplicationDrPrimarySecondaryToken**](SystemApi.md#SystemWriteReplicationDrPrimarySecondaryToken) | **Post** /sys/replication/dr/primary/secondary-token | 
+[**SystemWriteReplicationDrSecondaryConfigReloadSubsystem**](SystemApi.md#SystemWriteReplicationDrSecondaryConfigReloadSubsystem) | **Post** /sys/replication/dr/secondary/config/reload/{subsystem} | 
+[**SystemWriteReplicationDrSecondaryDisable**](SystemApi.md#SystemWriteReplicationDrSecondaryDisable) | **Post** /sys/replication/dr/secondary/disable | 
+[**SystemWriteReplicationDrSecondaryEnable**](SystemApi.md#SystemWriteReplicationDrSecondaryEnable) | **Post** /sys/replication/dr/secondary/enable | 
+[**SystemWriteReplicationDrSecondaryGeneratePublicKey**](SystemApi.md#SystemWriteReplicationDrSecondaryGeneratePublicKey) | **Post** /sys/replication/dr/secondary/generate-public-key | 
+[**SystemWriteReplicationDrSecondaryOperationTokenDelete**](SystemApi.md#SystemWriteReplicationDrSecondaryOperationTokenDelete) | **Post** /sys/replication/dr/secondary/operation-token/delete | 
+[**SystemWriteReplicationDrSecondaryPromote**](SystemApi.md#SystemWriteReplicationDrSecondaryPromote) | **Post** /sys/replication/dr/secondary/promote | 
+[**SystemWriteReplicationDrSecondaryRecover**](SystemApi.md#SystemWriteReplicationDrSecondaryRecover) | **Post** /sys/replication/dr/secondary/recover | 
+[**SystemWriteReplicationDrSecondaryReindex**](SystemApi.md#SystemWriteReplicationDrSecondaryReindex) | **Post** /sys/replication/dr/secondary/reindex | 
+[**SystemWriteReplicationDrSecondaryUpdatePrimary**](SystemApi.md#SystemWriteReplicationDrSecondaryUpdatePrimary) | **Post** /sys/replication/dr/secondary/update-primary | 
+[**SystemWriteReplicationPerformancePrimaryDemote**](SystemApi.md#SystemWriteReplicationPerformancePrimaryDemote) | **Post** /sys/replication/performance/primary/demote | 
+[**SystemWriteReplicationPerformancePrimaryDisable**](SystemApi.md#SystemWriteReplicationPerformancePrimaryDisable) | **Post** /sys/replication/performance/primary/disable | 
+[**SystemWriteReplicationPerformancePrimaryEnable**](SystemApi.md#SystemWriteReplicationPerformancePrimaryEnable) | **Post** /sys/replication/performance/primary/enable | 
+[**SystemWriteReplicationPerformancePrimaryPathsFilterId**](SystemApi.md#SystemWriteReplicationPerformancePrimaryPathsFilterId) | **Post** /sys/replication/performance/primary/paths-filter/{id} | 
+[**SystemWriteReplicationPerformancePrimaryRevokeSecondary**](SystemApi.md#SystemWriteReplicationPerformancePrimaryRevokeSecondary) | **Post** /sys/replication/performance/primary/revoke-secondary | 
+[**SystemWriteReplicationPerformancePrimarySecondaryToken**](SystemApi.md#SystemWriteReplicationPerformancePrimarySecondaryToken) | **Post** /sys/replication/performance/primary/secondary-token | 
+[**SystemWriteReplicationPerformanceSecondaryDisable**](SystemApi.md#SystemWriteReplicationPerformanceSecondaryDisable) | **Post** /sys/replication/performance/secondary/disable | 
+[**SystemWriteReplicationPerformanceSecondaryEnable**](SystemApi.md#SystemWriteReplicationPerformanceSecondaryEnable) | **Post** /sys/replication/performance/secondary/enable | 
+[**SystemWriteReplicationPerformanceSecondaryGeneratePublicKey**](SystemApi.md#SystemWriteReplicationPerformanceSecondaryGeneratePublicKey) | **Post** /sys/replication/performance/secondary/generate-public-key | 
+[**SystemWriteReplicationPerformanceSecondaryPromote**](SystemApi.md#SystemWriteReplicationPerformanceSecondaryPromote) | **Post** /sys/replication/performance/secondary/promote | 
+[**SystemWriteReplicationPerformanceSecondaryUpdatePrimary**](SystemApi.md#SystemWriteReplicationPerformanceSecondaryUpdatePrimary) | **Post** /sys/replication/performance/secondary/update-primary | 
+[**SystemWriteReplicationPrimaryDemote**](SystemApi.md#SystemWriteReplicationPrimaryDemote) | **Post** /sys/replication/primary/demote | 
+[**SystemWriteReplicationPrimaryDisable**](SystemApi.md#SystemWriteReplicationPrimaryDisable) | **Post** /sys/replication/primary/disable | 
+[**SystemWriteReplicationPrimaryEnable**](SystemApi.md#SystemWriteReplicationPrimaryEnable) | **Post** /sys/replication/primary/enable | 
+[**SystemWriteReplicationPrimaryRevokeSecondary**](SystemApi.md#SystemWriteReplicationPrimaryRevokeSecondary) | **Post** /sys/replication/primary/revoke-secondary | 
+[**SystemWriteReplicationPrimarySecondaryToken**](SystemApi.md#SystemWriteReplicationPrimarySecondaryToken) | **Post** /sys/replication/primary/secondary-token | 
+[**SystemWriteReplicationRecover**](SystemApi.md#SystemWriteReplicationRecover) | **Post** /sys/replication/recover | 
+[**SystemWriteReplicationReindex**](SystemApi.md#SystemWriteReplicationReindex) | **Post** /sys/replication/reindex | 
+[**SystemWriteReplicationSecondaryDisable**](SystemApi.md#SystemWriteReplicationSecondaryDisable) | **Post** /sys/replication/secondary/disable | 
+[**SystemWriteReplicationSecondaryEnable**](SystemApi.md#SystemWriteReplicationSecondaryEnable) | **Post** /sys/replication/secondary/enable | 
+[**SystemWriteReplicationSecondaryPromote**](SystemApi.md#SystemWriteReplicationSecondaryPromote) | **Post** /sys/replication/secondary/promote | 
+[**SystemWriteReplicationSecondaryUpdatePrimary**](SystemApi.md#SystemWriteReplicationSecondaryUpdatePrimary) | **Post** /sys/replication/secondary/update-primary | 
+[**SystemWriteSealwrapRewrap**](SystemApi.md#SystemWriteSealwrapRewrap) | **Post** /sys/sealwrap/rewrap | 
+[**SystemWriteStorageRaftSnapshotAutoConfigName**](SystemApi.md#SystemWriteStorageRaftSnapshotAutoConfigName) | **Post** /sys/storage/raft/snapshot-auto/config/{name} | 
 [**UiHeadersConfigure**](SystemApi.md#UiHeadersConfigure) | **Post** /sys/config/ui/headers/{header} | Configure the values to be returned for the UI header.
 [**UiHeadersDeleteConfiguration**](SystemApi.md#UiHeadersDeleteConfiguration) | **Delete** /sys/config/ui/headers/{header} | Remove a UI header.
-[**UiHeadersList**](SystemApi.md#UiHeadersList) | **Get** /sys/config/ui/headers/ | Return a list of configured UI headers.
+[**UiHeadersList**](SystemApi.md#UiHeadersList) | **Get** /sys/config/ui/headers | Return a list of configured UI headers.
 [**UiHeadersReadConfiguration**](SystemApi.md#UiHeadersReadConfiguration) | **Get** /sys/config/ui/headers/{header} | Return the given UI header&#x27;s configuration
 [**Unseal**](SystemApi.md#Unseal) | **Post** /sys/unseal | Unseal the Vault.
 [**Unwrap**](SystemApi.md#Unwrap) | **Post** /sys/wrapping/unwrap | 
-[**VersionHistory**](SystemApi.md#VersionHistory) | **Get** /sys/version-history/ | Returns map of historical version change entries
+[**VersionHistory**](SystemApi.md#VersionHistory) | **Get** /sys/version-history | Returns map of historical version change entries
 [**Wrap**](SystemApi.md#Wrap) | **Post** /sys/wrapping/wrap | 
 
 
@@ -1281,6 +1389,64 @@ This endpoint does not require any parameters.
 
 
 [**CorsReadConfigurationResponse**](CorsReadConfigurationResponse.md)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## Decode
+
+Decodes the encoded token with the otp.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	request := schema.NewDecodeRequestWithDefaults()
+	resp, err := client.System.Decode(
+		context.Background(),
+		request,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **decodeRequest** | [**DecodeRequest**](DecodeRequest.md) |  | 
+
+ (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -2463,6 +2629,67 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **genericMountPaths** | **bool** | Use generic mount paths | [default to false]
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## InternalGenerateOpenApiDocumentWithParameters
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	request := schema.NewInternalGenerateOpenApiDocumentWithParametersRequestWithDefaults()
+	genericMountPaths := true // bool | Use generic mount paths (defaults to false)
+	resp, err := client.System.InternalGenerateOpenApiDocumentWithParameters(
+		context.Background(),
+		request,
+		genericMountPaths,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **internalGenerateOpenApiDocumentWithParametersRequest** | [**InternalGenerateOpenApiDocumentWithParametersRequest**](InternalGenerateOpenApiDocumentWithParametersRequest.md) |  | 
  **genericMountPaths** | **bool** | Use generic mount paths | [default to false]
 
  (empty response body)
@@ -6901,6 +7128,359 @@ Name | Type | Description  | Notes
 
 
 
+## RawDelete
+
+Delete the key with given path.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.RawDelete(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## RawDeletePath
+
+Delete the key with given path.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | 
+	resp, err := client.System.RawDeletePath(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## RawRead
+
+Read the value of the key at the given path.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.RawRead(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Return a list if &#x60;true&#x60; | 
+
+[**RawReadResponse**](RawReadResponse.md)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## RawReadPath
+
+Read the value of the key at the given path.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | 
+	resp, err := client.System.RawReadPath(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **list** | **string** | Return a list if &#x60;true&#x60; | 
+
+[**RawReadPathResponse**](RawReadPathResponse.md)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## RawWrite
+
+Update the value of the key at the given path.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	request := schema.NewRawWriteRequestWithDefaults()
+	resp, err := client.System.RawWrite(
+		context.Background(),
+		request,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rawWriteRequest** | [**RawWriteRequest**](RawWriteRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## RawWritePath
+
+Update the value of the key at the given path.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | 
+	request := schema.NewRawWritePathRequestWithDefaults()
+	resp, err := client.System.RawWritePath(
+		context.Background(),
+		path,
+		request,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **rawWritePathRequest** | [**RawWritePathRequest**](RawWritePathRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
 ## ReadHealthStatus
 
 Returns the health status of Vault.
@@ -7893,58 +8473,6 @@ Name | Type | Description  | Notes
 
 
 
-## ReplicationStatus
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	resp, err := client.System.ReplicationStatus(
-		context.Background(),
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
 ## Rewrap
 
 
@@ -8376,6 +8904,5701 @@ This endpoint does not require any parameters.
 
 ### Other Parameters
 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemDeleteConfigControlGroup
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemDeleteConfigControlGroup(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemDeleteManagedKeysTypeName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	type_ := "type__example" // string | 
+	resp, err := client.System.SystemDeleteManagedKeysTypeName(
+		context.Background(),
+		name,
+		type_,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+**type_** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemDeleteMfaMethodDuoName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemDeleteMfaMethodDuoName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemDeleteMfaMethodOktaName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemDeleteMfaMethodOktaName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemDeleteMfaMethodPingidName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemDeleteMfaMethodPingidName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemDeleteMfaMethodTotpName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemDeleteMfaMethodTotpName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemDeleteNamespacesPath
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | 
+	resp, err := client.System.SystemDeleteNamespacesPath(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemDeletePoliciesEgpName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemDeletePoliciesEgpName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemDeletePoliciesRgpName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemDeletePoliciesRgpName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemDeleteQuotasLeaseCountName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemDeleteQuotasLeaseCountName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemDeleteReplicationPerformancePrimaryPathsFilterId
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	id := "id_example" // string | 
+	resp, err := client.System.SystemDeleteReplicationPerformancePrimaryPathsFilterId(
+		context.Background(),
+		id,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**id** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemDeleteStorageRaftSnapshotAutoConfigName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemDeleteStorageRaftSnapshotAutoConfigName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemListManagedKeysType
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	type_ := "type__example" // string | 
+	resp, err := client.System.SystemListManagedKeysType(
+		context.Background(),
+		type_,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**type_** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemListMfaMethod
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemListMfaMethod(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemListNamespaces
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemListNamespaces(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemListPoliciesEgp
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemListPoliciesEgp(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemListPoliciesRgp
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemListPoliciesRgp(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemListQuotasLeaseCount
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemListQuotasLeaseCount(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemListStorageRaftSnapshotAutoConfig
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemListStorageRaftSnapshotAutoConfig(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemReadConfigControlGroup
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemReadConfigControlGroup(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemReadConfigGroupPolicyApplication
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemReadConfigGroupPolicyApplication(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemReadLicenseStatus
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemReadLicenseStatus(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemReadManagedKeysTypeName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	type_ := "type__example" // string | 
+	resp, err := client.System.SystemReadManagedKeysTypeName(
+		context.Background(),
+		name,
+		type_,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+**type_** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemReadMfaMethodDuoName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemReadMfaMethodDuoName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemReadMfaMethodOktaName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemReadMfaMethodOktaName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemReadMfaMethodPingidName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemReadMfaMethodPingidName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemReadMfaMethodTotpName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemReadMfaMethodTotpName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemReadMfaMethodTotpNameGenerate
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemReadMfaMethodTotpNameGenerate(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemReadNamespacesPath
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | 
+	resp, err := client.System.SystemReadNamespacesPath(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemReadPluginsReloadBackendStatus
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemReadPluginsReloadBackendStatus(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemReadPoliciesEgpName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemReadPoliciesEgpName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemReadPoliciesRgpName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemReadPoliciesRgpName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemReadQuotasLeaseCountName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemReadQuotasLeaseCountName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemReadReplicationDrSecondaryLicenseStatus
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemReadReplicationDrSecondaryLicenseStatus(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemReadReplicationDrStatus
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemReadReplicationDrStatus(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemReadReplicationPerformancePrimaryDynamicFilterId
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	id := "id_example" // string | 
+	resp, err := client.System.SystemReadReplicationPerformancePrimaryDynamicFilterId(
+		context.Background(),
+		id,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**id** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemReadReplicationPerformancePrimaryPathsFilterId
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	id := "id_example" // string | 
+	resp, err := client.System.SystemReadReplicationPerformancePrimaryPathsFilterId(
+		context.Background(),
+		id,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**id** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemReadReplicationPerformanceSecondaryDynamicFilterId
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	id := "id_example" // string | 
+	resp, err := client.System.SystemReadReplicationPerformanceSecondaryDynamicFilterId(
+		context.Background(),
+		id,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**id** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemReadReplicationPerformanceStatus
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemReadReplicationPerformanceStatus(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemReadReplicationStatus
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemReadReplicationStatus(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemReadSealwrapRewrap
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemReadSealwrapRewrap(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemReadStorageRaftSnapshotAutoConfigName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemReadStorageRaftSnapshotAutoConfigName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemReadStorageRaftSnapshotAutoStatusName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemReadStorageRaftSnapshotAutoStatusName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteConfigControlGroup
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteConfigControlGroup(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteConfigGroupPolicyApplication
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteConfigGroupPolicyApplication(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteControlGroupAuthorize
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteControlGroupAuthorize(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteControlGroupRequest
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteControlGroupRequest(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteManagedKeysTypeName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	type_ := "type__example" // string | 
+	resp, err := client.System.SystemWriteManagedKeysTypeName(
+		context.Background(),
+		name,
+		type_,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+**type_** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteManagedKeysTypeNameTestSign
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	type_ := "type__example" // string | 
+	resp, err := client.System.SystemWriteManagedKeysTypeNameTestSign(
+		context.Background(),
+		name,
+		type_,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+**type_** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteMfaMethodDuoName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemWriteMfaMethodDuoName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteMfaMethodOktaName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemWriteMfaMethodOktaName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteMfaMethodPingidName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemWriteMfaMethodPingidName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteMfaMethodTotpName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemWriteMfaMethodTotpName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteMfaMethodTotpNameAdminDestroy
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemWriteMfaMethodTotpNameAdminDestroy(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteMfaMethodTotpNameAdminGenerate
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemWriteMfaMethodTotpNameAdminGenerate(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteNamespacesApiLockLock
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	request := schema.NewSystemWriteNamespacesApiLockLockRequestWithDefaults()
+	resp, err := client.System.SystemWriteNamespacesApiLockLock(
+		context.Background(),
+		request,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **systemWriteNamespacesApiLockLockRequest** | [**SystemWriteNamespacesApiLockLockRequest**](SystemWriteNamespacesApiLockLockRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteNamespacesApiLockLockPath
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | 
+	resp, err := client.System.SystemWriteNamespacesApiLockLockPath(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteNamespacesApiLockUnlock
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	request := schema.NewSystemWriteNamespacesApiLockUnlockRequestWithDefaults()
+	resp, err := client.System.SystemWriteNamespacesApiLockUnlock(
+		context.Background(),
+		request,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **systemWriteNamespacesApiLockUnlockRequest** | [**SystemWriteNamespacesApiLockUnlockRequest**](SystemWriteNamespacesApiLockUnlockRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteNamespacesApiLockUnlockPath
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | 
+	resp, err := client.System.SystemWriteNamespacesApiLockUnlockPath(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteNamespacesPath
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | 
+	resp, err := client.System.SystemWriteNamespacesPath(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWritePoliciesEgpName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemWritePoliciesEgpName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWritePoliciesRgpName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemWritePoliciesRgpName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteQuotasLeaseCountName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemWriteQuotasLeaseCountName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationDrPrimaryDemote
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationDrPrimaryDemote(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationDrPrimaryDisable
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationDrPrimaryDisable(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationDrPrimaryEnable
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationDrPrimaryEnable(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationDrPrimaryRevokeSecondary
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationDrPrimaryRevokeSecondary(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationDrPrimarySecondaryToken
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationDrPrimarySecondaryToken(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationDrSecondaryConfigReloadSubsystem
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	subsystem := "subsystem_example" // string | 
+	resp, err := client.System.SystemWriteReplicationDrSecondaryConfigReloadSubsystem(
+		context.Background(),
+		subsystem,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**subsystem** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationDrSecondaryDisable
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationDrSecondaryDisable(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationDrSecondaryEnable
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationDrSecondaryEnable(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationDrSecondaryGeneratePublicKey
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationDrSecondaryGeneratePublicKey(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationDrSecondaryOperationTokenDelete
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationDrSecondaryOperationTokenDelete(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationDrSecondaryPromote
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationDrSecondaryPromote(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationDrSecondaryRecover
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationDrSecondaryRecover(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationDrSecondaryReindex
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationDrSecondaryReindex(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationDrSecondaryUpdatePrimary
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationDrSecondaryUpdatePrimary(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationPerformancePrimaryDemote
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationPerformancePrimaryDemote(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationPerformancePrimaryDisable
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationPerformancePrimaryDisable(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationPerformancePrimaryEnable
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationPerformancePrimaryEnable(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationPerformancePrimaryPathsFilterId
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	id := "id_example" // string | 
+	resp, err := client.System.SystemWriteReplicationPerformancePrimaryPathsFilterId(
+		context.Background(),
+		id,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**id** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationPerformancePrimaryRevokeSecondary
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationPerformancePrimaryRevokeSecondary(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationPerformancePrimarySecondaryToken
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationPerformancePrimarySecondaryToken(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationPerformanceSecondaryDisable
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationPerformanceSecondaryDisable(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationPerformanceSecondaryEnable
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationPerformanceSecondaryEnable(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationPerformanceSecondaryGeneratePublicKey
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationPerformanceSecondaryGeneratePublicKey(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationPerformanceSecondaryPromote
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationPerformanceSecondaryPromote(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationPerformanceSecondaryUpdatePrimary
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationPerformanceSecondaryUpdatePrimary(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationPrimaryDemote
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationPrimaryDemote(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationPrimaryDisable
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationPrimaryDisable(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationPrimaryEnable
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationPrimaryEnable(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationPrimaryRevokeSecondary
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationPrimaryRevokeSecondary(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationPrimarySecondaryToken
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationPrimarySecondaryToken(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationRecover
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationRecover(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationReindex
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationReindex(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationSecondaryDisable
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationSecondaryDisable(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationSecondaryEnable
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationSecondaryEnable(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationSecondaryPromote
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationSecondaryPromote(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteReplicationSecondaryUpdatePrimary
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteReplicationSecondaryUpdatePrimary(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteSealwrapRewrap
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.SystemWriteSealwrapRewrap(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## SystemWriteStorageRaftSnapshotAutoConfigName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | 
+	resp, err := client.System.SystemWriteStorageRaftSnapshotAutoConfigName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)

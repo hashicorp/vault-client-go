@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Increment** | Pointer to **int32** | The desired increment in seconds to the lease | [optional] 
+**Increment** | Pointer to **string** | The desired increment in seconds to the lease | [optional] 
 **LeaseId** | Pointer to **string** | The lease identifier to renew. This is included with a lease. | [optional] 
 **UrlLeaseId** | Pointer to **string** | The lease identifier to renew. This is included with a lease. | [optional] 
 
@@ -34,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetIncrement
 
-`func (o *LeasesRenewLeaseRequest) GetIncrement() int32`
+`func (o *LeasesRenewLeaseRequest) GetIncrement() string`
 
 GetIncrement returns the Increment field if non-nil, zero value otherwise.
 
 ### GetIncrementOk
 
-`func (o *LeasesRenewLeaseRequest) GetIncrementOk() (*int32, bool)`
+`func (o *LeasesRenewLeaseRequest) GetIncrementOk() (*string, bool)`
 
 GetIncrementOk returns a tuple with the Increment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIncrement
 
-`func (o *LeasesRenewLeaseRequest) SetIncrement(v int32)`
+`func (o *LeasesRenewLeaseRequest) SetIncrement(v string)`
 
 SetIncrement sets Increment field to given value.
 

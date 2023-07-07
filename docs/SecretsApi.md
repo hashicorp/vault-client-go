@@ -13,14 +13,20 @@ Method | HTTP request | Description
 [**AwsConfigureLease**](SecretsApi.md#AwsConfigureLease) | **Post** /{aws_mount_path}/config/lease | 
 [**AwsConfigureRootIamCredentials**](SecretsApi.md#AwsConfigureRootIamCredentials) | **Post** /{aws_mount_path}/config/root | 
 [**AwsDeleteRole**](SecretsApi.md#AwsDeleteRole) | **Delete** /{aws_mount_path}/roles/{name} | Read, write and reference IAM policies that access keys can be made for.
+[**AwsDeleteStaticRolesName**](SecretsApi.md#AwsDeleteStaticRolesName) | **Delete** /{aws_mount_path}/static-roles/{name} | 
 [**AwsGenerateCredentials**](SecretsApi.md#AwsGenerateCredentials) | **Get** /{aws_mount_path}/creds/{name} | 
+[**AwsGenerateCredentialsWithParameters**](SecretsApi.md#AwsGenerateCredentialsWithParameters) | **Post** /{aws_mount_path}/creds/{name} | 
 [**AwsGenerateStsCredentials**](SecretsApi.md#AwsGenerateStsCredentials) | **Get** /{aws_mount_path}/sts/{name} | 
+[**AwsGenerateStsCredentialsWithParameters**](SecretsApi.md#AwsGenerateStsCredentialsWithParameters) | **Post** /{aws_mount_path}/sts/{name} | 
 [**AwsListRoles**](SecretsApi.md#AwsListRoles) | **Get** /{aws_mount_path}/roles | List the existing roles in this backend
 [**AwsReadLeaseConfiguration**](SecretsApi.md#AwsReadLeaseConfiguration) | **Get** /{aws_mount_path}/config/lease | 
 [**AwsReadRole**](SecretsApi.md#AwsReadRole) | **Get** /{aws_mount_path}/roles/{name} | Read, write and reference IAM policies that access keys can be made for.
 [**AwsReadRootIamCredentialsConfiguration**](SecretsApi.md#AwsReadRootIamCredentialsConfiguration) | **Get** /{aws_mount_path}/config/root | 
+[**AwsReadStaticCredsName**](SecretsApi.md#AwsReadStaticCredsName) | **Get** /{aws_mount_path}/static-creds/{name} | 
+[**AwsReadStaticRolesName**](SecretsApi.md#AwsReadStaticRolesName) | **Get** /{aws_mount_path}/static-roles/{name} | 
 [**AwsRotateRootIamCredentials**](SecretsApi.md#AwsRotateRootIamCredentials) | **Post** /{aws_mount_path}/config/rotate-root | 
 [**AwsWriteRole**](SecretsApi.md#AwsWriteRole) | **Post** /{aws_mount_path}/roles/{name} | Read, write and reference IAM policies that access keys can be made for.
+[**AwsWriteStaticRolesName**](SecretsApi.md#AwsWriteStaticRolesName) | **Post** /{aws_mount_path}/static-roles/{name} | 
 [**AzureConfigure**](SecretsApi.md#AzureConfigure) | **Post** /{azure_mount_path}/config | 
 [**AzureDeleteConfiguration**](SecretsApi.md#AzureDeleteConfiguration) | **Delete** /{azure_mount_path}/config | 
 [**AzureDeleteRole**](SecretsApi.md#AzureDeleteRole) | **Delete** /{azure_mount_path}/roles/{name} | Manage the Vault roles used to generate Azure credentials.
@@ -112,21 +118,21 @@ Method | HTTP request | Description
 [**KubernetesReadConfiguration**](SecretsApi.md#KubernetesReadConfiguration) | **Get** /{kubernetes_mount_path}/config | 
 [**KubernetesReadRole**](SecretsApi.md#KubernetesReadRole) | **Get** /{kubernetes_mount_path}/roles/{name} | 
 [**KubernetesWriteRole**](SecretsApi.md#KubernetesWriteRole) | **Post** /{kubernetes_mount_path}/roles/{name} | 
-[**KvV1Delete**](SecretsApi.md#KvV1Delete) | **Delete** /{kv-v1_mount_path}/{path} | 
-[**KvV1Read**](SecretsApi.md#KvV1Read) | **Get** /{kv-v1_mount_path}/{path} | 
-[**KvV1Write**](SecretsApi.md#KvV1Write) | **Post** /{kv-v1_mount_path}/{path} | 
-[**KvV2Configure**](SecretsApi.md#KvV2Configure) | **Post** /{kv-v2_mount_path}/config | Configure backend level settings that are applied to every key in the key-value store.
-[**KvV2Delete**](SecretsApi.md#KvV2Delete) | **Delete** /{kv-v2_mount_path}/data/{path} | 
-[**KvV2DeleteMetadata**](SecretsApi.md#KvV2DeleteMetadata) | **Delete** /{kv-v2_mount_path}/metadata/{path} | 
-[**KvV2DeleteVersions**](SecretsApi.md#KvV2DeleteVersions) | **Post** /{kv-v2_mount_path}/delete/{path} | 
-[**KvV2DestroyVersions**](SecretsApi.md#KvV2DestroyVersions) | **Post** /{kv-v2_mount_path}/destroy/{path} | 
-[**KvV2Read**](SecretsApi.md#KvV2Read) | **Get** /{kv-v2_mount_path}/data/{path} | 
-[**KvV2ReadConfiguration**](SecretsApi.md#KvV2ReadConfiguration) | **Get** /{kv-v2_mount_path}/config | Read the backend level settings.
-[**KvV2ReadMetadata**](SecretsApi.md#KvV2ReadMetadata) | **Get** /{kv-v2_mount_path}/metadata/{path} | 
-[**KvV2ReadSubkeys**](SecretsApi.md#KvV2ReadSubkeys) | **Get** /{kv-v2_mount_path}/subkeys/{path} | 
-[**KvV2UndeleteVersions**](SecretsApi.md#KvV2UndeleteVersions) | **Post** /{kv-v2_mount_path}/undelete/{path} | 
-[**KvV2Write**](SecretsApi.md#KvV2Write) | **Post** /{kv-v2_mount_path}/data/{path} | 
-[**KvV2WriteMetadata**](SecretsApi.md#KvV2WriteMetadata) | **Post** /{kv-v2_mount_path}/metadata/{path} | 
+[**KvV1Delete**](SecretsApi.md#KvV1Delete) | **Delete** /{kv_v1_mount_path}/{path} | 
+[**KvV1Read**](SecretsApi.md#KvV1Read) | **Get** /{kv_v1_mount_path}/{path} | 
+[**KvV1Write**](SecretsApi.md#KvV1Write) | **Post** /{kv_v1_mount_path}/{path} | 
+[**KvV2Configure**](SecretsApi.md#KvV2Configure) | **Post** /{kv_v2_mount_path}/config | Configure backend level settings that are applied to every key in the key-value store.
+[**KvV2Delete**](SecretsApi.md#KvV2Delete) | **Delete** /{kv_v2_mount_path}/data/{path} | 
+[**KvV2DeleteMetadata**](SecretsApi.md#KvV2DeleteMetadata) | **Delete** /{kv_v2_mount_path}/metadata/{path} | 
+[**KvV2DeleteVersions**](SecretsApi.md#KvV2DeleteVersions) | **Post** /{kv_v2_mount_path}/delete/{path} | 
+[**KvV2DestroyVersions**](SecretsApi.md#KvV2DestroyVersions) | **Post** /{kv_v2_mount_path}/destroy/{path} | 
+[**KvV2Read**](SecretsApi.md#KvV2Read) | **Get** /{kv_v2_mount_path}/data/{path} | 
+[**KvV2ReadConfiguration**](SecretsApi.md#KvV2ReadConfiguration) | **Get** /{kv_v2_mount_path}/config | Read the backend level settings.
+[**KvV2ReadMetadata**](SecretsApi.md#KvV2ReadMetadata) | **Get** /{kv_v2_mount_path}/metadata/{path} | 
+[**KvV2ReadSubkeys**](SecretsApi.md#KvV2ReadSubkeys) | **Get** /{kv_v2_mount_path}/subkeys/{path} | 
+[**KvV2UndeleteVersions**](SecretsApi.md#KvV2UndeleteVersions) | **Post** /{kv_v2_mount_path}/undelete/{path} | 
+[**KvV2Write**](SecretsApi.md#KvV2Write) | **Post** /{kv_v2_mount_path}/data/{path} | 
+[**KvV2WriteMetadata**](SecretsApi.md#KvV2WriteMetadata) | **Post** /{kv_v2_mount_path}/metadata/{path} | 
 [**LdapConfigure**](SecretsApi.md#LdapConfigure) | **Post** /{ldap_mount_path}/config | 
 [**LdapDeleteConfiguration**](SecretsApi.md#LdapDeleteConfiguration) | **Delete** /{ldap_mount_path}/config | 
 [**LdapDeleteDynamicRole**](SecretsApi.md#LdapDeleteDynamicRole) | **Delete** /{ldap_mount_path}/role/{name} | 
@@ -168,6 +174,7 @@ Method | HTTP request | Description
 [**NomadReadLeaseConfiguration**](SecretsApi.md#NomadReadLeaseConfiguration) | **Get** /{nomad_mount_path}/config/lease | 
 [**NomadReadRole**](SecretsApi.md#NomadReadRole) | **Get** /{nomad_mount_path}/role/{name} | 
 [**NomadWriteRole**](SecretsApi.md#NomadWriteRole) | **Post** /{nomad_mount_path}/role/{name} | 
+[**PkiConfigureAcme**](SecretsApi.md#PkiConfigureAcme) | **Post** /{pki_mount_path}/config/acme | 
 [**PkiConfigureAutoTidy**](SecretsApi.md#PkiConfigureAutoTidy) | **Post** /{pki_mount_path}/config/auto-tidy | 
 [**PkiConfigureCa**](SecretsApi.md#PkiConfigureCa) | **Post** /{pki_mount_path}/config/ca | 
 [**PkiConfigureCluster**](SecretsApi.md#PkiConfigureCluster) | **Post** /{pki_mount_path}/config/cluster | 
@@ -176,10 +183,15 @@ Method | HTTP request | Description
 [**PkiConfigureKeys**](SecretsApi.md#PkiConfigureKeys) | **Post** /{pki_mount_path}/config/keys | 
 [**PkiConfigureUrls**](SecretsApi.md#PkiConfigureUrls) | **Post** /{pki_mount_path}/config/urls | 
 [**PkiCrossSignIntermediate**](SecretsApi.md#PkiCrossSignIntermediate) | **Post** /{pki_mount_path}/intermediate/cross-sign | 
+[**PkiDeleteEabKey**](SecretsApi.md#PkiDeleteEabKey) | **Delete** /{pki_mount_path}/eab/{key_id} | 
 [**PkiDeleteIssuer**](SecretsApi.md#PkiDeleteIssuer) | **Delete** /{pki_mount_path}/issuer/{issuer_ref} | 
 [**PkiDeleteKey**](SecretsApi.md#PkiDeleteKey) | **Delete** /{pki_mount_path}/key/{key_ref} | 
 [**PkiDeleteRole**](SecretsApi.md#PkiDeleteRole) | **Delete** /{pki_mount_path}/roles/{name} | 
 [**PkiDeleteRoot**](SecretsApi.md#PkiDeleteRoot) | **Delete** /{pki_mount_path}/root | 
+[**PkiGenerateEabKey**](SecretsApi.md#PkiGenerateEabKey) | **Post** /{pki_mount_path}/acme/new-eab | 
+[**PkiGenerateEabKeyForIssuer**](SecretsApi.md#PkiGenerateEabKeyForIssuer) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/acme/new-eab | 
+[**PkiGenerateEabKeyForIssuerAndRole**](SecretsApi.md#PkiGenerateEabKeyForIssuerAndRole) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/new-eab | 
+[**PkiGenerateEabKeyForRole**](SecretsApi.md#PkiGenerateEabKeyForRole) | **Post** /{pki_mount_path}/roles/{role}/acme/new-eab | 
 [**PkiGenerateExportedKey**](SecretsApi.md#PkiGenerateExportedKey) | **Post** /{pki_mount_path}/keys/generate/exported | 
 [**PkiGenerateIntermediate**](SecretsApi.md#PkiGenerateIntermediate) | **Post** /{pki_mount_path}/intermediate/generate/{exported} | 
 [**PkiGenerateInternalKey**](SecretsApi.md#PkiGenerateInternalKey) | **Post** /{pki_mount_path}/keys/generate/internal | 
@@ -205,14 +217,17 @@ Method | HTTP request | Description
 [**PkiIssuersGenerateRoot**](SecretsApi.md#PkiIssuersGenerateRoot) | **Post** /{pki_mount_path}/issuers/generate/root/{exported} | 
 [**PkiIssuersImportBundle**](SecretsApi.md#PkiIssuersImportBundle) | **Post** /{pki_mount_path}/issuers/import/bundle | 
 [**PkiIssuersImportCert**](SecretsApi.md#PkiIssuersImportCert) | **Post** /{pki_mount_path}/issuers/import/cert | 
-[**PkiIssuersRotateRoot**](SecretsApi.md#PkiIssuersRotateRoot) | **Post** /{pki_mount_path}/root/rotate/{exported} | 
 [**PkiListCerts**](SecretsApi.md#PkiListCerts) | **Get** /{pki_mount_path}/certs | 
+[**PkiListEabKeys**](SecretsApi.md#PkiListEabKeys) | **Get** /{pki_mount_path}/eab | 
 [**PkiListIssuers**](SecretsApi.md#PkiListIssuers) | **Get** /{pki_mount_path}/issuers | 
 [**PkiListKeys**](SecretsApi.md#PkiListKeys) | **Get** /{pki_mount_path}/keys | 
 [**PkiListRevokedCerts**](SecretsApi.md#PkiListRevokedCerts) | **Get** /{pki_mount_path}/certs/revoked | 
 [**PkiListRoles**](SecretsApi.md#PkiListRoles) | **Get** /{pki_mount_path}/roles | 
 [**PkiQueryOcsp**](SecretsApi.md#PkiQueryOcsp) | **Post** /{pki_mount_path}/ocsp | 
 [**PkiQueryOcspWithGetReq**](SecretsApi.md#PkiQueryOcspWithGetReq) | **Get** /{pki_mount_path}/ocsp/{req} | 
+[**PkiReadAcmeConfiguration**](SecretsApi.md#PkiReadAcmeConfiguration) | **Get** /{pki_mount_path}/config/acme | 
+[**PkiReadAcmeDirectory**](SecretsApi.md#PkiReadAcmeDirectory) | **Get** /{pki_mount_path}/acme/directory | 
+[**PkiReadAcmeNewNonce**](SecretsApi.md#PkiReadAcmeNewNonce) | **Get** /{pki_mount_path}/acme/new-nonce | 
 [**PkiReadAutoTidyConfiguration**](SecretsApi.md#PkiReadAutoTidyConfiguration) | **Get** /{pki_mount_path}/config/auto-tidy | 
 [**PkiReadCaChainPem**](SecretsApi.md#PkiReadCaChainPem) | **Get** /{pki_mount_path}/ca_chain | 
 [**PkiReadCaDer**](SecretsApi.md#PkiReadCaDer) | **Get** /{pki_mount_path}/ca | 
@@ -231,12 +246,18 @@ Method | HTTP request | Description
 [**PkiReadCrlPem**](SecretsApi.md#PkiReadCrlPem) | **Get** /{pki_mount_path}/crl/pem | 
 [**PkiReadIssuer**](SecretsApi.md#PkiReadIssuer) | **Get** /{pki_mount_path}/issuer/{issuer_ref} | 
 [**PkiReadIssuerDer**](SecretsApi.md#PkiReadIssuerDer) | **Get** /{pki_mount_path}/issuer/{issuer_ref}/der | 
+[**PkiReadIssuerIssuerRefAcmeDirectory**](SecretsApi.md#PkiReadIssuerIssuerRefAcmeDirectory) | **Get** /{pki_mount_path}/issuer/{issuer_ref}/acme/directory | 
+[**PkiReadIssuerIssuerRefAcmeNewNonce**](SecretsApi.md#PkiReadIssuerIssuerRefAcmeNewNonce) | **Get** /{pki_mount_path}/issuer/{issuer_ref}/acme/new-nonce | 
+[**PkiReadIssuerIssuerRefRolesRoleAcmeDirectory**](SecretsApi.md#PkiReadIssuerIssuerRefRolesRoleAcmeDirectory) | **Get** /{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/directory | 
+[**PkiReadIssuerIssuerRefRolesRoleAcmeNewNonce**](SecretsApi.md#PkiReadIssuerIssuerRefRolesRoleAcmeNewNonce) | **Get** /{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/new-nonce | 
 [**PkiReadIssuerJson**](SecretsApi.md#PkiReadIssuerJson) | **Get** /{pki_mount_path}/issuer/{issuer_ref}/json | 
 [**PkiReadIssuerPem**](SecretsApi.md#PkiReadIssuerPem) | **Get** /{pki_mount_path}/issuer/{issuer_ref}/pem | 
 [**PkiReadIssuersConfiguration**](SecretsApi.md#PkiReadIssuersConfiguration) | **Get** /{pki_mount_path}/config/issuers | 
 [**PkiReadKey**](SecretsApi.md#PkiReadKey) | **Get** /{pki_mount_path}/key/{key_ref} | 
 [**PkiReadKeysConfiguration**](SecretsApi.md#PkiReadKeysConfiguration) | **Get** /{pki_mount_path}/config/keys | 
 [**PkiReadRole**](SecretsApi.md#PkiReadRole) | **Get** /{pki_mount_path}/roles/{name} | 
+[**PkiReadRolesRoleAcmeDirectory**](SecretsApi.md#PkiReadRolesRoleAcmeDirectory) | **Get** /{pki_mount_path}/roles/{role}/acme/directory | 
+[**PkiReadRolesRoleAcmeNewNonce**](SecretsApi.md#PkiReadRolesRoleAcmeNewNonce) | **Get** /{pki_mount_path}/roles/{role}/acme/new-nonce | 
 [**PkiReadUrlsConfiguration**](SecretsApi.md#PkiReadUrlsConfiguration) | **Get** /{pki_mount_path}/config/urls | 
 [**PkiReplaceRoot**](SecretsApi.md#PkiReplaceRoot) | **Post** /{pki_mount_path}/root/replace | 
 [**PkiRevoke**](SecretsApi.md#PkiRevoke) | **Post** /{pki_mount_path}/revoke | 
@@ -246,6 +267,7 @@ Method | HTTP request | Description
 [**PkiRootSignSelfIssued**](SecretsApi.md#PkiRootSignSelfIssued) | **Post** /{pki_mount_path}/root/sign-self-issued | 
 [**PkiRotateCrl**](SecretsApi.md#PkiRotateCrl) | **Get** /{pki_mount_path}/crl/rotate | 
 [**PkiRotateDeltaCrl**](SecretsApi.md#PkiRotateDeltaCrl) | **Get** /{pki_mount_path}/crl/rotate-delta | 
+[**PkiRotateRoot**](SecretsApi.md#PkiRotateRoot) | **Post** /{pki_mount_path}/root/rotate/{exported} | 
 [**PkiSetSignedIntermediate**](SecretsApi.md#PkiSetSignedIntermediate) | **Post** /{pki_mount_path}/intermediate/set-signed | 
 [**PkiSignVerbatim**](SecretsApi.md#PkiSignVerbatim) | **Post** /{pki_mount_path}/sign-verbatim | 
 [**PkiSignVerbatimWithRole**](SecretsApi.md#PkiSignVerbatimWithRole) | **Post** /{pki_mount_path}/sign-verbatim/{role} | 
@@ -253,9 +275,49 @@ Method | HTTP request | Description
 [**PkiTidy**](SecretsApi.md#PkiTidy) | **Post** /{pki_mount_path}/tidy | 
 [**PkiTidyCancel**](SecretsApi.md#PkiTidyCancel) | **Post** /{pki_mount_path}/tidy-cancel | 
 [**PkiTidyStatus**](SecretsApi.md#PkiTidyStatus) | **Get** /{pki_mount_path}/tidy-status | 
+[**PkiWriteAcmeAccountKid**](SecretsApi.md#PkiWriteAcmeAccountKid) | **Post** /{pki_mount_path}/acme/account/{kid} | 
+[**PkiWriteAcmeAuthorizationAuthId**](SecretsApi.md#PkiWriteAcmeAuthorizationAuthId) | **Post** /{pki_mount_path}/acme/authorization/{auth_id} | 
+[**PkiWriteAcmeChallengeAuthIdChallengeType**](SecretsApi.md#PkiWriteAcmeChallengeAuthIdChallengeType) | **Post** /{pki_mount_path}/acme/challenge/{auth_id}/{challenge_type} | 
+[**PkiWriteAcmeNewAccount**](SecretsApi.md#PkiWriteAcmeNewAccount) | **Post** /{pki_mount_path}/acme/new-account | 
+[**PkiWriteAcmeNewOrder**](SecretsApi.md#PkiWriteAcmeNewOrder) | **Post** /{pki_mount_path}/acme/new-order | 
+[**PkiWriteAcmeOrderOrderId**](SecretsApi.md#PkiWriteAcmeOrderOrderId) | **Post** /{pki_mount_path}/acme/order/{order_id} | 
+[**PkiWriteAcmeOrderOrderIdCert**](SecretsApi.md#PkiWriteAcmeOrderOrderIdCert) | **Post** /{pki_mount_path}/acme/order/{order_id}/cert | 
+[**PkiWriteAcmeOrderOrderIdFinalize**](SecretsApi.md#PkiWriteAcmeOrderOrderIdFinalize) | **Post** /{pki_mount_path}/acme/order/{order_id}/finalize | 
+[**PkiWriteAcmeOrders**](SecretsApi.md#PkiWriteAcmeOrders) | **Post** /{pki_mount_path}/acme/orders | 
+[**PkiWriteAcmeRevokeCert**](SecretsApi.md#PkiWriteAcmeRevokeCert) | **Post** /{pki_mount_path}/acme/revoke-cert | 
 [**PkiWriteIssuer**](SecretsApi.md#PkiWriteIssuer) | **Post** /{pki_mount_path}/issuer/{issuer_ref} | 
+[**PkiWriteIssuerIssuerRefAcmeAccountKid**](SecretsApi.md#PkiWriteIssuerIssuerRefAcmeAccountKid) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/acme/account/{kid} | 
+[**PkiWriteIssuerIssuerRefAcmeAuthorizationAuthId**](SecretsApi.md#PkiWriteIssuerIssuerRefAcmeAuthorizationAuthId) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/acme/authorization/{auth_id} | 
+[**PkiWriteIssuerIssuerRefAcmeChallengeAuthIdChallengeType**](SecretsApi.md#PkiWriteIssuerIssuerRefAcmeChallengeAuthIdChallengeType) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/acme/challenge/{auth_id}/{challenge_type} | 
+[**PkiWriteIssuerIssuerRefAcmeNewAccount**](SecretsApi.md#PkiWriteIssuerIssuerRefAcmeNewAccount) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/acme/new-account | 
+[**PkiWriteIssuerIssuerRefAcmeNewOrder**](SecretsApi.md#PkiWriteIssuerIssuerRefAcmeNewOrder) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/acme/new-order | 
+[**PkiWriteIssuerIssuerRefAcmeOrderOrderId**](SecretsApi.md#PkiWriteIssuerIssuerRefAcmeOrderOrderId) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/acme/order/{order_id} | 
+[**PkiWriteIssuerIssuerRefAcmeOrderOrderIdCert**](SecretsApi.md#PkiWriteIssuerIssuerRefAcmeOrderOrderIdCert) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/acme/order/{order_id}/cert | 
+[**PkiWriteIssuerIssuerRefAcmeOrderOrderIdFinalize**](SecretsApi.md#PkiWriteIssuerIssuerRefAcmeOrderOrderIdFinalize) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/acme/order/{order_id}/finalize | 
+[**PkiWriteIssuerIssuerRefAcmeOrders**](SecretsApi.md#PkiWriteIssuerIssuerRefAcmeOrders) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/acme/orders | 
+[**PkiWriteIssuerIssuerRefAcmeRevokeCert**](SecretsApi.md#PkiWriteIssuerIssuerRefAcmeRevokeCert) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/acme/revoke-cert | 
+[**PkiWriteIssuerIssuerRefRolesRoleAcmeAccountKid**](SecretsApi.md#PkiWriteIssuerIssuerRefRolesRoleAcmeAccountKid) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/account/{kid} | 
+[**PkiWriteIssuerIssuerRefRolesRoleAcmeAuthorizationAuthId**](SecretsApi.md#PkiWriteIssuerIssuerRefRolesRoleAcmeAuthorizationAuthId) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/authorization/{auth_id} | 
+[**PkiWriteIssuerIssuerRefRolesRoleAcmeChallengeAuthIdChallengeType**](SecretsApi.md#PkiWriteIssuerIssuerRefRolesRoleAcmeChallengeAuthIdChallengeType) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/challenge/{auth_id}/{challenge_type} | 
+[**PkiWriteIssuerIssuerRefRolesRoleAcmeNewAccount**](SecretsApi.md#PkiWriteIssuerIssuerRefRolesRoleAcmeNewAccount) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/new-account | 
+[**PkiWriteIssuerIssuerRefRolesRoleAcmeNewOrder**](SecretsApi.md#PkiWriteIssuerIssuerRefRolesRoleAcmeNewOrder) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/new-order | 
+[**PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderId**](SecretsApi.md#PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderId) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/order/{order_id} | 
+[**PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdCert**](SecretsApi.md#PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdCert) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/order/{order_id}/cert | 
+[**PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdFinalize**](SecretsApi.md#PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdFinalize) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/order/{order_id}/finalize | 
+[**PkiWriteIssuerIssuerRefRolesRoleAcmeOrders**](SecretsApi.md#PkiWriteIssuerIssuerRefRolesRoleAcmeOrders) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/orders | 
+[**PkiWriteIssuerIssuerRefRolesRoleAcmeRevokeCert**](SecretsApi.md#PkiWriteIssuerIssuerRefRolesRoleAcmeRevokeCert) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/revoke-cert | 
 [**PkiWriteKey**](SecretsApi.md#PkiWriteKey) | **Post** /{pki_mount_path}/key/{key_ref} | 
 [**PkiWriteRole**](SecretsApi.md#PkiWriteRole) | **Post** /{pki_mount_path}/roles/{name} | 
+[**PkiWriteRolesRoleAcmeAccountKid**](SecretsApi.md#PkiWriteRolesRoleAcmeAccountKid) | **Post** /{pki_mount_path}/roles/{role}/acme/account/{kid} | 
+[**PkiWriteRolesRoleAcmeAuthorizationAuthId**](SecretsApi.md#PkiWriteRolesRoleAcmeAuthorizationAuthId) | **Post** /{pki_mount_path}/roles/{role}/acme/authorization/{auth_id} | 
+[**PkiWriteRolesRoleAcmeChallengeAuthIdChallengeType**](SecretsApi.md#PkiWriteRolesRoleAcmeChallengeAuthIdChallengeType) | **Post** /{pki_mount_path}/roles/{role}/acme/challenge/{auth_id}/{challenge_type} | 
+[**PkiWriteRolesRoleAcmeNewAccount**](SecretsApi.md#PkiWriteRolesRoleAcmeNewAccount) | **Post** /{pki_mount_path}/roles/{role}/acme/new-account | 
+[**PkiWriteRolesRoleAcmeNewOrder**](SecretsApi.md#PkiWriteRolesRoleAcmeNewOrder) | **Post** /{pki_mount_path}/roles/{role}/acme/new-order | 
+[**PkiWriteRolesRoleAcmeOrderOrderId**](SecretsApi.md#PkiWriteRolesRoleAcmeOrderOrderId) | **Post** /{pki_mount_path}/roles/{role}/acme/order/{order_id} | 
+[**PkiWriteRolesRoleAcmeOrderOrderIdCert**](SecretsApi.md#PkiWriteRolesRoleAcmeOrderOrderIdCert) | **Post** /{pki_mount_path}/roles/{role}/acme/order/{order_id}/cert | 
+[**PkiWriteRolesRoleAcmeOrderOrderIdFinalize**](SecretsApi.md#PkiWriteRolesRoleAcmeOrderOrderIdFinalize) | **Post** /{pki_mount_path}/roles/{role}/acme/order/{order_id}/finalize | 
+[**PkiWriteRolesRoleAcmeOrders**](SecretsApi.md#PkiWriteRolesRoleAcmeOrders) | **Post** /{pki_mount_path}/roles/{role}/acme/orders | 
+[**PkiWriteRolesRoleAcmeRevokeCert**](SecretsApi.md#PkiWriteRolesRoleAcmeRevokeCert) | **Post** /{pki_mount_path}/roles/{role}/acme/revoke-cert | 
 [**RabbitMqConfigureConnection**](SecretsApi.md#RabbitMqConfigureConnection) | **Post** /{rabbitmq_mount_path}/config/connection | Configure the connection URI, username, and password to talk to RabbitMQ management HTTP API.
 [**RabbitMqConfigureLease**](SecretsApi.md#RabbitMqConfigureLease) | **Post** /{rabbitmq_mount_path}/config/lease | 
 [**RabbitMqDeleteRole**](SecretsApi.md#RabbitMqDeleteRole) | **Delete** /{rabbitmq_mount_path}/roles/{name} | Manage the roles that can be created with this backend.
@@ -297,6 +359,8 @@ Method | HTTP request | Description
 [**TotpReadKey**](SecretsApi.md#TotpReadKey) | **Get** /{totp_mount_path}/keys/{name} | 
 [**TotpValidateCode**](SecretsApi.md#TotpValidateCode) | **Post** /{totp_mount_path}/code/{name} | 
 [**TransitBackUpKey**](SecretsApi.md#TransitBackUpKey) | **Get** /{transit_mount_path}/backup/{name} | Backup the named key
+[**TransitByokKey**](SecretsApi.md#TransitByokKey) | **Get** /{transit_mount_path}/byok-export/{destination}/{source} | Securely export named encryption or signing key
+[**TransitByokKeyVersion**](SecretsApi.md#TransitByokKeyVersion) | **Get** /{transit_mount_path}/byok-export/{destination}/{source}/{version} | Securely export named encryption or signing key
 [**TransitConfigureCache**](SecretsApi.md#TransitConfigureCache) | **Post** /{transit_mount_path}/cache-config | Configures a new cache of the specified size
 [**TransitConfigureKey**](SecretsApi.md#TransitConfigureKey) | **Post** /{transit_mount_path}/keys/{name}/config | Configure a named encryption key
 [**TransitConfigureKeys**](SecretsApi.md#TransitConfigureKeys) | **Post** /{transit_mount_path}/config/keys | 
@@ -984,7 +1048,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	name := "name_example" // string | Name of the policy
+	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.AwsDeleteRole(
 		context.Background(),
 		name,
@@ -1005,7 +1069,70 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the policy | 
+**name** | **string** | Name of the role | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## AwsDeleteStaticRolesName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | The name of this role.
+	resp, err := client.Secrets.AwsDeleteStaticRolesName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("aws"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | The name of this role. | 
 
 ### Other Parameters
 
@@ -1085,6 +1212,73 @@ Name | Type | Description  | Notes
 
 
 
+## AwsGenerateCredentialsWithParameters
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the role
+	request := schema.NewAwsGenerateCredentialsWithParametersRequestWithDefaults()
+	resp, err := client.Secrets.AwsGenerateCredentialsWithParameters(
+		context.Background(),
+		name,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("aws"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the role | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **awsGenerateCredentialsWithParametersRequest** | [**AwsGenerateCredentialsWithParametersRequest**](AwsGenerateCredentialsWithParametersRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
 ## AwsGenerateStsCredentials
 
 
@@ -1140,6 +1334,73 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## AwsGenerateStsCredentialsWithParameters
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the role
+	request := schema.NewAwsGenerateStsCredentialsWithParametersRequestWithDefaults()
+	resp, err := client.Secrets.AwsGenerateStsCredentialsWithParameters(
+		context.Background(),
+		name,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("aws"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the role | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **awsGenerateStsCredentialsWithParametersRequest** | [**AwsGenerateStsCredentialsWithParametersRequest**](AwsGenerateStsCredentialsWithParametersRequest.md) |  | 
 
  (empty response body)
 
@@ -1292,7 +1553,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	name := "name_example" // string | Name of the policy
+	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.AwsReadRole(
 		context.Background(),
 		name,
@@ -1313,7 +1574,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the policy | 
+**name** | **string** | Name of the role | 
 
 ### Other Parameters
 
@@ -1383,6 +1644,132 @@ Name | Type | Description  | Notes
 
 
  (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## AwsReadStaticCredsName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | The name of this role.
+	resp, err := client.Secrets.AwsReadStaticCredsName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("aws"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | The name of this role. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+[**AwsReadStaticCredsNameResponse**](AwsReadStaticCredsNameResponse.md)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## AwsReadStaticRolesName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | The name of this role.
+	resp, err := client.Secrets.AwsReadStaticRolesName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("aws"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | The name of this role. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+[**AwsReadStaticRolesNameResponse**](AwsReadStaticRolesNameResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -1474,7 +1861,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	name := "name_example" // string | Name of the policy
+	name := "name_example" // string | Name of the role
 	request := schema.NewAwsWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.AwsWriteRole(
 		context.Background(),
@@ -1497,7 +1884,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the policy | 
+**name** | **string** | Name of the role | 
 
 ### Other Parameters
 
@@ -1509,6 +1896,73 @@ Name | Type | Description  | Notes
  **awsWriteRoleRequest** | [**AwsWriteRoleRequest**](AwsWriteRoleRequest.md) |  | 
 
  (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## AwsWriteStaticRolesName
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | The name of this role.
+	request := schema.NewAwsWriteStaticRolesNameRequestWithDefaults()
+	resp, err := client.Secrets.AwsWriteStaticRolesName(
+		context.Background(),
+		name,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("aws"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | The name of this role. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **awsWriteStaticRolesNameRequest** | [**AwsWriteStaticRolesNameRequest**](AwsWriteStaticRolesNameRequest.md) |  | 
+
+[**AwsWriteStaticRolesNameResponse**](AwsWriteStaticRolesNameResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -10780,6 +11234,69 @@ Name | Type | Description  | Notes
 
 
 
+## PkiConfigureAcme
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	request := schema.NewPkiConfigureAcmeRequestWithDefaults()
+	resp, err := client.Secrets.PkiConfigureAcme(
+		context.Background(),
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **pkiConfigureAcmeRequest** | [**PkiConfigureAcmeRequest**](PkiConfigureAcmeRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
 ## PkiConfigureAutoTidy
 
 
@@ -11284,6 +11801,69 @@ Name | Type | Description  | Notes
 
 
 
+## PkiDeleteEabKey
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	keyId := "keyId_example" // string | EAB key identifier
+	resp, err := client.Secrets.PkiDeleteEabKey(
+		context.Background(),
+		keyId,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**keyId** | **string** | EAB key identifier | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
 ## PkiDeleteIssuer
 
 
@@ -11526,6 +12106,258 @@ Name | Type | Description  | Notes
 
 
  (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiGenerateEabKey
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.Secrets.PkiGenerateEabKey(
+		context.Background(),
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+[**PkiGenerateEabKeyResponse**](PkiGenerateEabKeyResponse.md)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiGenerateEabKeyForIssuer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	resp, err := client.Secrets.PkiGenerateEabKeyForIssuer(
+		context.Background(),
+		issuerRef,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+[**PkiGenerateEabKeyForIssuerResponse**](PkiGenerateEabKeyForIssuerResponse.md)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiGenerateEabKeyForIssuerAndRole
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	role := "role_example" // string | The desired role for the acme request
+	resp, err := client.Secrets.PkiGenerateEabKeyForIssuerAndRole(
+		context.Background(),
+		issuerRef,
+		role,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+[**PkiGenerateEabKeyForIssuerAndRoleResponse**](PkiGenerateEabKeyForIssuerAndRoleResponse.md)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiGenerateEabKeyForRole
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	role := "role_example" // string | The desired role for the acme request
+	resp, err := client.Secrets.PkiGenerateEabKeyForRole(
+		context.Background(),
+		role,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+[**PkiGenerateEabKeyForRoleResponse**](PkiGenerateEabKeyForRoleResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -13171,73 +14003,6 @@ Name | Type | Description  | Notes
 
 
 
-## PkiIssuersRotateRoot
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-	"github.com/hashicorp/vault-client-go/schema"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
-	request := schema.NewPkiIssuersRotateRootRequestWithDefaults()
-	resp, err := client.Secrets.PkiIssuersRotateRoot(
-		context.Background(),
-		exported,
-		request,
-		vault.WithToken("my-token"),
-		vault.WithMountPath("pki"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**exported** | **string** | Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key! | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **pkiIssuersRotateRootRequest** | [**PkiIssuersRotateRootRequest**](PkiIssuersRotateRootRequest.md) |  | 
-
-[**PkiIssuersRotateRootResponse**](PkiIssuersRotateRootResponse.md)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
 ## PkiListCerts
 
 
@@ -13292,6 +14057,66 @@ Name | Type | Description  | Notes
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
 [**PkiListCertsResponse**](PkiListCertsResponse.md)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiListEabKeys
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.Secrets.PkiListEabKeys(
+		context.Background(),
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+[**PkiListEabKeysResponse**](PkiListEabKeysResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -13651,6 +14476,183 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiReadAcmeConfiguration
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.Secrets.PkiReadAcmeConfiguration(
+		context.Background(),
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiReadAcmeDirectory
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.Secrets.PkiReadAcmeDirectory(
+		context.Background(),
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiReadAcmeNewNonce
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.Secrets.PkiReadAcmeNewNonce(
+		context.Background(),
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -14742,6 +15744,266 @@ Name | Type | Description  | Notes
 
 
 
+## PkiReadIssuerIssuerRefAcmeDirectory
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	resp, err := client.Secrets.PkiReadIssuerIssuerRefAcmeDirectory(
+		context.Background(),
+		issuerRef,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiReadIssuerIssuerRefAcmeNewNonce
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	resp, err := client.Secrets.PkiReadIssuerIssuerRefAcmeNewNonce(
+		context.Background(),
+		issuerRef,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiReadIssuerIssuerRefRolesRoleAcmeDirectory
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	role := "role_example" // string | The desired role for the acme request
+	resp, err := client.Secrets.PkiReadIssuerIssuerRefRolesRoleAcmeDirectory(
+		context.Background(),
+		issuerRef,
+		role,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiReadIssuerIssuerRefRolesRoleAcmeNewNonce
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	role := "role_example" // string | The desired role for the acme request
+	resp, err := client.Secrets.PkiReadIssuerIssuerRefRolesRoleAcmeNewNonce(
+		context.Background(),
+		issuerRef,
+		role,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
 ## PkiReadIssuerJson
 
 
@@ -15106,6 +16368,132 @@ Name | Type | Description  | Notes
 
 
 [**PkiReadRoleResponse**](PkiReadRoleResponse.md)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiReadRolesRoleAcmeDirectory
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	role := "role_example" // string | The desired role for the acme request
+	resp, err := client.Secrets.PkiReadRolesRoleAcmeDirectory(
+		context.Background(),
+		role,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiReadRolesRoleAcmeNewNonce
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	role := "role_example" // string | The desired role for the acme request
+	resp, err := client.Secrets.PkiReadRolesRoleAcmeNewNonce(
+		context.Background(),
+		role,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -15667,6 +17055,73 @@ Name | Type | Description  | Notes
 
 
 
+## PkiRotateRoot
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
+	request := schema.NewPkiRotateRootRequestWithDefaults()
+	resp, err := client.Secrets.PkiRotateRoot(
+		context.Background(),
+		exported,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**exported** | **string** | Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key! | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **pkiRotateRootRequest** | [**PkiRotateRootRequest**](PkiRotateRootRequest.md) |  | 
+
+[**PkiRotateRootResponse**](PkiRotateRootResponse.md)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
 ## PkiSetSignedIntermediate
 
 
@@ -16108,6 +17563,664 @@ Name | Type | Description  | Notes
 
 
 
+## PkiWriteAcmeAccountKid
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	kid := "kid_example" // string | The key identifier provided by the CA
+	request := schema.NewPkiWriteAcmeAccountKidRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteAcmeAccountKid(
+		context.Background(),
+		kid,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**kid** | **string** | The key identifier provided by the CA | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **pkiWriteAcmeAccountKidRequest** | [**PkiWriteAcmeAccountKidRequest**](PkiWriteAcmeAccountKidRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteAcmeAuthorizationAuthId
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	authId := "authId_example" // string | ACME authorization identifier value
+	request := schema.NewPkiWriteAcmeAuthorizationAuthIdRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteAcmeAuthorizationAuthId(
+		context.Background(),
+		authId,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**authId** | **string** | ACME authorization identifier value | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **pkiWriteAcmeAuthorizationAuthIdRequest** | [**PkiWriteAcmeAuthorizationAuthIdRequest**](PkiWriteAcmeAuthorizationAuthIdRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteAcmeChallengeAuthIdChallengeType
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	authId := "authId_example" // string | ACME authorization identifier value
+	challengeType := "challengeType_example" // string | ACME challenge type
+	request := schema.NewPkiWriteAcmeChallengeAuthIdChallengeTypeRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteAcmeChallengeAuthIdChallengeType(
+		context.Background(),
+		authId,
+		challengeType,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**authId** | **string** | ACME authorization identifier value | 
+**challengeType** | **string** | ACME challenge type | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **pkiWriteAcmeChallengeAuthIdChallengeTypeRequest** | [**PkiWriteAcmeChallengeAuthIdChallengeTypeRequest**](PkiWriteAcmeChallengeAuthIdChallengeTypeRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteAcmeNewAccount
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	request := schema.NewPkiWriteAcmeNewAccountRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteAcmeNewAccount(
+		context.Background(),
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **pkiWriteAcmeNewAccountRequest** | [**PkiWriteAcmeNewAccountRequest**](PkiWriteAcmeNewAccountRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteAcmeNewOrder
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	request := schema.NewPkiWriteAcmeNewOrderRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteAcmeNewOrder(
+		context.Background(),
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **pkiWriteAcmeNewOrderRequest** | [**PkiWriteAcmeNewOrderRequest**](PkiWriteAcmeNewOrderRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteAcmeOrderOrderId
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	orderId := "orderId_example" // string | The ACME order identifier to fetch
+	request := schema.NewPkiWriteAcmeOrderOrderIdRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteAcmeOrderOrderId(
+		context.Background(),
+		orderId,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**orderId** | **string** | The ACME order identifier to fetch | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **pkiWriteAcmeOrderOrderIdRequest** | [**PkiWriteAcmeOrderOrderIdRequest**](PkiWriteAcmeOrderOrderIdRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteAcmeOrderOrderIdCert
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	orderId := "orderId_example" // string | The ACME order identifier to fetch
+	request := schema.NewPkiWriteAcmeOrderOrderIdCertRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteAcmeOrderOrderIdCert(
+		context.Background(),
+		orderId,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**orderId** | **string** | The ACME order identifier to fetch | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **pkiWriteAcmeOrderOrderIdCertRequest** | [**PkiWriteAcmeOrderOrderIdCertRequest**](PkiWriteAcmeOrderOrderIdCertRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteAcmeOrderOrderIdFinalize
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	orderId := "orderId_example" // string | The ACME order identifier to fetch
+	request := schema.NewPkiWriteAcmeOrderOrderIdFinalizeRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteAcmeOrderOrderIdFinalize(
+		context.Background(),
+		orderId,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**orderId** | **string** | The ACME order identifier to fetch | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **pkiWriteAcmeOrderOrderIdFinalizeRequest** | [**PkiWriteAcmeOrderOrderIdFinalizeRequest**](PkiWriteAcmeOrderOrderIdFinalizeRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteAcmeOrders
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	request := schema.NewPkiWriteAcmeOrdersRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteAcmeOrders(
+		context.Background(),
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **pkiWriteAcmeOrdersRequest** | [**PkiWriteAcmeOrdersRequest**](PkiWriteAcmeOrdersRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteAcmeRevokeCert
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	request := schema.NewPkiWriteAcmeRevokeCertRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteAcmeRevokeCert(
+		context.Background(),
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **pkiWriteAcmeRevokeCertRequest** | [**PkiWriteAcmeRevokeCertRequest**](PkiWriteAcmeRevokeCertRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
 ## PkiWriteIssuer
 
 
@@ -16169,6 +18282,1442 @@ Name | Type | Description  | Notes
  **pkiWriteIssuerRequest** | [**PkiWriteIssuerRequest**](PkiWriteIssuerRequest.md) |  | 
 
 [**PkiWriteIssuerResponse**](PkiWriteIssuerResponse.md)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteIssuerIssuerRefAcmeAccountKid
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	kid := "kid_example" // string | The key identifier provided by the CA
+	request := schema.NewPkiWriteIssuerIssuerRefAcmeAccountKidRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeAccountKid(
+		context.Background(),
+		issuerRef,
+		kid,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+**kid** | **string** | The key identifier provided by the CA | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **pkiWriteIssuerIssuerRefAcmeAccountKidRequest** | [**PkiWriteIssuerIssuerRefAcmeAccountKidRequest**](PkiWriteIssuerIssuerRefAcmeAccountKidRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteIssuerIssuerRefAcmeAuthorizationAuthId
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	authId := "authId_example" // string | ACME authorization identifier value
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	request := schema.NewPkiWriteIssuerIssuerRefAcmeAuthorizationAuthIdRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeAuthorizationAuthId(
+		context.Background(),
+		authId,
+		issuerRef,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**authId** | **string** | ACME authorization identifier value | 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **pkiWriteIssuerIssuerRefAcmeAuthorizationAuthIdRequest** | [**PkiWriteIssuerIssuerRefAcmeAuthorizationAuthIdRequest**](PkiWriteIssuerIssuerRefAcmeAuthorizationAuthIdRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteIssuerIssuerRefAcmeChallengeAuthIdChallengeType
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	authId := "authId_example" // string | ACME authorization identifier value
+	challengeType := "challengeType_example" // string | ACME challenge type
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	request := schema.NewPkiWriteIssuerIssuerRefAcmeChallengeAuthIdChallengeTypeRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeChallengeAuthIdChallengeType(
+		context.Background(),
+		authId,
+		challengeType,
+		issuerRef,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**authId** | **string** | ACME authorization identifier value | 
+**challengeType** | **string** | ACME challenge type | 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **pkiWriteIssuerIssuerRefAcmeChallengeAuthIdChallengeTypeRequest** | [**PkiWriteIssuerIssuerRefAcmeChallengeAuthIdChallengeTypeRequest**](PkiWriteIssuerIssuerRefAcmeChallengeAuthIdChallengeTypeRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteIssuerIssuerRefAcmeNewAccount
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	request := schema.NewPkiWriteIssuerIssuerRefAcmeNewAccountRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeNewAccount(
+		context.Background(),
+		issuerRef,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **pkiWriteIssuerIssuerRefAcmeNewAccountRequest** | [**PkiWriteIssuerIssuerRefAcmeNewAccountRequest**](PkiWriteIssuerIssuerRefAcmeNewAccountRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteIssuerIssuerRefAcmeNewOrder
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	request := schema.NewPkiWriteIssuerIssuerRefAcmeNewOrderRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeNewOrder(
+		context.Background(),
+		issuerRef,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **pkiWriteIssuerIssuerRefAcmeNewOrderRequest** | [**PkiWriteIssuerIssuerRefAcmeNewOrderRequest**](PkiWriteIssuerIssuerRefAcmeNewOrderRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteIssuerIssuerRefAcmeOrderOrderId
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	orderId := "orderId_example" // string | The ACME order identifier to fetch
+	request := schema.NewPkiWriteIssuerIssuerRefAcmeOrderOrderIdRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeOrderOrderId(
+		context.Background(),
+		issuerRef,
+		orderId,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+**orderId** | **string** | The ACME order identifier to fetch | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **pkiWriteIssuerIssuerRefAcmeOrderOrderIdRequest** | [**PkiWriteIssuerIssuerRefAcmeOrderOrderIdRequest**](PkiWriteIssuerIssuerRefAcmeOrderOrderIdRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteIssuerIssuerRefAcmeOrderOrderIdCert
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	orderId := "orderId_example" // string | The ACME order identifier to fetch
+	request := schema.NewPkiWriteIssuerIssuerRefAcmeOrderOrderIdCertRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeOrderOrderIdCert(
+		context.Background(),
+		issuerRef,
+		orderId,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+**orderId** | **string** | The ACME order identifier to fetch | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **pkiWriteIssuerIssuerRefAcmeOrderOrderIdCertRequest** | [**PkiWriteIssuerIssuerRefAcmeOrderOrderIdCertRequest**](PkiWriteIssuerIssuerRefAcmeOrderOrderIdCertRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteIssuerIssuerRefAcmeOrderOrderIdFinalize
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	orderId := "orderId_example" // string | The ACME order identifier to fetch
+	request := schema.NewPkiWriteIssuerIssuerRefAcmeOrderOrderIdFinalizeRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeOrderOrderIdFinalize(
+		context.Background(),
+		issuerRef,
+		orderId,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+**orderId** | **string** | The ACME order identifier to fetch | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **pkiWriteIssuerIssuerRefAcmeOrderOrderIdFinalizeRequest** | [**PkiWriteIssuerIssuerRefAcmeOrderOrderIdFinalizeRequest**](PkiWriteIssuerIssuerRefAcmeOrderOrderIdFinalizeRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteIssuerIssuerRefAcmeOrders
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	request := schema.NewPkiWriteIssuerIssuerRefAcmeOrdersRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeOrders(
+		context.Background(),
+		issuerRef,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **pkiWriteIssuerIssuerRefAcmeOrdersRequest** | [**PkiWriteIssuerIssuerRefAcmeOrdersRequest**](PkiWriteIssuerIssuerRefAcmeOrdersRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteIssuerIssuerRefAcmeRevokeCert
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	request := schema.NewPkiWriteIssuerIssuerRefAcmeRevokeCertRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeRevokeCert(
+		context.Background(),
+		issuerRef,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **pkiWriteIssuerIssuerRefAcmeRevokeCertRequest** | [**PkiWriteIssuerIssuerRefAcmeRevokeCertRequest**](PkiWriteIssuerIssuerRefAcmeRevokeCertRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteIssuerIssuerRefRolesRoleAcmeAccountKid
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	kid := "kid_example" // string | The key identifier provided by the CA
+	role := "role_example" // string | The desired role for the acme request
+	request := schema.NewPkiWriteIssuerIssuerRefRolesRoleAcmeAccountKidRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteIssuerIssuerRefRolesRoleAcmeAccountKid(
+		context.Background(),
+		issuerRef,
+		kid,
+		role,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+**kid** | **string** | The key identifier provided by the CA | 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **pkiWriteIssuerIssuerRefRolesRoleAcmeAccountKidRequest** | [**PkiWriteIssuerIssuerRefRolesRoleAcmeAccountKidRequest**](PkiWriteIssuerIssuerRefRolesRoleAcmeAccountKidRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteIssuerIssuerRefRolesRoleAcmeAuthorizationAuthId
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	authId := "authId_example" // string | ACME authorization identifier value
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	role := "role_example" // string | The desired role for the acme request
+	request := schema.NewPkiWriteIssuerIssuerRefRolesRoleAcmeAuthorizationAuthIdRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteIssuerIssuerRefRolesRoleAcmeAuthorizationAuthId(
+		context.Background(),
+		authId,
+		issuerRef,
+		role,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**authId** | **string** | ACME authorization identifier value | 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **pkiWriteIssuerIssuerRefRolesRoleAcmeAuthorizationAuthIdRequest** | [**PkiWriteIssuerIssuerRefRolesRoleAcmeAuthorizationAuthIdRequest**](PkiWriteIssuerIssuerRefRolesRoleAcmeAuthorizationAuthIdRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteIssuerIssuerRefRolesRoleAcmeChallengeAuthIdChallengeType
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	authId := "authId_example" // string | ACME authorization identifier value
+	challengeType := "challengeType_example" // string | ACME challenge type
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	role := "role_example" // string | The desired role for the acme request
+	request := schema.NewPkiWriteIssuerIssuerRefRolesRoleAcmeChallengeAuthIdChallengeTypeRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteIssuerIssuerRefRolesRoleAcmeChallengeAuthIdChallengeType(
+		context.Background(),
+		authId,
+		challengeType,
+		issuerRef,
+		role,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**authId** | **string** | ACME authorization identifier value | 
+**challengeType** | **string** | ACME challenge type | 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+ **pkiWriteIssuerIssuerRefRolesRoleAcmeChallengeAuthIdChallengeTypeRequest** | [**PkiWriteIssuerIssuerRefRolesRoleAcmeChallengeAuthIdChallengeTypeRequest**](PkiWriteIssuerIssuerRefRolesRoleAcmeChallengeAuthIdChallengeTypeRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteIssuerIssuerRefRolesRoleAcmeNewAccount
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	role := "role_example" // string | The desired role for the acme request
+	request := schema.NewPkiWriteIssuerIssuerRefRolesRoleAcmeNewAccountRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteIssuerIssuerRefRolesRoleAcmeNewAccount(
+		context.Background(),
+		issuerRef,
+		role,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **pkiWriteIssuerIssuerRefRolesRoleAcmeNewAccountRequest** | [**PkiWriteIssuerIssuerRefRolesRoleAcmeNewAccountRequest**](PkiWriteIssuerIssuerRefRolesRoleAcmeNewAccountRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteIssuerIssuerRefRolesRoleAcmeNewOrder
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	role := "role_example" // string | The desired role for the acme request
+	request := schema.NewPkiWriteIssuerIssuerRefRolesRoleAcmeNewOrderRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteIssuerIssuerRefRolesRoleAcmeNewOrder(
+		context.Background(),
+		issuerRef,
+		role,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **pkiWriteIssuerIssuerRefRolesRoleAcmeNewOrderRequest** | [**PkiWriteIssuerIssuerRefRolesRoleAcmeNewOrderRequest**](PkiWriteIssuerIssuerRefRolesRoleAcmeNewOrderRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderId
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	orderId := "orderId_example" // string | The ACME order identifier to fetch
+	role := "role_example" // string | The desired role for the acme request
+	request := schema.NewPkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderId(
+		context.Background(),
+		issuerRef,
+		orderId,
+		role,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+**orderId** | **string** | The ACME order identifier to fetch | 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **pkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdRequest** | [**PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdRequest**](PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdCert
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	orderId := "orderId_example" // string | The ACME order identifier to fetch
+	role := "role_example" // string | The desired role for the acme request
+	request := schema.NewPkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdCertRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdCert(
+		context.Background(),
+		issuerRef,
+		orderId,
+		role,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+**orderId** | **string** | The ACME order identifier to fetch | 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **pkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdCertRequest** | [**PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdCertRequest**](PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdCertRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdFinalize
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	orderId := "orderId_example" // string | The ACME order identifier to fetch
+	role := "role_example" // string | The desired role for the acme request
+	request := schema.NewPkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdFinalizeRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdFinalize(
+		context.Background(),
+		issuerRef,
+		orderId,
+		role,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+**orderId** | **string** | The ACME order identifier to fetch | 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **pkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdFinalizeRequest** | [**PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdFinalizeRequest**](PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdFinalizeRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteIssuerIssuerRefRolesRoleAcmeOrders
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	role := "role_example" // string | The desired role for the acme request
+	request := schema.NewPkiWriteIssuerIssuerRefRolesRoleAcmeOrdersRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteIssuerIssuerRefRolesRoleAcmeOrders(
+		context.Background(),
+		issuerRef,
+		role,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **pkiWriteIssuerIssuerRefRolesRoleAcmeOrdersRequest** | [**PkiWriteIssuerIssuerRefRolesRoleAcmeOrdersRequest**](PkiWriteIssuerIssuerRefRolesRoleAcmeOrdersRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteIssuerIssuerRefRolesRoleAcmeRevokeCert
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
+	role := "role_example" // string | The desired role for the acme request
+	request := schema.NewPkiWriteIssuerIssuerRefRolesRoleAcmeRevokeCertRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteIssuerIssuerRefRolesRoleAcmeRevokeCert(
+		context.Background(),
+		issuerRef,
+		role,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to an existing issuer name or issuer id | 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **pkiWriteIssuerIssuerRefRolesRoleAcmeRevokeCertRequest** | [**PkiWriteIssuerIssuerRefRolesRoleAcmeRevokeCertRequest**](PkiWriteIssuerIssuerRefRolesRoleAcmeRevokeCertRequest.md) |  | 
+
+ (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -16303,6 +19852,704 @@ Name | Type | Description  | Notes
  **pkiWriteRoleRequest** | [**PkiWriteRoleRequest**](PkiWriteRoleRequest.md) |  | 
 
 [**PkiWriteRoleResponse**](PkiWriteRoleResponse.md)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteRolesRoleAcmeAccountKid
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	kid := "kid_example" // string | The key identifier provided by the CA
+	role := "role_example" // string | The desired role for the acme request
+	request := schema.NewPkiWriteRolesRoleAcmeAccountKidRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteRolesRoleAcmeAccountKid(
+		context.Background(),
+		kid,
+		role,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**kid** | **string** | The key identifier provided by the CA | 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **pkiWriteRolesRoleAcmeAccountKidRequest** | [**PkiWriteRolesRoleAcmeAccountKidRequest**](PkiWriteRolesRoleAcmeAccountKidRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteRolesRoleAcmeAuthorizationAuthId
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	authId := "authId_example" // string | ACME authorization identifier value
+	role := "role_example" // string | The desired role for the acme request
+	request := schema.NewPkiWriteRolesRoleAcmeAuthorizationAuthIdRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteRolesRoleAcmeAuthorizationAuthId(
+		context.Background(),
+		authId,
+		role,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**authId** | **string** | ACME authorization identifier value | 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **pkiWriteRolesRoleAcmeAuthorizationAuthIdRequest** | [**PkiWriteRolesRoleAcmeAuthorizationAuthIdRequest**](PkiWriteRolesRoleAcmeAuthorizationAuthIdRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteRolesRoleAcmeChallengeAuthIdChallengeType
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	authId := "authId_example" // string | ACME authorization identifier value
+	challengeType := "challengeType_example" // string | ACME challenge type
+	role := "role_example" // string | The desired role for the acme request
+	request := schema.NewPkiWriteRolesRoleAcmeChallengeAuthIdChallengeTypeRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteRolesRoleAcmeChallengeAuthIdChallengeType(
+		context.Background(),
+		authId,
+		challengeType,
+		role,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**authId** | **string** | ACME authorization identifier value | 
+**challengeType** | **string** | ACME challenge type | 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **pkiWriteRolesRoleAcmeChallengeAuthIdChallengeTypeRequest** | [**PkiWriteRolesRoleAcmeChallengeAuthIdChallengeTypeRequest**](PkiWriteRolesRoleAcmeChallengeAuthIdChallengeTypeRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteRolesRoleAcmeNewAccount
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	role := "role_example" // string | The desired role for the acme request
+	request := schema.NewPkiWriteRolesRoleAcmeNewAccountRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteRolesRoleAcmeNewAccount(
+		context.Background(),
+		role,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **pkiWriteRolesRoleAcmeNewAccountRequest** | [**PkiWriteRolesRoleAcmeNewAccountRequest**](PkiWriteRolesRoleAcmeNewAccountRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteRolesRoleAcmeNewOrder
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	role := "role_example" // string | The desired role for the acme request
+	request := schema.NewPkiWriteRolesRoleAcmeNewOrderRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteRolesRoleAcmeNewOrder(
+		context.Background(),
+		role,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **pkiWriteRolesRoleAcmeNewOrderRequest** | [**PkiWriteRolesRoleAcmeNewOrderRequest**](PkiWriteRolesRoleAcmeNewOrderRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteRolesRoleAcmeOrderOrderId
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	orderId := "orderId_example" // string | The ACME order identifier to fetch
+	role := "role_example" // string | The desired role for the acme request
+	request := schema.NewPkiWriteRolesRoleAcmeOrderOrderIdRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteRolesRoleAcmeOrderOrderId(
+		context.Background(),
+		orderId,
+		role,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**orderId** | **string** | The ACME order identifier to fetch | 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **pkiWriteRolesRoleAcmeOrderOrderIdRequest** | [**PkiWriteRolesRoleAcmeOrderOrderIdRequest**](PkiWriteRolesRoleAcmeOrderOrderIdRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteRolesRoleAcmeOrderOrderIdCert
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	orderId := "orderId_example" // string | The ACME order identifier to fetch
+	role := "role_example" // string | The desired role for the acme request
+	request := schema.NewPkiWriteRolesRoleAcmeOrderOrderIdCertRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteRolesRoleAcmeOrderOrderIdCert(
+		context.Background(),
+		orderId,
+		role,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**orderId** | **string** | The ACME order identifier to fetch | 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **pkiWriteRolesRoleAcmeOrderOrderIdCertRequest** | [**PkiWriteRolesRoleAcmeOrderOrderIdCertRequest**](PkiWriteRolesRoleAcmeOrderOrderIdCertRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteRolesRoleAcmeOrderOrderIdFinalize
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	orderId := "orderId_example" // string | The ACME order identifier to fetch
+	role := "role_example" // string | The desired role for the acme request
+	request := schema.NewPkiWriteRolesRoleAcmeOrderOrderIdFinalizeRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteRolesRoleAcmeOrderOrderIdFinalize(
+		context.Background(),
+		orderId,
+		role,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**orderId** | **string** | The ACME order identifier to fetch | 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **pkiWriteRolesRoleAcmeOrderOrderIdFinalizeRequest** | [**PkiWriteRolesRoleAcmeOrderOrderIdFinalizeRequest**](PkiWriteRolesRoleAcmeOrderOrderIdFinalizeRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteRolesRoleAcmeOrders
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	role := "role_example" // string | The desired role for the acme request
+	request := schema.NewPkiWriteRolesRoleAcmeOrdersRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteRolesRoleAcmeOrders(
+		context.Background(),
+		role,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **pkiWriteRolesRoleAcmeOrdersRequest** | [**PkiWriteRolesRoleAcmeOrdersRequest**](PkiWriteRolesRoleAcmeOrdersRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## PkiWriteRolesRoleAcmeRevokeCert
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	role := "role_example" // string | The desired role for the acme request
+	request := schema.NewPkiWriteRolesRoleAcmeRevokeCertRequestWithDefaults()
+	resp, err := client.Secrets.PkiWriteRolesRoleAcmeRevokeCert(
+		context.Background(),
+		role,
+		request,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("pki"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**role** | **string** | The desired role for the acme request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **pkiWriteRolesRoleAcmeRevokeCertRequest** | [**PkiWriteRolesRoleAcmeRevokeCertRequest**](PkiWriteRolesRoleAcmeRevokeCertRequest.md) |  | 
+
+ (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -18876,6 +23123,144 @@ Name | Type | Description  | Notes
 
 
 
+## TransitByokKey
+
+Securely export named encryption or signing key
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	destination := "destination_example" // string | Destination key to export to; usually the public wrapping key of another Transit instance.
+	source := "source_example" // string | Source key to export; could be any present key within Transit.
+	resp, err := client.Secrets.TransitByokKey(
+		context.Background(),
+		destination,
+		source,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("transit"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**destination** | **string** | Destination key to export to; usually the public wrapping key of another Transit instance. | 
+**source** | **string** | Source key to export; could be any present key within Transit. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## TransitByokKeyVersion
+
+Securely export named encryption or signing key
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	destination := "destination_example" // string | Destination key to export to; usually the public wrapping key of another Transit instance.
+	source := "source_example" // string | Source key to export; could be any present key within Transit.
+	version := "version_example" // string | Optional version of the key to export, else all key versions are exported.
+	resp, err := client.Secrets.TransitByokKeyVersion(
+		context.Background(),
+		destination,
+		source,
+		version,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("transit"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**destination** | **string** | Destination key to export to; usually the public wrapping key of another Transit instance. | 
+**source** | **string** | Source key to export; could be any present key within Transit. | 
+**version** | **string** | Optional version of the key to export, else all key versions are exported. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
 ## TransitConfigureCache
 
 Configures a new cache of the specified size
@@ -19359,7 +23744,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-	type_ := "type__example" // string | Type of key to export (encryption-key, signing-key, hmac-key)
+	type_ := "type__example" // string | Type of key to export (encryption-key, signing-key, hmac-key, public-key)
 	resp, err := client.Secrets.TransitExportKey(
 		context.Background(),
 		name,
@@ -19382,7 +23767,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the key | 
-**type_** | **string** | Type of key to export (encryption-key, signing-key, hmac-key) | 
+**type_** | **string** | Type of key to export (encryption-key, signing-key, hmac-key, public-key) | 
 
 ### Other Parameters
 
@@ -19426,7 +23811,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-	type_ := "type__example" // string | Type of key to export (encryption-key, signing-key, hmac-key)
+	type_ := "type__example" // string | Type of key to export (encryption-key, signing-key, hmac-key, public-key)
 	version := "version_example" // string | Version of the key
 	resp, err := client.Secrets.TransitExportKeyVersion(
 		context.Background(),
@@ -19451,7 +23836,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the key | 
-**type_** | **string** | Type of key to export (encryption-key, signing-key, hmac-key) | 
+**type_** | **string** | Type of key to export (encryption-key, signing-key, hmac-key, public-key) | 
 **version** | **string** | Version of the key | 
 
 ### Other Parameters

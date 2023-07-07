@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Credentials** | Pointer to **string** | GCP IAM service account credentials JSON with permissions to create new service accounts and set IAM policies | [optional] 
-**MaxTtl** | Pointer to **int32** | Maximum time a service account key is valid for. If &lt;&#x3D; 0, will use system default. | [optional] 
-**Ttl** | Pointer to **int32** | Default lease for generated keys. If &lt;&#x3D; 0, will use system default. | [optional] 
+**MaxTtl** | Pointer to **string** | Maximum time a service account key is valid for. If &lt;&#x3D; 0, will use system default. | [optional] 
+**Ttl** | Pointer to **string** | Default lease for generated keys. If &lt;&#x3D; 0, will use system default. | [optional] 
 
 
 
@@ -63,20 +63,20 @@ HasCredentials returns a boolean if a field has been set.
 
 ### GetMaxTtl
 
-`func (o *GoogleCloudConfigureRequest) GetMaxTtl() int32`
+`func (o *GoogleCloudConfigureRequest) GetMaxTtl() string`
 
 GetMaxTtl returns the MaxTtl field if non-nil, zero value otherwise.
 
 ### GetMaxTtlOk
 
-`func (o *GoogleCloudConfigureRequest) GetMaxTtlOk() (*int32, bool)`
+`func (o *GoogleCloudConfigureRequest) GetMaxTtlOk() (*string, bool)`
 
 GetMaxTtlOk returns a tuple with the MaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxTtl
 
-`func (o *GoogleCloudConfigureRequest) SetMaxTtl(v int32)`
+`func (o *GoogleCloudConfigureRequest) SetMaxTtl(v string)`
 
 SetMaxTtl sets MaxTtl field to given value.
 
@@ -92,20 +92,20 @@ HasMaxTtl returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *GoogleCloudConfigureRequest) GetTtl() int32`
+`func (o *GoogleCloudConfigureRequest) GetTtl() string`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *GoogleCloudConfigureRequest) GetTtlOk() (*int32, bool)`
+`func (o *GoogleCloudConfigureRequest) GetTtlOk() (*string, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *GoogleCloudConfigureRequest) SetTtl(v int32)`
+`func (o *GoogleCloudConfigureRequest) SetTtl(v string)`
 
 SetTtl sets Ttl field to given value.
 

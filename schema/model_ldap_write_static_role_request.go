@@ -11,7 +11,7 @@ type LdapWriteStaticRoleRequest struct {
 	Dn string `json:"dn,omitempty"`
 
 	// Period for automatic credential rotation of the given entry.
-	RotationPeriod int32 `json:"rotation_period,omitempty"`
+	RotationPeriod string `json:"rotation_period,omitempty"`
 
 	// The username/logon name for the entry with which this role will be associated.
 	Username string `json:"username,omitempty"`

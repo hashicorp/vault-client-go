@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **ManagedKeyName** | Pointer to **string** | The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_id is required. Ignored for other types. | [optional] 
 **MaxPathLength** | Pointer to **int32** | The maximum allowable path length | [optional] [default to -1]
 **NotAfter** | Pointer to **string** | Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ | [optional] 
-**NotBeforeDuration** | Pointer to **int32** | The duration before now which the certificate needs to be backdated by. | [optional] [default to 30]
+**NotBeforeDuration** | Pointer to **string** | The duration before now which the certificate needs to be backdated by. | [optional] [default to "30"]
 **Organization** | Pointer to **[]string** | If set, O (Organization) will be set to this value. | [optional] 
 **OtherSans** | Pointer to **[]string** | Requested other SANs, in an array with the format &lt;oid&gt;;UTF8:&lt;utf8 string value&gt; for each entry. | [optional] 
 **Ou** | Pointer to **[]string** | If set, OU (OrganizationalUnit) will be set to this value. | [optional] 
@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 **SerialNumber** | Pointer to **string** | The Subject&#x27;s requested serial number, if any. See RFC 4519 Section 2.31 &#x27;serialNumber&#x27; for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate&#x27;s Serial Number field. | [optional] 
 **SignatureBits** | Pointer to **int32** | The number of bits to use in the signature algorithm; accepts 256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults to 0 to automatically detect based on key length (SHA-2-256 for RSA keys, and matching the curve size for NIST P-Curves). | [optional] [default to 0]
 **StreetAddress** | Pointer to **[]string** | If set, Street Address will be set to this value. | [optional] 
-**Ttl** | Pointer to **int32** | The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the mount max TTL. Note: this only has an effect when generating a CA cert or signing a CA cert, not when generating a CSR for an intermediate CA. | [optional] 
+**Ttl** | Pointer to **string** | The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the mount max TTL. Note: this only has an effect when generating a CA cert or signing a CA cert, not when generating a CSR for an intermediate CA. | [optional] 
 **UriSans** | Pointer to **[]string** | The requested URI SANs, if any, in a comma-delimited list. | [optional] 
 **UsePss** | Pointer to **bool** | Whether or not to use PSS signatures when using a RSA key-type issuer. Defaults to false. | [optional] [default to false]
 
@@ -525,20 +525,20 @@ HasNotAfter returns a boolean if a field has been set.
 
 ### GetNotBeforeDuration
 
-`func (o *PkiGenerateRootRequest) GetNotBeforeDuration() int32`
+`func (o *PkiGenerateRootRequest) GetNotBeforeDuration() string`
 
 GetNotBeforeDuration returns the NotBeforeDuration field if non-nil, zero value otherwise.
 
 ### GetNotBeforeDurationOk
 
-`func (o *PkiGenerateRootRequest) GetNotBeforeDurationOk() (*int32, bool)`
+`func (o *PkiGenerateRootRequest) GetNotBeforeDurationOk() (*string, bool)`
 
 GetNotBeforeDurationOk returns a tuple with the NotBeforeDuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNotBeforeDuration
 
-`func (o *PkiGenerateRootRequest) SetNotBeforeDuration(v int32)`
+`func (o *PkiGenerateRootRequest) SetNotBeforeDuration(v string)`
 
 SetNotBeforeDuration sets NotBeforeDuration field to given value.
 
@@ -844,20 +844,20 @@ HasStreetAddress returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *PkiGenerateRootRequest) GetTtl() int32`
+`func (o *PkiGenerateRootRequest) GetTtl() string`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *PkiGenerateRootRequest) GetTtlOk() (*int32, bool)`
+`func (o *PkiGenerateRootRequest) GetTtlOk() (*string, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *PkiGenerateRootRequest) SetTtl(v int32)`
+`func (o *PkiGenerateRootRequest) SetTtl(v string)`
 
 SetTtl sets Ttl field to given value.
 

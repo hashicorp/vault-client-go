@@ -11,7 +11,7 @@ type AwsConfigureIdentityWhitelistTidyOperationRequest struct {
 	DisablePeriodicTidy bool `json:"disable_periodic_tidy,omitempty"`
 
 	// The amount of extra time that must have passed beyond the identity's expiration, before it is removed from the backend storage.
-	SafetyBuffer int32 `json:"safety_buffer,omitempty"`
+	SafetyBuffer string `json:"safety_buffer,omitempty"`
 }
 
 // NewAwsConfigureIdentityWhitelistTidyOperationRequestWithDefaults instantiates a new AwsConfigureIdentityWhitelistTidyOperationRequest object
@@ -21,7 +21,7 @@ func NewAwsConfigureIdentityWhitelistTidyOperationRequestWithDefaults() *AwsConf
 	var this AwsConfigureIdentityWhitelistTidyOperationRequest
 
 	this.DisablePeriodicTidy = false
-	this.SafetyBuffer = 259200
+	this.SafetyBuffer = "259200"
 
 	return &this
 }

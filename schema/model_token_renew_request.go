@@ -8,7 +8,7 @@ package schema
 // TokenRenewRequest struct for TokenRenewRequest
 type TokenRenewRequest struct {
 	// The desired increment in seconds to the token expiration
-	Increment int32 `json:"increment,omitempty"`
+	Increment string `json:"increment,omitempty"`
 
 	// Token to renew (request body)
 	Token string `json:"token,omitempty"`
@@ -20,7 +20,7 @@ type TokenRenewRequest struct {
 func NewTokenRenewRequestWithDefaults() *TokenRenewRequest {
 	var this TokenRenewRequest
 
-	this.Increment = 0
+	this.Increment = "0"
 
 	return &this
 }

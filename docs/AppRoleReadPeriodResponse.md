@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Period** | Pointer to **int32** | Use \&quot;token_period\&quot; instead. If this and \&quot;token_period\&quot; are both specified, only \&quot;token_period\&quot; will be used. | [optional] 
-**TokenPeriod** | Pointer to **int32** | If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \&quot;24h\&quot;). | [optional] 
+**Period** | Pointer to **string** | Use \&quot;token_period\&quot; instead. If this and \&quot;token_period\&quot; are both specified, only \&quot;token_period\&quot; will be used. | [optional] 
+**TokenPeriod** | Pointer to **string** | If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \&quot;24h\&quot;). | [optional] 
 
 
 
@@ -33,20 +33,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPeriod
 
-`func (o *AppRoleReadPeriodResponse) GetPeriod() int32`
+`func (o *AppRoleReadPeriodResponse) GetPeriod() string`
 
 GetPeriod returns the Period field if non-nil, zero value otherwise.
 
 ### GetPeriodOk
 
-`func (o *AppRoleReadPeriodResponse) GetPeriodOk() (*int32, bool)`
+`func (o *AppRoleReadPeriodResponse) GetPeriodOk() (*string, bool)`
 
 GetPeriodOk returns a tuple with the Period field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPeriod
 
-`func (o *AppRoleReadPeriodResponse) SetPeriod(v int32)`
+`func (o *AppRoleReadPeriodResponse) SetPeriod(v string)`
 
 SetPeriod sets Period field to given value.
 
@@ -62,20 +62,20 @@ HasPeriod returns a boolean if a field has been set.
 
 ### GetTokenPeriod
 
-`func (o *AppRoleReadPeriodResponse) GetTokenPeriod() int32`
+`func (o *AppRoleReadPeriodResponse) GetTokenPeriod() string`
 
 GetTokenPeriod returns the TokenPeriod field if non-nil, zero value otherwise.
 
 ### GetTokenPeriodOk
 
-`func (o *AppRoleReadPeriodResponse) GetTokenPeriodOk() (*int32, bool)`
+`func (o *AppRoleReadPeriodResponse) GetTokenPeriodOk() (*string, bool)`
 
 GetTokenPeriodOk returns a tuple with the TokenPeriod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenPeriod
 
-`func (o *AppRoleReadPeriodResponse) SetTokenPeriod(v int32)`
+`func (o *AppRoleReadPeriodResponse) SetTokenPeriod(v string)`
 
 SetTokenPeriod sets TokenPeriod field to given value.
 

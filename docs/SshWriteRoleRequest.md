@@ -27,10 +27,10 @@ Name | Type | Description | Notes
 **ExcludeCidrList** | Pointer to **string** | [Optional for OTP type] [Not applicable for CA type] Comma separated list of CIDR blocks. IP addresses belonging to these blocks are not accepted by the role. This is particularly useful when big CIDR blocks are being used by the role and certain parts of it needs to be kept out. | [optional] 
 **KeyIdFormat** | Pointer to **string** | [Not applicable for OTP type] [Optional for CA type] When supplied, this value specifies a custom format for the key id of a signed certificate. The following variables are available for use: &#x27;{{token_display_name}}&#x27; - The display name of the token used to make the request. &#x27;{{role_name}}&#x27; - The name of the role signing the request. &#x27;{{public_key_hash}}&#x27; - A SHA256 checksum of the public key that is being signed. | [optional] 
 **KeyType** | Pointer to **string** | [Required for all types] Type of key used to login to hosts. It can be either &#x27;otp&#x27; or &#x27;ca&#x27;. &#x27;otp&#x27; type requires agent to be installed in remote hosts. | [optional] 
-**MaxTtl** | Pointer to **int32** | [Not applicable for OTP type] [Optional for CA type] The maximum allowed lease duration | [optional] 
-**NotBeforeDuration** | Pointer to **int32** | [Not applicable for OTP type] [Optional for CA type] The duration that the SSH certificate should be backdated by at issuance. | [optional] [default to 30]
+**MaxTtl** | Pointer to **string** | [Not applicable for OTP type] [Optional for CA type] The maximum allowed lease duration | [optional] 
+**NotBeforeDuration** | Pointer to **string** | [Not applicable for OTP type] [Optional for CA type] The duration that the SSH certificate should be backdated by at issuance. | [optional] [default to "30"]
 **Port** | Pointer to **int32** | [Optional for OTP type] [Not applicable for CA type] Port number for SSH connection. Default is &#x27;22&#x27;. Port number does not play any role in creation of OTP. For &#x27;otp&#x27; type, this is just a way to inform client about the port number to use. Port number will be returned to client by Vault server along with OTP. | [optional] 
-**Ttl** | Pointer to **int32** | [Not applicable for OTP type] [Optional for CA type] The lease duration if no specific lease duration is requested. The lease duration controls the expiration of certificates issued by this backend. Defaults to the value of max_ttl. | [optional] 
+**Ttl** | Pointer to **string** | [Not applicable for OTP type] [Optional for CA type] The lease duration if no specific lease duration is requested. The lease duration controls the expiration of certificates issued by this backend. Defaults to the value of max_ttl. | [optional] 
 
 
 
@@ -695,20 +695,20 @@ HasKeyType returns a boolean if a field has been set.
 
 ### GetMaxTtl
 
-`func (o *SshWriteRoleRequest) GetMaxTtl() int32`
+`func (o *SshWriteRoleRequest) GetMaxTtl() string`
 
 GetMaxTtl returns the MaxTtl field if non-nil, zero value otherwise.
 
 ### GetMaxTtlOk
 
-`func (o *SshWriteRoleRequest) GetMaxTtlOk() (*int32, bool)`
+`func (o *SshWriteRoleRequest) GetMaxTtlOk() (*string, bool)`
 
 GetMaxTtlOk returns a tuple with the MaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxTtl
 
-`func (o *SshWriteRoleRequest) SetMaxTtl(v int32)`
+`func (o *SshWriteRoleRequest) SetMaxTtl(v string)`
 
 SetMaxTtl sets MaxTtl field to given value.
 
@@ -724,20 +724,20 @@ HasMaxTtl returns a boolean if a field has been set.
 
 ### GetNotBeforeDuration
 
-`func (o *SshWriteRoleRequest) GetNotBeforeDuration() int32`
+`func (o *SshWriteRoleRequest) GetNotBeforeDuration() string`
 
 GetNotBeforeDuration returns the NotBeforeDuration field if non-nil, zero value otherwise.
 
 ### GetNotBeforeDurationOk
 
-`func (o *SshWriteRoleRequest) GetNotBeforeDurationOk() (*int32, bool)`
+`func (o *SshWriteRoleRequest) GetNotBeforeDurationOk() (*string, bool)`
 
 GetNotBeforeDurationOk returns a tuple with the NotBeforeDuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNotBeforeDuration
 
-`func (o *SshWriteRoleRequest) SetNotBeforeDuration(v int32)`
+`func (o *SshWriteRoleRequest) SetNotBeforeDuration(v string)`
 
 SetNotBeforeDuration sets NotBeforeDuration field to given value.
 
@@ -782,20 +782,20 @@ HasPort returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *SshWriteRoleRequest) GetTtl() int32`
+`func (o *SshWriteRoleRequest) GetTtl() string`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *SshWriteRoleRequest) GetTtlOk() (*int32, bool)`
+`func (o *SshWriteRoleRequest) GetTtlOk() (*string, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *SshWriteRoleRequest) SetTtl(v int32)`
+`func (o *SshWriteRoleRequest) SetTtl(v string)`
 
 SetTtl sets Ttl field to given value.
 

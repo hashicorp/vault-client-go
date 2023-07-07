@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DisablePeriodicTidy** | Pointer to **bool** | If set to &#x27;true&#x27;, disables the periodic tidying of deny listed entries. | [optional] [default to false]
-**SafetyBuffer** | Pointer to **int32** | The amount of extra time that must have passed beyond the roletag expiration, before it is removed from the backend storage. Defaults to 4320h (180 days). | [optional] [default to 15552000]
+**SafetyBuffer** | Pointer to **string** | The amount of extra time that must have passed beyond the roletag expiration, before it is removed from the backend storage. Defaults to 4320h (180 days). | [optional] [default to "15552000"]
 
 
 
@@ -62,20 +62,20 @@ HasDisablePeriodicTidy returns a boolean if a field has been set.
 
 ### GetSafetyBuffer
 
-`func (o *AwsConfigureRoleTagBlacklistTidyOperationRequest) GetSafetyBuffer() int32`
+`func (o *AwsConfigureRoleTagBlacklistTidyOperationRequest) GetSafetyBuffer() string`
 
 GetSafetyBuffer returns the SafetyBuffer field if non-nil, zero value otherwise.
 
 ### GetSafetyBufferOk
 
-`func (o *AwsConfigureRoleTagBlacklistTidyOperationRequest) GetSafetyBufferOk() (*int32, bool)`
+`func (o *AwsConfigureRoleTagBlacklistTidyOperationRequest) GetSafetyBufferOk() (*string, bool)`
 
 GetSafetyBufferOk returns a tuple with the SafetyBuffer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSafetyBuffer
 
-`func (o *AwsConfigureRoleTagBlacklistTidyOperationRequest) SetSafetyBuffer(v int32)`
+`func (o *AwsConfigureRoleTagBlacklistTidyOperationRequest) SetSafetyBuffer(v string)`
 
 SetSafetyBuffer sets SafetyBuffer field to given value.
 

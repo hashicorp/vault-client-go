@@ -9,7 +9,7 @@ package schema
 type EncryptionKeyReadRotationConfigurationResponse struct {
 	Enabled bool `json:"enabled,omitempty"`
 
-	Interval int32 `json:"interval,omitempty"`
+	Interval string `json:"interval,omitempty"`
 
 	MaxOperations int64 `json:"max_operations,omitempty"`
 }

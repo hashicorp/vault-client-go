@@ -8,7 +8,7 @@ package schema
 // AwsTidyIdentityAccessListRequest struct for AwsTidyIdentityAccessListRequest
 type AwsTidyIdentityAccessListRequest struct {
 	// The amount of extra time that must have passed beyond the identity's expiration, before it is removed from the backend storage.
-	SafetyBuffer int32 `json:"safety_buffer,omitempty"`
+	SafetyBuffer string `json:"safety_buffer,omitempty"`
 }
 
 // NewAwsTidyIdentityAccessListRequestWithDefaults instantiates a new AwsTidyIdentityAccessListRequest object
@@ -17,7 +17,7 @@ type AwsTidyIdentityAccessListRequest struct {
 func NewAwsTidyIdentityAccessListRequestWithDefaults() *AwsTidyIdentityAccessListRequest {
 	var this AwsTidyIdentityAccessListRequest
 
-	this.SafetyBuffer = 259200
+	this.SafetyBuffer = "259200"
 
 	return &this
 }

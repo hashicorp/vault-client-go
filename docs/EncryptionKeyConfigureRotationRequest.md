@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Enabled** | Pointer to **bool** | Whether automatic rotation is enabled. | [optional] 
-**Interval** | Pointer to **int32** | How long after installation of an active key term that the key will be automatically rotated. | [optional] 
+**Interval** | Pointer to **string** | How long after installation of an active key term that the key will be automatically rotated. | [optional] 
 **MaxOperations** | Pointer to **int64** | The number of encryption operations performed before the barrier key is automatically rotated. | [optional] 
 
 
@@ -63,20 +63,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetInterval
 
-`func (o *EncryptionKeyConfigureRotationRequest) GetInterval() int32`
+`func (o *EncryptionKeyConfigureRotationRequest) GetInterval() string`
 
 GetInterval returns the Interval field if non-nil, zero value otherwise.
 
 ### GetIntervalOk
 
-`func (o *EncryptionKeyConfigureRotationRequest) GetIntervalOk() (*int32, bool)`
+`func (o *EncryptionKeyConfigureRotationRequest) GetIntervalOk() (*string, bool)`
 
 GetIntervalOk returns a tuple with the Interval field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterval
 
-`func (o *EncryptionKeyConfigureRotationRequest) SetInterval(v int32)`
+`func (o *EncryptionKeyConfigureRotationRequest) SetInterval(v string)`
 
 SetInterval sets Interval field to given value.
 

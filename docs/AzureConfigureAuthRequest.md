@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **ClientSecret** | Pointer to **string** | The OAuth2 client secret to connection to Azure. This value can also be provided with the AZURE_CLIENT_SECRET environment variable. | [optional] 
 **Environment** | Pointer to **string** | The Azure environment name. If not provided, AzurePublicCloud is used. This value can also be provided with the AZURE_ENVIRONMENT environment variable. | [optional] 
 **Resource** | Pointer to **string** | The resource URL for the vault application in Azure Active Directory. This value can also be provided with the AZURE_AD_RESOURCE environment variable. | [optional] 
-**RootPasswordTtl** | Pointer to **int32** | The TTL of the root password in Azure. This can be either a number of seconds or a time formatted duration (ex: 24h, 48ds) | [optional] 
+**RootPasswordTtl** | Pointer to **string** | The TTL of the root password in Azure. This can be either a number of seconds or a time formatted duration (ex: 24h, 48ds) | [optional] [default to "15768000000000000"]
 **TenantId** | Pointer to **string** | The tenant id for the Azure Active Directory. This is sometimes referred to as Directory ID in AD. This value can also be provided with the AZURE_TENANT_ID environment variable. | [optional] 
 
 
@@ -153,20 +153,20 @@ HasResource returns a boolean if a field has been set.
 
 ### GetRootPasswordTtl
 
-`func (o *AzureConfigureAuthRequest) GetRootPasswordTtl() int32`
+`func (o *AzureConfigureAuthRequest) GetRootPasswordTtl() string`
 
 GetRootPasswordTtl returns the RootPasswordTtl field if non-nil, zero value otherwise.
 
 ### GetRootPasswordTtlOk
 
-`func (o *AzureConfigureAuthRequest) GetRootPasswordTtlOk() (*int32, bool)`
+`func (o *AzureConfigureAuthRequest) GetRootPasswordTtlOk() (*string, bool)`
 
 GetRootPasswordTtlOk returns a tuple with the RootPasswordTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRootPasswordTtl
 
-`func (o *AzureConfigureAuthRequest) SetRootPasswordTtl(v int32)`
+`func (o *AzureConfigureAuthRequest) SetRootPasswordTtl(v string)`
 
 SetRootPasswordTtl sets RootPasswordTtl field to given value.
 

@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccessTokenTtl** | Pointer to **int32** | The time-to-live for access tokens obtained by the client. | [optional] 
+**AccessTokenTtl** | Pointer to **string** | The time-to-live for access tokens obtained by the client. | [optional] [default to "24h"]
 **Assignments** | Pointer to **[]string** | Comma separated string or array of assignment resources. | [optional] 
 **ClientType** | Pointer to **string** | The client type based on its ability to maintain confidentiality of credentials. The following client types are supported: &#x27;confidential&#x27;, &#x27;public&#x27;. Defaults to &#x27;confidential&#x27;. | [optional] [default to "confidential"]
-**IdTokenTtl** | Pointer to **int32** | The time-to-live for ID tokens obtained by the client. | [optional] 
+**IdTokenTtl** | Pointer to **string** | The time-to-live for ID tokens obtained by the client. | [optional] [default to "24h"]
 **Key** | Pointer to **string** | A reference to a named key resource. Cannot be modified after creation. Defaults to the &#x27;default&#x27; key. | [optional] [default to "default"]
 **RedirectUris** | Pointer to **[]string** | Comma separated string or array of redirect URIs used by the client. One of these values must exactly match the redirect_uri parameter value used in each authentication request. | [optional] 
 
@@ -37,20 +37,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAccessTokenTtl
 
-`func (o *OidcWriteClientRequest) GetAccessTokenTtl() int32`
+`func (o *OidcWriteClientRequest) GetAccessTokenTtl() string`
 
 GetAccessTokenTtl returns the AccessTokenTtl field if non-nil, zero value otherwise.
 
 ### GetAccessTokenTtlOk
 
-`func (o *OidcWriteClientRequest) GetAccessTokenTtlOk() (*int32, bool)`
+`func (o *OidcWriteClientRequest) GetAccessTokenTtlOk() (*string, bool)`
 
 GetAccessTokenTtlOk returns a tuple with the AccessTokenTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccessTokenTtl
 
-`func (o *OidcWriteClientRequest) SetAccessTokenTtl(v int32)`
+`func (o *OidcWriteClientRequest) SetAccessTokenTtl(v string)`
 
 SetAccessTokenTtl sets AccessTokenTtl field to given value.
 
@@ -124,20 +124,20 @@ HasClientType returns a boolean if a field has been set.
 
 ### GetIdTokenTtl
 
-`func (o *OidcWriteClientRequest) GetIdTokenTtl() int32`
+`func (o *OidcWriteClientRequest) GetIdTokenTtl() string`
 
 GetIdTokenTtl returns the IdTokenTtl field if non-nil, zero value otherwise.
 
 ### GetIdTokenTtlOk
 
-`func (o *OidcWriteClientRequest) GetIdTokenTtlOk() (*int32, bool)`
+`func (o *OidcWriteClientRequest) GetIdTokenTtlOk() (*string, bool)`
 
 GetIdTokenTtlOk returns a tuple with the IdTokenTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIdTokenTtl
 
-`func (o *OidcWriteClientRequest) SetIdTokenTtl(v int32)`
+`func (o *OidcWriteClientRequest) SetIdTokenTtl(v string)`
 
 SetIdTokenTtl sets IdTokenTtl field to given value.
 

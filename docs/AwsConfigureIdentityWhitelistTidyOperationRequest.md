@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DisablePeriodicTidy** | Pointer to **bool** | If set to &#x27;true&#x27;, disables the periodic tidying of the &#x27;identity-accesslist/&lt;instance_id&gt;&#x27; entries. | [optional] [default to false]
-**SafetyBuffer** | Pointer to **int32** | The amount of extra time that must have passed beyond the identity&#x27;s expiration, before it is removed from the backend storage. | [optional] [default to 259200]
+**SafetyBuffer** | Pointer to **string** | The amount of extra time that must have passed beyond the identity&#x27;s expiration, before it is removed from the backend storage. | [optional] [default to "259200"]
 
 
 
@@ -62,20 +62,20 @@ HasDisablePeriodicTidy returns a boolean if a field has been set.
 
 ### GetSafetyBuffer
 
-`func (o *AwsConfigureIdentityWhitelistTidyOperationRequest) GetSafetyBuffer() int32`
+`func (o *AwsConfigureIdentityWhitelistTidyOperationRequest) GetSafetyBuffer() string`
 
 GetSafetyBuffer returns the SafetyBuffer field if non-nil, zero value otherwise.
 
 ### GetSafetyBufferOk
 
-`func (o *AwsConfigureIdentityWhitelistTidyOperationRequest) GetSafetyBufferOk() (*int32, bool)`
+`func (o *AwsConfigureIdentityWhitelistTidyOperationRequest) GetSafetyBufferOk() (*string, bool)`
 
 GetSafetyBufferOk returns a tuple with the SafetyBuffer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSafetyBuffer
 
-`func (o *AwsConfigureIdentityWhitelistTidyOperationRequest) SetSafetyBuffer(v int32)`
+`func (o *AwsConfigureIdentityWhitelistTidyOperationRequest) SetSafetyBuffer(v string)`
 
 SetSafetyBuffer sets SafetyBuffer field to given value.
 

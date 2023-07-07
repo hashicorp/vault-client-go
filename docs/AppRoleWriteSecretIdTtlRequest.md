@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SecretIdTtl** | Pointer to **int32** | Duration in seconds after which the issued SecretID should expire. Defaults to 0, meaning no expiration. | [optional] 
+**SecretIdTtl** | Pointer to **string** | Duration in seconds after which the issued SecretID should expire. Defaults to 0, meaning no expiration. | [optional] 
 
 
 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSecretIdTtl
 
-`func (o *AppRoleWriteSecretIdTtlRequest) GetSecretIdTtl() int32`
+`func (o *AppRoleWriteSecretIdTtlRequest) GetSecretIdTtl() string`
 
 GetSecretIdTtl returns the SecretIdTtl field if non-nil, zero value otherwise.
 
 ### GetSecretIdTtlOk
 
-`func (o *AppRoleWriteSecretIdTtlRequest) GetSecretIdTtlOk() (*int32, bool)`
+`func (o *AppRoleWriteSecretIdTtlRequest) GetSecretIdTtlOk() (*string, bool)`
 
 GetSecretIdTtlOk returns a tuple with the SecretIdTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecretIdTtl
 
-`func (o *AppRoleWriteSecretIdTtlRequest) SetSecretIdTtl(v int32)`
+`func (o *AppRoleWriteSecretIdTtlRequest) SetSecretIdTtl(v string)`
 
 SetSecretIdTtl sets SecretIdTtl field to given value.
 

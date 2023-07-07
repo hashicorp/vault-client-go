@@ -8,16 +8,16 @@ Name | Type | Description | Notes
 **ConsulNamespace** | Pointer to **string** | Indicates which namespace that the token will be created within. Defaults to &#x27;default&#x27;. Available in Consul 1.7 and above. | [optional] 
 **ConsulPolicies** | Pointer to **[]string** | List of policies to attach to the token. Either \&quot;consul_policies\&quot; or \&quot;consul_roles\&quot; are required for Consul 1.5 and above, or just \&quot;consul_policies\&quot; if using Consul 1.4. | [optional] 
 **ConsulRoles** | Pointer to **[]string** | List of Consul roles to attach to the token. Either \&quot;policies\&quot; or \&quot;consul_roles\&quot; are required for Consul 1.5 and above. | [optional] 
-**Lease** | Pointer to **int32** | Use \&quot;ttl\&quot; instead. | [optional] 
+**Lease** | Pointer to **string** | Use \&quot;ttl\&quot; instead. | [optional] 
 **Local** | Pointer to **bool** | Indicates that the token should not be replicated globally and instead be local to the current datacenter. Available in Consul 1.4 and above. | [optional] 
-**MaxTtl** | Pointer to **int32** | Max TTL for the Consul token created from the role. | [optional] 
+**MaxTtl** | Pointer to **string** | Max TTL for the Consul token created from the role. | [optional] 
 **NodeIdentities** | Pointer to **[]string** | List of Node Identities to attach to the token. Available in Consul 1.8.1 or above. | [optional] 
 **Partition** | Pointer to **string** | Indicates which admin partition that the token will be created within. Defaults to &#x27;default&#x27;. Available in Consul 1.11 and above. | [optional] 
 **Policies** | Pointer to **[]string** | Use \&quot;consul_policies\&quot; instead. | [optional] 
 **Policy** | Pointer to **string** | Policy document, base64 encoded. Required for &#x27;client&#x27; tokens. Required for Consul pre-1.4. | [optional] 
 **ServiceIdentities** | Pointer to **[]string** | List of Service Identities to attach to the token, separated by semicolons. Available in Consul 1.5 or above. | [optional] 
 **TokenType** | Pointer to **string** | Which type of token to create: &#x27;client&#x27; or &#x27;management&#x27;. If a &#x27;management&#x27; token, the \&quot;policy\&quot;, \&quot;policies\&quot;, and \&quot;consul_roles\&quot; parameters are not required. Defaults to &#x27;client&#x27;. | [optional] [default to "client"]
-**Ttl** | Pointer to **int32** | TTL for the Consul token created from the role. | [optional] 
+**Ttl** | Pointer to **string** | TTL for the Consul token created from the role. | [optional] 
 
 
 
@@ -131,20 +131,20 @@ HasConsulRoles returns a boolean if a field has been set.
 
 ### GetLease
 
-`func (o *ConsulWriteRoleRequest) GetLease() int32`
+`func (o *ConsulWriteRoleRequest) GetLease() string`
 
 GetLease returns the Lease field if non-nil, zero value otherwise.
 
 ### GetLeaseOk
 
-`func (o *ConsulWriteRoleRequest) GetLeaseOk() (*int32, bool)`
+`func (o *ConsulWriteRoleRequest) GetLeaseOk() (*string, bool)`
 
 GetLeaseOk returns a tuple with the Lease field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLease
 
-`func (o *ConsulWriteRoleRequest) SetLease(v int32)`
+`func (o *ConsulWriteRoleRequest) SetLease(v string)`
 
 SetLease sets Lease field to given value.
 
@@ -189,20 +189,20 @@ HasLocal returns a boolean if a field has been set.
 
 ### GetMaxTtl
 
-`func (o *ConsulWriteRoleRequest) GetMaxTtl() int32`
+`func (o *ConsulWriteRoleRequest) GetMaxTtl() string`
 
 GetMaxTtl returns the MaxTtl field if non-nil, zero value otherwise.
 
 ### GetMaxTtlOk
 
-`func (o *ConsulWriteRoleRequest) GetMaxTtlOk() (*int32, bool)`
+`func (o *ConsulWriteRoleRequest) GetMaxTtlOk() (*string, bool)`
 
 GetMaxTtlOk returns a tuple with the MaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxTtl
 
-`func (o *ConsulWriteRoleRequest) SetMaxTtl(v int32)`
+`func (o *ConsulWriteRoleRequest) SetMaxTtl(v string)`
 
 SetMaxTtl sets MaxTtl field to given value.
 
@@ -392,20 +392,20 @@ HasTokenType returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *ConsulWriteRoleRequest) GetTtl() int32`
+`func (o *ConsulWriteRoleRequest) GetTtl() string`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *ConsulWriteRoleRequest) GetTtlOk() (*int32, bool)`
+`func (o *ConsulWriteRoleRequest) GetTtlOk() (*string, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *ConsulWriteRoleRequest) SetTtl(v int32)`
+`func (o *ConsulWriteRoleRequest) SetTtl(v string)`
 
 SetTtl sets Ttl field to given value.
 

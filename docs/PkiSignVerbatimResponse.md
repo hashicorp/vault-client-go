@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CaChain** | Pointer to **[]string** | Certificate Chain | [optional] 
 **Certificate** | Pointer to **string** | Certificate | [optional] 
-**Expiration** | Pointer to **string** | Time of expiration | [optional] 
+**Expiration** | Pointer to **int64** | Time of expiration | [optional] 
 **IssuingCa** | Pointer to **string** | Issuing Certificate Authority | [optional] 
 **PrivateKey** | Pointer to **string** | Private key | [optional] 
 **PrivateKeyType** | Pointer to **string** | Private key type | [optional] 
@@ -96,20 +96,20 @@ HasCertificate returns a boolean if a field has been set.
 
 ### GetExpiration
 
-`func (o *PkiSignVerbatimResponse) GetExpiration() string`
+`func (o *PkiSignVerbatimResponse) GetExpiration() int64`
 
 GetExpiration returns the Expiration field if non-nil, zero value otherwise.
 
 ### GetExpirationOk
 
-`func (o *PkiSignVerbatimResponse) GetExpirationOk() (*string, bool)`
+`func (o *PkiSignVerbatimResponse) GetExpirationOk() (*int64, bool)`
 
 GetExpirationOk returns a tuple with the Expiration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExpiration
 
-`func (o *PkiSignVerbatimResponse) SetExpiration(v string)`
+`func (o *PkiSignVerbatimResponse) SetExpiration(v int64)`
 
 SetExpiration sets Expiration field to given value.
 

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**VerificationTtl** | Pointer to **int32** | Controls how long the public portion of a key will be available for verification after being rotated. Setting verification_ttl here will override the verification_ttl set on the key. | [optional] 
+**VerificationTtl** | Pointer to **string** | Controls how long the public portion of a key will be available for verification after being rotated. Setting verification_ttl here will override the verification_ttl set on the key. | [optional] 
 
 
 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetVerificationTtl
 
-`func (o *OidcRotateKeyRequest) GetVerificationTtl() int32`
+`func (o *OidcRotateKeyRequest) GetVerificationTtl() string`
 
 GetVerificationTtl returns the VerificationTtl field if non-nil, zero value otherwise.
 
 ### GetVerificationTtlOk
 
-`func (o *OidcRotateKeyRequest) GetVerificationTtlOk() (*int32, bool)`
+`func (o *OidcRotateKeyRequest) GetVerificationTtlOk() (*string, bool)`
 
 GetVerificationTtlOk returns a tuple with the VerificationTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVerificationTtl
 
-`func (o *OidcRotateKeyRequest) SetVerificationTtl(v int32)`
+`func (o *OidcRotateKeyRequest) SetVerificationTtl(v string)`
 
 SetVerificationTtl sets VerificationTtl field to given value.
 

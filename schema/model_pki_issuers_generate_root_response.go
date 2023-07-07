@@ -10,8 +10,8 @@ type PkiIssuersGenerateRootResponse struct {
 	// The generated self-signed CA certificate.
 	Certificate string `json:"certificate,omitempty"`
 
-	// The expiration of the given.
-	Expiration string `json:"expiration,omitempty"`
+	// The expiration of the given issuer.
+	Expiration int64 `json:"expiration,omitempty"`
 
 	// The ID of the issuer
 	IssuerId string `json:"issuer_id,omitempty"`

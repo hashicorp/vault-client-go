@@ -29,7 +29,7 @@ type LdapConfigureRequest struct {
 	ClientTlsKey string `json:"client_tls_key,omitempty"`
 
 	// Timeout, in seconds, when attempting to connect to the LDAP server before trying the next URL in the configuration.
-	ConnectionTimeout int32 `json:"connection_timeout,omitempty"`
+	ConnectionTimeout string `json:"connection_timeout,omitempty"`
 
 	// Denies an unauthenticated LDAP bind request if the user's password is empty; defaults to true
 	DenyNullBind bool `json:"deny_null_bind,omitempty"`
@@ -56,17 +56,17 @@ type LdapConfigureRequest struct {
 	// Deprecated
 	Length int32 `json:"length,omitempty"`
 
-	// The maximum number of results to return for a single paged query. If not set, the server default will be used for paged searches. A requested max_page_size of 0 is interpreted as no limit by LDAP servers. If set to a negative value, search requests will not be paged.
+	// If set to a value greater than 0, the LDAP backend will use the LDAP server's paged search control to request pages of up to the given size. This can be used to avoid hitting the LDAP server's maximum result size limit. Otherwise, the LDAP backend will not use the paged search control.
 	MaxPageSize int32 `json:"max_page_size,omitempty"`
 
 	// The maximum password time-to-live.
-	MaxTtl int32 `json:"max_ttl,omitempty"`
+	MaxTtl string `json:"max_ttl,omitempty"`
 
 	// Password policy to use to generate passwords
 	PasswordPolicy string `json:"password_policy,omitempty"`
 
 	// Timeout, in seconds, for the connection when making requests against the server before returning back an error.
-	RequestTimeout int32 `json:"request_timeout,omitempty"`
+	RequestTimeout string `json:"request_timeout,omitempty"`
 
 	// The desired LDAP schema used when modifying user account passwords.
 	Schema string `json:"schema,omitempty"`
@@ -81,7 +81,7 @@ type LdapConfigureRequest struct {
 	TlsMinVersion string `json:"tls_min_version,omitempty"`
 
 	// The default password time-to-live.
-	Ttl int32 `json:"ttl,omitempty"`
+	Ttl string `json:"ttl,omitempty"`
 
 	// Enables userPrincipalDomain login with [username]@UPNDomain (optional)
 	Upndomain string `json:"upndomain,omitempty"`
@@ -115,11 +115,13 @@ func NewLdapConfigureRequestWithDefaults() *LdapConfigureRequest {
 	var this LdapConfigureRequest
 
 	this.AnonymousGroupSearch = false
+	this.ConnectionTimeout = "30s"
 	this.DenyNullBind = true
 	this.DereferenceAliases = "never"
 	this.Groupattr = "cn"
 	this.Groupfilter = "(|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))"
-	this.MaxPageSize = 2147483647
+	this.MaxPageSize = 0
+	this.RequestTimeout = "90s"
 	this.Schema = "openldap"
 	this.TlsMaxVersion = "tls12"
 	this.TlsMinVersion = "tls12"

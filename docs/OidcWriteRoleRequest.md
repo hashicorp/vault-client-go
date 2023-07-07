@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **ClientId** | Pointer to **string** | Optional client_id | [optional] 
 **Key** | **string** | The OIDC key to use for generating tokens. The specified key must already exist. | 
 **Template** | Pointer to **string** | The template string to use for generating tokens. This may be in string-ified JSON or base64 format. | [optional] 
-**Ttl** | Pointer to **int32** | TTL of the tokens generated against the role. | [optional] 
+**Ttl** | Pointer to **string** | TTL of the tokens generated against the role. | [optional] [default to "24h"]
 
 
 
@@ -116,20 +116,20 @@ HasTemplate returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *OidcWriteRoleRequest) GetTtl() int32`
+`func (o *OidcWriteRoleRequest) GetTtl() string`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *OidcWriteRoleRequest) GetTtlOk() (*int32, bool)`
+`func (o *OidcWriteRoleRequest) GetTtlOk() (*string, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *OidcWriteRoleRequest) SetTtl(v int32)`
+`func (o *OidcWriteRoleRequest) SetTtl(v string)`
 
 SetTtl sets Ttl field to given value.
 

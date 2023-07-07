@@ -11,7 +11,7 @@ type TransitCreateKeyRequest struct {
 	AllowPlaintextBackup bool `json:"allow_plaintext_backup,omitempty"`
 
 	// Amount of time the key should live before being automatically rotated. A value of 0 (default) disables automatic rotation for the key.
-	AutoRotatePeriod int32 `json:"auto_rotate_period,omitempty"`
+	AutoRotatePeriod string `json:"auto_rotate_period,omitempty"`
 
 	// Base64 encoded context for key derivation. When reading a key with key derivation enabled, if the key type supports public keys, this will return the public key for the given context.
 	Context string `json:"context,omitempty"`
@@ -44,7 +44,7 @@ type TransitCreateKeyRequest struct {
 func NewTransitCreateKeyRequestWithDefaults() *TransitCreateKeyRequest {
 	var this TransitCreateKeyRequest
 
-	this.AutoRotatePeriod = 0
+	this.AutoRotatePeriod = "0"
 	this.KeySize = 0
 	this.Type = "aes256-gcm96"
 

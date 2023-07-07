@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AcmeAccountSafetyBuffer** | Pointer to **int32** | Safety buffer after creation after which accounts lacking orders are revoked | [optional] 
 **Enabled** | Pointer to **bool** | Specifies whether automatic tidy is enabled or not | [optional] 
 **IntervalDuration** | Pointer to **int32** | Specifies the duration between automatic tidy operation | [optional] 
 **IssuerSafetyBuffer** | Pointer to **int32** | Issuer safety buffer | [optional] 
@@ -13,6 +14,7 @@ Name | Type | Description | Notes
 **PublishStoredCertificateCountMetrics** | Pointer to **bool** |  | [optional] 
 **RevocationQueueSafetyBuffer** | Pointer to **int32** |  | [optional] 
 **SafetyBuffer** | Pointer to **int32** | Safety buffer time duration | [optional] 
+**TidyAcme** | Pointer to **bool** | Tidy Unused Acme Accounts, and Orders | [optional] 
 **TidyCertStore** | Pointer to **bool** | Specifies whether to tidy up the certificate store | [optional] 
 **TidyCrossClusterRevokedCerts** | Pointer to **bool** |  | [optional] 
 **TidyExpiredIssuers** | Pointer to **bool** | Specifies whether tidy expired issuers | [optional] 
@@ -42,6 +44,35 @@ will change when the set of required properties is changed
 NewPkiReadAutoTidyConfigurationResponseWithDefaults instantiates a new PkiReadAutoTidyConfigurationResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+
+### GetAcmeAccountSafetyBuffer
+
+`func (o *PkiReadAutoTidyConfigurationResponse) GetAcmeAccountSafetyBuffer() int32`
+
+GetAcmeAccountSafetyBuffer returns the AcmeAccountSafetyBuffer field if non-nil, zero value otherwise.
+
+### GetAcmeAccountSafetyBufferOk
+
+`func (o *PkiReadAutoTidyConfigurationResponse) GetAcmeAccountSafetyBufferOk() (*int32, bool)`
+
+GetAcmeAccountSafetyBufferOk returns a tuple with the AcmeAccountSafetyBuffer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAcmeAccountSafetyBuffer
+
+`func (o *PkiReadAutoTidyConfigurationResponse) SetAcmeAccountSafetyBuffer(v int32)`
+
+SetAcmeAccountSafetyBuffer sets AcmeAccountSafetyBuffer field to given value.
+
+
+### HasAcmeAccountSafetyBuffer
+
+`func (o *PkiReadAutoTidyConfigurationResponse) HasAcmeAccountSafetyBuffer() bool`
+
+HasAcmeAccountSafetyBuffer returns a boolean if a field has been set.
+
+
 
 
 ### GetEnabled
@@ -272,6 +303,35 @@ SetSafetyBuffer sets SafetyBuffer field to given value.
 `func (o *PkiReadAutoTidyConfigurationResponse) HasSafetyBuffer() bool`
 
 HasSafetyBuffer returns a boolean if a field has been set.
+
+
+
+
+### GetTidyAcme
+
+`func (o *PkiReadAutoTidyConfigurationResponse) GetTidyAcme() bool`
+
+GetTidyAcme returns the TidyAcme field if non-nil, zero value otherwise.
+
+### GetTidyAcmeOk
+
+`func (o *PkiReadAutoTidyConfigurationResponse) GetTidyAcmeOk() (*bool, bool)`
+
+GetTidyAcmeOk returns a tuple with the TidyAcme field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTidyAcme
+
+`func (o *PkiReadAutoTidyConfigurationResponse) SetTidyAcme(v bool)`
+
+SetTidyAcme sets TidyAcme field to given value.
+
+
+### HasTidyAcme
+
+`func (o *PkiReadAutoTidyConfigurationResponse) HasTidyAcme() bool`
+
+HasTidyAcme returns a boolean if a field has been set.
 
 
 

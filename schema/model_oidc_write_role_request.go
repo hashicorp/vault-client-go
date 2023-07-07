@@ -17,7 +17,7 @@ type OidcWriteRoleRequest struct {
 	Template string `json:"template,omitempty"`
 
 	// TTL of the tokens generated against the role.
-	Ttl int32 `json:"ttl,omitempty"`
+	Ttl string `json:"ttl,omitempty"`
 }
 
 // NewOidcWriteRoleRequestWithDefaults instantiates a new OidcWriteRoleRequest object
@@ -25,6 +25,8 @@ type OidcWriteRoleRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewOidcWriteRoleRequestWithDefaults() *OidcWriteRoleRequest {
 	var this OidcWriteRoleRequest
+
+	this.Ttl = "24h"
 
 	return &this
 }

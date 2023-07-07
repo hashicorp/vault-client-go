@@ -5,6 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AcmeAccountDeletedCount** | Pointer to **int32** | The number of revoked acme accounts removed | [optional] 
+**AcmeAccountRevokedCount** | Pointer to **int32** | The number of unused acme accounts revoked | [optional] 
+**AcmeAccountSafetyBuffer** | Pointer to **int32** | Safety buffer after creation after which accounts lacking orders are revoked | [optional] 
+**AcmeOrdersDeletedCount** | Pointer to **int32** | The number of expired, unused acme orders removed | [optional] 
 **CertStoreDeletedCount** | Pointer to **int32** | The number of certificate storage entries deleted | [optional] 
 **CrossRevokedCertDeletedCount** | Pointer to **int32** |  | [optional] 
 **CurrentCertStoreCount** | Pointer to **int32** | The number of revoked certificate entries deleted | [optional] 
@@ -12,15 +16,18 @@ Name | Type | Description | Notes
 **Error** | Pointer to **string** | The error message | [optional] 
 **InternalBackendUuid** | Pointer to **string** |  | [optional] 
 **IssuerSafetyBuffer** | Pointer to **int32** | Issuer safety buffer | [optional] 
+**LastAutoTidyFinished** | Pointer to **string** | Time the last auto-tidy operation finished | [optional] 
 **Message** | Pointer to **string** | Message of the operation | [optional] 
 **MissingIssuerCertCount** | Pointer to **int32** |  | [optional] 
 **PauseDuration** | Pointer to **string** | Duration to pause between tidying certificates | [optional] 
 **RevocationQueueDeletedCount** | Pointer to **int32** |  | [optional] 
+**RevocationQueueSafetyBuffer** | Pointer to **int32** | Revocation queue safety buffer | [optional] 
 **RevokedCertDeletedCount** | Pointer to **int32** | The number of revoked certificate entries deleted | [optional] 
 **SafetyBuffer** | Pointer to **int32** | Safety buffer time duration | [optional] 
 **State** | Pointer to **string** | One of Inactive, Running, Finished, or Error | [optional] 
+**TidyAcme** | Pointer to **bool** | Tidy Unused Acme Accounts, and Orders | [optional] 
 **TidyCertStore** | Pointer to **bool** | Tidy certificate store | [optional] 
-**TidyCrossClusterRevokedCerts** | Pointer to **string** |  | [optional] 
+**TidyCrossClusterRevokedCerts** | Pointer to **bool** | Tidy the cross-cluster revoked certificate store | [optional] 
 **TidyExpiredIssuers** | Pointer to **bool** | Tidy expired issuers | [optional] 
 **TidyMoveLegacyCaBundle** | Pointer to **bool** |  | [optional] 
 **TidyRevocationQueue** | Pointer to **bool** |  | [optional] 
@@ -28,6 +35,7 @@ Name | Type | Description | Notes
 **TidyRevokedCerts** | Pointer to **bool** | Tidy revoked certificates | [optional] 
 **TimeFinished** | Pointer to **string** | Time the operation finished | [optional] 
 **TimeStarted** | Pointer to **string** | Time the operation started | [optional] 
+**TotalAcmeAccountCount** | Pointer to **int32** | Total number of acme accounts iterated over | [optional] 
 
 
 
@@ -50,6 +58,122 @@ will change when the set of required properties is changed
 NewPkiTidyStatusResponseWithDefaults instantiates a new PkiTidyStatusResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+
+### GetAcmeAccountDeletedCount
+
+`func (o *PkiTidyStatusResponse) GetAcmeAccountDeletedCount() int32`
+
+GetAcmeAccountDeletedCount returns the AcmeAccountDeletedCount field if non-nil, zero value otherwise.
+
+### GetAcmeAccountDeletedCountOk
+
+`func (o *PkiTidyStatusResponse) GetAcmeAccountDeletedCountOk() (*int32, bool)`
+
+GetAcmeAccountDeletedCountOk returns a tuple with the AcmeAccountDeletedCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAcmeAccountDeletedCount
+
+`func (o *PkiTidyStatusResponse) SetAcmeAccountDeletedCount(v int32)`
+
+SetAcmeAccountDeletedCount sets AcmeAccountDeletedCount field to given value.
+
+
+### HasAcmeAccountDeletedCount
+
+`func (o *PkiTidyStatusResponse) HasAcmeAccountDeletedCount() bool`
+
+HasAcmeAccountDeletedCount returns a boolean if a field has been set.
+
+
+
+
+### GetAcmeAccountRevokedCount
+
+`func (o *PkiTidyStatusResponse) GetAcmeAccountRevokedCount() int32`
+
+GetAcmeAccountRevokedCount returns the AcmeAccountRevokedCount field if non-nil, zero value otherwise.
+
+### GetAcmeAccountRevokedCountOk
+
+`func (o *PkiTidyStatusResponse) GetAcmeAccountRevokedCountOk() (*int32, bool)`
+
+GetAcmeAccountRevokedCountOk returns a tuple with the AcmeAccountRevokedCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAcmeAccountRevokedCount
+
+`func (o *PkiTidyStatusResponse) SetAcmeAccountRevokedCount(v int32)`
+
+SetAcmeAccountRevokedCount sets AcmeAccountRevokedCount field to given value.
+
+
+### HasAcmeAccountRevokedCount
+
+`func (o *PkiTidyStatusResponse) HasAcmeAccountRevokedCount() bool`
+
+HasAcmeAccountRevokedCount returns a boolean if a field has been set.
+
+
+
+
+### GetAcmeAccountSafetyBuffer
+
+`func (o *PkiTidyStatusResponse) GetAcmeAccountSafetyBuffer() int32`
+
+GetAcmeAccountSafetyBuffer returns the AcmeAccountSafetyBuffer field if non-nil, zero value otherwise.
+
+### GetAcmeAccountSafetyBufferOk
+
+`func (o *PkiTidyStatusResponse) GetAcmeAccountSafetyBufferOk() (*int32, bool)`
+
+GetAcmeAccountSafetyBufferOk returns a tuple with the AcmeAccountSafetyBuffer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAcmeAccountSafetyBuffer
+
+`func (o *PkiTidyStatusResponse) SetAcmeAccountSafetyBuffer(v int32)`
+
+SetAcmeAccountSafetyBuffer sets AcmeAccountSafetyBuffer field to given value.
+
+
+### HasAcmeAccountSafetyBuffer
+
+`func (o *PkiTidyStatusResponse) HasAcmeAccountSafetyBuffer() bool`
+
+HasAcmeAccountSafetyBuffer returns a boolean if a field has been set.
+
+
+
+
+### GetAcmeOrdersDeletedCount
+
+`func (o *PkiTidyStatusResponse) GetAcmeOrdersDeletedCount() int32`
+
+GetAcmeOrdersDeletedCount returns the AcmeOrdersDeletedCount field if non-nil, zero value otherwise.
+
+### GetAcmeOrdersDeletedCountOk
+
+`func (o *PkiTidyStatusResponse) GetAcmeOrdersDeletedCountOk() (*int32, bool)`
+
+GetAcmeOrdersDeletedCountOk returns a tuple with the AcmeOrdersDeletedCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAcmeOrdersDeletedCount
+
+`func (o *PkiTidyStatusResponse) SetAcmeOrdersDeletedCount(v int32)`
+
+SetAcmeOrdersDeletedCount sets AcmeOrdersDeletedCount field to given value.
+
+
+### HasAcmeOrdersDeletedCount
+
+`func (o *PkiTidyStatusResponse) HasAcmeOrdersDeletedCount() bool`
+
+HasAcmeOrdersDeletedCount returns a boolean if a field has been set.
+
+
 
 
 ### GetCertStoreDeletedCount
@@ -255,6 +379,35 @@ HasIssuerSafetyBuffer returns a boolean if a field has been set.
 
 
 
+### GetLastAutoTidyFinished
+
+`func (o *PkiTidyStatusResponse) GetLastAutoTidyFinished() string`
+
+GetLastAutoTidyFinished returns the LastAutoTidyFinished field if non-nil, zero value otherwise.
+
+### GetLastAutoTidyFinishedOk
+
+`func (o *PkiTidyStatusResponse) GetLastAutoTidyFinishedOk() (*string, bool)`
+
+GetLastAutoTidyFinishedOk returns a tuple with the LastAutoTidyFinished field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastAutoTidyFinished
+
+`func (o *PkiTidyStatusResponse) SetLastAutoTidyFinished(v string)`
+
+SetLastAutoTidyFinished sets LastAutoTidyFinished field to given value.
+
+
+### HasLastAutoTidyFinished
+
+`func (o *PkiTidyStatusResponse) HasLastAutoTidyFinished() bool`
+
+HasLastAutoTidyFinished returns a boolean if a field has been set.
+
+
+
+
 ### GetMessage
 
 `func (o *PkiTidyStatusResponse) GetMessage() string`
@@ -371,6 +524,35 @@ HasRevocationQueueDeletedCount returns a boolean if a field has been set.
 
 
 
+### GetRevocationQueueSafetyBuffer
+
+`func (o *PkiTidyStatusResponse) GetRevocationQueueSafetyBuffer() int32`
+
+GetRevocationQueueSafetyBuffer returns the RevocationQueueSafetyBuffer field if non-nil, zero value otherwise.
+
+### GetRevocationQueueSafetyBufferOk
+
+`func (o *PkiTidyStatusResponse) GetRevocationQueueSafetyBufferOk() (*int32, bool)`
+
+GetRevocationQueueSafetyBufferOk returns a tuple with the RevocationQueueSafetyBuffer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRevocationQueueSafetyBuffer
+
+`func (o *PkiTidyStatusResponse) SetRevocationQueueSafetyBuffer(v int32)`
+
+SetRevocationQueueSafetyBuffer sets RevocationQueueSafetyBuffer field to given value.
+
+
+### HasRevocationQueueSafetyBuffer
+
+`func (o *PkiTidyStatusResponse) HasRevocationQueueSafetyBuffer() bool`
+
+HasRevocationQueueSafetyBuffer returns a boolean if a field has been set.
+
+
+
+
 ### GetRevokedCertDeletedCount
 
 `func (o *PkiTidyStatusResponse) GetRevokedCertDeletedCount() int32`
@@ -458,6 +640,35 @@ HasState returns a boolean if a field has been set.
 
 
 
+### GetTidyAcme
+
+`func (o *PkiTidyStatusResponse) GetTidyAcme() bool`
+
+GetTidyAcme returns the TidyAcme field if non-nil, zero value otherwise.
+
+### GetTidyAcmeOk
+
+`func (o *PkiTidyStatusResponse) GetTidyAcmeOk() (*bool, bool)`
+
+GetTidyAcmeOk returns a tuple with the TidyAcme field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTidyAcme
+
+`func (o *PkiTidyStatusResponse) SetTidyAcme(v bool)`
+
+SetTidyAcme sets TidyAcme field to given value.
+
+
+### HasTidyAcme
+
+`func (o *PkiTidyStatusResponse) HasTidyAcme() bool`
+
+HasTidyAcme returns a boolean if a field has been set.
+
+
+
+
 ### GetTidyCertStore
 
 `func (o *PkiTidyStatusResponse) GetTidyCertStore() bool`
@@ -489,20 +700,20 @@ HasTidyCertStore returns a boolean if a field has been set.
 
 ### GetTidyCrossClusterRevokedCerts
 
-`func (o *PkiTidyStatusResponse) GetTidyCrossClusterRevokedCerts() string`
+`func (o *PkiTidyStatusResponse) GetTidyCrossClusterRevokedCerts() bool`
 
 GetTidyCrossClusterRevokedCerts returns the TidyCrossClusterRevokedCerts field if non-nil, zero value otherwise.
 
 ### GetTidyCrossClusterRevokedCertsOk
 
-`func (o *PkiTidyStatusResponse) GetTidyCrossClusterRevokedCertsOk() (*string, bool)`
+`func (o *PkiTidyStatusResponse) GetTidyCrossClusterRevokedCertsOk() (*bool, bool)`
 
 GetTidyCrossClusterRevokedCertsOk returns a tuple with the TidyCrossClusterRevokedCerts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTidyCrossClusterRevokedCerts
 
-`func (o *PkiTidyStatusResponse) SetTidyCrossClusterRevokedCerts(v string)`
+`func (o *PkiTidyStatusResponse) SetTidyCrossClusterRevokedCerts(v bool)`
 
 SetTidyCrossClusterRevokedCerts sets TidyCrossClusterRevokedCerts field to given value.
 
@@ -715,6 +926,35 @@ SetTimeStarted sets TimeStarted field to given value.
 `func (o *PkiTidyStatusResponse) HasTimeStarted() bool`
 
 HasTimeStarted returns a boolean if a field has been set.
+
+
+
+
+### GetTotalAcmeAccountCount
+
+`func (o *PkiTidyStatusResponse) GetTotalAcmeAccountCount() int32`
+
+GetTotalAcmeAccountCount returns the TotalAcmeAccountCount field if non-nil, zero value otherwise.
+
+### GetTotalAcmeAccountCountOk
+
+`func (o *PkiTidyStatusResponse) GetTotalAcmeAccountCountOk() (*int32, bool)`
+
+GetTotalAcmeAccountCountOk returns a tuple with the TotalAcmeAccountCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotalAcmeAccountCount
+
+`func (o *PkiTidyStatusResponse) SetTotalAcmeAccountCount(v int32)`
+
+SetTotalAcmeAccountCount sets TotalAcmeAccountCount field to given value.
+
+
+### HasTotalAcmeAccountCount
+
+`func (o *PkiTidyStatusResponse) HasTotalAcmeAccountCount() bool`
+
+HasTotalAcmeAccountCount returns a boolean if a field has been set.
 
 
 

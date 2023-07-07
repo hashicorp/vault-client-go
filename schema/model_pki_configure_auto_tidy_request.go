@@ -7,14 +7,17 @@ package schema
 
 // PkiConfigureAutoTidyRequest struct for PkiConfigureAutoTidyRequest
 type PkiConfigureAutoTidyRequest struct {
+	// The amount of time that must pass after creation that an account with no orders is marked revoked, and the amount of time after being marked revoked or deactivated.
+	AcmeAccountSafetyBuffer string `json:"acme_account_safety_buffer,omitempty"`
+
 	// Set to true to enable automatic tidy operations.
 	Enabled bool `json:"enabled,omitempty"`
 
 	// Interval at which to run an auto-tidy operation. This is the time between tidy invocations (after one finishes to the start of the next). Running a manual tidy will reset this duration.
-	IntervalDuration int32 `json:"interval_duration,omitempty"`
+	IntervalDuration string `json:"interval_duration,omitempty"`
 
 	// The amount of extra time that must have passed beyond issuer's expiration before it is removed from the backend storage. Defaults to 8760 hours (1 year).
-	IssuerSafetyBuffer int32 `json:"issuer_safety_buffer,omitempty"`
+	IssuerSafetyBuffer string `json:"issuer_safety_buffer,omitempty"`
 
 	// This configures whether stored certificates are counted upon initialization of the backend, and whether during normal operation, a running count of certificates stored is maintained.
 	MaintainStoredCertificateCounts bool `json:"maintain_stored_certificate_counts,omitempty"`
@@ -26,10 +29,13 @@ type PkiConfigureAutoTidyRequest struct {
 	PublishStoredCertificateCountMetrics bool `json:"publish_stored_certificate_count_metrics,omitempty"`
 
 	// The amount of time that must pass from the cross-cluster revocation request being initiated to when it will be slated for removal. Setting this too low may remove valid revocation requests before the owning cluster has a chance to process them, especially if the cluster is offline.
-	RevocationQueueSafetyBuffer int32 `json:"revocation_queue_safety_buffer,omitempty"`
+	RevocationQueueSafetyBuffer string `json:"revocation_queue_safety_buffer,omitempty"`
 
 	// The amount of extra time that must have passed beyond certificate expiration before it is removed from the backend storage and/or revocation list. Defaults to 72 hours.
-	SafetyBuffer int32 `json:"safety_buffer,omitempty"`
+	SafetyBuffer string `json:"safety_buffer,omitempty"`
+
+	// Set to true to enable tidying ACME accounts, orders and authorizations. ACME orders are tidied (deleted) safety_buffer after the certificate associated with them expires, or after the order and relevant authorizations have expired if no certificate was produced. Authorizations are tidied with the corresponding order. When a valid ACME Account is at least acme_account_safety_buffer old, and has no remaining orders associated with it, the account is marked as revoked. After another acme_account_safety_buffer has passed from the revocation or deactivation date, a revoked or deactivated ACME account is deleted.
+	TidyAcme bool `json:"tidy_acme,omitempty"`
 
 	// Set to true to enable tidying up the certificate store
 	TidyCertStore bool `json:"tidy_cert_store,omitempty"`
@@ -62,13 +68,15 @@ type PkiConfigureAutoTidyRequest struct {
 func NewPkiConfigureAutoTidyRequestWithDefaults() *PkiConfigureAutoTidyRequest {
 	var this PkiConfigureAutoTidyRequest
 
-	this.IntervalDuration = 43200
-	this.IssuerSafetyBuffer = 31536000
+	this.AcmeAccountSafetyBuffer = "2592000"
+	this.IntervalDuration = "43200"
+	this.IssuerSafetyBuffer = "31536000"
 	this.MaintainStoredCertificateCounts = false
 	this.PauseDuration = "0s"
 	this.PublishStoredCertificateCountMetrics = false
-	this.RevocationQueueSafetyBuffer = 172800
-	this.SafetyBuffer = 259200
+	this.RevocationQueueSafetyBuffer = "172800"
+	this.SafetyBuffer = "259200"
+	this.TidyAcme = false
 	this.TidyRevocationQueue = false
 
 	return &this

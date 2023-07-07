@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreationPath** | Pointer to **string** |  | [optional] 
 **CreationTime** | Pointer to **time.Time** |  | [optional] 
-**CreationTtl** | Pointer to **int32** |  | [optional] 
+**CreationTtl** | Pointer to **string** |  | [optional] 
 
 
 
@@ -92,20 +92,20 @@ HasCreationTime returns a boolean if a field has been set.
 
 ### GetCreationTtl
 
-`func (o *ReadWrappingPropertiesResponse) GetCreationTtl() int32`
+`func (o *ReadWrappingPropertiesResponse) GetCreationTtl() string`
 
 GetCreationTtl returns the CreationTtl field if non-nil, zero value otherwise.
 
 ### GetCreationTtlOk
 
-`func (o *ReadWrappingPropertiesResponse) GetCreationTtlOk() (*int32, bool)`
+`func (o *ReadWrappingPropertiesResponse) GetCreationTtlOk() (*string, bool)`
 
 GetCreationTtlOk returns a tuple with the CreationTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreationTtl
 
-`func (o *ReadWrappingPropertiesResponse) SetCreationTtl(v int32)`
+`func (o *ReadWrappingPropertiesResponse) SetCreationTtl(v string)`
 
 SetCreationTtl sets CreationTtl field to given value.
 

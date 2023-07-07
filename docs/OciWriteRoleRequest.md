@@ -7,13 +7,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **OcidList** | Pointer to **[]string** | A comma separated list of Group or Dynamic Group OCIDs that are allowed to take this role. | [optional] 
 **TokenBoundCidrs** | Pointer to **[]string** | Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token. | [optional] 
-**TokenExplicitMaxTtl** | Pointer to **int32** | If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed. | [optional] 
-**TokenMaxTtl** | Pointer to **int32** | The maximum lifetime of the generated token | [optional] 
+**TokenExplicitMaxTtl** | Pointer to **string** | If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed. | [optional] 
+**TokenMaxTtl** | Pointer to **string** | The maximum lifetime of the generated token | [optional] 
 **TokenNoDefaultPolicy** | Pointer to **bool** | If true, the &#x27;default&#x27; policy will not automatically be added to generated tokens | [optional] 
 **TokenNumUses** | Pointer to **int32** | The maximum number of times a token may be used, a value of zero means unlimited | [optional] 
-**TokenPeriod** | Pointer to **int32** | If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \&quot;24h\&quot;). | [optional] 
+**TokenPeriod** | Pointer to **string** | If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \&quot;24h\&quot;). | [optional] 
 **TokenPolicies** | Pointer to **[]string** | Comma-separated list of policies | [optional] 
-**TokenTtl** | Pointer to **int32** | The initial ttl of the token to generate | [optional] 
+**TokenTtl** | Pointer to **string** | The initial ttl of the token to generate | [optional] 
 **TokenType** | Pointer to **string** | The type of token to generate, service or batch | [optional] [default to "default-service"]
 
 
@@ -99,20 +99,20 @@ HasTokenBoundCidrs returns a boolean if a field has been set.
 
 ### GetTokenExplicitMaxTtl
 
-`func (o *OciWriteRoleRequest) GetTokenExplicitMaxTtl() int32`
+`func (o *OciWriteRoleRequest) GetTokenExplicitMaxTtl() string`
 
 GetTokenExplicitMaxTtl returns the TokenExplicitMaxTtl field if non-nil, zero value otherwise.
 
 ### GetTokenExplicitMaxTtlOk
 
-`func (o *OciWriteRoleRequest) GetTokenExplicitMaxTtlOk() (*int32, bool)`
+`func (o *OciWriteRoleRequest) GetTokenExplicitMaxTtlOk() (*string, bool)`
 
 GetTokenExplicitMaxTtlOk returns a tuple with the TokenExplicitMaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenExplicitMaxTtl
 
-`func (o *OciWriteRoleRequest) SetTokenExplicitMaxTtl(v int32)`
+`func (o *OciWriteRoleRequest) SetTokenExplicitMaxTtl(v string)`
 
 SetTokenExplicitMaxTtl sets TokenExplicitMaxTtl field to given value.
 
@@ -128,20 +128,20 @@ HasTokenExplicitMaxTtl returns a boolean if a field has been set.
 
 ### GetTokenMaxTtl
 
-`func (o *OciWriteRoleRequest) GetTokenMaxTtl() int32`
+`func (o *OciWriteRoleRequest) GetTokenMaxTtl() string`
 
 GetTokenMaxTtl returns the TokenMaxTtl field if non-nil, zero value otherwise.
 
 ### GetTokenMaxTtlOk
 
-`func (o *OciWriteRoleRequest) GetTokenMaxTtlOk() (*int32, bool)`
+`func (o *OciWriteRoleRequest) GetTokenMaxTtlOk() (*string, bool)`
 
 GetTokenMaxTtlOk returns a tuple with the TokenMaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenMaxTtl
 
-`func (o *OciWriteRoleRequest) SetTokenMaxTtl(v int32)`
+`func (o *OciWriteRoleRequest) SetTokenMaxTtl(v string)`
 
 SetTokenMaxTtl sets TokenMaxTtl field to given value.
 
@@ -215,20 +215,20 @@ HasTokenNumUses returns a boolean if a field has been set.
 
 ### GetTokenPeriod
 
-`func (o *OciWriteRoleRequest) GetTokenPeriod() int32`
+`func (o *OciWriteRoleRequest) GetTokenPeriod() string`
 
 GetTokenPeriod returns the TokenPeriod field if non-nil, zero value otherwise.
 
 ### GetTokenPeriodOk
 
-`func (o *OciWriteRoleRequest) GetTokenPeriodOk() (*int32, bool)`
+`func (o *OciWriteRoleRequest) GetTokenPeriodOk() (*string, bool)`
 
 GetTokenPeriodOk returns a tuple with the TokenPeriod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenPeriod
 
-`func (o *OciWriteRoleRequest) SetTokenPeriod(v int32)`
+`func (o *OciWriteRoleRequest) SetTokenPeriod(v string)`
 
 SetTokenPeriod sets TokenPeriod field to given value.
 
@@ -273,20 +273,20 @@ HasTokenPolicies returns a boolean if a field has been set.
 
 ### GetTokenTtl
 
-`func (o *OciWriteRoleRequest) GetTokenTtl() int32`
+`func (o *OciWriteRoleRequest) GetTokenTtl() string`
 
 GetTokenTtl returns the TokenTtl field if non-nil, zero value otherwise.
 
 ### GetTokenTtlOk
 
-`func (o *OciWriteRoleRequest) GetTokenTtlOk() (*int32, bool)`
+`func (o *OciWriteRoleRequest) GetTokenTtlOk() (*string, bool)`
 
 GetTokenTtlOk returns a tuple with the TokenTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenTtl
 
-`func (o *OciWriteRoleRequest) SetTokenTtl(v int32)`
+`func (o *OciWriteRoleRequest) SetTokenTtl(v string)`
 
 SetTokenTtl sets TokenTtl field to given value.
 

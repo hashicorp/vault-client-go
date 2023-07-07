@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Enabled** | Pointer to **bool** |  | [optional] 
-**Interval** | Pointer to **int32** |  | [optional] 
+**Interval** | Pointer to **string** |  | [optional] 
 **MaxOperations** | Pointer to **int64** |  | [optional] 
 
 
@@ -63,20 +63,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetInterval
 
-`func (o *EncryptionKeyReadRotationConfigurationResponse) GetInterval() int32`
+`func (o *EncryptionKeyReadRotationConfigurationResponse) GetInterval() string`
 
 GetInterval returns the Interval field if non-nil, zero value otherwise.
 
 ### GetIntervalOk
 
-`func (o *EncryptionKeyReadRotationConfigurationResponse) GetIntervalOk() (*int32, bool)`
+`func (o *EncryptionKeyReadRotationConfigurationResponse) GetIntervalOk() (*string, bool)`
 
 GetIntervalOk returns a tuple with the Interval field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterval
 
-`func (o *EncryptionKeyReadRotationConfigurationResponse) SetInterval(v int32)`
+`func (o *EncryptionKeyReadRotationConfigurationResponse) SetInterval(v string)`
 
 SetInterval sets Interval field to given value.
 

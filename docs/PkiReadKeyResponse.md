@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **KeyType** | Pointer to **string** | Key Type | [optional] 
 **ManagedKeyId** | Pointer to **string** | Managed Key Id | [optional] 
 **ManagedKeyName** | Pointer to **string** | Managed Key Name | [optional] 
+**SubjectKeyId** | Pointer to **string** | RFC 5280 Subject Key Identifier of the public counterpart | [optional] 
 
 
 
@@ -175,6 +176,35 @@ SetManagedKeyName sets ManagedKeyName field to given value.
 `func (o *PkiReadKeyResponse) HasManagedKeyName() bool`
 
 HasManagedKeyName returns a boolean if a field has been set.
+
+
+
+
+### GetSubjectKeyId
+
+`func (o *PkiReadKeyResponse) GetSubjectKeyId() string`
+
+GetSubjectKeyId returns the SubjectKeyId field if non-nil, zero value otherwise.
+
+### GetSubjectKeyIdOk
+
+`func (o *PkiReadKeyResponse) GetSubjectKeyIdOk() (*string, bool)`
+
+GetSubjectKeyIdOk returns a tuple with the SubjectKeyId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubjectKeyId
+
+`func (o *PkiReadKeyResponse) SetSubjectKeyId(v string)`
+
+SetSubjectKeyId sets SubjectKeyId field to given value.
+
+
+### HasSubjectKeyId
+
+`func (o *PkiReadKeyResponse) HasSubjectKeyId() bool`
+
+HasSubjectKeyId returns a boolean if a field has been set.
 
 
 

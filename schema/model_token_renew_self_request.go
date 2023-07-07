@@ -8,7 +8,7 @@ package schema
 // TokenRenewSelfRequest struct for TokenRenewSelfRequest
 type TokenRenewSelfRequest struct {
 	// The desired increment in seconds to the token expiration
-	Increment int32 `json:"increment,omitempty"`
+	Increment string `json:"increment,omitempty"`
 
 	// Token to renew (unused, does not need to be set)
 	Token string `json:"token,omitempty"`
@@ -20,7 +20,7 @@ type TokenRenewSelfRequest struct {
 func NewTokenRenewSelfRequestWithDefaults() *TokenRenewSelfRequest {
 	var this TokenRenewSelfRequest
 
-	this.Increment = 0
+	this.Increment = "0"
 
 	return &this
 }

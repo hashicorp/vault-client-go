@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CaChain** | Pointer to **[]string** | Issuing CA Chain | [optional] 
+**CaChain** | Pointer to **string** | Issuing CA Chain | [optional] 
 **Certificate** | Pointer to **string** | Certificate | [optional] 
 **IssuerId** | Pointer to **string** | ID of the issuer | [optional] 
-**RevocationTime** | Pointer to **string** | Revocation time | [optional] 
+**RevocationTime** | Pointer to **int64** | Revocation time | [optional] 
 **RevocationTimeRfc3339** | Pointer to **string** | Revocation time RFC 3339 formatted | [optional] 
 
 
@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCaChain
 
-`func (o *PkiReadCaPemResponse) GetCaChain() []string`
+`func (o *PkiReadCaPemResponse) GetCaChain() string`
 
 GetCaChain returns the CaChain field if non-nil, zero value otherwise.
 
 ### GetCaChainOk
 
-`func (o *PkiReadCaPemResponse) GetCaChainOk() (*[]string, bool)`
+`func (o *PkiReadCaPemResponse) GetCaChainOk() (*string, bool)`
 
 GetCaChainOk returns a tuple with the CaChain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCaChain
 
-`func (o *PkiReadCaPemResponse) SetCaChain(v []string)`
+`func (o *PkiReadCaPemResponse) SetCaChain(v string)`
 
 SetCaChain sets CaChain field to given value.
 
@@ -123,20 +123,20 @@ HasIssuerId returns a boolean if a field has been set.
 
 ### GetRevocationTime
 
-`func (o *PkiReadCaPemResponse) GetRevocationTime() string`
+`func (o *PkiReadCaPemResponse) GetRevocationTime() int64`
 
 GetRevocationTime returns the RevocationTime field if non-nil, zero value otherwise.
 
 ### GetRevocationTimeOk
 
-`func (o *PkiReadCaPemResponse) GetRevocationTimeOk() (*string, bool)`
+`func (o *PkiReadCaPemResponse) GetRevocationTimeOk() (*int64, bool)`
 
 GetRevocationTimeOk returns a tuple with the RevocationTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRevocationTime
 
-`func (o *PkiReadCaPemResponse) SetRevocationTime(v string)`
+`func (o *PkiReadCaPemResponse) SetRevocationTime(v int64)`
 
 SetRevocationTime sets RevocationTime field to given value.
 

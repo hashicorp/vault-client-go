@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RevocationTime** | Pointer to **int32** | Revocation Time | [optional] 
+**RevocationTime** | Pointer to **int64** | Revocation Time | [optional] 
 **RevocationTimeRfc3339** | Pointer to **time.Time** | Revocation Time | [optional] 
 **State** | Pointer to **string** | Revocation State | [optional] 
 
@@ -34,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRevocationTime
 
-`func (o *PkiRevokeWithKeyResponse) GetRevocationTime() int32`
+`func (o *PkiRevokeWithKeyResponse) GetRevocationTime() int64`
 
 GetRevocationTime returns the RevocationTime field if non-nil, zero value otherwise.
 
 ### GetRevocationTimeOk
 
-`func (o *PkiRevokeWithKeyResponse) GetRevocationTimeOk() (*int32, bool)`
+`func (o *PkiRevokeWithKeyResponse) GetRevocationTimeOk() (*int64, bool)`
 
 GetRevocationTimeOk returns a tuple with the RevocationTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRevocationTime
 
-`func (o *PkiRevokeWithKeyResponse) SetRevocationTime(v int32)`
+`func (o *PkiRevokeWithKeyResponse) SetRevocationTime(v int64)`
 
 SetRevocationTime sets RevocationTime field to given value.
 

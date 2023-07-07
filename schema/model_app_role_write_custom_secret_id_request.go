@@ -23,7 +23,7 @@ type AppRoleWriteCustomSecretIdRequest struct {
 	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
 
 	// Duration in seconds after which this SecretID expires. Overrides secret_id_ttl role option when supplied. May not be longer than role's secret_id_ttl.
-	Ttl int32 `json:"ttl,omitempty"`
+	Ttl string `json:"ttl,omitempty"`
 }
 
 // NewAppRoleWriteCustomSecretIdRequestWithDefaults instantiates a new AppRoleWriteCustomSecretIdRequest object

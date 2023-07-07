@@ -17,7 +17,7 @@ type DatabaseWriteStaticRoleRequest struct {
 	DbName string `json:"db_name,omitempty"`
 
 	// Period for automatic credential rotation of the given username. Not valid unless used with \"username\".
-	RotationPeriod int32 `json:"rotation_period,omitempty"`
+	RotationPeriod string `json:"rotation_period,omitempty"`
 
 	// Specifies the database statements to be executed to rotate the accounts credentials. Not every plugin type will support this functionality. See the plugin's API page for more information on support and formatting for this parameter.
 	RotationStatements []string `json:"rotation_statements,omitempty"`

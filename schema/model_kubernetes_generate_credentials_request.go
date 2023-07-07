@@ -17,7 +17,7 @@ type KubernetesGenerateCredentialsRequest struct {
 	KubernetesNamespace string `json:"kubernetes_namespace"`
 
 	// The TTL of the generated credentials
-	Ttl int32 `json:"ttl,omitempty"`
+	Ttl string `json:"ttl,omitempty"`
 }
 
 // NewKubernetesGenerateCredentialsRequestWithDefaults instantiates a new KubernetesGenerateCredentialsRequest object

@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxTtl** | Pointer to **int32** | Duration after which the issued token should not be allowed to be renewed | [optional] 
-**Ttl** | Pointer to **int32** | Duration before which the issued token needs renewal | [optional] 
+**MaxTtl** | Pointer to **string** | Duration after which the issued token should not be allowed to be renewed | [optional] 
+**Ttl** | Pointer to **string** | Duration before which the issued token needs renewal | [optional] 
 
 
 
@@ -33,20 +33,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMaxTtl
 
-`func (o *NomadConfigureLeaseRequest) GetMaxTtl() int32`
+`func (o *NomadConfigureLeaseRequest) GetMaxTtl() string`
 
 GetMaxTtl returns the MaxTtl field if non-nil, zero value otherwise.
 
 ### GetMaxTtlOk
 
-`func (o *NomadConfigureLeaseRequest) GetMaxTtlOk() (*int32, bool)`
+`func (o *NomadConfigureLeaseRequest) GetMaxTtlOk() (*string, bool)`
 
 GetMaxTtlOk returns a tuple with the MaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxTtl
 
-`func (o *NomadConfigureLeaseRequest) SetMaxTtl(v int32)`
+`func (o *NomadConfigureLeaseRequest) SetMaxTtl(v string)`
 
 SetMaxTtl sets MaxTtl field to given value.
 
@@ -62,20 +62,20 @@ HasMaxTtl returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *NomadConfigureLeaseRequest) GetTtl() int32`
+`func (o *NomadConfigureLeaseRequest) GetTtl() string`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *NomadConfigureLeaseRequest) GetTtlOk() (*int32, bool)`
+`func (o *NomadConfigureLeaseRequest) GetTtlOk() (*string, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *NomadConfigureLeaseRequest) SetTtl(v int32)`
+`func (o *NomadConfigureLeaseRequest) SetTtl(v string)`
 
 SetTtl sets Ttl field to given value.
 

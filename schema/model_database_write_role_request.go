@@ -20,10 +20,10 @@ type DatabaseWriteRoleRequest struct {
 	DbName string `json:"db_name,omitempty"`
 
 	// Default ttl for role.
-	DefaultTtl int32 `json:"default_ttl,omitempty"`
+	DefaultTtl string `json:"default_ttl,omitempty"`
 
 	// Maximum time a credential is valid for
-	MaxTtl int32 `json:"max_ttl,omitempty"`
+	MaxTtl string `json:"max_ttl,omitempty"`
 
 	// Specifies the database statements to be executed to renew a user. Not every plugin type will support this functionality. See the plugin's API page for more information on support and formatting for this parameter.
 	RenewStatements []string `json:"renew_statements,omitempty"`

@@ -12,6 +12,12 @@ type TransitImportKeyVersionRequest struct {
 
 	// The hash function used as a random oracle in the OAEP wrapping of the user-generated, ephemeral AES key. Can be one of \"SHA1\", \"SHA224\", \"SHA256\" (default), \"SHA384\", or \"SHA512\"
 	HashFunction string `json:"hash_function,omitempty"`
+
+	// The plaintext public key to be imported. If \"ciphertext\" is set, this field is ignored.
+	PublicKey string `json:"public_key,omitempty"`
+
+	// Key version to be updated, if left empty, a new version will be created unless a private key is specified and the 'Latest' key is missing a private key.
+	Version int32 `json:"version,omitempty"`
 }
 
 // NewTransitImportKeyVersionRequestWithDefaults instantiates a new TransitImportKeyVersionRequest object

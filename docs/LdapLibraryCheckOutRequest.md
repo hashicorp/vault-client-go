@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Ttl** | Pointer to **int32** | The length of time before the check-out will expire, in seconds. | [optional] 
+**Ttl** | Pointer to **string** | The length of time before the check-out will expire, in seconds. | [optional] 
 
 
 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetTtl
 
-`func (o *LdapLibraryCheckOutRequest) GetTtl() int32`
+`func (o *LdapLibraryCheckOutRequest) GetTtl() string`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *LdapLibraryCheckOutRequest) GetTtlOk() (*int32, bool)`
+`func (o *LdapLibraryCheckOutRequest) GetTtlOk() (*string, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *LdapLibraryCheckOutRequest) SetTtl(v int32)`
+`func (o *LdapLibraryCheckOutRequest) SetTtl(v string)`
 
 SetTtl sets Ttl field to given value.
 

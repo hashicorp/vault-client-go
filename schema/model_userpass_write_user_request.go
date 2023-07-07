@@ -13,7 +13,7 @@ type UserpassWriteUserRequest struct {
 
 	// Use \"token_max_ttl\" instead. If this and \"token_max_ttl\" are both specified, only \"token_max_ttl\" will be used.
 	// Deprecated
-	MaxTtl int32 `json:"max_ttl,omitempty"`
+	MaxTtl string `json:"max_ttl,omitempty"`
 
 	// Password for this user.
 	Password string `json:"password,omitempty"`
@@ -26,10 +26,10 @@ type UserpassWriteUserRequest struct {
 	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
 
 	// If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
-	TokenExplicitMaxTtl int32 `json:"token_explicit_max_ttl,omitempty"`
+	TokenExplicitMaxTtl string `json:"token_explicit_max_ttl,omitempty"`
 
 	// The maximum lifetime of the generated token
-	TokenMaxTtl int32 `json:"token_max_ttl,omitempty"`
+	TokenMaxTtl string `json:"token_max_ttl,omitempty"`
 
 	// If true, the 'default' policy will not automatically be added to generated tokens
 	TokenNoDefaultPolicy bool `json:"token_no_default_policy,omitempty"`
@@ -38,20 +38,20 @@ type UserpassWriteUserRequest struct {
 	TokenNumUses int32 `json:"token_num_uses,omitempty"`
 
 	// If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").
-	TokenPeriod int32 `json:"token_period,omitempty"`
+	TokenPeriod string `json:"token_period,omitempty"`
 
 	// Comma-separated list of policies
 	TokenPolicies []string `json:"token_policies,omitempty"`
 
 	// The initial ttl of the token to generate
-	TokenTtl int32 `json:"token_ttl,omitempty"`
+	TokenTtl string `json:"token_ttl,omitempty"`
 
 	// The type of token to generate, service or batch
 	TokenType string `json:"token_type,omitempty"`
 
 	// Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.
 	// Deprecated
-	Ttl int32 `json:"ttl,omitempty"`
+	Ttl string `json:"ttl,omitempty"`
 }
 
 // NewUserpassWriteUserRequestWithDefaults instantiates a new UserpassWriteUserRequest object

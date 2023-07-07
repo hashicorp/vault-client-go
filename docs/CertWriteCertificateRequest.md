@@ -16,25 +16,25 @@ Name | Type | Description | Notes
 **Certificate** | Pointer to **string** | The public certificate that should be trusted. Must be x509 PEM encoded. | [optional] 
 **DisplayName** | Pointer to **string** | The display name to use for clients using this certificate. | [optional] 
 **Lease** | Pointer to **int32** | Use \&quot;token_ttl\&quot; instead. If this and \&quot;token_ttl\&quot; are both specified, only \&quot;token_ttl\&quot; will be used. | [optional] 
-**MaxTtl** | Pointer to **int32** | Use \&quot;token_max_ttl\&quot; instead. If this and \&quot;token_max_ttl\&quot; are both specified, only \&quot;token_max_ttl\&quot; will be used. | [optional] 
+**MaxTtl** | Pointer to **string** | Use \&quot;token_max_ttl\&quot; instead. If this and \&quot;token_max_ttl\&quot; are both specified, only \&quot;token_max_ttl\&quot; will be used. | [optional] 
 **OcspCaCertificates** | Pointer to **string** | Any additional CA certificates needed to communicate with OCSP servers | [optional] 
 **OcspEnabled** | Pointer to **bool** | Whether to attempt OCSP verification of certificates at login | [optional] 
 **OcspFailOpen** | Pointer to **bool** | If set to true, if an OCSP revocation cannot be made successfully, login will proceed rather than failing. If false, failing to get an OCSP status fails the request. | [optional] [default to false]
 **OcspQueryAllServers** | Pointer to **bool** | If set to true, rather than accepting the first successful OCSP response, query all servers and consider the certificate valid only if all servers agree. | [optional] [default to false]
 **OcspServersOverride** | Pointer to **[]string** | A comma-separated list of OCSP server addresses. If unset, the OCSP server is determined from the AuthorityInformationAccess extension on the certificate being inspected. | [optional] 
-**Period** | Pointer to **int32** | Use \&quot;token_period\&quot; instead. If this and \&quot;token_period\&quot; are both specified, only \&quot;token_period\&quot; will be used. | [optional] 
+**Period** | Pointer to **string** | Use \&quot;token_period\&quot; instead. If this and \&quot;token_period\&quot; are both specified, only \&quot;token_period\&quot; will be used. | [optional] 
 **Policies** | Pointer to **[]string** | Use \&quot;token_policies\&quot; instead. If this and \&quot;token_policies\&quot; are both specified, only \&quot;token_policies\&quot; will be used. | [optional] 
 **RequiredExtensions** | Pointer to **[]string** | A comma-separated string or array of extensions formatted as \&quot;oid:value\&quot;. Expects the extension value to be some type of ASN1 encoded string. All values much match. Supports globbing on \&quot;value\&quot;. | [optional] 
 **TokenBoundCidrs** | Pointer to **[]string** | Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token. | [optional] 
-**TokenExplicitMaxTtl** | Pointer to **int32** | If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed. | [optional] 
-**TokenMaxTtl** | Pointer to **int32** | The maximum lifetime of the generated token | [optional] 
+**TokenExplicitMaxTtl** | Pointer to **string** | If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed. | [optional] 
+**TokenMaxTtl** | Pointer to **string** | The maximum lifetime of the generated token | [optional] 
 **TokenNoDefaultPolicy** | Pointer to **bool** | If true, the &#x27;default&#x27; policy will not automatically be added to generated tokens | [optional] 
 **TokenNumUses** | Pointer to **int32** | The maximum number of times a token may be used, a value of zero means unlimited | [optional] 
-**TokenPeriod** | Pointer to **int32** | If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \&quot;24h\&quot;). | [optional] 
+**TokenPeriod** | Pointer to **string** | If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \&quot;24h\&quot;). | [optional] 
 **TokenPolicies** | Pointer to **[]string** | Comma-separated list of policies | [optional] 
-**TokenTtl** | Pointer to **int32** | The initial ttl of the token to generate | [optional] 
+**TokenTtl** | Pointer to **string** | The initial ttl of the token to generate | [optional] 
 **TokenType** | Pointer to **string** | The type of token to generate, service or batch | [optional] [default to "default-service"]
-**Ttl** | Pointer to **int32** | Use \&quot;token_ttl\&quot; instead. If this and \&quot;token_ttl\&quot; are both specified, only \&quot;token_ttl\&quot; will be used. | [optional] 
+**Ttl** | Pointer to **string** | Use \&quot;token_ttl\&quot; instead. If this and \&quot;token_ttl\&quot; are both specified, only \&quot;token_ttl\&quot; will be used. | [optional] 
 
 
 
@@ -380,20 +380,20 @@ HasLease returns a boolean if a field has been set.
 
 ### GetMaxTtl
 
-`func (o *CertWriteCertificateRequest) GetMaxTtl() int32`
+`func (o *CertWriteCertificateRequest) GetMaxTtl() string`
 
 GetMaxTtl returns the MaxTtl field if non-nil, zero value otherwise.
 
 ### GetMaxTtlOk
 
-`func (o *CertWriteCertificateRequest) GetMaxTtlOk() (*int32, bool)`
+`func (o *CertWriteCertificateRequest) GetMaxTtlOk() (*string, bool)`
 
 GetMaxTtlOk returns a tuple with the MaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxTtl
 
-`func (o *CertWriteCertificateRequest) SetMaxTtl(v int32)`
+`func (o *CertWriteCertificateRequest) SetMaxTtl(v string)`
 
 SetMaxTtl sets MaxTtl field to given value.
 
@@ -554,20 +554,20 @@ HasOcspServersOverride returns a boolean if a field has been set.
 
 ### GetPeriod
 
-`func (o *CertWriteCertificateRequest) GetPeriod() int32`
+`func (o *CertWriteCertificateRequest) GetPeriod() string`
 
 GetPeriod returns the Period field if non-nil, zero value otherwise.
 
 ### GetPeriodOk
 
-`func (o *CertWriteCertificateRequest) GetPeriodOk() (*int32, bool)`
+`func (o *CertWriteCertificateRequest) GetPeriodOk() (*string, bool)`
 
 GetPeriodOk returns a tuple with the Period field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPeriod
 
-`func (o *CertWriteCertificateRequest) SetPeriod(v int32)`
+`func (o *CertWriteCertificateRequest) SetPeriod(v string)`
 
 SetPeriod sets Period field to given value.
 
@@ -670,20 +670,20 @@ HasTokenBoundCidrs returns a boolean if a field has been set.
 
 ### GetTokenExplicitMaxTtl
 
-`func (o *CertWriteCertificateRequest) GetTokenExplicitMaxTtl() int32`
+`func (o *CertWriteCertificateRequest) GetTokenExplicitMaxTtl() string`
 
 GetTokenExplicitMaxTtl returns the TokenExplicitMaxTtl field if non-nil, zero value otherwise.
 
 ### GetTokenExplicitMaxTtlOk
 
-`func (o *CertWriteCertificateRequest) GetTokenExplicitMaxTtlOk() (*int32, bool)`
+`func (o *CertWriteCertificateRequest) GetTokenExplicitMaxTtlOk() (*string, bool)`
 
 GetTokenExplicitMaxTtlOk returns a tuple with the TokenExplicitMaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenExplicitMaxTtl
 
-`func (o *CertWriteCertificateRequest) SetTokenExplicitMaxTtl(v int32)`
+`func (o *CertWriteCertificateRequest) SetTokenExplicitMaxTtl(v string)`
 
 SetTokenExplicitMaxTtl sets TokenExplicitMaxTtl field to given value.
 
@@ -699,20 +699,20 @@ HasTokenExplicitMaxTtl returns a boolean if a field has been set.
 
 ### GetTokenMaxTtl
 
-`func (o *CertWriteCertificateRequest) GetTokenMaxTtl() int32`
+`func (o *CertWriteCertificateRequest) GetTokenMaxTtl() string`
 
 GetTokenMaxTtl returns the TokenMaxTtl field if non-nil, zero value otherwise.
 
 ### GetTokenMaxTtlOk
 
-`func (o *CertWriteCertificateRequest) GetTokenMaxTtlOk() (*int32, bool)`
+`func (o *CertWriteCertificateRequest) GetTokenMaxTtlOk() (*string, bool)`
 
 GetTokenMaxTtlOk returns a tuple with the TokenMaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenMaxTtl
 
-`func (o *CertWriteCertificateRequest) SetTokenMaxTtl(v int32)`
+`func (o *CertWriteCertificateRequest) SetTokenMaxTtl(v string)`
 
 SetTokenMaxTtl sets TokenMaxTtl field to given value.
 
@@ -786,20 +786,20 @@ HasTokenNumUses returns a boolean if a field has been set.
 
 ### GetTokenPeriod
 
-`func (o *CertWriteCertificateRequest) GetTokenPeriod() int32`
+`func (o *CertWriteCertificateRequest) GetTokenPeriod() string`
 
 GetTokenPeriod returns the TokenPeriod field if non-nil, zero value otherwise.
 
 ### GetTokenPeriodOk
 
-`func (o *CertWriteCertificateRequest) GetTokenPeriodOk() (*int32, bool)`
+`func (o *CertWriteCertificateRequest) GetTokenPeriodOk() (*string, bool)`
 
 GetTokenPeriodOk returns a tuple with the TokenPeriod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenPeriod
 
-`func (o *CertWriteCertificateRequest) SetTokenPeriod(v int32)`
+`func (o *CertWriteCertificateRequest) SetTokenPeriod(v string)`
 
 SetTokenPeriod sets TokenPeriod field to given value.
 
@@ -844,20 +844,20 @@ HasTokenPolicies returns a boolean if a field has been set.
 
 ### GetTokenTtl
 
-`func (o *CertWriteCertificateRequest) GetTokenTtl() int32`
+`func (o *CertWriteCertificateRequest) GetTokenTtl() string`
 
 GetTokenTtl returns the TokenTtl field if non-nil, zero value otherwise.
 
 ### GetTokenTtlOk
 
-`func (o *CertWriteCertificateRequest) GetTokenTtlOk() (*int32, bool)`
+`func (o *CertWriteCertificateRequest) GetTokenTtlOk() (*string, bool)`
 
 GetTokenTtlOk returns a tuple with the TokenTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenTtl
 
-`func (o *CertWriteCertificateRequest) SetTokenTtl(v int32)`
+`func (o *CertWriteCertificateRequest) SetTokenTtl(v string)`
 
 SetTokenTtl sets TokenTtl field to given value.
 
@@ -902,20 +902,20 @@ HasTokenType returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *CertWriteCertificateRequest) GetTtl() int32`
+`func (o *CertWriteCertificateRequest) GetTtl() string`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *CertWriteCertificateRequest) GetTtlOk() (*int32, bool)`
+`func (o *CertWriteCertificateRequest) GetTtlOk() (*string, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *CertWriteCertificateRequest) SetTtl(v int32)`
+`func (o *CertWriteCertificateRequest) SetTtl(v string)`
 
 SetTtl sets Ttl field to given value.
 

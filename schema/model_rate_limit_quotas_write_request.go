@@ -8,10 +8,10 @@ package schema
 // RateLimitQuotasWriteRequest struct for RateLimitQuotasWriteRequest
 type RateLimitQuotasWriteRequest struct {
 	// If set, when a client reaches a rate limit threshold, the client will be prohibited from any further requests until after the 'block_interval' has elapsed.
-	BlockInterval int32 `json:"block_interval,omitempty"`
+	BlockInterval string `json:"block_interval,omitempty"`
 
 	// The duration to enforce rate limiting for (default '1s').
-	Interval int32 `json:"interval,omitempty"`
+	Interval string `json:"interval,omitempty"`
 
 	// Path of the mount or namespace to apply the quota. A blank path configures a global quota. For example namespace1/ adds a quota to a full namespace, namespace1/auth/userpass adds a quota to userpass in namespace1.
 	Path string `json:"path,omitempty"`

@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **CfUsername** | Pointer to **string** | The username for CF’s API. | [optional] 
 **IdentityCaCertificates** | Pointer to **[]string** | The PEM-format CA certificates that are required to have issued the instance certificates presented for logging in. | [optional] 
 **LoginMaxSecondsNotAfter** | Pointer to **int32** | Duration in seconds for the maximum acceptable length in the future a \&quot;signing_time\&quot; can be. Useful for clock drift. Set low to reduce the opportunity for replay attacks. | [optional] [default to 60]
-**LoginMaxSecondsNotBefore** | Pointer to **int32** | Duration in seconds for the maximum acceptable age of a \&quot;signing_time\&quot;. Useful for clock drift. Set low to reduce the opportunity for replay attacks. | [optional] [default to 300]
+**LoginMaxSecondsNotBefore** | Pointer to **string** | Duration in seconds for the maximum acceptable age of a \&quot;signing_time\&quot;. Useful for clock drift. Set low to reduce the opportunity for replay attacks. | [optional] [default to "300"]
 **PcfApiAddr** | Pointer to **string** | Deprecated. Please use \&quot;cf_api_addr\&quot;. | [optional] 
 **PcfApiTrustedCertificates** | Pointer to **[]string** | Deprecated. Please use \&quot;cf_api_trusted_certificates\&quot;. | [optional] 
 **PcfPassword** | Pointer to **string** | Deprecated. Please use \&quot;cf_password\&quot;. | [optional] 
@@ -336,20 +336,20 @@ HasLoginMaxSecondsNotAfter returns a boolean if a field has been set.
 
 ### GetLoginMaxSecondsNotBefore
 
-`func (o *CloudFoundryConfigureRequest) GetLoginMaxSecondsNotBefore() int32`
+`func (o *CloudFoundryConfigureRequest) GetLoginMaxSecondsNotBefore() string`
 
 GetLoginMaxSecondsNotBefore returns the LoginMaxSecondsNotBefore field if non-nil, zero value otherwise.
 
 ### GetLoginMaxSecondsNotBeforeOk
 
-`func (o *CloudFoundryConfigureRequest) GetLoginMaxSecondsNotBeforeOk() (*int32, bool)`
+`func (o *CloudFoundryConfigureRequest) GetLoginMaxSecondsNotBeforeOk() (*string, bool)`
 
 GetLoginMaxSecondsNotBeforeOk returns a tuple with the LoginMaxSecondsNotBefore field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLoginMaxSecondsNotBefore
 
-`func (o *CloudFoundryConfigureRequest) SetLoginMaxSecondsNotBefore(v int32)`
+`func (o *CloudFoundryConfigureRequest) SetLoginMaxSecondsNotBefore(v string)`
 
 SetLoginMaxSecondsNotBefore sets LoginMaxSecondsNotBefore field to given value.
 

@@ -13,7 +13,7 @@ type ReadWrappingPropertiesResponse struct {
 
 	CreationTime time.Time `json:"creation_time,omitempty"`
 
-	CreationTtl int32 `json:"creation_ttl,omitempty"`
+	CreationTtl string `json:"creation_ttl,omitempty"`
 }
 
 // NewReadWrappingPropertiesResponseWithDefaults instantiates a new ReadWrappingPropertiesResponse object

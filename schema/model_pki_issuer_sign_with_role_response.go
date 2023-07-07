@@ -14,7 +14,7 @@ type PkiIssuerSignWithRoleResponse struct {
 	Certificate string `json:"certificate,omitempty"`
 
 	// Time of expiration
-	Expiration string `json:"expiration,omitempty"`
+	Expiration int64 `json:"expiration,omitempty"`
 
 	// Issuing Certificate Authority
 	IssuingCa string `json:"issuing_ca,omitempty"`

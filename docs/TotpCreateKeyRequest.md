@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Issuer** | Pointer to **string** | The name of the key&#x27;s issuing organization. Required if generate is true. | [optional] 
 **Key** | Pointer to **string** | The shared master key used to generate a TOTP token. Only used if generate is false. | [optional] 
 **KeySize** | Pointer to **int32** | Determines the size in bytes of the generated key. Only used if generate is true. | [optional] [default to 20]
-**Period** | Pointer to **int32** | The length of time used to generate a counter for the TOTP token calculation. | [optional] [default to 30]
+**Period** | Pointer to **string** | The length of time used to generate a counter for the TOTP token calculation. | [optional] [default to "30"]
 **QrSize** | Pointer to **int32** | The pixel size of the generated square QR code. Only used if generate is true and exported is true. If this value is 0, a QR code will not be returned. | [optional] [default to 200]
 **Skew** | Pointer to **int32** | The number of delay periods that are allowed when validating a TOTP token. This value can either be 0 or 1. Only used if generate is true. | [optional] [default to 1]
 **Url** | Pointer to **string** | A TOTP url string containing all of the parameters for key setup. Only used if generate is false. | [optional] 
@@ -275,20 +275,20 @@ HasKeySize returns a boolean if a field has been set.
 
 ### GetPeriod
 
-`func (o *TotpCreateKeyRequest) GetPeriod() int32`
+`func (o *TotpCreateKeyRequest) GetPeriod() string`
 
 GetPeriod returns the Period field if non-nil, zero value otherwise.
 
 ### GetPeriodOk
 
-`func (o *TotpCreateKeyRequest) GetPeriodOk() (*int32, bool)`
+`func (o *TotpCreateKeyRequest) GetPeriodOk() (*string, bool)`
 
 GetPeriodOk returns a tuple with the Period field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPeriod
 
-`func (o *TotpCreateKeyRequest) SetPeriod(v int32)`
+`func (o *TotpCreateKeyRequest) SetPeriod(v string)`
 
 SetPeriod sets Period field to given value.
 

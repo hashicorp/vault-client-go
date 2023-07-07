@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Arn** | Pointer to **string** | Use role_arns or policy_arns instead. | [optional] 
 **CredentialType** | Pointer to **string** | Type of credential to retrieve. Must be one of assumed_role, iam_user, or federation_token | [optional] 
-**DefaultStsTtl** | Pointer to **int32** | Default TTL for assumed_role and federation_token credential types when no TTL is explicitly requested with the credentials | [optional] 
+**DefaultStsTtl** | Pointer to **string** | Default TTL for assumed_role and federation_token credential types when no TTL is explicitly requested with the credentials | [optional] 
 **IamGroups** | Pointer to **[]string** | Names of IAM groups that generated IAM users will be added to. For a credential type of assumed_role or federation_token, the policies sent to the corresponding AWS call (sts:AssumeRole or sts:GetFederation) will be the policies from each group in iam_groups combined with the policy_document and policy_arns parameters. | [optional] 
 **IamTags** | Pointer to **map[string]interface{}** | IAM tags to be set for any users created by this role. These must be presented as Key-Value pairs. This can be represented as a map or a list of equal sign delimited key pairs. | [optional] 
-**MaxStsTtl** | Pointer to **int32** | Max allowed TTL for assumed_role and federation_token credential types | [optional] 
+**MaxStsTtl** | Pointer to **string** | Max allowed TTL for assumed_role and federation_token credential types | [optional] 
 **PermissionsBoundaryArn** | Pointer to **string** | ARN of an IAM policy to attach as a permissions boundary on IAM user credentials; only valid when credential_type isiam_user | [optional] 
 **Policy** | Pointer to **string** | Use policy_document instead. | [optional] 
 **PolicyArns** | Pointer to **[]string** | ARNs of AWS policies. Behavior varies by credential_type. When credential_type is iam_user, then it will attach the specified policies to the generated IAM user. When credential_type is assumed_role or federation_token, the policies will be passed as the PolicyArns parameter, acting as a filter on permissions available. | [optional] 
@@ -101,20 +101,20 @@ HasCredentialType returns a boolean if a field has been set.
 
 ### GetDefaultStsTtl
 
-`func (o *AwsWriteRoleRequest) GetDefaultStsTtl() int32`
+`func (o *AwsWriteRoleRequest) GetDefaultStsTtl() string`
 
 GetDefaultStsTtl returns the DefaultStsTtl field if non-nil, zero value otherwise.
 
 ### GetDefaultStsTtlOk
 
-`func (o *AwsWriteRoleRequest) GetDefaultStsTtlOk() (*int32, bool)`
+`func (o *AwsWriteRoleRequest) GetDefaultStsTtlOk() (*string, bool)`
 
 GetDefaultStsTtlOk returns a tuple with the DefaultStsTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultStsTtl
 
-`func (o *AwsWriteRoleRequest) SetDefaultStsTtl(v int32)`
+`func (o *AwsWriteRoleRequest) SetDefaultStsTtl(v string)`
 
 SetDefaultStsTtl sets DefaultStsTtl field to given value.
 
@@ -188,20 +188,20 @@ HasIamTags returns a boolean if a field has been set.
 
 ### GetMaxStsTtl
 
-`func (o *AwsWriteRoleRequest) GetMaxStsTtl() int32`
+`func (o *AwsWriteRoleRequest) GetMaxStsTtl() string`
 
 GetMaxStsTtl returns the MaxStsTtl field if non-nil, zero value otherwise.
 
 ### GetMaxStsTtlOk
 
-`func (o *AwsWriteRoleRequest) GetMaxStsTtlOk() (*int32, bool)`
+`func (o *AwsWriteRoleRequest) GetMaxStsTtlOk() (*string, bool)`
 
 GetMaxStsTtlOk returns a tuple with the MaxStsTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxStsTtl
 
-`func (o *AwsWriteRoleRequest) SetMaxStsTtl(v int32)`
+`func (o *AwsWriteRoleRequest) SetMaxStsTtl(v string)`
 
 SetMaxStsTtl sets MaxStsTtl field to given value.
 

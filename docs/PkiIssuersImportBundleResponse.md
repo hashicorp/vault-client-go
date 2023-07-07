@@ -5,6 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ExistingIssuers** | Pointer to **[]string** | Existing issuers specified as part of the import bundle of this request | [optional] 
+**ExistingKeys** | Pointer to **[]string** | Existing keys specified as part of the import bundle of this request | [optional] 
 **ImportedIssuers** | Pointer to **[]string** | Net-new issuers imported as a part of this request | [optional] 
 **ImportedKeys** | Pointer to **[]string** | Net-new keys imported as a part of this request | [optional] 
 **Mapping** | Pointer to **map[string]interface{}** | A mapping of issuer_id to key_id for all issuers included in this request | [optional] 
@@ -30,6 +32,64 @@ will change when the set of required properties is changed
 NewPkiIssuersImportBundleResponseWithDefaults instantiates a new PkiIssuersImportBundleResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+
+### GetExistingIssuers
+
+`func (o *PkiIssuersImportBundleResponse) GetExistingIssuers() []string`
+
+GetExistingIssuers returns the ExistingIssuers field if non-nil, zero value otherwise.
+
+### GetExistingIssuersOk
+
+`func (o *PkiIssuersImportBundleResponse) GetExistingIssuersOk() (*[]string, bool)`
+
+GetExistingIssuersOk returns a tuple with the ExistingIssuers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExistingIssuers
+
+`func (o *PkiIssuersImportBundleResponse) SetExistingIssuers(v []string)`
+
+SetExistingIssuers sets ExistingIssuers field to given value.
+
+
+### HasExistingIssuers
+
+`func (o *PkiIssuersImportBundleResponse) HasExistingIssuers() bool`
+
+HasExistingIssuers returns a boolean if a field has been set.
+
+
+
+
+### GetExistingKeys
+
+`func (o *PkiIssuersImportBundleResponse) GetExistingKeys() []string`
+
+GetExistingKeys returns the ExistingKeys field if non-nil, zero value otherwise.
+
+### GetExistingKeysOk
+
+`func (o *PkiIssuersImportBundleResponse) GetExistingKeysOk() (*[]string, bool)`
+
+GetExistingKeysOk returns a tuple with the ExistingKeys field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExistingKeys
+
+`func (o *PkiIssuersImportBundleResponse) SetExistingKeys(v []string)`
+
+SetExistingKeys sets ExistingKeys field to given value.
+
+
+### HasExistingKeys
+
+`func (o *PkiIssuersImportBundleResponse) HasExistingKeys() bool`
+
+HasExistingKeys returns a boolean if a field has been set.
+
+
 
 
 ### GetImportedIssuers

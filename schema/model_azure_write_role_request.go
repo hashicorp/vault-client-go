@@ -17,7 +17,7 @@ type AzureWriteRoleRequest struct {
 	AzureRoles string `json:"azure_roles,omitempty"`
 
 	// Maximum time a service principal. If not set or set to 0, will use system default.
-	MaxTtl int32 `json:"max_ttl,omitempty"`
+	MaxTtl string `json:"max_ttl,omitempty"`
 
 	// Indicates whether new application objects should be permanently deleted. If not set, objects will not be permanently deleted.
 	PermanentlyDelete bool `json:"permanently_delete,omitempty"`
@@ -26,7 +26,7 @@ type AzureWriteRoleRequest struct {
 	PersistApp bool `json:"persist_app,omitempty"`
 
 	// Default lease for generated credentials. If not set or set to 0, will use system default.
-	Ttl int32 `json:"ttl,omitempty"`
+	Ttl string `json:"ttl,omitempty"`
 }
 
 // NewAzureWriteRoleRequestWithDefaults instantiates a new AzureWriteRoleRequest object

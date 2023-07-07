@@ -8,7 +8,7 @@ package schema
 // OidcWriteClientRequest struct for OidcWriteClientRequest
 type OidcWriteClientRequest struct {
 	// The time-to-live for access tokens obtained by the client.
-	AccessTokenTtl int32 `json:"access_token_ttl,omitempty"`
+	AccessTokenTtl string `json:"access_token_ttl,omitempty"`
 
 	// Comma separated string or array of assignment resources.
 	Assignments []string `json:"assignments,omitempty"`
@@ -17,7 +17,7 @@ type OidcWriteClientRequest struct {
 	ClientType string `json:"client_type,omitempty"`
 
 	// The time-to-live for ID tokens obtained by the client.
-	IdTokenTtl int32 `json:"id_token_ttl,omitempty"`
+	IdTokenTtl string `json:"id_token_ttl,omitempty"`
 
 	// A reference to a named key resource. Cannot be modified after creation. Defaults to the 'default' key.
 	Key string `json:"key,omitempty"`
@@ -32,7 +32,9 @@ type OidcWriteClientRequest struct {
 func NewOidcWriteClientRequestWithDefaults() *OidcWriteClientRequest {
 	var this OidcWriteClientRequest
 
+	this.AccessTokenTtl = "24h"
 	this.ClientType = "confidential"
+	this.IdTokenTtl = "24h"
 	this.Key = "default"
 
 	return &this

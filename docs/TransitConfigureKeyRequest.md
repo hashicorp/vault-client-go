@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AllowPlaintextBackup** | Pointer to **bool** | Enables taking a backup of the named key in plaintext format. Once set, this cannot be disabled. | [optional] 
-**AutoRotatePeriod** | Pointer to **int32** | Amount of time the key should live before being automatically rotated. A value of 0 disables automatic rotation for the key. | [optional] 
+**AutoRotatePeriod** | Pointer to **string** | Amount of time the key should live before being automatically rotated. A value of 0 disables automatic rotation for the key. | [optional] 
 **DeletionAllowed** | Pointer to **bool** | Whether to allow deletion of the key | [optional] 
 **Exportable** | Pointer to **bool** | Enables export of the key. Once set, this cannot be disabled. | [optional] 
 **MinDecryptionVersion** | Pointer to **int32** | If set, the minimum version of the key allowed to be decrypted. For signing keys, the minimum version allowed to be used for verification. | [optional] 
@@ -66,20 +66,20 @@ HasAllowPlaintextBackup returns a boolean if a field has been set.
 
 ### GetAutoRotatePeriod
 
-`func (o *TransitConfigureKeyRequest) GetAutoRotatePeriod() int32`
+`func (o *TransitConfigureKeyRequest) GetAutoRotatePeriod() string`
 
 GetAutoRotatePeriod returns the AutoRotatePeriod field if non-nil, zero value otherwise.
 
 ### GetAutoRotatePeriodOk
 
-`func (o *TransitConfigureKeyRequest) GetAutoRotatePeriodOk() (*int32, bool)`
+`func (o *TransitConfigureKeyRequest) GetAutoRotatePeriodOk() (*string, bool)`
 
 GetAutoRotatePeriodOk returns a tuple with the AutoRotatePeriod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAutoRotatePeriod
 
-`func (o *TransitConfigureKeyRequest) SetAutoRotatePeriod(v int32)`
+`func (o *TransitConfigureKeyRequest) SetAutoRotatePeriod(v string)`
 
 SetAutoRotatePeriod sets AutoRotatePeriod field to given value.
 

@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IssuerSafetyBuffer** | Pointer to **int32** | The amount of extra time that must have passed beyond issuer&#x27;s expiration before it is removed from the backend storage. Defaults to 8760 hours (1 year). | [optional] [default to 31536000]
-**MaintainStoredCertificateCounts** | Pointer to **bool** | This configures whether stored certificates are counted upon initialization of the backend, and whether during normal operation, a running count of certificates stored is maintained. | [optional] [default to false]
+**AcmeAccountSafetyBuffer** | Pointer to **string** | The amount of time that must pass after creation that an account with no orders is marked revoked, and the amount of time after being marked revoked or deactivated. | [optional] [default to "2592000"]
+**IssuerSafetyBuffer** | Pointer to **string** | The amount of extra time that must have passed beyond issuer&#x27;s expiration before it is removed from the backend storage. Defaults to 8760 hours (1 year). | [optional] [default to "31536000"]
 **PauseDuration** | Pointer to **string** | The amount of time to wait between processing certificates. This allows operators to change the execution profile of tidy to take consume less resources by slowing down how long it takes to run. Note that the entire list of certificates will be stored in memory during the entire tidy operation, but resources to read/process/update existing entries will be spread out over a greater period of time. By default this is zero seconds. | [optional] [default to "0s"]
-**PublishStoredCertificateCountMetrics** | Pointer to **bool** | This configures whether the stored certificate count is published to the metrics consumer. It does not affect if the stored certificate count is maintained, and if maintained, it will be available on the tidy-status endpoint. | [optional] [default to false]
-**RevocationQueueSafetyBuffer** | Pointer to **int32** | The amount of time that must pass from the cross-cluster revocation request being initiated to when it will be slated for removal. Setting this too low may remove valid revocation requests before the owning cluster has a chance to process them, especially if the cluster is offline. | [optional] [default to 172800]
-**SafetyBuffer** | Pointer to **int32** | The amount of extra time that must have passed beyond certificate expiration before it is removed from the backend storage and/or revocation list. Defaults to 72 hours. | [optional] [default to 259200]
+**RevocationQueueSafetyBuffer** | Pointer to **string** | The amount of time that must pass from the cross-cluster revocation request being initiated to when it will be slated for removal. Setting this too low may remove valid revocation requests before the owning cluster has a chance to process them, especially if the cluster is offline. | [optional] [default to "172800"]
+**SafetyBuffer** | Pointer to **string** | The amount of extra time that must have passed beyond certificate expiration before it is removed from the backend storage and/or revocation list. Defaults to 72 hours. | [optional] [default to "259200"]
+**TidyAcme** | Pointer to **bool** | Set to true to enable tidying ACME accounts, orders and authorizations. ACME orders are tidied (deleted) safety_buffer after the certificate associated with them expires, or after the order and relevant authorizations have expired if no certificate was produced. Authorizations are tidied with the corresponding order. When a valid ACME Account is at least acme_account_safety_buffer old, and has no remaining orders associated with it, the account is marked as revoked. After another acme_account_safety_buffer has passed from the revocation or deactivation date, a revoked or deactivated ACME account is deleted. | [optional] [default to false]
 **TidyCertStore** | Pointer to **bool** | Set to true to enable tidying up the certificate store | [optional] 
 **TidyCrossClusterRevokedCerts** | Pointer to **bool** | Set to true to enable tidying up the cross-cluster revoked certificate store. Only runs on the active primary node. | [optional] 
 **TidyExpiredIssuers** | Pointer to **bool** | Set to true to automatically remove expired issuers past the issuer_safety_buffer. No keys will be removed as part of this operation. | [optional] 
@@ -43,22 +43,51 @@ This constructor will only assign default values to properties that have it defi
 but it doesn't guarantee that properties required by API are set
 
 
+### GetAcmeAccountSafetyBuffer
+
+`func (o *PkiTidyRequest) GetAcmeAccountSafetyBuffer() string`
+
+GetAcmeAccountSafetyBuffer returns the AcmeAccountSafetyBuffer field if non-nil, zero value otherwise.
+
+### GetAcmeAccountSafetyBufferOk
+
+`func (o *PkiTidyRequest) GetAcmeAccountSafetyBufferOk() (*string, bool)`
+
+GetAcmeAccountSafetyBufferOk returns a tuple with the AcmeAccountSafetyBuffer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAcmeAccountSafetyBuffer
+
+`func (o *PkiTidyRequest) SetAcmeAccountSafetyBuffer(v string)`
+
+SetAcmeAccountSafetyBuffer sets AcmeAccountSafetyBuffer field to given value.
+
+
+### HasAcmeAccountSafetyBuffer
+
+`func (o *PkiTidyRequest) HasAcmeAccountSafetyBuffer() bool`
+
+HasAcmeAccountSafetyBuffer returns a boolean if a field has been set.
+
+
+
+
 ### GetIssuerSafetyBuffer
 
-`func (o *PkiTidyRequest) GetIssuerSafetyBuffer() int32`
+`func (o *PkiTidyRequest) GetIssuerSafetyBuffer() string`
 
 GetIssuerSafetyBuffer returns the IssuerSafetyBuffer field if non-nil, zero value otherwise.
 
 ### GetIssuerSafetyBufferOk
 
-`func (o *PkiTidyRequest) GetIssuerSafetyBufferOk() (*int32, bool)`
+`func (o *PkiTidyRequest) GetIssuerSafetyBufferOk() (*string, bool)`
 
 GetIssuerSafetyBufferOk returns a tuple with the IssuerSafetyBuffer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIssuerSafetyBuffer
 
-`func (o *PkiTidyRequest) SetIssuerSafetyBuffer(v int32)`
+`func (o *PkiTidyRequest) SetIssuerSafetyBuffer(v string)`
 
 SetIssuerSafetyBuffer sets IssuerSafetyBuffer field to given value.
 
@@ -68,35 +97,6 @@ SetIssuerSafetyBuffer sets IssuerSafetyBuffer field to given value.
 `func (o *PkiTidyRequest) HasIssuerSafetyBuffer() bool`
 
 HasIssuerSafetyBuffer returns a boolean if a field has been set.
-
-
-
-
-### GetMaintainStoredCertificateCounts
-
-`func (o *PkiTidyRequest) GetMaintainStoredCertificateCounts() bool`
-
-GetMaintainStoredCertificateCounts returns the MaintainStoredCertificateCounts field if non-nil, zero value otherwise.
-
-### GetMaintainStoredCertificateCountsOk
-
-`func (o *PkiTidyRequest) GetMaintainStoredCertificateCountsOk() (*bool, bool)`
-
-GetMaintainStoredCertificateCountsOk returns a tuple with the MaintainStoredCertificateCounts field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMaintainStoredCertificateCounts
-
-`func (o *PkiTidyRequest) SetMaintainStoredCertificateCounts(v bool)`
-
-SetMaintainStoredCertificateCounts sets MaintainStoredCertificateCounts field to given value.
-
-
-### HasMaintainStoredCertificateCounts
-
-`func (o *PkiTidyRequest) HasMaintainStoredCertificateCounts() bool`
-
-HasMaintainStoredCertificateCounts returns a boolean if a field has been set.
 
 
 
@@ -130,51 +130,22 @@ HasPauseDuration returns a boolean if a field has been set.
 
 
 
-### GetPublishStoredCertificateCountMetrics
-
-`func (o *PkiTidyRequest) GetPublishStoredCertificateCountMetrics() bool`
-
-GetPublishStoredCertificateCountMetrics returns the PublishStoredCertificateCountMetrics field if non-nil, zero value otherwise.
-
-### GetPublishStoredCertificateCountMetricsOk
-
-`func (o *PkiTidyRequest) GetPublishStoredCertificateCountMetricsOk() (*bool, bool)`
-
-GetPublishStoredCertificateCountMetricsOk returns a tuple with the PublishStoredCertificateCountMetrics field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPublishStoredCertificateCountMetrics
-
-`func (o *PkiTidyRequest) SetPublishStoredCertificateCountMetrics(v bool)`
-
-SetPublishStoredCertificateCountMetrics sets PublishStoredCertificateCountMetrics field to given value.
-
-
-### HasPublishStoredCertificateCountMetrics
-
-`func (o *PkiTidyRequest) HasPublishStoredCertificateCountMetrics() bool`
-
-HasPublishStoredCertificateCountMetrics returns a boolean if a field has been set.
-
-
-
-
 ### GetRevocationQueueSafetyBuffer
 
-`func (o *PkiTidyRequest) GetRevocationQueueSafetyBuffer() int32`
+`func (o *PkiTidyRequest) GetRevocationQueueSafetyBuffer() string`
 
 GetRevocationQueueSafetyBuffer returns the RevocationQueueSafetyBuffer field if non-nil, zero value otherwise.
 
 ### GetRevocationQueueSafetyBufferOk
 
-`func (o *PkiTidyRequest) GetRevocationQueueSafetyBufferOk() (*int32, bool)`
+`func (o *PkiTidyRequest) GetRevocationQueueSafetyBufferOk() (*string, bool)`
 
 GetRevocationQueueSafetyBufferOk returns a tuple with the RevocationQueueSafetyBuffer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRevocationQueueSafetyBuffer
 
-`func (o *PkiTidyRequest) SetRevocationQueueSafetyBuffer(v int32)`
+`func (o *PkiTidyRequest) SetRevocationQueueSafetyBuffer(v string)`
 
 SetRevocationQueueSafetyBuffer sets RevocationQueueSafetyBuffer field to given value.
 
@@ -190,20 +161,20 @@ HasRevocationQueueSafetyBuffer returns a boolean if a field has been set.
 
 ### GetSafetyBuffer
 
-`func (o *PkiTidyRequest) GetSafetyBuffer() int32`
+`func (o *PkiTidyRequest) GetSafetyBuffer() string`
 
 GetSafetyBuffer returns the SafetyBuffer field if non-nil, zero value otherwise.
 
 ### GetSafetyBufferOk
 
-`func (o *PkiTidyRequest) GetSafetyBufferOk() (*int32, bool)`
+`func (o *PkiTidyRequest) GetSafetyBufferOk() (*string, bool)`
 
 GetSafetyBufferOk returns a tuple with the SafetyBuffer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSafetyBuffer
 
-`func (o *PkiTidyRequest) SetSafetyBuffer(v int32)`
+`func (o *PkiTidyRequest) SetSafetyBuffer(v string)`
 
 SetSafetyBuffer sets SafetyBuffer field to given value.
 
@@ -213,6 +184,35 @@ SetSafetyBuffer sets SafetyBuffer field to given value.
 `func (o *PkiTidyRequest) HasSafetyBuffer() bool`
 
 HasSafetyBuffer returns a boolean if a field has been set.
+
+
+
+
+### GetTidyAcme
+
+`func (o *PkiTidyRequest) GetTidyAcme() bool`
+
+GetTidyAcme returns the TidyAcme field if non-nil, zero value otherwise.
+
+### GetTidyAcmeOk
+
+`func (o *PkiTidyRequest) GetTidyAcmeOk() (*bool, bool)`
+
+GetTidyAcmeOk returns a tuple with the TidyAcme field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTidyAcme
+
+`func (o *PkiTidyRequest) SetTidyAcme(v bool)`
+
+SetTidyAcme sets TidyAcme field to given value.
+
+
+### HasTidyAcme
+
+`func (o *PkiTidyRequest) HasTidyAcme() bool`
+
+HasTidyAcme returns a boolean if a field has been set.
 
 
 

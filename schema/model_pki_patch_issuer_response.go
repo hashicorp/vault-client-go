@@ -16,6 +16,9 @@ type PkiPatchIssuerResponse struct {
 	// CRL Distribution Points
 	CrlDistributionPoints []string `json:"crl_distribution_points,omitempty"`
 
+	// Whether or not templating is enabled for AIA fields
+	EnableAiaUrlTemplating bool `json:"enable_aia_url_templating,omitempty"`
+
 	// Issuer Id
 	IssuerId string `json:"issuer_id,omitempty"`
 
@@ -48,7 +51,7 @@ type PkiPatchIssuerResponse struct {
 	Revoked bool `json:"revoked,omitempty"`
 
 	// Usage
-	Usage []string `json:"usage,omitempty"`
+	Usage string `json:"usage,omitempty"`
 }
 
 // NewPkiPatchIssuerResponseWithDefaults instantiates a new PkiPatchIssuerResponse object

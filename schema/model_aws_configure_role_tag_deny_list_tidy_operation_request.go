@@ -11,7 +11,7 @@ type AwsConfigureRoleTagDenyListTidyOperationRequest struct {
 	DisablePeriodicTidy bool `json:"disable_periodic_tidy,omitempty"`
 
 	// The amount of extra time that must have passed beyond the roletag expiration, before it is removed from the backend storage. Defaults to 4320h (180 days).
-	SafetyBuffer int32 `json:"safety_buffer,omitempty"`
+	SafetyBuffer string `json:"safety_buffer,omitempty"`
 }
 
 // NewAwsConfigureRoleTagDenyListTidyOperationRequestWithDefaults instantiates a new AwsConfigureRoleTagDenyListTidyOperationRequest object
@@ -21,7 +21,7 @@ func NewAwsConfigureRoleTagDenyListTidyOperationRequestWithDefaults() *AwsConfig
 	var this AwsConfigureRoleTagDenyListTidyOperationRequest
 
 	this.DisablePeriodicTidy = false
-	this.SafetyBuffer = 15552000
+	this.SafetyBuffer = "15552000"
 
 	return &this
 }

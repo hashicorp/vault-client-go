@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **KeyAlgorithm** | Pointer to **string** | Private key algorithm for service account key. Defaults to KEY_ALG_RSA_2048.\&quot; | [optional] [default to "KEY_ALG_RSA_2048"]
 **KeyType** | Pointer to **string** | Private key type for service account key. Defaults to TYPE_GOOGLE_CREDENTIALS_FILE.\&quot; | [optional] [default to "TYPE_GOOGLE_CREDENTIALS_FILE"]
-**Ttl** | Pointer to **int32** | Lifetime of the service account key | [optional] 
+**Ttl** | Pointer to **string** | Lifetime of the service account key | [optional] 
 
 
 
@@ -92,20 +92,20 @@ HasKeyType returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *GoogleCloudGenerateStaticAccountKeyWithParametersRequest) GetTtl() int32`
+`func (o *GoogleCloudGenerateStaticAccountKeyWithParametersRequest) GetTtl() string`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *GoogleCloudGenerateStaticAccountKeyWithParametersRequest) GetTtlOk() (*int32, bool)`
+`func (o *GoogleCloudGenerateStaticAccountKeyWithParametersRequest) GetTtlOk() (*string, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *GoogleCloudGenerateStaticAccountKeyWithParametersRequest) SetTtl(v int32)`
+`func (o *GoogleCloudGenerateStaticAccountKeyWithParametersRequest) SetTtl(v string)`
 
 SetTtl sets Ttl field to given value.
 

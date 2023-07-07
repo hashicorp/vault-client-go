@@ -32,7 +32,7 @@ type TotpCreateKeyRequest struct {
 	KeySize int32 `json:"key_size,omitempty"`
 
 	// The length of time used to generate a counter for the TOTP token calculation.
-	Period int32 `json:"period,omitempty"`
+	Period string `json:"period,omitempty"`
 
 	// The pixel size of the generated square QR code. Only used if generate is true and exported is true. If this value is 0, a QR code will not be returned.
 	QrSize int32 `json:"qr_size,omitempty"`
@@ -55,7 +55,7 @@ func NewTotpCreateKeyRequestWithDefaults() *TotpCreateKeyRequest {
 	this.Exported = true
 	this.Generate = false
 	this.KeySize = 20
-	this.Period = 30
+	this.Period = "30"
 	this.QrSize = 200
 	this.Skew = 1
 

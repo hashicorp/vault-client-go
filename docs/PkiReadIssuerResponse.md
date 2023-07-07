@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **CaChain** | Pointer to **[]string** | CA Chain | [optional] 
 **Certificate** | Pointer to **string** | Certificate | [optional] 
 **CrlDistributionPoints** | Pointer to **[]string** | CRL Distribution Points | [optional] 
+**EnableAiaUrlTemplating** | Pointer to **bool** | Whether or not templating is enabled for AIA fields | [optional] 
 **IssuerId** | Pointer to **string** | Issuer Id | [optional] 
 **IssuerName** | Pointer to **string** | Issuer Name | [optional] 
 **IssuingCertificates** | Pointer to **[]string** | Issuing Certificates | [optional] 
@@ -19,7 +20,7 @@ Name | Type | Description | Notes
 **RevocationTime** | Pointer to **int32** |  | [optional] 
 **RevocationTimeRfc3339** | Pointer to **string** |  | [optional] 
 **Revoked** | Pointer to **bool** | Revoked | [optional] 
-**Usage** | Pointer to **[]string** | Usage | [optional] 
+**Usage** | Pointer to **string** | Usage | [optional] 
 
 
 
@@ -127,6 +128,35 @@ SetCrlDistributionPoints sets CrlDistributionPoints field to given value.
 `func (o *PkiReadIssuerResponse) HasCrlDistributionPoints() bool`
 
 HasCrlDistributionPoints returns a boolean if a field has been set.
+
+
+
+
+### GetEnableAiaUrlTemplating
+
+`func (o *PkiReadIssuerResponse) GetEnableAiaUrlTemplating() bool`
+
+GetEnableAiaUrlTemplating returns the EnableAiaUrlTemplating field if non-nil, zero value otherwise.
+
+### GetEnableAiaUrlTemplatingOk
+
+`func (o *PkiReadIssuerResponse) GetEnableAiaUrlTemplatingOk() (*bool, bool)`
+
+GetEnableAiaUrlTemplatingOk returns a tuple with the EnableAiaUrlTemplating field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableAiaUrlTemplating
+
+`func (o *PkiReadIssuerResponse) SetEnableAiaUrlTemplating(v bool)`
+
+SetEnableAiaUrlTemplating sets EnableAiaUrlTemplating field to given value.
+
+
+### HasEnableAiaUrlTemplating
+
+`func (o *PkiReadIssuerResponse) HasEnableAiaUrlTemplating() bool`
+
+HasEnableAiaUrlTemplating returns a boolean if a field has been set.
 
 
 
@@ -452,20 +482,20 @@ HasRevoked returns a boolean if a field has been set.
 
 ### GetUsage
 
-`func (o *PkiReadIssuerResponse) GetUsage() []string`
+`func (o *PkiReadIssuerResponse) GetUsage() string`
 
 GetUsage returns the Usage field if non-nil, zero value otherwise.
 
 ### GetUsageOk
 
-`func (o *PkiReadIssuerResponse) GetUsageOk() (*[]string, bool)`
+`func (o *PkiReadIssuerResponse) GetUsageOk() (*string, bool)`
 
 GetUsageOk returns a tuple with the Usage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUsage
 
-`func (o *PkiReadIssuerResponse) SetUsage(v []string)`
+`func (o *PkiReadIssuerResponse) SetUsage(v string)`
 
 SetUsage sets Usage field to given value.
 

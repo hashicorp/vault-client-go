@@ -14,7 +14,7 @@ type GoogleCloudGenerateRolesetKeyWithParametersRequest struct {
 	KeyType string `json:"key_type,omitempty"`
 
 	// Lifetime of the service account key
-	Ttl int32 `json:"ttl,omitempty"`
+	Ttl string `json:"ttl,omitempty"`
 }
 
 // NewGoogleCloudGenerateRolesetKeyWithParametersRequestWithDefaults instantiates a new GoogleCloudGenerateRolesetKeyWithParametersRequest object

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TokenTtl** | Pointer to **int32** | The initial ttl of the token to generate | [optional] 
+**TokenTtl** | Pointer to **string** | The initial ttl of the token to generate | [optional] 
 
 
 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetTokenTtl
 
-`func (o *AppRoleReadTokenTtlResponse) GetTokenTtl() int32`
+`func (o *AppRoleReadTokenTtlResponse) GetTokenTtl() string`
 
 GetTokenTtl returns the TokenTtl field if non-nil, zero value otherwise.
 
 ### GetTokenTtlOk
 
-`func (o *AppRoleReadTokenTtlResponse) GetTokenTtlOk() (*int32, bool)`
+`func (o *AppRoleReadTokenTtlResponse) GetTokenTtlOk() (*string, bool)`
 
 GetTokenTtlOk returns a tuple with the TokenTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenTtl
 
-`func (o *AppRoleReadTokenTtlResponse) SetTokenTtl(v int32)`
+`func (o *AppRoleReadTokenTtlResponse) SetTokenTtl(v string)`
 
 SetTokenTtl sets TokenTtl field to given value.
 

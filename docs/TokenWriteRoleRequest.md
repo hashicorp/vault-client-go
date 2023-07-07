@@ -11,16 +11,16 @@ Name | Type | Description | Notes
 **BoundCidrs** | Pointer to **[]string** | Use &#x27;token_bound_cidrs&#x27; instead. | [optional] 
 **DisallowedPolicies** | Pointer to **[]string** | If set, successful token creation via this role will require that no policies in the given list are requested. The parameter is a comma-delimited string of policy names. | [optional] 
 **DisallowedPoliciesGlob** | Pointer to **[]string** | If set, successful token creation via this role will require that no requested policies glob match any of policies in this list. The parameter is a comma-delimited string of policy name globs. | [optional] 
-**ExplicitMaxTtl** | Pointer to **int32** | Use &#x27;token_explicit_max_ttl&#x27; instead. | [optional] 
+**ExplicitMaxTtl** | Pointer to **string** | Use &#x27;token_explicit_max_ttl&#x27; instead. | [optional] 
 **Orphan** | Pointer to **bool** | If true, tokens created via this role will be orphan tokens (have no parent) | [optional] 
 **PathSuffix** | Pointer to **string** | If set, tokens created via this role will contain the given suffix as a part of their path. This can be used to assist use of the &#x27;revoke-prefix&#x27; endpoint later on. The given suffix must match the regular expression.\\w[\\w-.]+\\w | [optional] 
-**Period** | Pointer to **int32** | Use &#x27;token_period&#x27; instead. | [optional] 
+**Period** | Pointer to **string** | Use &#x27;token_period&#x27; instead. | [optional] 
 **Renewable** | Pointer to **bool** | Tokens created via this role will be renewable or not according to this value. Defaults to \&quot;true\&quot;. | [optional] [default to true]
 **TokenBoundCidrs** | Pointer to **[]string** | Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token. | [optional] 
-**TokenExplicitMaxTtl** | Pointer to **int32** | If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed. | [optional] 
+**TokenExplicitMaxTtl** | Pointer to **string** | If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed. | [optional] 
 **TokenNoDefaultPolicy** | Pointer to **bool** | If true, the &#x27;default&#x27; policy will not automatically be added to generated tokens | [optional] 
 **TokenNumUses** | Pointer to **int32** | The maximum number of times a token may be used, a value of zero means unlimited | [optional] 
-**TokenPeriod** | Pointer to **int32** | If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \&quot;24h\&quot;). | [optional] 
+**TokenPeriod** | Pointer to **string** | If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \&quot;24h\&quot;). | [optional] 
 **TokenType** | Pointer to **string** | The type of token to generate, service or batch | [optional] [default to "default-service"]
 
 
@@ -222,20 +222,20 @@ HasDisallowedPoliciesGlob returns a boolean if a field has been set.
 
 ### GetExplicitMaxTtl
 
-`func (o *TokenWriteRoleRequest) GetExplicitMaxTtl() int32`
+`func (o *TokenWriteRoleRequest) GetExplicitMaxTtl() string`
 
 GetExplicitMaxTtl returns the ExplicitMaxTtl field if non-nil, zero value otherwise.
 
 ### GetExplicitMaxTtlOk
 
-`func (o *TokenWriteRoleRequest) GetExplicitMaxTtlOk() (*int32, bool)`
+`func (o *TokenWriteRoleRequest) GetExplicitMaxTtlOk() (*string, bool)`
 
 GetExplicitMaxTtlOk returns a tuple with the ExplicitMaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExplicitMaxTtl
 
-`func (o *TokenWriteRoleRequest) SetExplicitMaxTtl(v int32)`
+`func (o *TokenWriteRoleRequest) SetExplicitMaxTtl(v string)`
 
 SetExplicitMaxTtl sets ExplicitMaxTtl field to given value.
 
@@ -309,20 +309,20 @@ HasPathSuffix returns a boolean if a field has been set.
 
 ### GetPeriod
 
-`func (o *TokenWriteRoleRequest) GetPeriod() int32`
+`func (o *TokenWriteRoleRequest) GetPeriod() string`
 
 GetPeriod returns the Period field if non-nil, zero value otherwise.
 
 ### GetPeriodOk
 
-`func (o *TokenWriteRoleRequest) GetPeriodOk() (*int32, bool)`
+`func (o *TokenWriteRoleRequest) GetPeriodOk() (*string, bool)`
 
 GetPeriodOk returns a tuple with the Period field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPeriod
 
-`func (o *TokenWriteRoleRequest) SetPeriod(v int32)`
+`func (o *TokenWriteRoleRequest) SetPeriod(v string)`
 
 SetPeriod sets Period field to given value.
 
@@ -396,20 +396,20 @@ HasTokenBoundCidrs returns a boolean if a field has been set.
 
 ### GetTokenExplicitMaxTtl
 
-`func (o *TokenWriteRoleRequest) GetTokenExplicitMaxTtl() int32`
+`func (o *TokenWriteRoleRequest) GetTokenExplicitMaxTtl() string`
 
 GetTokenExplicitMaxTtl returns the TokenExplicitMaxTtl field if non-nil, zero value otherwise.
 
 ### GetTokenExplicitMaxTtlOk
 
-`func (o *TokenWriteRoleRequest) GetTokenExplicitMaxTtlOk() (*int32, bool)`
+`func (o *TokenWriteRoleRequest) GetTokenExplicitMaxTtlOk() (*string, bool)`
 
 GetTokenExplicitMaxTtlOk returns a tuple with the TokenExplicitMaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenExplicitMaxTtl
 
-`func (o *TokenWriteRoleRequest) SetTokenExplicitMaxTtl(v int32)`
+`func (o *TokenWriteRoleRequest) SetTokenExplicitMaxTtl(v string)`
 
 SetTokenExplicitMaxTtl sets TokenExplicitMaxTtl field to given value.
 
@@ -483,20 +483,20 @@ HasTokenNumUses returns a boolean if a field has been set.
 
 ### GetTokenPeriod
 
-`func (o *TokenWriteRoleRequest) GetTokenPeriod() int32`
+`func (o *TokenWriteRoleRequest) GetTokenPeriod() string`
 
 GetTokenPeriod returns the TokenPeriod field if non-nil, zero value otherwise.
 
 ### GetTokenPeriodOk
 
-`func (o *TokenWriteRoleRequest) GetTokenPeriodOk() (*int32, bool)`
+`func (o *TokenWriteRoleRequest) GetTokenPeriodOk() (*string, bool)`
 
 GetTokenPeriodOk returns a tuple with the TokenPeriod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenPeriod
 
-`func (o *TokenWriteRoleRequest) SetTokenPeriod(v int32)`
+`func (o *TokenWriteRoleRequest) SetTokenPeriod(v string)`
 
 SetTokenPeriod sets TokenPeriod field to given value.
 

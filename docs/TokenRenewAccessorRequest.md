@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Accessor** | Pointer to **string** | Accessor of the token to renew (request body) | [optional] 
-**Increment** | Pointer to **int32** | The desired increment in seconds to the token expiration | [optional] [default to 0]
+**Increment** | Pointer to **string** | The desired increment in seconds to the token expiration | [optional] [default to "0"]
 
 
 
@@ -62,20 +62,20 @@ HasAccessor returns a boolean if a field has been set.
 
 ### GetIncrement
 
-`func (o *TokenRenewAccessorRequest) GetIncrement() int32`
+`func (o *TokenRenewAccessorRequest) GetIncrement() string`
 
 GetIncrement returns the Increment field if non-nil, zero value otherwise.
 
 ### GetIncrementOk
 
-`func (o *TokenRenewAccessorRequest) GetIncrementOk() (*int32, bool)`
+`func (o *TokenRenewAccessorRequest) GetIncrementOk() (*string, bool)`
 
 GetIncrementOk returns a tuple with the Increment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIncrement
 
-`func (o *TokenRenewAccessorRequest) SetIncrement(v int32)`
+`func (o *TokenRenewAccessorRequest) SetIncrement(v string)`
 
 SetIncrement sets Increment field to given value.
 

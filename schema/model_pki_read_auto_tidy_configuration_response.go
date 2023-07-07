@@ -7,6 +7,9 @@ package schema
 
 // PkiReadAutoTidyConfigurationResponse struct for PkiReadAutoTidyConfigurationResponse
 type PkiReadAutoTidyConfigurationResponse struct {
+	// Safety buffer after creation after which accounts lacking orders are revoked
+	AcmeAccountSafetyBuffer int32 `json:"acme_account_safety_buffer,omitempty"`
+
 	// Specifies whether automatic tidy is enabled or not
 	Enabled bool `json:"enabled,omitempty"`
 
@@ -27,6 +30,9 @@ type PkiReadAutoTidyConfigurationResponse struct {
 
 	// Safety buffer time duration
 	SafetyBuffer int32 `json:"safety_buffer,omitempty"`
+
+	// Tidy Unused Acme Accounts, and Orders
+	TidyAcme bool `json:"tidy_acme,omitempty"`
 
 	// Specifies whether to tidy up the certificate store
 	TidyCertStore bool `json:"tidy_cert_store,omitempty"`

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Extensions** | Pointer to **map[string]interface{}** | Extensions that the certificate should be signed for. | [optional] 
 **KeyId** | Pointer to **string** | Key id that the created certificate should have. If not specified, the display name of the token will be used. | [optional] 
 **PublicKey** | Pointer to **string** | SSH public key that should be signed. | [optional] 
-**Ttl** | Pointer to **int32** | The requested Time To Live for the SSH certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be later than the role max TTL. | [optional] 
+**Ttl** | Pointer to **string** | The requested Time To Live for the SSH certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be later than the role max TTL. | [optional] 
 **ValidPrincipals** | Pointer to **string** | Valid principals, either usernames or hostnames, that the certificate should be signed for. | [optional] 
 
 
@@ -183,20 +183,20 @@ HasPublicKey returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *SshSignCertificateRequest) GetTtl() int32`
+`func (o *SshSignCertificateRequest) GetTtl() string`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *SshSignCertificateRequest) GetTtlOk() (*int32, bool)`
+`func (o *SshSignCertificateRequest) GetTtlOk() (*string, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *SshSignCertificateRequest) SetTtl(v int32)`
+`func (o *SshSignCertificateRequest) SetTtl(v string)`
 
 SetTtl sets Ttl field to given value.
 

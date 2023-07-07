@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SafetyBuffer** | Pointer to **int32** | The amount of extra time that must have passed beyond the identity&#x27;s expiration, before it is removed from the backend storage. | [optional] [default to 259200]
+**SafetyBuffer** | Pointer to **string** | The amount of extra time that must have passed beyond the identity&#x27;s expiration, before it is removed from the backend storage. | [optional] [default to "259200"]
 
 
 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSafetyBuffer
 
-`func (o *AwsTidyIdentityAccessListRequest) GetSafetyBuffer() int32`
+`func (o *AwsTidyIdentityAccessListRequest) GetSafetyBuffer() string`
 
 GetSafetyBuffer returns the SafetyBuffer field if non-nil, zero value otherwise.
 
 ### GetSafetyBufferOk
 
-`func (o *AwsTidyIdentityAccessListRequest) GetSafetyBufferOk() (*int32, bool)`
+`func (o *AwsTidyIdentityAccessListRequest) GetSafetyBufferOk() (*string, bool)`
 
 GetSafetyBufferOk returns a tuple with the SafetyBuffer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSafetyBuffer
 
-`func (o *AwsTidyIdentityAccessListRequest) SetSafetyBuffer(v int32)`
+`func (o *AwsTidyIdentityAccessListRequest) SetSafetyBuffer(v string)`
 
 SetSafetyBuffer sets SafetyBuffer field to given value.
 

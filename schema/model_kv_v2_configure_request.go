@@ -11,7 +11,7 @@ type KvV2ConfigureRequest struct {
 	CasRequired bool `json:"cas_required,omitempty"`
 
 	// If set, the length of time before a version is deleted. A negative duration disables the use of delete_version_after on all keys. A zero duration clears the current setting. Accepts a Go duration format string.
-	DeleteVersionAfter int32 `json:"delete_version_after,omitempty"`
+	DeleteVersionAfter string `json:"delete_version_after,omitempty"`
 
 	// The number of versions to keep for each key. Defaults to 10
 	MaxVersions int32 `json:"max_versions,omitempty"`

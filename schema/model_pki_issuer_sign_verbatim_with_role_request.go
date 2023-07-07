@@ -53,7 +53,7 @@ type PkiIssuerSignVerbatimWithRoleRequest struct {
 	SignatureBits int32 `json:"signature_bits,omitempty"`
 
 	// The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the role max TTL.
-	Ttl int32 `json:"ttl,omitempty"`
+	Ttl string `json:"ttl,omitempty"`
 
 	// The requested URI SANs, if any, in a comma-delimited list.
 	UriSans []string `json:"uri_sans,omitempty"`

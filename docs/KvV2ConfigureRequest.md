@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CasRequired** | Pointer to **bool** | If true, the backend will require the cas parameter to be set for each write | [optional] 
-**DeleteVersionAfter** | Pointer to **int32** | If set, the length of time before a version is deleted. A negative duration disables the use of delete_version_after on all keys. A zero duration clears the current setting. Accepts a Go duration format string. | [optional] 
+**DeleteVersionAfter** | Pointer to **string** | If set, the length of time before a version is deleted. A negative duration disables the use of delete_version_after on all keys. A zero duration clears the current setting. Accepts a Go duration format string. | [optional] 
 **MaxVersions** | Pointer to **int32** | The number of versions to keep for each key. Defaults to 10 | [optional] 
 
 
@@ -63,20 +63,20 @@ HasCasRequired returns a boolean if a field has been set.
 
 ### GetDeleteVersionAfter
 
-`func (o *KvV2ConfigureRequest) GetDeleteVersionAfter() int32`
+`func (o *KvV2ConfigureRequest) GetDeleteVersionAfter() string`
 
 GetDeleteVersionAfter returns the DeleteVersionAfter field if non-nil, zero value otherwise.
 
 ### GetDeleteVersionAfterOk
 
-`func (o *KvV2ConfigureRequest) GetDeleteVersionAfterOk() (*int32, bool)`
+`func (o *KvV2ConfigureRequest) GetDeleteVersionAfterOk() (*string, bool)`
 
 GetDeleteVersionAfterOk returns a tuple with the DeleteVersionAfter field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeleteVersionAfter
 
-`func (o *KvV2ConfigureRequest) SetDeleteVersionAfter(v int32)`
+`func (o *KvV2ConfigureRequest) SetDeleteVersionAfter(v string)`
 
 SetDeleteVersionAfter sets DeleteVersionAfter field to given value.
 

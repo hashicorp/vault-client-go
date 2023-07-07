@@ -7,6 +7,18 @@ package schema
 
 // PkiTidyCancelResponse struct for PkiTidyCancelResponse
 type PkiTidyCancelResponse struct {
+	// The number of revoked acme accounts removed
+	AcmeAccountDeletedCount int32 `json:"acme_account_deleted_count,omitempty"`
+
+	// The number of unused acme accounts revoked
+	AcmeAccountRevokedCount int32 `json:"acme_account_revoked_count,omitempty"`
+
+	// Safety buffer after creation after which accounts lacking orders are revoked
+	AcmeAccountSafetyBuffer int32 `json:"acme_account_safety_buffer,omitempty"`
+
+	// The number of expired, unused acme orders removed
+	AcmeOrdersDeletedCount int32 `json:"acme_orders_deleted_count,omitempty"`
+
 	// The number of certificate storage entries deleted
 	CertStoreDeletedCount int32 `json:"cert_store_deleted_count,omitempty"`
 
@@ -26,6 +38,9 @@ type PkiTidyCancelResponse struct {
 	// Issuer safety buffer
 	IssuerSafetyBuffer int32 `json:"issuer_safety_buffer,omitempty"`
 
+	// Time the last auto-tidy operation finished
+	LastAutoTidyFinished string `json:"last_auto_tidy_finished,omitempty"`
+
 	// Message of the operation
 	Message string `json:"message,omitempty"`
 
@@ -36,6 +51,9 @@ type PkiTidyCancelResponse struct {
 
 	RevocationQueueDeletedCount int32 `json:"revocation_queue_deleted_count,omitempty"`
 
+	// Revocation queue safety buffer
+	RevocationQueueSafetyBuffer int32 `json:"revocation_queue_safety_buffer,omitempty"`
+
 	// The number of revoked certificate entries deleted
 	RevokedCertDeletedCount int32 `json:"revoked_cert_deleted_count,omitempty"`
 
@@ -45,9 +63,13 @@ type PkiTidyCancelResponse struct {
 	// One of Inactive, Running, Finished, or Error
 	State string `json:"state,omitempty"`
 
+	// Tidy Unused Acme Accounts, and Orders
+	TidyAcme bool `json:"tidy_acme,omitempty"`
+
 	// Tidy certificate store
 	TidyCertStore bool `json:"tidy_cert_store,omitempty"`
 
+	// Tidy the cross-cluster revoked certificate store
 	TidyCrossClusterRevokedCerts bool `json:"tidy_cross_cluster_revoked_certs,omitempty"`
 
 	// Tidy expired issuers
@@ -68,6 +90,9 @@ type PkiTidyCancelResponse struct {
 
 	// Time the operation started
 	TimeStarted string `json:"time_started,omitempty"`
+
+	// Total number of acme accounts iterated over
+	TotalAcmeAccountCount int32 `json:"total_acme_account_count,omitempty"`
 }
 
 // NewPkiTidyCancelResponseWithDefaults instantiates a new PkiTidyCancelResponse object

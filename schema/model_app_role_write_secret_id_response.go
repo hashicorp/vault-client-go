@@ -17,7 +17,7 @@ type AppRoleWriteSecretIdResponse struct {
 	SecretIdNumUses int32 `json:"secret_id_num_uses,omitempty"`
 
 	// Duration in seconds after which the issued secret ID expires.
-	SecretIdTtl int32 `json:"secret_id_ttl,omitempty"`
+	SecretIdTtl string `json:"secret_id_ttl,omitempty"`
 }
 
 // NewAppRoleWriteSecretIdResponseWithDefaults instantiates a new AppRoleWriteSecretIdResponse object

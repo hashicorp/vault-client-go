@@ -12,27 +12,27 @@ Name | Type | Description | Notes
 **BoundClaimsType** | Pointer to **string** | How to interpret values in the map of claims/values (which must match for login): allowed values are &#x27;string&#x27; or &#x27;glob&#x27; | [optional] [default to "string"]
 **BoundSubject** | Pointer to **string** | The &#x27;sub&#x27; claim that is valid for login. Optional. | [optional] 
 **ClaimMappings** | Pointer to **map[string]interface{}** | Mappings of claims (key) that will be copied to a metadata field (value) | [optional] 
-**ClockSkewLeeway** | Pointer to **int32** | Duration in seconds of leeway when validating all claims to account for clock skew. Defaults to 60 (1 minute) if set to 0 and can be disabled if set to -1. | [optional] 
-**ExpirationLeeway** | Pointer to **int32** | Duration in seconds of leeway when validating expiration of a token to account for clock skew. Defaults to 150 (2.5 minutes) if set to 0 and can be disabled if set to -1. | [optional] [default to 150]
+**ClockSkewLeeway** | Pointer to **string** | Duration in seconds of leeway when validating all claims to account for clock skew. Defaults to 60 (1 minute) if set to 0 and can be disabled if set to -1. | [optional] [default to "60000000000"]
+**ExpirationLeeway** | Pointer to **string** | Duration in seconds of leeway when validating expiration of a token to account for clock skew. Defaults to 150 (2.5 minutes) if set to 0 and can be disabled if set to -1. | [optional] [default to "150"]
 **GroupsClaim** | Pointer to **string** | The claim to use for the Identity group alias names | [optional] 
-**MaxAge** | Pointer to **int32** | Specifies the allowable elapsed time in seconds since the last time the user was actively authenticated. | [optional] 
-**MaxTtl** | Pointer to **int32** | Use \&quot;token_max_ttl\&quot; instead. If this and \&quot;token_max_ttl\&quot; are both specified, only \&quot;token_max_ttl\&quot; will be used. | [optional] 
-**NotBeforeLeeway** | Pointer to **int32** | Duration in seconds of leeway when validating not before values of a token to account for clock skew. Defaults to 150 (2.5 minutes) if set to 0 and can be disabled if set to -1. | [optional] [default to 150]
+**MaxAge** | Pointer to **string** | Specifies the allowable elapsed time in seconds since the last time the user was actively authenticated. | [optional] 
+**MaxTtl** | Pointer to **string** | Use \&quot;token_max_ttl\&quot; instead. If this and \&quot;token_max_ttl\&quot; are both specified, only \&quot;token_max_ttl\&quot; will be used. | [optional] 
+**NotBeforeLeeway** | Pointer to **string** | Duration in seconds of leeway when validating not before values of a token to account for clock skew. Defaults to 150 (2.5 minutes) if set to 0 and can be disabled if set to -1. | [optional] [default to "150"]
 **NumUses** | Pointer to **int32** | Use \&quot;token_num_uses\&quot; instead. If this and \&quot;token_num_uses\&quot; are both specified, only \&quot;token_num_uses\&quot; will be used. | [optional] 
 **OidcScopes** | Pointer to **[]string** | Comma-separated list of OIDC scopes | [optional] 
-**Period** | Pointer to **int32** | Use \&quot;token_period\&quot; instead. If this and \&quot;token_period\&quot; are both specified, only \&quot;token_period\&quot; will be used. | [optional] 
+**Period** | Pointer to **string** | Use \&quot;token_period\&quot; instead. If this and \&quot;token_period\&quot; are both specified, only \&quot;token_period\&quot; will be used. | [optional] 
 **Policies** | Pointer to **[]string** | Use \&quot;token_policies\&quot; instead. If this and \&quot;token_policies\&quot; are both specified, only \&quot;token_policies\&quot; will be used. | [optional] 
 **RoleType** | Pointer to **string** | Type of the role, either &#x27;jwt&#x27; or &#x27;oidc&#x27;. | [optional] 
 **TokenBoundCidrs** | Pointer to **[]string** | Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token. | [optional] 
-**TokenExplicitMaxTtl** | Pointer to **int32** | If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed. | [optional] 
-**TokenMaxTtl** | Pointer to **int32** | The maximum lifetime of the generated token | [optional] 
+**TokenExplicitMaxTtl** | Pointer to **string** | If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed. | [optional] 
+**TokenMaxTtl** | Pointer to **string** | The maximum lifetime of the generated token | [optional] 
 **TokenNoDefaultPolicy** | Pointer to **bool** | If true, the &#x27;default&#x27; policy will not automatically be added to generated tokens | [optional] 
 **TokenNumUses** | Pointer to **int32** | The maximum number of times a token may be used, a value of zero means unlimited | [optional] 
-**TokenPeriod** | Pointer to **int32** | If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \&quot;24h\&quot;). | [optional] 
+**TokenPeriod** | Pointer to **string** | If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \&quot;24h\&quot;). | [optional] 
 **TokenPolicies** | Pointer to **[]string** | Comma-separated list of policies | [optional] 
-**TokenTtl** | Pointer to **int32** | The initial ttl of the token to generate | [optional] 
+**TokenTtl** | Pointer to **string** | The initial ttl of the token to generate | [optional] 
 **TokenType** | Pointer to **string** | The type of token to generate, service or batch | [optional] [default to "default-service"]
-**Ttl** | Pointer to **int32** | Use \&quot;token_ttl\&quot; instead. If this and \&quot;token_ttl\&quot; are both specified, only \&quot;token_ttl\&quot; will be used. | [optional] 
+**Ttl** | Pointer to **string** | Use \&quot;token_ttl\&quot; instead. If this and \&quot;token_ttl\&quot; are both specified, only \&quot;token_ttl\&quot; will be used. | [optional] 
 **UserClaim** | Pointer to **string** | The claim to use for the Identity entity alias name | [optional] 
 **UserClaimJsonPointer** | Pointer to **bool** | If true, the user_claim value will use JSON pointer syntax for referencing claims. | [optional] 
 **VerboseOidcLogging** | Pointer to **bool** | Log received OIDC tokens and claims when debug-level logging is active. Not recommended in production since sensitive information may be present in OIDC responses. | [optional] 
@@ -265,20 +265,20 @@ HasClaimMappings returns a boolean if a field has been set.
 
 ### GetClockSkewLeeway
 
-`func (o *JwtWriteRoleRequest) GetClockSkewLeeway() int32`
+`func (o *JwtWriteRoleRequest) GetClockSkewLeeway() string`
 
 GetClockSkewLeeway returns the ClockSkewLeeway field if non-nil, zero value otherwise.
 
 ### GetClockSkewLeewayOk
 
-`func (o *JwtWriteRoleRequest) GetClockSkewLeewayOk() (*int32, bool)`
+`func (o *JwtWriteRoleRequest) GetClockSkewLeewayOk() (*string, bool)`
 
 GetClockSkewLeewayOk returns a tuple with the ClockSkewLeeway field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClockSkewLeeway
 
-`func (o *JwtWriteRoleRequest) SetClockSkewLeeway(v int32)`
+`func (o *JwtWriteRoleRequest) SetClockSkewLeeway(v string)`
 
 SetClockSkewLeeway sets ClockSkewLeeway field to given value.
 
@@ -294,20 +294,20 @@ HasClockSkewLeeway returns a boolean if a field has been set.
 
 ### GetExpirationLeeway
 
-`func (o *JwtWriteRoleRequest) GetExpirationLeeway() int32`
+`func (o *JwtWriteRoleRequest) GetExpirationLeeway() string`
 
 GetExpirationLeeway returns the ExpirationLeeway field if non-nil, zero value otherwise.
 
 ### GetExpirationLeewayOk
 
-`func (o *JwtWriteRoleRequest) GetExpirationLeewayOk() (*int32, bool)`
+`func (o *JwtWriteRoleRequest) GetExpirationLeewayOk() (*string, bool)`
 
 GetExpirationLeewayOk returns a tuple with the ExpirationLeeway field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExpirationLeeway
 
-`func (o *JwtWriteRoleRequest) SetExpirationLeeway(v int32)`
+`func (o *JwtWriteRoleRequest) SetExpirationLeeway(v string)`
 
 SetExpirationLeeway sets ExpirationLeeway field to given value.
 
@@ -352,20 +352,20 @@ HasGroupsClaim returns a boolean if a field has been set.
 
 ### GetMaxAge
 
-`func (o *JwtWriteRoleRequest) GetMaxAge() int32`
+`func (o *JwtWriteRoleRequest) GetMaxAge() string`
 
 GetMaxAge returns the MaxAge field if non-nil, zero value otherwise.
 
 ### GetMaxAgeOk
 
-`func (o *JwtWriteRoleRequest) GetMaxAgeOk() (*int32, bool)`
+`func (o *JwtWriteRoleRequest) GetMaxAgeOk() (*string, bool)`
 
 GetMaxAgeOk returns a tuple with the MaxAge field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxAge
 
-`func (o *JwtWriteRoleRequest) SetMaxAge(v int32)`
+`func (o *JwtWriteRoleRequest) SetMaxAge(v string)`
 
 SetMaxAge sets MaxAge field to given value.
 
@@ -381,20 +381,20 @@ HasMaxAge returns a boolean if a field has been set.
 
 ### GetMaxTtl
 
-`func (o *JwtWriteRoleRequest) GetMaxTtl() int32`
+`func (o *JwtWriteRoleRequest) GetMaxTtl() string`
 
 GetMaxTtl returns the MaxTtl field if non-nil, zero value otherwise.
 
 ### GetMaxTtlOk
 
-`func (o *JwtWriteRoleRequest) GetMaxTtlOk() (*int32, bool)`
+`func (o *JwtWriteRoleRequest) GetMaxTtlOk() (*string, bool)`
 
 GetMaxTtlOk returns a tuple with the MaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxTtl
 
-`func (o *JwtWriteRoleRequest) SetMaxTtl(v int32)`
+`func (o *JwtWriteRoleRequest) SetMaxTtl(v string)`
 
 SetMaxTtl sets MaxTtl field to given value.
 
@@ -410,20 +410,20 @@ HasMaxTtl returns a boolean if a field has been set.
 
 ### GetNotBeforeLeeway
 
-`func (o *JwtWriteRoleRequest) GetNotBeforeLeeway() int32`
+`func (o *JwtWriteRoleRequest) GetNotBeforeLeeway() string`
 
 GetNotBeforeLeeway returns the NotBeforeLeeway field if non-nil, zero value otherwise.
 
 ### GetNotBeforeLeewayOk
 
-`func (o *JwtWriteRoleRequest) GetNotBeforeLeewayOk() (*int32, bool)`
+`func (o *JwtWriteRoleRequest) GetNotBeforeLeewayOk() (*string, bool)`
 
 GetNotBeforeLeewayOk returns a tuple with the NotBeforeLeeway field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNotBeforeLeeway
 
-`func (o *JwtWriteRoleRequest) SetNotBeforeLeeway(v int32)`
+`func (o *JwtWriteRoleRequest) SetNotBeforeLeeway(v string)`
 
 SetNotBeforeLeeway sets NotBeforeLeeway field to given value.
 
@@ -497,20 +497,20 @@ HasOidcScopes returns a boolean if a field has been set.
 
 ### GetPeriod
 
-`func (o *JwtWriteRoleRequest) GetPeriod() int32`
+`func (o *JwtWriteRoleRequest) GetPeriod() string`
 
 GetPeriod returns the Period field if non-nil, zero value otherwise.
 
 ### GetPeriodOk
 
-`func (o *JwtWriteRoleRequest) GetPeriodOk() (*int32, bool)`
+`func (o *JwtWriteRoleRequest) GetPeriodOk() (*string, bool)`
 
 GetPeriodOk returns a tuple with the Period field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPeriod
 
-`func (o *JwtWriteRoleRequest) SetPeriod(v int32)`
+`func (o *JwtWriteRoleRequest) SetPeriod(v string)`
 
 SetPeriod sets Period field to given value.
 
@@ -613,20 +613,20 @@ HasTokenBoundCidrs returns a boolean if a field has been set.
 
 ### GetTokenExplicitMaxTtl
 
-`func (o *JwtWriteRoleRequest) GetTokenExplicitMaxTtl() int32`
+`func (o *JwtWriteRoleRequest) GetTokenExplicitMaxTtl() string`
 
 GetTokenExplicitMaxTtl returns the TokenExplicitMaxTtl field if non-nil, zero value otherwise.
 
 ### GetTokenExplicitMaxTtlOk
 
-`func (o *JwtWriteRoleRequest) GetTokenExplicitMaxTtlOk() (*int32, bool)`
+`func (o *JwtWriteRoleRequest) GetTokenExplicitMaxTtlOk() (*string, bool)`
 
 GetTokenExplicitMaxTtlOk returns a tuple with the TokenExplicitMaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenExplicitMaxTtl
 
-`func (o *JwtWriteRoleRequest) SetTokenExplicitMaxTtl(v int32)`
+`func (o *JwtWriteRoleRequest) SetTokenExplicitMaxTtl(v string)`
 
 SetTokenExplicitMaxTtl sets TokenExplicitMaxTtl field to given value.
 
@@ -642,20 +642,20 @@ HasTokenExplicitMaxTtl returns a boolean if a field has been set.
 
 ### GetTokenMaxTtl
 
-`func (o *JwtWriteRoleRequest) GetTokenMaxTtl() int32`
+`func (o *JwtWriteRoleRequest) GetTokenMaxTtl() string`
 
 GetTokenMaxTtl returns the TokenMaxTtl field if non-nil, zero value otherwise.
 
 ### GetTokenMaxTtlOk
 
-`func (o *JwtWriteRoleRequest) GetTokenMaxTtlOk() (*int32, bool)`
+`func (o *JwtWriteRoleRequest) GetTokenMaxTtlOk() (*string, bool)`
 
 GetTokenMaxTtlOk returns a tuple with the TokenMaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenMaxTtl
 
-`func (o *JwtWriteRoleRequest) SetTokenMaxTtl(v int32)`
+`func (o *JwtWriteRoleRequest) SetTokenMaxTtl(v string)`
 
 SetTokenMaxTtl sets TokenMaxTtl field to given value.
 
@@ -729,20 +729,20 @@ HasTokenNumUses returns a boolean if a field has been set.
 
 ### GetTokenPeriod
 
-`func (o *JwtWriteRoleRequest) GetTokenPeriod() int32`
+`func (o *JwtWriteRoleRequest) GetTokenPeriod() string`
 
 GetTokenPeriod returns the TokenPeriod field if non-nil, zero value otherwise.
 
 ### GetTokenPeriodOk
 
-`func (o *JwtWriteRoleRequest) GetTokenPeriodOk() (*int32, bool)`
+`func (o *JwtWriteRoleRequest) GetTokenPeriodOk() (*string, bool)`
 
 GetTokenPeriodOk returns a tuple with the TokenPeriod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenPeriod
 
-`func (o *JwtWriteRoleRequest) SetTokenPeriod(v int32)`
+`func (o *JwtWriteRoleRequest) SetTokenPeriod(v string)`
 
 SetTokenPeriod sets TokenPeriod field to given value.
 
@@ -787,20 +787,20 @@ HasTokenPolicies returns a boolean if a field has been set.
 
 ### GetTokenTtl
 
-`func (o *JwtWriteRoleRequest) GetTokenTtl() int32`
+`func (o *JwtWriteRoleRequest) GetTokenTtl() string`
 
 GetTokenTtl returns the TokenTtl field if non-nil, zero value otherwise.
 
 ### GetTokenTtlOk
 
-`func (o *JwtWriteRoleRequest) GetTokenTtlOk() (*int32, bool)`
+`func (o *JwtWriteRoleRequest) GetTokenTtlOk() (*string, bool)`
 
 GetTokenTtlOk returns a tuple with the TokenTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenTtl
 
-`func (o *JwtWriteRoleRequest) SetTokenTtl(v int32)`
+`func (o *JwtWriteRoleRequest) SetTokenTtl(v string)`
 
 SetTokenTtl sets TokenTtl field to given value.
 
@@ -845,20 +845,20 @@ HasTokenType returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *JwtWriteRoleRequest) GetTtl() int32`
+`func (o *JwtWriteRoleRequest) GetTtl() string`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *JwtWriteRoleRequest) GetTtlOk() (*int32, bool)`
+`func (o *JwtWriteRoleRequest) GetTtlOk() (*string, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *JwtWriteRoleRequest) SetTtl(v int32)`
+`func (o *JwtWriteRoleRequest) SetTtl(v string)`
 
 SetTtl sets Ttl field to given value.
 

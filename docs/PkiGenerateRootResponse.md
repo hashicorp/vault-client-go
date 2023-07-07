@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Certificate** | Pointer to **string** | The generated self-signed CA certificate. | [optional] 
-**Expiration** | Pointer to **string** | The expiration of the given. | [optional] 
+**Expiration** | Pointer to **int64** | The expiration of the given issuer. | [optional] 
 **IssuerId** | Pointer to **string** | The ID of the issuer | [optional] 
 **IssuerName** | Pointer to **string** | The name of the issuer. | [optional] 
 **IssuingCa** | Pointer to **string** | The issuing certificate authority. | [optional] 
@@ -69,20 +69,20 @@ HasCertificate returns a boolean if a field has been set.
 
 ### GetExpiration
 
-`func (o *PkiGenerateRootResponse) GetExpiration() string`
+`func (o *PkiGenerateRootResponse) GetExpiration() int64`
 
 GetExpiration returns the Expiration field if non-nil, zero value otherwise.
 
 ### GetExpirationOk
 
-`func (o *PkiGenerateRootResponse) GetExpirationOk() (*string, bool)`
+`func (o *PkiGenerateRootResponse) GetExpirationOk() (*int64, bool)`
 
 GetExpirationOk returns a tuple with the Expiration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExpiration
 
-`func (o *PkiGenerateRootResponse) SetExpiration(v string)`
+`func (o *PkiGenerateRootResponse) SetExpiration(v int64)`
 
 SetExpiration sets Expiration field to given value.
 

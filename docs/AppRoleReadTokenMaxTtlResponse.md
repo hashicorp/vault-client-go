@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TokenMaxTtl** | Pointer to **int32** | The maximum lifetime of the generated token | [optional] 
+**TokenMaxTtl** | Pointer to **string** | The maximum lifetime of the generated token | [optional] 
 
 
 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetTokenMaxTtl
 
-`func (o *AppRoleReadTokenMaxTtlResponse) GetTokenMaxTtl() int32`
+`func (o *AppRoleReadTokenMaxTtlResponse) GetTokenMaxTtl() string`
 
 GetTokenMaxTtl returns the TokenMaxTtl field if non-nil, zero value otherwise.
 
 ### GetTokenMaxTtlOk
 
-`func (o *AppRoleReadTokenMaxTtlResponse) GetTokenMaxTtlOk() (*int32, bool)`
+`func (o *AppRoleReadTokenMaxTtlResponse) GetTokenMaxTtlOk() (*string, bool)`
 
 GetTokenMaxTtlOk returns a tuple with the TokenMaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenMaxTtl
 
-`func (o *AppRoleReadTokenMaxTtlResponse) SetTokenMaxTtl(v int32)`
+`func (o *AppRoleReadTokenMaxTtlResponse) SetTokenMaxTtl(v string)`
 
 SetTokenMaxTtl sets TokenMaxTtl field to given value.
 

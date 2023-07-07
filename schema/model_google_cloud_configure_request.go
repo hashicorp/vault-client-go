@@ -11,10 +11,10 @@ type GoogleCloudConfigureRequest struct {
 	Credentials string `json:"credentials,omitempty"`
 
 	// Maximum time a service account key is valid for. If <= 0, will use system default.
-	MaxTtl int32 `json:"max_ttl,omitempty"`
+	MaxTtl string `json:"max_ttl,omitempty"`
 
 	// Default lease for generated keys. If <= 0, will use system default.
-	Ttl int32 `json:"ttl,omitempty"`
+	Ttl string `json:"ttl,omitempty"`
 }
 
 // NewGoogleCloudConfigureRequestWithDefaults instantiates a new GoogleCloudConfigureRequest object

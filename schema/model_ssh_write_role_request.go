@@ -74,16 +74,16 @@ type SshWriteRoleRequest struct {
 	KeyType string `json:"key_type,omitempty"`
 
 	// [Not applicable for OTP type] [Optional for CA type] The maximum allowed lease duration
-	MaxTtl int32 `json:"max_ttl,omitempty"`
+	MaxTtl string `json:"max_ttl,omitempty"`
 
 	// [Not applicable for OTP type] [Optional for CA type] The duration that the SSH certificate should be backdated by at issuance.
-	NotBeforeDuration int32 `json:"not_before_duration,omitempty"`
+	NotBeforeDuration string `json:"not_before_duration,omitempty"`
 
 	// [Optional for OTP type] [Not applicable for CA type] Port number for SSH connection. Default is '22'. Port number does not play any role in creation of OTP. For 'otp' type, this is just a way to inform client about the port number to use. Port number will be returned to client by Vault server along with OTP.
 	Port int32 `json:"port,omitempty"`
 
 	// [Not applicable for OTP type] [Optional for CA type] The lease duration if no specific lease duration is requested. The lease duration controls the expiration of certificates issued by this backend. Defaults to the value of max_ttl.
-	Ttl int32 `json:"ttl,omitempty"`
+	Ttl string `json:"ttl,omitempty"`
 }
 
 // NewSshWriteRoleRequestWithDefaults instantiates a new SshWriteRoleRequest object
@@ -98,7 +98,7 @@ func NewSshWriteRoleRequestWithDefaults() *SshWriteRoleRequest {
 	this.AllowedUsersTemplate = false
 	this.DefaultExtensionsTemplate = false
 	this.DefaultUserTemplate = false
-	this.NotBeforeDuration = 30
+	this.NotBeforeDuration = "30"
 
 	return &this
 }

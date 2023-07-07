@@ -24,7 +24,7 @@ Method | HTTP request | Description
 [**EntityUpdateAliasById**](IdentityApi.md#EntityUpdateAliasById) | **Post** /identity/entity-alias/id/{id} | 
 [**EntityUpdateById**](IdentityApi.md#EntityUpdateById) | **Post** /identity/entity/id/{id} | 
 [**EntityUpdateByName**](IdentityApi.md#EntityUpdateByName) | **Post** /identity/entity/name/{name} | 
-[**GroupCreate**](IdentityApi.md#GroupCreate) | **Post** /identity/group | Create a new group.
+[**GroupCreate**](IdentityApi.md#GroupCreate) | **Post** /identity/group | 
 [**GroupCreateAlias**](IdentityApi.md#GroupCreateAlias) | **Post** /identity/group-alias | Creates a new group alias, or updates an existing one.
 [**GroupDeleteAliasById**](IdentityApi.md#GroupDeleteAliasById) | **Delete** /identity/group-alias/id/{id} | 
 [**GroupDeleteById**](IdentityApi.md#GroupDeleteById) | **Delete** /identity/group/id/{id} | 
@@ -41,15 +41,15 @@ Method | HTTP request | Description
 [**GroupUpdateByName**](IdentityApi.md#GroupUpdateByName) | **Post** /identity/group/name/{name} | 
 [**MfaAdminDestroyTotpSecret**](IdentityApi.md#MfaAdminDestroyTotpSecret) | **Post** /identity/mfa/method/totp/admin-destroy | Destroys a TOTP secret for the given MFA method ID on the given entity
 [**MfaAdminGenerateTotpSecret**](IdentityApi.md#MfaAdminGenerateTotpSecret) | **Post** /identity/mfa/method/totp/admin-generate | Update or create TOTP secret for the given method ID on the given entity.
-[**MfaConfigureDuoMethod**](IdentityApi.md#MfaConfigureDuoMethod) | **Post** /identity/mfa/method/duo/{method_id} | Update or create a configuration for the given MFA method
-[**MfaConfigureOktaMethod**](IdentityApi.md#MfaConfigureOktaMethod) | **Post** /identity/mfa/method/okta/{method_id} | Update or create a configuration for the given MFA method
-[**MfaConfigurePingIdMethod**](IdentityApi.md#MfaConfigurePingIdMethod) | **Post** /identity/mfa/method/pingid/{method_id} | Update or create a configuration for the given MFA method
-[**MfaConfigureTotpMethod**](IdentityApi.md#MfaConfigureTotpMethod) | **Post** /identity/mfa/method/totp/{method_id} | Update or create a configuration for the given MFA method
-[**MfaDeleteDuoMethod**](IdentityApi.md#MfaDeleteDuoMethod) | **Delete** /identity/mfa/method/duo/{method_id} | Delete a configuration for the given MFA method
+[**MfaCreateDuoMethod**](IdentityApi.md#MfaCreateDuoMethod) | **Post** /identity/mfa/method/duo | Create the given MFA method
+[**MfaCreateOktaMethod**](IdentityApi.md#MfaCreateOktaMethod) | **Post** /identity/mfa/method/okta | Create the given MFA method
+[**MfaCreatePingIdMethod**](IdentityApi.md#MfaCreatePingIdMethod) | **Post** /identity/mfa/method/pingid | Create the given MFA method
+[**MfaCreateTotpMethod**](IdentityApi.md#MfaCreateTotpMethod) | **Post** /identity/mfa/method/totp | Create the given MFA method
+[**MfaDeleteDuoMethod**](IdentityApi.md#MfaDeleteDuoMethod) | **Delete** /identity/mfa/method/duo/{method_id} | Delete the given MFA method
 [**MfaDeleteLoginEnforcement**](IdentityApi.md#MfaDeleteLoginEnforcement) | **Delete** /identity/mfa/login-enforcement/{name} | Delete a login enforcement
-[**MfaDeleteOktaMethod**](IdentityApi.md#MfaDeleteOktaMethod) | **Delete** /identity/mfa/method/okta/{method_id} | Delete a configuration for the given MFA method
-[**MfaDeletePingIdMethod**](IdentityApi.md#MfaDeletePingIdMethod) | **Delete** /identity/mfa/method/pingid/{method_id} | Delete a configuration for the given MFA method
-[**MfaDeleteTotpMethod**](IdentityApi.md#MfaDeleteTotpMethod) | **Delete** /identity/mfa/method/totp/{method_id} | Delete a configuration for the given MFA method
+[**MfaDeleteOktaMethod**](IdentityApi.md#MfaDeleteOktaMethod) | **Delete** /identity/mfa/method/okta/{method_id} | Delete the given MFA method
+[**MfaDeletePingIdMethod**](IdentityApi.md#MfaDeletePingIdMethod) | **Delete** /identity/mfa/method/pingid/{method_id} | Delete the given MFA method
+[**MfaDeleteTotpMethod**](IdentityApi.md#MfaDeleteTotpMethod) | **Delete** /identity/mfa/method/totp/{method_id} | Delete the given MFA method
 [**MfaGenerateTotpSecret**](IdentityApi.md#MfaGenerateTotpSecret) | **Post** /identity/mfa/method/totp/generate | Update or create TOTP secret for the given method ID on the given entity.
 [**MfaListDuoMethods**](IdentityApi.md#MfaListDuoMethods) | **Get** /identity/mfa/method/duo | List MFA method configurations for the given MFA method
 [**MfaListLoginEnforcements**](IdentityApi.md#MfaListLoginEnforcements) | **Get** /identity/mfa/login-enforcement | List login enforcements
@@ -57,12 +57,16 @@ Method | HTTP request | Description
 [**MfaListOktaMethods**](IdentityApi.md#MfaListOktaMethods) | **Get** /identity/mfa/method/okta | List MFA method configurations for the given MFA method
 [**MfaListPingIdMethods**](IdentityApi.md#MfaListPingIdMethods) | **Get** /identity/mfa/method/pingid | List MFA method configurations for the given MFA method
 [**MfaListTotpMethods**](IdentityApi.md#MfaListTotpMethods) | **Get** /identity/mfa/method/totp | List MFA method configurations for the given MFA method
-[**MfaReadDuoMethodConfiguration**](IdentityApi.md#MfaReadDuoMethodConfiguration) | **Get** /identity/mfa/method/duo/{method_id} | Read the current configuration for the given MFA method
+[**MfaReadDuoMethod**](IdentityApi.md#MfaReadDuoMethod) | **Get** /identity/mfa/method/duo/{method_id} | Read the current configuration for the given MFA method
 [**MfaReadLoginEnforcement**](IdentityApi.md#MfaReadLoginEnforcement) | **Get** /identity/mfa/login-enforcement/{name} | Read the current login enforcement
-[**MfaReadMethodConfiguration**](IdentityApi.md#MfaReadMethodConfiguration) | **Get** /identity/mfa/method/{method_id} | Read the current configuration for the given ID regardless of the MFA method type
-[**MfaReadOktaMethodConfiguration**](IdentityApi.md#MfaReadOktaMethodConfiguration) | **Get** /identity/mfa/method/okta/{method_id} | Read the current configuration for the given MFA method
-[**MfaReadPingIdMethodConfiguration**](IdentityApi.md#MfaReadPingIdMethodConfiguration) | **Get** /identity/mfa/method/pingid/{method_id} | Read the current configuration for the given MFA method
-[**MfaReadTotpMethodConfiguration**](IdentityApi.md#MfaReadTotpMethodConfiguration) | **Get** /identity/mfa/method/totp/{method_id} | Read the current configuration for the given MFA method
+[**MfaReadMethod**](IdentityApi.md#MfaReadMethod) | **Get** /identity/mfa/method/{method_id} | Read the current configuration for the given ID regardless of the MFA method type
+[**MfaReadOktaMethod**](IdentityApi.md#MfaReadOktaMethod) | **Get** /identity/mfa/method/okta/{method_id} | Read the current configuration for the given MFA method
+[**MfaReadPingIdMethod**](IdentityApi.md#MfaReadPingIdMethod) | **Get** /identity/mfa/method/pingid/{method_id} | Read the current configuration for the given MFA method
+[**MfaReadTotpMethod**](IdentityApi.md#MfaReadTotpMethod) | **Get** /identity/mfa/method/totp/{method_id} | Read the current configuration for the given MFA method
+[**MfaUpdateDuoMethod**](IdentityApi.md#MfaUpdateDuoMethod) | **Post** /identity/mfa/method/duo/{method_id} | Update the configuration for the given MFA method
+[**MfaUpdateOktaMethod**](IdentityApi.md#MfaUpdateOktaMethod) | **Post** /identity/mfa/method/okta/{method_id} | Update the configuration for the given MFA method
+[**MfaUpdatePingIdMethod**](IdentityApi.md#MfaUpdatePingIdMethod) | **Post** /identity/mfa/method/pingid/{method_id} | Update the configuration for the given MFA method
+[**MfaUpdateTotpMethod**](IdentityApi.md#MfaUpdateTotpMethod) | **Post** /identity/mfa/method/totp/{method_id} | Update the configuration for the given MFA method
 [**MfaWriteLoginEnforcement**](IdentityApi.md#MfaWriteLoginEnforcement) | **Post** /identity/mfa/login-enforcement/{name} | Create or update a login enforcement
 [**OidcConfigure**](IdentityApi.md#OidcConfigure) | **Post** /identity/oidc/config | 
 [**OidcDeleteAssignment**](IdentityApi.md#OidcDeleteAssignment) | **Delete** /identity/oidc/assignment/{name} | 
@@ -80,6 +84,7 @@ Method | HTTP request | Description
 [**OidcListRoles**](IdentityApi.md#OidcListRoles) | **Get** /identity/oidc/role | List configured OIDC roles
 [**OidcListScopes**](IdentityApi.md#OidcListScopes) | **Get** /identity/oidc/scope | 
 [**OidcProviderAuthorize**](IdentityApi.md#OidcProviderAuthorize) | **Get** /identity/oidc/provider/{name}/authorize | 
+[**OidcProviderAuthorizeWithParameters**](IdentityApi.md#OidcProviderAuthorizeWithParameters) | **Post** /identity/oidc/provider/{name}/authorize | 
 [**OidcProviderToken**](IdentityApi.md#OidcProviderToken) | **Post** /identity/oidc/provider/{name}/token | 
 [**OidcProviderUserInfo**](IdentityApi.md#OidcProviderUserInfo) | **Get** /identity/oidc/provider/{name}/userinfo | 
 [**OidcReadAssignment**](IdentityApi.md#OidcReadAssignment) | **Get** /identity/oidc/assignment/{name} | 
@@ -1428,7 +1433,7 @@ Name | Type | Description  | Notes
 
 ## GroupCreate
 
-Create a new group.
+
 
 ### Example
 
@@ -2442,9 +2447,9 @@ Name | Type | Description  | Notes
 
 
 
-## MfaConfigureDuoMethod
+## MfaCreateDuoMethod
 
-Update or create a configuration for the given MFA method
+Create the given MFA method
 
 ### Example
 
@@ -2468,11 +2473,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-	request := schema.NewMfaConfigureDuoMethodRequestWithDefaults()
-	resp, err := client.Identity.MfaConfigureDuoMethod(
+	request := schema.NewMfaCreateDuoMethodRequestWithDefaults()
+	resp, err := client.Identity.MfaCreateDuoMethod(
 		context.Background(),
-		methodId,
 		request,
 		vault.WithToken("my-token"),
 	)
@@ -2487,18 +2490,13 @@ func main() {
 ### Path Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**methodId** | **string** | The unique identifier for this MFA method. | 
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
- **mfaConfigureDuoMethodRequest** | [**MfaConfigureDuoMethodRequest**](MfaConfigureDuoMethodRequest.md) |  | 
+ **mfaCreateDuoMethodRequest** | [**MfaCreateDuoMethodRequest**](MfaCreateDuoMethodRequest.md) |  | 
 
  (empty response body)
 
@@ -2507,9 +2505,9 @@ Name | Type | Description  | Notes
 
 
 
-## MfaConfigureOktaMethod
+## MfaCreateOktaMethod
 
-Update or create a configuration for the given MFA method
+Create the given MFA method
 
 ### Example
 
@@ -2533,11 +2531,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-	request := schema.NewMfaConfigureOktaMethodRequestWithDefaults()
-	resp, err := client.Identity.MfaConfigureOktaMethod(
+	request := schema.NewMfaCreateOktaMethodRequestWithDefaults()
+	resp, err := client.Identity.MfaCreateOktaMethod(
 		context.Background(),
-		methodId,
 		request,
 		vault.WithToken("my-token"),
 	)
@@ -2552,18 +2548,13 @@ func main() {
 ### Path Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**methodId** | **string** | The unique identifier for this MFA method. | 
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
- **mfaConfigureOktaMethodRequest** | [**MfaConfigureOktaMethodRequest**](MfaConfigureOktaMethodRequest.md) |  | 
+ **mfaCreateOktaMethodRequest** | [**MfaCreateOktaMethodRequest**](MfaCreateOktaMethodRequest.md) |  | 
 
  (empty response body)
 
@@ -2572,9 +2563,9 @@ Name | Type | Description  | Notes
 
 
 
-## MfaConfigurePingIdMethod
+## MfaCreatePingIdMethod
 
-Update or create a configuration for the given MFA method
+Create the given MFA method
 
 ### Example
 
@@ -2598,11 +2589,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-	request := schema.NewMfaConfigurePingIdMethodRequestWithDefaults()
-	resp, err := client.Identity.MfaConfigurePingIdMethod(
+	request := schema.NewMfaCreatePingIdMethodRequestWithDefaults()
+	resp, err := client.Identity.MfaCreatePingIdMethod(
 		context.Background(),
-		methodId,
 		request,
 		vault.WithToken("my-token"),
 	)
@@ -2617,18 +2606,13 @@ func main() {
 ### Path Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**methodId** | **string** | The unique identifier for this MFA method. | 
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
- **mfaConfigurePingIdMethodRequest** | [**MfaConfigurePingIdMethodRequest**](MfaConfigurePingIdMethodRequest.md) |  | 
+ **mfaCreatePingIdMethodRequest** | [**MfaCreatePingIdMethodRequest**](MfaCreatePingIdMethodRequest.md) |  | 
 
  (empty response body)
 
@@ -2637,9 +2621,9 @@ Name | Type | Description  | Notes
 
 
 
-## MfaConfigureTotpMethod
+## MfaCreateTotpMethod
 
-Update or create a configuration for the given MFA method
+Create the given MFA method
 
 ### Example
 
@@ -2663,11 +2647,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-	request := schema.NewMfaConfigureTotpMethodRequestWithDefaults()
-	resp, err := client.Identity.MfaConfigureTotpMethod(
+	request := schema.NewMfaCreateTotpMethodRequestWithDefaults()
+	resp, err := client.Identity.MfaCreateTotpMethod(
 		context.Background(),
-		methodId,
 		request,
 		vault.WithToken("my-token"),
 	)
@@ -2682,18 +2664,13 @@ func main() {
 ### Path Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**methodId** | **string** | The unique identifier for this MFA method. | 
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
- **mfaConfigureTotpMethodRequest** | [**MfaConfigureTotpMethodRequest**](MfaConfigureTotpMethodRequest.md) |  | 
+ **mfaCreateTotpMethodRequest** | [**MfaCreateTotpMethodRequest**](MfaCreateTotpMethodRequest.md) |  | 
 
  (empty response body)
 
@@ -2704,7 +2681,7 @@ Name | Type | Description  | Notes
 
 ## MfaDeleteDuoMethod
 
-Delete a configuration for the given MFA method
+Delete the given MFA method
 
 ### Example
 
@@ -2826,7 +2803,7 @@ Name | Type | Description  | Notes
 
 ## MfaDeleteOktaMethod
 
-Delete a configuration for the given MFA method
+Delete the given MFA method
 
 ### Example
 
@@ -2887,7 +2864,7 @@ Name | Type | Description  | Notes
 
 ## MfaDeletePingIdMethod
 
-Delete a configuration for the given MFA method
+Delete the given MFA method
 
 ### Example
 
@@ -2948,7 +2925,7 @@ Name | Type | Description  | Notes
 
 ## MfaDeleteTotpMethod
 
-Delete a configuration for the given MFA method
+Delete the given MFA method
 
 ### Example
 
@@ -3395,7 +3372,7 @@ Name | Type | Description  | Notes
 
 
 
-## MfaReadDuoMethodConfiguration
+## MfaReadDuoMethod
 
 Read the current configuration for the given MFA method
 
@@ -3421,7 +3398,7 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-	resp, err := client.Identity.MfaReadDuoMethodConfiguration(
+	resp, err := client.Identity.MfaReadDuoMethod(
 		context.Background(),
 		methodId,
 		vault.WithToken("my-token"),
@@ -3517,7 +3494,7 @@ Name | Type | Description  | Notes
 
 
 
-## MfaReadMethodConfiguration
+## MfaReadMethod
 
 Read the current configuration for the given ID regardless of the MFA method type
 
@@ -3543,7 +3520,7 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-	resp, err := client.Identity.MfaReadMethodConfiguration(
+	resp, err := client.Identity.MfaReadMethod(
 		context.Background(),
 		methodId,
 		vault.WithToken("my-token"),
@@ -3578,7 +3555,7 @@ Name | Type | Description  | Notes
 
 
 
-## MfaReadOktaMethodConfiguration
+## MfaReadOktaMethod
 
 Read the current configuration for the given MFA method
 
@@ -3604,7 +3581,7 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-	resp, err := client.Identity.MfaReadOktaMethodConfiguration(
+	resp, err := client.Identity.MfaReadOktaMethod(
 		context.Background(),
 		methodId,
 		vault.WithToken("my-token"),
@@ -3639,7 +3616,7 @@ Name | Type | Description  | Notes
 
 
 
-## MfaReadPingIdMethodConfiguration
+## MfaReadPingIdMethod
 
 Read the current configuration for the given MFA method
 
@@ -3665,7 +3642,7 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-	resp, err := client.Identity.MfaReadPingIdMethodConfiguration(
+	resp, err := client.Identity.MfaReadPingIdMethod(
 		context.Background(),
 		methodId,
 		vault.WithToken("my-token"),
@@ -3700,7 +3677,7 @@ Name | Type | Description  | Notes
 
 
 
-## MfaReadTotpMethodConfiguration
+## MfaReadTotpMethod
 
 Read the current configuration for the given MFA method
 
@@ -3726,7 +3703,7 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-	resp, err := client.Identity.MfaReadTotpMethodConfiguration(
+	resp, err := client.Identity.MfaReadTotpMethod(
 		context.Background(),
 		methodId,
 		vault.WithToken("my-token"),
@@ -3753,6 +3730,266 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## MfaUpdateDuoMethod
+
+Update the configuration for the given MFA method
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	request := schema.NewMfaUpdateDuoMethodRequestWithDefaults()
+	resp, err := client.Identity.MfaUpdateDuoMethod(
+		context.Background(),
+		methodId,
+		request,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**methodId** | **string** | The unique identifier for this MFA method. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **mfaUpdateDuoMethodRequest** | [**MfaUpdateDuoMethodRequest**](MfaUpdateDuoMethodRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## MfaUpdateOktaMethod
+
+Update the configuration for the given MFA method
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	request := schema.NewMfaUpdateOktaMethodRequestWithDefaults()
+	resp, err := client.Identity.MfaUpdateOktaMethod(
+		context.Background(),
+		methodId,
+		request,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**methodId** | **string** | The unique identifier for this MFA method. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **mfaUpdateOktaMethodRequest** | [**MfaUpdateOktaMethodRequest**](MfaUpdateOktaMethodRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## MfaUpdatePingIdMethod
+
+Update the configuration for the given MFA method
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	request := schema.NewMfaUpdatePingIdMethodRequestWithDefaults()
+	resp, err := client.Identity.MfaUpdatePingIdMethod(
+		context.Background(),
+		methodId,
+		request,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**methodId** | **string** | The unique identifier for this MFA method. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **mfaUpdatePingIdMethodRequest** | [**MfaUpdatePingIdMethodRequest**](MfaUpdatePingIdMethodRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## MfaUpdateTotpMethod
+
+Update the configuration for the given MFA method
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	request := schema.NewMfaUpdateTotpMethodRequestWithDefaults()
+	resp, err := client.Identity.MfaUpdateTotpMethod(
+		context.Background(),
+		methodId,
+		request,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**methodId** | **string** | The unique identifier for this MFA method. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **mfaUpdateTotpMethodRequest** | [**MfaUpdateTotpMethodRequest**](MfaUpdateTotpMethodRequest.md) |  | 
 
  (empty response body)
 
@@ -4755,6 +4992,71 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## OidcProviderAuthorizeWithParameters
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the provider
+	request := schema.NewOidcProviderAuthorizeWithParametersRequestWithDefaults()
+	resp, err := client.Identity.OidcProviderAuthorizeWithParameters(
+		context.Background(),
+		name,
+		request,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the provider | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **oidcProviderAuthorizeWithParametersRequest** | [**OidcProviderAuthorizeWithParametersRequest**](OidcProviderAuthorizeWithParametersRequest.md) |  | 
 
  (empty response body)
 

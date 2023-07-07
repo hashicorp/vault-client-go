@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Increment** | Pointer to **int32** | The desired increment in seconds to the token expiration | [optional] [default to 0]
+**Increment** | Pointer to **string** | The desired increment in seconds to the token expiration | [optional] [default to "0"]
 **Token** | Pointer to **string** | Token to renew (request body) | [optional] 
 
 
@@ -33,20 +33,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetIncrement
 
-`func (o *TokenRenewRequest) GetIncrement() int32`
+`func (o *TokenRenewRequest) GetIncrement() string`
 
 GetIncrement returns the Increment field if non-nil, zero value otherwise.
 
 ### GetIncrementOk
 
-`func (o *TokenRenewRequest) GetIncrementOk() (*int32, bool)`
+`func (o *TokenRenewRequest) GetIncrementOk() (*string, bool)`
 
 GetIncrementOk returns a tuple with the Increment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIncrement
 
-`func (o *TokenRenewRequest) SetIncrement(v int32)`
+`func (o *TokenRenewRequest) SetIncrement(v string)`
 
 SetIncrement sets Increment field to given value.
 

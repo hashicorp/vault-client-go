@@ -531,7 +531,7 @@ func (i *Identity) EntityUpdateByName(ctx context.Context, name string, request 
 	)
 }
 
-// GroupCreate Create a new group.
+// GroupCreate
 func (i *Identity) GroupCreate(ctx context.Context, request schema.GroupCreateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -926,16 +926,14 @@ func (i *Identity) MfaAdminGenerateTotpSecret(ctx context.Context, request schem
 	)
 }
 
-// MfaConfigureDuoMethod Update or create a configuration for the given MFA method
-// methodId: The unique identifier for this MFA method.
-func (i *Identity) MfaConfigureDuoMethod(ctx context.Context, methodId string, request schema.MfaConfigureDuoMethodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// MfaCreateDuoMethod Create the given MFA method
+func (i *Identity) MfaCreateDuoMethod(ctx context.Context, request schema.MfaCreateDuoMethodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/mfa/method/duo/{method_id}"
-	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+	requestPath := "/v1/identity/mfa/method/duo"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
@@ -950,16 +948,14 @@ func (i *Identity) MfaConfigureDuoMethod(ctx context.Context, methodId string, r
 	)
 }
 
-// MfaConfigureOktaMethod Update or create a configuration for the given MFA method
-// methodId: The unique identifier for this MFA method.
-func (i *Identity) MfaConfigureOktaMethod(ctx context.Context, methodId string, request schema.MfaConfigureOktaMethodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// MfaCreateOktaMethod Create the given MFA method
+func (i *Identity) MfaCreateOktaMethod(ctx context.Context, request schema.MfaCreateOktaMethodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/mfa/method/okta/{method_id}"
-	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+	requestPath := "/v1/identity/mfa/method/okta"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
@@ -974,16 +970,14 @@ func (i *Identity) MfaConfigureOktaMethod(ctx context.Context, methodId string, 
 	)
 }
 
-// MfaConfigurePingIdMethod Update or create a configuration for the given MFA method
-// methodId: The unique identifier for this MFA method.
-func (i *Identity) MfaConfigurePingIdMethod(ctx context.Context, methodId string, request schema.MfaConfigurePingIdMethodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// MfaCreatePingIdMethod Create the given MFA method
+func (i *Identity) MfaCreatePingIdMethod(ctx context.Context, request schema.MfaCreatePingIdMethodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/mfa/method/pingid/{method_id}"
-	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+	requestPath := "/v1/identity/mfa/method/pingid"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
@@ -998,16 +992,14 @@ func (i *Identity) MfaConfigurePingIdMethod(ctx context.Context, methodId string
 	)
 }
 
-// MfaConfigureTotpMethod Update or create a configuration for the given MFA method
-// methodId: The unique identifier for this MFA method.
-func (i *Identity) MfaConfigureTotpMethod(ctx context.Context, methodId string, request schema.MfaConfigureTotpMethodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// MfaCreateTotpMethod Create the given MFA method
+func (i *Identity) MfaCreateTotpMethod(ctx context.Context, request schema.MfaCreateTotpMethodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/mfa/method/totp/{method_id}"
-	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+	requestPath := "/v1/identity/mfa/method/totp"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
@@ -1022,7 +1014,7 @@ func (i *Identity) MfaConfigureTotpMethod(ctx context.Context, methodId string, 
 	)
 }
 
-// MfaDeleteDuoMethod Delete a configuration for the given MFA method
+// MfaDeleteDuoMethod Delete the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (i *Identity) MfaDeleteDuoMethod(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
@@ -1070,7 +1062,7 @@ func (i *Identity) MfaDeleteLoginEnforcement(ctx context.Context, name string, o
 	)
 }
 
-// MfaDeleteOktaMethod Delete a configuration for the given MFA method
+// MfaDeleteOktaMethod Delete the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (i *Identity) MfaDeleteOktaMethod(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
@@ -1094,7 +1086,7 @@ func (i *Identity) MfaDeleteOktaMethod(ctx context.Context, methodId string, opt
 	)
 }
 
-// MfaDeletePingIdMethod Delete a configuration for the given MFA method
+// MfaDeletePingIdMethod Delete the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (i *Identity) MfaDeletePingIdMethod(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
@@ -1118,7 +1110,7 @@ func (i *Identity) MfaDeletePingIdMethod(ctx context.Context, methodId string, o
 	)
 }
 
-// MfaDeleteTotpMethod Delete a configuration for the given MFA method
+// MfaDeleteTotpMethod Delete the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (i *Identity) MfaDeleteTotpMethod(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
@@ -1302,9 +1294,9 @@ func (i *Identity) MfaListTotpMethods(ctx context.Context, options ...RequestOpt
 	)
 }
 
-// MfaReadDuoMethodConfiguration Read the current configuration for the given MFA method
+// MfaReadDuoMethod Read the current configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
-func (i *Identity) MfaReadDuoMethodConfiguration(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) MfaReadDuoMethod(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1350,9 +1342,9 @@ func (i *Identity) MfaReadLoginEnforcement(ctx context.Context, name string, opt
 	)
 }
 
-// MfaReadMethodConfiguration Read the current configuration for the given ID regardless of the MFA method type
+// MfaReadMethod Read the current configuration for the given ID regardless of the MFA method type
 // methodId: The unique identifier for this MFA method.
-func (i *Identity) MfaReadMethodConfiguration(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) MfaReadMethod(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1374,9 +1366,9 @@ func (i *Identity) MfaReadMethodConfiguration(ctx context.Context, methodId stri
 	)
 }
 
-// MfaReadOktaMethodConfiguration Read the current configuration for the given MFA method
+// MfaReadOktaMethod Read the current configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
-func (i *Identity) MfaReadOktaMethodConfiguration(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) MfaReadOktaMethod(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1398,9 +1390,9 @@ func (i *Identity) MfaReadOktaMethodConfiguration(ctx context.Context, methodId 
 	)
 }
 
-// MfaReadPingIdMethodConfiguration Read the current configuration for the given MFA method
+// MfaReadPingIdMethod Read the current configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
-func (i *Identity) MfaReadPingIdMethodConfiguration(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) MfaReadPingIdMethod(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1422,9 +1414,9 @@ func (i *Identity) MfaReadPingIdMethodConfiguration(ctx context.Context, methodI
 	)
 }
 
-// MfaReadTotpMethodConfiguration Read the current configuration for the given MFA method
+// MfaReadTotpMethod Read the current configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
-func (i *Identity) MfaReadTotpMethodConfiguration(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) MfaReadTotpMethod(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1441,6 +1433,102 @@ func (i *Identity) MfaReadTotpMethodConfiguration(ctx context.Context, methodId 
 		http.MethodGet,
 		requestPath,
 		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// MfaUpdateDuoMethod Update the configuration for the given MFA method
+// methodId: The unique identifier for this MFA method.
+func (i *Identity) MfaUpdateDuoMethod(ctx context.Context, methodId string, request schema.MfaUpdateDuoMethodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/mfa/method/duo/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// MfaUpdateOktaMethod Update the configuration for the given MFA method
+// methodId: The unique identifier for this MFA method.
+func (i *Identity) MfaUpdateOktaMethod(ctx context.Context, methodId string, request schema.MfaUpdateOktaMethodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/mfa/method/okta/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// MfaUpdatePingIdMethod Update the configuration for the given MFA method
+// methodId: The unique identifier for this MFA method.
+func (i *Identity) MfaUpdatePingIdMethod(ctx context.Context, methodId string, request schema.MfaUpdatePingIdMethodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/mfa/method/pingid/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// MfaUpdateTotpMethod Update the configuration for the given MFA method
+// methodId: The unique identifier for this MFA method.
+func (i *Identity) MfaUpdateTotpMethod(ctx context.Context, methodId string, request schema.MfaUpdateTotpMethodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/mfa/method/totp/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodPost,
+		requestPath,
+		request,
 		requestQueryParameters,
 		requestModifiers,
 	)
@@ -1841,6 +1929,30 @@ func (i *Identity) OidcProviderAuthorize(ctx context.Context, name string, optio
 		http.MethodGet,
 		requestPath,
 		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// OidcProviderAuthorizeWithParameters
+// name: Name of the provider
+func (i *Identity) OidcProviderAuthorizeWithParameters(ctx context.Context, name string, request schema.OidcProviderAuthorizeWithParametersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/identity/oidc/provider/{name}/authorize"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		i.client,
+		http.MethodPost,
+		requestPath,
+		request,
 		requestQueryParameters,
 		requestModifiers,
 	)

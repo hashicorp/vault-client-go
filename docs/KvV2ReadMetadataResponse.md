@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **CreatedTime** | Pointer to **time.Time** |  | [optional] 
 **CurrentVersion** | Pointer to **int64** |  | [optional] 
 **CustomMetadata** | Pointer to **map[string]interface{}** | User-provided key-value pairs that are used to describe arbitrary and version-agnostic information about a secret. | [optional] 
-**DeleteVersionAfter** | Pointer to **int32** | The length of time before a version is deleted. | [optional] 
+**DeleteVersionAfter** | Pointer to **string** | The length of time before a version is deleted. | [optional] 
 **MaxVersions** | Pointer to **int64** | The number of versions to keep | [optional] 
 **OldestVersion** | Pointer to **int64** |  | [optional] 
 **UpdatedTime** | Pointer to **time.Time** |  | [optional] 
@@ -156,20 +156,20 @@ HasCustomMetadata returns a boolean if a field has been set.
 
 ### GetDeleteVersionAfter
 
-`func (o *KvV2ReadMetadataResponse) GetDeleteVersionAfter() int32`
+`func (o *KvV2ReadMetadataResponse) GetDeleteVersionAfter() string`
 
 GetDeleteVersionAfter returns the DeleteVersionAfter field if non-nil, zero value otherwise.
 
 ### GetDeleteVersionAfterOk
 
-`func (o *KvV2ReadMetadataResponse) GetDeleteVersionAfterOk() (*int32, bool)`
+`func (o *KvV2ReadMetadataResponse) GetDeleteVersionAfterOk() (*string, bool)`
 
 GetDeleteVersionAfterOk returns a tuple with the DeleteVersionAfter field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeleteVersionAfter
 
-`func (o *KvV2ReadMetadataResponse) SetDeleteVersionAfter(v int32)`
+`func (o *KvV2ReadMetadataResponse) SetDeleteVersionAfter(v string)`
 
 SetDeleteVersionAfter sets DeleteVersionAfter field to given value.
 

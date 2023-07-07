@@ -10,7 +10,7 @@ import "time"
 // PkiRevokeWithKeyResponse struct for PkiRevokeWithKeyResponse
 type PkiRevokeWithKeyResponse struct {
 	// Revocation Time
-	RevocationTime int32 `json:"revocation_time,omitempty"`
+	RevocationTime int64 `json:"revocation_time,omitempty"`
 
 	// Revocation Time
 	RevocationTimeRfc3339 time.Time `json:"revocation_time_rfc3339,omitempty"`

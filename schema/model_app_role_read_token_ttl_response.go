@@ -8,7 +8,7 @@ package schema
 // AppRoleReadTokenTtlResponse struct for AppRoleReadTokenTtlResponse
 type AppRoleReadTokenTtlResponse struct {
 	// The initial ttl of the token to generate
-	TokenTtl int32 `json:"token_ttl,omitempty"`
+	TokenTtl string `json:"token_ttl,omitempty"`
 }
 
 // NewAppRoleReadTokenTtlResponseWithDefaults instantiates a new AppRoleReadTokenTtlResponse object

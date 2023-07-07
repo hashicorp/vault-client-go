@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreationLdif** | **string** | LDIF string used to create new entities within the LDAP system. This LDIF can be templated. | 
-**DefaultTtl** | Pointer to **int32** | Default TTL for dynamic credentials | [optional] 
+**DefaultTtl** | Pointer to **string** | Default TTL for dynamic credentials | [optional] 
 **DeletionLdif** | **string** | LDIF string used to delete entities created within the LDAP system. This LDIF can be templated. | 
-**MaxTtl** | Pointer to **int32** | Max TTL a dynamic credential can be extended to | [optional] 
+**MaxTtl** | Pointer to **string** | Max TTL a dynamic credential can be extended to | [optional] 
 **RollbackLdif** | Pointer to **string** | LDIF string used to rollback changes in the event of a failure to create credentials. This LDIF can be templated. | [optional] 
 **UsernameTemplate** | Pointer to **string** | The template used to create a username | [optional] 
 
@@ -60,20 +60,20 @@ SetCreationLdif sets CreationLdif field to given value.
 
 ### GetDefaultTtl
 
-`func (o *LdapWriteDynamicRoleRequest) GetDefaultTtl() int32`
+`func (o *LdapWriteDynamicRoleRequest) GetDefaultTtl() string`
 
 GetDefaultTtl returns the DefaultTtl field if non-nil, zero value otherwise.
 
 ### GetDefaultTtlOk
 
-`func (o *LdapWriteDynamicRoleRequest) GetDefaultTtlOk() (*int32, bool)`
+`func (o *LdapWriteDynamicRoleRequest) GetDefaultTtlOk() (*string, bool)`
 
 GetDefaultTtlOk returns a tuple with the DefaultTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultTtl
 
-`func (o *LdapWriteDynamicRoleRequest) SetDefaultTtl(v int32)`
+`func (o *LdapWriteDynamicRoleRequest) SetDefaultTtl(v string)`
 
 SetDefaultTtl sets DefaultTtl field to given value.
 
@@ -112,20 +112,20 @@ SetDeletionLdif sets DeletionLdif field to given value.
 
 ### GetMaxTtl
 
-`func (o *LdapWriteDynamicRoleRequest) GetMaxTtl() int32`
+`func (o *LdapWriteDynamicRoleRequest) GetMaxTtl() string`
 
 GetMaxTtl returns the MaxTtl field if non-nil, zero value otherwise.
 
 ### GetMaxTtlOk
 
-`func (o *LdapWriteDynamicRoleRequest) GetMaxTtlOk() (*int32, bool)`
+`func (o *LdapWriteDynamicRoleRequest) GetMaxTtlOk() (*string, bool)`
 
 GetMaxTtlOk returns a tuple with the MaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxTtl
 
-`func (o *LdapWriteDynamicRoleRequest) SetMaxTtl(v int32)`
+`func (o *LdapWriteDynamicRoleRequest) SetMaxTtl(v string)`
 
 SetMaxTtl sets MaxTtl field to given value.
 

@@ -4765,7 +4765,7 @@
       ],
       "get": {
         "summary": "Read mappings for teams",
-        "operationId": "github-read-teams",
+        "operationId": "github-read-teams2",
         "tags": [
           "auth"
         ],
@@ -4904,7 +4904,7 @@
       ],
       "get": {
         "summary": "Read mappings for users",
-        "operationId": "github-read-users",
+        "operationId": "github-read-users2",
         "tags": [
           "auth"
         ],

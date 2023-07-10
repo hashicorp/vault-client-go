@@ -3492,29 +3492,6 @@ func (a *Auth) GithubReadTeamMapping(ctx context.Context, key string, options ..
 	)
 }
 
-// GithubReadTeams Read mappings for teams
-func (a *Auth) GithubReadTeams(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/auth/{github_mount_path}/map/teams"
-	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("github")), -1)
-
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // GithubReadUserMapping Read/write/delete a single users mapping
 // key: Key for the users mapping
 func (a *Auth) GithubReadUserMapping(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
@@ -3526,29 +3503,6 @@ func (a *Auth) GithubReadUserMapping(ctx context.Context, key string, options ..
 	requestPath := "/v1/auth/{github_mount_path}/map/users/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("github")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
-
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// GithubReadUsers Read mappings for users
-func (a *Auth) GithubReadUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/auth/{github_mount_path}/map/users"
-	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("github")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 

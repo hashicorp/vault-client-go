@@ -145,9 +145,7 @@ Method | HTTP request | Description
 [**GithubLogin**](AuthApi.md#GithubLogin) | **Post** /auth/{github_mount_path}/login | 
 [**GithubReadConfiguration**](AuthApi.md#GithubReadConfiguration) | **Get** /auth/{github_mount_path}/config | 
 [**GithubReadTeamMapping**](AuthApi.md#GithubReadTeamMapping) | **Get** /auth/{github_mount_path}/map/teams/{key} | Read/write/delete a single teams mapping
-[**GithubReadTeams**](AuthApi.md#GithubReadTeams) | **Get** /auth/{github_mount_path}/map/teams | Read mappings for teams
 [**GithubReadUserMapping**](AuthApi.md#GithubReadUserMapping) | **Get** /auth/{github_mount_path}/map/users/{key} | Read/write/delete a single users mapping
-[**GithubReadUsers**](AuthApi.md#GithubReadUsers) | **Get** /auth/{github_mount_path}/map/users | Read mappings for users
 [**GithubWriteTeamMapping**](AuthApi.md#GithubWriteTeamMapping) | **Post** /auth/{github_mount_path}/map/teams/{key} | Read/write/delete a single teams mapping
 [**GithubWriteUserMapping**](AuthApi.md#GithubWriteUserMapping) | **Post** /auth/{github_mount_path}/map/users/{key} | Read/write/delete a single users mapping
 [**GoogleCloudConfigureAuth**](AuthApi.md#GoogleCloudConfigureAuth) | **Post** /auth/{gcp_mount_path}/config | 
@@ -9248,65 +9246,6 @@ Name | Type | Description  | Notes
 
 
 
-## GithubReadTeams
-
-Read mappings for teams
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	resp, err := client.Auth.GithubReadTeams(
-		context.Background(),
-		vault.WithToken("my-token"),
-		vault.WithMountPath("github"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
 ## GithubReadUserMapping
 
 Read/write/delete a single users mapping
@@ -9361,65 +9300,6 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
-## GithubReadUsers
-
-Read mappings for users
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	resp, err := client.Auth.GithubReadUsers(
-		context.Background(),
-		vault.WithToken("my-token"),
-		vault.WithMountPath("github"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
 
 
  (empty response body)

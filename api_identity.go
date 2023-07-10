@@ -72,7 +72,7 @@ func (i *Identity) AliasListById(ctx context.Context, options ...RequestOption) 
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/alias/id"
+	requestPath := "/v1/identity/alias/id/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -281,7 +281,7 @@ func (i *Identity) EntityListAliasesById(ctx context.Context, options ...Request
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/entity-alias/id"
+	requestPath := "/v1/identity/entity-alias/id/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -304,7 +304,7 @@ func (i *Identity) EntityListById(ctx context.Context, options ...RequestOption)
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/entity/id"
+	requestPath := "/v1/identity/entity/id/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -327,7 +327,7 @@ func (i *Identity) EntityListByName(ctx context.Context, options ...RequestOptio
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/entity/name"
+	requestPath := "/v1/identity/entity/name/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -654,7 +654,7 @@ func (i *Identity) GroupListAliasesById(ctx context.Context, options ...RequestO
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/group-alias/id"
+	requestPath := "/v1/identity/group-alias/id/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -677,7 +677,7 @@ func (i *Identity) GroupListById(ctx context.Context, options ...RequestOption) 
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/group/id"
+	requestPath := "/v1/identity/group/id/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -700,7 +700,7 @@ func (i *Identity) GroupListByName(ctx context.Context, options ...RequestOption
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/group/name"
+	requestPath := "/v1/identity/group/name/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -1163,7 +1163,7 @@ func (i *Identity) MfaListDuoMethods(ctx context.Context, options ...RequestOpti
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/mfa/method/duo"
+	requestPath := "/v1/identity/mfa/method/duo/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -1186,7 +1186,7 @@ func (i *Identity) MfaListLoginEnforcements(ctx context.Context, options ...Requ
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/mfa/login-enforcement"
+	requestPath := "/v1/identity/mfa/login-enforcement/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -1209,7 +1209,7 @@ func (i *Identity) MfaListMethods(ctx context.Context, options ...RequestOption)
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/mfa/method"
+	requestPath := "/v1/identity/mfa/method/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -1232,7 +1232,7 @@ func (i *Identity) MfaListOktaMethods(ctx context.Context, options ...RequestOpt
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/mfa/method/okta"
+	requestPath := "/v1/identity/mfa/method/okta/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -1255,7 +1255,7 @@ func (i *Identity) MfaListPingIdMethods(ctx context.Context, options ...RequestO
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/mfa/method/pingid"
+	requestPath := "/v1/identity/mfa/method/pingid/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -1278,7 +1278,7 @@ func (i *Identity) MfaListTotpMethods(ctx context.Context, options ...RequestOpt
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/mfa/method/totp"
+	requestPath := "/v1/identity/mfa/method/totp/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -1777,7 +1777,7 @@ func (i *Identity) OidcListAssignments(ctx context.Context, options ...RequestOp
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/oidc/assignment"
+	requestPath := "/v1/identity/oidc/assignment/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -1800,7 +1800,7 @@ func (i *Identity) OidcListClients(ctx context.Context, options ...RequestOption
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/oidc/client"
+	requestPath := "/v1/identity/oidc/client/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -1823,7 +1823,7 @@ func (i *Identity) OidcListKeys(ctx context.Context, options ...RequestOption) (
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/oidc/key"
+	requestPath := "/v1/identity/oidc/key/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -1847,7 +1847,7 @@ func (i *Identity) OidcListProviders(ctx context.Context, allowedClientId string
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/oidc/provider"
+	requestPath := "/v1/identity/oidc/provider/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("allowedClientId", url.QueryEscape(parameterToString(allowedClientId)))
@@ -1871,7 +1871,7 @@ func (i *Identity) OidcListRoles(ctx context.Context, options ...RequestOption) 
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/oidc/role"
+	requestPath := "/v1/identity/oidc/role/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -1894,7 +1894,7 @@ func (i *Identity) OidcListScopes(ctx context.Context, options ...RequestOption)
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/oidc/scope"
+	requestPath := "/v1/identity/oidc/scope/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -2485,7 +2485,7 @@ func (i *Identity) PersonaListById(ctx context.Context, options ...RequestOption
 		return nil, err
 	}
 
-	requestPath := "/v1/identity/persona/id"
+	requestPath := "/v1/identity/persona/id/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")

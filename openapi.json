@@ -10,7 +10,7 @@
     }
   },
   "paths": {
-    "/auth/token/accessors": {
+    "/auth/token/accessors/": {
       "description": "List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires 'sudo' capability in addition to 'list'.",
       "x-vault-sudo": true,
       "get": {
@@ -414,7 +414,7 @@
         }
       }
     },
-    "/auth/token/roles": {
+    "/auth/token/roles/": {
       "description": "This endpoint lists configured roles.",
       "get": {
         "summary": "This endpoint lists configured roles.",
@@ -553,7 +553,7 @@
         }
       }
     },
-    "/auth/{alicloud_mount_path}/role": {
+    "/auth/{alicloud_mount_path}/role/": {
       "description": "Lists all the roles that are registered with Vault.",
       "parameters": [
         {
@@ -665,7 +665,7 @@
         }
       }
     },
-    "/auth/{alicloud_mount_path}/roles": {
+    "/auth/{alicloud_mount_path}/roles/": {
       "description": "Lists all the roles that are registered with Vault.",
       "parameters": [
         {
@@ -743,7 +743,7 @@
         }
       }
     },
-    "/auth/{approle_mount_path}/role": {
+    "/auth/{approle_mount_path}/role/": {
       "description": "Lists all the roles registered with the backend.",
       "parameters": [
         {
@@ -1341,38 +1341,6 @@
           "required": true
         }
       ],
-      "get": {
-        "operationId": "app-role-list-secret-ids",
-        "tags": [
-          "auth"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Must be set to `true`",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "true"
-              ]
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AppRoleListSecretIdsResponse"
-                }
-              }
-            }
-          }
-        }
-      },
       "post": {
         "operationId": "app-role-write-secret-id",
         "tags": [
@@ -1726,6 +1694,62 @@
         "responses": {
           "204": {
             "description": "No Content"
+          }
+        }
+      }
+    },
+    "/auth/{approle_mount_path}/role/{role_name}/secret-id/": {
+      "description": "Generate a SecretID against this role.",
+      "parameters": [
+        {
+          "name": "role_name",
+          "description": "Name of the role. Must be less than 4096 bytes.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "approle_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "approle"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "app-role-list-secret-ids",
+        "tags": [
+          "auth"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppRoleListSecretIdsResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -2228,7 +2252,7 @@
         }
       }
     },
-    "/auth/{aws_mount_path}/config/certificates": {
+    "/auth/{aws_mount_path}/config/certificates/": {
       "description": "Lists all the AWS public certificates that are registered with the backend.",
       "parameters": [
         {
@@ -2400,7 +2424,7 @@
         }
       }
     },
-    "/auth/{aws_mount_path}/config/sts": {
+    "/auth/{aws_mount_path}/config/sts/": {
       "description": "List all the AWS account/STS role relationships registered with Vault.",
       "parameters": [
         {
@@ -2744,7 +2768,7 @@
         }
       }
     },
-    "/auth/{aws_mount_path}/identity-accesslist": {
+    "/auth/{aws_mount_path}/identity-accesslist/": {
       "description": "Lists the items present in the identity access list.",
       "parameters": [
         {
@@ -2830,7 +2854,7 @@
         }
       }
     },
-    "/auth/{aws_mount_path}/identity-whitelist": {
+    "/auth/{aws_mount_path}/identity-whitelist/": {
       "description": "Lists the items present in the identity access list.",
       "parameters": [
         {
@@ -2953,7 +2977,7 @@
         }
       }
     },
-    "/auth/{aws_mount_path}/role": {
+    "/auth/{aws_mount_path}/role/": {
       "description": "Lists all the roles that are registered with Vault.",
       "parameters": [
         {
@@ -3106,7 +3130,7 @@
         }
       }
     },
-    "/auth/{aws_mount_path}/roles": {
+    "/auth/{aws_mount_path}/roles/": {
       "description": "Lists all the roles that are registered with Vault.",
       "parameters": [
         {
@@ -3146,7 +3170,7 @@
         }
       }
     },
-    "/auth/{aws_mount_path}/roletag-blacklist": {
+    "/auth/{aws_mount_path}/roletag-blacklist/": {
       "description": "Lists the deny list role tags.",
       "parameters": [
         {
@@ -3243,7 +3267,7 @@
         }
       }
     },
-    "/auth/{aws_mount_path}/roletag-denylist": {
+    "/auth/{aws_mount_path}/roletag-denylist/": {
       "description": "Lists the deny list role tags.",
       "parameters": [
         {
@@ -3580,7 +3604,7 @@
         }
       }
     },
-    "/auth/{azure_mount_path}/role": {
+    "/auth/{azure_mount_path}/role/": {
       "description": "Lists all the roles registered with the backend.",
       "parameters": [
         {
@@ -3800,7 +3824,7 @@
         }
       }
     },
-    "/auth/{cert_mount_path}/certs": {
+    "/auth/{cert_mount_path}/certs/": {
       "description": "Manage trusted certificates used for authentication.",
       "parameters": [
         {
@@ -3965,7 +3989,7 @@
         }
       }
     },
-    "/auth/{cert_mount_path}/crls": {
+    "/auth/{cert_mount_path}/crls/": {
       "description": "Manage Certificate Revocation Lists checked during authentication.",
       "parameters": [
         {
@@ -4206,7 +4230,7 @@
         }
       }
     },
-    "/auth/{cf_mount_path}/roles": {
+    "/auth/{cf_mount_path}/roles/": {
       "description": "List the existing roles in this backend.",
       "parameters": [
         {
@@ -4398,7 +4422,7 @@
         }
       }
     },
-    "/auth/{gcp_mount_path}/role": {
+    "/auth/{gcp_mount_path}/role/": {
       "description": "Lists all the roles that are registered with Vault.",
       "parameters": [
         {
@@ -4602,7 +4626,7 @@
         }
       }
     },
-    "/auth/{gcp_mount_path}/roles": {
+    "/auth/{gcp_mount_path}/roles/": {
       "description": "Lists all the roles that are registered with Vault.",
       "parameters": [
         {
@@ -4745,14 +4769,45 @@
         "tags": [
           "auth"
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/auth/{github_mount_path}/map/teams/": {
+      "description": "Read mappings for teams",
+      "parameters": [
+        {
+          "name": "github_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "github"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Read mappings for teams",
+        "operationId": "github-list-teams",
+        "tags": [
+          "auth"
+        ],
         "parameters": [
           {
             "name": "list",
-            "description": "Return a list if `true`",
+            "description": "Must be set to `true`",
             "in": "query",
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
           }
         ],
         "responses": {
@@ -4853,14 +4908,45 @@
         "tags": [
           "auth"
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/auth/{github_mount_path}/map/users/": {
+      "description": "Read mappings for users",
+      "parameters": [
+        {
+          "name": "github_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "github"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Read mappings for users",
+        "operationId": "github-list-users",
+        "tags": [
+          "auth"
+        ],
         "parameters": [
           {
             "name": "list",
-            "description": "Return a list if `true`",
+            "description": "Must be set to `true`",
             "in": "query",
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
           }
         ],
         "responses": {
@@ -5115,7 +5201,7 @@
         }
       }
     },
-    "/auth/{jwt_mount_path}/role": {
+    "/auth/{jwt_mount_path}/role/": {
       "description": "Lists all the roles registered with the backend.",
       "parameters": [
         {
@@ -5323,7 +5409,7 @@
         }
       }
     },
-    "/auth/{kerberos_mount_path}/groups": {
+    "/auth/{kerberos_mount_path}/groups/": {
       "description": "Manage users allowed to authenticate.",
       "parameters": [
         {
@@ -5562,7 +5648,7 @@
         }
       }
     },
-    "/auth/{kubernetes_mount_path}/role": {
+    "/auth/{kubernetes_mount_path}/role/": {
       "description": "Lists all the roles registered with the backend.",
       "parameters": [
         {
@@ -5732,7 +5818,7 @@
         }
       }
     },
-    "/auth/{ldap_mount_path}/groups": {
+    "/auth/{ldap_mount_path}/groups/": {
       "description": "Manage additional groups for users allowed to authenticate.",
       "parameters": [
         {
@@ -5898,7 +5984,7 @@
         }
       }
     },
-    "/auth/{ldap_mount_path}/users": {
+    "/auth/{ldap_mount_path}/users/": {
       "description": "Manage users allowed to authenticate.",
       "parameters": [
         {
@@ -6138,7 +6224,7 @@
         }
       }
     },
-    "/auth/{oci_mount_path}/role": {
+    "/auth/{oci_mount_path}/role/": {
       "description": "Lists all the roles that are registered with Vault.",
       "parameters": [
         {
@@ -6301,7 +6387,7 @@
         }
       }
     },
-    "/auth/{okta_mount_path}/groups": {
+    "/auth/{okta_mount_path}/groups/": {
       "description": "Manage users allowed to authenticate.",
       "parameters": [
         {
@@ -6467,7 +6553,7 @@
         }
       }
     },
-    "/auth/{okta_mount_path}/users": {
+    "/auth/{okta_mount_path}/users/": {
       "description": "Manage additional groups for users allowed to authenticate.",
       "parameters": [
         {
@@ -6757,7 +6843,7 @@
         }
       }
     },
-    "/auth/{radius_mount_path}/users": {
+    "/auth/{radius_mount_path}/users/": {
       "description": "Manage users allowed to authenticate.",
       "parameters": [
         {
@@ -6924,7 +7010,7 @@
         }
       }
     },
-    "/auth/{userpass_mount_path}/users": {
+    "/auth/{userpass_mount_path}/users/": {
       "description": "Manage users allowed to authenticate.",
       "parameters": [
         {
@@ -7156,16 +7242,6 @@
         "tags": [
           "secrets"
         ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Return a list if `true`",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -7197,6 +7273,47 @@
         }
       }
     },
+    "/cubbyhole/{path}/": {
+      "description": "Pass-through secret storage to a token-specific cubbyhole in the storage backend, allowing you to read/write arbitrary data into secret storage.",
+      "parameters": [
+        {
+          "name": "path",
+          "description": "Specifies the path of the secret.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "List secret entries at the specified location.",
+        "description": "Folders are suffixed with /. The input must be a folder; list on a file will not return a value. The values themselves are not accessible via this command.",
+        "operationId": "cubbyhole-list",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/identity/alias": {
       "description": "Create a new alias.",
       "post": {
@@ -7222,7 +7339,7 @@
         }
       }
     },
-    "/identity/alias/id": {
+    "/identity/alias/id/": {
       "description": "List all the alias IDs.",
       "get": {
         "summary": "List all the alias IDs.",
@@ -7358,7 +7475,7 @@
         }
       }
     },
-    "/identity/entity-alias/id": {
+    "/identity/entity-alias/id/": {
       "description": "List all the alias IDs.",
       "get": {
         "summary": "List all the alias IDs.",
@@ -7469,7 +7586,7 @@
         }
       }
     },
-    "/identity/entity/id": {
+    "/identity/entity/id/": {
       "description": "List all the entity IDs",
       "get": {
         "summary": "List all the entity IDs",
@@ -7580,7 +7697,7 @@
         }
       }
     },
-    "/identity/entity/name": {
+    "/identity/entity/name/": {
       "description": "List all the entity names",
       "get": {
         "summary": "List all the entity names",
@@ -7715,7 +7832,7 @@
         }
       }
     },
-    "/identity/group-alias/id": {
+    "/identity/group-alias/id/": {
       "description": "List all the group alias IDs.",
       "get": {
         "summary": "List all the group alias IDs.",
@@ -7800,7 +7917,7 @@
         }
       }
     },
-    "/identity/group/id": {
+    "/identity/group/id/": {
       "description": "List all the group IDs.",
       "get": {
         "summary": "List all the group IDs.",
@@ -7886,7 +8003,7 @@
         }
       }
     },
-    "/identity/group/name": {
+    "/identity/group/name/": {
       "get": {
         "operationId": "group-list-by-name",
         "tags": [
@@ -8019,7 +8136,7 @@
         }
       }
     },
-    "/identity/mfa/login-enforcement": {
+    "/identity/mfa/login-enforcement/": {
       "get": {
         "summary": "List login enforcements",
         "operationId": "mfa-list-login-enforcements",
@@ -8106,7 +8223,7 @@
         }
       }
     },
-    "/identity/mfa/method": {
+    "/identity/mfa/method/": {
       "get": {
         "summary": "List MFA method configurations for all MFA methods",
         "operationId": "mfa-list-methods",
@@ -8135,6 +8252,30 @@
       }
     },
     "/identity/mfa/method/duo": {
+      "post": {
+        "summary": "Create the given MFA method",
+        "operationId": "mfa-create-duo-method",
+        "tags": [
+          "identity"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MfaCreateDuoMethodRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/identity/mfa/method/duo/": {
       "get": {
         "summary": "List MFA method configurations for the given MFA method",
         "operationId": "mfa-list-duo-methods",
@@ -8155,28 +8296,6 @@
             "required": true
           }
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "summary": "Create the given MFA method",
-        "operationId": "mfa-create-duo-method",
-        "tags": [
-          "identity"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MfaCreateDuoMethodRequest"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -8244,6 +8363,30 @@
       }
     },
     "/identity/mfa/method/okta": {
+      "post": {
+        "summary": "Create the given MFA method",
+        "operationId": "mfa-create-okta-method",
+        "tags": [
+          "identity"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MfaCreateOktaMethodRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/identity/mfa/method/okta/": {
       "get": {
         "summary": "List MFA method configurations for the given MFA method",
         "operationId": "mfa-list-okta-methods",
@@ -8264,28 +8407,6 @@
             "required": true
           }
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "summary": "Create the given MFA method",
-        "operationId": "mfa-create-okta-method",
-        "tags": [
-          "identity"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MfaCreateOktaMethodRequest"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -8353,6 +8474,30 @@
       }
     },
     "/identity/mfa/method/pingid": {
+      "post": {
+        "summary": "Create the given MFA method",
+        "operationId": "mfa-create-ping-id-method",
+        "tags": [
+          "identity"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MfaCreatePingIdMethodRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/identity/mfa/method/pingid/": {
       "get": {
         "summary": "List MFA method configurations for the given MFA method",
         "operationId": "mfa-list-ping-id-methods",
@@ -8373,28 +8518,6 @@
             "required": true
           }
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "summary": "Create the given MFA method",
-        "operationId": "mfa-create-ping-id-method",
-        "tags": [
-          "identity"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MfaCreatePingIdMethodRequest"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -8462,6 +8585,30 @@
       }
     },
     "/identity/mfa/method/totp": {
+      "post": {
+        "summary": "Create the given MFA method",
+        "operationId": "mfa-create-totp-method",
+        "tags": [
+          "identity"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MfaCreateTotpMethodRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/identity/mfa/method/totp/": {
       "get": {
         "summary": "List MFA method configurations for the given MFA method",
         "operationId": "mfa-list-totp-methods",
@@ -8482,28 +8629,6 @@
             "required": true
           }
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "summary": "Create the given MFA method",
-        "operationId": "mfa-create-totp-method",
-        "tags": [
-          "identity"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MfaCreateTotpMethodRequest"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -8699,7 +8824,7 @@
         }
       }
     },
-    "/identity/oidc/assignment": {
+    "/identity/oidc/assignment/": {
       "description": "List OIDC assignments",
       "get": {
         "operationId": "oidc-list-assignments",
@@ -8785,7 +8910,7 @@
         }
       }
     },
-    "/identity/oidc/client": {
+    "/identity/oidc/client/": {
       "description": "List OIDC clients",
       "get": {
         "operationId": "oidc-list-clients",
@@ -8931,7 +9056,7 @@
         }
       }
     },
-    "/identity/oidc/key": {
+    "/identity/oidc/key/": {
       "description": "List OIDC keys",
       "get": {
         "summary": "List OIDC keys",
@@ -9057,7 +9182,7 @@
         }
       }
     },
-    "/identity/oidc/provider": {
+    "/identity/oidc/provider/": {
       "description": "List OIDC providers",
       "parameters": [
         {
@@ -9324,7 +9449,7 @@
         }
       }
     },
-    "/identity/oidc/role": {
+    "/identity/oidc/role/": {
       "description": "List configured OIDC roles",
       "get": {
         "summary": "List configured OIDC roles",
@@ -9414,7 +9539,7 @@
         }
       }
     },
-    "/identity/oidc/scope": {
+    "/identity/oidc/scope/": {
       "description": "List OIDC scopes",
       "get": {
         "operationId": "oidc-list-scopes",
@@ -9551,7 +9676,7 @@
         }
       }
     },
-    "/identity/persona/id": {
+    "/identity/persona/id/": {
       "description": "List all the alias IDs.",
       "get": {
         "summary": "List all the alias IDs.",
@@ -10195,8 +10320,9 @@
         }
       }
     },
-    "/sys/config/ui/headers": {
+    "/sys/config/ui/headers/": {
       "description": "This path responds to the following HTTP methods. GET /<header> Returns the header value. POST /<header> Sets the header value for the UI. DELETE /<header> Clears the header value for UI. LIST / List the headers configured for the UI.",
+      "x-vault-sudo": true,
       "get": {
         "summary": "Return a list of configured UI headers.",
         "operationId": "ui-headers-list",
@@ -11146,7 +11272,7 @@
         }
       }
     },
-    "/sys/leases/lookup/{prefix}": {
+    "/sys/leases/lookup/{prefix}/": {
       "description": "View or list lease metadata.",
       "parameters": [
         {
@@ -11564,7 +11690,7 @@
         }
       }
     },
-    "/sys/managed-keys/{type}": {
+    "/sys/managed-keys/{type}/": {
       "parameters": [
         {
           "name": "type",
@@ -11711,7 +11837,7 @@
         }
       }
     },
-    "/sys/mfa/method": {
+    "/sys/mfa/method/": {
       "get": {
         "operationId": "system-list-mfa-method",
         "tags": [
@@ -12178,7 +12304,7 @@
         }
       }
     },
-    "/sys/namespaces": {
+    "/sys/namespaces/": {
       "get": {
         "operationId": "system-list-namespaces",
         "tags": [
@@ -12431,7 +12557,7 @@
         }
       }
     },
-    "/sys/plugins/catalog/{type}": {
+    "/sys/plugins/catalog/{type}/": {
       "description": "Configures the plugins known to Vault",
       "parameters": [
         {
@@ -12612,7 +12738,7 @@
         }
       }
     },
-    "/sys/policies/acl": {
+    "/sys/policies/acl/": {
       "description": "List the configured access control policies.",
       "get": {
         "operationId": "policies-list-acl-policies",
@@ -12714,7 +12840,7 @@
         }
       }
     },
-    "/sys/policies/egp": {
+    "/sys/policies/egp/": {
       "get": {
         "operationId": "system-list-policies-egp",
         "tags": [
@@ -12786,7 +12912,7 @@
         }
       }
     },
-    "/sys/policies/password": {
+    "/sys/policies/password/": {
       "get": {
         "summary": "List the existing password policies.",
         "operationId": "policies-list-password-policies",
@@ -12921,7 +13047,7 @@
         }
       }
     },
-    "/sys/policies/rgp": {
+    "/sys/policies/rgp/": {
       "get": {
         "operationId": "system-list-policies-rgp",
         "tags": [
@@ -12996,18 +13122,43 @@
     "/sys/policy": {
       "description": "List the configured access control policies.",
       "get": {
-        "operationId": "policies-list",
+        "operationId": "policies-read-acl-policy-list2",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PoliciesReadAclPolicyList2Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sys/policy/": {
+      "description": "List the configured access control policies.",
+      "get": {
+        "operationId": "policies-list-acl-policy-list2",
         "tags": [
           "system"
         ],
         "parameters": [
           {
             "name": "list",
-            "description": "Return a list if `true`",
+            "description": "Must be set to `true`",
             "in": "query",
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
           }
         ],
         "responses": {
@@ -13016,7 +13167,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PoliciesListResponse"
+                  "$ref": "#/components/schemas/PoliciesListAclPolicyList2Response"
                 }
               }
             }
@@ -13298,7 +13449,7 @@
         }
       }
     },
-    "/sys/quotas/lease-count": {
+    "/sys/quotas/lease-count/": {
       "get": {
         "operationId": "system-list-quotas-lease-count",
         "tags": [
@@ -13370,7 +13521,7 @@
         }
       }
     },
-    "/sys/quotas/rate-limit": {
+    "/sys/quotas/rate-limit/": {
       "description": "Lists the names of all the rate limit quotas.",
       "get": {
         "operationId": "rate-limit-quotas-list",
@@ -13479,16 +13630,6 @@
         "tags": [
           "system"
         ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Return a list if `true`",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -13537,6 +13678,43 @@
         }
       }
     },
+    "/sys/raw/": {
+      "description": "Write, Read, and Delete data directly in the Storage backend.",
+      "x-vault-sudo": true,
+      "get": {
+        "summary": "Return a list keys for a given path prefix.",
+        "operationId": "raw-list",
+        "tags": [
+          "system"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RawListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/sys/raw/{path}": {
       "description": "Write, Read, and Delete data directly in the Storage backend.",
       "parameters": [
@@ -13556,16 +13734,6 @@
         "operationId": "raw-read-path",
         "tags": [
           "system"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Return a list if `true`",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -13611,6 +13779,53 @@
         "responses": {
           "204": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/sys/raw/{path}/": {
+      "description": "Write, Read, and Delete data directly in the Storage backend.",
+      "parameters": [
+        {
+          "name": "path",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-sudo": true,
+      "get": {
+        "summary": "Return a list keys for a given path prefix.",
+        "operationId": "raw-list-path",
+        "tags": [
+          "system"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RawListPathResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -15229,7 +15444,7 @@
         }
       }
     },
-    "/sys/version-history": {
+    "/sys/version-history/": {
       "description": "List historical version changes sorted by installation time in ascending order.",
       "get": {
         "summary": "Returns map of historical version change entries",
@@ -15476,7 +15691,7 @@
         }
       }
     },
-    "/{alicloud_mount_path}/role": {
+    "/{alicloud_mount_path}/role/": {
       "description": "List the existing roles in this backend.",
       "parameters": [
         {
@@ -15764,7 +15979,7 @@
         }
       }
     },
-    "/{aws_mount_path}/roles": {
+    "/{aws_mount_path}/roles/": {
       "description": "List the existing roles in this backend",
       "parameters": [
         {
@@ -16151,7 +16366,7 @@
         }
       }
     },
-    "/{azure_mount_path}/roles": {
+    "/{azure_mount_path}/roles/": {
       "description": "List existing roles.",
       "parameters": [
         {
@@ -16369,7 +16584,7 @@
         }
       }
     },
-    "/{consul_mount_path}/roles": {
+    "/{consul_mount_path}/roles/": {
       "parameters": [
         {
           "name": "consul_mount_path",
@@ -16474,7 +16689,7 @@
         }
       }
     },
-    "/{database_mount_path}/config": {
+    "/{database_mount_path}/config/": {
       "description": "Configure connection details to a database plugin.",
       "parameters": [
         {
@@ -16655,7 +16870,7 @@
         }
       }
     },
-    "/{database_mount_path}/roles": {
+    "/{database_mount_path}/roles/": {
       "description": "Manage the roles that can be created with this backend.",
       "parameters": [
         {
@@ -16873,7 +17088,7 @@
         }
       }
     },
-    "/{database_mount_path}/static-roles": {
+    "/{database_mount_path}/static-roles/": {
       "description": "Manage the static roles that can be created with this backend.",
       "parameters": [
         {
@@ -17058,7 +17273,7 @@
         }
       }
     },
-    "/{gcp_mount_path}/impersonated-account": {
+    "/{gcp_mount_path}/impersonated-account/": {
       "description": "List created impersonated accounts.",
       "parameters": [
         {
@@ -17212,7 +17427,7 @@
         }
       }
     },
-    "/{gcp_mount_path}/impersonated-accounts": {
+    "/{gcp_mount_path}/impersonated-accounts/": {
       "description": "List created impersonated accounts.",
       "parameters": [
         {
@@ -17308,7 +17523,7 @@
         }
       }
     },
-    "/{gcp_mount_path}/roleset": {
+    "/{gcp_mount_path}/roleset/": {
       "description": "List existing rolesets.",
       "parameters": [
         {
@@ -17588,7 +17803,7 @@
         }
       }
     },
-    "/{gcp_mount_path}/rolesets": {
+    "/{gcp_mount_path}/rolesets/": {
       "description": "List existing rolesets.",
       "parameters": [
         {
@@ -17628,7 +17843,7 @@
         }
       }
     },
-    "/{gcp_mount_path}/static-account": {
+    "/{gcp_mount_path}/static-account/": {
       "description": "List created static accounts.",
       "parameters": [
         {
@@ -17873,7 +18088,7 @@
         }
       }
     },
-    "/{gcp_mount_path}/static-accounts": {
+    "/{gcp_mount_path}/static-accounts/": {
       "description": "List created static accounts.",
       "parameters": [
         {
@@ -18110,7 +18325,7 @@
         }
       }
     },
-    "/{gcpkms_mount_path}/keys": {
+    "/{gcpkms_mount_path}/keys/": {
       "description": "List named keys",
       "parameters": [
         {
@@ -18757,7 +18972,7 @@
         }
       }
     },
-    "/{kubernetes_mount_path}/roles": {
+    "/{kubernetes_mount_path}/roles/": {
       "description": "List the existing roles in this secrets engine.",
       "parameters": [
         {
@@ -18894,16 +19109,6 @@
         "tags": [
           "secrets"
         ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Return a list if `true`",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -18929,6 +19134,62 @@
         "responses": {
           "204": {
             "description": "No Content"
+          }
+        }
+      }
+    },
+    "/{kv_v1_mount_path}/{path}/": {
+      "description": "Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.",
+      "parameters": [
+        {
+          "name": "path",
+          "description": "Location of the secret.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "kv_v1_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "kv-v1"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "kv-v1-list",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KvV1ListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -19204,16 +19465,6 @@
         "tags": [
           "secrets"
         ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Return a list if `true`",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -19256,6 +19507,62 @@
         "responses": {
           "204": {
             "description": "No Content"
+          }
+        }
+      }
+    },
+    "/{kv_v2_mount_path}/metadata/{path}/": {
+      "description": "Configures settings for the KV store",
+      "parameters": [
+        {
+          "name": "path",
+          "description": "Location of the secret.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "kv_v2_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "kv-v2"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "kv-v2-list-metadata",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KvV2ListMetadataResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -19441,7 +19748,7 @@
         }
       }
     },
-    "/{ldap_mount_path}/library": {
+    "/{ldap_mount_path}/library/": {
       "description": "List the name of each set of service accounts currently stored.",
       "parameters": [
         {
@@ -19726,7 +20033,7 @@
         }
       }
     },
-    "/{ldap_mount_path}/role": {
+    "/{ldap_mount_path}/role/": {
       "description": "List all the dynamic roles Vault is currently managing in LDAP.",
       "parameters": [
         {
@@ -19930,7 +20237,7 @@
         }
       }
     },
-    "/{ldap_mount_path}/static-role": {
+    "/{ldap_mount_path}/static-role/": {
       "description": "This path lists all the static roles Vault is currently managing within the LDAP system.",
       "parameters": [
         {
@@ -20131,7 +20438,7 @@
         }
       }
     },
-    "/{mongodbatlas_mount_path}/roles": {
+    "/{mongodbatlas_mount_path}/roles/": {
       "description": "List the existing roles in this backend",
       "parameters": [
         {
@@ -20392,7 +20699,7 @@
         }
       }
     },
-    "/{nomad_mount_path}/role": {
+    "/{nomad_mount_path}/role/": {
       "parameters": [
         {
           "name": "nomad_mount_path",
@@ -21351,7 +21658,7 @@
         }
       }
     },
-    "/{pki_mount_path}/certs": {
+    "/{pki_mount_path}/certs/": {
       "description": "Fetch a CA, CRL, CA Chain, or non-revoked certificate.",
       "parameters": [
         {
@@ -21398,7 +21705,7 @@
         }
       }
     },
-    "/{pki_mount_path}/certs/revoked": {
+    "/{pki_mount_path}/certs/revoked/": {
       "description": "List all revoked serial numbers within the local cluster",
       "parameters": [
         {
@@ -22103,7 +22410,7 @@
         }
       }
     },
-    "/{pki_mount_path}/eab": {
+    "/{pki_mount_path}/eab/": {
       "description": "list external account bindings to be used for ACME",
       "parameters": [
         {
@@ -24752,7 +25059,7 @@
         }
       }
     },
-    "/{pki_mount_path}/issuers": {
+    "/{pki_mount_path}/issuers/": {
       "description": "Fetch a list of CA certificates.",
       "parameters": [
         {
@@ -24766,6 +25073,7 @@
           "required": true
         }
       ],
+      "x-vault-unauthenticated": true,
       "get": {
         "operationId": "pki-list-issuers",
         "tags": [
@@ -25081,7 +25389,7 @@
         }
       }
     },
-    "/{pki_mount_path}/keys": {
+    "/{pki_mount_path}/keys/": {
       "description": "Fetch a list of all issuer keys",
       "parameters": [
         {
@@ -25449,7 +25757,7 @@
         }
       }
     },
-    "/{pki_mount_path}/roles": {
+    "/{pki_mount_path}/roles/": {
       "description": "List the existing roles in this backend",
       "parameters": [
         {
@@ -26854,7 +27162,7 @@
         }
       }
     },
-    "/{rabbitmq_mount_path}/roles": {
+    "/{rabbitmq_mount_path}/roles/": {
       "description": "Manage the roles that can be created with this backend.",
       "parameters": [
         {
@@ -27237,7 +27545,7 @@
         }
       }
     },
-    "/{ssh_mount_path}/roles": {
+    "/{ssh_mount_path}/roles/": {
       "description": "Manage the 'roles' that can be created with this backend.",
       "parameters": [
         {
@@ -27564,7 +27872,7 @@
         }
       }
     },
-    "/{terraform_mount_path}/role": {
+    "/{terraform_mount_path}/role/": {
       "description": "List the existing roles in Terraform Cloud / Enterprise backend",
       "parameters": [
         {
@@ -27762,7 +28070,7 @@
         }
       }
     },
-    "/{totp_mount_path}/keys": {
+    "/{totp_mount_path}/keys/": {
       "description": "Manage the keys that can be created with this backend.",
       "parameters": [
         {
@@ -28533,7 +28841,7 @@
         }
       }
     },
-    "/{transit_mount_path}/keys": {
+    "/{transit_mount_path}/keys/": {
       "description": "Managed named encryption keys",
       "parameters": [
         {
@@ -35509,6 +35817,17 @@
           }
         }
       },
+      "KvV1ListResponse": {
+        "type": "object",
+        "properties": {
+          "keys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "KvV2ConfigureRequest": {
         "type": "object",
         "properties": {
@@ -35547,6 +35866,17 @@
             "description": "The versions to destroy. Their data will be permanently deleted.",
             "items": {
               "type": "integer"
+            }
+          }
+        }
+      },
+      "KvV2ListMetadataResponse": {
+        "type": "object",
+        "properties": {
+          "keys": {
+            "type": "array",
+            "items": {
+              "type": "string"
             }
           }
         }
@@ -46282,18 +46612,7 @@
           }
         }
       },
-      "PoliciesListPasswordPoliciesResponse": {
-        "type": "object",
-        "properties": {
-          "keys": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "PoliciesListResponse": {
+      "PoliciesListAclPolicyList2Response": {
         "type": "object",
         "properties": {
           "keys": {
@@ -46303,6 +46622,17 @@
             }
           },
           "policies": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "PoliciesListPasswordPoliciesResponse": {
+        "type": "object",
+        "properties": {
+          "keys": {
             "type": "array",
             "items": {
               "type": "string"
@@ -46321,6 +46651,23 @@
           },
           "rules": {
             "type": "string"
+          }
+        }
+      },
+      "PoliciesReadAclPolicyList2Response": {
+        "type": "object",
+        "properties": {
+          "keys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "policies": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -46816,6 +47163,28 @@
           "type": {
             "type": "string",
             "description": "Type of the quota rule."
+          }
+        }
+      },
+      "RawListPathResponse": {
+        "type": "object",
+        "properties": {
+          "keys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "RawListResponse": {
+        "type": "object",
+        "properties": {
+          "keys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },

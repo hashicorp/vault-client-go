@@ -122,7 +122,7 @@ func (s *Secrets) AliCloudListRoles(ctx context.Context, options ...RequestOptio
 		return nil, err
 	}
 
-	requestPath := "/v1/{alicloud_mount_path}/role"
+	requestPath := "/v1/{alicloud_mount_path}/role/"
 	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("alicloud")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -415,7 +415,7 @@ func (s *Secrets) AwsListRoles(ctx context.Context, options ...RequestOption) (*
 		return nil, err
 	}
 
-	requestPath := "/v1/{aws_mount_path}/roles"
+	requestPath := "/v1/{aws_mount_path}/roles/"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -704,7 +704,7 @@ func (s *Secrets) AzureListRoles(ctx context.Context, options ...RequestOption) 
 		return nil, err
 	}
 
-	requestPath := "/v1/{azure_mount_path}/roles"
+	requestPath := "/v1/{azure_mount_path}/roles/"
 	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("azure")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -922,7 +922,7 @@ func (s *Secrets) ConsulListRoles(ctx context.Context, options ...RequestOption)
 		return nil, err
 	}
 
-	requestPath := "/v1/{consul_mount_path}/roles"
+	requestPath := "/v1/{consul_mount_path}/roles/"
 	requestPath = strings.Replace(requestPath, "{"+"consul_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("consul")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -1036,6 +1036,32 @@ func (s *Secrets) CubbyholeDelete(ctx context.Context, path string, options ...R
 	)
 }
 
+// CubbyholeList List secret entries at the specified location.
+// Folders are suffixed with /. The input must be a folder; list on a file will not return a value. The values themselves are not accessible via this command.
+// path: Specifies the path of the secret.
+func (s *Secrets) CubbyholeList(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/cubbyhole/{path}/"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("list", "true")
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
 // CubbyholeRead Retrieve the secret at the specified location.
 // path: Specifies the path of the secret.
 func (s *Secrets) CubbyholeRead(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
@@ -1048,7 +1074,6 @@ func (s *Secrets) CubbyholeRead(ctx context.Context, path string, options ...Req
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("list", "true")
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1217,7 +1242,7 @@ func (s *Secrets) DatabaseListConnections(ctx context.Context, options ...Reques
 		return nil, err
 	}
 
-	requestPath := "/v1/{database_mount_path}/config"
+	requestPath := "/v1/{database_mount_path}/config/"
 	requestPath = strings.Replace(requestPath, "{"+"database_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("database")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -1241,7 +1266,7 @@ func (s *Secrets) DatabaseListRoles(ctx context.Context, options ...RequestOptio
 		return nil, err
 	}
 
-	requestPath := "/v1/{database_mount_path}/roles"
+	requestPath := "/v1/{database_mount_path}/roles/"
 	requestPath = strings.Replace(requestPath, "{"+"database_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("database")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -1265,7 +1290,7 @@ func (s *Secrets) DatabaseListStaticRoles(ctx context.Context, options ...Reques
 		return nil, err
 	}
 
-	requestPath := "/v1/{database_mount_path}/static-roles"
+	requestPath := "/v1/{database_mount_path}/static-roles/"
 	requestPath = strings.Replace(requestPath, "{"+"database_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("database")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -2008,7 +2033,7 @@ func (s *Secrets) GoogleCloudKmsListKeys(ctx context.Context, options ...Request
 		return nil, err
 	}
 
-	requestPath := "/v1/{gcpkms_mount_path}/keys"
+	requestPath := "/v1/{gcpkms_mount_path}/keys/"
 	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcpkms")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -2305,7 +2330,7 @@ func (s *Secrets) GoogleCloudListImpersonatedAccounts(ctx context.Context, optio
 		return nil, err
 	}
 
-	requestPath := "/v1/{gcp_mount_path}/impersonated-account"
+	requestPath := "/v1/{gcp_mount_path}/impersonated-account/"
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -2329,7 +2354,7 @@ func (s *Secrets) GoogleCloudListRolesets(ctx context.Context, options ...Reques
 		return nil, err
 	}
 
-	requestPath := "/v1/{gcp_mount_path}/roleset"
+	requestPath := "/v1/{gcp_mount_path}/roleset/"
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -2353,7 +2378,7 @@ func (s *Secrets) GoogleCloudListStaticAccounts(ctx context.Context, options ...
 		return nil, err
 	}
 
-	requestPath := "/v1/{gcp_mount_path}/static-account"
+	requestPath := "/v1/{gcp_mount_path}/static-account/"
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -2767,7 +2792,7 @@ func (s *Secrets) KubernetesListRoles(ctx context.Context, options ...RequestOpt
 		return nil, err
 	}
 
-	requestPath := "/v1/{kubernetes_mount_path}/roles"
+	requestPath := "/v1/{kubernetes_mount_path}/roles/"
 	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kubernetes")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -2882,6 +2907,32 @@ func (s *Secrets) KvV1Delete(ctx context.Context, path string, options ...Reques
 	)
 }
 
+// KvV1List
+// path: Location of the secret.
+func (s *Secrets) KvV1List(ctx context.Context, path string, options ...RequestOption) (*Response[schema.KvV1ListResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{kv_v1_mount_path}/{path}/"
+	requestPath = strings.Replace(requestPath, "{"+"kv_v1_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v1")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("list", "true")
+
+	return sendRequestParseResponse[schema.KvV1ListResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
 // KvV1Read
 // path: Location of the secret.
 func (s *Secrets) KvV1Read(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
@@ -2895,7 +2946,6 @@ func (s *Secrets) KvV1Read(ctx context.Context, path string, options ...RequestO
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("list", "true")
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3056,6 +3106,32 @@ func (s *Secrets) KvV2DestroyVersions(ctx context.Context, path string, request 
 	)
 }
 
+// KvV2ListMetadata
+// path: Location of the secret.
+func (s *Secrets) KvV2ListMetadata(ctx context.Context, path string, options ...RequestOption) (*Response[schema.KvV2ListMetadataResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{kv_v2_mount_path}/metadata/{path}/"
+	requestPath = strings.Replace(requestPath, "{"+"kv_v2_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kv-v2")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("list", "true")
+
+	return sendRequestParseResponse[schema.KvV2ListMetadataResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
 // KvV2Read
 // path: Location of the secret.
 func (s *Secrets) KvV2Read(ctx context.Context, path string, options ...RequestOption) (*Response[schema.KvV2ReadResponse], error) {
@@ -3117,7 +3193,6 @@ func (s *Secrets) KvV2ReadMetadata(ctx context.Context, path string, options ...
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("list", "true")
 
 	return sendRequestParseResponse[schema.KvV2ReadMetadataResponse](
 		ctx,
@@ -3483,7 +3558,7 @@ func (s *Secrets) LdapLibraryList(ctx context.Context, options ...RequestOption)
 		return nil, err
 	}
 
-	requestPath := "/v1/{ldap_mount_path}/library"
+	requestPath := "/v1/{ldap_mount_path}/library/"
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("ldap")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -3532,7 +3607,7 @@ func (s *Secrets) LdapListDynamicRoles(ctx context.Context, options ...RequestOp
 		return nil, err
 	}
 
-	requestPath := "/v1/{ldap_mount_path}/role"
+	requestPath := "/v1/{ldap_mount_path}/role/"
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("ldap")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -3556,7 +3631,7 @@ func (s *Secrets) LdapListStaticRoles(ctx context.Context, options ...RequestOpt
 		return nil, err
 	}
 
-	requestPath := "/v1/{ldap_mount_path}/static-role"
+	requestPath := "/v1/{ldap_mount_path}/static-role/"
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("ldap")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -3874,7 +3949,7 @@ func (s *Secrets) MongoDbAtlasListRoles(ctx context.Context, options ...RequestO
 		return nil, err
 	}
 
-	requestPath := "/v1/{mongodbatlas_mount_path}/roles"
+	requestPath := "/v1/{mongodbatlas_mount_path}/roles/"
 	requestPath = strings.Replace(requestPath, "{"+"mongodbatlas_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("mongodbatlas")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -4113,7 +4188,7 @@ func (s *Secrets) NomadListRoles(ctx context.Context, options ...RequestOption) 
 		return nil, err
 	}
 
-	requestPath := "/v1/{nomad_mount_path}/role"
+	requestPath := "/v1/{nomad_mount_path}/role/"
 	requestPath = strings.Replace(requestPath, "{"+"nomad_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("nomad")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -5282,7 +5357,7 @@ func (s *Secrets) PkiListCerts(ctx context.Context, options ...RequestOption) (*
 		return nil, err
 	}
 
-	requestPath := "/v1/{pki_mount_path}/certs"
+	requestPath := "/v1/{pki_mount_path}/certs/"
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -5306,7 +5381,7 @@ func (s *Secrets) PkiListEabKeys(ctx context.Context, options ...RequestOption) 
 		return nil, err
 	}
 
-	requestPath := "/v1/{pki_mount_path}/eab"
+	requestPath := "/v1/{pki_mount_path}/eab/"
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -5330,7 +5405,7 @@ func (s *Secrets) PkiListIssuers(ctx context.Context, options ...RequestOption) 
 		return nil, err
 	}
 
-	requestPath := "/v1/{pki_mount_path}/issuers"
+	requestPath := "/v1/{pki_mount_path}/issuers/"
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -5354,7 +5429,7 @@ func (s *Secrets) PkiListKeys(ctx context.Context, options ...RequestOption) (*R
 		return nil, err
 	}
 
-	requestPath := "/v1/{pki_mount_path}/keys"
+	requestPath := "/v1/{pki_mount_path}/keys/"
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -5378,7 +5453,7 @@ func (s *Secrets) PkiListRevokedCerts(ctx context.Context, options ...RequestOpt
 		return nil, err
 	}
 
-	requestPath := "/v1/{pki_mount_path}/certs/revoked"
+	requestPath := "/v1/{pki_mount_path}/certs/revoked/"
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -5402,7 +5477,7 @@ func (s *Secrets) PkiListRoles(ctx context.Context, options ...RequestOption) (*
 		return nil, err
 	}
 
-	requestPath := "/v1/{pki_mount_path}/roles"
+	requestPath := "/v1/{pki_mount_path}/roles/"
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("pki")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -7868,7 +7943,7 @@ func (s *Secrets) RabbitMqListRoles(ctx context.Context, options ...RequestOptio
 		return nil, err
 	}
 
-	requestPath := "/v1/{rabbitmq_mount_path}/roles"
+	requestPath := "/v1/{rabbitmq_mount_path}/roles/"
 	requestPath = strings.Replace(requestPath, "{"+"rabbitmq_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("rabbitmq")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -8157,7 +8232,7 @@ func (s *Secrets) SshListRoles(ctx context.Context, options ...RequestOption) (*
 		return nil, err
 	}
 
-	requestPath := "/v1/{ssh_mount_path}/roles"
+	requestPath := "/v1/{ssh_mount_path}/roles/"
 	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("ssh")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -8490,7 +8565,7 @@ func (s *Secrets) TerraformCloudListRoles(ctx context.Context, options ...Reques
 		return nil, err
 	}
 
-	requestPath := "/v1/{terraform_mount_path}/role"
+	requestPath := "/v1/{terraform_mount_path}/role/"
 	requestPath = strings.Replace(requestPath, "{"+"terraform_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("terraform")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -8687,7 +8762,7 @@ func (s *Secrets) TotpListKeys(ctx context.Context, options ...RequestOption) (*
 		return nil, err
 	}
 
-	requestPath := "/v1/{totp_mount_path}/keys"
+	requestPath := "/v1/{totp_mount_path}/keys/"
 	requestPath = strings.Replace(requestPath, "{"+"totp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("totp")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -9346,7 +9421,7 @@ func (s *Secrets) TransitListKeys(ctx context.Context, options ...RequestOption)
 		return nil, err
 	}
 
-	requestPath := "/v1/{transit_mount_path}/keys"
+	requestPath := "/v1/{transit_mount_path}/keys/"
 	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("transit")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()

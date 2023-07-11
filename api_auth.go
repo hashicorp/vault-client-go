@@ -5357,8 +5357,7 @@ func (a *Auth) RadiusWriteUser(ctx context.Context, name string, request schema.
 }
 
 // TokenCreate The token create path is used to create new tokens.
-// format: Return json formatted output
-func (a *Auth) TokenCreate(ctx context.Context, request schema.TokenCreateRequest, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenCreate(ctx context.Context, request schema.TokenCreateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5367,7 +5366,6 @@ func (a *Auth) TokenCreate(ctx context.Context, request schema.TokenCreateReques
 	requestPath := "/v1/auth/token/create"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("format", url.QueryEscape(parameterToString(format)))
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5382,8 +5380,7 @@ func (a *Auth) TokenCreate(ctx context.Context, request schema.TokenCreateReques
 
 // TokenCreateAgainstRole This token create path is used to create new tokens adhering to the given role.
 // roleName: Name of the role
-// format: Return json formatted output
-func (a *Auth) TokenCreateAgainstRole(ctx context.Context, roleName string, request schema.TokenCreateAgainstRoleRequest, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenCreateAgainstRole(ctx context.Context, roleName string, request schema.TokenCreateAgainstRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5393,7 +5390,6 @@ func (a *Auth) TokenCreateAgainstRole(ctx context.Context, roleName string, requ
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("format", url.QueryEscape(parameterToString(format)))
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5407,8 +5403,7 @@ func (a *Auth) TokenCreateAgainstRole(ctx context.Context, roleName string, requ
 }
 
 // TokenCreateOrphan The token create path is used to create new orphan tokens.
-// format: Return json formatted output
-func (a *Auth) TokenCreateOrphan(ctx context.Context, request schema.TokenCreateOrphanRequest, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenCreateOrphan(ctx context.Context, request schema.TokenCreateOrphanRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5417,7 +5412,6 @@ func (a *Auth) TokenCreateOrphan(ctx context.Context, request schema.TokenCreate
 	requestPath := "/v1/auth/token/create-orphan"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("format", url.QueryEscape(parameterToString(format)))
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,

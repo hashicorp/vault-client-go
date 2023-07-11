@@ -9,14 +9,14 @@ Name | Type | Description | Notes
 **EntityAlias** | Pointer to **string** | Name of the entity alias to associate with this token | [optional] 
 **ExplicitMaxTtl** | Pointer to **string** | Explicit Max TTL of this token | [optional] 
 **Id** | Pointer to **string** | Value for the token | [optional] 
-**Metadata** | Pointer to **map[string]interface{}** | Arbitrary key&#x3D;value metadata to associate with the token | [optional] 
+**Lease** | Pointer to **string** | Use &#x27;ttl&#x27; instead | [optional] 
+**Meta** | Pointer to **map[string]interface{}** | Arbitrary key&#x3D;value metadata to associate with the token | [optional] 
 **NoDefaultPolicy** | Pointer to **bool** | Do not include default policy for this token | [optional] 
 **NoParent** | Pointer to **bool** | Create the token with no parent | [optional] 
 **NumUses** | Pointer to **int32** | Max number of uses for this token | [optional] 
 **Period** | Pointer to **string** | Renew period | [optional] 
 **Policies** | Pointer to **[]string** | List of policies for the token | [optional] 
-**Renewable** | Pointer to **bool** | Allow token to be renewed past its initial TTL up to system/mount maximum TTL | [optional] 
-**RoleName** | Pointer to **string** | Name of the role | [optional] 
+**Renewable** | Pointer to **bool** | Allow token to be renewed past its initial TTL up to system/mount maximum TTL | [optional] [default to true]
 **Ttl** | Pointer to **string** | Time to live for this token | [optional] 
 **Type** | Pointer to **string** | Token type | [optional] 
 
@@ -159,31 +159,60 @@ HasId returns a boolean if a field has been set.
 
 
 
-### GetMetadata
+### GetLease
 
-`func (o *TokenCreateOrphanRequest) GetMetadata() map[string]interface{}`
+`func (o *TokenCreateOrphanRequest) GetLease() string`
 
-GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+GetLease returns the Lease field if non-nil, zero value otherwise.
 
-### GetMetadataOk
+### GetLeaseOk
 
-`func (o *TokenCreateOrphanRequest) GetMetadataOk() (*map[string]interface{}, bool)`
+`func (o *TokenCreateOrphanRequest) GetLeaseOk() (*string, bool)`
 
-GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+GetLeaseOk returns a tuple with the Lease field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMetadata
+### SetLease
 
-`func (o *TokenCreateOrphanRequest) SetMetadata(v map[string]interface{})`
+`func (o *TokenCreateOrphanRequest) SetLease(v string)`
 
-SetMetadata sets Metadata field to given value.
+SetLease sets Lease field to given value.
 
 
-### HasMetadata
+### HasLease
 
-`func (o *TokenCreateOrphanRequest) HasMetadata() bool`
+`func (o *TokenCreateOrphanRequest) HasLease() bool`
 
-HasMetadata returns a boolean if a field has been set.
+HasLease returns a boolean if a field has been set.
+
+
+
+
+### GetMeta
+
+`func (o *TokenCreateOrphanRequest) GetMeta() map[string]interface{}`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *TokenCreateOrphanRequest) GetMetaOk() (*map[string]interface{}, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *TokenCreateOrphanRequest) SetMeta(v map[string]interface{})`
+
+SetMeta sets Meta field to given value.
+
+
+### HasMeta
+
+`func (o *TokenCreateOrphanRequest) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 
@@ -358,35 +387,6 @@ SetRenewable sets Renewable field to given value.
 `func (o *TokenCreateOrphanRequest) HasRenewable() bool`
 
 HasRenewable returns a boolean if a field has been set.
-
-
-
-
-### GetRoleName
-
-`func (o *TokenCreateOrphanRequest) GetRoleName() string`
-
-GetRoleName returns the RoleName field if non-nil, zero value otherwise.
-
-### GetRoleNameOk
-
-`func (o *TokenCreateOrphanRequest) GetRoleNameOk() (*string, bool)`
-
-GetRoleNameOk returns a tuple with the RoleName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRoleName
-
-`func (o *TokenCreateOrphanRequest) SetRoleName(v string)`
-
-SetRoleName sets RoleName field to given value.
-
-
-### HasRoleName
-
-`func (o *TokenCreateOrphanRequest) HasRoleName() bool`
-
-HasRoleName returns a boolean if a field has been set.
 
 
 

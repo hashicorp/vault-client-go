@@ -42,16 +42,6 @@
     },
     "/auth/token/create": {
       "description": "The token create path is used to create new tokens.",
-      "parameters": [
-        {
-          "name": "format",
-          "description": "Return json formatted output",
-          "in": "query",
-          "schema": {
-            "type": "string"
-          }
-        }
-      ],
       "post": {
         "summary": "The token create path is used to create new tokens.",
         "operationId": "token-create",
@@ -77,16 +67,6 @@
     },
     "/auth/token/create-orphan": {
       "description": "The token create path is used to create new orphan tokens.",
-      "parameters": [
-        {
-          "name": "format",
-          "description": "Return json formatted output",
-          "in": "query",
-          "schema": {
-            "type": "string"
-          }
-        }
-      ],
       "post": {
         "summary": "The token create path is used to create new orphan tokens.",
         "operationId": "token-create-orphan",
@@ -113,14 +93,6 @@
     "/auth/token/create/{role_name}": {
       "description": "This token create path is used to create new tokens adhering to the given role.",
       "parameters": [
-        {
-          "name": "format",
-          "description": "Return json formatted output",
-          "in": "query",
-          "schema": {
-            "type": "string"
-          }
-        },
         {
           "name": "role_name",
           "description": "Name of the role",
@@ -47890,10 +47862,15 @@
             "type": "string",
             "description": "Value for the token"
           },
-          "metadata": {
+          "lease": {
+            "type": "string",
+            "description": "Use 'ttl' instead",
+            "deprecated": true
+          },
+          "meta": {
             "type": "object",
             "description": "Arbitrary key=value metadata to associate with the token",
-            "format": "map"
+            "format": "kvpairs"
           },
           "no_default_policy": {
             "type": "boolean",
@@ -47920,7 +47897,8 @@
           },
           "renewable": {
             "type": "boolean",
-            "description": "Allow token to be renewed past its initial TTL up to system/mount maximum TTL"
+            "description": "Allow token to be renewed past its initial TTL up to system/mount maximum TTL",
+            "default": true
           },
           "ttl": {
             "type": "string",
@@ -47951,10 +47929,15 @@
             "type": "string",
             "description": "Value for the token"
           },
-          "metadata": {
+          "lease": {
+            "type": "string",
+            "description": "Use 'ttl' instead",
+            "deprecated": true
+          },
+          "meta": {
             "type": "object",
             "description": "Arbitrary key=value metadata to associate with the token",
-            "format": "map"
+            "format": "kvpairs"
           },
           "no_default_policy": {
             "type": "boolean",
@@ -47981,11 +47964,8 @@
           },
           "renewable": {
             "type": "boolean",
-            "description": "Allow token to be renewed past its initial TTL up to system/mount maximum TTL"
-          },
-          "role_name": {
-            "type": "string",
-            "description": "Name of the role"
+            "description": "Allow token to be renewed past its initial TTL up to system/mount maximum TTL",
+            "default": true
           },
           "ttl": {
             "type": "string",
@@ -48016,10 +47996,15 @@
             "type": "string",
             "description": "Value for the token"
           },
-          "metadata": {
+          "lease": {
+            "type": "string",
+            "description": "Use 'ttl' instead",
+            "deprecated": true
+          },
+          "meta": {
             "type": "object",
             "description": "Arbitrary key=value metadata to associate with the token",
-            "format": "map"
+            "format": "kvpairs"
           },
           "no_default_policy": {
             "type": "boolean",
@@ -48046,7 +48031,8 @@
           },
           "renewable": {
             "type": "boolean",
-            "description": "Allow token to be renewed past its initial TTL up to system/mount maximum TTL"
+            "description": "Allow token to be renewed past its initial TTL up to system/mount maximum TTL",
+            "default": true
           },
           "ttl": {
             "type": "string",

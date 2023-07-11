@@ -19,8 +19,12 @@ type TokenCreateOrphanRequest struct {
 	// Value for the token
 	Id string `json:"id,omitempty"`
 
+	// Use 'ttl' instead
+	// Deprecated
+	Lease string `json:"lease,omitempty"`
+
 	// Arbitrary key=value metadata to associate with the token
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Meta map[string]interface{} `json:"meta,omitempty"`
 
 	// Do not include default policy for this token
 	NoDefaultPolicy bool `json:"no_default_policy,omitempty"`
@@ -40,9 +44,6 @@ type TokenCreateOrphanRequest struct {
 	// Allow token to be renewed past its initial TTL up to system/mount maximum TTL
 	Renewable bool `json:"renewable,omitempty"`
 
-	// Name of the role
-	RoleName string `json:"role_name,omitempty"`
-
 	// Time to live for this token
 	Ttl string `json:"ttl,omitempty"`
 
@@ -55,6 +56,8 @@ type TokenCreateOrphanRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTokenCreateOrphanRequestWithDefaults() *TokenCreateOrphanRequest {
 	var this TokenCreateOrphanRequest
+
+	this.Renewable = true
 
 	return &this
 }

@@ -4765,7 +4765,7 @@
       ],
       "get": {
         "summary": "Read mappings for teams",
-        "operationId": "github-read-teams2",
+        "operationId": "github-list-teams2",
         "tags": [
           "auth"
         ],
@@ -4904,7 +4904,7 @@
       ],
       "get": {
         "summary": "Read mappings for users",
-        "operationId": "github-read-users2",
+        "operationId": "github-list-users2",
         "tags": [
           "auth"
         ],
@@ -13122,7 +13122,7 @@
     "/sys/policy": {
       "description": "List the configured access control policies.",
       "get": {
-        "operationId": "policies-read-acl-policy-list2",
+        "operationId": "policies-list-acl-policies2",
         "tags": [
           "system"
         ],
@@ -13132,7 +13132,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PoliciesReadAclPolicyList2Response"
+                  "$ref": "#/components/schemas/PoliciesListAclPolicies2Response"
                 }
               }
             }
@@ -13143,7 +13143,7 @@
     "/sys/policy/": {
       "description": "List the configured access control policies.",
       "get": {
-        "operationId": "policies-list-acl-policy-list2",
+        "operationId": "policies-list-acl-policies3",
         "tags": [
           "system"
         ],
@@ -13167,7 +13167,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PoliciesListAclPolicyList2Response"
+                  "$ref": "#/components/schemas/PoliciesListAclPolicies3Response"
                 }
               }
             }
@@ -46595,7 +46595,7 @@
           }
         }
       },
-      "PoliciesListAclPoliciesResponse": {
+      "PoliciesListAclPolicies2Response": {
         "type": "object",
         "properties": {
           "keys": {
@@ -46612,7 +46612,24 @@
           }
         }
       },
-      "PoliciesListAclPolicyList2Response": {
+      "PoliciesListAclPolicies3Response": {
+        "type": "object",
+        "properties": {
+          "keys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "policies": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "PoliciesListAclPoliciesResponse": {
         "type": "object",
         "properties": {
           "keys": {
@@ -46651,23 +46668,6 @@
           },
           "rules": {
             "type": "string"
-          }
-        }
-      },
-      "PoliciesReadAclPolicyList2Response": {
-        "type": "object",
-        "properties": {
-          "keys": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "policies": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           }
         }
       },

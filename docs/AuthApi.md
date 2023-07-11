@@ -14134,11 +14134,9 @@ func main() {
 	}
 
 	request := schema.NewTokenCreateRequestWithDefaults()
-	format := "format_example" // string | Return json formatted output
 	resp, err := client.Auth.TokenCreate(
 		context.Background(),
 		request,
-		format,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14159,7 +14157,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenCreateRequest** | [**TokenCreateRequest**](TokenCreateRequest.md) |  | 
- **format** | **string** | Return json formatted output | 
 
  (empty response body)
 
@@ -14196,12 +14193,10 @@ func main() {
 
 	roleName := "roleName_example" // string | Name of the role
 	request := schema.NewTokenCreateAgainstRoleRequestWithDefaults()
-	format := "format_example" // string | Return json formatted output
 	resp, err := client.Auth.TokenCreateAgainstRole(
 		context.Background(),
 		roleName,
 		request,
-		format,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14227,7 +14222,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **tokenCreateAgainstRoleRequest** | [**TokenCreateAgainstRoleRequest**](TokenCreateAgainstRoleRequest.md) |  | 
- **format** | **string** | Return json formatted output | 
 
  (empty response body)
 
@@ -14263,11 +14257,9 @@ func main() {
 	}
 
 	request := schema.NewTokenCreateOrphanRequestWithDefaults()
-	format := "format_example" // string | Return json formatted output
 	resp, err := client.Auth.TokenCreateOrphan(
 		context.Background(),
 		request,
-		format,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14288,7 +14280,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenCreateOrphanRequest** | [**TokenCreateOrphanRequest**](TokenCreateOrphanRequest.md) |  | 
- **format** | **string** | Return json formatted output | 
 
  (empty response body)
 

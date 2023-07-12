@@ -19,16 +19,3 @@ type GenerateRandomRequest struct {
 	// The number of bytes to generate (POST URL parameter)
 	Urlbytes string `json:"urlbytes,omitempty"`
 }
-
-// NewGenerateRandomRequestWithDefaults instantiates a new GenerateRandomRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGenerateRandomRequestWithDefaults() *GenerateRandomRequest {
-	var this GenerateRandomRequest
-
-	this.Bytes = 32
-	this.Format = "base64"
-	this.Source = "platform"
-
-	return &this
-}

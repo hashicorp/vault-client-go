@@ -13,12 +13,3 @@ type MongoDbAtlasConfigureRequest struct {
 	// MongoDB Atlas Programmatic Public Key
 	PublicKey string `json:"public_key"`
 }
-
-// NewMongoDbAtlasConfigureRequestWithDefaults instantiates a new MongoDbAtlasConfigureRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMongoDbAtlasConfigureRequestWithDefaults() *MongoDbAtlasConfigureRequest {
-	var this MongoDbAtlasConfigureRequest
-
-	return &this
-}

@@ -40,15 +40,3 @@ type MountsReadConfigurationResponse struct {
 
 	Uuid string `json:"uuid,omitempty"`
 }
-
-// NewMountsReadConfigurationResponseWithDefaults instantiates a new MountsReadConfigurationResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMountsReadConfigurationResponseWithDefaults() *MountsReadConfigurationResponse {
-	var this MountsReadConfigurationResponse
-
-	this.Local = false
-	this.SealWrap = false
-
-	return &this
-}

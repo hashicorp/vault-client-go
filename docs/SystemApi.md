@@ -293,11 +293,10 @@ func main() {
 	}
 
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
-	request := schema.NewAuditingCalculateHashRequestWithDefaults()
 	resp, err := client.System.AuditingCalculateHash(
 		context.Background(),
 		path,
-		request,
+		AuditingCalculateHashRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -480,11 +479,10 @@ func main() {
 	}
 
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
-	request := schema.NewAuditingEnableDeviceRequestWithDefaults()
 	resp, err := client.System.AuditingEnableDevice(
 		context.Background(),
 		path,
-		request,
+		AuditingEnableDeviceRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -545,11 +543,10 @@ func main() {
 	}
 
 	header := "header_example" // string | 
-	request := schema.NewAuditingEnableRequestHeaderRequestWithDefaults()
 	resp, err := client.System.AuditingEnableRequestHeader(
 		context.Background(),
 		header,
-		request,
+		AuditingEnableRequestHeaderRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -840,11 +837,10 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
-	request := schema.NewAuthEnableMethodRequestWithDefaults()
 	resp, err := client.System.AuthEnableMethod(
 		context.Background(),
 		path,
-		request,
+		AuthEnableMethodRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1083,11 +1079,10 @@ func main() {
 	}
 
 	path := "path_example" // string | Tune the configuration parameters for an auth path.
-	request := schema.NewAuthTuneConfigurationParametersRequestWithDefaults()
 	resp, err := client.System.AuthTuneConfigurationParameters(
 		context.Background(),
 		path,
-		request,
+		AuthTuneConfigurationParametersRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1259,10 +1254,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewCorsConfigureRequestWithDefaults()
 	resp, err := client.System.CorsConfigure(
 		context.Background(),
-		request,
+		CorsConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1421,10 +1415,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewDecodeRequestWithDefaults()
 	resp, err := client.System.Decode(
 		context.Background(),
-		request,
+		DecodeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1479,10 +1472,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewEncryptionKeyConfigureRotationRequestWithDefaults()
 	resp, err := client.System.EncryptionKeyConfigureRotation(
 		context.Background(),
-		request,
+		EncryptionKeyConfigureRotationRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1693,10 +1685,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewGenerateHashRequestWithDefaults()
 	resp, err := client.System.GenerateHash(
 		context.Background(),
-		request,
+		GenerateHashRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1752,11 +1743,10 @@ func main() {
 	}
 
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
-	request := schema.NewGenerateHashWithAlgorithmRequestWithDefaults()
 	resp, err := client.System.GenerateHashWithAlgorithm(
 		context.Background(),
 		urlalgorithm,
-		request,
+		GenerateHashWithAlgorithmRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1816,10 +1806,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewGenerateRandomRequestWithDefaults()
 	resp, err := client.System.GenerateRandom(
 		context.Background(),
-		request,
+		GenerateRandomRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1875,11 +1864,10 @@ func main() {
 	}
 
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
-	request := schema.NewGenerateRandomWithBytesRequestWithDefaults()
 	resp, err := client.System.GenerateRandomWithBytes(
 		context.Background(),
 		urlbytes,
-		request,
+		GenerateRandomWithBytesRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1940,11 +1928,10 @@ func main() {
 	}
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
-	request := schema.NewGenerateRandomWithSourceRequestWithDefaults()
 	resp, err := client.System.GenerateRandomWithSource(
 		context.Background(),
 		source,
-		request,
+		GenerateRandomWithSourceRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2006,12 +1993,11 @@ func main() {
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
-	request := schema.NewGenerateRandomWithSourceAndBytesRequestWithDefaults()
 	resp, err := client.System.GenerateRandomWithSourceAndBytes(
 		context.Background(),
 		source,
 		urlbytes,
-		request,
+		GenerateRandomWithSourceAndBytesRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2127,10 +2113,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewInitializeRequestWithDefaults()
 	resp, err := client.System.Initialize(
 		context.Background(),
-		request,
+		InitializeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2185,10 +2170,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewInternalClientActivityConfigureRequestWithDefaults()
 	resp, err := client.System.InternalClientActivityConfigure(
 		context.Background(),
-		request,
+		InternalClientActivityConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2664,11 +2648,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewInternalGenerateOpenApiDocumentWithParametersRequestWithDefaults()
 	genericMountPaths := true // bool | Use generic mount paths (defaults to false)
 	resp, err := client.System.InternalGenerateOpenApiDocumentWithParameters(
 		context.Background(),
-		request,
+		InternalGenerateOpenApiDocumentWithParametersRequest{ /* populate request parameters */ },
 		genericMountPaths,
 		vault.WithToken("my-token"),
 	)
@@ -3393,10 +3376,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewLeasesReadLeaseRequestWithDefaults()
 	resp, err := client.System.LeasesReadLease(
 		context.Background(),
-		request,
+		LeasesReadLeaseRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3451,10 +3433,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewLeasesRenewLeaseRequestWithDefaults()
 	resp, err := client.System.LeasesRenewLease(
 		context.Background(),
-		request,
+		LeasesRenewLeaseRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3510,11 +3491,10 @@ func main() {
 	}
 
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
-	request := schema.NewLeasesRenewLeaseWithIdRequestWithDefaults()
 	resp, err := client.System.LeasesRenewLeaseWithId(
 		context.Background(),
 		urlLeaseId,
-		request,
+		LeasesRenewLeaseWithIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3574,10 +3554,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewLeasesRevokeLeaseRequestWithDefaults()
 	resp, err := client.System.LeasesRevokeLease(
 		context.Background(),
-		request,
+		LeasesRevokeLeaseRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3633,11 +3612,10 @@ func main() {
 	}
 
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
-	request := schema.NewLeasesRevokeLeaseWithIdRequestWithDefaults()
 	resp, err := client.System.LeasesRevokeLeaseWithId(
 		context.Background(),
 		urlLeaseId,
-		request,
+		LeasesRevokeLeaseWithIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3698,11 +3676,10 @@ func main() {
 	}
 
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
-	request := schema.NewLeasesRevokeLeaseWithPrefixRequestWithDefaults()
 	resp, err := client.System.LeasesRevokeLeaseWithPrefix(
 		context.Background(),
 		prefix,
-		request,
+		LeasesRevokeLeaseWithPrefixRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4209,10 +4186,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewLoggersUpdateVerbosityLevelRequestWithDefaults()
 	resp, err := client.System.LoggersUpdateVerbosityLevel(
 		context.Background(),
-		request,
+		LoggersUpdateVerbosityLevelRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4268,11 +4244,10 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the logger to be modified.
-	request := schema.NewLoggersUpdateVerbosityLevelForRequestWithDefaults()
 	resp, err := client.System.LoggersUpdateVerbosityLevelFor(
 		context.Background(),
 		name,
-		request,
+		LoggersUpdateVerbosityLevelForRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4389,10 +4364,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewMfaValidateRequestWithDefaults()
 	resp, err := client.System.MfaValidate(
 		context.Background(),
-		request,
+		MfaValidateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4569,11 +4543,10 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
-	request := schema.NewMountsEnableSecretsEngineRequestWithDefaults()
 	resp, err := client.System.MountsEnableSecretsEngine(
 		context.Background(),
 		path,
-		request,
+		MountsEnableSecretsEngineRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4808,11 +4781,10 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
-	request := schema.NewMountsTuneConfigurationParametersRequestWithDefaults()
 	resp, err := client.System.MountsTuneConfigurationParameters(
 		context.Background(),
 		path,
-		request,
+		MountsTuneConfigurationParametersRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5113,11 +5085,10 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the plugin
-	request := schema.NewPluginsCatalogRegisterPluginRequestWithDefaults()
 	resp, err := client.System.PluginsCatalogRegisterPlugin(
 		context.Background(),
 		name,
-		request,
+		PluginsCatalogRegisterPluginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5179,12 +5150,11 @@ func main() {
 
 	name := "name_example" // string | The name of the plugin
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
-	request := schema.NewPluginsCatalogRegisterPluginWithTypeRequestWithDefaults()
 	resp, err := client.System.PluginsCatalogRegisterPluginWithType(
 		context.Background(),
 		name,
 		type_,
-		request,
+		PluginsCatalogRegisterPluginWithTypeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5374,10 +5344,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPluginsReloadBackendsRequestWithDefaults()
 	resp, err := client.System.PluginsReloadBackends(
 		context.Background(),
-		request,
+		PluginsReloadBackendsRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5903,11 +5872,10 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
-	request := schema.NewPoliciesWriteAclPolicyRequestWithDefaults()
 	resp, err := client.System.PoliciesWriteAclPolicy(
 		context.Background(),
 		name,
-		request,
+		PoliciesWriteAclPolicyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5968,11 +5936,10 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the password policy.
-	request := schema.NewPoliciesWritePasswordPolicyRequestWithDefaults()
 	resp, err := client.System.PoliciesWritePasswordPolicy(
 		context.Background(),
 		name,
-		request,
+		PoliciesWritePasswordPolicyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6628,10 +6595,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewQueryTokenAccessorCapabilitiesRequestWithDefaults()
 	resp, err := client.System.QueryTokenAccessorCapabilities(
 		context.Background(),
-		request,
+		QueryTokenAccessorCapabilitiesRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6686,10 +6652,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewQueryTokenCapabilitiesRequestWithDefaults()
 	resp, err := client.System.QueryTokenCapabilities(
 		context.Background(),
-		request,
+		QueryTokenCapabilitiesRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6744,10 +6709,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewQueryTokenSelfCapabilitiesRequestWithDefaults()
 	resp, err := client.System.QueryTokenSelfCapabilities(
 		context.Background(),
-		request,
+		QueryTokenSelfCapabilitiesRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6802,10 +6766,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewRateLimitQuotasConfigureRequestWithDefaults()
 	resp, err := client.System.RateLimitQuotasConfigure(
 		context.Background(),
-		request,
+		RateLimitQuotasConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7090,11 +7053,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the quota rule.
-	request := schema.NewRateLimitQuotasWriteRequestWithDefaults()
 	resp, err := client.System.RateLimitQuotasWrite(
 		context.Background(),
 		name,
-		request,
+		RateLimitQuotasWriteRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7384,10 +7346,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewRawWriteRequestWithDefaults()
 	resp, err := client.System.RawWrite(
 		context.Background(),
-		request,
+		RawWriteRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7443,11 +7404,10 @@ func main() {
 	}
 
 	path := "path_example" // string | 
-	request := schema.NewRawWritePathRequestWithDefaults()
 	resp, err := client.System.RawWritePath(
 		context.Background(),
 		path,
-		request,
+		RawWritePathRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7665,10 +7625,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewReadWrappingPropertiesRequestWithDefaults()
 	resp, err := client.System.ReadWrappingProperties(
 		context.Background(),
-		request,
+		ReadWrappingPropertiesRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7779,10 +7738,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewRekeyAttemptInitializeRequestWithDefaults()
 	resp, err := client.System.RekeyAttemptInitialize(
 		context.Background(),
-		request,
+		RekeyAttemptInitializeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7889,10 +7847,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewRekeyAttemptUpdateRequestWithDefaults()
 	resp, err := client.System.RekeyAttemptUpdate(
 		context.Background(),
-		request,
+		RekeyAttemptUpdateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8261,10 +8218,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewRekeyVerificationUpdateRequestWithDefaults()
 	resp, err := client.System.RekeyVerificationUpdate(
 		context.Background(),
-		request,
+		RekeyVerificationUpdateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8380,10 +8336,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewRemountRequestWithDefaults()
 	resp, err := client.System.Remount(
 		context.Background(),
-		request,
+		RemountRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8499,10 +8454,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewRewrapRequestWithDefaults()
 	resp, err := client.System.Rewrap(
 		context.Background(),
-		request,
+		RewrapRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8611,10 +8565,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewRootTokenGenerationInitializeRequestWithDefaults()
 	resp, err := client.System.RootTokenGenerationInitialize(
 		context.Background(),
-		request,
+		RootTokenGenerationInitializeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8723,10 +8676,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewRootTokenGenerationUpdateRequestWithDefaults()
 	resp, err := client.System.RootTokenGenerationUpdate(
 		context.Background(),
-		request,
+		RootTokenGenerationUpdateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -12149,10 +12101,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewSystemWriteNamespacesApiLockLockRequestWithDefaults()
 	resp, err := client.System.SystemWriteNamespacesApiLockLock(
 		context.Background(),
-		request,
+		SystemWriteNamespacesApiLockLockRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -12268,10 +12219,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewSystemWriteNamespacesApiLockUnlockRequestWithDefaults()
 	resp, err := client.System.SystemWriteNamespacesApiLockUnlock(
 		context.Background(),
-		request,
+		SystemWriteNamespacesApiLockUnlockRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14635,11 +14585,10 @@ func main() {
 	}
 
 	header := "header_example" // string | The name of the header.
-	request := schema.NewUiHeadersConfigureRequestWithDefaults()
 	resp, err := client.System.UiHeadersConfigure(
 		context.Background(),
 		header,
-		request,
+		UiHeadersConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14876,10 +14825,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewUnsealRequestWithDefaults()
 	resp, err := client.System.Unseal(
 		context.Background(),
-		request,
+		UnsealRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14934,10 +14882,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewUnwrapRequestWithDefaults()
 	resp, err := client.System.Unwrap(
 		context.Background(),
-		request,
+		UnwrapRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {

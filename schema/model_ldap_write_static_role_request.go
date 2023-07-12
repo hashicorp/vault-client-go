@@ -16,12 +16,3 @@ type LdapWriteStaticRoleRequest struct {
 	// The username/logon name for the entry with which this role will be associated.
 	Username string `json:"username,omitempty"`
 }
-
-// NewLdapWriteStaticRoleRequestWithDefaults instantiates a new LdapWriteStaticRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLdapWriteStaticRoleRequestWithDefaults() *LdapWriteStaticRoleRequest {
-	var this LdapWriteStaticRoleRequest
-
-	return &this
-}

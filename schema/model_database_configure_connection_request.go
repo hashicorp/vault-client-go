@@ -25,14 +25,3 @@ type DatabaseConfigureConnectionRequest struct {
 	// If true, the connection details are verified by actually connecting to the database. Defaults to true.
 	VerifyConnection bool `json:"verify_connection,omitempty"`
 }
-
-// NewDatabaseConfigureConnectionRequestWithDefaults instantiates a new DatabaseConfigureConnectionRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDatabaseConfigureConnectionRequestWithDefaults() *DatabaseConfigureConnectionRequest {
-	var this DatabaseConfigureConnectionRequest
-
-	this.VerifyConnection = true
-
-	return &this
-}

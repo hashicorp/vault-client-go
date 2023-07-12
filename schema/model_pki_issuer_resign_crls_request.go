@@ -22,16 +22,3 @@ type PkiIssuerResignCrlsRequest struct {
 	// The amount of time the generated CRL should be valid; defaults to 72 hours.
 	NextUpdate string `json:"next_update,omitempty"`
 }
-
-// NewPkiIssuerResignCrlsRequestWithDefaults instantiates a new PkiIssuerResignCrlsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiIssuerResignCrlsRequestWithDefaults() *PkiIssuerResignCrlsRequest {
-	var this PkiIssuerResignCrlsRequest
-
-	this.DeltaCrlBaseNumber = -1
-	this.Format = "pem"
-	this.NextUpdate = "72h"
-
-	return &this
-}

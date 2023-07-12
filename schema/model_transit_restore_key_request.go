@@ -16,14 +16,3 @@ type TransitRestoreKeyRequest struct {
 	// If set, this will be the name of the restored key.
 	Name string `json:"name,omitempty"`
 }
-
-// NewTransitRestoreKeyRequestWithDefaults instantiates a new TransitRestoreKeyRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTransitRestoreKeyRequestWithDefaults() *TransitRestoreKeyRequest {
-	var this TransitRestoreKeyRequest
-
-	this.Force = false
-
-	return &this
-}

@@ -98,18 +98,3 @@ type AwsWriteAuthRoleRequest struct {
 	// Deprecated
 	Ttl string `json:"ttl,omitempty"`
 }
-
-// NewAwsWriteAuthRoleRequestWithDefaults instantiates a new AwsWriteAuthRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAwsWriteAuthRoleRequestWithDefaults() *AwsWriteAuthRoleRequest {
-	var this AwsWriteAuthRoleRequest
-
-	this.AllowInstanceMigration = false
-	this.DisallowReauthentication = false
-	this.ResolveAwsUniqueIds = true
-	this.RoleTag = ""
-	this.TokenType = "default-service"
-
-	return &this
-}

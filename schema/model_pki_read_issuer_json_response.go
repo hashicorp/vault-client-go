@@ -19,12 +19,3 @@ type PkiReadIssuerJsonResponse struct {
 	// Issuer Name
 	IssuerName string `json:"issuer_name,omitempty"`
 }
-
-// NewPkiReadIssuerJsonResponseWithDefaults instantiates a new PkiReadIssuerJsonResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiReadIssuerJsonResponseWithDefaults() *PkiReadIssuerJsonResponse {
-	var this PkiReadIssuerJsonResponse
-
-	return &this
-}

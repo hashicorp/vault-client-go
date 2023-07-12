@@ -57,14 +57,3 @@ type AliCloudWriteAuthRoleRequest struct {
 	// Deprecated
 	Ttl string `json:"ttl,omitempty"`
 }
-
-// NewAliCloudWriteAuthRoleRequestWithDefaults instantiates a new AliCloudWriteAuthRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAliCloudWriteAuthRoleRequestWithDefaults() *AliCloudWriteAuthRoleRequest {
-	var this AliCloudWriteAuthRoleRequest
-
-	this.TokenType = "default-service"
-
-	return &this
-}

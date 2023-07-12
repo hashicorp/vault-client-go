@@ -13,12 +13,3 @@ type MfaAdminGenerateTotpSecretRequest struct {
 	// The unique identifier for this MFA method.
 	MethodId string `json:"method_id"`
 }
-
-// NewMfaAdminGenerateTotpSecretRequestWithDefaults instantiates a new MfaAdminGenerateTotpSecretRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMfaAdminGenerateTotpSecretRequestWithDefaults() *MfaAdminGenerateTotpSecretRequest {
-	var this MfaAdminGenerateTotpSecretRequest
-
-	return &this
-}

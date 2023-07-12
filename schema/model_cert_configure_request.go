@@ -16,16 +16,3 @@ type CertConfigureRequest struct {
 	// The size of the in memory OCSP response cache, shared by all configured certs
 	OcspCacheSize int32 `json:"ocsp_cache_size,omitempty"`
 }
-
-// NewCertConfigureRequestWithDefaults instantiates a new CertConfigureRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCertConfigureRequestWithDefaults() *CertConfigureRequest {
-	var this CertConfigureRequest
-
-	this.DisableBinding = false
-	this.EnableIdentityAliasMetadata = false
-	this.OcspCacheSize = 100
-
-	return &this
-}

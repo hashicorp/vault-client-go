@@ -13,14 +13,3 @@ type AwsConfigureCertificateRequest struct {
 	// Takes the value of either \"pkcs7\" or \"identity\", indicating the type of document which can be verified using the given certificate. The reason is that the PKCS#7 document will have a DSA digest and the identity signature will have an RSA signature, and accordingly the public certificates to verify those also vary. Defaults to \"pkcs7\".
 	Type string `json:"type,omitempty"`
 }
-
-// NewAwsConfigureCertificateRequestWithDefaults instantiates a new AwsConfigureCertificateRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAwsConfigureCertificateRequestWithDefaults() *AwsConfigureCertificateRequest {
-	var this AwsConfigureCertificateRequest
-
-	this.Type = "pkcs7"
-
-	return &this
-}

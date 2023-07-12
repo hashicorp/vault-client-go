@@ -14,12 +14,3 @@ type AppRoleReadPeriodResponse struct {
 	// If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").
 	TokenPeriod string `json:"token_period,omitempty"`
 }
-
-// NewAppRoleReadPeriodResponseWithDefaults instantiates a new AppRoleReadPeriodResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppRoleReadPeriodResponseWithDefaults() *AppRoleReadPeriodResponse {
-	var this AppRoleReadPeriodResponse
-
-	return &this
-}

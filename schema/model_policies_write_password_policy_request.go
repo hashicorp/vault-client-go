@@ -10,12 +10,3 @@ type PoliciesWritePasswordPolicyRequest struct {
 	// The password policy
 	Policy string `json:"policy,omitempty"`
 }
-
-// NewPoliciesWritePasswordPolicyRequestWithDefaults instantiates a new PoliciesWritePasswordPolicyRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPoliciesWritePasswordPolicyRequestWithDefaults() *PoliciesWritePasswordPolicyRequest {
-	var this PoliciesWritePasswordPolicyRequest
-
-	return &this
-}

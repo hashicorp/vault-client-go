@@ -13,12 +13,3 @@ type AwsReadStaticCredsNameResponse struct {
 	// The secret key of the AWS Credential
 	SecretKey string `json:"secret_key,omitempty"`
 }
-
-// NewAwsReadStaticCredsNameResponseWithDefaults instantiates a new AwsReadStaticCredsNameResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAwsReadStaticCredsNameResponseWithDefaults() *AwsReadStaticCredsNameResponse {
-	var this AwsReadStaticCredsNameResponse
-
-	return &this
-}

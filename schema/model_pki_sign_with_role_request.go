@@ -52,19 +52,3 @@ type PkiSignWithRoleRequest struct {
 	// The requested user_ids value to place in the subject, if any, in a comma-delimited list. Restricted by allowed_user_ids. Any values are added with OID 0.9.2342.19200300.100.1.1.
 	UserIds []string `json:"user_ids,omitempty"`
 }
-
-// NewPkiSignWithRoleRequestWithDefaults instantiates a new PkiSignWithRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiSignWithRoleRequestWithDefaults() *PkiSignWithRoleRequest {
-	var this PkiSignWithRoleRequest
-
-	this.Csr = ""
-	this.ExcludeCnFromSans = false
-	this.Format = "pem"
-	this.IssuerRef = "default"
-	this.PrivateKeyFormat = "der"
-	this.RemoveRootsFromChain = false
-
-	return &this
-}

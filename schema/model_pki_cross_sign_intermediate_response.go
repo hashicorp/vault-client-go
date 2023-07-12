@@ -19,12 +19,3 @@ type PkiCrossSignIntermediateResponse struct {
 	// Specifies the format used for marshaling the private key.
 	PrivateKeyType string `json:"private_key_type,omitempty"`
 }
-
-// NewPkiCrossSignIntermediateResponseWithDefaults instantiates a new PkiCrossSignIntermediateResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiCrossSignIntermediateResponseWithDefaults() *PkiCrossSignIntermediateResponse {
-	var this PkiCrossSignIntermediateResponse
-
-	return &this
-}

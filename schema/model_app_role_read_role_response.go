@@ -57,14 +57,3 @@ type AppRoleReadRoleResponse struct {
 	// The type of token to generate, service or batch
 	TokenType string `json:"token_type,omitempty"`
 }
-
-// NewAppRoleReadRoleResponseWithDefaults instantiates a new AppRoleReadRoleResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppRoleReadRoleResponseWithDefaults() *AppRoleReadRoleResponse {
-	var this AppRoleReadRoleResponse
-
-	this.TokenType = "default-service"
-
-	return &this
-}

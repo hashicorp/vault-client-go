@@ -10,12 +10,3 @@ type TokenLookUpRequest struct {
 	// Token to lookup (POST request body)
 	Token string `json:"token,omitempty"`
 }
-
-// NewTokenLookUpRequestWithDefaults instantiates a new TokenLookUpRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTokenLookUpRequestWithDefaults() *TokenLookUpRequest {
-	var this TokenLookUpRequest
-
-	return &this
-}

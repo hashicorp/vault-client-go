@@ -9,12 +9,3 @@ package schema
 type AuditingEnableRequestHeaderRequest struct {
 	Hmac bool `json:"hmac,omitempty"`
 }
-
-// NewAuditingEnableRequestHeaderRequestWithDefaults instantiates a new AuditingEnableRequestHeaderRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAuditingEnableRequestHeaderRequestWithDefaults() *AuditingEnableRequestHeaderRequest {
-	var this AuditingEnableRequestHeaderRequest
-
-	return &this
-}

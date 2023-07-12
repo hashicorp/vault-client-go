@@ -28,12 +28,3 @@ type GoogleCloudKmsWriteKeyRequest struct {
 	// Amount of time between crypto key version rotations. This is specified as a time duration value like 72h (72 hours). The smallest possible value is 24h. This value only applies to keys with a purpose of \"encrypt_decrypt\".
 	RotationPeriod string `json:"rotation_period,omitempty"`
 }
-
-// NewGoogleCloudKmsWriteKeyRequestWithDefaults instantiates a new GoogleCloudKmsWriteKeyRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGoogleCloudKmsWriteKeyRequestWithDefaults() *GoogleCloudKmsWriteKeyRequest {
-	var this GoogleCloudKmsWriteKeyRequest
-
-	return &this
-}

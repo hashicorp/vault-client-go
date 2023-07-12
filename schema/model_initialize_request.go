@@ -31,12 +31,3 @@ type InitializeRequest struct {
 	// Specifies the number of shares that should be encrypted by the HSM and stored for auto-unsealing. Currently must be the same as `secret_shares`.
 	StoredShares int32 `json:"stored_shares,omitempty"`
 }
-
-// NewInitializeRequestWithDefaults instantiates a new InitializeRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInitializeRequestWithDefaults() *InitializeRequest {
-	var this InitializeRequest
-
-	return &this
-}

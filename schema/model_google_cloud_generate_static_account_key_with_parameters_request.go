@@ -16,15 +16,3 @@ type GoogleCloudGenerateStaticAccountKeyWithParametersRequest struct {
 	// Lifetime of the service account key
 	Ttl string `json:"ttl,omitempty"`
 }
-
-// NewGoogleCloudGenerateStaticAccountKeyWithParametersRequestWithDefaults instantiates a new GoogleCloudGenerateStaticAccountKeyWithParametersRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGoogleCloudGenerateStaticAccountKeyWithParametersRequestWithDefaults() *GoogleCloudGenerateStaticAccountKeyWithParametersRequest {
-	var this GoogleCloudGenerateStaticAccountKeyWithParametersRequest
-
-	this.KeyAlgorithm = "KEY_ALG_RSA_2048"
-	this.KeyType = "TYPE_GOOGLE_CREDENTIALS_FILE"
-
-	return &this
-}

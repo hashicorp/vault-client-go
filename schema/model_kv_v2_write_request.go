@@ -16,12 +16,3 @@ type KvV2WriteRequest struct {
 	// If provided during a read, the value at the version number will be returned
 	Version int32 `json:"version,omitempty"`
 }
-
-// NewKvV2WriteRequestWithDefaults instantiates a new KvV2WriteRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewKvV2WriteRequestWithDefaults() *KvV2WriteRequest {
-	var this KvV2WriteRequest
-
-	return &this
-}

@@ -34,14 +34,3 @@ type DatabaseWriteRoleRequest struct {
 	// Specifies the database statements to be executed rollback a create operation in the event of an error. Not every plugin type will support this functionality. See the plugin's API page for more information on support and formatting for this parameter.
 	RollbackStatements []string `json:"rollback_statements,omitempty"`
 }
-
-// NewDatabaseWriteRoleRequestWithDefaults instantiates a new DatabaseWriteRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDatabaseWriteRoleRequestWithDefaults() *DatabaseWriteRoleRequest {
-	var this DatabaseWriteRoleRequest
-
-	this.CredentialType = "password"
-
-	return &this
-}

@@ -34,14 +34,3 @@ type TransitEncryptRequest struct {
 	// This parameter is required when encryption key is expected to be created. When performing an upsert operation, the type of key to create. Currently, \"aes128-gcm96\" (symmetric) and \"aes256-gcm96\" (symmetric) are the only types supported. Defaults to \"aes256-gcm96\".
 	Type string `json:"type,omitempty"`
 }
-
-// NewTransitEncryptRequestWithDefaults instantiates a new TransitEncryptRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTransitEncryptRequestWithDefaults() *TransitEncryptRequest {
-	var this TransitEncryptRequest
-
-	this.Type = "aes256-gcm96"
-
-	return &this
-}

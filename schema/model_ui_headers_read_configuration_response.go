@@ -13,12 +13,3 @@ type UiHeadersReadConfigurationResponse struct {
 	// returns all header values when `multivalue` request parameter is true
 	Values []string `json:"values,omitempty"`
 }
-
-// NewUiHeadersReadConfigurationResponseWithDefaults instantiates a new UiHeadersReadConfigurationResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUiHeadersReadConfigurationResponseWithDefaults() *UiHeadersReadConfigurationResponse {
-	var this UiHeadersReadConfigurationResponse
-
-	return &this
-}

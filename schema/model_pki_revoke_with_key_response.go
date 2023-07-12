@@ -18,12 +18,3 @@ type PkiRevokeWithKeyResponse struct {
 	// Revocation State
 	State string `json:"state,omitempty"`
 }
-
-// NewPkiRevokeWithKeyResponseWithDefaults instantiates a new PkiRevokeWithKeyResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiRevokeWithKeyResponseWithDefaults() *PkiRevokeWithKeyResponse {
-	var this PkiRevokeWithKeyResponse
-
-	return &this
-}

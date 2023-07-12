@@ -70,15 +70,3 @@ type KubernetesWriteAuthRoleRequest struct {
 	// Deprecated
 	Ttl string `json:"ttl,omitempty"`
 }
-
-// NewKubernetesWriteAuthRoleRequestWithDefaults instantiates a new KubernetesWriteAuthRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewKubernetesWriteAuthRoleRequestWithDefaults() *KubernetesWriteAuthRoleRequest {
-	var this KubernetesWriteAuthRoleRequest
-
-	this.AliasNameSource = "serviceaccount_uid"
-	this.TokenType = "default-service"
-
-	return &this
-}

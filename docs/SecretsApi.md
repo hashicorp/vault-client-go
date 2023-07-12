@@ -426,10 +426,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAliCloudConfigureRequestWithDefaults()
 	resp, err := client.Secrets.AliCloudConfigure(
 		context.Background(),
-		request,
+		AliCloudConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
@@ -857,11 +856,10 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the role.
-	request := schema.NewAliCloudWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.AliCloudWriteRole(
 		context.Background(),
 		name,
-		request,
+		AliCloudWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
@@ -923,10 +921,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAwsConfigureLeaseRequestWithDefaults()
 	resp, err := client.Secrets.AwsConfigureLease(
 		context.Background(),
-		request,
+		AwsConfigureLeaseRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -986,10 +983,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAwsConfigureRootIamCredentialsRequestWithDefaults()
 	resp, err := client.Secrets.AwsConfigureRootIamCredentials(
 		context.Background(),
-		request,
+		AwsConfigureRootIamCredentialsRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -1239,11 +1235,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	request := schema.NewAwsGenerateCredentialsWithParametersRequestWithDefaults()
 	resp, err := client.Secrets.AwsGenerateCredentialsWithParameters(
 		context.Background(),
 		name,
-		request,
+		AwsGenerateCredentialsWithParametersRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -1369,11 +1364,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	request := schema.NewAwsGenerateStsCredentialsWithParametersRequestWithDefaults()
 	resp, err := client.Secrets.AwsGenerateStsCredentialsWithParameters(
 		context.Background(),
 		name,
-		request,
+		AwsGenerateStsCredentialsWithParametersRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -1862,11 +1856,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	request := schema.NewAwsWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.AwsWriteRole(
 		context.Background(),
 		name,
-		request,
+		AwsWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -1929,11 +1922,10 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of this role.
-	request := schema.NewAwsWriteStaticRolesNameRequestWithDefaults()
 	resp, err := client.Secrets.AwsWriteStaticRolesName(
 		context.Background(),
 		name,
-		request,
+		AwsWriteStaticRolesNameRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -1995,10 +1987,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAzureConfigureRequestWithDefaults()
 	resp, err := client.Secrets.AzureConfigure(
 		context.Background(),
-		request,
+		AzureConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
@@ -2485,11 +2476,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	request := schema.NewAzureWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.AzureWriteRole(
 		context.Background(),
 		name,
-		request,
+		AzureWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
@@ -2551,10 +2541,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewConsulConfigureAccessRequestWithDefaults()
 	resp, err := client.Secrets.ConsulConfigureAccess(
 		context.Background(),
-		request,
+		ConsulConfigureAccessRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("consul"),
 	)
@@ -2923,11 +2912,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	request := schema.NewConsulWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.ConsulWriteRole(
 		context.Background(),
 		name,
-		request,
+		ConsulWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("consul"),
 	)
@@ -3174,11 +3162,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of this database connection
-	request := schema.NewDatabaseConfigureConnectionRequestWithDefaults()
 	resp, err := client.Secrets.DatabaseConfigureConnection(
 		context.Background(),
 		name,
-		request,
+		DatabaseConfigureConnectionRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("database"),
 	)
@@ -4114,11 +4101,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	request := schema.NewDatabaseWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.DatabaseWriteRole(
 		context.Background(),
 		name,
-		request,
+		DatabaseWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("database"),
 	)
@@ -4181,11 +4167,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	request := schema.NewDatabaseWriteStaticRoleRequestWithDefaults()
 	resp, err := client.Secrets.DatabaseWriteStaticRole(
 		context.Background(),
 		name,
-		request,
+		DatabaseWriteStaticRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("database"),
 	)
@@ -4247,10 +4232,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewGoogleCloudConfigureRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudConfigure(
 		context.Background(),
-		request,
+		GoogleCloudConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
@@ -4752,11 +4736,10 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
-	request := schema.NewGoogleCloudGenerateRolesetKeyWithParametersRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudGenerateRolesetKeyWithParameters(
 		context.Background(),
 		roleset,
-		request,
+		GoogleCloudGenerateRolesetKeyWithParametersRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
@@ -5008,11 +4991,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the static account.
-	request := schema.NewGoogleCloudGenerateStaticAccountKeyWithParametersRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudGenerateStaticAccountKeyWithParameters(
 		context.Background(),
 		name,
-		request,
+		GoogleCloudGenerateStaticAccountKeyWithParametersRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
@@ -5074,10 +5056,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewGoogleCloudKmsConfigureRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKmsConfigure(
 		context.Background(),
-		request,
+		GoogleCloudKmsConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
@@ -5138,11 +5119,10 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
-	request := schema.NewGoogleCloudKmsConfigureKeyRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKmsConfigureKey(
 		context.Background(),
 		key,
-		request,
+		GoogleCloudKmsConfigureKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
@@ -5205,11 +5185,10 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault to use for decryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-	request := schema.NewGoogleCloudKmsDecryptRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKmsDecrypt(
 		context.Background(),
 		key,
-		request,
+		GoogleCloudKmsDecryptRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
@@ -5457,11 +5436,10 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault to use for encryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-	request := schema.NewGoogleCloudKmsEncryptRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKmsEncrypt(
 		context.Background(),
 		key,
-		request,
+		GoogleCloudKmsEncryptRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
@@ -5769,11 +5747,10 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key to use for encryption. This key must already exist in Vault and Google Cloud KMS.
-	request := schema.NewGoogleCloudKmsReencryptRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKmsReencrypt(
 		context.Background(),
 		key,
-		request,
+		GoogleCloudKmsReencryptRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
@@ -5836,11 +5813,10 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key to register in Vault. This will be the named used to refer to the underlying crypto key when encrypting or decrypting data.
-	request := schema.NewGoogleCloudKmsRegisterKeyRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKmsRegisterKey(
 		context.Background(),
 		key,
-		request,
+		GoogleCloudKmsRegisterKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
@@ -6029,11 +6005,10 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault to use for signing. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-	request := schema.NewGoogleCloudKmsSignRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKmsSign(
 		context.Background(),
 		key,
-		request,
+		GoogleCloudKmsSignRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
@@ -6159,11 +6134,10 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault to use for verification. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-	request := schema.NewGoogleCloudKmsVerifyRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKmsVerify(
 		context.Background(),
 		key,
-		request,
+		GoogleCloudKmsVerifyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
@@ -6226,11 +6200,10 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
-	request := schema.NewGoogleCloudKmsWriteKeyRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKmsWriteKey(
 		context.Background(),
 		key,
-		request,
+		GoogleCloudKmsWriteKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
@@ -6969,11 +6942,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name to refer to this impersonated account in Vault. Cannot be updated.
-	request := schema.NewGoogleCloudWriteImpersonatedAccountRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudWriteImpersonatedAccount(
 		context.Background(),
 		name,
-		request,
+		GoogleCloudWriteImpersonatedAccountRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
@@ -7036,11 +7008,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the role.
-	request := schema.NewGoogleCloudWriteRolesetRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudWriteRoleset(
 		context.Background(),
 		name,
-		request,
+		GoogleCloudWriteRolesetRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
@@ -7103,11 +7074,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
-	request := schema.NewGoogleCloudWriteStaticAccountRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudWriteStaticAccount(
 		context.Background(),
 		name,
-		request,
+		GoogleCloudWriteStaticAccountRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
@@ -7228,10 +7198,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewKubernetesConfigureRequestWithDefaults()
 	resp, err := client.Secrets.KubernetesConfigure(
 		context.Background(),
-		request,
+		KubernetesConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
@@ -7414,11 +7383,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Vault role
-	request := schema.NewKubernetesGenerateCredentialsRequestWithDefaults()
 	resp, err := client.Secrets.KubernetesGenerateCredentials(
 		context.Background(),
 		name,
-		request,
+		KubernetesGenerateCredentialsRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
@@ -7663,11 +7631,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	request := schema.NewKubernetesWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.KubernetesWriteRole(
 		context.Background(),
 		name,
-		request,
+		KubernetesWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
@@ -7919,10 +7886,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewKvV2ConfigureRequestWithDefaults()
 	resp, err := client.Secrets.KvV2Configure(
 		context.Background(),
-		request,
+		KvV2ConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kv-v2"),
 	)
@@ -8109,11 +8075,10 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-	request := schema.NewKvV2DeleteVersionsRequestWithDefaults()
 	resp, err := client.Secrets.KvV2DeleteVersions(
 		context.Background(),
 		path,
-		request,
+		KvV2DeleteVersionsRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kv-v2"),
 	)
@@ -8176,11 +8141,10 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-	request := schema.NewKvV2DestroyVersionsRequestWithDefaults()
 	resp, err := client.Secrets.KvV2DestroyVersions(
 		context.Background(),
 		path,
-		request,
+		KvV2DestroyVersionsRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kv-v2"),
 	)
@@ -8492,11 +8456,10 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-	request := schema.NewKvV2UndeleteVersionsRequestWithDefaults()
 	resp, err := client.Secrets.KvV2UndeleteVersions(
 		context.Background(),
 		path,
-		request,
+		KvV2UndeleteVersionsRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kv-v2"),
 	)
@@ -8559,11 +8522,10 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-	request := schema.NewKvV2WriteRequestWithDefaults()
 	resp, err := client.Secrets.KvV2Write(
 		context.Background(),
 		path,
-		request,
+		KvV2WriteRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kv-v2"),
 	)
@@ -8626,11 +8588,10 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-	request := schema.NewKvV2WriteMetadataRequestWithDefaults()
 	resp, err := client.Secrets.KvV2WriteMetadata(
 		context.Background(),
 		path,
-		request,
+		KvV2WriteMetadataRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kv-v2"),
 	)
@@ -8692,10 +8653,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewLdapConfigureRequestWithDefaults()
 	resp, err := client.Secrets.LdapConfigure(
 		context.Background(),
-		request,
+		LdapConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
@@ -8941,11 +8901,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-	request := schema.NewLdapLibraryCheckInRequestWithDefaults()
 	resp, err := client.Secrets.LdapLibraryCheckIn(
 		context.Background(),
 		name,
-		request,
+		LdapLibraryCheckInRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
@@ -9008,11 +8967,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set
-	request := schema.NewLdapLibraryCheckOutRequestWithDefaults()
 	resp, err := client.Secrets.LdapLibraryCheckOut(
 		context.Background(),
 		name,
-		request,
+		LdapLibraryCheckOutRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
@@ -9138,11 +9096,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-	request := schema.NewLdapLibraryConfigureRequestWithDefaults()
 	resp, err := client.Secrets.LdapLibraryConfigure(
 		context.Background(),
 		name,
-		request,
+		LdapLibraryConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
@@ -9268,11 +9225,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-	request := schema.NewLdapLibraryForceCheckInRequestWithDefaults()
 	resp, err := client.Secrets.LdapLibraryForceCheckIn(
 		context.Background(),
 		name,
-		request,
+		LdapLibraryForceCheckInRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
@@ -10011,11 +9967,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role (lowercase)
-	request := schema.NewLdapWriteDynamicRoleRequestWithDefaults()
 	resp, err := client.Secrets.LdapWriteDynamicRole(
 		context.Background(),
 		name,
-		request,
+		LdapWriteDynamicRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
@@ -10078,11 +10033,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	request := schema.NewLdapWriteStaticRoleRequestWithDefaults()
 	resp, err := client.Secrets.LdapWriteStaticRole(
 		context.Background(),
 		name,
-		request,
+		LdapWriteStaticRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
@@ -10144,10 +10098,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewMongoDbAtlasConfigureRequestWithDefaults()
 	resp, err := client.Secrets.MongoDbAtlasConfigure(
 		context.Background(),
-		request,
+		MongoDbAtlasConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("mongodbatlas"),
 	)
@@ -10516,11 +10469,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Roles
-	request := schema.NewMongoDbAtlasWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.MongoDbAtlasWriteRole(
 		context.Background(),
 		name,
-		request,
+		MongoDbAtlasWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("mongodbatlas"),
 	)
@@ -10582,10 +10534,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewNomadConfigureAccessRequestWithDefaults()
 	resp, err := client.Secrets.NomadConfigureAccess(
 		context.Background(),
-		request,
+		NomadConfigureAccessRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("nomad"),
 	)
@@ -10645,10 +10596,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewNomadConfigureLeaseRequestWithDefaults()
 	resp, err := client.Secrets.NomadConfigureLease(
 		context.Background(),
-		request,
+		NomadConfigureLeaseRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("nomad"),
 	)
@@ -11194,11 +11144,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	request := schema.NewNomadWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.NomadWriteRole(
 		context.Background(),
 		name,
-		request,
+		NomadWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("nomad"),
 	)
@@ -11260,10 +11209,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiConfigureAcmeRequestWithDefaults()
 	resp, err := client.Secrets.PkiConfigureAcme(
 		context.Background(),
-		request,
+		PkiConfigureAcmeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -11323,10 +11271,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiConfigureAutoTidyRequestWithDefaults()
 	resp, err := client.Secrets.PkiConfigureAutoTidy(
 		context.Background(),
-		request,
+		PkiConfigureAutoTidyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -11386,10 +11333,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiConfigureCaRequestWithDefaults()
 	resp, err := client.Secrets.PkiConfigureCa(
 		context.Background(),
-		request,
+		PkiConfigureCaRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -11449,10 +11395,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiConfigureClusterRequestWithDefaults()
 	resp, err := client.Secrets.PkiConfigureCluster(
 		context.Background(),
-		request,
+		PkiConfigureClusterRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -11512,10 +11457,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiConfigureCrlRequestWithDefaults()
 	resp, err := client.Secrets.PkiConfigureCrl(
 		context.Background(),
-		request,
+		PkiConfigureCrlRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -11575,10 +11519,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiConfigureIssuersRequestWithDefaults()
 	resp, err := client.Secrets.PkiConfigureIssuers(
 		context.Background(),
-		request,
+		PkiConfigureIssuersRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -11638,10 +11581,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiConfigureKeysRequestWithDefaults()
 	resp, err := client.Secrets.PkiConfigureKeys(
 		context.Background(),
-		request,
+		PkiConfigureKeysRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -11701,10 +11643,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiConfigureUrlsRequestWithDefaults()
 	resp, err := client.Secrets.PkiConfigureUrls(
 		context.Background(),
-		request,
+		PkiConfigureUrlsRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -11764,10 +11705,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiCrossSignIntermediateRequestWithDefaults()
 	resp, err := client.Secrets.PkiCrossSignIntermediate(
 		context.Background(),
-		request,
+		PkiCrossSignIntermediateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -12390,10 +12330,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiGenerateExportedKeyRequestWithDefaults()
 	resp, err := client.Secrets.PkiGenerateExportedKey(
 		context.Background(),
-		request,
+		PkiGenerateExportedKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -12454,11 +12393,10 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
-	request := schema.NewPkiGenerateIntermediateRequestWithDefaults()
 	resp, err := client.Secrets.PkiGenerateIntermediate(
 		context.Background(),
 		exported,
-		request,
+		PkiGenerateIntermediateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -12520,10 +12458,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiGenerateInternalKeyRequestWithDefaults()
 	resp, err := client.Secrets.PkiGenerateInternalKey(
 		context.Background(),
-		request,
+		PkiGenerateInternalKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -12583,10 +12520,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiGenerateKmsKeyRequestWithDefaults()
 	resp, err := client.Secrets.PkiGenerateKmsKey(
 		context.Background(),
-		request,
+		PkiGenerateKmsKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -12647,11 +12583,10 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
-	request := schema.NewPkiGenerateRootRequestWithDefaults()
 	resp, err := client.Secrets.PkiGenerateRoot(
 		context.Background(),
 		exported,
-		request,
+		PkiGenerateRootRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -12713,10 +12648,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiImportKeyRequestWithDefaults()
 	resp, err := client.Secrets.PkiImportKey(
 		context.Background(),
-		request,
+		PkiImportKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -12777,11 +12711,10 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role with configuration for this request
-	request := schema.NewPkiIssueWithRoleRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssueWithRole(
 		context.Background(),
 		role,
-		request,
+		PkiIssueWithRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -12845,12 +12778,11 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
-	request := schema.NewPkiIssuerIssueWithRoleRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuerIssueWithRole(
 		context.Background(),
 		issuerRef,
 		role,
-		request,
+		PkiIssuerIssueWithRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -13293,11 +13225,10 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-	request := schema.NewPkiIssuerResignCrlsRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuerResignCrls(
 		context.Background(),
 		issuerRef,
-		request,
+		PkiIssuerResignCrlsRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -13360,11 +13291,10 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-	request := schema.NewPkiIssuerSignIntermediateRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuerSignIntermediate(
 		context.Background(),
 		issuerRef,
-		request,
+		PkiIssuerSignIntermediateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -13427,11 +13357,10 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-	request := schema.NewPkiIssuerSignRevocationListRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuerSignRevocationList(
 		context.Background(),
 		issuerRef,
-		request,
+		PkiIssuerSignRevocationListRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -13494,11 +13423,10 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-	request := schema.NewPkiIssuerSignSelfIssuedRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuerSignSelfIssued(
 		context.Background(),
 		issuerRef,
-		request,
+		PkiIssuerSignSelfIssuedRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -13561,11 +13489,10 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-	request := schema.NewPkiIssuerSignVerbatimRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuerSignVerbatim(
 		context.Background(),
 		issuerRef,
-		request,
+		PkiIssuerSignVerbatimRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -13629,12 +13556,11 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
-	request := schema.NewPkiIssuerSignVerbatimWithRoleRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuerSignVerbatimWithRole(
 		context.Background(),
 		issuerRef,
 		role,
-		request,
+		PkiIssuerSignVerbatimWithRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -13700,12 +13626,11 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
-	request := schema.NewPkiIssuerSignWithRoleRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuerSignWithRole(
 		context.Background(),
 		issuerRef,
 		role,
-		request,
+		PkiIssuerSignWithRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -13770,11 +13695,10 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
-	request := schema.NewPkiIssuersGenerateIntermediateRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuersGenerateIntermediate(
 		context.Background(),
 		exported,
-		request,
+		PkiIssuersGenerateIntermediateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -13837,11 +13761,10 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
-	request := schema.NewPkiIssuersGenerateRootRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuersGenerateRoot(
 		context.Background(),
 		exported,
-		request,
+		PkiIssuersGenerateRootRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -13903,10 +13826,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiIssuersImportBundleRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuersImportBundle(
 		context.Background(),
-		request,
+		PkiIssuersImportBundleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -13966,10 +13888,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiIssuersImportCertRequestWithDefaults()
 	resp, err := client.Secrets.PkiIssuersImportCert(
 		context.Background(),
-		request,
+		PkiIssuersImportCertRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -16585,10 +16506,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiReplaceRootRequestWithDefaults()
 	resp, err := client.Secrets.PkiReplaceRoot(
 		context.Background(),
-		request,
+		PkiReplaceRootRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -16648,10 +16568,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiRevokeRequestWithDefaults()
 	resp, err := client.Secrets.PkiRevoke(
 		context.Background(),
-		request,
+		PkiRevokeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -16774,10 +16693,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiRevokeWithKeyRequestWithDefaults()
 	resp, err := client.Secrets.PkiRevokeWithKey(
 		context.Background(),
-		request,
+		PkiRevokeWithKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -16837,10 +16755,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiRootSignIntermediateRequestWithDefaults()
 	resp, err := client.Secrets.PkiRootSignIntermediate(
 		context.Background(),
-		request,
+		PkiRootSignIntermediateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -16900,10 +16817,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiRootSignSelfIssuedRequestWithDefaults()
 	resp, err := client.Secrets.PkiRootSignSelfIssued(
 		context.Background(),
-		request,
+		PkiRootSignSelfIssuedRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17082,11 +16998,10 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
-	request := schema.NewPkiRotateRootRequestWithDefaults()
 	resp, err := client.Secrets.PkiRotateRoot(
 		context.Background(),
 		exported,
-		request,
+		PkiRotateRootRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17148,10 +17063,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiSetSignedIntermediateRequestWithDefaults()
 	resp, err := client.Secrets.PkiSetSignedIntermediate(
 		context.Background(),
-		request,
+		PkiSetSignedIntermediateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17211,10 +17125,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiSignVerbatimRequestWithDefaults()
 	resp, err := client.Secrets.PkiSignVerbatim(
 		context.Background(),
-		request,
+		PkiSignVerbatimRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17275,11 +17188,10 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role with configuration for this request
-	request := schema.NewPkiSignVerbatimWithRoleRequestWithDefaults()
 	resp, err := client.Secrets.PkiSignVerbatimWithRole(
 		context.Background(),
 		role,
-		request,
+		PkiSignVerbatimWithRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17342,11 +17254,10 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role with configuration for this request
-	request := schema.NewPkiSignWithRoleRequestWithDefaults()
 	resp, err := client.Secrets.PkiSignWithRole(
 		context.Background(),
 		role,
-		request,
+		PkiSignWithRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17408,10 +17319,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiTidyRequestWithDefaults()
 	resp, err := client.Secrets.PkiTidy(
 		context.Background(),
-		request,
+		PkiTidyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17590,11 +17500,10 @@ func main() {
 	}
 
 	kid := "kid_example" // string | The key identifier provided by the CA
-	request := schema.NewPkiWriteAcmeAccountKidRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteAcmeAccountKid(
 		context.Background(),
 		kid,
-		request,
+		PkiWriteAcmeAccountKidRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17657,11 +17566,10 @@ func main() {
 	}
 
 	authId := "authId_example" // string | ACME authorization identifier value
-	request := schema.NewPkiWriteAcmeAuthorizationAuthIdRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteAcmeAuthorizationAuthId(
 		context.Background(),
 		authId,
-		request,
+		PkiWriteAcmeAuthorizationAuthIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17725,12 +17633,11 @@ func main() {
 
 	authId := "authId_example" // string | ACME authorization identifier value
 	challengeType := "challengeType_example" // string | ACME challenge type
-	request := schema.NewPkiWriteAcmeChallengeAuthIdChallengeTypeRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteAcmeChallengeAuthIdChallengeType(
 		context.Background(),
 		authId,
 		challengeType,
-		request,
+		PkiWriteAcmeChallengeAuthIdChallengeTypeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17794,10 +17701,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiWriteAcmeNewAccountRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteAcmeNewAccount(
 		context.Background(),
-		request,
+		PkiWriteAcmeNewAccountRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17857,10 +17763,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiWriteAcmeNewOrderRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteAcmeNewOrder(
 		context.Background(),
-		request,
+		PkiWriteAcmeNewOrderRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17921,11 +17826,10 @@ func main() {
 	}
 
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
-	request := schema.NewPkiWriteAcmeOrderOrderIdRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteAcmeOrderOrderId(
 		context.Background(),
 		orderId,
-		request,
+		PkiWriteAcmeOrderOrderIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17988,11 +17892,10 @@ func main() {
 	}
 
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
-	request := schema.NewPkiWriteAcmeOrderOrderIdCertRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteAcmeOrderOrderIdCert(
 		context.Background(),
 		orderId,
-		request,
+		PkiWriteAcmeOrderOrderIdCertRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18055,11 +17958,10 @@ func main() {
 	}
 
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
-	request := schema.NewPkiWriteAcmeOrderOrderIdFinalizeRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteAcmeOrderOrderIdFinalize(
 		context.Background(),
 		orderId,
-		request,
+		PkiWriteAcmeOrderOrderIdFinalizeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18121,10 +18023,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiWriteAcmeOrdersRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteAcmeOrders(
 		context.Background(),
-		request,
+		PkiWriteAcmeOrdersRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18184,10 +18085,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPkiWriteAcmeRevokeCertRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteAcmeRevokeCert(
 		context.Background(),
-		request,
+		PkiWriteAcmeRevokeCertRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18248,11 +18148,10 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-	request := schema.NewPkiWriteIssuerRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteIssuer(
 		context.Background(),
 		issuerRef,
-		request,
+		PkiWriteIssuerRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18316,12 +18215,11 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	kid := "kid_example" // string | The key identifier provided by the CA
-	request := schema.NewPkiWriteIssuerIssuerRefAcmeAccountKidRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeAccountKid(
 		context.Background(),
 		issuerRef,
 		kid,
-		request,
+		PkiWriteIssuerIssuerRefAcmeAccountKidRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18387,12 +18285,11 @@ func main() {
 
 	authId := "authId_example" // string | ACME authorization identifier value
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
-	request := schema.NewPkiWriteIssuerIssuerRefAcmeAuthorizationAuthIdRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeAuthorizationAuthId(
 		context.Background(),
 		authId,
 		issuerRef,
-		request,
+		PkiWriteIssuerIssuerRefAcmeAuthorizationAuthIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18459,13 +18356,12 @@ func main() {
 	authId := "authId_example" // string | ACME authorization identifier value
 	challengeType := "challengeType_example" // string | ACME challenge type
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
-	request := schema.NewPkiWriteIssuerIssuerRefAcmeChallengeAuthIdChallengeTypeRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeChallengeAuthIdChallengeType(
 		context.Background(),
 		authId,
 		challengeType,
 		issuerRef,
-		request,
+		PkiWriteIssuerIssuerRefAcmeChallengeAuthIdChallengeTypeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18532,11 +18428,10 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
-	request := schema.NewPkiWriteIssuerIssuerRefAcmeNewAccountRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeNewAccount(
 		context.Background(),
 		issuerRef,
-		request,
+		PkiWriteIssuerIssuerRefAcmeNewAccountRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18599,11 +18494,10 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
-	request := schema.NewPkiWriteIssuerIssuerRefAcmeNewOrderRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeNewOrder(
 		context.Background(),
 		issuerRef,
-		request,
+		PkiWriteIssuerIssuerRefAcmeNewOrderRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18667,12 +18561,11 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
-	request := schema.NewPkiWriteIssuerIssuerRefAcmeOrderOrderIdRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeOrderOrderId(
 		context.Background(),
 		issuerRef,
 		orderId,
-		request,
+		PkiWriteIssuerIssuerRefAcmeOrderOrderIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18738,12 +18631,11 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
-	request := schema.NewPkiWriteIssuerIssuerRefAcmeOrderOrderIdCertRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeOrderOrderIdCert(
 		context.Background(),
 		issuerRef,
 		orderId,
-		request,
+		PkiWriteIssuerIssuerRefAcmeOrderOrderIdCertRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18809,12 +18701,11 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
-	request := schema.NewPkiWriteIssuerIssuerRefAcmeOrderOrderIdFinalizeRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeOrderOrderIdFinalize(
 		context.Background(),
 		issuerRef,
 		orderId,
-		request,
+		PkiWriteIssuerIssuerRefAcmeOrderOrderIdFinalizeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18879,11 +18770,10 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
-	request := schema.NewPkiWriteIssuerIssuerRefAcmeOrdersRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeOrders(
 		context.Background(),
 		issuerRef,
-		request,
+		PkiWriteIssuerIssuerRefAcmeOrdersRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18946,11 +18836,10 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
-	request := schema.NewPkiWriteIssuerIssuerRefAcmeRevokeCertRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeRevokeCert(
 		context.Background(),
 		issuerRef,
-		request,
+		PkiWriteIssuerIssuerRefAcmeRevokeCertRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19015,13 +18904,12 @@ func main() {
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	kid := "kid_example" // string | The key identifier provided by the CA
 	role := "role_example" // string | The desired role for the acme request
-	request := schema.NewPkiWriteIssuerIssuerRefRolesRoleAcmeAccountKidRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefRolesRoleAcmeAccountKid(
 		context.Background(),
 		issuerRef,
 		kid,
 		role,
-		request,
+		PkiWriteIssuerIssuerRefRolesRoleAcmeAccountKidRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19090,13 +18978,12 @@ func main() {
 	authId := "authId_example" // string | ACME authorization identifier value
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	role := "role_example" // string | The desired role for the acme request
-	request := schema.NewPkiWriteIssuerIssuerRefRolesRoleAcmeAuthorizationAuthIdRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefRolesRoleAcmeAuthorizationAuthId(
 		context.Background(),
 		authId,
 		issuerRef,
 		role,
-		request,
+		PkiWriteIssuerIssuerRefRolesRoleAcmeAuthorizationAuthIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19166,14 +19053,13 @@ func main() {
 	challengeType := "challengeType_example" // string | ACME challenge type
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	role := "role_example" // string | The desired role for the acme request
-	request := schema.NewPkiWriteIssuerIssuerRefRolesRoleAcmeChallengeAuthIdChallengeTypeRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefRolesRoleAcmeChallengeAuthIdChallengeType(
 		context.Background(),
 		authId,
 		challengeType,
 		issuerRef,
 		role,
-		request,
+		PkiWriteIssuerIssuerRefRolesRoleAcmeChallengeAuthIdChallengeTypeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19243,12 +19129,11 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	role := "role_example" // string | The desired role for the acme request
-	request := schema.NewPkiWriteIssuerIssuerRefRolesRoleAcmeNewAccountRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefRolesRoleAcmeNewAccount(
 		context.Background(),
 		issuerRef,
 		role,
-		request,
+		PkiWriteIssuerIssuerRefRolesRoleAcmeNewAccountRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19314,12 +19199,11 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	role := "role_example" // string | The desired role for the acme request
-	request := schema.NewPkiWriteIssuerIssuerRefRolesRoleAcmeNewOrderRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefRolesRoleAcmeNewOrder(
 		context.Background(),
 		issuerRef,
 		role,
-		request,
+		PkiWriteIssuerIssuerRefRolesRoleAcmeNewOrderRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19386,13 +19270,12 @@ func main() {
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
 	role := "role_example" // string | The desired role for the acme request
-	request := schema.NewPkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderId(
 		context.Background(),
 		issuerRef,
 		orderId,
 		role,
-		request,
+		PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19461,13 +19344,12 @@ func main() {
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
 	role := "role_example" // string | The desired role for the acme request
-	request := schema.NewPkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdCertRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdCert(
 		context.Background(),
 		issuerRef,
 		orderId,
 		role,
-		request,
+		PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdCertRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19536,13 +19418,12 @@ func main() {
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
 	role := "role_example" // string | The desired role for the acme request
-	request := schema.NewPkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdFinalizeRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdFinalize(
 		context.Background(),
 		issuerRef,
 		orderId,
 		role,
-		request,
+		PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdFinalizeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19610,12 +19491,11 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	role := "role_example" // string | The desired role for the acme request
-	request := schema.NewPkiWriteIssuerIssuerRefRolesRoleAcmeOrdersRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefRolesRoleAcmeOrders(
 		context.Background(),
 		issuerRef,
 		role,
-		request,
+		PkiWriteIssuerIssuerRefRolesRoleAcmeOrdersRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19681,12 +19561,11 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	role := "role_example" // string | The desired role for the acme request
-	request := schema.NewPkiWriteIssuerIssuerRefRolesRoleAcmeRevokeCertRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefRolesRoleAcmeRevokeCert(
 		context.Background(),
 		issuerRef,
 		role,
-		request,
+		PkiWriteIssuerIssuerRefRolesRoleAcmeRevokeCertRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19751,11 +19630,10 @@ func main() {
 	}
 
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
-	request := schema.NewPkiWriteKeyRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteKey(
 		context.Background(),
 		keyRef,
-		request,
+		PkiWriteKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19818,11 +19696,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	request := schema.NewPkiWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteRole(
 		context.Background(),
 		name,
-		request,
+		PkiWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19886,12 +19763,11 @@ func main() {
 
 	kid := "kid_example" // string | The key identifier provided by the CA
 	role := "role_example" // string | The desired role for the acme request
-	request := schema.NewPkiWriteRolesRoleAcmeAccountKidRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeAccountKid(
 		context.Background(),
 		kid,
 		role,
-		request,
+		PkiWriteRolesRoleAcmeAccountKidRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19957,12 +19833,11 @@ func main() {
 
 	authId := "authId_example" // string | ACME authorization identifier value
 	role := "role_example" // string | The desired role for the acme request
-	request := schema.NewPkiWriteRolesRoleAcmeAuthorizationAuthIdRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeAuthorizationAuthId(
 		context.Background(),
 		authId,
 		role,
-		request,
+		PkiWriteRolesRoleAcmeAuthorizationAuthIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -20029,13 +19904,12 @@ func main() {
 	authId := "authId_example" // string | ACME authorization identifier value
 	challengeType := "challengeType_example" // string | ACME challenge type
 	role := "role_example" // string | The desired role for the acme request
-	request := schema.NewPkiWriteRolesRoleAcmeChallengeAuthIdChallengeTypeRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeChallengeAuthIdChallengeType(
 		context.Background(),
 		authId,
 		challengeType,
 		role,
-		request,
+		PkiWriteRolesRoleAcmeChallengeAuthIdChallengeTypeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -20102,11 +19976,10 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role for the acme request
-	request := schema.NewPkiWriteRolesRoleAcmeNewAccountRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeNewAccount(
 		context.Background(),
 		role,
-		request,
+		PkiWriteRolesRoleAcmeNewAccountRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -20169,11 +20042,10 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role for the acme request
-	request := schema.NewPkiWriteRolesRoleAcmeNewOrderRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeNewOrder(
 		context.Background(),
 		role,
-		request,
+		PkiWriteRolesRoleAcmeNewOrderRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -20237,12 +20109,11 @@ func main() {
 
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
 	role := "role_example" // string | The desired role for the acme request
-	request := schema.NewPkiWriteRolesRoleAcmeOrderOrderIdRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeOrderOrderId(
 		context.Background(),
 		orderId,
 		role,
-		request,
+		PkiWriteRolesRoleAcmeOrderOrderIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -20308,12 +20179,11 @@ func main() {
 
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
 	role := "role_example" // string | The desired role for the acme request
-	request := schema.NewPkiWriteRolesRoleAcmeOrderOrderIdCertRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeOrderOrderIdCert(
 		context.Background(),
 		orderId,
 		role,
-		request,
+		PkiWriteRolesRoleAcmeOrderOrderIdCertRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -20379,12 +20249,11 @@ func main() {
 
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
 	role := "role_example" // string | The desired role for the acme request
-	request := schema.NewPkiWriteRolesRoleAcmeOrderOrderIdFinalizeRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeOrderOrderIdFinalize(
 		context.Background(),
 		orderId,
 		role,
-		request,
+		PkiWriteRolesRoleAcmeOrderOrderIdFinalizeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -20449,11 +20318,10 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role for the acme request
-	request := schema.NewPkiWriteRolesRoleAcmeOrdersRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeOrders(
 		context.Background(),
 		role,
-		request,
+		PkiWriteRolesRoleAcmeOrdersRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -20516,11 +20384,10 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role for the acme request
-	request := schema.NewPkiWriteRolesRoleAcmeRevokeCertRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeRevokeCert(
 		context.Background(),
 		role,
-		request,
+		PkiWriteRolesRoleAcmeRevokeCertRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -20582,10 +20449,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewRabbitMqConfigureConnectionRequestWithDefaults()
 	resp, err := client.Secrets.RabbitMqConfigureConnection(
 		context.Background(),
-		request,
+		RabbitMqConfigureConnectionRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("rabbitmq"),
 	)
@@ -20645,10 +20511,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewRabbitMqConfigureLeaseRequestWithDefaults()
 	resp, err := client.Secrets.RabbitMqConfigureLease(
 		context.Background(),
-		request,
+		RabbitMqConfigureLeaseRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("rabbitmq"),
 	)
@@ -21017,11 +20882,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	request := schema.NewRabbitMqWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.RabbitMqWriteRole(
 		context.Background(),
 		name,
-		request,
+		RabbitMqWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("rabbitmq"),
 	)
@@ -21083,10 +20947,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewSshConfigureCaRequestWithDefaults()
 	resp, err := client.Secrets.SshConfigureCa(
 		context.Background(),
-		request,
+		SshConfigureCaRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
@@ -21146,10 +21009,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewSshConfigureZeroAddressRequestWithDefaults()
 	resp, err := client.Secrets.SshConfigureZeroAddress(
 		context.Background(),
-		request,
+		SshConfigureZeroAddressRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
@@ -21391,11 +21253,10 @@ func main() {
 	}
 
 	role := "role_example" // string | [Required] Name of the role
-	request := schema.NewSshGenerateCredentialsRequestWithDefaults()
 	resp, err := client.Secrets.SshGenerateCredentials(
 		context.Background(),
 		role,
-		request,
+		SshGenerateCredentialsRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
@@ -21458,11 +21319,10 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role with configuration for this request.
-	request := schema.NewSshIssueCertificateRequestWithDefaults()
 	resp, err := client.Secrets.SshIssueCertificate(
 		context.Background(),
 		role,
-		request,
+		SshIssueCertificateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
@@ -21584,10 +21444,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewSshListRolesByIpRequestWithDefaults()
 	resp, err := client.Secrets.SshListRolesByIp(
 		context.Background(),
-		request,
+		SshListRolesByIpRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
@@ -21888,11 +21747,10 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role with configuration for this request.
-	request := schema.NewSshSignCertificateRequestWithDefaults()
 	resp, err := client.Secrets.SshSignCertificate(
 		context.Background(),
 		role,
-		request,
+		SshSignCertificateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
@@ -22013,10 +21871,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewSshVerifyOtpRequestWithDefaults()
 	resp, err := client.Secrets.SshVerifyOtp(
 		context.Background(),
-		request,
+		SshVerifyOtpRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
@@ -22077,11 +21934,10 @@ func main() {
 	}
 
 	role := "role_example" // string | [Required for all types] Name of the role being created.
-	request := schema.NewSshWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.SshWriteRole(
 		context.Background(),
 		role,
-		request,
+		SshWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
@@ -22143,10 +21999,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTerraformCloudConfigureRequestWithDefaults()
 	resp, err := client.Secrets.TerraformCloudConfigure(
 		context.Background(),
-		request,
+		TerraformCloudConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("terraform"),
 	)
@@ -22637,11 +22492,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	request := schema.NewTerraformCloudWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.TerraformCloudWriteRole(
 		context.Background(),
 		name,
-		request,
+		TerraformCloudWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("terraform"),
 	)
@@ -22704,11 +22558,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
-	request := schema.NewTotpCreateKeyRequestWithDefaults()
 	resp, err := client.Secrets.TotpCreateKey(
 		context.Background(),
 		name,
-		request,
+		TotpCreateKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("totp"),
 	)
@@ -23020,11 +22873,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
-	request := schema.NewTotpValidateCodeRequestWithDefaults()
 	resp, err := client.Secrets.TotpValidateCode(
 		context.Background(),
 		name,
-		request,
+		TotpValidateCodeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("totp"),
 	)
@@ -23287,10 +23139,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTransitConfigureCacheRequestWithDefaults()
 	resp, err := client.Secrets.TransitConfigureCache(
 		context.Background(),
-		request,
+		TransitConfigureCacheRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -23351,11 +23202,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-	request := schema.NewTransitConfigureKeyRequestWithDefaults()
 	resp, err := client.Secrets.TransitConfigureKey(
 		context.Background(),
 		name,
-		request,
+		TransitConfigureKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -23417,10 +23267,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTransitConfigureKeysRequestWithDefaults()
 	resp, err := client.Secrets.TransitConfigureKeys(
 		context.Background(),
-		request,
+		TransitConfigureKeysRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -23481,11 +23330,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-	request := schema.NewTransitCreateKeyRequestWithDefaults()
 	resp, err := client.Secrets.TransitCreateKey(
 		context.Background(),
 		name,
-		request,
+		TransitCreateKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -23548,11 +23396,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-	request := schema.NewTransitDecryptRequestWithDefaults()
 	resp, err := client.Secrets.TransitDecrypt(
 		context.Background(),
 		name,
-		request,
+		TransitDecryptRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -23678,11 +23525,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-	request := schema.NewTransitEncryptRequestWithDefaults()
 	resp, err := client.Secrets.TransitEncrypt(
 		context.Background(),
 		name,
-		request,
+		TransitEncryptRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -23884,12 +23730,11 @@ func main() {
 
 	name := "name_example" // string | The backend key used for encrypting the data key
 	plaintext := "plaintext_example" // string | \"plaintext\" will return the key in both plaintext and ciphertext; \"wrapped\" will return the ciphertext only.
-	request := schema.NewTransitGenerateDataKeyRequestWithDefaults()
 	resp, err := client.Secrets.TransitGenerateDataKey(
 		context.Background(),
 		name,
 		plaintext,
-		request,
+		TransitGenerateDataKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -23954,11 +23799,10 @@ func main() {
 	}
 
 	name := "name_example" // string | The key to use for the HMAC function
-	request := schema.NewTransitGenerateHmacRequestWithDefaults()
 	resp, err := client.Secrets.TransitGenerateHmac(
 		context.Background(),
 		name,
-		request,
+		TransitGenerateHmacRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -24022,12 +23866,11 @@ func main() {
 
 	name := "name_example" // string | The key to use for the HMAC function
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
-	request := schema.NewTransitGenerateHmacWithAlgorithmRequestWithDefaults()
 	resp, err := client.Secrets.TransitGenerateHmacWithAlgorithm(
 		context.Background(),
 		name,
 		urlalgorithm,
-		request,
+		TransitGenerateHmacWithAlgorithmRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -24091,10 +23934,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTransitGenerateRandomRequestWithDefaults()
 	resp, err := client.Secrets.TransitGenerateRandom(
 		context.Background(),
-		request,
+		TransitGenerateRandomRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -24155,11 +23997,10 @@ func main() {
 	}
 
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
-	request := schema.NewTransitGenerateRandomWithBytesRequestWithDefaults()
 	resp, err := client.Secrets.TransitGenerateRandomWithBytes(
 		context.Background(),
 		urlbytes,
-		request,
+		TransitGenerateRandomWithBytesRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -24222,11 +24063,10 @@ func main() {
 	}
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
-	request := schema.NewTransitGenerateRandomWithSourceRequestWithDefaults()
 	resp, err := client.Secrets.TransitGenerateRandomWithSource(
 		context.Background(),
 		source,
-		request,
+		TransitGenerateRandomWithSourceRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -24290,12 +24130,11 @@ func main() {
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
-	request := schema.NewTransitGenerateRandomWithSourceAndBytesRequestWithDefaults()
 	resp, err := client.Secrets.TransitGenerateRandomWithSourceAndBytes(
 		context.Background(),
 		source,
 		urlbytes,
-		request,
+		TransitGenerateRandomWithSourceAndBytesRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -24359,10 +24198,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTransitHashRequestWithDefaults()
 	resp, err := client.Secrets.TransitHash(
 		context.Background(),
-		request,
+		TransitHashRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -24423,11 +24261,10 @@ func main() {
 	}
 
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
-	request := schema.NewTransitHashWithAlgorithmRequestWithDefaults()
 	resp, err := client.Secrets.TransitHashWithAlgorithm(
 		context.Background(),
 		urlalgorithm,
-		request,
+		TransitHashWithAlgorithmRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -24490,11 +24327,10 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the key
-	request := schema.NewTransitImportKeyRequestWithDefaults()
 	resp, err := client.Secrets.TransitImportKey(
 		context.Background(),
 		name,
-		request,
+		TransitImportKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -24557,11 +24393,10 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the key
-	request := schema.NewTransitImportKeyVersionRequestWithDefaults()
 	resp, err := client.Secrets.TransitImportKeyVersion(
 		context.Background(),
 		name,
-		request,
+		TransitImportKeyVersionRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -24924,11 +24759,10 @@ func main() {
 	}
 
 	name := "name_example" // string | If set, this will be the name of the restored key.
-	request := schema.NewTransitRestoreAndRenameKeyRequestWithDefaults()
 	resp, err := client.Secrets.TransitRestoreAndRenameKey(
 		context.Background(),
 		name,
-		request,
+		TransitRestoreAndRenameKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -24990,10 +24824,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTransitRestoreKeyRequestWithDefaults()
 	resp, err := client.Secrets.TransitRestoreKey(
 		context.Background(),
-		request,
+		TransitRestoreKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -25054,11 +24887,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-	request := schema.NewTransitRewrapRequestWithDefaults()
 	resp, err := client.Secrets.TransitRewrap(
 		context.Background(),
 		name,
-		request,
+		TransitRewrapRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -25121,11 +24953,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-	request := schema.NewTransitRotateKeyRequestWithDefaults()
 	resp, err := client.Secrets.TransitRotateKey(
 		context.Background(),
 		name,
-		request,
+		TransitRotateKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -25188,11 +25019,10 @@ func main() {
 	}
 
 	name := "name_example" // string | The key to use
-	request := schema.NewTransitSignRequestWithDefaults()
 	resp, err := client.Secrets.TransitSign(
 		context.Background(),
 		name,
-		request,
+		TransitSignRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -25256,12 +25086,11 @@ func main() {
 
 	name := "name_example" // string | The key to use
 	urlalgorithm := "urlalgorithm_example" // string | Hash algorithm to use (POST URL parameter)
-	request := schema.NewTransitSignWithAlgorithmRequestWithDefaults()
 	resp, err := client.Secrets.TransitSignWithAlgorithm(
 		context.Background(),
 		name,
 		urlalgorithm,
-		request,
+		TransitSignWithAlgorithmRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -25326,11 +25155,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-	request := schema.NewTransitTrimKeyRequestWithDefaults()
 	resp, err := client.Secrets.TransitTrimKey(
 		context.Background(),
 		name,
-		request,
+		TransitTrimKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -25393,11 +25221,10 @@ func main() {
 	}
 
 	name := "name_example" // string | The key to use
-	request := schema.NewTransitVerifyRequestWithDefaults()
 	resp, err := client.Secrets.TransitVerify(
 		context.Background(),
 		name,
-		request,
+		TransitVerifyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -25461,12 +25288,11 @@ func main() {
 
 	name := "name_example" // string | The key to use
 	urlalgorithm := "urlalgorithm_example" // string | Hash algorithm to use (POST URL parameter)
-	request := schema.NewTransitVerifyWithAlgorithmRequestWithDefaults()
 	resp, err := client.Secrets.TransitVerifyWithAlgorithm(
 		context.Background(),
 		name,
 		urlalgorithm,
-		request,
+		TransitVerifyWithAlgorithmRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)

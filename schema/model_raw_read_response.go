@@ -9,12 +9,3 @@ package schema
 type RawReadResponse struct {
 	Value string `json:"value,omitempty"`
 }
-
-// NewRawReadResponseWithDefaults instantiates a new RawReadResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRawReadResponseWithDefaults() *RawReadResponse {
-	var this RawReadResponse
-
-	return &this
-}

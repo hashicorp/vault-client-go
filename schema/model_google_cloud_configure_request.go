@@ -16,12 +16,3 @@ type GoogleCloudConfigureRequest struct {
 	// Default lease for generated keys. If <= 0, will use system default.
 	Ttl string `json:"ttl,omitempty"`
 }
-
-// NewGoogleCloudConfigureRequestWithDefaults instantiates a new GoogleCloudConfigureRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGoogleCloudConfigureRequestWithDefaults() *GoogleCloudConfigureRequest {
-	var this GoogleCloudConfigureRequest
-
-	return &this
-}

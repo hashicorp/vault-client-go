@@ -16,12 +16,3 @@ type OidcWriteProviderRequest struct {
 	// The scopes supported for requesting on the provider
 	ScopesSupported []string `json:"scopes_supported,omitempty"`
 }
-
-// NewOidcWriteProviderRequestWithDefaults instantiates a new OidcWriteProviderRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewOidcWriteProviderRequestWithDefaults() *OidcWriteProviderRequest {
-	var this OidcWriteProviderRequest
-
-	return &this
-}

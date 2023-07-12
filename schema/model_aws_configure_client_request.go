@@ -34,21 +34,3 @@ type AwsConfigureClientRequest struct {
 	// The region ID for the sts_endpoint, if set.
 	StsRegion string `json:"sts_region,omitempty"`
 }
-
-// NewAwsConfigureClientRequestWithDefaults instantiates a new AwsConfigureClientRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAwsConfigureClientRequestWithDefaults() *AwsConfigureClientRequest {
-	var this AwsConfigureClientRequest
-
-	this.AccessKey = ""
-	this.Endpoint = ""
-	this.IamEndpoint = ""
-	this.IamServerIdHeaderValue = ""
-	this.MaxRetries = -1
-	this.SecretKey = ""
-	this.StsEndpoint = ""
-	this.StsRegion = ""
-
-	return &this
-}

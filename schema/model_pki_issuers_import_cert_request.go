@@ -10,12 +10,3 @@ type PkiIssuersImportCertRequest struct {
 	// PEM-format, concatenated unencrypted secret-key (optional) and certificates.
 	PemBundle string `json:"pem_bundle,omitempty"`
 }
-
-// NewPkiIssuersImportCertRequestWithDefaults instantiates a new PkiIssuersImportCertRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiIssuersImportCertRequestWithDefaults() *PkiIssuersImportCertRequest {
-	var this PkiIssuersImportCertRequest
-
-	return &this
-}

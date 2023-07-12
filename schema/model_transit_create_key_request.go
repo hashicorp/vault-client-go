@@ -37,16 +37,3 @@ type TransitCreateKeyRequest struct {
 	// The type of key to create. Currently, \"aes128-gcm96\" (symmetric), \"aes256-gcm96\" (symmetric), \"ecdsa-p256\" (asymmetric), \"ecdsa-p384\" (asymmetric), \"ecdsa-p521\" (asymmetric), \"ed25519\" (asymmetric), \"rsa-2048\" (asymmetric), \"rsa-3072\" (asymmetric), \"rsa-4096\" (asymmetric) are supported. Defaults to \"aes256-gcm96\".
 	Type string `json:"type,omitempty"`
 }
-
-// NewTransitCreateKeyRequestWithDefaults instantiates a new TransitCreateKeyRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTransitCreateKeyRequestWithDefaults() *TransitCreateKeyRequest {
-	var this TransitCreateKeyRequest
-
-	this.AutoRotatePeriod = "0"
-	this.KeySize = 0
-	this.Type = "aes256-gcm96"
-
-	return &this
-}

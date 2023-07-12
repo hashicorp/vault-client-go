@@ -118,29 +118,3 @@ type LdapConfigureAuthRequest struct {
 	// If true, sets the alias name to the username
 	UsernameAsAlias bool `json:"username_as_alias,omitempty"`
 }
-
-// NewLdapConfigureAuthRequestWithDefaults instantiates a new LdapConfigureAuthRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLdapConfigureAuthRequestWithDefaults() *LdapConfigureAuthRequest {
-	var this LdapConfigureAuthRequest
-
-	this.AnonymousGroupSearch = false
-	this.ConnectionTimeout = "30s"
-	this.DenyNullBind = true
-	this.DereferenceAliases = "never"
-	this.Groupattr = "cn"
-	this.Groupfilter = "(|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))"
-	this.MaxPageSize = 0
-	this.RequestTimeout = "90s"
-	this.TlsMaxVersion = "tls12"
-	this.TlsMinVersion = "tls12"
-	this.TokenType = "default-service"
-	this.Url = "ldap://127.0.0.1"
-	this.UseTokenGroups = false
-	this.Userattr = "cn"
-	this.Userfilter = "({{.UserAttr}}={{.Username}})"
-	this.UsernameAsAlias = false
-
-	return &this
-}

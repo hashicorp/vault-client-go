@@ -34,12 +34,3 @@ type AwsLoginRequest struct {
 	// Base64 encoded SHA256 RSA signature of the instance identity document. This needs to be supplied along with 'identity' parameter.
 	Signature string `json:"signature,omitempty"`
 }
-
-// NewAwsLoginRequestWithDefaults instantiates a new AwsLoginRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAwsLoginRequestWithDefaults() *AwsLoginRequest {
-	var this AwsLoginRequest
-
-	return &this
-}

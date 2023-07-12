@@ -17,12 +17,3 @@ type QueryTokenAccessorCapabilitiesRequest struct {
 	// Paths on which capabilities are being queried.
 	Paths []string `json:"paths,omitempty"`
 }
-
-// NewQueryTokenAccessorCapabilitiesRequestWithDefaults instantiates a new QueryTokenAccessorCapabilitiesRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewQueryTokenAccessorCapabilitiesRequestWithDefaults() *QueryTokenAccessorCapabilitiesRequest {
-	var this QueryTokenAccessorCapabilitiesRequest
-
-	return &this
-}

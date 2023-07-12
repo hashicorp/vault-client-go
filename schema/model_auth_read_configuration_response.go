@@ -33,12 +33,3 @@ type AuthReadConfigurationResponse struct {
 
 	Uuid string `json:"uuid,omitempty"`
 }
-
-// NewAuthReadConfigurationResponseWithDefaults instantiates a new AuthReadConfigurationResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAuthReadConfigurationResponseWithDefaults() *AuthReadConfigurationResponse {
-	var this AuthReadConfigurationResponse
-
-	return &this
-}

@@ -16,14 +16,3 @@ type CentrifyLoginRequest struct {
 	// Username of the user.
 	Username string `json:"username,omitempty"`
 }
-
-// NewCentrifyLoginRequestWithDefaults instantiates a new CentrifyLoginRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCentrifyLoginRequestWithDefaults() *CentrifyLoginRequest {
-	var this CentrifyLoginRequest
-
-	this.Mode = "ro"
-
-	return &this
-}

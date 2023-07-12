@@ -13,12 +13,3 @@ type RekeyReadBackupRecoveryKeyResponse struct {
 
 	Nonce string `json:"nonce,omitempty"`
 }
-
-// NewRekeyReadBackupRecoveryKeyResponseWithDefaults instantiates a new RekeyReadBackupRecoveryKeyResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRekeyReadBackupRecoveryKeyResponseWithDefaults() *RekeyReadBackupRecoveryKeyResponse {
-	var this RekeyReadBackupRecoveryKeyResponse
-
-	return &this
-}

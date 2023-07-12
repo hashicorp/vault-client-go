@@ -16,12 +16,3 @@ type PkiWriteKeyResponse struct {
 	// Key Type
 	KeyType string `json:"key_type,omitempty"`
 }
-
-// NewPkiWriteKeyResponseWithDefaults instantiates a new PkiWriteKeyResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiWriteKeyResponseWithDefaults() *PkiWriteKeyResponse {
-	var this PkiWriteKeyResponse
-
-	return &this
-}

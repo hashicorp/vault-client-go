@@ -25,12 +25,3 @@ type TransitConfigureKeyRequest struct {
 	// If set, the minimum version of the key allowed to be used for encryption; or for signing keys, to be used for signing. If set to zero, only the latest version of the key is allowed.
 	MinEncryptionVersion int32 `json:"min_encryption_version,omitempty"`
 }
-
-// NewTransitConfigureKeyRequestWithDefaults instantiates a new TransitConfigureKeyRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTransitConfigureKeyRequestWithDefaults() *TransitConfigureKeyRequest {
-	var this TransitConfigureKeyRequest
-
-	return &this
-}

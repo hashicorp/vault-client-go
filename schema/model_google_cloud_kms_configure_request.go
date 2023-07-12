@@ -13,12 +13,3 @@ type GoogleCloudKmsConfigureRequest struct {
 	// The list of full-URL scopes to request when authenticating. By default, this requests https://www.googleapis.com/auth/cloudkms.
 	Scopes []string `json:"scopes,omitempty"`
 }
-
-// NewGoogleCloudKmsConfigureRequestWithDefaults instantiates a new GoogleCloudKmsConfigureRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGoogleCloudKmsConfigureRequestWithDefaults() *GoogleCloudKmsConfigureRequest {
-	var this GoogleCloudKmsConfigureRequest
-
-	return &this
-}

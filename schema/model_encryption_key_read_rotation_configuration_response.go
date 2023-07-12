@@ -13,12 +13,3 @@ type EncryptionKeyReadRotationConfigurationResponse struct {
 
 	MaxOperations int64 `json:"max_operations,omitempty"`
 }
-
-// NewEncryptionKeyReadRotationConfigurationResponseWithDefaults instantiates a new EncryptionKeyReadRotationConfigurationResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewEncryptionKeyReadRotationConfigurationResponseWithDefaults() *EncryptionKeyReadRotationConfigurationResponse {
-	var this EncryptionKeyReadRotationConfigurationResponse
-
-	return &this
-}

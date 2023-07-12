@@ -25,17 +25,3 @@ type PkiConfigureAcmeRequest struct {
 	// whether ACME is enabled, defaults to false meaning that clusters will by default not get ACME support
 	Enabled bool `json:"enabled,omitempty"`
 }
-
-// NewPkiConfigureAcmeRequestWithDefaults instantiates a new PkiConfigureAcmeRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiConfigureAcmeRequestWithDefaults() *PkiConfigureAcmeRequest {
-	var this PkiConfigureAcmeRequest
-
-	this.DefaultDirectoryPolicy = "sign-verbatim"
-	this.DnsResolver = ""
-	this.EabPolicy = "always-required"
-	this.Enabled = false
-
-	return &this
-}

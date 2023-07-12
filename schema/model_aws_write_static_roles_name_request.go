@@ -13,12 +13,3 @@ type AwsWriteStaticRolesNameRequest struct {
 	// The IAM user to adopt as a static role.
 	Username string `json:"username,omitempty"`
 }
-
-// NewAwsWriteStaticRolesNameRequestWithDefaults instantiates a new AwsWriteStaticRolesNameRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAwsWriteStaticRolesNameRequestWithDefaults() *AwsWriteStaticRolesNameRequest {
-	var this AwsWriteStaticRolesNameRequest
-
-	return &this
-}

@@ -11,12 +11,3 @@ type PoliciesListAclPoliciesResponse struct {
 
 	Policies []string `json:"policies,omitempty"`
 }
-
-// NewPoliciesListAclPoliciesResponseWithDefaults instantiates a new PoliciesListAclPoliciesResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPoliciesListAclPoliciesResponseWithDefaults() *PoliciesListAclPoliciesResponse {
-	var this PoliciesListAclPoliciesResponse
-
-	return &this
-}

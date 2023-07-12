@@ -9,12 +9,3 @@ package schema
 type RateLimitQuotasListResponse struct {
 	Keys []string `json:"keys,omitempty"`
 }
-
-// NewRateLimitQuotasListResponseWithDefaults instantiates a new RateLimitQuotasListResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRateLimitQuotasListResponseWithDefaults() *RateLimitQuotasListResponse {
-	var this RateLimitQuotasListResponse
-
-	return &this
-}

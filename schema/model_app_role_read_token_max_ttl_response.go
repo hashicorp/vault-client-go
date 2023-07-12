@@ -10,12 +10,3 @@ type AppRoleReadTokenMaxTtlResponse struct {
 	// The maximum lifetime of the generated token
 	TokenMaxTtl string `json:"token_max_ttl,omitempty"`
 }
-
-// NewAppRoleReadTokenMaxTtlResponseWithDefaults instantiates a new AppRoleReadTokenMaxTtlResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppRoleReadTokenMaxTtlResponseWithDefaults() *AppRoleReadTokenMaxTtlResponse {
-	var this AppRoleReadTokenMaxTtlResponse
-
-	return &this
-}

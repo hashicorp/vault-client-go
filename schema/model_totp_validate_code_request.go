@@ -10,12 +10,3 @@ type TotpValidateCodeRequest struct {
 	// TOTP code to be validated.
 	Code string `json:"code,omitempty"`
 }
-
-// NewTotpValidateCodeRequestWithDefaults instantiates a new TotpValidateCodeRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTotpValidateCodeRequestWithDefaults() *TotpValidateCodeRequest {
-	var this TotpValidateCodeRequest
-
-	return &this
-}

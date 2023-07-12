@@ -34,16 +34,3 @@ type MountsEnableSecretsEngineRequest struct {
 	// The type of the backend. Example: \"passthrough\"
 	Type string `json:"type,omitempty"`
 }
-
-// NewMountsEnableSecretsEngineRequestWithDefaults instantiates a new MountsEnableSecretsEngineRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMountsEnableSecretsEngineRequestWithDefaults() *MountsEnableSecretsEngineRequest {
-	var this MountsEnableSecretsEngineRequest
-
-	this.ExternalEntropyAccess = false
-	this.Local = false
-	this.SealWrap = false
-
-	return &this
-}

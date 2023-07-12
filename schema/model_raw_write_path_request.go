@@ -15,12 +15,3 @@ type RawWritePathRequest struct {
 
 	Value string `json:"value,omitempty"`
 }
-
-// NewRawWritePathRequestWithDefaults instantiates a new RawWritePathRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRawWritePathRequestWithDefaults() *RawWritePathRequest {
-	var this RawWritePathRequest
-
-	return &this
-}

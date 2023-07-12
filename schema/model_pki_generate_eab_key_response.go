@@ -24,12 +24,3 @@ type PkiGenerateEabKeyResponse struct {
 	// The EAB key type
 	KeyType string `json:"key_type,omitempty"`
 }
-
-// NewPkiGenerateEabKeyResponseWithDefaults instantiates a new PkiGenerateEabKeyResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiGenerateEabKeyResponseWithDefaults() *PkiGenerateEabKeyResponse {
-	var this PkiGenerateEabKeyResponse
-
-	return &this
-}

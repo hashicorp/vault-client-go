@@ -19,14 +19,3 @@ type TransitImportKeyVersionRequest struct {
 	// Key version to be updated, if left empty, a new version will be created unless a private key is specified and the 'Latest' key is missing a private key.
 	Version int32 `json:"version,omitempty"`
 }
-
-// NewTransitImportKeyVersionRequestWithDefaults instantiates a new TransitImportKeyVersionRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTransitImportKeyVersionRequestWithDefaults() *TransitImportKeyVersionRequest {
-	var this TransitImportKeyVersionRequest
-
-	this.HashFunction = "SHA256"
-
-	return &this
-}

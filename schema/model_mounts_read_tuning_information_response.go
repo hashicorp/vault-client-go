@@ -50,12 +50,3 @@ type MountsReadTuningInformationResponse struct {
 
 	UserLockoutThreshold int64 `json:"user_lockout_threshold,omitempty"`
 }
-
-// NewMountsReadTuningInformationResponseWithDefaults instantiates a new MountsReadTuningInformationResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMountsReadTuningInformationResponseWithDefaults() *MountsReadTuningInformationResponse {
-	var this MountsReadTuningInformationResponse
-
-	return &this
-}

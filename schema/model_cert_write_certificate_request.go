@@ -103,16 +103,3 @@ type CertWriteCertificateRequest struct {
 	// Deprecated
 	Ttl string `json:"ttl,omitempty"`
 }
-
-// NewCertWriteCertificateRequestWithDefaults instantiates a new CertWriteCertificateRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCertWriteCertificateRequestWithDefaults() *CertWriteCertificateRequest {
-	var this CertWriteCertificateRequest
-
-	this.OcspFailOpen = false
-	this.OcspQueryAllServers = false
-	this.TokenType = "default-service"
-
-	return &this
-}

@@ -34,19 +34,3 @@ type MfaUpdateTotpMethodRequest struct {
 	// The number of delay periods that are allowed when validating a TOTP token. This value can either be 0 or 1.
 	Skew int32 `json:"skew,omitempty"`
 }
-
-// NewMfaUpdateTotpMethodRequestWithDefaults instantiates a new MfaUpdateTotpMethodRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMfaUpdateTotpMethodRequestWithDefaults() *MfaUpdateTotpMethodRequest {
-	var this MfaUpdateTotpMethodRequest
-
-	this.Algorithm = "SHA1"
-	this.Digits = 6
-	this.KeySize = 20
-	this.Period = "30"
-	this.QrSize = 200
-	this.Skew = 1
-
-	return &this
-}

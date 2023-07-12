@@ -16,12 +16,3 @@ type GoogleCloudKmsDecryptRequest struct {
 	// Integer version of the crypto key version to use for decryption. This is required for asymmetric keys. For symmetric keys, Cloud KMS will choose the correct version automatically.
 	KeyVersion int32 `json:"key_version,omitempty"`
 }
-
-// NewGoogleCloudKmsDecryptRequestWithDefaults instantiates a new GoogleCloudKmsDecryptRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGoogleCloudKmsDecryptRequestWithDefaults() *GoogleCloudKmsDecryptRequest {
-	var this GoogleCloudKmsDecryptRequest
-
-	return &this
-}

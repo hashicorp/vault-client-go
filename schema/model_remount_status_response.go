@@ -11,12 +11,3 @@ type RemountStatusResponse struct {
 
 	MigrationInfo map[string]interface{} `json:"migration_info,omitempty"`
 }
-
-// NewRemountStatusResponseWithDefaults instantiates a new RemountStatusResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRemountStatusResponseWithDefaults() *RemountStatusResponse {
-	var this RemountStatusResponse
-
-	return &this
-}

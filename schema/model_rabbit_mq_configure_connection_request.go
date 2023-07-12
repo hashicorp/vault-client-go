@@ -25,14 +25,3 @@ type RabbitMqConfigureConnectionRequest struct {
 	// If set, connection_uri is verified by actually connecting to the RabbitMQ management API
 	VerifyConnection bool `json:"verify_connection,omitempty"`
 }
-
-// NewRabbitMqConfigureConnectionRequestWithDefaults instantiates a new RabbitMqConfigureConnectionRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRabbitMqConfigureConnectionRequestWithDefaults() *RabbitMqConfigureConnectionRequest {
-	var this RabbitMqConfigureConnectionRequest
-
-	this.VerifyConnection = true
-
-	return &this
-}

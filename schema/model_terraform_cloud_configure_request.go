@@ -16,15 +16,3 @@ type TerraformCloudConfigureRequest struct {
 	// The token to access Terraform Cloud
 	Token string `json:"token"`
 }
-
-// NewTerraformCloudConfigureRequestWithDefaults instantiates a new TerraformCloudConfigureRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTerraformCloudConfigureRequestWithDefaults() *TerraformCloudConfigureRequest {
-	var this TerraformCloudConfigureRequest
-
-	this.Address = "https://app.terraform.io"
-	this.BasePath = "/api/v2/"
-
-	return &this
-}

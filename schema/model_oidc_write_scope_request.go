@@ -13,12 +13,3 @@ type OidcWriteScopeRequest struct {
 	// The template string to use for the scope. This may be in string-ified JSON or base64 format.
 	Template string `json:"template,omitempty"`
 }
-
-// NewOidcWriteScopeRequestWithDefaults instantiates a new OidcWriteScopeRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewOidcWriteScopeRequestWithDefaults() *OidcWriteScopeRequest {
-	var this OidcWriteScopeRequest
-
-	return &this
-}

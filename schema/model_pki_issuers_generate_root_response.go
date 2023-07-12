@@ -34,12 +34,3 @@ type PkiIssuersGenerateRootResponse struct {
 	// The requested Subject's named serial number.
 	SerialNumber string `json:"serial_number,omitempty"`
 }
-
-// NewPkiIssuersGenerateRootResponseWithDefaults instantiates a new PkiIssuersGenerateRootResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiIssuersGenerateRootResponseWithDefaults() *PkiIssuersGenerateRootResponse {
-	var this PkiIssuersGenerateRootResponse
-
-	return &this
-}

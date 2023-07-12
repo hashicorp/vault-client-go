@@ -19,12 +19,3 @@ type EntityMergeRequest struct {
 	// Entity ID into which all the other entities need to get merged
 	ToEntityId string `json:"to_entity_id,omitempty"`
 }
-
-// NewEntityMergeRequestWithDefaults instantiates a new EntityMergeRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewEntityMergeRequestWithDefaults() *EntityMergeRequest {
-	var this EntityMergeRequest
-
-	return &this
-}

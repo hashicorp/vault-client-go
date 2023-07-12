@@ -16,12 +16,3 @@ type PkiWriteAcmeChallengeAuthIdChallengeTypeRequest struct {
 	// ACME request 'signature' value
 	Signature string `json:"signature,omitempty"`
 }
-
-// NewPkiWriteAcmeChallengeAuthIdChallengeTypeRequestWithDefaults instantiates a new PkiWriteAcmeChallengeAuthIdChallengeTypeRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiWriteAcmeChallengeAuthIdChallengeTypeRequestWithDefaults() *PkiWriteAcmeChallengeAuthIdChallengeTypeRequest {
-	var this PkiWriteAcmeChallengeAuthIdChallengeTypeRequest
-
-	return &this
-}

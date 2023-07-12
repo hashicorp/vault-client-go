@@ -13,12 +13,3 @@ type AliCloudConfigureRequest struct {
 	// Secret key with appropriate permissions.
 	SecretKey string `json:"secret_key,omitempty"`
 }
-
-// NewAliCloudConfigureRequestWithDefaults instantiates a new AliCloudConfigureRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAliCloudConfigureRequestWithDefaults() *AliCloudConfigureRequest {
-	var this AliCloudConfigureRequest
-
-	return &this
-}

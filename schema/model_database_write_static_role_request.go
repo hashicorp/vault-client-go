@@ -25,14 +25,3 @@ type DatabaseWriteStaticRoleRequest struct {
 	// Name of the static user account for Vault to manage. Requires \"rotation_period\" to be specified
 	Username string `json:"username,omitempty"`
 }
-
-// NewDatabaseWriteStaticRoleRequestWithDefaults instantiates a new DatabaseWriteStaticRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDatabaseWriteStaticRoleRequestWithDefaults() *DatabaseWriteStaticRoleRequest {
-	var this DatabaseWriteStaticRoleRequest
-
-	this.CredentialType = "password"
-
-	return &this
-}

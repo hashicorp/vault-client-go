@@ -13,12 +13,3 @@ type RootTokenGenerationUpdateRequest struct {
 	// Specifies the nonce of the attempt.
 	Nonce string `json:"nonce,omitempty"`
 }
-
-// NewRootTokenGenerationUpdateRequestWithDefaults instantiates a new RootTokenGenerationUpdateRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRootTokenGenerationUpdateRequestWithDefaults() *RootTokenGenerationUpdateRequest {
-	var this RootTokenGenerationUpdateRequest
-
-	return &this
-}

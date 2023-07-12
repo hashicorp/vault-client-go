@@ -22,12 +22,3 @@ type PkiIssuersImportBundleResponse struct {
 	// A mapping of issuer_id to key_id for all issuers included in this request
 	Mapping map[string]interface{} `json:"mapping,omitempty"`
 }
-
-// NewPkiIssuersImportBundleResponseWithDefaults instantiates a new PkiIssuersImportBundleResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiIssuersImportBundleResponseWithDefaults() *PkiIssuersImportBundleResponse {
-	var this PkiIssuersImportBundleResponse
-
-	return &this
-}

@@ -10,12 +10,3 @@ type PoliciesWriteAclPolicyRequest struct {
 	// The rules of the policy.
 	Policy string `json:"policy,omitempty"`
 }
-
-// NewPoliciesWriteAclPolicyRequestWithDefaults instantiates a new PoliciesWriteAclPolicyRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPoliciesWriteAclPolicyRequestWithDefaults() *PoliciesWriteAclPolicyRequest {
-	var this PoliciesWriteAclPolicyRequest
-
-	return &this
-}

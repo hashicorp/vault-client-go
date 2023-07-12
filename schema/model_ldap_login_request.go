@@ -10,12 +10,3 @@ type LdapLoginRequest struct {
 	// Password for this user.
 	Password string `json:"password,omitempty"`
 }
-
-// NewLdapLoginRequestWithDefaults instantiates a new LdapLoginRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLdapLoginRequestWithDefaults() *LdapLoginRequest {
-	var this LdapLoginRequest
-
-	return &this
-}

@@ -53,12 +53,3 @@ type PkiRevokeIssuerResponse struct {
 	// Allowed usage
 	Usage string `json:"usage,omitempty"`
 }
-
-// NewPkiRevokeIssuerResponseWithDefaults instantiates a new PkiRevokeIssuerResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiRevokeIssuerResponseWithDefaults() *PkiRevokeIssuerResponse {
-	var this PkiRevokeIssuerResponse
-
-	return &this
-}

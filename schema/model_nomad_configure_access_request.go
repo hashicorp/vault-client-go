@@ -25,12 +25,3 @@ type NomadConfigureAccessRequest struct {
 	// Token for API calls
 	Token string `json:"token,omitempty"`
 }
-
-// NewNomadConfigureAccessRequestWithDefaults instantiates a new NomadConfigureAccessRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNomadConfigureAccessRequestWithDefaults() *NomadConfigureAccessRequest {
-	var this NomadConfigureAccessRequest
-
-	return &this
-}

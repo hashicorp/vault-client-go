@@ -25,14 +25,3 @@ type AzureConfigureAuthRequest struct {
 	// The tenant id for the Azure Active Directory. This is sometimes referred to as Directory ID in AD. This value can also be provided with the AZURE_TENANT_ID environment variable.
 	TenantId string `json:"tenant_id,omitempty"`
 }
-
-// NewAzureConfigureAuthRequestWithDefaults instantiates a new AzureConfigureAuthRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAzureConfigureAuthRequestWithDefaults() *AzureConfigureAuthRequest {
-	var this AzureConfigureAuthRequest
-
-	this.RootPasswordTtl = "15768000000000000"
-
-	return &this
-}

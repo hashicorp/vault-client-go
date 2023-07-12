@@ -9,12 +9,3 @@ package schema
 type PoliciesReadPasswordPolicyResponse struct {
 	Policy string `json:"policy,omitempty"`
 }
-
-// NewPoliciesReadPasswordPolicyResponseWithDefaults instantiates a new PoliciesReadPasswordPolicyResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPoliciesReadPasswordPolicyResponseWithDefaults() *PoliciesReadPasswordPolicyResponse {
-	var this PoliciesReadPasswordPolicyResponse
-
-	return &this
-}

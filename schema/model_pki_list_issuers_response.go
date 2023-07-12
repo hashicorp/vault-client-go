@@ -13,12 +13,3 @@ type PkiListIssuersResponse struct {
 	// A list of keys
 	Keys []string `json:"keys,omitempty"`
 }
-
-// NewPkiListIssuersResponseWithDefaults instantiates a new PkiListIssuersResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiListIssuersResponseWithDefaults() *PkiListIssuersResponse {
-	var this PkiListIssuersResponse
-
-	return &this
-}

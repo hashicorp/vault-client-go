@@ -10,14 +10,3 @@ type LeasesRevokeLeaseWithPrefixRequest struct {
 	// Whether or not to perform the revocation synchronously
 	Sync bool `json:"sync,omitempty"`
 }
-
-// NewLeasesRevokeLeaseWithPrefixRequestWithDefaults instantiates a new LeasesRevokeLeaseWithPrefixRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLeasesRevokeLeaseWithPrefixRequestWithDefaults() *LeasesRevokeLeaseWithPrefixRequest {
-	var this LeasesRevokeLeaseWithPrefixRequest
-
-	this.Sync = true
-
-	return &this
-}

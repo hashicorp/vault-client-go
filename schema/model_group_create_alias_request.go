@@ -19,12 +19,3 @@ type GroupCreateAliasRequest struct {
 	// Alias of the group.
 	Name string `json:"name,omitempty"`
 }
-
-// NewGroupCreateAliasRequestWithDefaults instantiates a new GroupCreateAliasRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGroupCreateAliasRequestWithDefaults() *GroupCreateAliasRequest {
-	var this GroupCreateAliasRequest
-
-	return &this
-}

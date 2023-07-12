@@ -13,12 +13,3 @@ type UnsealRequest struct {
 	// Specifies if previously-provided unseal keys are discarded and the unseal process is reset.
 	Reset bool `json:"reset,omitempty"`
 }
-
-// NewUnsealRequestWithDefaults instantiates a new UnsealRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUnsealRequestWithDefaults() *UnsealRequest {
-	var this UnsealRequest
-
-	return &this
-}

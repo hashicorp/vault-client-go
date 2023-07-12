@@ -31,16 +31,3 @@ type SshIssueCertificateRequest struct {
 	// Valid principals, either usernames or hostnames, that the certificate should be signed for.
 	ValidPrincipals string `json:"valid_principals,omitempty"`
 }
-
-// NewSshIssueCertificateRequestWithDefaults instantiates a new SshIssueCertificateRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSshIssueCertificateRequestWithDefaults() *SshIssueCertificateRequest {
-	var this SshIssueCertificateRequest
-
-	this.CertType = "user"
-	this.KeyBits = 0
-	this.KeyType = "rsa"
-
-	return &this
-}

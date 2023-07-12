@@ -10,12 +10,3 @@ type AppRoleReadRoleIdResponse struct {
 	// Identifier of the role. Defaults to a UUID.
 	RoleId string `json:"role_id,omitempty"`
 }
-
-// NewAppRoleReadRoleIdResponseWithDefaults instantiates a new AppRoleReadRoleIdResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppRoleReadRoleIdResponseWithDefaults() *AppRoleReadRoleIdResponse {
-	var this AppRoleReadRoleIdResponse
-
-	return &this
-}

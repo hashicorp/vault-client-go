@@ -11,12 +11,3 @@ type AppRoleReadBoundCidrListResponse struct {
 	// Deprecated
 	BoundCidrList []string `json:"bound_cidr_list,omitempty"`
 }
-
-// NewAppRoleReadBoundCidrListResponseWithDefaults instantiates a new AppRoleReadBoundCidrListResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppRoleReadBoundCidrListResponseWithDefaults() *AppRoleReadBoundCidrListResponse {
-	var this AppRoleReadBoundCidrListResponse
-
-	return &this
-}

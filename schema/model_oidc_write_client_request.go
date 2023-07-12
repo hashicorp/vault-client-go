@@ -25,17 +25,3 @@ type OidcWriteClientRequest struct {
 	// Comma separated string or array of redirect URIs used by the client. One of these values must exactly match the redirect_uri parameter value used in each authentication request.
 	RedirectUris []string `json:"redirect_uris,omitempty"`
 }
-
-// NewOidcWriteClientRequestWithDefaults instantiates a new OidcWriteClientRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewOidcWriteClientRequestWithDefaults() *OidcWriteClientRequest {
-	var this OidcWriteClientRequest
-
-	this.AccessTokenTtl = "24h"
-	this.ClientType = "confidential"
-	this.IdTokenTtl = "24h"
-	this.Key = "default"
-
-	return &this
-}

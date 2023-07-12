@@ -19,12 +19,3 @@ type PkiGenerateInternalKeyResponse struct {
 	// The private key string
 	PrivateKey string `json:"private_key,omitempty"`
 }
-
-// NewPkiGenerateInternalKeyResponseWithDefaults instantiates a new PkiGenerateInternalKeyResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiGenerateInternalKeyResponseWithDefaults() *PkiGenerateInternalKeyResponse {
-	var this PkiGenerateInternalKeyResponse
-
-	return &this
-}

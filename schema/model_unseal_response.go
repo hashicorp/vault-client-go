@@ -39,12 +39,3 @@ type UnsealResponse struct {
 
 	Version string `json:"version,omitempty"`
 }
-
-// NewUnsealResponseWithDefaults instantiates a new UnsealResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUnsealResponseWithDefaults() *UnsealResponse {
-	var this UnsealResponse
-
-	return &this
-}

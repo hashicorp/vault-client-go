@@ -8,6 +8,19 @@ and this project adheres to
 
 ## Unreleased ([diff][unreleased-diff])
 
+## [0.4.0][] ([diff][0.4.0-diff]) - 2023-07-11
+
+### Added
+
+### Removed
+
+- Removed `ReadWithParameters` (previously deprecated in 0.3.2)
+- Removed `ReadRawWithParameters` (previously deprecated in 0.3.2)
+- Removed `DeleteWithParameters` (previously deprecated in 0.3.2)
+
+### Fixed
+
+
 ## [0.3.3][] ([diff][0.3.3-diff]) - 2023-05-26
 
 ### Fixed
@@ -99,7 +112,9 @@ and this project adheres to
 <!-- diffs -->
 
 [unreleased-diff]:
-  https://github.com/hashicorp/vault-client-go/compare/v0.3.3...HEAD
+  https://github.com/hashicorp/vault-client-go/compare/v0.4.0...HEAD
+[0.4.0-diff]:
+  https://github.com/hashicorp/vault-client-go/compare/v0.3.3...v0.4.0
 [0.3.3-diff]:
   https://github.com/hashicorp/vault-client-go/compare/v0.3.2...v0.3.3
 [0.3.2-diff]:
@@ -117,6 +132,7 @@ and this project adheres to
 
 <!-- releases -->
 
+[0.4.0]: https://github.com/hashicorp/vault-client-go/releases/tag/v0.4.0
 [0.3.3]: https://github.com/hashicorp/vault-client-go/releases/tag/v0.3.3
 [0.3.2]: https://github.com/hashicorp/vault-client-go/releases/tag/v0.3.2
 [0.3.1]: https://github.com/hashicorp/vault-client-go/releases/tag/v0.3.1

@@ -13,8 +13,6 @@ type RawWriteRequest struct {
 
 	Encoding string `json:"encoding,omitempty"`
 
-	Path string `json:"path,omitempty"`
-
 	Value string `json:"value,omitempty"`
 }
 

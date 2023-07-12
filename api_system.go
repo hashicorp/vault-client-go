@@ -1211,31 +1211,8 @@ func (s *System) LeasesList(ctx context.Context, options ...RequestOption) (*Res
 }
 
 // LeasesLookUp
-func (s *System) LeasesLookUp(ctx context.Context, options ...RequestOption) (*Response[schema.LeasesLookUpResponse], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/leases/lookup/"
-
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("list", "true")
-
-	return sendRequestParseResponse[schema.LeasesLookUpResponse](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// LeasesLookUpWithPrefix
 // prefix: The path to list leases under. Example: \&quot;aws/creds/deploy\&quot;
-func (s *System) LeasesLookUpWithPrefix(ctx context.Context, prefix string, options ...RequestOption) (*Response[schema.LeasesLookUpWithPrefixResponse], error) {
+func (s *System) LeasesLookUp(ctx context.Context, prefix string, options ...RequestOption) (*Response[schema.LeasesLookUpResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1247,7 +1224,7 @@ func (s *System) LeasesLookUpWithPrefix(ctx context.Context, prefix string, opti
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[schema.LeasesLookUpWithPrefixResponse](
+	return sendRequestParseResponse[schema.LeasesLookUpResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -2756,29 +2733,7 @@ func (s *System) RateLimitQuotasWrite(ctx context.Context, name string, request 
 }
 
 // RawDelete Delete the key with given path.
-func (s *System) RawDelete(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/raw"
-
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodDelete,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// RawDeletePath Delete the key with given path.
-func (s *System) RawDeletePath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) RawDelete(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2801,13 +2756,14 @@ func (s *System) RawDeletePath(ctx context.Context, path string, options ...Requ
 }
 
 // RawRead Read the value of the key at the given path.
-func (s *System) RawRead(ctx context.Context, options ...RequestOption) (*Response[schema.RawReadResponse], error) {
+func (s *System) RawRead(ctx context.Context, path string, options ...RequestOption) (*Response[schema.RawReadResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/raw"
+	requestPath := "/v1/sys/raw/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -2823,54 +2779,8 @@ func (s *System) RawRead(ctx context.Context, options ...RequestOption) (*Respon
 	)
 }
 
-// RawReadPath Read the value of the key at the given path.
-func (s *System) RawReadPath(ctx context.Context, path string, options ...RequestOption) (*Response[schema.RawReadPathResponse], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/raw/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("list", "true")
-
-	return sendRequestParseResponse[schema.RawReadPathResponse](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // RawWrite Update the value of the key at the given path.
-func (s *System) RawWrite(ctx context.Context, request schema.RawWriteRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/raw"
-
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodPost,
-		requestPath,
-		request,
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// RawWritePath Update the value of the key at the given path.
-func (s *System) RawWritePath(ctx context.Context, path string, request schema.RawWritePathRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) RawWrite(ctx context.Context, path string, request schema.RawWriteRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err

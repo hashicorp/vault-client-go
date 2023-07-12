@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **Compressed** | Pointer to **bool** |  | [optional] 
 **CompressionType** | Pointer to **string** |  | [optional] 
 **Encoding** | Pointer to **string** |  | [optional] 
-**Path** | Pointer to **string** |  | [optional] 
 **Value** | Pointer to **string** |  | [optional] 
 
 
@@ -117,35 +116,6 @@ SetEncoding sets Encoding field to given value.
 `func (o *RawWriteRequest) HasEncoding() bool`
 
 HasEncoding returns a boolean if a field has been set.
-
-
-
-
-### GetPath
-
-`func (o *RawWriteRequest) GetPath() string`
-
-GetPath returns the Path field if non-nil, zero value otherwise.
-
-### GetPathOk
-
-`func (o *RawWriteRequest) GetPathOk() (*string, bool)`
-
-GetPathOk returns a tuple with the Path field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPath
-
-`func (o *RawWriteRequest) SetPath(v string)`
-
-SetPath sets Path field to given value.
-
-
-### HasPath
-
-`func (o *RawWriteRequest) HasPath() bool`
-
-HasPath returns a boolean if a field has been set.
 
 
 

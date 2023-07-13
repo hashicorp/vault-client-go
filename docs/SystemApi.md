@@ -55,7 +55,7 @@ Method | HTTP request | Description
 [**LeasesForceRevokeLeaseWithPrefix**](SystemApi.md#LeasesForceRevokeLeaseWithPrefix) | **Post** /sys/leases/revoke-force/{prefix} | Revokes all secrets or tokens generated under a given prefix immediately
 [**LeasesList**](SystemApi.md#LeasesList) | **Get** /sys/leases | 
 [**LeasesLookUp**](SystemApi.md#LeasesLookUp) | **Get** /sys/leases/lookup/ | 
-[**LeasesLookUpWithPrefix**](SystemApi.md#LeasesLookUpWithPrefix) | **Get** /sys/leases/lookup/{prefix} | 
+[**LeasesLookUpWithPrefix**](SystemApi.md#LeasesLookUpWithPrefix) | **Get** /sys/leases/lookup/{prefix}/ | 
 [**LeasesReadLease**](SystemApi.md#LeasesReadLease) | **Post** /sys/leases/lookup | 
 [**LeasesRenewLease**](SystemApi.md#LeasesRenewLease) | **Post** /sys/leases/renew | Renews a lease, requesting to extend the lease.
 [**LeasesRenewLeaseWithId**](SystemApi.md#LeasesRenewLeaseWithId) | **Post** /sys/leases/renew/{url_lease_id} | Renews a lease, requesting to extend the lease.
@@ -82,7 +82,7 @@ Method | HTTP request | Description
 [**MountsReadTuningInformation**](SystemApi.md#MountsReadTuningInformation) | **Get** /sys/mounts/{path}/tune | 
 [**MountsTuneConfigurationParameters**](SystemApi.md#MountsTuneConfigurationParameters) | **Post** /sys/mounts/{path}/tune | 
 [**PluginsCatalogListPlugins**](SystemApi.md#PluginsCatalogListPlugins) | **Get** /sys/plugins/catalog | 
-[**PluginsCatalogListPluginsWithType**](SystemApi.md#PluginsCatalogListPluginsWithType) | **Get** /sys/plugins/catalog/{type} | List the plugins in the catalog.
+[**PluginsCatalogListPluginsWithType**](SystemApi.md#PluginsCatalogListPluginsWithType) | **Get** /sys/plugins/catalog/{type}/ | List the plugins in the catalog.
 [**PluginsCatalogReadPluginConfiguration**](SystemApi.md#PluginsCatalogReadPluginConfiguration) | **Get** /sys/plugins/catalog/{name} | Return the configuration data for the plugin with the given name.
 [**PluginsCatalogReadPluginConfigurationWithType**](SystemApi.md#PluginsCatalogReadPluginConfigurationWithType) | **Get** /sys/plugins/catalog/{type}/{name} | Return the configuration data for the plugin with the given name.
 [**PluginsCatalogRegisterPlugin**](SystemApi.md#PluginsCatalogRegisterPlugin) | **Post** /sys/plugins/catalog/{name} | Register a new plugin, or updates an existing one with the supplied name.
@@ -93,9 +93,8 @@ Method | HTTP request | Description
 [**PoliciesDeleteAclPolicy**](SystemApi.md#PoliciesDeleteAclPolicy) | **Delete** /sys/policies/acl/{name} | Delete the ACL policy with the given name.
 [**PoliciesDeletePasswordPolicy**](SystemApi.md#PoliciesDeletePasswordPolicy) | **Delete** /sys/policies/password/{name} | Delete a password policy.
 [**PoliciesGeneratePasswordFromPasswordPolicy**](SystemApi.md#PoliciesGeneratePasswordFromPasswordPolicy) | **Get** /sys/policies/password/{name}/generate | Generate a password from an existing password policy.
-[**PoliciesList**](SystemApi.md#PoliciesList) | **Get** /sys/policy | 
-[**PoliciesListAclPolicies**](SystemApi.md#PoliciesListAclPolicies) | **Get** /sys/policies/acl | 
-[**PoliciesListPasswordPolicies**](SystemApi.md#PoliciesListPasswordPolicies) | **Get** /sys/policies/password | List the existing password policies.
+[**PoliciesListAclPolicies**](SystemApi.md#PoliciesListAclPolicies) | **Get** /sys/policies/acl/ | 
+[**PoliciesListPasswordPolicies**](SystemApi.md#PoliciesListPasswordPolicies) | **Get** /sys/policies/password/ | List the existing password policies.
 [**PoliciesReadAclPolicy**](SystemApi.md#PoliciesReadAclPolicy) | **Get** /sys/policies/acl/{name} | Retrieve information about the named ACL policy.
 [**PoliciesReadPasswordPolicy**](SystemApi.md#PoliciesReadPasswordPolicy) | **Get** /sys/policies/password/{name} | Retrieve an existing password policy.
 [**PoliciesWriteAclPolicy**](SystemApi.md#PoliciesWriteAclPolicy) | **Post** /sys/policies/acl/{name} | Add a new or update an existing ACL policy.
@@ -116,12 +115,14 @@ Method | HTTP request | Description
 [**QueryTokenSelfCapabilities**](SystemApi.md#QueryTokenSelfCapabilities) | **Post** /sys/capabilities-self | 
 [**RateLimitQuotasConfigure**](SystemApi.md#RateLimitQuotasConfigure) | **Post** /sys/quotas/config | 
 [**RateLimitQuotasDelete**](SystemApi.md#RateLimitQuotasDelete) | **Delete** /sys/quotas/rate-limit/{name} | 
-[**RateLimitQuotasList**](SystemApi.md#RateLimitQuotasList) | **Get** /sys/quotas/rate-limit | 
+[**RateLimitQuotasList**](SystemApi.md#RateLimitQuotasList) | **Get** /sys/quotas/rate-limit/ | 
 [**RateLimitQuotasRead**](SystemApi.md#RateLimitQuotasRead) | **Get** /sys/quotas/rate-limit/{name} | 
 [**RateLimitQuotasReadConfiguration**](SystemApi.md#RateLimitQuotasReadConfiguration) | **Get** /sys/quotas/config | 
 [**RateLimitQuotasWrite**](SystemApi.md#RateLimitQuotasWrite) | **Post** /sys/quotas/rate-limit/{name} | 
 [**RawDelete**](SystemApi.md#RawDelete) | **Delete** /sys/raw | Delete the key with given path.
 [**RawDeletePath**](SystemApi.md#RawDeletePath) | **Delete** /sys/raw/{path} | Delete the key with given path.
+[**RawList**](SystemApi.md#RawList) | **Get** /sys/raw/ | Return a list keys for a given path prefix.
+[**RawListPath**](SystemApi.md#RawListPath) | **Get** /sys/raw/{path}/ | Return a list keys for a given path prefix.
 [**RawRead**](SystemApi.md#RawRead) | **Get** /sys/raw | Read the value of the key at the given path.
 [**RawReadPath**](SystemApi.md#RawReadPath) | **Get** /sys/raw/{path} | Read the value of the key at the given path.
 [**RawWrite**](SystemApi.md#RawWrite) | **Post** /sys/raw | Update the value of the key at the given path.
@@ -164,12 +165,12 @@ Method | HTTP request | Description
 [**SystemDeleteQuotasLeaseCountName**](SystemApi.md#SystemDeleteQuotasLeaseCountName) | **Delete** /sys/quotas/lease-count/{name} | 
 [**SystemDeleteReplicationPerformancePrimaryPathsFilterId**](SystemApi.md#SystemDeleteReplicationPerformancePrimaryPathsFilterId) | **Delete** /sys/replication/performance/primary/paths-filter/{id} | 
 [**SystemDeleteStorageRaftSnapshotAutoConfigName**](SystemApi.md#SystemDeleteStorageRaftSnapshotAutoConfigName) | **Delete** /sys/storage/raft/snapshot-auto/config/{name} | 
-[**SystemListManagedKeysType**](SystemApi.md#SystemListManagedKeysType) | **Get** /sys/managed-keys/{type} | 
-[**SystemListMfaMethod**](SystemApi.md#SystemListMfaMethod) | **Get** /sys/mfa/method | 
-[**SystemListNamespaces**](SystemApi.md#SystemListNamespaces) | **Get** /sys/namespaces | 
-[**SystemListPoliciesEgp**](SystemApi.md#SystemListPoliciesEgp) | **Get** /sys/policies/egp | 
-[**SystemListPoliciesRgp**](SystemApi.md#SystemListPoliciesRgp) | **Get** /sys/policies/rgp | 
-[**SystemListQuotasLeaseCount**](SystemApi.md#SystemListQuotasLeaseCount) | **Get** /sys/quotas/lease-count | 
+[**SystemListManagedKeysType**](SystemApi.md#SystemListManagedKeysType) | **Get** /sys/managed-keys/{type}/ | 
+[**SystemListMfaMethod**](SystemApi.md#SystemListMfaMethod) | **Get** /sys/mfa/method/ | 
+[**SystemListNamespaces**](SystemApi.md#SystemListNamespaces) | **Get** /sys/namespaces/ | 
+[**SystemListPoliciesEgp**](SystemApi.md#SystemListPoliciesEgp) | **Get** /sys/policies/egp/ | 
+[**SystemListPoliciesRgp**](SystemApi.md#SystemListPoliciesRgp) | **Get** /sys/policies/rgp/ | 
+[**SystemListQuotasLeaseCount**](SystemApi.md#SystemListQuotasLeaseCount) | **Get** /sys/quotas/lease-count/ | 
 [**SystemListStorageRaftSnapshotAutoConfig**](SystemApi.md#SystemListStorageRaftSnapshotAutoConfig) | **Get** /sys/storage/raft/snapshot-auto/config/ | 
 [**SystemReadConfigControlGroup**](SystemApi.md#SystemReadConfigControlGroup) | **Get** /sys/config/control-group | 
 [**SystemReadConfigGroupPolicyApplication**](SystemApi.md#SystemReadConfigGroupPolicyApplication) | **Get** /sys/config/group-policy-application | 
@@ -255,11 +256,11 @@ Method | HTTP request | Description
 [**SystemWriteStorageRaftSnapshotAutoConfigName**](SystemApi.md#SystemWriteStorageRaftSnapshotAutoConfigName) | **Post** /sys/storage/raft/snapshot-auto/config/{name} | 
 [**UiHeadersConfigure**](SystemApi.md#UiHeadersConfigure) | **Post** /sys/config/ui/headers/{header} | Configure the values to be returned for the UI header.
 [**UiHeadersDeleteConfiguration**](SystemApi.md#UiHeadersDeleteConfiguration) | **Delete** /sys/config/ui/headers/{header} | Remove a UI header.
-[**UiHeadersList**](SystemApi.md#UiHeadersList) | **Get** /sys/config/ui/headers | Return a list of configured UI headers.
+[**UiHeadersList**](SystemApi.md#UiHeadersList) | **Get** /sys/config/ui/headers/ | Return a list of configured UI headers.
 [**UiHeadersReadConfiguration**](SystemApi.md#UiHeadersReadConfiguration) | **Get** /sys/config/ui/headers/{header} | Return the given UI header&#x27;s configuration
 [**Unseal**](SystemApi.md#Unseal) | **Post** /sys/unseal | Unseal the Vault.
 [**Unwrap**](SystemApi.md#Unwrap) | **Post** /sys/wrapping/unwrap | 
-[**VersionHistory**](SystemApi.md#VersionHistory) | **Get** /sys/version-history | Returns map of historical version change entries
+[**VersionHistory**](SystemApi.md#VersionHistory) | **Get** /sys/version-history/ | Returns map of historical version change entries
 [**Wrap**](SystemApi.md#Wrap) | **Post** /sys/wrapping/wrap | 
 
 
@@ -5589,61 +5590,6 @@ Name | Type | Description  | Notes
 
 
 
-## PoliciesList
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	resp, err := client.System.PoliciesList(
-		context.Background(),
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Return a list if &#x60;true&#x60; | 
-
-[**PoliciesListResponse**](PoliciesListResponse.md)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
 ## PoliciesListAclPolicies
 
 
@@ -7241,6 +7187,123 @@ Name | Type | Description  | Notes
 
 
 
+## RawList
+
+Return a list keys for a given path prefix.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.RawList(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+[**RawListResponse**](RawListResponse.md)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
+## RawListPath
+
+Return a list keys for a given path prefix.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | 
+	resp, err := client.System.RawListPath(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+[**RawListPathResponse**](RawListPathResponse.md)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
 ## RawRead
 
 Read the value of the key at the given path.
@@ -7280,14 +7343,11 @@ func main() {
 
 ### Path Parameters
 
-
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Return a list if &#x60;true&#x60; | 
 
 [**RawReadResponse**](RawReadResponse.md)
 
@@ -7349,7 +7409,6 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **list** | **string** | Return a list if &#x60;true&#x60; | 
 
 [**RawReadPathResponse**](RawReadPathResponse.md)
 

@@ -5,18 +5,16 @@
 
 package schema
 
-// PoliciesListResponse struct for PoliciesListResponse
-type PoliciesListResponse struct {
+// RawListResponse struct for RawListResponse
+type RawListResponse struct {
 	Keys []string `json:"keys,omitempty"`
-
-	Policies []string `json:"policies,omitempty"`
 }
 
-// NewPoliciesListResponseWithDefaults instantiates a new PoliciesListResponse object
+// NewRawListResponseWithDefaults instantiates a new RawListResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewPoliciesListResponseWithDefaults() *PoliciesListResponse {
-	var this PoliciesListResponse
+func NewRawListResponseWithDefaults() *RawListResponse {
+	var this RawListResponse
 
 	return &this
 }

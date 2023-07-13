@@ -1241,7 +1241,7 @@ func (s *System) LeasesLookUpWithPrefix(ctx context.Context, prefix string, opti
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/leases/lookup/{prefix}"
+	requestPath := "/v1/sys/leases/lookup/{prefix}/"
 	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -1870,7 +1870,7 @@ func (s *System) PluginsCatalogListPluginsWithType(ctx context.Context, type_ st
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/plugins/catalog/{type}"
+	requestPath := "/v1/sys/plugins/catalog/{type}/"
 	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -2132,29 +2132,6 @@ func (s *System) PoliciesGeneratePasswordFromPasswordPolicy(ctx context.Context,
 	)
 }
 
-// PoliciesList
-func (s *System) PoliciesList(ctx context.Context, options ...RequestOption) (*Response[schema.PoliciesListResponse], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/sys/policy"
-
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("list", "true")
-
-	return sendRequestParseResponse[schema.PoliciesListResponse](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
 // PoliciesListAclPolicies
 func (s *System) PoliciesListAclPolicies(ctx context.Context, options ...RequestOption) (*Response[schema.PoliciesListAclPoliciesResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
@@ -2162,7 +2139,7 @@ func (s *System) PoliciesListAclPolicies(ctx context.Context, options ...Request
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/policies/acl"
+	requestPath := "/v1/sys/policies/acl/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -2185,7 +2162,7 @@ func (s *System) PoliciesListPasswordPolicies(ctx context.Context, options ...Re
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/policies/password"
+	requestPath := "/v1/sys/policies/password/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -2669,7 +2646,7 @@ func (s *System) RateLimitQuotasList(ctx context.Context, options ...RequestOpti
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/quotas/rate-limit"
+	requestPath := "/v1/sys/quotas/rate-limit/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -2800,6 +2777,53 @@ func (s *System) RawDeletePath(ctx context.Context, path string, options ...Requ
 	)
 }
 
+// RawList Return a list keys for a given path prefix.
+func (s *System) RawList(ctx context.Context, options ...RequestOption) (*Response[schema.RawListResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/raw/"
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("list", "true")
+
+	return sendRequestParseResponse[schema.RawListResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// RawListPath Return a list keys for a given path prefix.
+func (s *System) RawListPath(ctx context.Context, path string, options ...RequestOption) (*Response[schema.RawListPathResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/raw/{path}/"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("list", "true")
+
+	return sendRequestParseResponse[schema.RawListPathResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
 // RawRead Read the value of the key at the given path.
 func (s *System) RawRead(ctx context.Context, options ...RequestOption) (*Response[schema.RawReadResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
@@ -2810,7 +2834,6 @@ func (s *System) RawRead(ctx context.Context, options ...RequestOption) (*Respon
 	requestPath := "/v1/sys/raw"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("list", "true")
 
 	return sendRequestParseResponse[schema.RawReadResponse](
 		ctx,
@@ -2834,7 +2857,6 @@ func (s *System) RawReadPath(ctx context.Context, path string, options ...Reques
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("list", "true")
 
 	return sendRequestParseResponse[schema.RawReadPathResponse](
 		ctx,
@@ -3757,7 +3779,7 @@ func (s *System) SystemListManagedKeysType(ctx context.Context, type_ string, op
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/managed-keys/{type}"
+	requestPath := "/v1/sys/managed-keys/{type}/"
 	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
@@ -3781,7 +3803,7 @@ func (s *System) SystemListMfaMethod(ctx context.Context, options ...RequestOpti
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/mfa/method"
+	requestPath := "/v1/sys/mfa/method/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -3804,7 +3826,7 @@ func (s *System) SystemListNamespaces(ctx context.Context, options ...RequestOpt
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/namespaces"
+	requestPath := "/v1/sys/namespaces/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -3827,7 +3849,7 @@ func (s *System) SystemListPoliciesEgp(ctx context.Context, options ...RequestOp
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/policies/egp"
+	requestPath := "/v1/sys/policies/egp/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -3850,7 +3872,7 @@ func (s *System) SystemListPoliciesRgp(ctx context.Context, options ...RequestOp
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/policies/rgp"
+	requestPath := "/v1/sys/policies/rgp/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -3873,7 +3895,7 @@ func (s *System) SystemListQuotasLeaseCount(ctx context.Context, options ...Requ
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/quotas/lease-count"
+	requestPath := "/v1/sys/quotas/lease-count/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -5806,7 +5828,7 @@ func (s *System) UiHeadersList(ctx context.Context, options ...RequestOption) (*
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/config/ui/headers"
+	requestPath := "/v1/sys/config/ui/headers/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
@@ -5897,7 +5919,7 @@ func (s *System) VersionHistory(ctx context.Context, options ...RequestOption) (
 		return nil, err
 	}
 
-	requestPath := "/v1/sys/version-history"
+	requestPath := "/v1/sys/version-history/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")

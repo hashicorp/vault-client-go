@@ -28,14 +28,3 @@ type AwsConfigureRootIamCredentialsRequest struct {
 	// Template to generate custom IAM usernames
 	UsernameTemplate string `json:"username_template,omitempty"`
 }
-
-// NewAwsConfigureRootIamCredentialsRequestWithDefaults instantiates a new AwsConfigureRootIamCredentialsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAwsConfigureRootIamCredentialsRequestWithDefaults() *AwsConfigureRootIamCredentialsRequest {
-	var this AwsConfigureRootIamCredentialsRequest
-
-	this.MaxRetries = -1
-
-	return &this
-}

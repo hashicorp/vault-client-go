@@ -85,20 +85,3 @@ type SshWriteRoleRequest struct {
 	// [Not applicable for OTP type] [Optional for CA type] The lease duration if no specific lease duration is requested. The lease duration controls the expiration of certificates issued by this backend. Defaults to the value of max_ttl.
 	Ttl string `json:"ttl,omitempty"`
 }
-
-// NewSshWriteRoleRequestWithDefaults instantiates a new SshWriteRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSshWriteRoleRequestWithDefaults() *SshWriteRoleRequest {
-	var this SshWriteRoleRequest
-
-	this.AllowHostCertificates = false
-	this.AllowUserCertificates = false
-	this.AllowedDomainsTemplate = false
-	this.AllowedUsersTemplate = false
-	this.DefaultExtensionsTemplate = false
-	this.DefaultUserTemplate = false
-	this.NotBeforeDuration = "30"
-
-	return &this
-}

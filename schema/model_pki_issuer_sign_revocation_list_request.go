@@ -25,16 +25,3 @@ type PkiIssuerSignRevocationListRequest struct {
 	// A list of maps containing the keys serial_number (string), revocation_time (string), and extensions (map with keys id (string), critical (bool), value (string))
 	RevokedCerts []map[string]interface{} `json:"revoked_certs,omitempty"`
 }
-
-// NewPkiIssuerSignRevocationListRequestWithDefaults instantiates a new PkiIssuerSignRevocationListRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiIssuerSignRevocationListRequestWithDefaults() *PkiIssuerSignRevocationListRequest {
-	var this PkiIssuerSignRevocationListRequest
-
-	this.DeltaCrlBaseNumber = -1
-	this.Format = "pem"
-	this.NextUpdate = "72h"
-
-	return &this
-}

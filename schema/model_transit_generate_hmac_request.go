@@ -22,14 +22,3 @@ type TransitGenerateHmacRequest struct {
 	// Algorithm to use (POST URL parameter)
 	Urlalgorithm string `json:"urlalgorithm,omitempty"`
 }
-
-// NewTransitGenerateHmacRequestWithDefaults instantiates a new TransitGenerateHmacRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTransitGenerateHmacRequestWithDefaults() *TransitGenerateHmacRequest {
-	var this TransitGenerateHmacRequest
-
-	this.Algorithm = "sha2-256"
-
-	return &this
-}

@@ -25,12 +25,3 @@ type TransitDecryptRequest struct {
 	// Ordinarily, if a batch item fails to decrypt due to a bad input, but other batch items succeed, the HTTP response code is 400 (Bad Request). Some applications may want to treat partial failures differently. Providing the parameter returns the given response code integer instead of a 400 in this case. If all values fail HTTP 400 is still returned.
 	PartialFailureResponseCode int32 `json:"partial_failure_response_code,omitempty"`
 }
-
-// NewTransitDecryptRequestWithDefaults instantiates a new TransitDecryptRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTransitDecryptRequestWithDefaults() *TransitDecryptRequest {
-	var this TransitDecryptRequest
-
-	return &this
-}

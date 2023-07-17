@@ -22,12 +22,3 @@ type PersonaCreateRequest struct {
 	// Name of the persona
 	Name string `json:"name,omitempty"`
 }
-
-// NewPersonaCreateRequestWithDefaults instantiates a new PersonaCreateRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPersonaCreateRequestWithDefaults() *PersonaCreateRequest {
-	var this PersonaCreateRequest
-
-	return &this
-}

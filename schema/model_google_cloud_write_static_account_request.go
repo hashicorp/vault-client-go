@@ -19,14 +19,3 @@ type GoogleCloudWriteStaticAccountRequest struct {
 	// List of OAuth scopes to assign to access tokens generated under this account. Ignored if \"secret_type\" is not \"\"access_token\"\"
 	TokenScopes []string `json:"token_scopes,omitempty"`
 }
-
-// NewGoogleCloudWriteStaticAccountRequestWithDefaults instantiates a new GoogleCloudWriteStaticAccountRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGoogleCloudWriteStaticAccountRequestWithDefaults() *GoogleCloudWriteStaticAccountRequest {
-	var this GoogleCloudWriteStaticAccountRequest
-
-	this.SecretType = "access_token"
-
-	return &this
-}

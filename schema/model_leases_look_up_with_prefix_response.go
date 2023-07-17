@@ -10,12 +10,3 @@ type LeasesLookUpWithPrefixResponse struct {
 	// A list of lease ids
 	Keys []string `json:"keys,omitempty"`
 }
-
-// NewLeasesLookUpWithPrefixResponseWithDefaults instantiates a new LeasesLookUpWithPrefixResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLeasesLookUpWithPrefixResponseWithDefaults() *LeasesLookUpWithPrefixResponse {
-	var this LeasesLookUpWithPrefixResponse
-
-	return &this
-}

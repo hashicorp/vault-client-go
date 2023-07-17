@@ -10,12 +10,3 @@ type AppRoleLookUpSecretIdRequest struct {
 	// SecretID attached to the role.
 	SecretId string `json:"secret_id,omitempty"`
 }
-
-// NewAppRoleLookUpSecretIdRequestWithDefaults instantiates a new AppRoleLookUpSecretIdRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppRoleLookUpSecretIdRequestWithDefaults() *AppRoleLookUpSecretIdRequest {
-	var this AppRoleLookUpSecretIdRequest
-
-	return &this
-}

@@ -19,16 +19,3 @@ type LdapLibraryConfigureRequest struct {
 	// In seconds, the amount of time a check-out should last. Defaults to 24 hours.
 	Ttl string `json:"ttl,omitempty"`
 }
-
-// NewLdapLibraryConfigureRequestWithDefaults instantiates a new LdapLibraryConfigureRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLdapLibraryConfigureRequestWithDefaults() *LdapLibraryConfigureRequest {
-	var this LdapLibraryConfigureRequest
-
-	this.DisableCheckInEnforcement = false
-	this.MaxTtl = "86400"
-	this.Ttl = "86400"
-
-	return &this
-}

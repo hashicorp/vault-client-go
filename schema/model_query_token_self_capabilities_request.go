@@ -17,12 +17,3 @@ type QueryTokenSelfCapabilitiesRequest struct {
 	// Token for which capabilities are being queried.
 	Token string `json:"token,omitempty"`
 }
-
-// NewQueryTokenSelfCapabilitiesRequestWithDefaults instantiates a new QueryTokenSelfCapabilitiesRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewQueryTokenSelfCapabilitiesRequestWithDefaults() *QueryTokenSelfCapabilitiesRequest {
-	var this QueryTokenSelfCapabilitiesRequest
-
-	return &this
-}

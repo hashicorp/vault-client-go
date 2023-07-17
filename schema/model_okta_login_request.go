@@ -19,12 +19,3 @@ type OktaLoginRequest struct {
 	// TOTP passcode.
 	Totp string `json:"totp,omitempty"`
 }
-
-// NewOktaLoginRequestWithDefaults instantiates a new OktaLoginRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewOktaLoginRequestWithDefaults() *OktaLoginRequest {
-	var this OktaLoginRequest
-
-	return &this
-}

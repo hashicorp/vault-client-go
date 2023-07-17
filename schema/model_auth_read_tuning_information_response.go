@@ -43,12 +43,3 @@ type AuthReadTuningInformationResponse struct {
 
 	UserLockoutThreshold int64 `json:"user_lockout_threshold,omitempty"`
 }
-
-// NewAuthReadTuningInformationResponseWithDefaults instantiates a new AuthReadTuningInformationResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAuthReadTuningInformationResponseWithDefaults() *AuthReadTuningInformationResponse {
-	var this AuthReadTuningInformationResponse
-
-	return &this
-}

@@ -13,15 +13,3 @@ type AwsConfigureIdentityWhitelistTidyOperationRequest struct {
 	// The amount of extra time that must have passed beyond the identity's expiration, before it is removed from the backend storage.
 	SafetyBuffer string `json:"safety_buffer,omitempty"`
 }
-
-// NewAwsConfigureIdentityWhitelistTidyOperationRequestWithDefaults instantiates a new AwsConfigureIdentityWhitelistTidyOperationRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAwsConfigureIdentityWhitelistTidyOperationRequestWithDefaults() *AwsConfigureIdentityWhitelistTidyOperationRequest {
-	var this AwsConfigureIdentityWhitelistTidyOperationRequest
-
-	this.DisablePeriodicTidy = false
-	this.SafetyBuffer = "259200"
-
-	return &this
-}

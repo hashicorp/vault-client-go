@@ -10,12 +10,3 @@ type AppRoleReadLocalSecretIdsResponse struct {
 	// If true, the secret identifiers generated using this role will be cluster local. This can only be set during role creation and once set, it can't be reset later
 	LocalSecretIds bool `json:"local_secret_ids,omitempty"`
 }
-
-// NewAppRoleReadLocalSecretIdsResponseWithDefaults instantiates a new AppRoleReadLocalSecretIdsResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppRoleReadLocalSecretIdsResponseWithDefaults() *AppRoleReadLocalSecretIdsResponse {
-	var this AppRoleReadLocalSecretIdsResponse
-
-	return &this
-}

@@ -13,14 +13,3 @@ type AppRoleLoginRequest struct {
 	// SecretID belong to the App role
 	SecretId string `json:"secret_id,omitempty"`
 }
-
-// NewAppRoleLoginRequestWithDefaults instantiates a new AppRoleLoginRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppRoleLoginRequestWithDefaults() *AppRoleLoginRequest {
-	var this AppRoleLoginRequest
-
-	this.SecretId = ""
-
-	return &this
-}

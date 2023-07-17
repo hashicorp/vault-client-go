@@ -33,12 +33,3 @@ type InternalUiReadMountInformationResponse struct {
 
 	Uuid string `json:"uuid,omitempty"`
 }
-
-// NewInternalUiReadMountInformationResponseWithDefaults instantiates a new InternalUiReadMountInformationResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInternalUiReadMountInformationResponseWithDefaults() *InternalUiReadMountInformationResponse {
-	var this InternalUiReadMountInformationResponse
-
-	return &this
-}

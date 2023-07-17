@@ -13,12 +13,3 @@ type OidcIntrospectRequest struct {
 	// Token to verify
 	Token string `json:"token,omitempty"`
 }
-
-// NewOidcIntrospectRequestWithDefaults instantiates a new OidcIntrospectRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewOidcIntrospectRequestWithDefaults() *OidcIntrospectRequest {
-	var this OidcIntrospectRequest
-
-	return &this
-}

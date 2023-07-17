@@ -10,12 +10,3 @@ type LoggersUpdateVerbosityLevelForRequest struct {
 	// Log verbosity level. Supported values (in order of detail) are \"trace\", \"debug\", \"info\", \"warn\", and \"error\".
 	Level string `json:"level,omitempty"`
 }
-
-// NewLoggersUpdateVerbosityLevelForRequestWithDefaults instantiates a new LoggersUpdateVerbosityLevelForRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLoggersUpdateVerbosityLevelForRequestWithDefaults() *LoggersUpdateVerbosityLevelForRequest {
-	var this LoggersUpdateVerbosityLevelForRequest
-
-	return &this
-}

@@ -15,12 +15,3 @@ type JwtOidcCallbackWithParametersRequest struct {
 
 	State string `json:"state,omitempty"`
 }
-
-// NewJwtOidcCallbackWithParametersRequestWithDefaults instantiates a new JwtOidcCallbackWithParametersRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewJwtOidcCallbackWithParametersRequestWithDefaults() *JwtOidcCallbackWithParametersRequest {
-	var this JwtOidcCallbackWithParametersRequest
-
-	return &this
-}

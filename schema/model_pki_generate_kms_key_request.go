@@ -22,15 +22,3 @@ type PkiGenerateKmsKeyRequest struct {
 	// The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_id is required. Ignored for other types.
 	ManagedKeyName string `json:"managed_key_name,omitempty"`
 }
-
-// NewPkiGenerateKmsKeyRequestWithDefaults instantiates a new PkiGenerateKmsKeyRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiGenerateKmsKeyRequestWithDefaults() *PkiGenerateKmsKeyRequest {
-	var this PkiGenerateKmsKeyRequest
-
-	this.KeyBits = 0
-	this.KeyType = "rsa"
-
-	return &this
-}

@@ -28,12 +28,3 @@ type GroupCreateRequest struct {
 	// Type of the group, 'internal' or 'external'. Defaults to 'internal'
 	Type string `json:"type,omitempty"`
 }
-
-// NewGroupCreateRequestWithDefaults instantiates a new GroupCreateRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGroupCreateRequestWithDefaults() *GroupCreateRequest {
-	var this GroupCreateRequest
-
-	return &this
-}

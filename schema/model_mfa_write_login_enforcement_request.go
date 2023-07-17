@@ -22,12 +22,3 @@ type MfaWriteLoginEnforcementRequest struct {
 	// Array of Method IDs that determine what methods will be enforced
 	MfaMethodIds []string `json:"mfa_method_ids"`
 }
-
-// NewMfaWriteLoginEnforcementRequestWithDefaults instantiates a new MfaWriteLoginEnforcementRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMfaWriteLoginEnforcementRequestWithDefaults() *MfaWriteLoginEnforcementRequest {
-	var this MfaWriteLoginEnforcementRequest
-
-	return &this
-}

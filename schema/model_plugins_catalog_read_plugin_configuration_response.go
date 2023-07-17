@@ -26,12 +26,3 @@ type PluginsCatalogReadPluginConfigurationResponse struct {
 	// The semantic version of the plugin to use.
 	Version string `json:"version,omitempty"`
 }
-
-// NewPluginsCatalogReadPluginConfigurationResponseWithDefaults instantiates a new PluginsCatalogReadPluginConfigurationResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPluginsCatalogReadPluginConfigurationResponseWithDefaults() *PluginsCatalogReadPluginConfigurationResponse {
-	var this PluginsCatalogReadPluginConfigurationResponse
-
-	return &this
-}

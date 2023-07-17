@@ -16,14 +16,3 @@ type LeasesRevokeLeaseRequest struct {
 	// The lease identifier to renew. This is included with a lease.
 	UrlLeaseId string `json:"url_lease_id,omitempty"`
 }
-
-// NewLeasesRevokeLeaseRequestWithDefaults instantiates a new LeasesRevokeLeaseRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLeasesRevokeLeaseRequestWithDefaults() *LeasesRevokeLeaseRequest {
-	var this LeasesRevokeLeaseRequest
-
-	this.Sync = true
-
-	return &this
-}

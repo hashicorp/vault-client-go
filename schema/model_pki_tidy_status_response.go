@@ -94,12 +94,3 @@ type PkiTidyStatusResponse struct {
 	// Total number of acme accounts iterated over
 	TotalAcmeAccountCount int32 `json:"total_acme_account_count,omitempty"`
 }
-
-// NewPkiTidyStatusResponseWithDefaults instantiates a new PkiTidyStatusResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiTidyStatusResponseWithDefaults() *PkiTidyStatusResponse {
-	var this PkiTidyStatusResponse
-
-	return &this
-}

@@ -9,12 +9,3 @@ package schema
 type AppRoleListSecretIdsResponse struct {
 	Keys []string `json:"keys,omitempty"`
 }
-
-// NewAppRoleListSecretIdsResponseWithDefaults instantiates a new AppRoleListSecretIdsResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppRoleListSecretIdsResponseWithDefaults() *AppRoleListSecretIdsResponse {
-	var this AppRoleListSecretIdsResponse
-
-	return &this
-}

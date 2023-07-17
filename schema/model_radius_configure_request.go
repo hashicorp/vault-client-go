@@ -58,20 +58,3 @@ type RadiusConfigureRequest struct {
 	// Comma-separated list of policies to grant upon successful RADIUS authentication of an unregistered user (default: empty)
 	UnregisteredUserPolicies string `json:"unregistered_user_policies,omitempty"`
 }
-
-// NewRadiusConfigureRequestWithDefaults instantiates a new RadiusConfigureRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRadiusConfigureRequestWithDefaults() *RadiusConfigureRequest {
-	var this RadiusConfigureRequest
-
-	this.DialTimeout = "10"
-	this.NasIdentifier = ""
-	this.NasPort = 10
-	this.Port = 1812
-	this.ReadTimeout = "10"
-	this.TokenType = "default-service"
-	this.UnregisteredUserPolicies = ""
-
-	return &this
-}

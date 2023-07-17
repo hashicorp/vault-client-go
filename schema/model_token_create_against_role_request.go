@@ -50,14 +50,3 @@ type TokenCreateAgainstRoleRequest struct {
 	// Token type
 	Type string `json:"type,omitempty"`
 }
-
-// NewTokenCreateAgainstRoleRequestWithDefaults instantiates a new TokenCreateAgainstRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTokenCreateAgainstRoleRequestWithDefaults() *TokenCreateAgainstRoleRequest {
-	var this TokenCreateAgainstRoleRequest
-
-	this.Renewable = true
-
-	return &this
-}

@@ -43,21 +43,3 @@ type TotpCreateKeyRequest struct {
 	// A TOTP url string containing all of the parameters for key setup. Only used if generate is false.
 	Url string `json:"url,omitempty"`
 }
-
-// NewTotpCreateKeyRequestWithDefaults instantiates a new TotpCreateKeyRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTotpCreateKeyRequestWithDefaults() *TotpCreateKeyRequest {
-	var this TotpCreateKeyRequest
-
-	this.Algorithm = "SHA1"
-	this.Digits = 6
-	this.Exported = true
-	this.Generate = false
-	this.KeySize = 20
-	this.Period = "30"
-	this.QrSize = 200
-	this.Skew = 1
-
-	return &this
-}

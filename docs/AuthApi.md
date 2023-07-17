@@ -402,10 +402,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAliCloudLoginRequestWithDefaults()
 	resp, err := client.Auth.AliCloudLogin(
 		context.Background(),
-		request,
+		AliCloudLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
@@ -529,11 +528,10 @@ func main() {
 	}
 
 	role := "role_example" // string | The name of the role as it should appear in Vault.
-	request := schema.NewAliCloudWriteAuthRoleRequestWithDefaults()
 	resp, err := client.Auth.AliCloudWriteAuthRole(
 		context.Background(),
 		role,
-		request,
+		AliCloudWriteAuthRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
@@ -1352,11 +1350,10 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleDestroySecretIdRequestWithDefaults()
 	resp, err := client.Auth.AppRoleDestroySecretId(
 		context.Background(),
 		roleName,
-		request,
+		AppRoleDestroySecretIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -1419,11 +1416,10 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleDestroySecretIdByAccessorRequestWithDefaults()
 	resp, err := client.Auth.AppRoleDestroySecretIdByAccessor(
 		context.Background(),
 		roleName,
-		request,
+		AppRoleDestroySecretIdByAccessorRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -1609,10 +1605,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAppRoleLoginRequestWithDefaults()
 	resp, err := client.Auth.AppRoleLogin(
 		context.Background(),
-		request,
+		AppRoleLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -1673,11 +1668,10 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleLookUpSecretIdRequestWithDefaults()
 	resp, err := client.Auth.AppRoleLookUpSecretId(
 		context.Background(),
 		roleName,
-		request,
+		AppRoleLookUpSecretIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -1740,11 +1734,10 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleLookUpSecretIdByAccessorRequestWithDefaults()
 	resp, err := client.Auth.AppRoleLookUpSecretIdByAccessor(
 		context.Background(),
 		roleName,
-		request,
+		AppRoleLookUpSecretIdByAccessorRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -2748,11 +2741,10 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteBindSecretIdRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteBindSecretId(
 		context.Background(),
 		roleName,
-		request,
+		AppRoleWriteBindSecretIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -2815,11 +2807,10 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteBoundCidrListRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteBoundCidrList(
 		context.Background(),
 		roleName,
-		request,
+		AppRoleWriteBoundCidrListRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -2882,11 +2873,10 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteCustomSecretIdRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteCustomSecretId(
 		context.Background(),
 		roleName,
-		request,
+		AppRoleWriteCustomSecretIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -2949,11 +2939,10 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWritePeriodRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWritePeriod(
 		context.Background(),
 		roleName,
-		request,
+		AppRoleWritePeriodRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -3016,11 +3005,10 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWritePoliciesRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWritePolicies(
 		context.Background(),
 		roleName,
-		request,
+		AppRoleWritePoliciesRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -3083,11 +3071,10 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteRoleRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteRole(
 		context.Background(),
 		roleName,
-		request,
+		AppRoleWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -3150,11 +3137,10 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteRoleIdRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteRoleId(
 		context.Background(),
 		roleName,
-		request,
+		AppRoleWriteRoleIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -3217,11 +3203,10 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteSecretIdRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteSecretId(
 		context.Background(),
 		roleName,
-		request,
+		AppRoleWriteSecretIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -3284,11 +3269,10 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteSecretIdBoundCidrsRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteSecretIdBoundCidrs(
 		context.Background(),
 		roleName,
-		request,
+		AppRoleWriteSecretIdBoundCidrsRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -3351,11 +3335,10 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteSecretIdNumUsesRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteSecretIdNumUses(
 		context.Background(),
 		roleName,
-		request,
+		AppRoleWriteSecretIdNumUsesRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -3418,11 +3401,10 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteSecretIdTtlRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteSecretIdTtl(
 		context.Background(),
 		roleName,
-		request,
+		AppRoleWriteSecretIdTtlRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -3485,11 +3467,10 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteTokenBoundCidrsRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteTokenBoundCidrs(
 		context.Background(),
 		roleName,
-		request,
+		AppRoleWriteTokenBoundCidrsRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -3552,11 +3533,10 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteTokenMaxTtlRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteTokenMaxTtl(
 		context.Background(),
 		roleName,
-		request,
+		AppRoleWriteTokenMaxTtlRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -3619,11 +3599,10 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteTokenNumUsesRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteTokenNumUses(
 		context.Background(),
 		roleName,
-		request,
+		AppRoleWriteTokenNumUsesRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -3686,11 +3665,10 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteTokenTtlRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteTokenTtl(
 		context.Background(),
 		roleName,
-		request,
+		AppRoleWriteTokenTtlRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -3753,11 +3731,10 @@ func main() {
 	}
 
 	certName := "certName_example" // string | Name of the certificate.
-	request := schema.NewAwsConfigureCertificateRequestWithDefaults()
 	resp, err := client.Auth.AwsConfigureCertificate(
 		context.Background(),
 		certName,
-		request,
+		AwsConfigureCertificateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -3819,10 +3796,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAwsConfigureClientRequestWithDefaults()
 	resp, err := client.Auth.AwsConfigureClient(
 		context.Background(),
-		request,
+		AwsConfigureClientRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -3882,10 +3858,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAwsConfigureIdentityAccessListTidyOperationRequestWithDefaults()
 	resp, err := client.Auth.AwsConfigureIdentityAccessListTidyOperation(
 		context.Background(),
-		request,
+		AwsConfigureIdentityAccessListTidyOperationRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -3945,10 +3920,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAwsConfigureIdentityIntegrationRequestWithDefaults()
 	resp, err := client.Auth.AwsConfigureIdentityIntegration(
 		context.Background(),
-		request,
+		AwsConfigureIdentityIntegrationRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -4008,10 +3982,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAwsConfigureIdentityWhitelistTidyOperationRequestWithDefaults()
 	resp, err := client.Auth.AwsConfigureIdentityWhitelistTidyOperation(
 		context.Background(),
-		request,
+		AwsConfigureIdentityWhitelistTidyOperationRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -4071,10 +4044,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAwsConfigureRoleTagBlacklistTidyOperationRequestWithDefaults()
 	resp, err := client.Auth.AwsConfigureRoleTagBlacklistTidyOperation(
 		context.Background(),
-		request,
+		AwsConfigureRoleTagBlacklistTidyOperationRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -4134,10 +4106,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAwsConfigureRoleTagDenyListTidyOperationRequestWithDefaults()
 	resp, err := client.Auth.AwsConfigureRoleTagDenyListTidyOperation(
 		context.Background(),
-		request,
+		AwsConfigureRoleTagDenyListTidyOperationRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -5353,10 +5324,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAwsLoginRequestWithDefaults()
 	resp, err := client.Auth.AwsLogin(
 		context.Background(),
-		request,
+		AwsLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -6270,10 +6240,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAwsTidyIdentityAccessListRequestWithDefaults()
 	resp, err := client.Auth.AwsTidyIdentityAccessList(
 		context.Background(),
-		request,
+		AwsTidyIdentityAccessListRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -6333,10 +6302,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAwsTidyIdentityWhitelistRequestWithDefaults()
 	resp, err := client.Auth.AwsTidyIdentityWhitelist(
 		context.Background(),
-		request,
+		AwsTidyIdentityWhitelistRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -6396,10 +6364,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAwsTidyRoleTagBlacklistRequestWithDefaults()
 	resp, err := client.Auth.AwsTidyRoleTagBlacklist(
 		context.Background(),
-		request,
+		AwsTidyRoleTagBlacklistRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -6459,10 +6426,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAwsTidyRoleTagDenyListRequestWithDefaults()
 	resp, err := client.Auth.AwsTidyRoleTagDenyList(
 		context.Background(),
-		request,
+		AwsTidyRoleTagDenyListRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -6523,11 +6489,10 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-	request := schema.NewAwsWriteAuthRoleRequestWithDefaults()
 	resp, err := client.Auth.AwsWriteAuthRole(
 		context.Background(),
 		role,
-		request,
+		AwsWriteAuthRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -6590,11 +6555,10 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-	request := schema.NewAwsWriteRoleTagRequestWithDefaults()
 	resp, err := client.Auth.AwsWriteRoleTag(
 		context.Background(),
 		role,
-		request,
+		AwsWriteRoleTagRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -6783,11 +6747,10 @@ func main() {
 	}
 
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-	request := schema.NewAwsWriteStsRoleRequestWithDefaults()
 	resp, err := client.Auth.AwsWriteStsRole(
 		context.Background(),
 		accountId,
-		request,
+		AwsWriteStsRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -6849,10 +6812,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAzureConfigureAuthRequestWithDefaults()
 	resp, err := client.Auth.AzureConfigureAuth(
 		context.Background(),
-		request,
+		AzureConfigureAuthRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
@@ -7094,10 +7056,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAzureLoginRequestWithDefaults()
 	resp, err := client.Auth.AzureLogin(
 		context.Background(),
-		request,
+		AzureLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
@@ -7339,11 +7300,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	request := schema.NewAzureWriteAuthRoleRequestWithDefaults()
 	resp, err := client.Auth.AzureWriteAuthRole(
 		context.Background(),
 		name,
-		request,
+		AzureWriteAuthRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
@@ -7405,10 +7365,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewCentrifyConfigureRequestWithDefaults()
 	resp, err := client.Auth.CentrifyConfigure(
 		context.Background(),
-		request,
+		CentrifyConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("centrify"),
 	)
@@ -7468,10 +7427,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewCentrifyLoginRequestWithDefaults()
 	resp, err := client.Auth.CentrifyLogin(
 		context.Background(),
-		request,
+		CentrifyLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("centrify"),
 	)
@@ -7590,10 +7548,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewCertConfigureRequestWithDefaults()
 	resp, err := client.Auth.CertConfigure(
 		context.Background(),
-		request,
+		CertConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
@@ -7899,10 +7856,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewCertLoginRequestWithDefaults()
 	resp, err := client.Auth.CertLogin(
 		context.Background(),
-		request,
+		CertLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
@@ -8148,11 +8104,10 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the certificate
-	request := schema.NewCertWriteCertificateRequestWithDefaults()
 	resp, err := client.Auth.CertWriteCertificate(
 		context.Background(),
 		name,
-		request,
+		CertWriteCertificateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
@@ -8215,11 +8170,10 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the certificate
-	request := schema.NewCertWriteCrlRequestWithDefaults()
 	resp, err := client.Auth.CertWriteCrl(
 		context.Background(),
 		name,
-		request,
+		CertWriteCrlRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
@@ -8281,10 +8235,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewCloudFoundryConfigureRequestWithDefaults()
 	resp, err := client.Auth.CloudFoundryConfigure(
 		context.Background(),
-		request,
+		CloudFoundryConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
@@ -8526,10 +8479,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewCloudFoundryLoginRequestWithDefaults()
 	resp, err := client.Auth.CloudFoundryLogin(
 		context.Background(),
-		request,
+		CloudFoundryLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
@@ -8712,11 +8664,10 @@ func main() {
 	}
 
 	role := "role_example" // string | The name of the role.
-	request := schema.NewCloudFoundryWriteRoleRequestWithDefaults()
 	resp, err := client.Auth.CloudFoundryWriteRole(
 		context.Background(),
 		role,
-		request,
+		CloudFoundryWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
@@ -8778,10 +8729,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewGithubConfigureRequestWithDefaults()
 	resp, err := client.Auth.GithubConfigure(
 		context.Background(),
-		request,
+		GithubConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
@@ -9087,10 +9037,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewGithubLoginRequestWithDefaults()
 	resp, err := client.Auth.GithubLogin(
 		context.Background(),
-		request,
+		GithubLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
@@ -9336,11 +9285,10 @@ func main() {
 	}
 
 	key := "key_example" // string | Key for the teams mapping
-	request := schema.NewGithubWriteTeamMappingRequestWithDefaults()
 	resp, err := client.Auth.GithubWriteTeamMapping(
 		context.Background(),
 		key,
-		request,
+		GithubWriteTeamMappingRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
@@ -9403,11 +9351,10 @@ func main() {
 	}
 
 	key := "key_example" // string | Key for the users mapping
-	request := schema.NewGithubWriteUserMappingRequestWithDefaults()
 	resp, err := client.Auth.GithubWriteUserMapping(
 		context.Background(),
 		key,
-		request,
+		GithubWriteUserMappingRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
@@ -9469,10 +9416,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewGoogleCloudConfigureAuthRequestWithDefaults()
 	resp, err := client.Auth.GoogleCloudConfigureAuth(
 		context.Background(),
-		request,
+		GoogleCloudConfigureAuthRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
@@ -9596,11 +9542,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	request := schema.NewGoogleCloudEditLabelsForRoleRequestWithDefaults()
 	resp, err := client.Auth.GoogleCloudEditLabelsForRole(
 		context.Background(),
 		name,
-		request,
+		GoogleCloudEditLabelsForRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
@@ -9663,11 +9608,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	request := schema.NewGoogleCloudEditServiceAccountsForRoleRequestWithDefaults()
 	resp, err := client.Auth.GoogleCloudEditServiceAccountsForRole(
 		context.Background(),
 		name,
-		request,
+		GoogleCloudEditServiceAccountsForRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
@@ -9789,10 +9733,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewGoogleCloudLoginRequestWithDefaults()
 	resp, err := client.Auth.GoogleCloudLogin(
 		context.Background(),
-		request,
+		GoogleCloudLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
@@ -9975,11 +9918,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	request := schema.NewGoogleCloudWriteRoleRequestWithDefaults()
 	resp, err := client.Auth.GoogleCloudWriteRole(
 		context.Background(),
 		name,
-		request,
+		GoogleCloudWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
@@ -10046,10 +9988,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewJwtConfigureRequestWithDefaults()
 	resp, err := client.Auth.JwtConfigure(
 		context.Background(),
-		request,
+		JwtConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
@@ -10234,10 +10175,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewJwtLoginRequestWithDefaults()
 	resp, err := client.Auth.JwtLogin(
 		context.Background(),
-		request,
+		JwtLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
@@ -10356,10 +10296,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewJwtOidcCallbackWithParametersRequestWithDefaults()
 	resp, err := client.Auth.JwtOidcCallbackWithParameters(
 		context.Background(),
-		request,
+		JwtOidcCallbackWithParametersRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
@@ -10419,10 +10358,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewJwtOidcRequestAuthorizationUrlRequestWithDefaults()
 	resp, err := client.Auth.JwtOidcRequestAuthorizationUrl(
 		context.Background(),
-		request,
+		JwtOidcRequestAuthorizationUrlRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
@@ -10610,11 +10548,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	request := schema.NewJwtWriteRoleRequestWithDefaults()
 	resp, err := client.Auth.JwtWriteRole(
 		context.Background(),
 		name,
-		request,
+		JwtWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
@@ -10676,10 +10613,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewKerberosConfigureRequestWithDefaults()
 	resp, err := client.Auth.KerberosConfigure(
 		context.Background(),
-		request,
+		KerberosConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
@@ -10739,10 +10675,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewKerberosConfigureLdapRequestWithDefaults()
 	resp, err := client.Auth.KerberosConfigureLdap(
 		context.Background(),
-		request,
+		KerberosConfigureLdapRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
@@ -10925,10 +10860,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewKerberosLoginRequestWithDefaults()
 	resp, err := client.Auth.KerberosLogin(
 		context.Background(),
-		request,
+		KerberosLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
@@ -11170,11 +11104,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
-	request := schema.NewKerberosWriteGroupRequestWithDefaults()
 	resp, err := client.Auth.KerberosWriteGroup(
 		context.Background(),
 		name,
-		request,
+		KerberosWriteGroupRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
@@ -11236,10 +11169,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewKubernetesConfigureAuthRequestWithDefaults()
 	resp, err := client.Auth.KubernetesConfigureAuth(
 		context.Background(),
-		request,
+		KubernetesConfigureAuthRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
@@ -11422,10 +11354,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewKubernetesLoginRequestWithDefaults()
 	resp, err := client.Auth.KubernetesLogin(
 		context.Background(),
-		request,
+		KubernetesLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
@@ -11608,11 +11539,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-	request := schema.NewKubernetesWriteAuthRoleRequestWithDefaults()
 	resp, err := client.Auth.KubernetesWriteAuthRole(
 		context.Background(),
 		name,
-		request,
+		KubernetesWriteAuthRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
@@ -11674,10 +11604,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewLdapConfigureAuthRequestWithDefaults()
 	resp, err := client.Auth.LdapConfigureAuth(
 		context.Background(),
-		request,
+		LdapConfigureAuthRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
@@ -11984,11 +11913,10 @@ func main() {
 	}
 
 	username := "username_example" // string | DN (distinguished name) to be used for login.
-	request := schema.NewLdapLoginRequestWithDefaults()
 	resp, err := client.Auth.LdapLogin(
 		context.Background(),
 		username,
-		request,
+		LdapLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
@@ -12236,11 +12164,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
-	request := schema.NewLdapWriteGroupRequestWithDefaults()
 	resp, err := client.Auth.LdapWriteGroup(
 		context.Background(),
 		name,
-		request,
+		LdapWriteGroupRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
@@ -12303,11 +12230,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP user.
-	request := schema.NewLdapWriteUserRequestWithDefaults()
 	resp, err := client.Auth.LdapWriteUser(
 		context.Background(),
 		name,
-		request,
+		LdapWriteUserRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
@@ -12369,10 +12295,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewOciConfigureRequestWithDefaults()
 	resp, err := client.Auth.OciConfigure(
 		context.Background(),
-		request,
+		OciConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
@@ -12615,11 +12540,10 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-	request := schema.NewOciLoginRequestWithDefaults()
 	resp, err := client.Auth.OciLogin(
 		context.Background(),
 		role,
-		request,
+		OciLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
@@ -12804,11 +12728,10 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-	request := schema.NewOciWriteRoleRequestWithDefaults()
 	resp, err := client.Auth.OciWriteRole(
 		context.Background(),
 		role,
-		request,
+		OciWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
@@ -12870,10 +12793,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewOktaConfigureRequestWithDefaults()
 	resp, err := client.Auth.OktaConfigure(
 		context.Background(),
-		request,
+		OktaConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
@@ -13180,11 +13102,10 @@ func main() {
 	}
 
 	username := "username_example" // string | Username to be used for login.
-	request := schema.NewOktaLoginRequestWithDefaults()
 	resp, err := client.Auth.OktaLogin(
 		context.Background(),
 		username,
-		request,
+		OktaLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
@@ -13495,11 +13416,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Okta group.
-	request := schema.NewOktaWriteGroupRequestWithDefaults()
 	resp, err := client.Auth.OktaWriteGroup(
 		context.Background(),
 		name,
-		request,
+		OktaWriteGroupRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
@@ -13562,11 +13482,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the user.
-	request := schema.NewOktaWriteUserRequestWithDefaults()
 	resp, err := client.Auth.OktaWriteUser(
 		context.Background(),
 		name,
-		request,
+		OktaWriteUserRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
@@ -13628,10 +13547,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewRadiusConfigureRequestWithDefaults()
 	resp, err := client.Auth.RadiusConfigure(
 		context.Background(),
-		request,
+		RadiusConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
@@ -13814,10 +13732,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewRadiusLoginRequestWithDefaults()
 	resp, err := client.Auth.RadiusLogin(
 		context.Background(),
-		request,
+		RadiusLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
@@ -13878,11 +13795,10 @@ func main() {
 	}
 
 	urlusername := "urlusername_example" // string | Username to be used for login. (URL parameter)
-	request := schema.NewRadiusLoginWithUsernameRequestWithDefaults()
 	resp, err := client.Auth.RadiusLoginWithUsername(
 		context.Background(),
 		urlusername,
-		request,
+		RadiusLoginWithUsernameRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
@@ -14067,11 +13983,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the RADIUS user.
-	request := schema.NewRadiusWriteUserRequestWithDefaults()
 	resp, err := client.Auth.RadiusWriteUser(
 		context.Background(),
 		name,
-		request,
+		RadiusWriteUserRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
@@ -14133,10 +14048,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTokenCreateRequestWithDefaults()
 	resp, err := client.Auth.TokenCreate(
 		context.Background(),
-		request,
+		TokenCreateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14192,11 +14106,10 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role
-	request := schema.NewTokenCreateAgainstRoleRequestWithDefaults()
 	resp, err := client.Auth.TokenCreateAgainstRole(
 		context.Background(),
 		roleName,
-		request,
+		TokenCreateAgainstRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14256,10 +14169,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTokenCreateOrphanRequestWithDefaults()
 	resp, err := client.Auth.TokenCreateOrphan(
 		context.Background(),
-		request,
+		TokenCreateOrphanRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14485,10 +14397,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTokenLookUpRequestWithDefaults()
 	resp, err := client.Auth.TokenLookUp(
 		context.Background(),
-		request,
+		TokenLookUpRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14543,10 +14454,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTokenLookUpAccessorRequestWithDefaults()
 	resp, err := client.Auth.TokenLookUpAccessor(
 		context.Background(),
-		request,
+		TokenLookUpAccessorRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14714,10 +14624,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTokenRenewRequestWithDefaults()
 	resp, err := client.Auth.TokenRenew(
 		context.Background(),
-		request,
+		TokenRenewRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14772,10 +14681,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTokenRenewAccessorRequestWithDefaults()
 	resp, err := client.Auth.TokenRenewAccessor(
 		context.Background(),
-		request,
+		TokenRenewAccessorRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14830,10 +14738,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTokenRenewSelfRequestWithDefaults()
 	resp, err := client.Auth.TokenRenewSelf(
 		context.Background(),
-		request,
+		TokenRenewSelfRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14888,10 +14795,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTokenRevokeRequestWithDefaults()
 	resp, err := client.Auth.TokenRevoke(
 		context.Background(),
-		request,
+		TokenRevokeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14946,10 +14852,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTokenRevokeAccessorRequestWithDefaults()
 	resp, err := client.Auth.TokenRevokeAccessor(
 		context.Background(),
-		request,
+		TokenRevokeAccessorRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -15004,10 +14909,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTokenRevokeOrphanRequestWithDefaults()
 	resp, err := client.Auth.TokenRevokeOrphan(
 		context.Background(),
-		request,
+		TokenRevokeOrphanRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -15167,11 +15071,10 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role
-	request := schema.NewTokenWriteRoleRequestWithDefaults()
 	resp, err := client.Auth.TokenWriteRole(
 		context.Background(),
 		roleName,
-		request,
+		TokenWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -15355,11 +15258,10 @@ func main() {
 	}
 
 	username := "username_example" // string | Username of the user.
-	request := schema.NewUserpassLoginRequestWithDefaults()
 	resp, err := client.Auth.UserpassLogin(
 		context.Background(),
 		username,
-		request,
+		UserpassLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)
@@ -15485,11 +15387,10 @@ func main() {
 	}
 
 	username := "username_example" // string | Username for this user.
-	request := schema.NewUserpassResetPasswordRequestWithDefaults()
 	resp, err := client.Auth.UserpassResetPassword(
 		context.Background(),
 		username,
-		request,
+		UserpassResetPasswordRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)
@@ -15552,11 +15453,10 @@ func main() {
 	}
 
 	username := "username_example" // string | Username for this user.
-	request := schema.NewUserpassUpdatePoliciesRequestWithDefaults()
 	resp, err := client.Auth.UserpassUpdatePolicies(
 		context.Background(),
 		username,
-		request,
+		UserpassUpdatePoliciesRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)
@@ -15619,11 +15519,10 @@ func main() {
 	}
 
 	username := "username_example" // string | Username for this user.
-	request := schema.NewUserpassWriteUserRequestWithDefaults()
 	resp, err := client.Auth.UserpassWriteUser(
 		context.Background(),
 		username,
-		request,
+		UserpassWriteUserRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)

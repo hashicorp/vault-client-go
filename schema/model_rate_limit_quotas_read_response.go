@@ -21,12 +21,3 @@ type RateLimitQuotasReadResponse struct {
 
 	Type string `json:"type,omitempty"`
 }
-
-// NewRateLimitQuotasReadResponseWithDefaults instantiates a new RateLimitQuotasReadResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRateLimitQuotasReadResponseWithDefaults() *RateLimitQuotasReadResponse {
-	var this RateLimitQuotasReadResponse
-
-	return &this
-}

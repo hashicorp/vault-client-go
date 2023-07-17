@@ -19,15 +19,3 @@ type TransitHashRequest struct {
 	// Algorithm to use (POST URL parameter)
 	Urlalgorithm string `json:"urlalgorithm,omitempty"`
 }
-
-// NewTransitHashRequestWithDefaults instantiates a new TransitHashRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTransitHashRequestWithDefaults() *TransitHashRequest {
-	var this TransitHashRequest
-
-	this.Algorithm = "sha2-256"
-	this.Format = "hex"
-
-	return &this
-}

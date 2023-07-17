@@ -13,12 +13,3 @@ type KubernetesLoginRequest struct {
 	// Name of the role against which the login is being attempted. This field is required
 	Role string `json:"role,omitempty"`
 }
-
-// NewKubernetesLoginRequestWithDefaults instantiates a new KubernetesLoginRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewKubernetesLoginRequestWithDefaults() *KubernetesLoginRequest {
-	var this KubernetesLoginRequest
-
-	return &this
-}

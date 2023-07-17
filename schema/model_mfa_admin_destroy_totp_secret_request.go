@@ -13,12 +13,3 @@ type MfaAdminDestroyTotpSecretRequest struct {
 	// The unique identifier for this MFA method.
 	MethodId string `json:"method_id"`
 }
-
-// NewMfaAdminDestroyTotpSecretRequestWithDefaults instantiates a new MfaAdminDestroyTotpSecretRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMfaAdminDestroyTotpSecretRequestWithDefaults() *MfaAdminDestroyTotpSecretRequest {
-	var this MfaAdminDestroyTotpSecretRequest
-
-	return &this
-}

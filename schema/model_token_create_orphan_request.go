@@ -50,14 +50,3 @@ type TokenCreateOrphanRequest struct {
 	// Token type
 	Type string `json:"type,omitempty"`
 }
-
-// NewTokenCreateOrphanRequestWithDefaults instantiates a new TokenCreateOrphanRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTokenCreateOrphanRequestWithDefaults() *TokenCreateOrphanRequest {
-	var this TokenCreateOrphanRequest
-
-	this.Renewable = true
-
-	return &this
-}

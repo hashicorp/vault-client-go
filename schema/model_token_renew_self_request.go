@@ -13,14 +13,3 @@ type TokenRenewSelfRequest struct {
 	// Token to renew (unused, does not need to be set)
 	Token string `json:"token,omitempty"`
 }
-
-// NewTokenRenewSelfRequestWithDefaults instantiates a new TokenRenewSelfRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTokenRenewSelfRequestWithDefaults() *TokenRenewSelfRequest {
-	var this TokenRenewSelfRequest
-
-	this.Increment = "0"
-
-	return &this
-}

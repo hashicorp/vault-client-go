@@ -49,12 +49,3 @@ type JwtConfigureRequest struct {
 	// Provider-specific configuration. Optional.
 	ProviderConfig map[string]interface{} `json:"provider_config,omitempty"`
 }
-
-// NewJwtConfigureRequestWithDefaults instantiates a new JwtConfigureRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewJwtConfigureRequestWithDefaults() *JwtConfigureRequest {
-	var this JwtConfigureRequest
-
-	return &this
-}

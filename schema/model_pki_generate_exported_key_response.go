@@ -19,12 +19,3 @@ type PkiGenerateExportedKeyResponse struct {
 	// The private key string
 	PrivateKey string `json:"private_key,omitempty"`
 }
-
-// NewPkiGenerateExportedKeyResponseWithDefaults instantiates a new PkiGenerateExportedKeyResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiGenerateExportedKeyResponseWithDefaults() *PkiGenerateExportedKeyResponse {
-	var this PkiGenerateExportedKeyResponse
-
-	return &this
-}

@@ -16,12 +16,3 @@ type GoogleCloudKmsReencryptRequest struct {
 	// Integer version of the crypto key version to use for the new encryption. If unspecified, this defaults to the latest active crypto key version.
 	KeyVersion int32 `json:"key_version,omitempty"`
 }
-
-// NewGoogleCloudKmsReencryptRequestWithDefaults instantiates a new GoogleCloudKmsReencryptRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGoogleCloudKmsReencryptRequestWithDefaults() *GoogleCloudKmsReencryptRequest {
-	var this GoogleCloudKmsReencryptRequest
-
-	return &this
-}

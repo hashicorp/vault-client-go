@@ -30,15 +30,3 @@ type KubernetesConfigureAuthRequest struct {
 	// A service account JWT used to access the TokenReview API to validate other JWTs during login. If not set the JWT used for login will be used to access the API.
 	TokenReviewerJwt string `json:"token_reviewer_jwt,omitempty"`
 }
-
-// NewKubernetesConfigureAuthRequestWithDefaults instantiates a new KubernetesConfigureAuthRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewKubernetesConfigureAuthRequestWithDefaults() *KubernetesConfigureAuthRequest {
-	var this KubernetesConfigureAuthRequest
-
-	this.DisableIssValidation = true
-	this.DisableLocalCaJwt = false
-
-	return &this
-}

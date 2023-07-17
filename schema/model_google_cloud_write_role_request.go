@@ -95,17 +95,3 @@ type GoogleCloudWriteRoleRequest struct {
 	// Type of the role. Currently supported: iam, gce
 	Type string `json:"type,omitempty"`
 }
-
-// NewGoogleCloudWriteRoleRequestWithDefaults instantiates a new GoogleCloudWriteRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGoogleCloudWriteRoleRequestWithDefaults() *GoogleCloudWriteRoleRequest {
-	var this GoogleCloudWriteRoleRequest
-
-	this.AddGroupAliases = false
-	this.AllowGceInference = true
-	this.MaxJwtExp = "900"
-	this.TokenType = "default-service"
-
-	return &this
-}

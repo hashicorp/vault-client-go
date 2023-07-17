@@ -16,15 +16,3 @@ type GoogleCloudGenerateRolesetKeyWithParametersRequest struct {
 	// Lifetime of the service account key
 	Ttl string `json:"ttl,omitempty"`
 }
-
-// NewGoogleCloudGenerateRolesetKeyWithParametersRequestWithDefaults instantiates a new GoogleCloudGenerateRolesetKeyWithParametersRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGoogleCloudGenerateRolesetKeyWithParametersRequestWithDefaults() *GoogleCloudGenerateRolesetKeyWithParametersRequest {
-	var this GoogleCloudGenerateRolesetKeyWithParametersRequest
-
-	this.KeyAlgorithm = "KEY_ALG_RSA_2048"
-	this.KeyType = "TYPE_GOOGLE_CREDENTIALS_FILE"
-
-	return &this
-}

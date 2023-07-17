@@ -29,12 +29,3 @@ type LeaderStatusResponse struct {
 
 	RaftCommittedIndex int64 `json:"raft_committed_index,omitempty"`
 }
-
-// NewLeaderStatusResponseWithDefaults instantiates a new LeaderStatusResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLeaderStatusResponseWithDefaults() *LeaderStatusResponse {
-	var this LeaderStatusResponse
-
-	return &this
-}

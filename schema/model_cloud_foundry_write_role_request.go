@@ -69,15 +69,3 @@ type CloudFoundryWriteRoleRequest struct {
 	// Deprecated
 	Ttl string `json:"ttl,omitempty"`
 }
-
-// NewCloudFoundryWriteRoleRequestWithDefaults instantiates a new CloudFoundryWriteRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCloudFoundryWriteRoleRequestWithDefaults() *CloudFoundryWriteRoleRequest {
-	var this CloudFoundryWriteRoleRequest
-
-	this.DisableIpMatching = false
-	this.TokenType = "default-service"
-
-	return &this
-}

@@ -32,12 +32,3 @@ type AppRoleLookUpSecretIdResponse struct {
 	// List of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token. Should be a subset of the token CIDR blocks listed on the role, if any.
 	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
 }
-
-// NewAppRoleLookUpSecretIdResponseWithDefaults instantiates a new AppRoleLookUpSecretIdResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppRoleLookUpSecretIdResponseWithDefaults() *AppRoleLookUpSecretIdResponse {
-	var this AppRoleLookUpSecretIdResponse
-
-	return &this
-}

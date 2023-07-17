@@ -16,12 +16,3 @@ type GoogleCloudKmsVerifyRequest struct {
 	// Base64-encoded signature to use for verification. This field is required.
 	Signature string `json:"signature,omitempty"`
 }
-
-// NewGoogleCloudKmsVerifyRequestWithDefaults instantiates a new GoogleCloudKmsVerifyRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGoogleCloudKmsVerifyRequestWithDefaults() *GoogleCloudKmsVerifyRequest {
-	var this GoogleCloudKmsVerifyRequest
-
-	return &this
-}

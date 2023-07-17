@@ -28,12 +28,3 @@ type PkiIssuerSignVerbatimWithRoleResponse struct {
 	// Serial Number
 	SerialNumber string `json:"serial_number,omitempty"`
 }
-
-// NewPkiIssuerSignVerbatimWithRoleResponseWithDefaults instantiates a new PkiIssuerSignVerbatimWithRoleResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiIssuerSignVerbatimWithRoleResponseWithDefaults() *PkiIssuerSignVerbatimWithRoleResponse {
-	var this PkiIssuerSignVerbatimWithRoleResponse
-
-	return &this
-}

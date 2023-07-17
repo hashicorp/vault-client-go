@@ -16,12 +16,3 @@ type GoogleCloudKmsEncryptRequest struct {
 	// Plaintext value to be encrypted. This can be a string or binary, but the size is limited. See the Google Cloud KMS documentation for information on size limitations by key types.
 	Plaintext string `json:"plaintext,omitempty"`
 }
-
-// NewGoogleCloudKmsEncryptRequestWithDefaults instantiates a new GoogleCloudKmsEncryptRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGoogleCloudKmsEncryptRequestWithDefaults() *GoogleCloudKmsEncryptRequest {
-	var this GoogleCloudKmsEncryptRequest
-
-	return &this
-}

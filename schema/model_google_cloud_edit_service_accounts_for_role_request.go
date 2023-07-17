@@ -13,12 +13,3 @@ type GoogleCloudEditServiceAccountsForRoleRequest struct {
 	// Service-account emails or IDs to remove.
 	Remove []string `json:"remove,omitempty"`
 }
-
-// NewGoogleCloudEditServiceAccountsForRoleRequestWithDefaults instantiates a new GoogleCloudEditServiceAccountsForRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGoogleCloudEditServiceAccountsForRoleRequestWithDefaults() *GoogleCloudEditServiceAccountsForRoleRequest {
-	var this GoogleCloudEditServiceAccountsForRoleRequest
-
-	return &this
-}

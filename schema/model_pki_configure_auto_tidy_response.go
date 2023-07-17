@@ -53,12 +53,3 @@ type PkiConfigureAutoTidyResponse struct {
 	// Specifies whether to remove all invalid and expired certificates from storage
 	TidyRevokedCerts bool `json:"tidy_revoked_certs,omitempty"`
 }
-
-// NewPkiConfigureAutoTidyResponseWithDefaults instantiates a new PkiConfigureAutoTidyResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiConfigureAutoTidyResponseWithDefaults() *PkiConfigureAutoTidyResponse {
-	var this PkiConfigureAutoTidyResponse
-
-	return &this
-}

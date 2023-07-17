@@ -16,12 +16,3 @@ type CorsConfigureRequest struct {
 	// Enables or disables CORS headers on requests.
 	Enable bool `json:"enable,omitempty"`
 }
-
-// NewCorsConfigureRequestWithDefaults instantiates a new CorsConfigureRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCorsConfigureRequestWithDefaults() *CorsConfigureRequest {
-	var this CorsConfigureRequest
-
-	return &this
-}

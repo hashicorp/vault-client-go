@@ -16,15 +16,3 @@ type PkiRootSignSelfIssuedRequest struct {
 	// If true, require the public key algorithm of the signer to match that of the self issued certificate.
 	RequireMatchingCertificateAlgorithms bool `json:"require_matching_certificate_algorithms,omitempty"`
 }
-
-// NewPkiRootSignSelfIssuedRequestWithDefaults instantiates a new PkiRootSignSelfIssuedRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiRootSignSelfIssuedRequestWithDefaults() *PkiRootSignSelfIssuedRequest {
-	var this PkiRootSignSelfIssuedRequest
-
-	this.IssuerRef = "default"
-	this.RequireMatchingCertificateAlgorithms = false
-
-	return &this
-}

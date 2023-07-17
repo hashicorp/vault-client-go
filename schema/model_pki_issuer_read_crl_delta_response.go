@@ -9,12 +9,3 @@ package schema
 type PkiIssuerReadCrlDeltaResponse struct {
 	Crl string `json:"crl,omitempty"`
 }
-
-// NewPkiIssuerReadCrlDeltaResponseWithDefaults instantiates a new PkiIssuerReadCrlDeltaResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiIssuerReadCrlDeltaResponseWithDefaults() *PkiIssuerReadCrlDeltaResponse {
-	var this PkiIssuerReadCrlDeltaResponse
-
-	return &this
-}

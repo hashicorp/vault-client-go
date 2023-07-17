@@ -16,14 +16,3 @@ type AwsGenerateCredentialsWithParametersRequest struct {
 	// Lifetime of the returned credentials in seconds
 	Ttl string `json:"ttl,omitempty"`
 }
-
-// NewAwsGenerateCredentialsWithParametersRequestWithDefaults instantiates a new AwsGenerateCredentialsWithParametersRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAwsGenerateCredentialsWithParametersRequestWithDefaults() *AwsGenerateCredentialsWithParametersRequest {
-	var this AwsGenerateCredentialsWithParametersRequest
-
-	this.Ttl = "3600"
-
-	return &this
-}

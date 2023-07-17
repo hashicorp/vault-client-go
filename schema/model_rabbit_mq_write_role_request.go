@@ -16,12 +16,3 @@ type RabbitMqWriteRoleRequest struct {
 	// A map of virtual hosts to permissions.
 	Vhosts string `json:"vhosts,omitempty"`
 }
-
-// NewRabbitMqWriteRoleRequestWithDefaults instantiates a new RabbitMqWriteRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRabbitMqWriteRoleRequestWithDefaults() *RabbitMqWriteRoleRequest {
-	var this RabbitMqWriteRoleRequest
-
-	return &this
-}

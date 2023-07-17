@@ -31,12 +31,3 @@ type MongoDbAtlasWriteRoleRequest struct {
 	// Duration in seconds after which the issued credential should expire. Defaults to 0, in which case the value will fallback to the system/mount defaults.
 	Ttl string `json:"ttl,omitempty"`
 }
-
-// NewMongoDbAtlasWriteRoleRequestWithDefaults instantiates a new MongoDbAtlasWriteRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMongoDbAtlasWriteRoleRequestWithDefaults() *MongoDbAtlasWriteRoleRequest {
-	var this MongoDbAtlasWriteRoleRequest
-
-	return &this
-}

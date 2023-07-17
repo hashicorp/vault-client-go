@@ -22,16 +22,3 @@ type SshConfigureCaRequest struct {
 	// Public half of the SSH key that will be used to sign certificates.
 	PublicKey string `json:"public_key,omitempty"`
 }
-
-// NewSshConfigureCaRequestWithDefaults instantiates a new SshConfigureCaRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSshConfigureCaRequestWithDefaults() *SshConfigureCaRequest {
-	var this SshConfigureCaRequest
-
-	this.GenerateSigningKey = true
-	this.KeyBits = 0
-	this.KeyType = "ssh-rsa"
-
-	return &this
-}

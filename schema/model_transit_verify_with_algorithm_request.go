@@ -40,17 +40,3 @@ type TransitVerifyWithAlgorithmRequest struct {
 	// The signature algorithm to use for signature verification. Currently only applies to RSA key types. Options are 'pss' or 'pkcs1v15'. Defaults to 'pss'
 	SignatureAlgorithm string `json:"signature_algorithm,omitempty"`
 }
-
-// NewTransitVerifyWithAlgorithmRequestWithDefaults instantiates a new TransitVerifyWithAlgorithmRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTransitVerifyWithAlgorithmRequestWithDefaults() *TransitVerifyWithAlgorithmRequest {
-	var this TransitVerifyWithAlgorithmRequest
-
-	this.Algorithm = "sha2-256"
-	this.HashAlgorithm = "sha2-256"
-	this.MarshalingAlgorithm = "asn1"
-	this.SaltLength = "auto"
-
-	return &this
-}

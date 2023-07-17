@@ -13,12 +13,3 @@ type GoogleCloudEditLabelsForRoleRequest struct {
 	// Label key values to remove
 	Remove []string `json:"remove,omitempty"`
 }
-
-// NewGoogleCloudEditLabelsForRoleRequestWithDefaults instantiates a new GoogleCloudEditLabelsForRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGoogleCloudEditLabelsForRoleRequestWithDefaults() *GoogleCloudEditLabelsForRoleRequest {
-	var this GoogleCloudEditLabelsForRoleRequest
-
-	return &this
-}

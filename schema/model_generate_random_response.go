@@ -9,12 +9,3 @@ package schema
 type GenerateRandomResponse struct {
 	RandomBytes string `json:"random_bytes,omitempty"`
 }
-
-// NewGenerateRandomResponseWithDefaults instantiates a new GenerateRandomResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGenerateRandomResponseWithDefaults() *GenerateRandomResponse {
-	var this GenerateRandomResponse
-
-	return &this
-}

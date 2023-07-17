@@ -16,12 +16,3 @@ type KvV2ConfigureRequest struct {
 	// The number of versions to keep for each key. Defaults to 10
 	MaxVersions int32 `json:"max_versions,omitempty"`
 }
-
-// NewKvV2ConfigureRequestWithDefaults instantiates a new KvV2ConfigureRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewKvV2ConfigureRequestWithDefaults() *KvV2ConfigureRequest {
-	var this KvV2ConfigureRequest
-
-	return &this
-}

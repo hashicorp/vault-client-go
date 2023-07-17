@@ -53,14 +53,3 @@ type UserpassWriteUserRequest struct {
 	// Deprecated
 	Ttl string `json:"ttl,omitempty"`
 }
-
-// NewUserpassWriteUserRequestWithDefaults instantiates a new UserpassWriteUserRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUserpassWriteUserRequestWithDefaults() *UserpassWriteUserRequest {
-	var this UserpassWriteUserRequest
-
-	this.TokenType = "default-service"
-
-	return &this
-}

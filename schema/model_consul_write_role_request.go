@@ -50,14 +50,3 @@ type ConsulWriteRoleRequest struct {
 	// TTL for the Consul token created from the role.
 	Ttl string `json:"ttl,omitempty"`
 }
-
-// NewConsulWriteRoleRequestWithDefaults instantiates a new ConsulWriteRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewConsulWriteRoleRequestWithDefaults() *ConsulWriteRoleRequest {
-	var this ConsulWriteRoleRequest
-
-	this.TokenType = "client"
-
-	return &this
-}

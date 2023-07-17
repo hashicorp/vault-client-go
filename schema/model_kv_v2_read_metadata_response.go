@@ -30,12 +30,3 @@ type KvV2ReadMetadataResponse struct {
 
 	Versions map[string]interface{} `json:"versions,omitempty"`
 }
-
-// NewKvV2ReadMetadataResponseWithDefaults instantiates a new KvV2ReadMetadataResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewKvV2ReadMetadataResponseWithDefaults() *KvV2ReadMetadataResponse {
-	var this KvV2ReadMetadataResponse
-
-	return &this
-}

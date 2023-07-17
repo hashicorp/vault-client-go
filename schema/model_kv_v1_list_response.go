@@ -9,12 +9,3 @@ package schema
 type KvV1ListResponse struct {
 	Keys []string `json:"keys,omitempty"`
 }
-
-// NewKvV1ListResponseWithDefaults instantiates a new KvV1ListResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewKvV1ListResponseWithDefaults() *KvV1ListResponse {
-	var this KvV1ListResponse
-
-	return &this
-}

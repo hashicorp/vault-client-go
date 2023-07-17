@@ -19,12 +19,3 @@ type AppRoleWriteCustomSecretIdResponse struct {
 	// Duration in seconds after which the issued secret ID expires.
 	SecretIdTtl string `json:"secret_id_ttl,omitempty"`
 }
-
-// NewAppRoleWriteCustomSecretIdResponseWithDefaults instantiates a new AppRoleWriteCustomSecretIdResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppRoleWriteCustomSecretIdResponseWithDefaults() *AppRoleWriteCustomSecretIdResponse {
-	var this AppRoleWriteCustomSecretIdResponse
-
-	return &this
-}

@@ -28,15 +28,3 @@ type AzureWriteRoleRequest struct {
 	// Default lease for generated credentials. If not set or set to 0, will use system default.
 	Ttl string `json:"ttl,omitempty"`
 }
-
-// NewAzureWriteRoleRequestWithDefaults instantiates a new AzureWriteRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAzureWriteRoleRequestWithDefaults() *AzureWriteRoleRequest {
-	var this AzureWriteRoleRequest
-
-	this.PermanentlyDelete = false
-	this.PersistApp = false
-
-	return &this
-}

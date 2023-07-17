@@ -19,14 +19,3 @@ type TransitGenerateHmacWithAlgorithmRequest struct {
 	// The version of the key to use for generating the HMAC. Must be 0 (for latest) or a value greater than or equal to the min_encryption_version configured on the key.
 	KeyVersion int32 `json:"key_version,omitempty"`
 }
-
-// NewTransitGenerateHmacWithAlgorithmRequestWithDefaults instantiates a new TransitGenerateHmacWithAlgorithmRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTransitGenerateHmacWithAlgorithmRequestWithDefaults() *TransitGenerateHmacWithAlgorithmRequest {
-	var this TransitGenerateHmacWithAlgorithmRequest
-
-	this.Algorithm = "sha2-256"
-
-	return &this
-}

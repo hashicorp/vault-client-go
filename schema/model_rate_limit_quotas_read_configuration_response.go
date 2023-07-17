@@ -13,12 +13,3 @@ type RateLimitQuotasReadConfigurationResponse struct {
 
 	RateLimitExemptPaths []string `json:"rate_limit_exempt_paths,omitempty"`
 }
-
-// NewRateLimitQuotasReadConfigurationResponseWithDefaults instantiates a new RateLimitQuotasReadConfigurationResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRateLimitQuotasReadConfigurationResponseWithDefaults() *RateLimitQuotasReadConfigurationResponse {
-	var this RateLimitQuotasReadConfigurationResponse
-
-	return &this
-}

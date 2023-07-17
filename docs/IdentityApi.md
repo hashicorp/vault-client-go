@@ -141,10 +141,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAliasCreateRequestWithDefaults()
 	resp, err := client.Identity.AliasCreate(
 		context.Background(),
-		request,
+		AliasCreateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -377,11 +376,10 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the alias
-	request := schema.NewAliasUpdateByIdRequestWithDefaults()
 	resp, err := client.Identity.AliasUpdateById(
 		context.Background(),
 		id,
-		request,
+		AliasUpdateByIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -441,10 +439,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewEntityBatchDeleteRequestWithDefaults()
 	resp, err := client.Identity.EntityBatchDelete(
 		context.Background(),
-		request,
+		EntityBatchDeleteRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -499,10 +496,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewEntityCreateRequestWithDefaults()
 	resp, err := client.Identity.EntityCreate(
 		context.Background(),
-		request,
+		EntityCreateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -557,10 +553,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewEntityCreateAliasRequestWithDefaults()
 	resp, err := client.Identity.EntityCreateAlias(
 		context.Background(),
-		request,
+		EntityCreateAliasRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -963,10 +958,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewEntityLookUpRequestWithDefaults()
 	resp, err := client.Identity.EntityLookUp(
 		context.Background(),
-		request,
+		EntityLookUpRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1021,10 +1015,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewEntityMergeRequestWithDefaults()
 	resp, err := client.Identity.EntityMerge(
 		context.Background(),
-		request,
+		EntityMergeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1263,11 +1256,10 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the alias
-	request := schema.NewEntityUpdateAliasByIdRequestWithDefaults()
 	resp, err := client.Identity.EntityUpdateAliasById(
 		context.Background(),
 		id,
-		request,
+		EntityUpdateAliasByIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1328,11 +1320,10 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
-	request := schema.NewEntityUpdateByIdRequestWithDefaults()
 	resp, err := client.Identity.EntityUpdateById(
 		context.Background(),
 		id,
-		request,
+		EntityUpdateByIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1393,11 +1384,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the entity
-	request := schema.NewEntityUpdateByNameRequestWithDefaults()
 	resp, err := client.Identity.EntityUpdateByName(
 		context.Background(),
 		name,
-		request,
+		EntityUpdateByNameRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1457,10 +1447,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewGroupCreateRequestWithDefaults()
 	resp, err := client.Identity.GroupCreate(
 		context.Background(),
-		request,
+		GroupCreateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1515,10 +1504,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewGroupCreateAliasRequestWithDefaults()
 	resp, err := client.Identity.GroupCreateAlias(
 		context.Background(),
-		request,
+		GroupCreateAliasRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1921,10 +1909,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewGroupLookUpRequestWithDefaults()
 	resp, err := client.Identity.GroupLookUp(
 		context.Background(),
-		request,
+		GroupLookUpRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2163,11 +2150,10 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the group alias.
-	request := schema.NewGroupUpdateAliasByIdRequestWithDefaults()
 	resp, err := client.Identity.GroupUpdateAliasById(
 		context.Background(),
 		id,
-		request,
+		GroupUpdateAliasByIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2228,11 +2214,10 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
-	request := schema.NewGroupUpdateByIdRequestWithDefaults()
 	resp, err := client.Identity.GroupUpdateById(
 		context.Background(),
 		id,
-		request,
+		GroupUpdateByIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2293,11 +2278,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the group.
-	request := schema.NewGroupUpdateByNameRequestWithDefaults()
 	resp, err := client.Identity.GroupUpdateByName(
 		context.Background(),
 		name,
-		request,
+		GroupUpdateByNameRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2357,10 +2341,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewMfaAdminDestroyTotpSecretRequestWithDefaults()
 	resp, err := client.Identity.MfaAdminDestroyTotpSecret(
 		context.Background(),
-		request,
+		MfaAdminDestroyTotpSecretRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2415,10 +2398,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewMfaAdminGenerateTotpSecretRequestWithDefaults()
 	resp, err := client.Identity.MfaAdminGenerateTotpSecret(
 		context.Background(),
-		request,
+		MfaAdminGenerateTotpSecretRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2473,10 +2455,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewMfaCreateDuoMethodRequestWithDefaults()
 	resp, err := client.Identity.MfaCreateDuoMethod(
 		context.Background(),
-		request,
+		MfaCreateDuoMethodRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2531,10 +2512,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewMfaCreateOktaMethodRequestWithDefaults()
 	resp, err := client.Identity.MfaCreateOktaMethod(
 		context.Background(),
-		request,
+		MfaCreateOktaMethodRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2589,10 +2569,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewMfaCreatePingIdMethodRequestWithDefaults()
 	resp, err := client.Identity.MfaCreatePingIdMethod(
 		context.Background(),
-		request,
+		MfaCreatePingIdMethodRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2647,10 +2626,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewMfaCreateTotpMethodRequestWithDefaults()
 	resp, err := client.Identity.MfaCreateTotpMethod(
 		context.Background(),
-		request,
+		MfaCreateTotpMethodRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3010,10 +2988,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewMfaGenerateTotpSecretRequestWithDefaults()
 	resp, err := client.Identity.MfaGenerateTotpSecret(
 		context.Background(),
-		request,
+		MfaGenerateTotpSecretRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3765,11 +3742,10 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-	request := schema.NewMfaUpdateDuoMethodRequestWithDefaults()
 	resp, err := client.Identity.MfaUpdateDuoMethod(
 		context.Background(),
 		methodId,
-		request,
+		MfaUpdateDuoMethodRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3830,11 +3806,10 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-	request := schema.NewMfaUpdateOktaMethodRequestWithDefaults()
 	resp, err := client.Identity.MfaUpdateOktaMethod(
 		context.Background(),
 		methodId,
-		request,
+		MfaUpdateOktaMethodRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3895,11 +3870,10 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-	request := schema.NewMfaUpdatePingIdMethodRequestWithDefaults()
 	resp, err := client.Identity.MfaUpdatePingIdMethod(
 		context.Background(),
 		methodId,
-		request,
+		MfaUpdatePingIdMethodRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3960,11 +3934,10 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-	request := schema.NewMfaUpdateTotpMethodRequestWithDefaults()
 	resp, err := client.Identity.MfaUpdateTotpMethod(
 		context.Background(),
 		methodId,
-		request,
+		MfaUpdateTotpMethodRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4025,11 +3998,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name for this login enforcement configuration
-	request := schema.NewMfaWriteLoginEnforcementRequestWithDefaults()
 	resp, err := client.Identity.MfaWriteLoginEnforcement(
 		context.Background(),
 		name,
-		request,
+		MfaWriteLoginEnforcementRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4089,10 +4061,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewOidcConfigureRequestWithDefaults()
 	resp, err := client.Identity.OidcConfigure(
 		context.Background(),
-		request,
+		OidcConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4574,10 +4545,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewOidcIntrospectRequestWithDefaults()
 	resp, err := client.Identity.OidcIntrospect(
 		context.Background(),
-		request,
+		OidcIntrospectRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5027,11 +4997,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
-	request := schema.NewOidcProviderAuthorizeWithParametersRequestWithDefaults()
 	resp, err := client.Identity.OidcProviderAuthorizeWithParameters(
 		context.Background(),
 		name,
-		request,
+		OidcProviderAuthorizeWithParametersRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5092,11 +5061,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
-	request := schema.NewOidcProviderTokenRequestWithDefaults()
 	resp, err := client.Identity.OidcProviderToken(
 		context.Background(),
 		name,
-		request,
+		OidcProviderTokenRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5862,11 +5830,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-	request := schema.NewOidcRotateKeyRequestWithDefaults()
 	resp, err := client.Identity.OidcRotateKey(
 		context.Background(),
 		name,
-		request,
+		OidcRotateKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5927,11 +5894,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the assignment
-	request := schema.NewOidcWriteAssignmentRequestWithDefaults()
 	resp, err := client.Identity.OidcWriteAssignment(
 		context.Background(),
 		name,
-		request,
+		OidcWriteAssignmentRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5992,11 +5958,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the client.
-	request := schema.NewOidcWriteClientRequestWithDefaults()
 	resp, err := client.Identity.OidcWriteClient(
 		context.Background(),
 		name,
-		request,
+		OidcWriteClientRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6057,11 +6022,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-	request := schema.NewOidcWriteKeyRequestWithDefaults()
 	resp, err := client.Identity.OidcWriteKey(
 		context.Background(),
 		name,
-		request,
+		OidcWriteKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6122,11 +6086,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
-	request := schema.NewOidcWriteProviderRequestWithDefaults()
 	resp, err := client.Identity.OidcWriteProvider(
 		context.Background(),
 		name,
-		request,
+		OidcWriteProviderRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6187,11 +6150,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-	request := schema.NewOidcWriteRoleRequestWithDefaults()
 	resp, err := client.Identity.OidcWriteRole(
 		context.Background(),
 		name,
-		request,
+		OidcWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6252,11 +6214,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the scope
-	request := schema.NewOidcWriteScopeRequestWithDefaults()
 	resp, err := client.Identity.OidcWriteScope(
 		context.Background(),
 		name,
-		request,
+		OidcWriteScopeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6316,10 +6277,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewPersonaCreateRequestWithDefaults()
 	resp, err := client.Identity.PersonaCreate(
 		context.Background(),
-		request,
+		PersonaCreateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6552,11 +6512,10 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the persona
-	request := schema.NewPersonaUpdateByIdRequestWithDefaults()
 	resp, err := client.Identity.PersonaUpdateById(
 		context.Background(),
 		id,
-		request,
+		PersonaUpdateByIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {

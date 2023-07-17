@@ -13,12 +13,3 @@ type NomadConfigureLeaseRequest struct {
 	// Duration before which the issued token needs renewal
 	Ttl string `json:"ttl,omitempty"`
 }
-
-// NewNomadConfigureLeaseRequestWithDefaults instantiates a new NomadConfigureLeaseRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewNomadConfigureLeaseRequestWithDefaults() *NomadConfigureLeaseRequest {
-	var this NomadConfigureLeaseRequest
-
-	return &this
-}

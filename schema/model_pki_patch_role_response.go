@@ -148,14 +148,3 @@ type PkiPatchRoleResponse struct {
 	// Whether or not to use PSS signatures when using a RSA key-type issuer. Defaults to false.
 	UsePss bool `json:"use_pss,omitempty"`
 }
-
-// NewPkiPatchRoleResponseWithDefaults instantiates a new PkiPatchRoleResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiPatchRoleResponseWithDefaults() *PkiPatchRoleResponse {
-	var this PkiPatchRoleResponse
-
-	this.ServerFlag = true
-
-	return &this
-}

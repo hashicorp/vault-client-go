@@ -19,14 +19,3 @@ type KubernetesConfigureRequest struct {
 	// The JSON web token of the service account used by the secret engine to manage Kubernetes credentials. Defaults to the local pod's JWT if found.
 	ServiceAccountJwt string `json:"service_account_jwt,omitempty"`
 }
-
-// NewKubernetesConfigureRequestWithDefaults instantiates a new KubernetesConfigureRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewKubernetesConfigureRequestWithDefaults() *KubernetesConfigureRequest {
-	var this KubernetesConfigureRequest
-
-	this.DisableLocalCaJwt = false
-
-	return &this
-}

@@ -43,14 +43,3 @@ type KubernetesWriteRoleRequest struct {
 	// The maximum ttl for generated Kubernetes service account tokens. If not set or set to 0, will use system default.
 	TokenMaxTtl string `json:"token_max_ttl,omitempty"`
 }
-
-// NewKubernetesWriteRoleRequestWithDefaults instantiates a new KubernetesWriteRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewKubernetesWriteRoleRequestWithDefaults() *KubernetesWriteRoleRequest {
-	var this KubernetesWriteRoleRequest
-
-	this.KubernetesRoleType = "Role"
-
-	return &this
-}

@@ -11,12 +11,3 @@ type KvV2ReadResponse struct {
 
 	Metadata map[string]interface{} `json:"metadata,omitempty"`
 }
-
-// NewKvV2ReadResponseWithDefaults instantiates a new KvV2ReadResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewKvV2ReadResponseWithDefaults() *KvV2ReadResponse {
-	var this KvV2ReadResponse
-
-	return &this
-}

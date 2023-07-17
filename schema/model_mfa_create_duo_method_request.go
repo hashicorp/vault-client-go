@@ -28,12 +28,3 @@ type MfaCreateDuoMethodRequest struct {
 	// A template string for mapping Identity names to MFA method names. Values to subtitute should be placed in {{}}. For example, \"{{alias.name}}@example.com\". Currently-supported mappings: alias.name: The name returned by the mount configured via the mount_accessor parameter If blank, the Alias's name field will be used as-is.
 	UsernameFormat string `json:"username_format,omitempty"`
 }
-
-// NewMfaCreateDuoMethodRequestWithDefaults instantiates a new MfaCreateDuoMethodRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMfaCreateDuoMethodRequestWithDefaults() *MfaCreateDuoMethodRequest {
-	var this MfaCreateDuoMethodRequest
-
-	return &this
-}

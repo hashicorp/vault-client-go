@@ -9,12 +9,3 @@ package schema
 type RawListResponse struct {
 	Keys []string `json:"keys,omitempty"`
 }
-
-// NewRawListResponseWithDefaults instantiates a new RawListResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRawListResponseWithDefaults() *RawListResponse {
-	var this RawListResponse
-
-	return &this
-}

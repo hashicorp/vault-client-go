@@ -40,12 +40,3 @@ type PkiReadCrlConfigurationResponse struct {
 	// If set to true, existing CRL and OCSP paths will return the unified CRL instead of a response based on cluster-local data
 	UnifiedCrlOnExistingPaths bool `json:"unified_crl_on_existing_paths,omitempty"`
 }
-
-// NewPkiReadCrlConfigurationResponseWithDefaults instantiates a new PkiReadCrlConfigurationResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiReadCrlConfigurationResponseWithDefaults() *PkiReadCrlConfigurationResponse {
-	var this PkiReadCrlConfigurationResponse
-
-	return &this
-}

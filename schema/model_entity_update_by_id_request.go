@@ -19,12 +19,3 @@ type EntityUpdateByIdRequest struct {
 	// Policies to be tied to the entity.
 	Policies []string `json:"policies,omitempty"`
 }
-
-// NewEntityUpdateByIdRequestWithDefaults instantiates a new EntityUpdateByIdRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewEntityUpdateByIdRequestWithDefaults() *EntityUpdateByIdRequest {
-	var this EntityUpdateByIdRequest
-
-	return &this
-}

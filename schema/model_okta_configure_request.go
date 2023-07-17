@@ -66,14 +66,3 @@ type OktaConfigureRequest struct {
 	// Deprecated
 	Ttl string `json:"ttl,omitempty"`
 }
-
-// NewOktaConfigureRequestWithDefaults instantiates a new OktaConfigureRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewOktaConfigureRequestWithDefaults() *OktaConfigureRequest {
-	var this OktaConfigureRequest
-
-	this.TokenType = "default-service"
-
-	return &this
-}

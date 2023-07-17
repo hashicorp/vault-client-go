@@ -14,12 +14,3 @@ type AppRoleReadPoliciesResponse struct {
 	// Comma-separated list of policies
 	TokenPolicies []string `json:"token_policies,omitempty"`
 }
-
-// NewAppRoleReadPoliciesResponseWithDefaults instantiates a new AppRoleReadPoliciesResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppRoleReadPoliciesResponseWithDefaults() *AppRoleReadPoliciesResponse {
-	var this AppRoleReadPoliciesResponse
-
-	return &this
-}

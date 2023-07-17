@@ -10,12 +10,3 @@ type EntityBatchDeleteRequest struct {
 	// Entity IDs to delete
 	EntityIds []string `json:"entity_ids,omitempty"`
 }
-
-// NewEntityBatchDeleteRequestWithDefaults instantiates a new EntityBatchDeleteRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewEntityBatchDeleteRequestWithDefaults() *EntityBatchDeleteRequest {
-	var this EntityBatchDeleteRequest
-
-	return &this
-}

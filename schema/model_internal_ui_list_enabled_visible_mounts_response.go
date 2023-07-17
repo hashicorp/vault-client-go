@@ -13,12 +13,3 @@ type InternalUiListEnabledVisibleMountsResponse struct {
 	// secret mounts
 	Secret map[string]interface{} `json:"secret,omitempty"`
 }
-
-// NewInternalUiListEnabledVisibleMountsResponseWithDefaults instantiates a new InternalUiListEnabledVisibleMountsResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInternalUiListEnabledVisibleMountsResponseWithDefaults() *InternalUiListEnabledVisibleMountsResponse {
-	var this InternalUiListEnabledVisibleMountsResponse
-
-	return &this
-}

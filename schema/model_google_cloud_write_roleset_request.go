@@ -19,14 +19,3 @@ type GoogleCloudWriteRolesetRequest struct {
 	// List of OAuth scopes to assign to credentials generated under this role set
 	TokenScopes []string `json:"token_scopes,omitempty"`
 }
-
-// NewGoogleCloudWriteRolesetRequestWithDefaults instantiates a new GoogleCloudWriteRolesetRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGoogleCloudWriteRolesetRequestWithDefaults() *GoogleCloudWriteRolesetRequest {
-	var this GoogleCloudWriteRolesetRequest
-
-	this.SecretType = "access_token"
-
-	return &this
-}

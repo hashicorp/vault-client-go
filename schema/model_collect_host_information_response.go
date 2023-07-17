@@ -21,12 +21,3 @@ type CollectHostInformationResponse struct {
 
 	Timestamp time.Time `json:"timestamp,omitempty"`
 }
-
-// NewCollectHostInformationResponseWithDefaults instantiates a new CollectHostInformationResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCollectHostInformationResponseWithDefaults() *CollectHostInformationResponse {
-	var this CollectHostInformationResponse
-
-	return &this
-}

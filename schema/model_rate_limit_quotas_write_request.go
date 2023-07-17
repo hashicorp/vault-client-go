@@ -25,12 +25,3 @@ type RateLimitQuotasWriteRequest struct {
 	// Type of the quota rule.
 	Type string `json:"type,omitempty"`
 }
-
-// NewRateLimitQuotasWriteRequestWithDefaults instantiates a new RateLimitQuotasWriteRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRateLimitQuotasWriteRequestWithDefaults() *RateLimitQuotasWriteRequest {
-	var this RateLimitQuotasWriteRequest
-
-	return &this
-}

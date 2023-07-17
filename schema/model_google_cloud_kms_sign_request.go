@@ -13,12 +13,3 @@ type GoogleCloudKmsSignRequest struct {
 	// Integer version of the crypto key version to use for signing. This field is required.
 	KeyVersion int32 `json:"key_version,omitempty"`
 }
-
-// NewGoogleCloudKmsSignRequestWithDefaults instantiates a new GoogleCloudKmsSignRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGoogleCloudKmsSignRequestWithDefaults() *GoogleCloudKmsSignRequest {
-	var this GoogleCloudKmsSignRequest
-
-	return &this
-}

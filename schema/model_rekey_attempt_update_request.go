@@ -13,12 +13,3 @@ type RekeyAttemptUpdateRequest struct {
 	// Specifies the nonce of the rekey attempt.
 	Nonce string `json:"nonce,omitempty"`
 }
-
-// NewRekeyAttemptUpdateRequestWithDefaults instantiates a new RekeyAttemptUpdateRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRekeyAttemptUpdateRequestWithDefaults() *RekeyAttemptUpdateRequest {
-	var this RekeyAttemptUpdateRequest
-
-	return &this
-}

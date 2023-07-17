@@ -9,12 +9,3 @@ package schema
 type AuditingListRequestHeadersResponse struct {
 	Headers map[string]interface{} `json:"headers,omitempty"`
 }
-
-// NewAuditingListRequestHeadersResponseWithDefaults instantiates a new AuditingListRequestHeadersResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAuditingListRequestHeadersResponseWithDefaults() *AuditingListRequestHeadersResponse {
-	var this AuditingListRequestHeadersResponse
-
-	return &this
-}

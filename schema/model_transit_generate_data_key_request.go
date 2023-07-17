@@ -19,14 +19,3 @@ type TransitGenerateDataKeyRequest struct {
 	// Nonce for when convergent encryption v1 is used (only in Vault 0.6.1)
 	Nonce string `json:"nonce,omitempty"`
 }
-
-// NewTransitGenerateDataKeyRequestWithDefaults instantiates a new TransitGenerateDataKeyRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTransitGenerateDataKeyRequestWithDefaults() *TransitGenerateDataKeyRequest {
-	var this TransitGenerateDataKeyRequest
-
-	this.Bits = 256
-
-	return &this
-}

@@ -37,14 +37,3 @@ type OciWriteRoleRequest struct {
 	// The type of token to generate, service or batch
 	TokenType string `json:"token_type,omitempty"`
 }
-
-// NewOciWriteRoleRequestWithDefaults instantiates a new OciWriteRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewOciWriteRoleRequestWithDefaults() *OciWriteRoleRequest {
-	var this OciWriteRoleRequest
-
-	this.TokenType = "default-service"
-
-	return &this
-}

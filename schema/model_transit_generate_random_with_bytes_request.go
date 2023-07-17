@@ -16,16 +16,3 @@ type TransitGenerateRandomWithBytesRequest struct {
 	// Which system to source random data from, ether \"platform\", \"seal\", or \"all\".
 	Source string `json:"source,omitempty"`
 }
-
-// NewTransitGenerateRandomWithBytesRequestWithDefaults instantiates a new TransitGenerateRandomWithBytesRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTransitGenerateRandomWithBytesRequestWithDefaults() *TransitGenerateRandomWithBytesRequest {
-	var this TransitGenerateRandomWithBytesRequest
-
-	this.Bytes = 32
-	this.Format = "base64"
-	this.Source = "platform"
-
-	return &this
-}

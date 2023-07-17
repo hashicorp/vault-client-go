@@ -22,12 +22,3 @@ type GroupLookUpRequest struct {
 	// Name of the group.
 	Name string `json:"name,omitempty"`
 }
-
-// NewGroupLookUpRequestWithDefaults instantiates a new GroupLookUpRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGroupLookUpRequestWithDefaults() *GroupLookUpRequest {
-	var this GroupLookUpRequest
-
-	return &this
-}

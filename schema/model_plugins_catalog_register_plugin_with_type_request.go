@@ -22,12 +22,3 @@ type PluginsCatalogRegisterPluginWithTypeRequest struct {
 	// The semantic version of the plugin to use.
 	Version string `json:"version,omitempty"`
 }
-
-// NewPluginsCatalogRegisterPluginWithTypeRequestWithDefaults instantiates a new PluginsCatalogRegisterPluginWithTypeRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPluginsCatalogRegisterPluginWithTypeRequestWithDefaults() *PluginsCatalogRegisterPluginWithTypeRequest {
-	var this PluginsCatalogRegisterPluginWithTypeRequest
-
-	return &this
-}

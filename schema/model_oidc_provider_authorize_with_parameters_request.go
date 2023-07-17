@@ -34,14 +34,3 @@ type OidcProviderAuthorizeWithParametersRequest struct {
 	// The value used to maintain state between the authentication request and client.
 	State string `json:"state,omitempty"`
 }
-
-// NewOidcProviderAuthorizeWithParametersRequestWithDefaults instantiates a new OidcProviderAuthorizeWithParametersRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewOidcProviderAuthorizeWithParametersRequestWithDefaults() *OidcProviderAuthorizeWithParametersRequest {
-	var this OidcProviderAuthorizeWithParametersRequest
-
-	this.CodeChallengeMethod = "plain"
-
-	return &this
-}

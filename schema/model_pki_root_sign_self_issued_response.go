@@ -13,12 +13,3 @@ type PkiRootSignSelfIssuedResponse struct {
 	// Issuing CA
 	IssuingCa string `json:"issuing_ca,omitempty"`
 }
-
-// NewPkiRootSignSelfIssuedResponseWithDefaults instantiates a new PkiRootSignSelfIssuedResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiRootSignSelfIssuedResponseWithDefaults() *PkiRootSignSelfIssuedResponse {
-	var this PkiRootSignSelfIssuedResponse
-
-	return &this
-}

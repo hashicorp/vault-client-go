@@ -16,12 +16,3 @@ type JwtOidcRequestAuthorizationUrlRequest struct {
 	// The role to issue an OIDC authorization URL against.
 	Role string `json:"role,omitempty"`
 }
-
-// NewJwtOidcRequestAuthorizationUrlRequestWithDefaults instantiates a new JwtOidcRequestAuthorizationUrlRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewJwtOidcRequestAuthorizationUrlRequestWithDefaults() *JwtOidcRequestAuthorizationUrlRequest {
-	var this JwtOidcRequestAuthorizationUrlRequest
-
-	return &this
-}

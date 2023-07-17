@@ -9,12 +9,3 @@ package schema
 type HaStatusResponse struct {
 	Nodes []map[string]interface{} `json:"nodes,omitempty"`
 }
-
-// NewHaStatusResponseWithDefaults instantiates a new HaStatusResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewHaStatusResponseWithDefaults() *HaStatusResponse {
-	var this HaStatusResponse
-
-	return &this
-}

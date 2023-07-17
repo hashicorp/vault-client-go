@@ -5,9 +5,7 @@
 
 package schema
 
-// PoliciesListResponse struct for PoliciesListResponse
-type PoliciesListResponse struct {
+// KvV1ListResponse struct for KvV1ListResponse
+type KvV1ListResponse struct {
 	Keys []string `json:"keys,omitempty"`
-
-	Policies []string `json:"policies,omitempty"`
 }

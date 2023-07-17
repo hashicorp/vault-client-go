@@ -1,4 +1,4 @@
-# PoliciesListResponse
+# RawListResponse
 
 
 ## Properties
@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Keys** | Pointer to **[]string** |  | [optional] 
-**Policies** | Pointer to **[]string** |  | [optional] 
 
 
 

@@ -6,7 +6,7 @@ Method | HTTP request | Description
 [**AliCloudDeleteConfiguration**](SecretsApi.md#AliCloudDeleteConfiguration) | **Delete** /{alicloud_mount_path}/config | 
 [**AliCloudDeleteRole**](SecretsApi.md#AliCloudDeleteRole) | **Delete** /{alicloud_mount_path}/role/{name} | Read, write and reference policies and roles that API keys or STS credentials can be made for.
 [**AliCloudGenerateCredentials**](SecretsApi.md#AliCloudGenerateCredentials) | **Get** /{alicloud_mount_path}/creds/{name} | Generate an API key or STS credential using the given role&#x27;s configuration.&#x27;
-[**AliCloudListRoles**](SecretsApi.md#AliCloudListRoles) | **Get** /{alicloud_mount_path}/role | List the existing roles in this backend.
+[**AliCloudListRoles**](SecretsApi.md#AliCloudListRoles) | **Get** /{alicloud_mount_path}/role/ | List the existing roles in this backend.
 [**AliCloudReadConfiguration**](SecretsApi.md#AliCloudReadConfiguration) | **Get** /{alicloud_mount_path}/config | 
 [**AliCloudReadRole**](SecretsApi.md#AliCloudReadRole) | **Get** /{alicloud_mount_path}/role/{name} | Read, write and reference policies and roles that API keys or STS credentials can be made for.
 [**AliCloudWriteRole**](SecretsApi.md#AliCloudWriteRole) | **Post** /{alicloud_mount_path}/role/{name} | Read, write and reference policies and roles that API keys or STS credentials can be made for.
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 [**AwsGenerateCredentialsWithParameters**](SecretsApi.md#AwsGenerateCredentialsWithParameters) | **Post** /{aws_mount_path}/creds/{name} | 
 [**AwsGenerateStsCredentials**](SecretsApi.md#AwsGenerateStsCredentials) | **Get** /{aws_mount_path}/sts/{name} | 
 [**AwsGenerateStsCredentialsWithParameters**](SecretsApi.md#AwsGenerateStsCredentialsWithParameters) | **Post** /{aws_mount_path}/sts/{name} | 
-[**AwsListRoles**](SecretsApi.md#AwsListRoles) | **Get** /{aws_mount_path}/roles | List the existing roles in this backend
+[**AwsListRoles**](SecretsApi.md#AwsListRoles) | **Get** /{aws_mount_path}/roles/ | List the existing roles in this backend
 [**AwsReadLeaseConfiguration**](SecretsApi.md#AwsReadLeaseConfiguration) | **Get** /{aws_mount_path}/config/lease | 
 [**AwsReadRole**](SecretsApi.md#AwsReadRole) | **Get** /{aws_mount_path}/roles/{name} | Read, write and reference IAM policies that access keys can be made for.
 [**AwsReadRootIamCredentialsConfiguration**](SecretsApi.md#AwsReadRootIamCredentialsConfiguration) | **Get** /{aws_mount_path}/config/root | 
@@ -30,7 +30,7 @@ Method | HTTP request | Description
 [**AzureConfigure**](SecretsApi.md#AzureConfigure) | **Post** /{azure_mount_path}/config | 
 [**AzureDeleteConfiguration**](SecretsApi.md#AzureDeleteConfiguration) | **Delete** /{azure_mount_path}/config | 
 [**AzureDeleteRole**](SecretsApi.md#AzureDeleteRole) | **Delete** /{azure_mount_path}/roles/{name} | Manage the Vault roles used to generate Azure credentials.
-[**AzureListRoles**](SecretsApi.md#AzureListRoles) | **Get** /{azure_mount_path}/roles | List existing roles.
+[**AzureListRoles**](SecretsApi.md#AzureListRoles) | **Get** /{azure_mount_path}/roles/ | List existing roles.
 [**AzureReadConfiguration**](SecretsApi.md#AzureReadConfiguration) | **Get** /{azure_mount_path}/config | 
 [**AzureReadRole**](SecretsApi.md#AzureReadRole) | **Get** /{azure_mount_path}/roles/{name} | Manage the Vault roles used to generate Azure credentials.
 [**AzureRequestServicePrincipalCredentials**](SecretsApi.md#AzureRequestServicePrincipalCredentials) | **Get** /{azure_mount_path}/creds/{role} | 
@@ -39,11 +39,12 @@ Method | HTTP request | Description
 [**ConsulConfigureAccess**](SecretsApi.md#ConsulConfigureAccess) | **Post** /{consul_mount_path}/config/access | 
 [**ConsulDeleteRole**](SecretsApi.md#ConsulDeleteRole) | **Delete** /{consul_mount_path}/roles/{name} | 
 [**ConsulGenerateCredentials**](SecretsApi.md#ConsulGenerateCredentials) | **Get** /{consul_mount_path}/creds/{role} | 
-[**ConsulListRoles**](SecretsApi.md#ConsulListRoles) | **Get** /{consul_mount_path}/roles | 
+[**ConsulListRoles**](SecretsApi.md#ConsulListRoles) | **Get** /{consul_mount_path}/roles/ | 
 [**ConsulReadAccessConfiguration**](SecretsApi.md#ConsulReadAccessConfiguration) | **Get** /{consul_mount_path}/config/access | 
 [**ConsulReadRole**](SecretsApi.md#ConsulReadRole) | **Get** /{consul_mount_path}/roles/{name} | 
 [**ConsulWriteRole**](SecretsApi.md#ConsulWriteRole) | **Post** /{consul_mount_path}/roles/{name} | 
 [**CubbyholeDelete**](SecretsApi.md#CubbyholeDelete) | **Delete** /cubbyhole/{path} | Deletes the secret at the specified location.
+[**CubbyholeList**](SecretsApi.md#CubbyholeList) | **Get** /cubbyhole/{path}/ | List secret entries at the specified location.
 [**CubbyholeRead**](SecretsApi.md#CubbyholeRead) | **Get** /cubbyhole/{path} | Retrieve the secret at the specified location.
 [**CubbyholeWrite**](SecretsApi.md#CubbyholeWrite) | **Post** /cubbyhole/{path} | Store a secret at the specified location.
 [**DatabaseConfigureConnection**](SecretsApi.md#DatabaseConfigureConnection) | **Post** /{database_mount_path}/config/{name} | 
@@ -51,9 +52,9 @@ Method | HTTP request | Description
 [**DatabaseDeleteRole**](SecretsApi.md#DatabaseDeleteRole) | **Delete** /{database_mount_path}/roles/{name} | Manage the roles that can be created with this backend.
 [**DatabaseDeleteStaticRole**](SecretsApi.md#DatabaseDeleteStaticRole) | **Delete** /{database_mount_path}/static-roles/{name} | Manage the static roles that can be created with this backend.
 [**DatabaseGenerateCredentials**](SecretsApi.md#DatabaseGenerateCredentials) | **Get** /{database_mount_path}/creds/{name} | Request database credentials for a certain role.
-[**DatabaseListConnections**](SecretsApi.md#DatabaseListConnections) | **Get** /{database_mount_path}/config | Configure connection details to a database plugin.
-[**DatabaseListRoles**](SecretsApi.md#DatabaseListRoles) | **Get** /{database_mount_path}/roles | Manage the roles that can be created with this backend.
-[**DatabaseListStaticRoles**](SecretsApi.md#DatabaseListStaticRoles) | **Get** /{database_mount_path}/static-roles | Manage the static roles that can be created with this backend.
+[**DatabaseListConnections**](SecretsApi.md#DatabaseListConnections) | **Get** /{database_mount_path}/config/ | Configure connection details to a database plugin.
+[**DatabaseListRoles**](SecretsApi.md#DatabaseListRoles) | **Get** /{database_mount_path}/roles/ | Manage the roles that can be created with this backend.
+[**DatabaseListStaticRoles**](SecretsApi.md#DatabaseListStaticRoles) | **Get** /{database_mount_path}/static-roles/ | Manage the static roles that can be created with this backend.
 [**DatabaseReadConnectionConfiguration**](SecretsApi.md#DatabaseReadConnectionConfiguration) | **Get** /{database_mount_path}/config/{name} | 
 [**DatabaseReadRole**](SecretsApi.md#DatabaseReadRole) | **Get** /{database_mount_path}/roles/{name} | Manage the roles that can be created with this backend.
 [**DatabaseReadStaticRole**](SecretsApi.md#DatabaseReadStaticRole) | **Get** /{database_mount_path}/static-roles/{name} | Manage the static roles that can be created with this backend.
@@ -83,7 +84,7 @@ Method | HTTP request | Description
 [**GoogleCloudKmsDeleteKey**](SecretsApi.md#GoogleCloudKmsDeleteKey) | **Delete** /{gcpkms_mount_path}/keys/{key} | Interact with crypto keys in Vault and Google Cloud KMS
 [**GoogleCloudKmsDeregisterKey**](SecretsApi.md#GoogleCloudKmsDeregisterKey) | **Post** /{gcpkms_mount_path}/keys/deregister/{key} | 
 [**GoogleCloudKmsEncrypt**](SecretsApi.md#GoogleCloudKmsEncrypt) | **Post** /{gcpkms_mount_path}/encrypt/{key} | Encrypt a plaintext value using a named key
-[**GoogleCloudKmsListKeys**](SecretsApi.md#GoogleCloudKmsListKeys) | **Get** /{gcpkms_mount_path}/keys | List named keys
+[**GoogleCloudKmsListKeys**](SecretsApi.md#GoogleCloudKmsListKeys) | **Get** /{gcpkms_mount_path}/keys/ | List named keys
 [**GoogleCloudKmsReadConfiguration**](SecretsApi.md#GoogleCloudKmsReadConfiguration) | **Get** /{gcpkms_mount_path}/config | 
 [**GoogleCloudKmsReadKey**](SecretsApi.md#GoogleCloudKmsReadKey) | **Get** /{gcpkms_mount_path}/keys/{key} | Interact with crypto keys in Vault and Google Cloud KMS
 [**GoogleCloudKmsReadKeyConfiguration**](SecretsApi.md#GoogleCloudKmsReadKeyConfiguration) | **Get** /{gcpkms_mount_path}/keys/config/{key} | 
@@ -95,9 +96,9 @@ Method | HTTP request | Description
 [**GoogleCloudKmsTrimKeyVersions**](SecretsApi.md#GoogleCloudKmsTrimKeyVersions) | **Post** /{gcpkms_mount_path}/keys/trim/{key} | 
 [**GoogleCloudKmsVerify**](SecretsApi.md#GoogleCloudKmsVerify) | **Post** /{gcpkms_mount_path}/verify/{key} | Verify a signature using a named key
 [**GoogleCloudKmsWriteKey**](SecretsApi.md#GoogleCloudKmsWriteKey) | **Post** /{gcpkms_mount_path}/keys/{key} | Interact with crypto keys in Vault and Google Cloud KMS
-[**GoogleCloudListImpersonatedAccounts**](SecretsApi.md#GoogleCloudListImpersonatedAccounts) | **Get** /{gcp_mount_path}/impersonated-account | 
-[**GoogleCloudListRolesets**](SecretsApi.md#GoogleCloudListRolesets) | **Get** /{gcp_mount_path}/roleset | 
-[**GoogleCloudListStaticAccounts**](SecretsApi.md#GoogleCloudListStaticAccounts) | **Get** /{gcp_mount_path}/static-account | 
+[**GoogleCloudListImpersonatedAccounts**](SecretsApi.md#GoogleCloudListImpersonatedAccounts) | **Get** /{gcp_mount_path}/impersonated-account/ | 
+[**GoogleCloudListRolesets**](SecretsApi.md#GoogleCloudListRolesets) | **Get** /{gcp_mount_path}/roleset/ | 
+[**GoogleCloudListStaticAccounts**](SecretsApi.md#GoogleCloudListStaticAccounts) | **Get** /{gcp_mount_path}/static-account/ | 
 [**GoogleCloudReadConfiguration**](SecretsApi.md#GoogleCloudReadConfiguration) | **Get** /{gcp_mount_path}/config | 
 [**GoogleCloudReadImpersonatedAccount**](SecretsApi.md#GoogleCloudReadImpersonatedAccount) | **Get** /{gcp_mount_path}/impersonated-account/{name} | 
 [**GoogleCloudReadRoleset**](SecretsApi.md#GoogleCloudReadRoleset) | **Get** /{gcp_mount_path}/roleset/{name} | 
@@ -114,11 +115,12 @@ Method | HTTP request | Description
 [**KubernetesDeleteConfiguration**](SecretsApi.md#KubernetesDeleteConfiguration) | **Delete** /{kubernetes_mount_path}/config | 
 [**KubernetesDeleteRole**](SecretsApi.md#KubernetesDeleteRole) | **Delete** /{kubernetes_mount_path}/roles/{name} | 
 [**KubernetesGenerateCredentials**](SecretsApi.md#KubernetesGenerateCredentials) | **Post** /{kubernetes_mount_path}/creds/{name} | 
-[**KubernetesListRoles**](SecretsApi.md#KubernetesListRoles) | **Get** /{kubernetes_mount_path}/roles | 
+[**KubernetesListRoles**](SecretsApi.md#KubernetesListRoles) | **Get** /{kubernetes_mount_path}/roles/ | 
 [**KubernetesReadConfiguration**](SecretsApi.md#KubernetesReadConfiguration) | **Get** /{kubernetes_mount_path}/config | 
 [**KubernetesReadRole**](SecretsApi.md#KubernetesReadRole) | **Get** /{kubernetes_mount_path}/roles/{name} | 
 [**KubernetesWriteRole**](SecretsApi.md#KubernetesWriteRole) | **Post** /{kubernetes_mount_path}/roles/{name} | 
 [**KvV1Delete**](SecretsApi.md#KvV1Delete) | **Delete** /{kv_v1_mount_path}/{path} | 
+[**KvV1List**](SecretsApi.md#KvV1List) | **Get** /{kv_v1_mount_path}/{path}/ | 
 [**KvV1Read**](SecretsApi.md#KvV1Read) | **Get** /{kv_v1_mount_path}/{path} | 
 [**KvV1Write**](SecretsApi.md#KvV1Write) | **Post** /{kv_v1_mount_path}/{path} | 
 [**KvV2Configure**](SecretsApi.md#KvV2Configure) | **Post** /{kv_v2_mount_path}/config | Configure backend level settings that are applied to every key in the key-value store.
@@ -126,6 +128,7 @@ Method | HTTP request | Description
 [**KvV2DeleteMetadata**](SecretsApi.md#KvV2DeleteMetadata) | **Delete** /{kv_v2_mount_path}/metadata/{path} | 
 [**KvV2DeleteVersions**](SecretsApi.md#KvV2DeleteVersions) | **Post** /{kv_v2_mount_path}/delete/{path} | 
 [**KvV2DestroyVersions**](SecretsApi.md#KvV2DestroyVersions) | **Post** /{kv_v2_mount_path}/destroy/{path} | 
+[**KvV2ListMetadata**](SecretsApi.md#KvV2ListMetadata) | **Get** /{kv_v2_mount_path}/metadata/{path}/ | 
 [**KvV2Read**](SecretsApi.md#KvV2Read) | **Get** /{kv_v2_mount_path}/data/{path} | 
 [**KvV2ReadConfiguration**](SecretsApi.md#KvV2ReadConfiguration) | **Get** /{kv_v2_mount_path}/config | Read the backend level settings.
 [**KvV2ReadMetadata**](SecretsApi.md#KvV2ReadMetadata) | **Get** /{kv_v2_mount_path}/metadata/{path} | 
@@ -143,10 +146,10 @@ Method | HTTP request | Description
 [**LdapLibraryConfigure**](SecretsApi.md#LdapLibraryConfigure) | **Post** /{ldap_mount_path}/library/{name} | Update a library set.
 [**LdapLibraryDelete**](SecretsApi.md#LdapLibraryDelete) | **Delete** /{ldap_mount_path}/library/{name} | Delete a library set.
 [**LdapLibraryForceCheckIn**](SecretsApi.md#LdapLibraryForceCheckIn) | **Post** /{ldap_mount_path}/library/manage/{name}/check-in | Check service accounts in to the library.
-[**LdapLibraryList**](SecretsApi.md#LdapLibraryList) | **Get** /{ldap_mount_path}/library | 
+[**LdapLibraryList**](SecretsApi.md#LdapLibraryList) | **Get** /{ldap_mount_path}/library/ | 
 [**LdapLibraryRead**](SecretsApi.md#LdapLibraryRead) | **Get** /{ldap_mount_path}/library/{name} | Read a library set.
-[**LdapListDynamicRoles**](SecretsApi.md#LdapListDynamicRoles) | **Get** /{ldap_mount_path}/role | 
-[**LdapListStaticRoles**](SecretsApi.md#LdapListStaticRoles) | **Get** /{ldap_mount_path}/static-role | 
+[**LdapListDynamicRoles**](SecretsApi.md#LdapListDynamicRoles) | **Get** /{ldap_mount_path}/role/ | 
+[**LdapListStaticRoles**](SecretsApi.md#LdapListStaticRoles) | **Get** /{ldap_mount_path}/static-role/ | 
 [**LdapReadConfiguration**](SecretsApi.md#LdapReadConfiguration) | **Get** /{ldap_mount_path}/config | 
 [**LdapReadDynamicRole**](SecretsApi.md#LdapReadDynamicRole) | **Get** /{ldap_mount_path}/role/{name} | 
 [**LdapReadStaticRole**](SecretsApi.md#LdapReadStaticRole) | **Get** /{ldap_mount_path}/static-role/{name} | 
@@ -159,7 +162,7 @@ Method | HTTP request | Description
 [**MongoDbAtlasConfigure**](SecretsApi.md#MongoDbAtlasConfigure) | **Post** /{mongodbatlas_mount_path}/config | 
 [**MongoDbAtlasDeleteRole**](SecretsApi.md#MongoDbAtlasDeleteRole) | **Delete** /{mongodbatlas_mount_path}/roles/{name} | Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
 [**MongoDbAtlasGenerateCredentials**](SecretsApi.md#MongoDbAtlasGenerateCredentials) | **Get** /{mongodbatlas_mount_path}/creds/{name} | 
-[**MongoDbAtlasListRoles**](SecretsApi.md#MongoDbAtlasListRoles) | **Get** /{mongodbatlas_mount_path}/roles | List the existing roles in this backend
+[**MongoDbAtlasListRoles**](SecretsApi.md#MongoDbAtlasListRoles) | **Get** /{mongodbatlas_mount_path}/roles/ | List the existing roles in this backend
 [**MongoDbAtlasReadConfiguration**](SecretsApi.md#MongoDbAtlasReadConfiguration) | **Get** /{mongodbatlas_mount_path}/config | 
 [**MongoDbAtlasReadRole**](SecretsApi.md#MongoDbAtlasReadRole) | **Get** /{mongodbatlas_mount_path}/roles/{name} | Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
 [**MongoDbAtlasWriteRole**](SecretsApi.md#MongoDbAtlasWriteRole) | **Post** /{mongodbatlas_mount_path}/roles/{name} | Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
@@ -169,7 +172,7 @@ Method | HTTP request | Description
 [**NomadDeleteLeaseConfiguration**](SecretsApi.md#NomadDeleteLeaseConfiguration) | **Delete** /{nomad_mount_path}/config/lease | 
 [**NomadDeleteRole**](SecretsApi.md#NomadDeleteRole) | **Delete** /{nomad_mount_path}/role/{name} | 
 [**NomadGenerateCredentials**](SecretsApi.md#NomadGenerateCredentials) | **Get** /{nomad_mount_path}/creds/{name} | 
-[**NomadListRoles**](SecretsApi.md#NomadListRoles) | **Get** /{nomad_mount_path}/role | 
+[**NomadListRoles**](SecretsApi.md#NomadListRoles) | **Get** /{nomad_mount_path}/role/ | 
 [**NomadReadAccessConfiguration**](SecretsApi.md#NomadReadAccessConfiguration) | **Get** /{nomad_mount_path}/config/access | 
 [**NomadReadLeaseConfiguration**](SecretsApi.md#NomadReadLeaseConfiguration) | **Get** /{nomad_mount_path}/config/lease | 
 [**NomadReadRole**](SecretsApi.md#NomadReadRole) | **Get** /{nomad_mount_path}/role/{name} | 
@@ -217,12 +220,12 @@ Method | HTTP request | Description
 [**PkiIssuersGenerateRoot**](SecretsApi.md#PkiIssuersGenerateRoot) | **Post** /{pki_mount_path}/issuers/generate/root/{exported} | 
 [**PkiIssuersImportBundle**](SecretsApi.md#PkiIssuersImportBundle) | **Post** /{pki_mount_path}/issuers/import/bundle | 
 [**PkiIssuersImportCert**](SecretsApi.md#PkiIssuersImportCert) | **Post** /{pki_mount_path}/issuers/import/cert | 
-[**PkiListCerts**](SecretsApi.md#PkiListCerts) | **Get** /{pki_mount_path}/certs | 
-[**PkiListEabKeys**](SecretsApi.md#PkiListEabKeys) | **Get** /{pki_mount_path}/eab | 
-[**PkiListIssuers**](SecretsApi.md#PkiListIssuers) | **Get** /{pki_mount_path}/issuers | 
-[**PkiListKeys**](SecretsApi.md#PkiListKeys) | **Get** /{pki_mount_path}/keys | 
-[**PkiListRevokedCerts**](SecretsApi.md#PkiListRevokedCerts) | **Get** /{pki_mount_path}/certs/revoked | 
-[**PkiListRoles**](SecretsApi.md#PkiListRoles) | **Get** /{pki_mount_path}/roles | 
+[**PkiListCerts**](SecretsApi.md#PkiListCerts) | **Get** /{pki_mount_path}/certs/ | 
+[**PkiListEabKeys**](SecretsApi.md#PkiListEabKeys) | **Get** /{pki_mount_path}/eab/ | 
+[**PkiListIssuers**](SecretsApi.md#PkiListIssuers) | **Get** /{pki_mount_path}/issuers/ | 
+[**PkiListKeys**](SecretsApi.md#PkiListKeys) | **Get** /{pki_mount_path}/keys/ | 
+[**PkiListRevokedCerts**](SecretsApi.md#PkiListRevokedCerts) | **Get** /{pki_mount_path}/certs/revoked/ | 
+[**PkiListRoles**](SecretsApi.md#PkiListRoles) | **Get** /{pki_mount_path}/roles/ | 
 [**PkiQueryOcsp**](SecretsApi.md#PkiQueryOcsp) | **Post** /{pki_mount_path}/ocsp | 
 [**PkiQueryOcspWithGetReq**](SecretsApi.md#PkiQueryOcspWithGetReq) | **Get** /{pki_mount_path}/ocsp/{req} | 
 [**PkiReadAcmeConfiguration**](SecretsApi.md#PkiReadAcmeConfiguration) | **Get** /{pki_mount_path}/config/acme | 
@@ -321,7 +324,7 @@ Method | HTTP request | Description
 [**RabbitMqConfigureConnection**](SecretsApi.md#RabbitMqConfigureConnection) | **Post** /{rabbitmq_mount_path}/config/connection | Configure the connection URI, username, and password to talk to RabbitMQ management HTTP API.
 [**RabbitMqConfigureLease**](SecretsApi.md#RabbitMqConfigureLease) | **Post** /{rabbitmq_mount_path}/config/lease | 
 [**RabbitMqDeleteRole**](SecretsApi.md#RabbitMqDeleteRole) | **Delete** /{rabbitmq_mount_path}/roles/{name} | Manage the roles that can be created with this backend.
-[**RabbitMqListRoles**](SecretsApi.md#RabbitMqListRoles) | **Get** /{rabbitmq_mount_path}/roles | Manage the roles that can be created with this backend.
+[**RabbitMqListRoles**](SecretsApi.md#RabbitMqListRoles) | **Get** /{rabbitmq_mount_path}/roles/ | Manage the roles that can be created with this backend.
 [**RabbitMqReadLeaseConfiguration**](SecretsApi.md#RabbitMqReadLeaseConfiguration) | **Get** /{rabbitmq_mount_path}/config/lease | 
 [**RabbitMqReadRole**](SecretsApi.md#RabbitMqReadRole) | **Get** /{rabbitmq_mount_path}/roles/{name} | Manage the roles that can be created with this backend.
 [**RabbitMqRequestCredentials**](SecretsApi.md#RabbitMqRequestCredentials) | **Get** /{rabbitmq_mount_path}/creds/{name} | Request RabbitMQ credentials for a certain role.
@@ -333,7 +336,7 @@ Method | HTTP request | Description
 [**SshDeleteZeroAddressConfiguration**](SecretsApi.md#SshDeleteZeroAddressConfiguration) | **Delete** /{ssh_mount_path}/config/zeroaddress | 
 [**SshGenerateCredentials**](SecretsApi.md#SshGenerateCredentials) | **Post** /{ssh_mount_path}/creds/{role} | Creates a credential for establishing SSH connection with the remote host.
 [**SshIssueCertificate**](SecretsApi.md#SshIssueCertificate) | **Post** /{ssh_mount_path}/issue/{role} | 
-[**SshListRoles**](SecretsApi.md#SshListRoles) | **Get** /{ssh_mount_path}/roles | Manage the &#x27;roles&#x27; that can be created with this backend.
+[**SshListRoles**](SecretsApi.md#SshListRoles) | **Get** /{ssh_mount_path}/roles/ | Manage the &#x27;roles&#x27; that can be created with this backend.
 [**SshListRolesByIp**](SecretsApi.md#SshListRolesByIp) | **Post** /{ssh_mount_path}/lookup | List all the roles associated with the given IP address.
 [**SshReadCaConfiguration**](SecretsApi.md#SshReadCaConfiguration) | **Get** /{ssh_mount_path}/config/ca | 
 [**SshReadPublicKey**](SecretsApi.md#SshReadPublicKey) | **Get** /{ssh_mount_path}/public_key | Retrieve the public key.
@@ -347,7 +350,7 @@ Method | HTTP request | Description
 [**TerraformCloudDeleteConfiguration**](SecretsApi.md#TerraformCloudDeleteConfiguration) | **Delete** /{terraform_mount_path}/config | 
 [**TerraformCloudDeleteRole**](SecretsApi.md#TerraformCloudDeleteRole) | **Delete** /{terraform_mount_path}/role/{name} | 
 [**TerraformCloudGenerateCredentials**](SecretsApi.md#TerraformCloudGenerateCredentials) | **Get** /{terraform_mount_path}/creds/{name} | 
-[**TerraformCloudListRoles**](SecretsApi.md#TerraformCloudListRoles) | **Get** /{terraform_mount_path}/role | 
+[**TerraformCloudListRoles**](SecretsApi.md#TerraformCloudListRoles) | **Get** /{terraform_mount_path}/role/ | 
 [**TerraformCloudReadConfiguration**](SecretsApi.md#TerraformCloudReadConfiguration) | **Get** /{terraform_mount_path}/config | 
 [**TerraformCloudReadRole**](SecretsApi.md#TerraformCloudReadRole) | **Get** /{terraform_mount_path}/role/{name} | 
 [**TerraformCloudRotateRole**](SecretsApi.md#TerraformCloudRotateRole) | **Post** /{terraform_mount_path}/rotate-role/{name} | 
@@ -355,7 +358,7 @@ Method | HTTP request | Description
 [**TotpCreateKey**](SecretsApi.md#TotpCreateKey) | **Post** /{totp_mount_path}/keys/{name} | 
 [**TotpDeleteKey**](SecretsApi.md#TotpDeleteKey) | **Delete** /{totp_mount_path}/keys/{name} | 
 [**TotpGenerateCode**](SecretsApi.md#TotpGenerateCode) | **Get** /{totp_mount_path}/code/{name} | 
-[**TotpListKeys**](SecretsApi.md#TotpListKeys) | **Get** /{totp_mount_path}/keys | Manage the keys that can be created with this backend.
+[**TotpListKeys**](SecretsApi.md#TotpListKeys) | **Get** /{totp_mount_path}/keys/ | Manage the keys that can be created with this backend.
 [**TotpReadKey**](SecretsApi.md#TotpReadKey) | **Get** /{totp_mount_path}/keys/{name} | 
 [**TotpValidateCode**](SecretsApi.md#TotpValidateCode) | **Post** /{totp_mount_path}/code/{name} | 
 [**TransitBackUpKey**](SecretsApi.md#TransitBackUpKey) | **Get** /{transit_mount_path}/backup/{name} | Backup the named key
@@ -381,7 +384,7 @@ Method | HTTP request | Description
 [**TransitHashWithAlgorithm**](SecretsApi.md#TransitHashWithAlgorithm) | **Post** /{transit_mount_path}/hash/{urlalgorithm} | Generate a hash sum for input data
 [**TransitImportKey**](SecretsApi.md#TransitImportKey) | **Post** /{transit_mount_path}/keys/{name}/import | Imports an externally-generated key into a new transit key
 [**TransitImportKeyVersion**](SecretsApi.md#TransitImportKeyVersion) | **Post** /{transit_mount_path}/keys/{name}/import_version | Imports an externally-generated key into an existing imported key
-[**TransitListKeys**](SecretsApi.md#TransitListKeys) | **Get** /{transit_mount_path}/keys | Managed named encryption keys
+[**TransitListKeys**](SecretsApi.md#TransitListKeys) | **Get** /{transit_mount_path}/keys/ | Managed named encryption keys
 [**TransitReadCacheConfiguration**](SecretsApi.md#TransitReadCacheConfiguration) | **Get** /{transit_mount_path}/cache-config | Returns the size of the active cache
 [**TransitReadKey**](SecretsApi.md#TransitReadKey) | **Get** /{transit_mount_path}/keys/{name} | 
 [**TransitReadKeysConfiguration**](SecretsApi.md#TransitReadKeysConfiguration) | **Get** /{transit_mount_path}/config/keys | 
@@ -3012,6 +3015,70 @@ Name | Type | Description  | Notes
 
 
 
+## CubbyholeList
+
+List secret entries at the specified location.
+
+Folders are suffixed with /. The input must be a folder; list on a file will not return a value. The values themselves are not accessible via this command.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | Specifies the path of the secret.
+	resp, err := client.Secrets.CubbyholeList(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** | Specifies the path of the secret. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
 ## CubbyholeRead
 
 Retrieve the secret at the specified location.
@@ -3065,7 +3132,6 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **list** | **string** | Return a list if &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -7733,6 +7799,70 @@ Name | Type | Description  | Notes
 
 
 
+## KvV1List
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | Location of the secret.
+	resp, err := client.Secrets.KvV1List(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("kv-v1"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** | Location of the secret. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+[**KvV1ListResponse**](KvV1ListResponse.md)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
 ## KvV1Read
 
 
@@ -7788,7 +7918,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **list** | **string** | Return a list if &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -8180,6 +8309,70 @@ Name | Type | Description  | Notes
 
 
 
+## KvV2ListMetadata
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | Location of the secret.
+	resp, err := client.Secrets.KvV2ListMetadata(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+		vault.WithMountPath("kv-v2"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** | Location of the secret. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+[**KvV2ListMetadataResponse**](KvV2ListMetadataResponse.md)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+
 ## KvV2Read
 
 
@@ -8357,7 +8550,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **list** | **string** | Return a list if &#x60;true&#x60; | 
 
 [**KvV2ReadMetadataResponse**](KvV2ReadMetadataResponse.md)
 

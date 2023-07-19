@@ -960,8 +960,7 @@ func (s *System) InternalGenerateOpenApiDocument(ctx context.Context, genericMou
 }
 
 // InternalGenerateOpenApiDocumentWithParameters
-// genericMountPaths: Use generic mount paths
-func (s *System) InternalGenerateOpenApiDocumentWithParameters(ctx context.Context, request schema.InternalGenerateOpenApiDocumentWithParametersRequest, genericMountPaths bool, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) InternalGenerateOpenApiDocumentWithParameters(ctx context.Context, request schema.InternalGenerateOpenApiDocumentWithParametersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -970,7 +969,6 @@ func (s *System) InternalGenerateOpenApiDocumentWithParameters(ctx context.Conte
 	requestPath := "/v1/sys/internal/specs/openapi"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("genericMountPaths", url.QueryEscape(parameterToString(genericMountPaths)))
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4753,7 +4751,7 @@ func (s *System) SystemWriteMfaMethodTotpNameAdminGenerate(ctx context.Context, 
 }
 
 // SystemWriteNamespacesApiLockLock
-func (s *System) SystemWriteNamespacesApiLockLock(ctx context.Context, request schema.SystemWriteNamespacesApiLockLockRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) SystemWriteNamespacesApiLockLock(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4763,12 +4761,12 @@ func (s *System) SystemWriteNamespacesApiLockLock(ctx context.Context, request s
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
-	return sendStructuredRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		s.client,
 		http.MethodPost,
 		requestPath,
-		request,
+		nil, // request body
 		requestQueryParameters,
 		requestModifiers,
 	)
@@ -4798,7 +4796,7 @@ func (s *System) SystemWriteNamespacesApiLockLockPath(ctx context.Context, path 
 }
 
 // SystemWriteNamespacesApiLockUnlock
-func (s *System) SystemWriteNamespacesApiLockUnlock(ctx context.Context, request schema.SystemWriteNamespacesApiLockUnlockRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) SystemWriteNamespacesApiLockUnlock(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4808,12 +4806,12 @@ func (s *System) SystemWriteNamespacesApiLockUnlock(ctx context.Context, request
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
-	return sendStructuredRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		s.client,
 		http.MethodPost,
 		requestPath,
-		request,
+		nil, // request body
 		requestQueryParameters,
 		requestModifiers,
 	)

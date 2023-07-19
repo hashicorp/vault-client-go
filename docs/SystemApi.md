@@ -2649,11 +2649,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	genericMountPaths := true // bool | Use generic mount paths (defaults to false)
 	resp, err := client.System.InternalGenerateOpenApiDocumentWithParameters(
 		context.Background(),
 		InternalGenerateOpenApiDocumentWithParametersRequest{ /* populate request parameters */ },
-		genericMountPaths,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2674,7 +2672,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **internalGenerateOpenApiDocumentWithParametersRequest** | [**InternalGenerateOpenApiDocumentWithParametersRequest**](InternalGenerateOpenApiDocumentWithParametersRequest.md) |  | 
- **genericMountPaths** | **bool** | Use generic mount paths | [default to false]
 
  (empty response body)
 
@@ -12149,7 +12146,6 @@ import (
 	"os"
 
 	"github.com/hashicorp/vault-client-go"
-	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -12162,7 +12158,6 @@ func main() {
 
 	resp, err := client.System.SystemWriteNamespacesApiLockLock(
 		context.Background(),
-		SystemWriteNamespacesApiLockLockRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -12175,14 +12170,11 @@ func main() {
 
 ### Path Parameters
 
-
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **systemWriteNamespacesApiLockLockRequest** | [**SystemWriteNamespacesApiLockLockRequest**](SystemWriteNamespacesApiLockLockRequest.md) |  | 
 
  (empty response body)
 
@@ -12267,7 +12259,6 @@ import (
 	"os"
 
 	"github.com/hashicorp/vault-client-go"
-	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -12280,7 +12271,6 @@ func main() {
 
 	resp, err := client.System.SystemWriteNamespacesApiLockUnlock(
 		context.Background(),
-		SystemWriteNamespacesApiLockUnlockRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -12293,14 +12283,11 @@ func main() {
 
 ### Path Parameters
 
-
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **systemWriteNamespacesApiLockUnlockRequest** | [**SystemWriteNamespacesApiLockUnlockRequest**](SystemWriteNamespacesApiLockUnlockRequest.md) |  | 
 
  (empty response body)
 

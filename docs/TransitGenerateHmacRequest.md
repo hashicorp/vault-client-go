@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **BatchInput** | Pointer to **[]map[string]interface{}** | Specifies a list of items to be processed in a single batch. When this parameter is set, if the parameter &#x27;input&#x27; is also set, it will be ignored. Any batch output will preserve the order of the batch input. | [optional] 
 **Input** | Pointer to **string** | The base64-encoded input data | [optional] 
 **KeyVersion** | Pointer to **int32** | The version of the key to use for generating the HMAC. Must be 0 (for latest) or a value greater than or equal to the min_encryption_version configured on the key. | [optional] 
-**Urlalgorithm** | Pointer to **string** | Algorithm to use (POST URL parameter) | [optional] 
 
 
 

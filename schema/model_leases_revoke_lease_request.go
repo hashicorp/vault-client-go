@@ -12,7 +12,4 @@ type LeasesRevokeLeaseRequest struct {
 
 	// Whether or not to perform the revocation synchronously
 	Sync bool `json:"sync,omitempty"`
-
-	// The lease identifier to renew. This is included with a lease.
-	UrlLeaseId string `json:"url_lease_id,omitempty"`
 }

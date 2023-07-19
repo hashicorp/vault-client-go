@@ -36,7 +36,4 @@ type TransitSignRequest struct {
 
 	// The signature algorithm to use for signing. Currently only applies to RSA key types. Options are 'pss' or 'pkcs1v15'. Defaults to 'pss'
 	SignatureAlgorithm string `json:"signature_algorithm,omitempty"`
-
-	// Hash algorithm to use (POST URL parameter)
-	Urlalgorithm string `json:"urlalgorithm,omitempty"`
 }

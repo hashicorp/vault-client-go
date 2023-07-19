@@ -116,7 +116,7 @@ func (s *Secrets) AliCloudGenerateCredentials(ctx context.Context, name string, 
 }
 
 // AliCloudListRoles List the existing roles in this backend.
-func (s *Secrets) AliCloudListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AliCloudListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -128,7 +128,7 @@ func (s *Secrets) AliCloudListRoles(ctx context.Context, options ...RequestOptio
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -409,7 +409,7 @@ func (s *Secrets) AwsGenerateStsCredentialsWithParameters(ctx context.Context, n
 }
 
 // AwsListRoles List the existing roles in this backend
-func (s *Secrets) AwsListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AwsListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -421,7 +421,7 @@ func (s *Secrets) AwsListRoles(ctx context.Context, options ...RequestOption) (*
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -698,7 +698,7 @@ func (s *Secrets) AzureDeleteRole(ctx context.Context, name string, options ...R
 }
 
 // AzureListRoles List existing roles.
-func (s *Secrets) AzureListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) AzureListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -710,7 +710,7 @@ func (s *Secrets) AzureListRoles(ctx context.Context, options ...RequestOption) 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -916,7 +916,7 @@ func (s *Secrets) ConsulGenerateCredentials(ctx context.Context, role string, op
 }
 
 // ConsulListRoles
-func (s *Secrets) ConsulListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) ConsulListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -928,7 +928,7 @@ func (s *Secrets) ConsulListRoles(ctx context.Context, options ...RequestOption)
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -1039,7 +1039,7 @@ func (s *Secrets) CubbyholeDelete(ctx context.Context, path string, options ...R
 // CubbyholeList List secret entries at the specified location.
 // Folders are suffixed with /. The input must be a folder; list on a file will not return a value. The values themselves are not accessible via this command.
 // path: Specifies the path of the secret.
-func (s *Secrets) CubbyholeList(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) CubbyholeList(ctx context.Context, path string, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1051,7 +1051,7 @@ func (s *Secrets) CubbyholeList(ctx context.Context, path string, options ...Req
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -1236,7 +1236,7 @@ func (s *Secrets) DatabaseGenerateCredentials(ctx context.Context, name string, 
 }
 
 // DatabaseListConnections Configure connection details to a database plugin.
-func (s *Secrets) DatabaseListConnections(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) DatabaseListConnections(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1248,7 +1248,7 @@ func (s *Secrets) DatabaseListConnections(ctx context.Context, options ...Reques
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -1260,7 +1260,7 @@ func (s *Secrets) DatabaseListConnections(ctx context.Context, options ...Reques
 }
 
 // DatabaseListRoles Manage the roles that can be created with this backend.
-func (s *Secrets) DatabaseListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) DatabaseListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1272,7 +1272,7 @@ func (s *Secrets) DatabaseListRoles(ctx context.Context, options ...RequestOptio
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -1284,7 +1284,7 @@ func (s *Secrets) DatabaseListRoles(ctx context.Context, options ...RequestOptio
 }
 
 // DatabaseListStaticRoles Manage the static roles that can be created with this backend.
-func (s *Secrets) DatabaseListStaticRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) DatabaseListStaticRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1296,7 +1296,7 @@ func (s *Secrets) DatabaseListStaticRoles(ctx context.Context, options ...Reques
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -2027,7 +2027,7 @@ func (s *Secrets) GoogleCloudKmsEncrypt(ctx context.Context, key string, request
 }
 
 // GoogleCloudKmsListKeys List named keys
-func (s *Secrets) GoogleCloudKmsListKeys(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudKmsListKeys(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2039,7 +2039,7 @@ func (s *Secrets) GoogleCloudKmsListKeys(ctx context.Context, options ...Request
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -2324,7 +2324,7 @@ func (s *Secrets) GoogleCloudKmsWriteKey(ctx context.Context, key string, reques
 }
 
 // GoogleCloudListImpersonatedAccounts
-func (s *Secrets) GoogleCloudListImpersonatedAccounts(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudListImpersonatedAccounts(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2336,7 +2336,7 @@ func (s *Secrets) GoogleCloudListImpersonatedAccounts(ctx context.Context, optio
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -2348,7 +2348,7 @@ func (s *Secrets) GoogleCloudListImpersonatedAccounts(ctx context.Context, optio
 }
 
 // GoogleCloudListRolesets
-func (s *Secrets) GoogleCloudListRolesets(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudListRolesets(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2360,7 +2360,7 @@ func (s *Secrets) GoogleCloudListRolesets(ctx context.Context, options ...Reques
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -2372,7 +2372,7 @@ func (s *Secrets) GoogleCloudListRolesets(ctx context.Context, options ...Reques
 }
 
 // GoogleCloudListStaticAccounts
-func (s *Secrets) GoogleCloudListStaticAccounts(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudListStaticAccounts(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2384,7 +2384,7 @@ func (s *Secrets) GoogleCloudListStaticAccounts(ctx context.Context, options ...
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -2786,7 +2786,7 @@ func (s *Secrets) KubernetesGenerateCredentials(ctx context.Context, name string
 }
 
 // KubernetesListRoles
-func (s *Secrets) KubernetesListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) KubernetesListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2798,7 +2798,7 @@ func (s *Secrets) KubernetesListRoles(ctx context.Context, options ...RequestOpt
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -3552,7 +3552,7 @@ func (s *Secrets) LdapLibraryForceCheckIn(ctx context.Context, name string, requ
 }
 
 // LdapLibraryList
-func (s *Secrets) LdapLibraryList(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapLibraryList(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3564,7 +3564,7 @@ func (s *Secrets) LdapLibraryList(ctx context.Context, options ...RequestOption)
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -3601,7 +3601,7 @@ func (s *Secrets) LdapLibraryRead(ctx context.Context, name string, options ...R
 }
 
 // LdapListDynamicRoles
-func (s *Secrets) LdapListDynamicRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapListDynamicRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3613,7 +3613,7 @@ func (s *Secrets) LdapListDynamicRoles(ctx context.Context, options ...RequestOp
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -3625,7 +3625,7 @@ func (s *Secrets) LdapListDynamicRoles(ctx context.Context, options ...RequestOp
 }
 
 // LdapListStaticRoles
-func (s *Secrets) LdapListStaticRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) LdapListStaticRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3637,7 +3637,7 @@ func (s *Secrets) LdapListStaticRoles(ctx context.Context, options ...RequestOpt
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -3943,7 +3943,7 @@ func (s *Secrets) MongoDbAtlasGenerateCredentials(ctx context.Context, name stri
 }
 
 // MongoDbAtlasListRoles List the existing roles in this backend
-func (s *Secrets) MongoDbAtlasListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) MongoDbAtlasListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3955,7 +3955,7 @@ func (s *Secrets) MongoDbAtlasListRoles(ctx context.Context, options ...RequestO
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -4182,7 +4182,7 @@ func (s *Secrets) NomadGenerateCredentials(ctx context.Context, name string, opt
 }
 
 // NomadListRoles
-func (s *Secrets) NomadListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) NomadListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4194,7 +4194,7 @@ func (s *Secrets) NomadListRoles(ctx context.Context, options ...RequestOption) 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -5351,7 +5351,7 @@ func (s *Secrets) PkiIssuersImportCert(ctx context.Context, request schema.PkiIs
 }
 
 // PkiListCerts
-func (s *Secrets) PkiListCerts(ctx context.Context, options ...RequestOption) (*Response[schema.PkiListCertsResponse], error) {
+func (s *Secrets) PkiListCerts(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5363,7 +5363,7 @@ func (s *Secrets) PkiListCerts(ctx context.Context, options ...RequestOption) (*
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[schema.PkiListCertsResponse](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -5447,7 +5447,7 @@ func (s *Secrets) PkiListKeys(ctx context.Context, options ...RequestOption) (*R
 }
 
 // PkiListRevokedCerts
-func (s *Secrets) PkiListRevokedCerts(ctx context.Context, options ...RequestOption) (*Response[schema.PkiListRevokedCertsResponse], error) {
+func (s *Secrets) PkiListRevokedCerts(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5459,7 +5459,7 @@ func (s *Secrets) PkiListRevokedCerts(ctx context.Context, options ...RequestOpt
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[schema.PkiListRevokedCertsResponse](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -5471,7 +5471,7 @@ func (s *Secrets) PkiListRevokedCerts(ctx context.Context, options ...RequestOpt
 }
 
 // PkiListRoles
-func (s *Secrets) PkiListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.PkiListRolesResponse], error) {
+func (s *Secrets) PkiListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5483,7 +5483,7 @@ func (s *Secrets) PkiListRoles(ctx context.Context, options ...RequestOption) (*
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[schema.PkiListRolesResponse](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -7937,7 +7937,7 @@ func (s *Secrets) RabbitMqDeleteRole(ctx context.Context, name string, options .
 }
 
 // RabbitMqListRoles Manage the roles that can be created with this backend.
-func (s *Secrets) RabbitMqListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) RabbitMqListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7949,7 +7949,7 @@ func (s *Secrets) RabbitMqListRoles(ctx context.Context, options ...RequestOptio
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -8226,7 +8226,7 @@ func (s *Secrets) SshIssueCertificate(ctx context.Context, role string, request 
 }
 
 // SshListRoles Manage the 'roles' that can be created with this backend.
-func (s *Secrets) SshListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) SshListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8238,7 +8238,7 @@ func (s *Secrets) SshListRoles(ctx context.Context, options ...RequestOption) (*
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -8559,7 +8559,7 @@ func (s *Secrets) TerraformCloudGenerateCredentials(ctx context.Context, name st
 }
 
 // TerraformCloudListRoles
-func (s *Secrets) TerraformCloudListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TerraformCloudListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8571,7 +8571,7 @@ func (s *Secrets) TerraformCloudListRoles(ctx context.Context, options ...Reques
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -8756,7 +8756,7 @@ func (s *Secrets) TotpGenerateCode(ctx context.Context, name string, options ...
 }
 
 // TotpListKeys Manage the keys that can be created with this backend.
-func (s *Secrets) TotpListKeys(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TotpListKeys(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -8768,7 +8768,7 @@ func (s *Secrets) TotpListKeys(ctx context.Context, options ...RequestOption) (*
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -9415,7 +9415,7 @@ func (s *Secrets) TransitImportKeyVersion(ctx context.Context, name string, requ
 }
 
 // TransitListKeys Managed named encryption keys
-func (s *Secrets) TransitListKeys(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) TransitListKeys(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -9427,7 +9427,7 @@ func (s *Secrets) TransitListKeys(ctx context.Context, options ...RequestOption)
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,

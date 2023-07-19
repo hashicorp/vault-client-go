@@ -45,7 +45,7 @@ func (a *Auth) AliCloudDeleteAuthRole(ctx context.Context, role string, options 
 }
 
 // AliCloudListAuthRoles Lists all the roles that are registered with Vault.
-func (a *Auth) AliCloudListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AliCloudListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -57,7 +57,7 @@ func (a *Auth) AliCloudListAuthRoles(ctx context.Context, options ...RequestOpti
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -492,7 +492,7 @@ func (a *Auth) AppRoleDestroySecretIdByAccessor(ctx context.Context, roleName st
 }
 
 // AppRoleListRoles
-func (a *Auth) AppRoleListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.AppRoleListRolesResponse], error) {
+func (a *Auth) AppRoleListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -504,7 +504,7 @@ func (a *Auth) AppRoleListRoles(ctx context.Context, options ...RequestOption) (
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[schema.AppRoleListRolesResponse](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -517,7 +517,7 @@ func (a *Auth) AppRoleListRoles(ctx context.Context, options ...RequestOption) (
 
 // AppRoleListSecretIds
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleListSecretIds(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleListSecretIdsResponse], error) {
+func (a *Auth) AppRoleListSecretIds(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -530,7 +530,7 @@ func (a *Auth) AppRoleListSecretIds(ctx context.Context, roleName string, option
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[schema.AppRoleListSecretIdsResponse](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1816,7 +1816,7 @@ func (a *Auth) AwsDeleteStsRole(ctx context.Context, accountId string, options .
 }
 
 // AwsListAuthRoles
-func (a *Auth) AwsListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1828,7 +1828,7 @@ func (a *Auth) AwsListAuthRoles(ctx context.Context, options ...RequestOption) (
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1840,7 +1840,7 @@ func (a *Auth) AwsListAuthRoles(ctx context.Context, options ...RequestOption) (
 }
 
 // AwsListCertificateConfigurations
-func (a *Auth) AwsListCertificateConfigurations(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsListCertificateConfigurations(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1852,7 +1852,7 @@ func (a *Auth) AwsListCertificateConfigurations(ctx context.Context, options ...
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1864,7 +1864,7 @@ func (a *Auth) AwsListCertificateConfigurations(ctx context.Context, options ...
 }
 
 // AwsListIdentityAccessList
-func (a *Auth) AwsListIdentityAccessList(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsListIdentityAccessList(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1876,7 +1876,7 @@ func (a *Auth) AwsListIdentityAccessList(ctx context.Context, options ...Request
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1888,7 +1888,7 @@ func (a *Auth) AwsListIdentityAccessList(ctx context.Context, options ...Request
 }
 
 // AwsListIdentityWhitelist
-func (a *Auth) AwsListIdentityWhitelist(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsListIdentityWhitelist(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1900,7 +1900,7 @@ func (a *Auth) AwsListIdentityWhitelist(ctx context.Context, options ...RequestO
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1912,7 +1912,7 @@ func (a *Auth) AwsListIdentityWhitelist(ctx context.Context, options ...RequestO
 }
 
 // AwsListRoleTagBlacklists
-func (a *Auth) AwsListRoleTagBlacklists(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsListRoleTagBlacklists(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1924,7 +1924,7 @@ func (a *Auth) AwsListRoleTagBlacklists(ctx context.Context, options ...RequestO
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1936,7 +1936,7 @@ func (a *Auth) AwsListRoleTagBlacklists(ctx context.Context, options ...RequestO
 }
 
 // AwsListRoleTagDenyLists
-func (a *Auth) AwsListRoleTagDenyLists(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsListRoleTagDenyLists(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1948,7 +1948,7 @@ func (a *Auth) AwsListRoleTagDenyLists(ctx context.Context, options ...RequestOp
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1960,7 +1960,7 @@ func (a *Auth) AwsListRoleTagDenyLists(ctx context.Context, options ...RequestOp
 }
 
 // AwsListStsRoleRelationships
-func (a *Auth) AwsListStsRoleRelationships(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsListStsRoleRelationships(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1972,7 +1972,7 @@ func (a *Auth) AwsListStsRoleRelationships(ctx context.Context, options ...Reque
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -2631,7 +2631,7 @@ func (a *Auth) AzureDeleteAuthRole(ctx context.Context, name string, options ...
 }
 
 // AzureListAuthRoles
-func (a *Auth) AzureListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AzureListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2643,7 +2643,7 @@ func (a *Auth) AzureListAuthRoles(ctx context.Context, options ...RequestOption)
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -2916,7 +2916,7 @@ func (a *Auth) CertDeleteCrl(ctx context.Context, name string, options ...Reques
 }
 
 // CertListCertificates Manage trusted certificates used for authentication.
-func (a *Auth) CertListCertificates(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CertListCertificates(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2928,7 +2928,7 @@ func (a *Auth) CertListCertificates(ctx context.Context, options ...RequestOptio
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -2940,7 +2940,7 @@ func (a *Auth) CertListCertificates(ctx context.Context, options ...RequestOptio
 }
 
 // CertListCrls
-func (a *Auth) CertListCrls(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CertListCrls(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2952,7 +2952,7 @@ func (a *Auth) CertListCrls(ctx context.Context, options ...RequestOption) (*Res
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -3181,7 +3181,7 @@ func (a *Auth) CloudFoundryDeleteRole(ctx context.Context, role string, options 
 }
 
 // CloudFoundryListRoles
-func (a *Auth) CloudFoundryListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CloudFoundryListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3193,7 +3193,7 @@ func (a *Auth) CloudFoundryListRoles(ctx context.Context, options ...RequestOpti
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -3374,7 +3374,7 @@ func (a *Auth) GithubDeleteUserMapping(ctx context.Context, key string, options 
 }
 
 // GithubListTeams Read mappings for teams
-func (a *Auth) GithubListTeams(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GithubListTeams(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3386,7 +3386,7 @@ func (a *Auth) GithubListTeams(ctx context.Context, options ...RequestOption) (*
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -3398,7 +3398,7 @@ func (a *Auth) GithubListTeams(ctx context.Context, options ...RequestOption) (*
 }
 
 // GithubListUsers Read mappings for users
-func (a *Auth) GithubListUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GithubListUsers(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3410,7 +3410,7 @@ func (a *Auth) GithubListUsers(ctx context.Context, options ...RequestOption) (*
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -3666,7 +3666,7 @@ func (a *Auth) GoogleCloudEditServiceAccountsForRole(ctx context.Context, name s
 }
 
 // GoogleCloudListRoles Lists all the roles that are registered with Vault.
-func (a *Auth) GoogleCloudListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GoogleCloudListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3678,7 +3678,7 @@ func (a *Auth) GoogleCloudListRoles(ctx context.Context, options ...RequestOptio
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -3836,7 +3836,7 @@ func (a *Auth) JwtDeleteRole(ctx context.Context, name string, options ...Reques
 
 // JwtListRoles Lists all the roles registered with the backend.
 // The list will contain the names of the roles.
-func (a *Auth) JwtListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) JwtListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3848,7 +3848,7 @@ func (a *Auth) JwtListRoles(ctx context.Context, options ...RequestOption) (*Res
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -4097,7 +4097,7 @@ func (a *Auth) KerberosDeleteGroup(ctx context.Context, name string, options ...
 }
 
 // KerberosListGroups
-func (a *Auth) KerberosListGroups(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KerberosListGroups(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4109,7 +4109,7 @@ func (a *Auth) KerberosListGroups(ctx context.Context, options ...RequestOption)
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -4288,7 +4288,7 @@ func (a *Auth) KubernetesDeleteAuthRole(ctx context.Context, name string, option
 }
 
 // KubernetesListAuthRoles Lists all the roles registered with the backend.
-func (a *Auth) KubernetesListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KubernetesListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4300,7 +4300,7 @@ func (a *Auth) KubernetesListAuthRoles(ctx context.Context, options ...RequestOp
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -4481,7 +4481,7 @@ func (a *Auth) LdapDeleteUser(ctx context.Context, name string, options ...Reque
 }
 
 // LdapListGroups Manage additional groups for users allowed to authenticate.
-func (a *Auth) LdapListGroups(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) LdapListGroups(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4493,7 +4493,7 @@ func (a *Auth) LdapListGroups(ctx context.Context, options ...RequestOption) (*R
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -4505,7 +4505,7 @@ func (a *Auth) LdapListGroups(ctx context.Context, options ...RequestOption) (*R
 }
 
 // LdapListUsers Manage users allowed to authenticate.
-func (a *Auth) LdapListUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) LdapListUsers(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4517,7 +4517,7 @@ func (a *Auth) LdapListUsers(ctx context.Context, options ...RequestOption) (*Re
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -4748,7 +4748,7 @@ func (a *Auth) OciDeleteRole(ctx context.Context, role string, options ...Reques
 }
 
 // OciListRoles Lists all the roles that are registered with Vault.
-func (a *Auth) OciListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OciListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4760,7 +4760,7 @@ func (a *Auth) OciListRoles(ctx context.Context, options ...RequestOption) (*Res
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -4943,7 +4943,7 @@ func (a *Auth) OktaDeleteUser(ctx context.Context, name string, options ...Reque
 }
 
 // OktaListGroups Manage users allowed to authenticate.
-func (a *Auth) OktaListGroups(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OktaListGroups(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4955,7 +4955,7 @@ func (a *Auth) OktaListGroups(ctx context.Context, options ...RequestOption) (*R
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -4967,7 +4967,7 @@ func (a *Auth) OktaListGroups(ctx context.Context, options ...RequestOption) (*R
 }
 
 // OktaListUsers Manage additional groups for users allowed to authenticate.
-func (a *Auth) OktaListUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OktaListUsers(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4979,7 +4979,7 @@ func (a *Auth) OktaListUsers(ctx context.Context, options ...RequestOption) (*Re
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -5212,7 +5212,7 @@ func (a *Auth) RadiusDeleteUser(ctx context.Context, name string, options ...Req
 }
 
 // RadiusListUsers Manage users allowed to authenticate.
-func (a *Auth) RadiusListUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) RadiusListUsers(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5224,7 +5224,7 @@ func (a *Auth) RadiusListUsers(ctx context.Context, options ...RequestOption) (*
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -5449,7 +5449,7 @@ func (a *Auth) TokenDeleteRole(ctx context.Context, roleName string, options ...
 }
 
 // TokenListAccessors List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires 'sudo' capability in addition to 'list'.
-func (a *Auth) TokenListAccessors(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenListAccessors(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5460,7 +5460,7 @@ func (a *Auth) TokenListAccessors(ctx context.Context, options ...RequestOption)
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -5472,7 +5472,7 @@ func (a *Auth) TokenListAccessors(ctx context.Context, options ...RequestOption)
 }
 
 // TokenListRoles This endpoint lists configured roles.
-func (a *Auth) TokenListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5483,7 +5483,7 @@ func (a *Auth) TokenListRoles(ctx context.Context, options ...RequestOption) (*R
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -5810,7 +5810,7 @@ func (a *Auth) UserpassDeleteUser(ctx context.Context, username string, options 
 }
 
 // UserpassListUsers Manage users allowed to authenticate.
-func (a *Auth) UserpassListUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) UserpassListUsers(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5822,7 +5822,7 @@ func (a *Auth) UserpassListUsers(ctx context.Context, options ...RequestOption) 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,

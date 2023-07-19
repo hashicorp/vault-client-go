@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -815,7 +815,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -870,7 +870,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -925,7 +925,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -1766,7 +1766,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -1821,7 +1821,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -1876,7 +1876,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -3067,7 +3067,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -3122,7 +3122,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -3177,7 +3177,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -3232,7 +3232,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -3287,7 +3287,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -3342,7 +3342,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -4624,7 +4624,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -4679,7 +4679,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -4734,7 +4734,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -4792,7 +4792,7 @@ Name | Type | Description  | Notes
  **list** | **string** | Must be set to &#x60;true&#x60; | 
  **allowedClientId** | **string** | Filters the list of OIDC providers to those that allow the given client ID in their set of allowed_client_ids. | [default to &quot;&quot;]
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -4847,7 +4847,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -4902,7 +4902,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -6417,7 +6417,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)

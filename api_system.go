@@ -2156,7 +2156,7 @@ func (s *System) PoliciesListAclPolicies(ctx context.Context, options ...Request
 }
 
 // PoliciesListPasswordPolicies List the existing password policies.
-func (s *System) PoliciesListPasswordPolicies(ctx context.Context, options ...RequestOption) (*Response[schema.PoliciesListPasswordPoliciesResponse], error) {
+func (s *System) PoliciesListPasswordPolicies(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2167,7 +2167,7 @@ func (s *System) PoliciesListPasswordPolicies(ctx context.Context, options ...Re
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[schema.PoliciesListPasswordPoliciesResponse](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -2640,7 +2640,7 @@ func (s *System) RateLimitQuotasDelete(ctx context.Context, name string, options
 }
 
 // RateLimitQuotasList
-func (s *System) RateLimitQuotasList(ctx context.Context, options ...RequestOption) (*Response[schema.RateLimitQuotasListResponse], error) {
+func (s *System) RateLimitQuotasList(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2651,7 +2651,7 @@ func (s *System) RateLimitQuotasList(ctx context.Context, options ...RequestOpti
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[schema.RateLimitQuotasListResponse](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -2778,7 +2778,7 @@ func (s *System) RawDeletePath(ctx context.Context, path string, options ...Requ
 }
 
 // RawList Return a list keys for a given path prefix.
-func (s *System) RawList(ctx context.Context, options ...RequestOption) (*Response[schema.RawListResponse], error) {
+func (s *System) RawList(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2789,7 +2789,7 @@ func (s *System) RawList(ctx context.Context, options ...RequestOption) (*Respon
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[schema.RawListResponse](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -2801,7 +2801,7 @@ func (s *System) RawList(ctx context.Context, options ...RequestOption) (*Respon
 }
 
 // RawListPath Return a list keys for a given path prefix.
-func (s *System) RawListPath(ctx context.Context, path string, options ...RequestOption) (*Response[schema.RawListPathResponse], error) {
+func (s *System) RawListPath(ctx context.Context, path string, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2813,7 +2813,7 @@ func (s *System) RawListPath(ctx context.Context, path string, options ...Reques
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[schema.RawListPathResponse](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -3773,7 +3773,7 @@ func (s *System) SystemDeleteStorageRaftSnapshotAutoConfigName(ctx context.Conte
 }
 
 // SystemListManagedKeysType
-func (s *System) SystemListManagedKeysType(ctx context.Context, type_ string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) SystemListManagedKeysType(ctx context.Context, type_ string, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3785,7 +3785,7 @@ func (s *System) SystemListManagedKeysType(ctx context.Context, type_ string, op
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -3797,7 +3797,7 @@ func (s *System) SystemListManagedKeysType(ctx context.Context, type_ string, op
 }
 
 // SystemListMfaMethod
-func (s *System) SystemListMfaMethod(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) SystemListMfaMethod(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3808,7 +3808,7 @@ func (s *System) SystemListMfaMethod(ctx context.Context, options ...RequestOpti
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -3820,7 +3820,7 @@ func (s *System) SystemListMfaMethod(ctx context.Context, options ...RequestOpti
 }
 
 // SystemListNamespaces
-func (s *System) SystemListNamespaces(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) SystemListNamespaces(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3831,7 +3831,7 @@ func (s *System) SystemListNamespaces(ctx context.Context, options ...RequestOpt
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -3843,7 +3843,7 @@ func (s *System) SystemListNamespaces(ctx context.Context, options ...RequestOpt
 }
 
 // SystemListPoliciesEgp
-func (s *System) SystemListPoliciesEgp(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) SystemListPoliciesEgp(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3854,7 +3854,7 @@ func (s *System) SystemListPoliciesEgp(ctx context.Context, options ...RequestOp
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -3866,7 +3866,7 @@ func (s *System) SystemListPoliciesEgp(ctx context.Context, options ...RequestOp
 }
 
 // SystemListPoliciesRgp
-func (s *System) SystemListPoliciesRgp(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) SystemListPoliciesRgp(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3877,7 +3877,7 @@ func (s *System) SystemListPoliciesRgp(ctx context.Context, options ...RequestOp
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -3889,7 +3889,7 @@ func (s *System) SystemListPoliciesRgp(ctx context.Context, options ...RequestOp
 }
 
 // SystemListQuotasLeaseCount
-func (s *System) SystemListQuotasLeaseCount(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) SystemListQuotasLeaseCount(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3900,7 +3900,7 @@ func (s *System) SystemListQuotasLeaseCount(ctx context.Context, options ...Requ
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -3912,7 +3912,7 @@ func (s *System) SystemListQuotasLeaseCount(ctx context.Context, options ...Requ
 }
 
 // SystemListStorageRaftSnapshotAutoConfig
-func (s *System) SystemListStorageRaftSnapshotAutoConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) SystemListStorageRaftSnapshotAutoConfig(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3923,7 +3923,7 @@ func (s *System) SystemListStorageRaftSnapshotAutoConfig(ctx context.Context, op
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,

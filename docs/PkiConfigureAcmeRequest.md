@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AllowRoleExtKeyUsage** | Pointer to **bool** | whether the ExtKeyUsage field from a role is used, defaults to false meaning that certificate will be signed with ServerAuth. | [optional] [default to false]
 **AllowedIssuers** | Pointer to **[]string** | which issuers are allowed for use with ACME; by default, this will only be the primary (default) issuer | [optional] [default to ["*"]]
 **AllowedRoles** | Pointer to **[]string** | which roles are allowed for use with ACME; by default via &#x27;*&#x27;, these will be all roles including sign-verbatim; when concrete role names are specified, any default_directory_policy role must be included to allow usage of the default acme directories under /pki/acme/directory and /pki/issuer/:issuer_id/acme/directory. | [optional] [default to ["*"]]
 **DefaultDirectoryPolicy** | Pointer to **string** | the policy to be used for non-role-qualified ACME requests; by default ACME issuance will be otherwise unrestricted, equivalent to the sign-verbatim endpoint; one may also specify a role to use as this policy, as \&quot;role:&lt;role_name&gt;\&quot;, the specified role must be allowed by allowed_roles | [optional] [default to "sign-verbatim"]

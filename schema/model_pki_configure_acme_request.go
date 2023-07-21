@@ -7,6 +7,9 @@ package schema
 
 // PkiConfigureAcmeRequest struct for PkiConfigureAcmeRequest
 type PkiConfigureAcmeRequest struct {
+	// whether the ExtKeyUsage field from a role is used, defaults to false meaning that certificate will be signed with ServerAuth.
+	AllowRoleExtKeyUsage bool `json:"allow_role_ext_key_usage,omitempty"`
+
 	// which issuers are allowed for use with ACME; by default, this will only be the primary (default) issuer
 	AllowedIssuers []string `json:"allowed_issuers,omitempty"`
 

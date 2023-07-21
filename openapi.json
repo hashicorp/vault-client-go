@@ -11209,8 +11209,19 @@
         }
       }
     },
-    "/sys/leases/lookup/": {
+    "/sys/leases/lookup/{prefix}/": {
       "description": "View or list lease metadata.",
+      "parameters": [
+        {
+          "name": "prefix",
+          "description": "The path to list leases under. Example: \"aws/creds/deploy\"",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
       "x-vault-sudo": true,
       "get": {
         "operationId": "leases-look-up",
@@ -11238,53 +11249,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/LeasesLookUpResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/sys/leases/lookup/{prefix}/": {
-      "description": "View or list lease metadata.",
-      "parameters": [
-        {
-          "name": "prefix",
-          "description": "The path to list leases under. Example: \"aws/creds/deploy\"",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        }
-      ],
-      "x-vault-sudo": true,
-      "get": {
-        "operationId": "leases-look-up-with-prefix",
-        "tags": [
-          "system"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Must be set to `true`",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "true"
-              ]
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/LeasesLookUpWithPrefixResponse"
                 }
               }
             }
@@ -13593,8 +13557,18 @@
         }
       }
     },
-    "/sys/raw": {
+    "/sys/raw/{path}": {
       "description": "Write, Read, and Delete data directly in the Storage backend.",
+      "parameters": [
+        {
+          "name": "path",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
       "x-vault-sudo": true,
       "x-vault-createSupported": true,
       "get": {
@@ -13651,8 +13625,18 @@
         }
       }
     },
-    "/sys/raw/": {
+    "/sys/raw/{path}/": {
       "description": "Write, Read, and Delete data directly in the Storage backend.",
+      "parameters": [
+        {
+          "name": "path",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
       "x-vault-sudo": true,
       "get": {
         "summary": "Return a list keys for a given path prefix.",
@@ -13681,121 +13665,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/RawListResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/sys/raw/{path}": {
-      "description": "Write, Read, and Delete data directly in the Storage backend.",
-      "parameters": [
-        {
-          "name": "path",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        }
-      ],
-      "x-vault-sudo": true,
-      "x-vault-createSupported": true,
-      "get": {
-        "summary": "Read the value of the key at the given path.",
-        "operationId": "raw-read-path",
-        "tags": [
-          "system"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RawReadPathResponse"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "summary": "Update the value of the key at the given path.",
-        "operationId": "raw-write-path",
-        "tags": [
-          "system"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RawWritePathRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "summary": "Delete the key with given path.",
-        "operationId": "raw-delete-path",
-        "tags": [
-          "system"
-        ],
-        "responses": {
-          "204": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/sys/raw/{path}/": {
-      "description": "Write, Read, and Delete data directly in the Storage backend.",
-      "parameters": [
-        {
-          "name": "path",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        }
-      ],
-      "x-vault-sudo": true,
-      "get": {
-        "summary": "Return a list keys for a given path prefix.",
-        "operationId": "raw-list-path",
-        "tags": [
-          "system"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Must be set to `true`",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "true"
-              ]
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RawListPathResponse"
                 }
               }
             }
@@ -36822,18 +36691,6 @@
           }
         }
       },
-      "LeasesLookUpWithPrefixResponse": {
-        "type": "object",
-        "properties": {
-          "keys": {
-            "type": "array",
-            "description": "A list of lease ids",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
       "LeasesReadLeaseRequest": {
         "type": "object",
         "properties": {
@@ -47145,17 +47002,6 @@
           }
         }
       },
-      "RawListPathResponse": {
-        "type": "object",
-        "properties": {
-          "keys": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
       "RawListResponse": {
         "type": "object",
         "properties": {
@@ -47167,34 +47013,9 @@
           }
         }
       },
-      "RawReadPathResponse": {
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
       "RawReadResponse": {
         "type": "object",
         "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "RawWritePathRequest": {
-        "type": "object",
-        "properties": {
-          "compressed": {
-            "type": "boolean"
-          },
-          "compression_type": {
-            "type": "string"
-          },
-          "encoding": {
-            "type": "string"
-          },
           "value": {
             "type": "string"
           }
@@ -47210,9 +47031,6 @@
             "type": "string"
           },
           "encoding": {
-            "type": "string"
-          },
-          "path": {
             "type": "string"
           },
           "value": {

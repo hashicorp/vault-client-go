@@ -54,8 +54,7 @@ Method | HTTP request | Description
 [**LeasesCount**](SystemApi.md#LeasesCount) | **Get** /sys/leases/count | 
 [**LeasesForceRevokeLeaseWithPrefix**](SystemApi.md#LeasesForceRevokeLeaseWithPrefix) | **Post** /sys/leases/revoke-force/{prefix} | Revokes all secrets or tokens generated under a given prefix immediately
 [**LeasesList**](SystemApi.md#LeasesList) | **Get** /sys/leases | 
-[**LeasesLookUp**](SystemApi.md#LeasesLookUp) | **Get** /sys/leases/lookup/ | 
-[**LeasesLookUpWithPrefix**](SystemApi.md#LeasesLookUpWithPrefix) | **Get** /sys/leases/lookup/{prefix}/ | 
+[**LeasesLookUp**](SystemApi.md#LeasesLookUp) | **Get** /sys/leases/lookup/{prefix}/ | 
 [**LeasesReadLease**](SystemApi.md#LeasesReadLease) | **Post** /sys/leases/lookup | 
 [**LeasesRenewLease**](SystemApi.md#LeasesRenewLease) | **Post** /sys/leases/renew | Renews a lease, requesting to extend the lease.
 [**LeasesRenewLeaseWithId**](SystemApi.md#LeasesRenewLeaseWithId) | **Post** /sys/leases/renew/{url_lease_id} | Renews a lease, requesting to extend the lease.
@@ -119,14 +118,10 @@ Method | HTTP request | Description
 [**RateLimitQuotasRead**](SystemApi.md#RateLimitQuotasRead) | **Get** /sys/quotas/rate-limit/{name} | 
 [**RateLimitQuotasReadConfiguration**](SystemApi.md#RateLimitQuotasReadConfiguration) | **Get** /sys/quotas/config | 
 [**RateLimitQuotasWrite**](SystemApi.md#RateLimitQuotasWrite) | **Post** /sys/quotas/rate-limit/{name} | 
-[**RawDelete**](SystemApi.md#RawDelete) | **Delete** /sys/raw | Delete the key with given path.
-[**RawDeletePath**](SystemApi.md#RawDeletePath) | **Delete** /sys/raw/{path} | Delete the key with given path.
-[**RawList**](SystemApi.md#RawList) | **Get** /sys/raw/ | Return a list keys for a given path prefix.
-[**RawListPath**](SystemApi.md#RawListPath) | **Get** /sys/raw/{path}/ | Return a list keys for a given path prefix.
-[**RawRead**](SystemApi.md#RawRead) | **Get** /sys/raw | Read the value of the key at the given path.
-[**RawReadPath**](SystemApi.md#RawReadPath) | **Get** /sys/raw/{path} | Read the value of the key at the given path.
-[**RawWrite**](SystemApi.md#RawWrite) | **Post** /sys/raw | Update the value of the key at the given path.
-[**RawWritePath**](SystemApi.md#RawWritePath) | **Post** /sys/raw/{path} | Update the value of the key at the given path.
+[**RawDelete**](SystemApi.md#RawDelete) | **Delete** /sys/raw/{path} | Delete the key with given path.
+[**RawList**](SystemApi.md#RawList) | **Get** /sys/raw/{path}/ | Return a list keys for a given path prefix.
+[**RawRead**](SystemApi.md#RawRead) | **Get** /sys/raw/{path} | Read the value of the key at the given path.
+[**RawWrite**](SystemApi.md#RawWrite) | **Post** /sys/raw/{path} | Update the value of the key at the given path.
 [**ReadHealthStatus**](SystemApi.md#ReadHealthStatus) | **Get** /sys/health | Returns the health status of Vault.
 [**ReadInitializationStatus**](SystemApi.md#ReadInitializationStatus) | **Get** /sys/init | Returns the initialization status of Vault.
 [**ReadSanitizedConfigurationState**](SystemApi.md#ReadSanitizedConfigurationState) | **Get** /sys/config/state/sanitized | Return a sanitized version of the Vault server configuration.
@@ -3259,63 +3254,8 @@ func main() {
 		log.Fatal(err)
 	}
 
-	resp, err := client.System.LeasesLookUp(
-		context.Background(),
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
-[**LeasesLookUpResponse**](LeasesLookUpResponse.md)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
-## LeasesLookUpWithPrefix
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
 	prefix := "prefix_example" // string | The path to list leases under. Example: \"aws/creds/deploy\"
-	resp, err := client.System.LeasesLookUpWithPrefix(
+	resp, err := client.System.LeasesLookUp(
 		context.Background(),
 		prefix,
 		vault.WithToken("my-token"),
@@ -3344,7 +3284,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-[**LeasesLookUpWithPrefixResponse**](LeasesLookUpWithPrefixResponse.md)
+[**LeasesLookUpResponse**](LeasesLookUpResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -7061,60 +7001,8 @@ func main() {
 		log.Fatal(err)
 	}
 
-	resp, err := client.System.RawDelete(
-		context.Background(),
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
-## RawDeletePath
-
-Delete the key with given path.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
 	path := "path_example" // string | 
-	resp, err := client.System.RawDeletePath(
+	resp, err := client.System.RawDelete(
 		context.Background(),
 		path,
 		vault.WithToken("my-token"),
@@ -7174,63 +7062,8 @@ func main() {
 		log.Fatal(err)
 	}
 
-	resp, err := client.System.RawList(
-		context.Background(),
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
-[**RawListResponse**](RawListResponse.md)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
-## RawListPath
-
-Return a list keys for a given path prefix.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
 	path := "path_example" // string | 
-	resp, err := client.System.RawListPath(
+	resp, err := client.System.RawList(
 		context.Background(),
 		path,
 		vault.WithToken("my-token"),
@@ -7259,7 +7092,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-[**RawListPathResponse**](RawListPathResponse.md)
+[**RawListResponse**](RawListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -7291,60 +7124,8 @@ func main() {
 		log.Fatal(err)
 	}
 
-	resp, err := client.System.RawRead(
-		context.Background(),
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
-[**RawReadResponse**](RawReadResponse.md)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
-## RawReadPath
-
-Read the value of the key at the given path.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
 	path := "path_example" // string | 
-	resp, err := client.System.RawReadPath(
+	resp, err := client.System.RawRead(
 		context.Background(),
 		path,
 		vault.WithToken("my-token"),
@@ -7372,7 +7153,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-[**RawReadPathResponse**](RawReadPathResponse.md)
+[**RawReadResponse**](RawReadResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -7405,68 +7186,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	path := "path_example" // string | 
 	resp, err := client.System.RawWrite(
 		context.Background(),
-		RawWriteRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **rawWriteRequest** | [**RawWriteRequest**](RawWriteRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
-## RawWritePath
-
-Update the value of the key at the given path.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-	"github.com/hashicorp/vault-client-go/schema"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	path := "path_example" // string | 
-	resp, err := client.System.RawWritePath(
-		context.Background(),
 		path,
-		RawWritePathRequest{ /* populate request parameters */ },
+		RawWriteRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7491,7 +7215,7 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **rawWritePathRequest** | [**RawWritePathRequest**](RawWritePathRequest.md) |  | 
+ **rawWriteRequest** | [**RawWriteRequest**](RawWriteRequest.md) |  | 
 
  (empty response body)
 

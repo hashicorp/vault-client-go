@@ -348,6 +348,7 @@
     },
     "/auth/token/revoke-orphan": {
       "description": "This endpoint will delete the token and orphan its child tokens.",
+      "x-vault-sudo": true,
       "post": {
         "summary": "This endpoint will delete the token and orphan its child tokens.",
         "operationId": "token-revoke-orphan",
@@ -14970,6 +14971,7 @@
     },
     "/sys/seal": {
       "description": "Seals the Vault.",
+      "x-vault-sudo": true,
       "post": {
         "summary": "Seal the Vault.",
         "operationId": "seal",
@@ -15031,6 +15033,7 @@
       }
     },
     "/sys/step-down": {
+      "x-vault-sudo": true,
       "post": {
         "summary": "Cause the node to give up active status.",
         "description": "This endpoint forces the node to give up active status. If the node does not have active status, this endpoint does nothing. Note that the node will sleep for ten seconds before attempting to grab the active lock again, but if no standby nodes grab the active lock in the interim, the same node may become the active node again.",
@@ -28299,7 +28302,6 @@
           "required": true
         }
       ],
-      "x-vault-createSupported": true,
       "get": {
         "summary": "Returns the size of the active cache",
         "operationId": "transit-read-cache-configuration",
@@ -38437,6 +38439,11 @@
       "PkiConfigureAcmeRequest": {
         "type": "object",
         "properties": {
+          "allow_role_ext_key_usage": {
+            "type": "boolean",
+            "description": "whether the ExtKeyUsage field from a role is used, defaults to false meaning that certificate will be signed with ServerAuth.",
+            "default": false
+          },
           "allowed_issuers": {
             "type": "array",
             "description": "which issuers are allowed for use with ACME; by default, this will only be the primary (default) issuer",

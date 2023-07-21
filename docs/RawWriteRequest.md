@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **Compressed** | Pointer to **bool** |  | [optional] 
 **CompressionType** | Pointer to **string** |  | [optional] 
 **Encoding** | Pointer to **string** |  | [optional] 
-**Path** | Pointer to **string** |  | [optional] 
 **Value** | Pointer to **string** |  | [optional] 
 
 

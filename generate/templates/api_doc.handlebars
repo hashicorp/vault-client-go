@@ -26,7 +26,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"{{#each bodyParams}}{{#if @first}}
+	"github.com/hashicorp/vault-client-go"{{#each bodyParams}}{{#if isModel}}
 	"github.com/hashicorp/vault-client-go/schema"{{/if}}{{/each}}
 )
 

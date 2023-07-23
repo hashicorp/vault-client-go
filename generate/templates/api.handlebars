@@ -29,7 +29,7 @@ type {{cut classname "Api"}} struct {
 // {{paramName}}: {{.}}{{/with}}{{/endsWith}}{{/each}}{{#each bodyParams}}{{#with description}}
 // {{paramName}}: {{.}}{{/with}}{{/each}}{{#each queryParams}}{{#neq paramName "list"}}{{#with description}}
 // {{paramName}}: {{.}}{{/with}}{{/neq}}{{/each}}
-func ({{lower (substring classname 0 1)}} *{{cut classname "Api"}}) {{nickname}}(ctx context.Context{{#each pathParams}}{{#endsWith baseName "_mount_path"}}{{else}}, {{paramName}} {{{dataType}}}{{/endsWith}}{{/each}}{{#each bodyParams}}, request schema.{{{dataType}}}{{/each}}{{#each queryParams}}{{#neq paramName "list"}}, {{paramName}} {{{dataType}}}{{/neq}}{{/each}}, options ...RequestOption) (*Response[{{#with returnType}}schema.{{{.}}}{{/with}}{{#unless returnType}}map[string]interface{}{{/unless}}], error) {
+func ({{lower (substring classname 0 1)}} *{{cut classname "Api"}}) {{nickname}}(ctx context.Context{{#each pathParams}}{{#endsWith baseName "_mount_path"}}{{else}}, {{paramName}} {{{dataType}}}{{/endsWith}}{{/each}}{{#each bodyParams}}, request {{#if isModel}}schema.{{/if}}{{{dataType}}}{{/each}}{{#each queryParams}}{{#neq paramName "list"}}, {{paramName}} {{{dataType}}}{{/neq}}{{/each}}, options ...RequestOption) (*Response[{{#with returnType}}schema.{{{.}}}{{/with}}{{#unless returnType}}map[string]interface{}{{/unless}}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err

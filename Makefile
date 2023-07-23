@@ -4,6 +4,14 @@ GENERATE_CONFIG_PATH        ?= generate/config.yaml
 GENERATE_TEMPLATES_PATH     ?= generate/templates
 OUTPUT_PATH                 ?= .
 
+# To pass extra options to openapi-generator-cli, set this:
+OPENAPI_GENERATOR_EXTRA_OPTIONS ?=
+
+# For example, to see the data being fed to the template processor:
+#
+#   make generate OPENAPI_GENERATOR_EXTRA_OPTIONS=--global-property=debugOperations \
+#   | sed -rn '/^\[ \{$/,/^} ]/p' | jq -S > operations.json
+
 .PHONY: regen bootstrap delete-generated generate format tidy clean format-readme
 
 regen: bootstrap delete-generated generate format tidy clean
@@ -32,7 +40,8 @@ generate:
 				--input-spec       /local/$(OPENAPI_SPEC_PATH) \
 				--config           /local/$(GENERATE_CONFIG_PATH) \
 				--template-dir     /local/$(GENERATE_TEMPLATES_PATH) \
-				--output           /local/$(OUTPUT_PATH)
+				--output           /local/$(OUTPUT_PATH) \
+				$(OPENAPI_GENERATOR_EXTRA_OPTIONS)
 
 	mkdir -p schema/ && mv model_*.go schema/
 

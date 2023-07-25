@@ -35,7 +35,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -421,7 +428,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -572,7 +586,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -684,7 +705,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -765,7 +793,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AppRoleListRolesResponse"
+                  "$ref": "#/components/schemas/StandardListResponse"
                 }
               }
             }
@@ -1739,7 +1767,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AppRoleListSecretIdsResponse"
+                  "$ref": "#/components/schemas/StandardListResponse"
                 }
               }
             }
@@ -2290,7 +2318,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -2462,7 +2497,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -2806,7 +2848,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -2892,7 +2941,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -3015,7 +3071,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -3168,7 +3231,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -3208,7 +3278,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -3305,7 +3382,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -3642,7 +3726,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -3867,7 +3958,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -4027,7 +4125,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -4268,7 +4373,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -4461,7 +4573,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -4665,7 +4784,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -4815,7 +4941,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -4954,7 +5087,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -5241,7 +5381,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -5447,7 +5594,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -5691,7 +5845,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -5861,7 +6022,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -6027,7 +6195,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -6263,7 +6438,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -6430,7 +6612,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -6596,7 +6785,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -6886,7 +7082,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -7053,7 +7256,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -7323,7 +7533,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -7377,7 +7594,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -7513,7 +7737,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -7624,7 +7855,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -7735,7 +7973,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -7870,7 +8115,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -7955,7 +8207,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -8039,7 +8298,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -8173,7 +8439,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -8260,7 +8533,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -8312,7 +8592,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -8423,7 +8710,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -8534,7 +8828,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -8645,7 +8946,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -8861,7 +9169,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -8947,7 +9262,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -9094,7 +9416,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -9205,6 +9534,15 @@
         ],
         "parameters": [
           {
+            "name": "allowed_client_id",
+            "description": "Filters the list of OIDC providers to those that allow the given client ID in their set of allowed_client_ids.",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": ""
+            }
+          },
+          {
             "name": "list",
             "description": "Must be set to `true`",
             "in": "query",
@@ -9215,20 +9553,18 @@
               ]
             },
             "required": true
-          },
-          {
-            "name": "allowed_client_id",
-            "description": "Filters the list of OIDC providers to those that allow the given client ID in their set of allowed_client_ids.",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "default": ""
-            }
           }
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -9363,33 +9699,8 @@
         ],
         "parameters": [
           {
-            "name": "code_challenge_method",
-            "description": "The method that was used to derive the code challenge. The following methods are supported: 'S256', 'plain'. Defaults to 'plain'.",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "default": "plain"
-            }
-          },
-          {
-            "name": "scope",
-            "description": "A space-delimited, case-sensitive list of scopes to be requested. The 'openid' scope is required.",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "state",
-            "description": "The value used to maintain state between the authentication request and client.",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "redirect_uri",
-            "description": "The redirection URI to which the response will be sent.",
+            "name": "client_id",
+            "description": "The ID of the requesting client.",
             "in": "query",
             "schema": {
               "type": "string"
@@ -9404,6 +9715,15 @@
             }
           },
           {
+            "name": "code_challenge_method",
+            "description": "The method that was used to derive the code challenge. The following methods are supported: 'S256', 'plain'. Defaults to 'plain'.",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "plain"
+            }
+          },
+          {
             "name": "max_age",
             "description": "The allowable elapsed time in seconds since the last time the end-user was actively authenticated.",
             "in": "query",
@@ -9412,8 +9732,16 @@
             }
           },
           {
-            "name": "client_id",
-            "description": "The ID of the requesting client.",
+            "name": "nonce",
+            "description": "The value that will be returned in the ID token nonce claim after a token exchange.",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "redirect_uri",
+            "description": "The redirection URI to which the response will be sent.",
             "in": "query",
             "schema": {
               "type": "string"
@@ -9428,8 +9756,16 @@
             }
           },
           {
-            "name": "nonce",
-            "description": "The value that will be returned in the ID token nonce claim after a token exchange.",
+            "name": "scope",
+            "description": "A space-delimited, case-sensitive list of scopes to be requested. The 'openid' scope is required.",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state",
+            "description": "The value used to maintain state between the authentication request and client.",
             "in": "query",
             "schema": {
               "type": "string"
@@ -9560,7 +9896,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -9649,7 +9992,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -9787,7 +10137,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -11047,20 +11404,20 @@
         ],
         "parameters": [
           {
+            "name": "context",
+            "description": "Context string appended to every operationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "generic_mount_paths",
             "description": "Use generic mount paths",
             "in": "query",
             "schema": {
               "type": "boolean",
               "default": false
-            }
-          },
-          {
-            "name": "context",
-            "description": "Context string appended to every operationId",
-            "in": "query",
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -11781,7 +12138,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -11918,7 +12282,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -12205,20 +12576,20 @@
         ],
         "parameters": [
           {
-            "name": "log_level",
-            "description": "Log level to view system logs at. Currently supported values are \"trace\", \"debug\", \"info\", \"warn\", \"error\".",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "log_format",
             "description": "Output format of logs. Supported values are \"standard\" and \"json\". The default is \"standard\".",
             "in": "query",
             "schema": {
               "type": "string",
               "default": "standard"
+            }
+          },
+          {
+            "name": "log_level",
+            "description": "Log level to view system logs at. Currently supported values are \"trace\", \"debug\", \"info\", \"warn\", \"error\".",
+            "in": "query",
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -12385,7 +12756,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -12901,7 +13279,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -12978,7 +13363,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PoliciesListPasswordPoliciesResponse"
+                  "$ref": "#/components/schemas/StandardListResponse"
                 }
               }
             }
@@ -13108,7 +13493,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -13510,7 +13902,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -13587,7 +13986,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RateLimitQuotasListResponse"
+                  "$ref": "#/components/schemas/StandardListResponse"
                 }
               }
             }
@@ -13766,7 +14165,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RawListResponse"
+                  "$ref": "#/components/schemas/StandardListResponse"
                 }
               }
             }
@@ -15042,7 +15441,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -15693,7 +16099,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -15927,20 +16340,20 @@
             }
           },
           {
+            "name": "role_session_name",
+            "description": "Session name to use when assuming role. Max chars: 64",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "ttl",
             "description": "Lifetime of the returned credentials in seconds",
             "in": "query",
             "schema": {
               "type": "string",
               "default": 3600
-            }
-          },
-          {
-            "name": "role_session_name",
-            "description": "Session name to use when assuming role. Max chars: 64",
-            "in": "query",
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -16008,7 +16421,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -16247,20 +16667,20 @@
             }
           },
           {
+            "name": "role_session_name",
+            "description": "Session name to use when assuming role. Max chars: 64",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "ttl",
             "description": "Lifetime of the returned credentials in seconds",
             "in": "query",
             "schema": {
               "type": "string",
               "default": 3600
-            }
-          },
-          {
-            "name": "role_session_name",
-            "description": "Session name to use when assuming role. Max chars: 64",
-            "in": "query",
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -16422,7 +16842,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -16638,7 +17065,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -16745,7 +17179,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -16926,7 +17367,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -17144,7 +17592,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -17328,7 +17783,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -17482,7 +17944,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -17578,7 +18047,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -17858,7 +18334,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -17898,7 +18381,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -18143,7 +18633,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -18381,7 +18878,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -19027,7 +19531,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -19803,7 +20314,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -20088,7 +20606,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -20292,7 +20817,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -20494,7 +21026,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -20753,7 +21292,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -21717,7 +22263,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PkiListCertsResponse"
+                  "$ref": "#/components/schemas/StandardListResponse"
                 }
               }
             }
@@ -21764,7 +22310,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PkiListRevokedCertsResponse"
+                  "$ref": "#/components/schemas/StandardListResponse"
                 }
               }
             }
@@ -25816,7 +26362,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PkiListRolesResponse"
+                  "$ref": "#/components/schemas/StandardListResponse"
                 }
               }
             }
@@ -27218,7 +27764,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -27601,7 +28154,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -27927,7 +28487,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -28126,7 +28693,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -28896,7 +29470,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -29997,28 +30578,6 @@
           "secret_id": {
             "type": "string",
             "description": "SecretID attached to the role."
-          }
-        }
-      },
-      "AppRoleListRolesResponse": {
-        "type": "object",
-        "properties": {
-          "keys": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "AppRoleListSecretIdsResponse": {
-        "type": "object",
-        "properties": {
-          "keys": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           }
         }
       },
@@ -41882,18 +42441,6 @@
           }
         }
       },
-      "PkiListCertsResponse": {
-        "type": "object",
-        "properties": {
-          "keys": {
-            "type": "array",
-            "description": "A list of keys",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
       "PkiListEabKeysResponse": {
         "type": "object",
         "properties": {
@@ -41939,30 +42486,6 @@
           "keys": {
             "type": "array",
             "description": "A list of keys",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "PkiListRevokedCertsResponse": {
-        "type": "object",
-        "properties": {
-          "keys": {
-            "type": "array",
-            "description": "List of Keys",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "PkiListRolesResponse": {
-        "type": "object",
-        "properties": {
-          "keys": {
-            "type": "array",
-            "description": "List of roles",
             "items": {
               "type": "string"
             }
@@ -46613,17 +47136,6 @@
           }
         }
       },
-      "PoliciesListPasswordPoliciesResponse": {
-        "type": "object",
-        "properties": {
-          "keys": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
       "PoliciesReadAclPolicy2Response": {
         "type": "object",
         "properties": {
@@ -47042,17 +47554,6 @@
           }
         }
       },
-      "RateLimitQuotasListResponse": {
-        "type": "object",
-        "properties": {
-          "keys": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
       "RateLimitQuotasReadConfigurationResponse": {
         "type": "object",
         "properties": {
@@ -47126,17 +47627,6 @@
           "type": {
             "type": "string",
             "description": "Type of the quota rule."
-          }
-        }
-      },
-      "RawListResponse": {
-        "type": "object",
-        "properties": {
-          "keys": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           }
         }
       },
@@ -48085,6 +48575,17 @@
             "format": "duration",
             "x-vault-displayAttrs": {
               "name": "TTL"
+            }
+          }
+        }
+      },
+      "StandardListResponse": {
+        "type": "object",
+        "properties": {
+          "keys": {
+            "type": "array",
+            "items": {
+              "type": "string"
             }
           }
         }

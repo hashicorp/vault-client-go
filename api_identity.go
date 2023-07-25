@@ -66,7 +66,7 @@ func (i *Identity) AliasDeleteById(ctx context.Context, id string, options ...Re
 }
 
 // AliasListById List all the alias IDs.
-func (i *Identity) AliasListById(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) AliasListById(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -77,7 +77,7 @@ func (i *Identity) AliasListById(ctx context.Context, options ...RequestOption) 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		i.client,
 		http.MethodGet,
@@ -275,7 +275,7 @@ func (i *Identity) EntityDeleteByName(ctx context.Context, name string, options 
 }
 
 // EntityListAliasesById List all the alias IDs.
-func (i *Identity) EntityListAliasesById(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) EntityListAliasesById(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -286,7 +286,7 @@ func (i *Identity) EntityListAliasesById(ctx context.Context, options ...Request
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		i.client,
 		http.MethodGet,
@@ -298,7 +298,7 @@ func (i *Identity) EntityListAliasesById(ctx context.Context, options ...Request
 }
 
 // EntityListById List all the entity IDs
-func (i *Identity) EntityListById(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) EntityListById(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -309,7 +309,7 @@ func (i *Identity) EntityListById(ctx context.Context, options ...RequestOption)
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		i.client,
 		http.MethodGet,
@@ -321,7 +321,7 @@ func (i *Identity) EntityListById(ctx context.Context, options ...RequestOption)
 }
 
 // EntityListByName List all the entity names
-func (i *Identity) EntityListByName(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) EntityListByName(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -332,7 +332,7 @@ func (i *Identity) EntityListByName(ctx context.Context, options ...RequestOptio
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		i.client,
 		http.MethodGet,
@@ -648,7 +648,7 @@ func (i *Identity) GroupDeleteByName(ctx context.Context, name string, options .
 }
 
 // GroupListAliasesById List all the group alias IDs.
-func (i *Identity) GroupListAliasesById(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) GroupListAliasesById(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -659,7 +659,7 @@ func (i *Identity) GroupListAliasesById(ctx context.Context, options ...RequestO
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		i.client,
 		http.MethodGet,
@@ -671,7 +671,7 @@ func (i *Identity) GroupListAliasesById(ctx context.Context, options ...RequestO
 }
 
 // GroupListById List all the group IDs.
-func (i *Identity) GroupListById(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) GroupListById(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -682,7 +682,7 @@ func (i *Identity) GroupListById(ctx context.Context, options ...RequestOption) 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		i.client,
 		http.MethodGet,
@@ -694,7 +694,7 @@ func (i *Identity) GroupListById(ctx context.Context, options ...RequestOption) 
 }
 
 // GroupListByName
-func (i *Identity) GroupListByName(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) GroupListByName(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -705,7 +705,7 @@ func (i *Identity) GroupListByName(ctx context.Context, options ...RequestOption
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		i.client,
 		http.MethodGet,
@@ -1157,7 +1157,7 @@ func (i *Identity) MfaGenerateTotpSecret(ctx context.Context, request schema.Mfa
 }
 
 // MfaListDuoMethods List MFA method configurations for the given MFA method
-func (i *Identity) MfaListDuoMethods(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) MfaListDuoMethods(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1168,7 +1168,7 @@ func (i *Identity) MfaListDuoMethods(ctx context.Context, options ...RequestOpti
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		i.client,
 		http.MethodGet,
@@ -1180,7 +1180,7 @@ func (i *Identity) MfaListDuoMethods(ctx context.Context, options ...RequestOpti
 }
 
 // MfaListLoginEnforcements List login enforcements
-func (i *Identity) MfaListLoginEnforcements(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) MfaListLoginEnforcements(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1191,7 +1191,7 @@ func (i *Identity) MfaListLoginEnforcements(ctx context.Context, options ...Requ
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		i.client,
 		http.MethodGet,
@@ -1203,7 +1203,7 @@ func (i *Identity) MfaListLoginEnforcements(ctx context.Context, options ...Requ
 }
 
 // MfaListMethods List MFA method configurations for all MFA methods
-func (i *Identity) MfaListMethods(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) MfaListMethods(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1214,7 +1214,7 @@ func (i *Identity) MfaListMethods(ctx context.Context, options ...RequestOption)
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		i.client,
 		http.MethodGet,
@@ -1226,7 +1226,7 @@ func (i *Identity) MfaListMethods(ctx context.Context, options ...RequestOption)
 }
 
 // MfaListOktaMethods List MFA method configurations for the given MFA method
-func (i *Identity) MfaListOktaMethods(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) MfaListOktaMethods(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1237,7 +1237,7 @@ func (i *Identity) MfaListOktaMethods(ctx context.Context, options ...RequestOpt
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		i.client,
 		http.MethodGet,
@@ -1249,7 +1249,7 @@ func (i *Identity) MfaListOktaMethods(ctx context.Context, options ...RequestOpt
 }
 
 // MfaListPingIdMethods List MFA method configurations for the given MFA method
-func (i *Identity) MfaListPingIdMethods(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) MfaListPingIdMethods(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1260,7 +1260,7 @@ func (i *Identity) MfaListPingIdMethods(ctx context.Context, options ...RequestO
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		i.client,
 		http.MethodGet,
@@ -1272,7 +1272,7 @@ func (i *Identity) MfaListPingIdMethods(ctx context.Context, options ...RequestO
 }
 
 // MfaListTotpMethods List MFA method configurations for the given MFA method
-func (i *Identity) MfaListTotpMethods(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) MfaListTotpMethods(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1283,7 +1283,7 @@ func (i *Identity) MfaListTotpMethods(ctx context.Context, options ...RequestOpt
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		i.client,
 		http.MethodGet,
@@ -1771,7 +1771,7 @@ func (i *Identity) OidcIntrospect(ctx context.Context, request schema.OidcIntros
 }
 
 // OidcListAssignments
-func (i *Identity) OidcListAssignments(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) OidcListAssignments(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1782,7 +1782,7 @@ func (i *Identity) OidcListAssignments(ctx context.Context, options ...RequestOp
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		i.client,
 		http.MethodGet,
@@ -1794,7 +1794,7 @@ func (i *Identity) OidcListAssignments(ctx context.Context, options ...RequestOp
 }
 
 // OidcListClients
-func (i *Identity) OidcListClients(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) OidcListClients(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1805,7 +1805,7 @@ func (i *Identity) OidcListClients(ctx context.Context, options ...RequestOption
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		i.client,
 		http.MethodGet,
@@ -1817,7 +1817,7 @@ func (i *Identity) OidcListClients(ctx context.Context, options ...RequestOption
 }
 
 // OidcListKeys List OIDC keys
-func (i *Identity) OidcListKeys(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) OidcListKeys(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1828,7 +1828,7 @@ func (i *Identity) OidcListKeys(ctx context.Context, options ...RequestOption) (
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		i.client,
 		http.MethodGet,
@@ -1841,7 +1841,7 @@ func (i *Identity) OidcListKeys(ctx context.Context, options ...RequestOption) (
 
 // OidcListProviders
 // allowedClientId: Filters the list of OIDC providers to those that allow the given client ID in their set of allowed_client_ids.
-func (i *Identity) OidcListProviders(ctx context.Context, allowedClientId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) OidcListProviders(ctx context.Context, allowedClientId string, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1850,10 +1850,10 @@ func (i *Identity) OidcListProviders(ctx context.Context, allowedClientId string
 	requestPath := "/v1/identity/oidc/provider/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("list", "true")
 	requestQueryParameters.Add("allowed_client_id", url.QueryEscape(parameterToString(allowedClientId)))
+	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		i.client,
 		http.MethodGet,
@@ -1865,7 +1865,7 @@ func (i *Identity) OidcListProviders(ctx context.Context, allowedClientId string
 }
 
 // OidcListRoles List configured OIDC roles
-func (i *Identity) OidcListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) OidcListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1876,7 +1876,7 @@ func (i *Identity) OidcListRoles(ctx context.Context, options ...RequestOption) 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		i.client,
 		http.MethodGet,
@@ -1888,7 +1888,7 @@ func (i *Identity) OidcListRoles(ctx context.Context, options ...RequestOption) 
 }
 
 // OidcListScopes
-func (i *Identity) OidcListScopes(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) OidcListScopes(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1899,7 +1899,7 @@ func (i *Identity) OidcListScopes(ctx context.Context, options ...RequestOption)
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		i.client,
 		http.MethodGet,
@@ -1912,16 +1912,16 @@ func (i *Identity) OidcListScopes(ctx context.Context, options ...RequestOption)
 
 // OidcProviderAuthorize
 // name: Name of the provider
+// clientId: The ID of the requesting client.
+// codeChallenge: The code challenge derived from the code verifier.
 // codeChallengeMethod: The method that was used to derive the code challenge. The following methods are supported: &#x27;S256&#x27;, &#x27;plain&#x27;. Defaults to &#x27;plain&#x27;.
+// maxAge: The allowable elapsed time in seconds since the last time the end-user was actively authenticated.
+// nonce: The value that will be returned in the ID token nonce claim after a token exchange.
+// redirectUri: The redirection URI to which the response will be sent.
+// responseType: The OIDC authentication flow to be used. The following response types are supported: &#x27;code&#x27;
 // scope: A space-delimited, case-sensitive list of scopes to be requested. The &#x27;openid&#x27; scope is required.
 // state: The value used to maintain state between the authentication request and client.
-// redirectUri: The redirection URI to which the response will be sent.
-// codeChallenge: The code challenge derived from the code verifier.
-// maxAge: The allowable elapsed time in seconds since the last time the end-user was actively authenticated.
-// clientId: The ID of the requesting client.
-// responseType: The OIDC authentication flow to be used. The following response types are supported: &#x27;code&#x27;
-// nonce: The value that will be returned in the ID token nonce claim after a token exchange.
-func (i *Identity) OidcProviderAuthorize(ctx context.Context, name string, codeChallengeMethod string, scope string, state string, redirectUri string, codeChallenge string, maxAge int32, clientId string, responseType string, nonce string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) OidcProviderAuthorize(ctx context.Context, name string, clientId string, codeChallenge string, codeChallengeMethod string, maxAge int32, nonce string, redirectUri string, responseType string, scope string, state string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1931,15 +1931,15 @@ func (i *Identity) OidcProviderAuthorize(ctx context.Context, name string, codeC
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("client_id", url.QueryEscape(parameterToString(clientId)))
+	requestQueryParameters.Add("code_challenge", url.QueryEscape(parameterToString(codeChallenge)))
 	requestQueryParameters.Add("code_challenge_method", url.QueryEscape(parameterToString(codeChallengeMethod)))
+	requestQueryParameters.Add("max_age", url.QueryEscape(parameterToString(maxAge)))
+	requestQueryParameters.Add("nonce", url.QueryEscape(parameterToString(nonce)))
+	requestQueryParameters.Add("redirect_uri", url.QueryEscape(parameterToString(redirectUri)))
+	requestQueryParameters.Add("response_type", url.QueryEscape(parameterToString(responseType)))
 	requestQueryParameters.Add("scope", url.QueryEscape(parameterToString(scope)))
 	requestQueryParameters.Add("state", url.QueryEscape(parameterToString(state)))
-	requestQueryParameters.Add("redirect_uri", url.QueryEscape(parameterToString(redirectUri)))
-	requestQueryParameters.Add("code_challenge", url.QueryEscape(parameterToString(codeChallenge)))
-	requestQueryParameters.Add("max_age", url.QueryEscape(parameterToString(maxAge)))
-	requestQueryParameters.Add("client_id", url.QueryEscape(parameterToString(clientId)))
-	requestQueryParameters.Add("response_type", url.QueryEscape(parameterToString(responseType)))
-	requestQueryParameters.Add("nonce", url.QueryEscape(parameterToString(nonce)))
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2497,7 +2497,7 @@ func (i *Identity) PersonaDeleteById(ctx context.Context, id string, options ...
 }
 
 // PersonaListById List all the alias IDs.
-func (i *Identity) PersonaListById(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (i *Identity) PersonaListById(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2508,7 +2508,7 @@ func (i *Identity) PersonaListById(ctx context.Context, options ...RequestOption
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		i.client,
 		http.MethodGet,

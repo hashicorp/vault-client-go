@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -815,7 +815,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -870,7 +870,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -925,7 +925,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -1766,7 +1766,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -1821,7 +1821,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -1876,7 +1876,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -3067,7 +3067,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -3122,7 +3122,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -3177,7 +3177,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -3232,7 +3232,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -3287,7 +3287,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -3342,7 +3342,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -4624,7 +4624,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -4679,7 +4679,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -4734,7 +4734,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -4792,7 +4792,7 @@ Name | Type | Description  | Notes
  **list** | **string** | Must be set to &#x60;true&#x60; | 
  **allowedClientId** | **string** | Filters the list of OIDC providers to those that allow the given client ID in their set of allowed_client_ids. | [default to &quot;&quot;]
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -4847,7 +4847,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -4902,7 +4902,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -4935,27 +4935,27 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
+	clientId := "clientId_example" // string | The ID of the requesting client.
+	codeChallenge := "codeChallenge_example" // string | The code challenge derived from the code verifier.
 	codeChallengeMethod := "codeChallengeMethod_example" // string | The method that was used to derive the code challenge. The following methods are supported: 'S256', 'plain'. Defaults to 'plain'. (defaults to "plain")
+	maxAge := int32(56) // int32 | The allowable elapsed time in seconds since the last time the end-user was actively authenticated.
+	nonce := "nonce_example" // string | The value that will be returned in the ID token nonce claim after a token exchange.
+	redirectUri := "redirectUri_example" // string | The redirection URI to which the response will be sent.
+	responseType := "responseType_example" // string | The OIDC authentication flow to be used. The following response types are supported: 'code'
 	scope := "scope_example" // string | A space-delimited, case-sensitive list of scopes to be requested. The 'openid' scope is required.
 	state := "state_example" // string | The value used to maintain state between the authentication request and client.
-	redirectUri := "redirectUri_example" // string | The redirection URI to which the response will be sent.
-	codeChallenge := "codeChallenge_example" // string | The code challenge derived from the code verifier.
-	maxAge := int32(56) // int32 | The allowable elapsed time in seconds since the last time the end-user was actively authenticated.
-	clientId := "clientId_example" // string | The ID of the requesting client.
-	responseType := "responseType_example" // string | The OIDC authentication flow to be used. The following response types are supported: 'code'
-	nonce := "nonce_example" // string | The value that will be returned in the ID token nonce claim after a token exchange.
 	resp, err := client.Identity.OidcProviderAuthorize(
 		context.Background(),
 		name,
+		clientId,
+		codeChallenge,
 		codeChallengeMethod,
+		maxAge,
+		nonce,
+		redirectUri,
+		responseType,
 		scope,
 		state,
-		redirectUri,
-		codeChallenge,
-		maxAge,
-		clientId,
-		responseType,
-		nonce,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4980,15 +4980,15 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **clientId** | **string** | The ID of the requesting client. | 
+ **codeChallenge** | **string** | The code challenge derived from the code verifier. | 
  **codeChallengeMethod** | **string** | The method that was used to derive the code challenge. The following methods are supported: &#x27;S256&#x27;, &#x27;plain&#x27;. Defaults to &#x27;plain&#x27;. | [default to &quot;plain&quot;]
+ **maxAge** | **int32** | The allowable elapsed time in seconds since the last time the end-user was actively authenticated. | 
+ **nonce** | **string** | The value that will be returned in the ID token nonce claim after a token exchange. | 
+ **redirectUri** | **string** | The redirection URI to which the response will be sent. | 
+ **responseType** | **string** | The OIDC authentication flow to be used. The following response types are supported: &#x27;code&#x27; | 
  **scope** | **string** | A space-delimited, case-sensitive list of scopes to be requested. The &#x27;openid&#x27; scope is required. | 
  **state** | **string** | The value used to maintain state between the authentication request and client. | 
- **redirectUri** | **string** | The redirection URI to which the response will be sent. | 
- **codeChallenge** | **string** | The code challenge derived from the code verifier. | 
- **maxAge** | **int32** | The allowable elapsed time in seconds since the last time the end-user was actively authenticated. | 
- **clientId** | **string** | The ID of the requesting client. | 
- **responseType** | **string** | The OIDC authentication flow to be used. The following response types are supported: &#x27;code&#x27; | 
- **nonce** | **string** | The value that will be returned in the ID token nonce claim after a token exchange. | 
 
  (empty response body)
 
@@ -6444,7 +6444,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)

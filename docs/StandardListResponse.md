@@ -1,4 +1,4 @@
-# RawListResponse
+# StandardListResponse
 
 
 ## Properties

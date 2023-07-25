@@ -3883,7 +3883,7 @@ func (a *Auth) JwtLogin(ctx context.Context, request schema.JwtLoginRequest, opt
 }
 
 // JwtOidcCallback Callback endpoint to complete an OIDC login.
-func (a *Auth) JwtOidcCallback(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) JwtOidcCallback(ctx context.Context, clientNonce string, code string, state string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3893,6 +3893,9 @@ func (a *Auth) JwtOidcCallback(ctx context.Context, options ...RequestOption) (*
 	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("jwt")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("client_nonce", url.QueryEscape(parameterToString(clientNonce)))
+	requestQueryParameters.Add("code", url.QueryEscape(parameterToString(code)))
+	requestQueryParameters.Add("state", url.QueryEscape(parameterToString(state)))
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3905,8 +3908,8 @@ func (a *Auth) JwtOidcCallback(ctx context.Context, options ...RequestOption) (*
 	)
 }
 
-// JwtOidcCallbackWithParameters Callback endpoint to handle form_posts.
-func (a *Auth) JwtOidcCallbackWithParameters(ctx context.Context, request schema.JwtOidcCallbackWithParametersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// JwtOidcCallbackFormPost Callback endpoint to handle form_posts.
+func (a *Auth) JwtOidcCallbackFormPost(ctx context.Context, request schema.JwtOidcCallbackFormPostRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err

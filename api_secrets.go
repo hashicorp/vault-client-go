@@ -1719,7 +1719,10 @@ func (s *Secrets) GoogleCloudGenerateRolesetAccessTokenWithParameters(ctx contex
 
 // GoogleCloudGenerateRolesetKey
 // roleset: Required. Name of the role set.
-func (s *Secrets) GoogleCloudGenerateRolesetKey(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// keyAlgorithm: Private key algorithm for service account key - defaults to KEY_ALG_RSA_2048\&quot;
+// keyType: Private key type for service account key - defaults to TYPE_GOOGLE_CREDENTIALS_FILE\&quot;
+// ttl: Lifetime of the service account key
+func (s *Secrets) GoogleCloudGenerateRolesetKey(ctx context.Context, roleset string, keyAlgorithm string, keyType string, ttl string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1730,6 +1733,9 @@ func (s *Secrets) GoogleCloudGenerateRolesetKey(ctx context.Context, roleset str
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("key_algorithm", url.QueryEscape(parameterToString(keyAlgorithm)))
+	requestQueryParameters.Add("key_type", url.QueryEscape(parameterToString(keyType)))
+	requestQueryParameters.Add("ttl", url.QueryEscape(parameterToString(ttl)))
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1819,7 +1825,10 @@ func (s *Secrets) GoogleCloudGenerateStaticAccountAccessTokenWithParameters(ctx 
 
 // GoogleCloudGenerateStaticAccountKey
 // name: Required. Name of the static account.
-func (s *Secrets) GoogleCloudGenerateStaticAccountKey(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// keyAlgorithm: Private key algorithm for service account key. Defaults to KEY_ALG_RSA_2048.\&quot;
+// keyType: Private key type for service account key. Defaults to TYPE_GOOGLE_CREDENTIALS_FILE.\&quot;
+// ttl: Lifetime of the service account key
+func (s *Secrets) GoogleCloudGenerateStaticAccountKey(ctx context.Context, name string, keyAlgorithm string, keyType string, ttl string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1830,6 +1839,9 @@ func (s *Secrets) GoogleCloudGenerateStaticAccountKey(ctx context.Context, name 
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("key_algorithm", url.QueryEscape(parameterToString(keyAlgorithm)))
+	requestQueryParameters.Add("key_type", url.QueryEscape(parameterToString(keyType)))
+	requestQueryParameters.Add("ttl", url.QueryEscape(parameterToString(ttl)))
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2921,7 +2933,7 @@ func (s *Secrets) KvV1Delete(ctx context.Context, path string, options ...Reques
 
 // KvV1List
 // path: Location of the secret.
-func (s *Secrets) KvV1List(ctx context.Context, path string, options ...RequestOption) (*Response[schema.KvV1ListResponse], error) {
+func (s *Secrets) KvV1List(ctx context.Context, path string, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2934,7 +2946,7 @@ func (s *Secrets) KvV1List(ctx context.Context, path string, options ...RequestO
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[schema.KvV1ListResponse](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,
@@ -2972,7 +2984,7 @@ func (s *Secrets) KvV1Read(ctx context.Context, path string, options ...RequestO
 
 // KvV1Write
 // path: Location of the secret.
-func (s *Secrets) KvV1Write(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) KvV1Write(ctx context.Context, path string, request map[string]interface{}, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2984,12 +2996,12 @@ func (s *Secrets) KvV1Write(ctx context.Context, path string, options ...Request
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
 		s.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
+		request,
 		requestQueryParameters,
 		requestModifiers,
 	)
@@ -3120,7 +3132,7 @@ func (s *Secrets) KvV2DestroyVersions(ctx context.Context, path string, request 
 
 // KvV2ListMetadata
 // path: Location of the secret.
-func (s *Secrets) KvV2ListMetadata(ctx context.Context, path string, options ...RequestOption) (*Response[schema.KvV2ListMetadataResponse], error) {
+func (s *Secrets) KvV2ListMetadata(ctx context.Context, path string, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3133,7 +3145,7 @@ func (s *Secrets) KvV2ListMetadata(ctx context.Context, path string, options ...
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[schema.KvV2ListMetadataResponse](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		s.client,
 		http.MethodGet,

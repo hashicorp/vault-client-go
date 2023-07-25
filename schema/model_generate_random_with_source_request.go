@@ -12,7 +12,4 @@ type GenerateRandomWithSourceRequest struct {
 
 	// Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".
 	Format string `json:"format,omitempty"`
-
-	// The number of bytes to generate (POST URL parameter)
-	Urlbytes string `json:"urlbytes,omitempty"`
 }

@@ -1850,8 +1850,8 @@ func (i *Identity) OidcListProviders(ctx context.Context, allowedClientId string
 	requestPath := "/v1/identity/oidc/provider/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("allowedClientId", url.QueryEscape(parameterToString(allowedClientId)))
 	requestQueryParameters.Add("list", "true")
+	requestQueryParameters.Add("allowedClientId", url.QueryEscape(parameterToString(allowedClientId)))
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1912,7 +1912,16 @@ func (i *Identity) OidcListScopes(ctx context.Context, options ...RequestOption)
 
 // OidcProviderAuthorize
 // name: Name of the provider
-func (i *Identity) OidcProviderAuthorize(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// codeChallengeMethod: The method that was used to derive the code challenge. The following methods are supported: &#x27;S256&#x27;, &#x27;plain&#x27;. Defaults to &#x27;plain&#x27;.
+// scope: A space-delimited, case-sensitive list of scopes to be requested. The &#x27;openid&#x27; scope is required.
+// state: The value used to maintain state between the authentication request and client.
+// redirectUri: The redirection URI to which the response will be sent.
+// codeChallenge: The code challenge derived from the code verifier.
+// maxAge: The allowable elapsed time in seconds since the last time the end-user was actively authenticated.
+// clientId: The ID of the requesting client.
+// responseType: The OIDC authentication flow to be used. The following response types are supported: &#x27;code&#x27;
+// nonce: The value that will be returned in the ID token nonce claim after a token exchange.
+func (i *Identity) OidcProviderAuthorize(ctx context.Context, name string, codeChallengeMethod string, scope string, state string, redirectUri string, codeChallenge string, maxAge int32, clientId string, responseType string, nonce string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1922,6 +1931,15 @@ func (i *Identity) OidcProviderAuthorize(ctx context.Context, name string, optio
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("codeChallengeMethod", url.QueryEscape(parameterToString(codeChallengeMethod)))
+	requestQueryParameters.Add("scope", url.QueryEscape(parameterToString(scope)))
+	requestQueryParameters.Add("state", url.QueryEscape(parameterToString(state)))
+	requestQueryParameters.Add("redirectUri", url.QueryEscape(parameterToString(redirectUri)))
+	requestQueryParameters.Add("codeChallenge", url.QueryEscape(parameterToString(codeChallenge)))
+	requestQueryParameters.Add("maxAge", url.QueryEscape(parameterToString(maxAge)))
+	requestQueryParameters.Add("clientId", url.QueryEscape(parameterToString(clientId)))
+	requestQueryParameters.Add("responseType", url.QueryEscape(parameterToString(responseType)))
+	requestQueryParameters.Add("nonce", url.QueryEscape(parameterToString(nonce)))
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,

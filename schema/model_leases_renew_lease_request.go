@@ -12,7 +12,4 @@ type LeasesRenewLeaseRequest struct {
 
 	// The lease identifier to renew. This is included with a lease.
 	LeaseId string `json:"lease_id,omitempty"`
-
-	// The lease identifier to renew. This is included with a lease.
-	UrlLeaseId string `json:"url_lease_id,omitempty"`
 }

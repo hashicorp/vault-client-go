@@ -19,9 +19,6 @@ type PluginsCatalogRegisterPluginRequest struct {
 	// The SHA256 sum of the executable used in the command field. This should be HEX encoded.
 	Sha256 string `json:"sha256,omitempty"`
 
-	// The type of the plugin, may be auth, secret, or database
-	Type string `json:"type,omitempty"`
-
 	// The semantic version of the plugin to use.
 	Version string `json:"version,omitempty"`
 }

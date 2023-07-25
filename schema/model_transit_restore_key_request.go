@@ -12,7 +12,4 @@ type TransitRestoreKeyRequest struct {
 
 	// If set and a key by the given name exists, force the restore operation and override the key.
 	Force bool `json:"force,omitempty"`
-
-	// If set, this will be the name of the restored key.
-	Name string `json:"name,omitempty"`
 }

@@ -1174,9 +1174,15 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+	roleArn := "roleArn_example" // string | ARN of role to assume when credential_type is assumed_role
+	ttl := "ttl_example" // string | Lifetime of the returned credentials in seconds (defaults to "3600")
+	roleSessionName := "roleSessionName_example" // string | Session name to use when assuming role. Max chars: 64
 	resp, err := client.Secrets.AwsGenerateCredentials(
 		context.Background(),
 		name,
+		roleArn,
+		ttl,
+		roleSessionName,
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -1203,6 +1209,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+ **roleArn** | **string** | ARN of role to assume when credential_type is assumed_role | 
+ **ttl** | **string** | Lifetime of the returned credentials in seconds | [default to &quot;3600&quot;]
+ **roleSessionName** | **string** | Session name to use when assuming role. Max chars: 64 | 
 
  (empty response body)
 
@@ -1303,9 +1312,15 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+	roleArn := "roleArn_example" // string | ARN of role to assume when credential_type is assumed_role
+	ttl := "ttl_example" // string | Lifetime of the returned credentials in seconds (defaults to "3600")
+	roleSessionName := "roleSessionName_example" // string | Session name to use when assuming role. Max chars: 64
 	resp, err := client.Secrets.AwsGenerateStsCredentials(
 		context.Background(),
 		name,
+		roleArn,
+		ttl,
+		roleSessionName,
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -1332,6 +1347,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+ **roleArn** | **string** | ARN of role to assume when credential_type is assumed_role | 
+ **ttl** | **string** | Lifetime of the returned credentials in seconds | [default to &quot;3600&quot;]
+ **roleSessionName** | **string** | Session name to use when assuming role. Max chars: 64 | 
 
  (empty response body)
 
@@ -3169,6 +3187,7 @@ func main() {
 	resp, err := client.Secrets.CubbyholeWrite(
 		context.Background(),
 		path,
+		map[string]interface{}{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3193,6 +3212,7 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **requestBody** | **map[string]interface{}** |  | 
 
  (empty response body)
 

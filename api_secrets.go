@@ -1684,31 +1684,6 @@ func (s *Secrets) GoogleCloudGenerateRolesetAccessToken(ctx context.Context, rol
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// GoogleCloudGenerateRolesetAccessTokenWithParameters
-// roleset: Required. Name of the role set.
-func (s *Secrets) GoogleCloudGenerateRolesetAccessTokenWithParameters(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{gcp_mount_path}/roleset/{roleset}/token"
-	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
-
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
 		http.MethodPost,
 		requestPath,
 		nil, // request body
@@ -1719,38 +1694,7 @@ func (s *Secrets) GoogleCloudGenerateRolesetAccessTokenWithParameters(ctx contex
 
 // GoogleCloudGenerateRolesetKey
 // roleset: Required. Name of the role set.
-// keyAlgorithm: Private key algorithm for service account key - defaults to KEY_ALG_RSA_2048\&quot;
-// keyType: Private key type for service account key - defaults to TYPE_GOOGLE_CREDENTIALS_FILE\&quot;
-// ttl: Lifetime of the service account key
-func (s *Secrets) GoogleCloudGenerateRolesetKey(ctx context.Context, roleset string, keyAlgorithm string, keyType string, ttl string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{gcp_mount_path}/roleset/{roleset}/key"
-	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
-
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("key_algorithm", url.QueryEscape(parameterToString(keyAlgorithm)))
-	requestQueryParameters.Add("key_type", url.QueryEscape(parameterToString(keyType)))
-	requestQueryParameters.Add("ttl", url.QueryEscape(parameterToString(ttl)))
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// GoogleCloudGenerateRolesetKeyWithParameters
-// roleset: Required. Name of the role set.
-func (s *Secrets) GoogleCloudGenerateRolesetKeyWithParameters(ctx context.Context, roleset string, request schema.GoogleCloudGenerateRolesetKeyWithParametersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudGenerateRolesetKey(ctx context.Context, roleset string, request schema.GoogleCloudGenerateRolesetKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1790,31 +1734,6 @@ func (s *Secrets) GoogleCloudGenerateStaticAccountAccessToken(ctx context.Contex
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// GoogleCloudGenerateStaticAccountAccessTokenWithParameters
-// name: Required. Name of the static account.
-func (s *Secrets) GoogleCloudGenerateStaticAccountAccessTokenWithParameters(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{gcp_mount_path}/static-account/{name}/token"
-	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
 		http.MethodPost,
 		requestPath,
 		nil, // request body
@@ -1825,38 +1744,7 @@ func (s *Secrets) GoogleCloudGenerateStaticAccountAccessTokenWithParameters(ctx 
 
 // GoogleCloudGenerateStaticAccountKey
 // name: Required. Name of the static account.
-// keyAlgorithm: Private key algorithm for service account key. Defaults to KEY_ALG_RSA_2048.\&quot;
-// keyType: Private key type for service account key. Defaults to TYPE_GOOGLE_CREDENTIALS_FILE.\&quot;
-// ttl: Lifetime of the service account key
-func (s *Secrets) GoogleCloudGenerateStaticAccountKey(ctx context.Context, name string, keyAlgorithm string, keyType string, ttl string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{gcp_mount_path}/static-account/{name}/key"
-	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("key_algorithm", url.QueryEscape(parameterToString(keyAlgorithm)))
-	requestQueryParameters.Add("key_type", url.QueryEscape(parameterToString(keyType)))
-	requestQueryParameters.Add("ttl", url.QueryEscape(parameterToString(ttl)))
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		s.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// GoogleCloudGenerateStaticAccountKeyWithParameters
-// name: Required. Name of the static account.
-func (s *Secrets) GoogleCloudGenerateStaticAccountKeyWithParameters(ctx context.Context, name string, request schema.GoogleCloudGenerateStaticAccountKeyWithParametersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) GoogleCloudGenerateStaticAccountKey(ctx context.Context, name string, request schema.GoogleCloudGenerateStaticAccountKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3055,9 +2943,9 @@ func (s *Secrets) KvV2Delete(ctx context.Context, path string, options ...Reques
 	)
 }
 
-// KvV2DeleteMetadata
+// KvV2DeleteMetadataAndAllVersions
 // path: Location of the secret.
-func (s *Secrets) KvV2DeleteMetadata(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) KvV2DeleteMetadataAndAllVersions(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3130,9 +3018,9 @@ func (s *Secrets) KvV2DestroyVersions(ctx context.Context, path string, request 
 	)
 }
 
-// KvV2ListMetadata
+// KvV2List
 // path: Location of the secret.
-func (s *Secrets) KvV2ListMetadata(ctx context.Context, path string, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
+func (s *Secrets) KvV2List(ctx context.Context, path string, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err

@@ -17,10 +17,9 @@ type {{cut classname "Api"}} struct {
 	client *Client
 }
 {{#each operation}}
-{{#endsWith nickname "2"}}
-{{else}}
-{{#endsWith nickname "3"}}
-{{else}}
+{{#endsWith nickname "2"}}{{else}}
+{{#endsWith nickname "3"}}{{else}}
+{{#endsWith nickname "4"}}{{else}}
 
 {{#if isDeprecated}}
 // Deprecated{{/if}}
@@ -66,6 +65,7 @@ func ({{lower (substring classname 0 1)}} *{{cut classname "Api"}}) {{nickname}}
 	)
 {{/unless}}
 }
+{{/endsWith}}
 {{/endsWith}}
 {{/endsWith}}
 {{/each}}

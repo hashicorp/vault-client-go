@@ -1850,7 +1850,7 @@ func (i *Identity) OidcListProviders(ctx context.Context, allowedClientId string
 	requestPath := "/v1/identity/oidc/provider/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("allowedClientId", url.QueryEscape(parameterToString(allowedClientId)))
+	requestQueryParameters.Add("allowed_client_id", url.QueryEscape(parameterToString(allowedClientId)))
 	requestQueryParameters.Add("list", "true")
 
 	return sendRequestParseResponse[map[string]interface{}](

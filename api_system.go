@@ -946,7 +946,7 @@ func (s *System) InternalGenerateOpenApiDocument(ctx context.Context, genericMou
 	requestPath := "/v1/sys/internal/specs/openapi"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("genericMountPaths", url.QueryEscape(parameterToString(genericMountPaths)))
+	requestQueryParameters.Add("generic_mount_paths", url.QueryEscape(parameterToString(genericMountPaths)))
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -970,7 +970,7 @@ func (s *System) InternalGenerateOpenApiDocumentWithParameters(ctx context.Conte
 	requestPath := "/v1/sys/internal/specs/openapi"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("genericMountPaths", url.QueryEscape(parameterToString(genericMountPaths)))
+	requestQueryParameters.Add("generic_mount_paths", url.QueryEscape(parameterToString(genericMountPaths)))
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1661,8 +1661,8 @@ func (s *System) Monitor(ctx context.Context, logFormat string, logLevel string,
 	requestPath := "/v1/sys/monitor"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("logFormat", url.QueryEscape(parameterToString(logFormat)))
-	requestQueryParameters.Add("logLevel", url.QueryEscape(parameterToString(logLevel)))
+	requestQueryParameters.Add("log_format", url.QueryEscape(parameterToString(logFormat)))
+	requestQueryParameters.Add("log_level", url.QueryEscape(parameterToString(logLevel)))
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,

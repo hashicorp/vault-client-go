@@ -2587,9 +2587,11 @@ func main() {
 	}
 
 	genericMountPaths := true // bool | Use generic mount paths (defaults to false)
+	context := "context_example" // string | Context string appended to every operationId
 	resp, err := client.System.InternalGenerateOpenApiDocument(
 		context.Background(),
 		genericMountPaths,
+		context,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2610,6 +2612,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **genericMountPaths** | **bool** | Use generic mount paths | [default to false]
+ **context** | **string** | Context string appended to every operationId | 
 
  (empty response body)
 
@@ -2644,11 +2647,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	genericMountPaths := true // bool | Use generic mount paths (defaults to false)
 	resp, err := client.System.InternalGenerateOpenApiDocumentWithParameters(
 		context.Background(),
 		InternalGenerateOpenApiDocumentWithParametersRequest{ /* populate request parameters */ },
-		genericMountPaths,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2669,7 +2670,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **internalGenerateOpenApiDocumentWithParametersRequest** | [**InternalGenerateOpenApiDocumentWithParametersRequest**](InternalGenerateOpenApiDocumentWithParametersRequest.md) |  | 
- **genericMountPaths** | **bool** | Use generic mount paths | [default to false]
 
  (empty response body)
 
@@ -4361,12 +4361,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	logFormat := "logFormat_example" // string | Output format of logs. Supported values are \"standard\" and \"json\". The default is \"standard\". (defaults to "standard")
 	logLevel := "logLevel_example" // string | Log level to view system logs at. Currently supported values are \"trace\", \"debug\", \"info\", \"warn\", \"error\".
+	logFormat := "logFormat_example" // string | Output format of logs. Supported values are \"standard\" and \"json\". The default is \"standard\". (defaults to "standard")
 	resp, err := client.System.Monitor(
 		context.Background(),
-		logFormat,
 		logLevel,
+		logFormat,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4386,8 +4386,8 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **logFormat** | **string** | Output format of logs. Supported values are \&quot;standard\&quot; and \&quot;json\&quot;. The default is \&quot;standard\&quot;. | [default to &quot;standard&quot;]
  **logLevel** | **string** | Log level to view system logs at. Currently supported values are \&quot;trace\&quot;, \&quot;debug\&quot;, \&quot;info\&quot;, \&quot;warn\&quot;, \&quot;error\&quot;. | 
+ **logFormat** | **string** | Output format of logs. Supported values are \&quot;standard\&quot; and \&quot;json\&quot;. The default is \&quot;standard\&quot;. | [default to &quot;standard&quot;]
 
  (empty response body)
 
@@ -11873,7 +11873,6 @@ import (
 	"os"
 
 	"github.com/hashicorp/vault-client-go"
-	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -11886,7 +11885,6 @@ func main() {
 
 	resp, err := client.System.SystemWriteNamespacesApiLockLock(
 		context.Background(),
-		SystemWriteNamespacesApiLockLockRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -11899,14 +11897,11 @@ func main() {
 
 ### Path Parameters
 
-
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **systemWriteNamespacesApiLockLockRequest** | [**SystemWriteNamespacesApiLockLockRequest**](SystemWriteNamespacesApiLockLockRequest.md) |  | 
 
  (empty response body)
 
@@ -11991,7 +11986,6 @@ import (
 	"os"
 
 	"github.com/hashicorp/vault-client-go"
-	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -12004,7 +11998,6 @@ func main() {
 
 	resp, err := client.System.SystemWriteNamespacesApiLockUnlock(
 		context.Background(),
-		SystemWriteNamespacesApiLockUnlockRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -12017,14 +12010,11 @@ func main() {
 
 ### Path Parameters
 
-
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **systemWriteNamespacesApiLockUnlockRequest** | [**SystemWriteNamespacesApiLockUnlockRequest**](SystemWriteNamespacesApiLockUnlockRequest.md) |  | 
 
  (empty response body)
 
@@ -14778,6 +14768,7 @@ func main() {
 
 	resp, err := client.System.Wrap(
 		context.Background(),
+		map[string]interface{}{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14790,11 +14781,14 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
 
 ### Other Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **requestBody** | **map[string]interface{}** |  | 
 
  (empty response body)
 

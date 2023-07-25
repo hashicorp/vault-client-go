@@ -310,7 +310,10 @@ func (s *Secrets) AwsDeleteStaticRolesName(ctx context.Context, name string, opt
 
 // AwsGenerateCredentials
 // name: Name of the role
-func (s *Secrets) AwsGenerateCredentials(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// roleArn: ARN of role to assume when credential_type is assumed_role
+// ttl: Lifetime of the returned credentials in seconds
+// roleSessionName: Session name to use when assuming role. Max chars: 64
+func (s *Secrets) AwsGenerateCredentials(ctx context.Context, name string, roleArn string, ttl string, roleSessionName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -321,6 +324,9 @@ func (s *Secrets) AwsGenerateCredentials(ctx context.Context, name string, optio
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("roleArn", url.QueryEscape(parameterToString(roleArn)))
+	requestQueryParameters.Add("ttl", url.QueryEscape(parameterToString(ttl)))
+	requestQueryParameters.Add("roleSessionName", url.QueryEscape(parameterToString(roleSessionName)))
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -360,7 +366,10 @@ func (s *Secrets) AwsGenerateCredentialsWithParameters(ctx context.Context, name
 
 // AwsGenerateStsCredentials
 // name: Name of the role
-func (s *Secrets) AwsGenerateStsCredentials(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// roleArn: ARN of role to assume when credential_type is assumed_role
+// ttl: Lifetime of the returned credentials in seconds
+// roleSessionName: Session name to use when assuming role. Max chars: 64
+func (s *Secrets) AwsGenerateStsCredentials(ctx context.Context, name string, roleArn string, ttl string, roleSessionName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -371,6 +380,9 @@ func (s *Secrets) AwsGenerateStsCredentials(ctx context.Context, name string, op
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters.Add("roleArn", url.QueryEscape(parameterToString(roleArn)))
+	requestQueryParameters.Add("ttl", url.QueryEscape(parameterToString(ttl)))
+	requestQueryParameters.Add("roleSessionName", url.QueryEscape(parameterToString(roleSessionName)))
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1088,7 +1100,7 @@ func (s *Secrets) CubbyholeRead(ctx context.Context, path string, options ...Req
 
 // CubbyholeWrite Store a secret at the specified location.
 // path: Specifies the path of the secret.
-func (s *Secrets) CubbyholeWrite(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *Secrets) CubbyholeWrite(ctx context.Context, path string, request map[string]interface{}, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1099,12 +1111,12 @@ func (s *Secrets) CubbyholeWrite(ctx context.Context, path string, options ...Re
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
 		s.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
+		request,
 		requestQueryParameters,
 		requestModifiers,
 	)

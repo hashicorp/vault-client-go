@@ -937,7 +937,8 @@ func (s *System) InternalCountTokens(ctx context.Context, options ...RequestOpti
 
 // InternalGenerateOpenApiDocument
 // genericMountPaths: Use generic mount paths
-func (s *System) InternalGenerateOpenApiDocument(ctx context.Context, genericMountPaths bool, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// context: Context string appended to every operationId
+func (s *System) InternalGenerateOpenApiDocument(ctx context.Context, genericMountPaths bool, context string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -946,7 +947,8 @@ func (s *System) InternalGenerateOpenApiDocument(ctx context.Context, genericMou
 	requestPath := "/v1/sys/internal/specs/openapi"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("generic_mount_paths", url.QueryEscape(parameterToString(genericMountPaths)))
+	requestQueryParameters.Add("genericMountPaths", url.QueryEscape(parameterToString(genericMountPaths)))
+	requestQueryParameters.Add("context", url.QueryEscape(parameterToString(context)))
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -960,8 +962,7 @@ func (s *System) InternalGenerateOpenApiDocument(ctx context.Context, genericMou
 }
 
 // InternalGenerateOpenApiDocumentWithParameters
-// genericMountPaths: Use generic mount paths
-func (s *System) InternalGenerateOpenApiDocumentWithParameters(ctx context.Context, request schema.InternalGenerateOpenApiDocumentWithParametersRequest, genericMountPaths bool, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) InternalGenerateOpenApiDocumentWithParameters(ctx context.Context, request schema.InternalGenerateOpenApiDocumentWithParametersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -970,7 +971,6 @@ func (s *System) InternalGenerateOpenApiDocumentWithParameters(ctx context.Conte
 	requestPath := "/v1/sys/internal/specs/openapi"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("generic_mount_paths", url.QueryEscape(parameterToString(genericMountPaths)))
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1650,9 +1650,9 @@ func (s *System) MfaValidate(ctx context.Context, request schema.MfaValidateRequ
 }
 
 // Monitor
-// logFormat: Output format of logs. Supported values are \&quot;standard\&quot; and \&quot;json\&quot;. The default is \&quot;standard\&quot;.
 // logLevel: Log level to view system logs at. Currently supported values are \&quot;trace\&quot;, \&quot;debug\&quot;, \&quot;info\&quot;, \&quot;warn\&quot;, \&quot;error\&quot;.
-func (s *System) Monitor(ctx context.Context, logFormat string, logLevel string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// logFormat: Output format of logs. Supported values are \&quot;standard\&quot; and \&quot;json\&quot;. The default is \&quot;standard\&quot;.
+func (s *System) Monitor(ctx context.Context, logLevel string, logFormat string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1661,8 +1661,8 @@ func (s *System) Monitor(ctx context.Context, logFormat string, logLevel string,
 	requestPath := "/v1/sys/monitor"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("log_format", url.QueryEscape(parameterToString(logFormat)))
-	requestQueryParameters.Add("log_level", url.QueryEscape(parameterToString(logLevel)))
+	requestQueryParameters.Add("logLevel", url.QueryEscape(parameterToString(logLevel)))
+	requestQueryParameters.Add("logFormat", url.QueryEscape(parameterToString(logFormat)))
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4641,7 +4641,7 @@ func (s *System) SystemWriteMfaMethodTotpNameAdminGenerate(ctx context.Context, 
 }
 
 // SystemWriteNamespacesApiLockLock
-func (s *System) SystemWriteNamespacesApiLockLock(ctx context.Context, request schema.SystemWriteNamespacesApiLockLockRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) SystemWriteNamespacesApiLockLock(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4651,12 +4651,12 @@ func (s *System) SystemWriteNamespacesApiLockLock(ctx context.Context, request s
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
-	return sendStructuredRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		s.client,
 		http.MethodPost,
 		requestPath,
-		request,
+		nil, // request body
 		requestQueryParameters,
 		requestModifiers,
 	)
@@ -4686,7 +4686,7 @@ func (s *System) SystemWriteNamespacesApiLockLockPath(ctx context.Context, path 
 }
 
 // SystemWriteNamespacesApiLockUnlock
-func (s *System) SystemWriteNamespacesApiLockUnlock(ctx context.Context, request schema.SystemWriteNamespacesApiLockUnlockRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) SystemWriteNamespacesApiLockUnlock(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4696,12 +4696,12 @@ func (s *System) SystemWriteNamespacesApiLockUnlock(ctx context.Context, request
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
-	return sendStructuredRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		s.client,
 		http.MethodPost,
 		requestPath,
-		request,
+		nil, // request body
 		requestQueryParameters,
 		requestModifiers,
 	)
@@ -5824,7 +5824,7 @@ func (s *System) VersionHistory(ctx context.Context, options ...RequestOption) (
 }
 
 // Wrap
-func (s *System) Wrap(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (s *System) Wrap(ctx context.Context, request map[string]interface{}, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5834,12 +5834,12 @@ func (s *System) Wrap(ctx context.Context, options ...RequestOption) (*Response[
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
 		s.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
+		request,
 		requestQueryParameters,
 		requestModifiers,
 	)

@@ -133,6 +133,16 @@
         "tags": [
           "auth"
         ],
+        "parameters": [
+          {
+            "name": "token",
+            "description": "Token to lookup",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -1391,6 +1401,16 @@
         "tags": [
           "auth"
         ],
+        "parameters": [
+          {
+            "name": "secret_id_accessor",
+            "description": "Accessor of the SecretID",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "204": {
             "description": "No Content"
@@ -1775,6 +1795,16 @@
         "operationId": "app-role-destroy-secret-id2",
         "tags": [
           "auth"
+        ],
+        "parameters": [
+          {
+            "name": "secret_id",
+            "description": "SecretID attached to the role.",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "204": {
@@ -7227,6 +7257,17 @@
         "tags": [
           "secrets"
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -9157,17 +9198,6 @@
     },
     "/identity/oidc/provider/": {
       "description": "List OIDC providers",
-      "parameters": [
-        {
-          "name": "allowed_client_id",
-          "description": "Filters the list of OIDC providers to those that allow the given client ID in their set of allowed_client_ids.",
-          "in": "query",
-          "schema": {
-            "type": "string",
-            "default": ""
-          }
-        }
-      ],
       "get": {
         "operationId": "oidc-list-providers",
         "tags": [
@@ -9185,6 +9215,15 @@
               ]
             },
             "required": true
+          },
+          {
+            "name": "allowed_client_id",
+            "description": "Filters the list of OIDC providers to those that allow the given client ID in their set of allowed_client_ids.",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": ""
+            }
           }
         ],
         "responses": {
@@ -9321,6 +9360,81 @@
         "operationId": "oidc-provider-authorize",
         "tags": [
           "identity"
+        ],
+        "parameters": [
+          {
+            "name": "code_challenge_method",
+            "description": "The method that was used to derive the code challenge. The following methods are supported: 'S256', 'plain'. Defaults to 'plain'.",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "plain"
+            }
+          },
+          {
+            "name": "scope",
+            "description": "A space-delimited, case-sensitive list of scopes to be requested. The 'openid' scope is required.",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state",
+            "description": "The value used to maintain state between the authentication request and client.",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "redirect_uri",
+            "description": "The redirection URI to which the response will be sent.",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "code_challenge",
+            "description": "The code challenge derived from the code verifier.",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "max_age",
+            "description": "The allowable elapsed time in seconds since the last time the end-user was actively authenticated.",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "client_id",
+            "description": "The ID of the requesting client.",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "response_type",
+            "description": "The OIDC authentication flow to be used. The following response types are supported: 'code'",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "nonce",
+            "description": "The value that will be returned in the ID token nonce claim after a token exchange.",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -10925,22 +11039,30 @@
     },
     "/sys/internal/specs/openapi": {
       "description": "Generate an OpenAPI 3 document of all mounted paths.",
-      "parameters": [
-        {
-          "name": "generic_mount_paths",
-          "description": "Use generic mount paths",
-          "in": "query",
-          "schema": {
-            "type": "boolean",
-            "default": false
-          }
-        }
-      ],
       "x-vault-unauthenticated": true,
       "get": {
         "operationId": "internal-generate-open-api-document",
         "tags": [
           "system"
+        ],
+        "parameters": [
+          {
+            "name": "generic_mount_paths",
+            "description": "Use generic mount paths",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "context",
+            "description": "Context string appended to every operationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -11752,20 +11874,20 @@
     },
     "/sys/metrics": {
       "description": "Export the metrics aggregated for telemetry purpose.",
-      "parameters": [
-        {
-          "name": "format",
-          "description": "Format to export metrics into. Currently accepts only \"prometheus\".",
-          "in": "query",
-          "schema": {
-            "type": "string"
-          }
-        }
-      ],
       "get": {
         "operationId": "metrics",
         "tags": [
           "system"
+        ],
+        "parameters": [
+          {
+            "name": "format",
+            "description": "Format to export metrics into. Currently accepts only \"prometheus\".",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -12076,29 +12198,29 @@
       }
     },
     "/sys/monitor": {
-      "parameters": [
-        {
-          "name": "log_format",
-          "description": "Output format of logs. Supported values are \"standard\" and \"json\". The default is \"standard\".",
-          "in": "query",
-          "schema": {
-            "type": "string",
-            "default": "standard"
-          }
-        },
-        {
-          "name": "log_level",
-          "description": "Log level to view system logs at. Currently supported values are \"trace\", \"debug\", \"info\", \"warn\", \"error\".",
-          "in": "query",
-          "schema": {
-            "type": "string"
-          }
-        }
-      ],
       "get": {
         "operationId": "monitor",
         "tags": [
           "system"
+        ],
+        "parameters": [
+          {
+            "name": "log_level",
+            "description": "Log level to view system logs at. Currently supported values are \"trace\", \"debug\", \"info\", \"warn\", \"error\".",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "log_format",
+            "description": "Output format of logs. Supported values are \"standard\" and \"json\". The default is \"standard\".",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "standard"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -12274,16 +12396,6 @@
         "tags": [
           "system"
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SystemWriteNamespacesApiLockLockRequest"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -12320,16 +12432,6 @@
         "tags": [
           "system"
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SystemWriteNamespacesApiLockUnlockRequest"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -15333,6 +15435,15 @@
         "tags": [
           "system"
         ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -15434,6 +15545,17 @@
         "tags": [
           "system"
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -15795,6 +15917,33 @@
         "tags": [
           "secrets"
         ],
+        "parameters": [
+          {
+            "name": "role_arn",
+            "description": "ARN of role to assume when credential_type is assumed_role",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ttl",
+            "description": "Lifetime of the returned credentials in seconds",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": 3600
+            }
+          },
+          {
+            "name": "role_session_name",
+            "description": "Session name to use when assuming role. Max chars: 64",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -16087,6 +16236,33 @@
         "operationId": "aws-generate-sts-credentials",
         "tags": [
           "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "role_arn",
+            "description": "ARN of role to assume when credential_type is assumed_role",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ttl",
+            "description": "Lifetime of the returned credentials in seconds",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": 3600
+            }
+          },
+          {
+            "name": "role_session_name",
+            "description": "Session name to use when assuming role. Max chars: 64",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -33317,10 +33493,6 @@
           "input": {
             "type": "string",
             "description": "The base64-encoded input data"
-          },
-          "urlalgorithm": {
-            "type": "string",
-            "description": "Algorithm to use (POST URL parameter)"
           }
         }
       },
@@ -33371,15 +33543,6 @@
             "type": "string",
             "description": "Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".",
             "default": "base64"
-          },
-          "source": {
-            "type": "string",
-            "description": "Which system to source random data from, ether \"platform\", \"seal\", or \"all\".",
-            "default": "platform"
-          },
-          "urlbytes": {
-            "type": "string",
-            "description": "The number of bytes to generate (POST URL parameter)"
           }
         }
       },
@@ -33403,11 +33566,6 @@
             "type": "string",
             "description": "Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".",
             "default": "base64"
-          },
-          "source": {
-            "type": "string",
-            "description": "Which system to source random data from, ether \"platform\", \"seal\", or \"all\".",
-            "default": "platform"
           }
         }
       },
@@ -33454,10 +33612,6 @@
             "type": "string",
             "description": "Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".",
             "default": "base64"
-          },
-          "urlbytes": {
-            "type": "string",
-            "description": "The number of bytes to generate (POST URL parameter)"
           }
         }
       },
@@ -34521,6 +34675,11 @@
           "context": {
             "type": "string",
             "description": "Context string appended to every operationId"
+          },
+          "generic_mount_paths": {
+            "type": "boolean",
+            "description": "Use generic mount paths",
+            "default": false
           }
         }
       },
@@ -36743,10 +36902,6 @@
           "lease_id": {
             "type": "string",
             "description": "The lease identifier to renew. This is included with a lease."
-          },
-          "url_lease_id": {
-            "type": "string",
-            "description": "The lease identifier to renew. This is included with a lease."
           }
         }
       },
@@ -36759,10 +36914,6 @@
             "format": "duration"
           },
           "lease_id": {
-            "type": "string",
-            "description": "The lease identifier to renew. This is included with a lease."
-          },
-          "url_lease_id": {
             "type": "string",
             "description": "The lease identifier to renew. This is included with a lease."
           }
@@ -36807,10 +36958,6 @@
             "type": "boolean",
             "description": "Whether or not to perform the revocation synchronously",
             "default": true
-          },
-          "url_lease_id": {
-            "type": "string",
-            "description": "The lease identifier to renew. This is included with a lease."
           }
         }
       },
@@ -36825,10 +36972,6 @@
             "type": "boolean",
             "description": "Whether or not to perform the revocation synchronously",
             "default": true
-          },
-          "url_lease_id": {
-            "type": "string",
-            "description": "The lease identifier to renew. This is included with a lease."
           }
         }
       },
@@ -40690,10 +40833,6 @@
             "description": "Whether or not to remove self-signed CA certificates in the output of the ca_chain field.",
             "default": false
           },
-          "role": {
-            "type": "string",
-            "description": "The desired role with configuration for this request"
-          },
           "serial_number": {
             "type": "string",
             "description": "The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field."
@@ -44030,10 +44169,6 @@
             "description": "Whether or not to remove self-signed CA certificates in the output of the ca_chain field.",
             "default": false
           },
-          "role": {
-            "type": "string",
-            "description": "The desired role with configuration for this request"
-          },
           "serial_number": {
             "type": "string",
             "description": "The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field."
@@ -46355,10 +46490,6 @@
             "type": "string",
             "description": "The SHA256 sum of the executable used in the command field. This should be HEX encoded."
           },
-          "type": {
-            "type": "string",
-            "description": "The type of the plugin, may be auth, secret, or database"
-          },
           "version": {
             "type": "string",
             "description": "The semantic version of the plugin to use."
@@ -46856,10 +46987,6 @@
           "password": {
             "type": "string",
             "description": "Password for this user."
-          },
-          "urlusername": {
-            "type": "string",
-            "description": "Username to be used for login. (URL parameter)"
           },
           "username": {
             "type": "string",
@@ -47962,28 +48089,6 @@
           }
         }
       },
-      "SystemWriteNamespacesApiLockLockRequest": {
-        "type": "object",
-        "properties": {
-          "path": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "path"
-        ]
-      },
-      "SystemWriteNamespacesApiLockUnlockRequest": {
-        "type": "object",
-        "properties": {
-          "path": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "path"
-        ]
-      },
       "TerraformCloudConfigureRequest": {
         "type": "object",
         "properties": {
@@ -48252,7 +48357,7 @@
         "properties": {
           "token": {
             "type": "string",
-            "description": "Token to lookup (POST request body)"
+            "description": "Token to lookup"
           }
         }
       },
@@ -48755,10 +48860,6 @@
           "key_version": {
             "type": "integer",
             "description": "The version of the key to use for generating the HMAC. Must be 0 (for latest) or a value greater than or equal to the min_encryption_version configured on the key."
-          },
-          "urlalgorithm": {
-            "type": "string",
-            "description": "Algorithm to use (POST URL parameter)"
           }
         }
       },
@@ -48799,15 +48900,6 @@
             "type": "string",
             "description": "Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".",
             "default": "base64"
-          },
-          "source": {
-            "type": "string",
-            "description": "Which system to source random data from, ether \"platform\", \"seal\", or \"all\".",
-            "default": "platform"
-          },
-          "urlbytes": {
-            "type": "string",
-            "description": "The number of bytes to generate (POST URL parameter)"
           }
         }
       },
@@ -48823,11 +48915,6 @@
             "type": "string",
             "description": "Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".",
             "default": "base64"
-          },
-          "source": {
-            "type": "string",
-            "description": "Which system to source random data from, ether \"platform\", \"seal\", or \"all\".",
-            "default": "platform"
           }
         }
       },
@@ -48858,10 +48945,6 @@
             "type": "string",
             "description": "Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".",
             "default": "base64"
-          },
-          "urlbytes": {
-            "type": "string",
-            "description": "The number of bytes to generate (POST URL parameter)"
           }
         }
       },
@@ -48881,10 +48964,6 @@
           "input": {
             "type": "string",
             "description": "The base64-encoded input data"
-          },
-          "urlalgorithm": {
-            "type": "string",
-            "description": "Algorithm to use (POST URL parameter)"
           }
         }
       },
@@ -49003,10 +49082,6 @@
             "type": "boolean",
             "description": "If set and a key by the given name exists, force the restore operation and override the key.",
             "default": false
-          },
-          "name": {
-            "type": "string",
-            "description": "If set, this will be the name of the restored key."
           }
         }
       },
@@ -49100,10 +49175,6 @@
           "signature_algorithm": {
             "type": "string",
             "description": "The signature algorithm to use for signing. Currently only applies to RSA key types. Options are 'pss' or 'pkcs1v15'. Defaults to 'pss'"
-          },
-          "urlalgorithm": {
-            "type": "string",
-            "description": "Hash algorithm to use (POST URL parameter)"
           }
         }
       },
@@ -49221,10 +49292,6 @@
           "signature_algorithm": {
             "type": "string",
             "description": "The signature algorithm to use for signature verification. Currently only applies to RSA key types. Options are 'pss' or 'pkcs1v15'. Defaults to 'pss'"
-          },
-          "urlalgorithm": {
-            "type": "string",
-            "description": "Hash algorithm to use (POST URL parameter)"
           }
         }
       },

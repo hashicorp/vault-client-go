@@ -15,7 +15,4 @@ type TransitHashRequest struct {
 
 	// The base64-encoded input data
 	Input string `json:"input,omitempty"`
-
-	// Algorithm to use (POST URL parameter)
-	Urlalgorithm string `json:"urlalgorithm,omitempty"`
 }

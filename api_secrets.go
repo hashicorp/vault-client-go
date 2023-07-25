@@ -324,9 +324,9 @@ func (s *Secrets) AwsGenerateCredentials(ctx context.Context, name string, roleA
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("roleArn", url.QueryEscape(parameterToString(roleArn)))
+	requestQueryParameters.Add("role_arn", url.QueryEscape(parameterToString(roleArn)))
 	requestQueryParameters.Add("ttl", url.QueryEscape(parameterToString(ttl)))
-	requestQueryParameters.Add("roleSessionName", url.QueryEscape(parameterToString(roleSessionName)))
+	requestQueryParameters.Add("role_session_name", url.QueryEscape(parameterToString(roleSessionName)))
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -380,9 +380,9 @@ func (s *Secrets) AwsGenerateStsCredentials(ctx context.Context, name string, ro
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("roleArn", url.QueryEscape(parameterToString(roleArn)))
+	requestQueryParameters.Add("role_arn", url.QueryEscape(parameterToString(roleArn)))
 	requestQueryParameters.Add("ttl", url.QueryEscape(parameterToString(ttl)))
-	requestQueryParameters.Add("roleSessionName", url.QueryEscape(parameterToString(roleSessionName)))
+	requestQueryParameters.Add("role_session_name", url.QueryEscape(parameterToString(roleSessionName)))
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,

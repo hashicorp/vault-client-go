@@ -1851,7 +1851,7 @@ func (i *Identity) OidcListProviders(ctx context.Context, allowedClientId string
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
-	requestQueryParameters.Add("allowedClientId", url.QueryEscape(parameterToString(allowedClientId)))
+	requestQueryParameters.Add("allowed_client_id", url.QueryEscape(parameterToString(allowedClientId)))
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1931,14 +1931,14 @@ func (i *Identity) OidcProviderAuthorize(ctx context.Context, name string, codeC
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("codeChallengeMethod", url.QueryEscape(parameterToString(codeChallengeMethod)))
+	requestQueryParameters.Add("code_challenge_method", url.QueryEscape(parameterToString(codeChallengeMethod)))
 	requestQueryParameters.Add("scope", url.QueryEscape(parameterToString(scope)))
 	requestQueryParameters.Add("state", url.QueryEscape(parameterToString(state)))
-	requestQueryParameters.Add("redirectUri", url.QueryEscape(parameterToString(redirectUri)))
-	requestQueryParameters.Add("codeChallenge", url.QueryEscape(parameterToString(codeChallenge)))
-	requestQueryParameters.Add("maxAge", url.QueryEscape(parameterToString(maxAge)))
-	requestQueryParameters.Add("clientId", url.QueryEscape(parameterToString(clientId)))
-	requestQueryParameters.Add("responseType", url.QueryEscape(parameterToString(responseType)))
+	requestQueryParameters.Add("redirect_uri", url.QueryEscape(parameterToString(redirectUri)))
+	requestQueryParameters.Add("code_challenge", url.QueryEscape(parameterToString(codeChallenge)))
+	requestQueryParameters.Add("max_age", url.QueryEscape(parameterToString(maxAge)))
+	requestQueryParameters.Add("client_id", url.QueryEscape(parameterToString(clientId)))
+	requestQueryParameters.Add("response_type", url.QueryEscape(parameterToString(responseType)))
 	requestQueryParameters.Add("nonce", url.QueryEscape(parameterToString(nonce)))
 
 	return sendRequestParseResponse[map[string]interface{}](

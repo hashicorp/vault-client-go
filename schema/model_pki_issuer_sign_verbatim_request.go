@@ -46,9 +46,6 @@ type PkiIssuerSignVerbatimRequest struct {
 	// Whether or not to remove self-signed CA certificates in the output of the ca_chain field.
 	RemoveRootsFromChain bool `json:"remove_roots_from_chain,omitempty"`
 
-	// The desired role with configuration for this request
-	Role string `json:"role,omitempty"`
-
 	// The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field.
 	SerialNumber string `json:"serial_number,omitempty"`
 

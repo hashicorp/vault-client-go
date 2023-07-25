@@ -18,7 +18,4 @@ type TransitGenerateHmacRequest struct {
 
 	// The version of the key to use for generating the HMAC. Must be 0 (for latest) or a value greater than or equal to the min_encryption_version configured on the key.
 	KeyVersion int32 `json:"key_version,omitempty"`
-
-	// Algorithm to use (POST URL parameter)
-	Urlalgorithm string `json:"urlalgorithm,omitempty"`
 }

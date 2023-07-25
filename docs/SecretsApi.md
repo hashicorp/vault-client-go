@@ -4758,9 +4758,15 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
+	keyAlgorithm := "keyAlgorithm_example" // string | Private key algorithm for service account key - defaults to KEY_ALG_RSA_2048\" (defaults to "KEY_ALG_RSA_2048")
+	keyType := "keyType_example" // string | Private key type for service account key - defaults to TYPE_GOOGLE_CREDENTIALS_FILE\" (defaults to "TYPE_GOOGLE_CREDENTIALS_FILE")
+	ttl := "ttl_example" // string | Lifetime of the service account key
 	resp, err := client.Secrets.GoogleCloudGenerateRolesetKey(
 		context.Background(),
 		roleset,
+		keyAlgorithm,
+		keyType,
+		ttl,
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
@@ -4787,6 +4793,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+ **keyAlgorithm** | **string** | Private key algorithm for service account key - defaults to KEY_ALG_RSA_2048\&quot; | [default to &quot;KEY_ALG_RSA_2048&quot;]
+ **keyType** | **string** | Private key type for service account key - defaults to TYPE_GOOGLE_CREDENTIALS_FILE\&quot; | [default to &quot;TYPE_GOOGLE_CREDENTIALS_FILE&quot;]
+ **ttl** | **string** | Lifetime of the service account key | 
 
  (empty response body)
 
@@ -5013,9 +5022,15 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the static account.
+	keyAlgorithm := "keyAlgorithm_example" // string | Private key algorithm for service account key. Defaults to KEY_ALG_RSA_2048.\" (defaults to "KEY_ALG_RSA_2048")
+	keyType := "keyType_example" // string | Private key type for service account key. Defaults to TYPE_GOOGLE_CREDENTIALS_FILE.\" (defaults to "TYPE_GOOGLE_CREDENTIALS_FILE")
+	ttl := "ttl_example" // string | Lifetime of the service account key
 	resp, err := client.Secrets.GoogleCloudGenerateStaticAccountKey(
 		context.Background(),
 		name,
+		keyAlgorithm,
+		keyType,
+		ttl,
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
@@ -5042,6 +5057,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+ **keyAlgorithm** | **string** | Private key algorithm for service account key. Defaults to KEY_ALG_RSA_2048.\&quot; | [default to &quot;KEY_ALG_RSA_2048&quot;]
+ **keyType** | **string** | Private key type for service account key. Defaults to TYPE_GOOGLE_CREDENTIALS_FILE.\&quot; | [default to &quot;TYPE_GOOGLE_CREDENTIALS_FILE&quot;]
+ **ttl** | **string** | Lifetime of the service account key | 
 
  (empty response body)
 
@@ -7876,7 +7894,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-[**KvV1ListResponse**](KvV1ListResponse.md)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -7975,6 +7993,7 @@ func main() {
 	resp, err := client.Secrets.KvV1Write(
 		context.Background(),
 		path,
+		map[string]interface{}{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kv-v1"),
 	)
@@ -8001,6 +8020,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+ **requestBody** | **map[string]interface{}** |  | 
 
  (empty response body)
 
@@ -8386,7 +8406,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-[**KvV2ListMetadataResponse**](KvV2ListMetadataResponse.md)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)

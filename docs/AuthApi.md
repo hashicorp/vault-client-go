@@ -162,7 +162,7 @@ Method | HTTP request | Description
 [**JwtListRoles**](AuthApi.md#JwtListRoles) | **Get** /auth/{jwt_mount_path}/role/ | Lists all the roles registered with the backend.
 [**JwtLogin**](AuthApi.md#JwtLogin) | **Post** /auth/{jwt_mount_path}/login | Authenticates to Vault using a JWT (or OIDC) token.
 [**JwtOidcCallback**](AuthApi.md#JwtOidcCallback) | **Get** /auth/{jwt_mount_path}/oidc/callback | Callback endpoint to complete an OIDC login.
-[**JwtOidcCallbackWithParameters**](AuthApi.md#JwtOidcCallbackWithParameters) | **Post** /auth/{jwt_mount_path}/oidc/callback | Callback endpoint to handle form_posts.
+[**JwtOidcCallbackFormPost**](AuthApi.md#JwtOidcCallbackFormPost) | **Post** /auth/{jwt_mount_path}/oidc/callback | Callback endpoint to handle form_posts.
 [**JwtOidcRequestAuthorizationUrl**](AuthApi.md#JwtOidcRequestAuthorizationUrl) | **Post** /auth/{jwt_mount_path}/oidc/auth_url | Request an authorization URL to start an OIDC login flow.
 [**JwtReadConfiguration**](AuthApi.md#JwtReadConfiguration) | **Get** /auth/{jwt_mount_path}/config | Read the current JWT authentication backend configuration.
 [**JwtReadRole**](AuthApi.md#JwtReadRole) | **Get** /auth/{jwt_mount_path}/role/{name} | Read an existing role.
@@ -10236,8 +10236,14 @@ func main() {
 		log.Fatal(err)
 	}
 
+	clientNonce := "clientNonce_example" // string | 
+	code := "code_example" // string | 
+	state := "state_example" // string | 
 	resp, err := client.Auth.JwtOidcCallback(
 		context.Background(),
+		clientNonce,
+		code,
+		state,
 		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
@@ -10262,6 +10268,9 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **clientNonce** | **string** |  | 
+ **code** | **string** |  | 
+ **state** | **string** |  | 
 
  (empty response body)
 
@@ -10270,7 +10279,7 @@ Name | Type | Description  | Notes
 
 
 
-## JwtOidcCallbackWithParameters
+## JwtOidcCallbackFormPost
 
 Callback endpoint to handle form_posts.
 
@@ -10296,9 +10305,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	resp, err := client.Auth.JwtOidcCallbackWithParameters(
+	resp, err := client.Auth.JwtOidcCallbackFormPost(
 		context.Background(),
-		JwtOidcCallbackWithParametersRequest{ /* populate request parameters */ },
+		JwtOidcCallbackFormPostRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
@@ -10323,7 +10332,7 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **jwtOidcCallbackWithParametersRequest** | [**JwtOidcCallbackWithParametersRequest**](JwtOidcCallbackWithParametersRequest.md) |  | 
+ **jwtOidcCallbackFormPostRequest** | [**JwtOidcCallbackFormPostRequest**](JwtOidcCallbackFormPostRequest.md) |  | 
 
  (empty response body)
 

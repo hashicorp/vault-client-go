@@ -1,4 +1,4 @@
-# JwtOidcCallbackWithParametersRequest
+# JwtOidcCallbackFormPostRequest
 
 
 ## Properties

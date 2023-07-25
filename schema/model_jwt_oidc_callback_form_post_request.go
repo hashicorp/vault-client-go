@@ -5,8 +5,8 @@
 
 package schema
 
-// JwtOidcCallbackWithParametersRequest struct for JwtOidcCallbackWithParametersRequest
-type JwtOidcCallbackWithParametersRequest struct {
+// JwtOidcCallbackFormPostRequest struct for JwtOidcCallbackFormPostRequest
+type JwtOidcCallbackFormPostRequest struct {
 	ClientNonce string `json:"client_nonce,omitempty"`
 
 	Code string `json:"code,omitempty"`

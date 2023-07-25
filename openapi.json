@@ -5315,6 +5315,29 @@
         "tags": [
           "auth"
         ],
+        "parameters": [
+          {
+            "name": "client_nonce",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "code",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -5323,7 +5346,7 @@
       },
       "post": {
         "summary": "Callback endpoint to handle form_posts.",
-        "operationId": "jwt-oidc-callback-with-parameters",
+        "operationId": "jwt-oidc-callback-form-post",
         "tags": [
           "auth"
         ],
@@ -5332,7 +5355,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/JwtOidcCallbackWithParametersRequest"
+                "$ref": "#/components/schemas/JwtOidcCallbackFormPostRequest"
               }
             }
           }
@@ -17984,6 +18007,34 @@
         "tags": [
           "secrets"
         ],
+        "parameters": [
+          {
+            "name": "key_algorithm",
+            "description": "Private key algorithm for service account key - defaults to KEY_ALG_RSA_2048\"",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "KEY_ALG_RSA_2048"
+            }
+          },
+          {
+            "name": "key_type",
+            "description": "Private key type for service account key - defaults to TYPE_GOOGLE_CREDENTIALS_FILE\"",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "TYPE_GOOGLE_CREDENTIALS_FILE"
+            }
+          },
+          {
+            "name": "ttl",
+            "description": "Lifetime of the service account key",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -18224,6 +18275,34 @@
         "operationId": "google-cloud-generate-roleset-key",
         "tags": [
           "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "key_algorithm",
+            "description": "Private key algorithm for service account key - defaults to KEY_ALG_RSA_2048\"",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "KEY_ALG_RSA_2048"
+            }
+          },
+          {
+            "name": "key_type",
+            "description": "Private key type for service account key - defaults to TYPE_GOOGLE_CREDENTIALS_FILE\"",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "TYPE_GOOGLE_CREDENTIALS_FILE"
+            }
+          },
+          {
+            "name": "ttl",
+            "description": "Lifetime of the service account key",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -18488,6 +18567,34 @@
         "operationId": "google-cloud-generate-static-account-key",
         "tags": [
           "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "key_algorithm",
+            "description": "Private key algorithm for service account key. Defaults to KEY_ALG_RSA_2048.\"",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "KEY_ALG_RSA_2048"
+            }
+          },
+          {
+            "name": "key_type",
+            "description": "Private key type for service account key. Defaults to TYPE_GOOGLE_CREDENTIALS_FILE.\"",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "TYPE_GOOGLE_CREDENTIALS_FILE"
+            }
+          },
+          {
+            "name": "ttl",
+            "description": "Lifetime of the service account key",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -19651,6 +19758,17 @@
         "tags": [
           "secrets"
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
         "responses": {
           "204": {
             "description": "No Content"
@@ -19717,7 +19835,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/KvV1ListResponse"
+                  "$ref": "#/components/schemas/StandardListResponse"
                 }
               }
             }
@@ -20090,7 +20208,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/KvV2ListMetadataResponse"
+                  "$ref": "#/components/schemas/StandardListResponse"
                 }
               }
             }
@@ -35438,7 +35556,7 @@
           }
         }
       },
-      "JwtOidcCallbackWithParametersRequest": {
+      "JwtOidcCallbackFormPostRequest": {
         "type": "object",
         "properties": {
           "client_nonce": {
@@ -36378,17 +36496,6 @@
           }
         }
       },
-      "KvV1ListResponse": {
-        "type": "object",
-        "properties": {
-          "keys": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
       "KvV2ConfigureRequest": {
         "type": "object",
         "properties": {
@@ -36427,17 +36534,6 @@
             "description": "The versions to destroy. Their data will be permanently deleted.",
             "items": {
               "type": "integer"
-            }
-          }
-        }
-      },
-      "KvV2ListMetadataResponse": {
-        "type": "object",
-        "properties": {
-          "keys": {
-            "type": "array",
-            "items": {
-              "type": "string"
             }
           }
         }

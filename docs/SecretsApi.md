@@ -703,7 +703,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -1175,14 +1175,14 @@ func main() {
 
 	name := "name_example" // string | Name of the role
 	roleArn := "roleArn_example" // string | ARN of role to assume when credential_type is assumed_role
-	ttl := "ttl_example" // string | Lifetime of the returned credentials in seconds (defaults to "3600")
 	roleSessionName := "roleSessionName_example" // string | Session name to use when assuming role. Max chars: 64
+	ttl := "ttl_example" // string | Lifetime of the returned credentials in seconds (defaults to "3600")
 	resp, err := client.Secrets.AwsGenerateCredentials(
 		context.Background(),
 		name,
 		roleArn,
-		ttl,
 		roleSessionName,
+		ttl,
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -1210,8 +1210,8 @@ Name | Type | Description  | Notes
 
 
  **roleArn** | **string** | ARN of role to assume when credential_type is assumed_role | 
- **ttl** | **string** | Lifetime of the returned credentials in seconds | [default to &quot;3600&quot;]
  **roleSessionName** | **string** | Session name to use when assuming role. Max chars: 64 | 
+ **ttl** | **string** | Lifetime of the returned credentials in seconds | [default to &quot;3600&quot;]
 
  (empty response body)
 
@@ -1313,14 +1313,14 @@ func main() {
 
 	name := "name_example" // string | Name of the role
 	roleArn := "roleArn_example" // string | ARN of role to assume when credential_type is assumed_role
-	ttl := "ttl_example" // string | Lifetime of the returned credentials in seconds (defaults to "3600")
 	roleSessionName := "roleSessionName_example" // string | Session name to use when assuming role. Max chars: 64
+	ttl := "ttl_example" // string | Lifetime of the returned credentials in seconds (defaults to "3600")
 	resp, err := client.Secrets.AwsGenerateStsCredentials(
 		context.Background(),
 		name,
 		roleArn,
-		ttl,
 		roleSessionName,
+		ttl,
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -1348,8 +1348,8 @@ Name | Type | Description  | Notes
 
 
  **roleArn** | **string** | ARN of role to assume when credential_type is assumed_role | 
- **ttl** | **string** | Lifetime of the returned credentials in seconds | [default to &quot;3600&quot;]
  **roleSessionName** | **string** | Session name to use when assuming role. Max chars: 64 | 
+ **ttl** | **string** | Lifetime of the returned credentials in seconds | [default to &quot;3600&quot;]
 
  (empty response body)
 
@@ -1477,7 +1477,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -2219,7 +2219,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -2777,7 +2777,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -3090,7 +3090,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -3592,7 +3592,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -3652,7 +3652,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -3712,7 +3712,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -5614,7 +5614,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -6378,7 +6378,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -6438,7 +6438,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -6498,7 +6498,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -7561,7 +7561,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -9529,7 +9529,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -9652,7 +9652,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -9712,7 +9712,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -10525,7 +10525,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -11141,7 +11141,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -14189,7 +14189,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-[**PkiListCertsResponse**](PkiListCertsResponse.md)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -14429,7 +14429,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-[**PkiListRevokedCertsResponse**](PkiListRevokedCertsResponse.md)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -14489,7 +14489,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-[**PkiListRolesResponse**](PkiListRolesResponse.md)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -20875,7 +20875,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -21623,7 +21623,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -22485,7 +22485,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -22988,7 +22988,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -24697,7 +24697,7 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)

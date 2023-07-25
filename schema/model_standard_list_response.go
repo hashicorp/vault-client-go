@@ -5,7 +5,7 @@
 
 package schema
 
-// RateLimitQuotasListResponse struct for RateLimitQuotasListResponse
-type RateLimitQuotasListResponse struct {
+// StandardListResponse struct for StandardListResponse
+type StandardListResponse struct {
 	Keys []string `json:"keys,omitempty"`
 }

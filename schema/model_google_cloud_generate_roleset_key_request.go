@@ -5,8 +5,8 @@
 
 package schema
 
-// GoogleCloudGenerateRolesetKeyWithParametersRequest struct for GoogleCloudGenerateRolesetKeyWithParametersRequest
-type GoogleCloudGenerateRolesetKeyWithParametersRequest struct {
+// GoogleCloudGenerateRolesetKeyRequest struct for GoogleCloudGenerateRolesetKeyRequest
+type GoogleCloudGenerateRolesetKeyRequest struct {
 	// Private key algorithm for service account key - defaults to KEY_ALG_RSA_2048\"
 	KeyAlgorithm string `json:"key_algorithm,omitempty"`
 

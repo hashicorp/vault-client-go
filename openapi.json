@@ -18003,7 +18003,7 @@
         }
       ],
       "get": {
-        "operationId": "google-cloud-generate-roleset-key2",
+        "operationId": "google-cloud-generate-roleset-key4",
         "tags": [
           "secrets"
         ],
@@ -18042,7 +18042,7 @@
         }
       },
       "post": {
-        "operationId": "google-cloud-generate-roleset-key-with-parameters2",
+        "operationId": "google-cloud-generate-roleset-key3",
         "tags": [
           "secrets"
         ],
@@ -18051,7 +18051,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GoogleCloudGenerateRolesetKeyWithParameters2Request"
+                "$ref": "#/components/schemas/GoogleCloudGenerateRolesetKey3Request"
               }
             }
           }
@@ -18272,7 +18272,7 @@
         }
       ],
       "get": {
-        "operationId": "google-cloud-generate-roleset-key",
+        "operationId": "google-cloud-generate-roleset-key2",
         "tags": [
           "secrets"
         ],
@@ -18311,7 +18311,7 @@
         }
       },
       "post": {
-        "operationId": "google-cloud-generate-roleset-key-with-parameters",
+        "operationId": "google-cloud-generate-roleset-key",
         "tags": [
           "secrets"
         ],
@@ -18320,7 +18320,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GoogleCloudGenerateRolesetKeyWithParametersRequest"
+                "$ref": "#/components/schemas/GoogleCloudGenerateRolesetKeyRequest"
               }
             }
           }
@@ -18356,7 +18356,7 @@
         }
       ],
       "get": {
-        "operationId": "google-cloud-generate-roleset-access-token",
+        "operationId": "google-cloud-generate-roleset-access-token2",
         "tags": [
           "secrets"
         ],
@@ -18367,7 +18367,7 @@
         }
       },
       "post": {
-        "operationId": "google-cloud-generate-roleset-access-token-with-parameters",
+        "operationId": "google-cloud-generate-roleset-access-token",
         "tags": [
           "secrets"
         ],
@@ -18564,7 +18564,7 @@
         }
       ],
       "get": {
-        "operationId": "google-cloud-generate-static-account-key",
+        "operationId": "google-cloud-generate-static-account-key2",
         "tags": [
           "secrets"
         ],
@@ -18603,7 +18603,7 @@
         }
       },
       "post": {
-        "operationId": "google-cloud-generate-static-account-key-with-parameters",
+        "operationId": "google-cloud-generate-static-account-key",
         "tags": [
           "secrets"
         ],
@@ -18612,7 +18612,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GoogleCloudGenerateStaticAccountKeyWithParametersRequest"
+                "$ref": "#/components/schemas/GoogleCloudGenerateStaticAccountKeyRequest"
               }
             }
           }
@@ -18683,7 +18683,7 @@
         }
       ],
       "get": {
-        "operationId": "google-cloud-generate-static-account-access-token",
+        "operationId": "google-cloud-generate-static-account-access-token2",
         "tags": [
           "secrets"
         ],
@@ -18694,7 +18694,7 @@
         }
       },
       "post": {
-        "operationId": "google-cloud-generate-static-account-access-token-with-parameters",
+        "operationId": "google-cloud-generate-static-account-access-token",
         "tags": [
           "secrets"
         ],
@@ -18776,7 +18776,7 @@
         }
       ],
       "get": {
-        "operationId": "google-cloud-generate-roleset-access-token2",
+        "operationId": "google-cloud-generate-roleset-access-token4",
         "tags": [
           "secrets"
         ],
@@ -18787,7 +18787,7 @@
         }
       },
       "post": {
-        "operationId": "google-cloud-generate-roleset-access-token-with-parameters2",
+        "operationId": "google-cloud-generate-roleset-access-token3",
         "tags": [
           "secrets"
         ],
@@ -20149,7 +20149,7 @@
         }
       },
       "delete": {
-        "operationId": "kv-v2-delete-metadata",
+        "operationId": "kv-v2-delete-metadata-and-all-versions",
         "tags": [
           "secrets"
         ],
@@ -20184,7 +20184,7 @@
         }
       ],
       "get": {
-        "operationId": "kv-v2-list-metadata",
+        "operationId": "kv-v2-list",
         "tags": [
           "secrets"
         ],
@@ -34566,7 +34566,7 @@
           }
         }
       },
-      "GoogleCloudGenerateRolesetKeyWithParameters2Request": {
+      "GoogleCloudGenerateRolesetKey3Request": {
         "type": "object",
         "properties": {
           "key_algorithm": {
@@ -34586,7 +34586,7 @@
           }
         }
       },
-      "GoogleCloudGenerateRolesetKeyWithParametersRequest": {
+      "GoogleCloudGenerateRolesetKeyRequest": {
         "type": "object",
         "properties": {
           "key_algorithm": {
@@ -34606,7 +34606,7 @@
           }
         }
       },
-      "GoogleCloudGenerateStaticAccountKeyWithParametersRequest": {
+      "GoogleCloudGenerateStaticAccountKeyRequest": {
         "type": "object",
         "properties": {
           "key_algorithm": {

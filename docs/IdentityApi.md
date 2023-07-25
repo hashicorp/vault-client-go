@@ -111,10 +111,6 @@ Method | HTTP request | Description
 [**PersonaReadById**](IdentityApi.md#PersonaReadById) | **Get** /identity/persona/id/{id} | 
 [**PersonaUpdateById**](IdentityApi.md#PersonaUpdateById) | **Post** /identity/persona/id/{id} | 
 
-
-
-
-
 ## AliasCreate
 
 Create a new alias.
@@ -169,8 +165,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AliasDeleteById
 
@@ -231,8 +225,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AliasListById
 
 List all the alias IDs.
@@ -285,8 +277,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AliasReadById
 
@@ -346,8 +336,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AliasUpdateById
 
@@ -411,8 +399,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## EntityBatchDelete
 
 Delete all of the entities provided
@@ -467,8 +453,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## EntityCreate
 
@@ -525,8 +509,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## EntityCreateAlias
 
 Create a new alias.
@@ -581,8 +563,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## EntityDeleteAliasById
 
@@ -643,8 +623,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## EntityDeleteById
 
 
@@ -703,8 +681,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## EntityDeleteByName
 
@@ -765,8 +741,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## EntityListAliasesById
 
 List all the alias IDs.
@@ -819,8 +793,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## EntityListById
 
@@ -875,8 +847,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## EntityListByName
 
 List all the entity names
@@ -929,8 +899,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## EntityLookUp
 
@@ -987,8 +955,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## EntityMerge
 
 Merge two or more entities together
@@ -1043,8 +1009,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## EntityReadAliasById
 
@@ -1105,8 +1069,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## EntityReadById
 
 
@@ -1166,8 +1128,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## EntityReadByName
 
 
@@ -1226,8 +1186,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## EntityUpdateAliasById
 
@@ -1291,8 +1249,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## EntityUpdateById
 
 
@@ -1354,8 +1310,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## EntityUpdateByName
 
@@ -1419,8 +1373,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## GroupCreate
 
 
@@ -1476,8 +1428,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## GroupCreateAlias
 
 Creates a new group alias, or updates an existing one.
@@ -1532,8 +1482,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## GroupDeleteAliasById
 
@@ -1594,8 +1542,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## GroupDeleteById
 
 
@@ -1654,8 +1600,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## GroupDeleteByName
 
@@ -1716,8 +1660,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## GroupListAliasesById
 
 List all the group alias IDs.
@@ -1770,8 +1712,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## GroupListById
 
@@ -1826,8 +1766,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## GroupListByName
 
 
@@ -1880,8 +1818,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## GroupLookUp
 
@@ -1937,8 +1873,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## GroupReadAliasById
 
@@ -1999,8 +1933,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## GroupReadById
 
 
@@ -2060,8 +1992,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## GroupReadByName
 
 
@@ -2120,8 +2050,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## GroupUpdateAliasById
 
@@ -2185,8 +2113,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## GroupUpdateById
 
 
@@ -2248,8 +2174,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## GroupUpdateByName
 
@@ -2313,8 +2237,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## MfaAdminDestroyTotpSecret
 
 Destroys a TOTP secret for the given MFA method ID on the given entity
@@ -2369,8 +2291,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## MfaAdminGenerateTotpSecret
 
@@ -2427,8 +2347,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## MfaCreateDuoMethod
 
 Create the given MFA method
@@ -2483,8 +2401,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## MfaCreateOktaMethod
 
@@ -2541,8 +2457,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## MfaCreatePingIdMethod
 
 Create the given MFA method
@@ -2598,8 +2512,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## MfaCreateTotpMethod
 
 Create the given MFA method
@@ -2654,8 +2566,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## MfaDeleteDuoMethod
 
@@ -2716,8 +2626,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## MfaDeleteLoginEnforcement
 
 Delete a login enforcement
@@ -2776,8 +2684,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## MfaDeleteOktaMethod
 
@@ -2838,8 +2744,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## MfaDeletePingIdMethod
 
 Delete the given MFA method
@@ -2898,8 +2802,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## MfaDeleteTotpMethod
 
@@ -2960,8 +2862,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## MfaGenerateTotpSecret
 
 Update or create TOTP secret for the given method ID on the given entity.
@@ -3017,8 +2917,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## MfaListDuoMethods
 
 List MFA method configurations for the given MFA method
@@ -3071,8 +2969,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## MfaListLoginEnforcements
 
@@ -3127,8 +3023,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## MfaListMethods
 
 List MFA method configurations for all MFA methods
@@ -3181,8 +3075,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## MfaListOktaMethods
 
@@ -3237,8 +3129,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## MfaListPingIdMethods
 
 List MFA method configurations for the given MFA method
@@ -3292,8 +3182,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## MfaListTotpMethods
 
 List MFA method configurations for the given MFA method
@@ -3346,8 +3234,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## MfaReadDuoMethod
 
@@ -3408,8 +3294,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## MfaReadLoginEnforcement
 
 Read the current login enforcement
@@ -3468,8 +3352,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## MfaReadMethod
 
@@ -3530,8 +3412,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## MfaReadOktaMethod
 
 Read the current configuration for the given MFA method
@@ -3590,8 +3470,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## MfaReadPingIdMethod
 
@@ -3652,8 +3530,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## MfaReadTotpMethod
 
 Read the current configuration for the given MFA method
@@ -3712,8 +3588,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## MfaUpdateDuoMethod
 
@@ -3777,8 +3651,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## MfaUpdateOktaMethod
 
 Update the configuration for the given MFA method
@@ -3840,8 +3712,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## MfaUpdatePingIdMethod
 
@@ -3905,8 +3775,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## MfaUpdateTotpMethod
 
 Update the configuration for the given MFA method
@@ -3968,8 +3836,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## MfaWriteLoginEnforcement
 
@@ -4033,8 +3899,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OidcConfigure
 
 
@@ -4089,8 +3953,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## OidcDeleteAssignment
 
@@ -4151,8 +4013,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OidcDeleteClient
 
 
@@ -4211,8 +4071,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## OidcDeleteKey
 
@@ -4273,8 +4131,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OidcDeleteProvider
 
 
@@ -4333,8 +4189,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## OidcDeleteRole
 
@@ -4395,8 +4249,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OidcDeleteScope
 
 
@@ -4455,8 +4307,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## OidcGenerateToken
 
@@ -4517,8 +4367,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OidcIntrospect
 
 Verify the authenticity of an OIDC token
@@ -4574,8 +4422,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OidcListAssignments
 
 
@@ -4628,8 +4474,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## OidcListClients
 
@@ -4684,8 +4528,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OidcListKeys
 
 List OIDC keys
@@ -4738,8 +4580,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## OidcListProviders
 
@@ -4797,8 +4637,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OidcListRoles
 
 List configured OIDC roles
@@ -4852,8 +4690,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OidcListScopes
 
 
@@ -4906,8 +4742,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## OidcProviderAuthorize
 
@@ -4995,8 +4829,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OidcProviderAuthorizeWithParameters
 
 
@@ -5058,8 +4890,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## OidcProviderToken
 
@@ -5123,8 +4953,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OidcProviderUserInfo
 
 
@@ -5183,8 +5011,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## OidcReadAssignment
 
@@ -5245,8 +5071,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OidcReadClient
 
 
@@ -5306,8 +5130,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OidcReadConfiguration
 
 
@@ -5357,8 +5179,6 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## OidcReadKey
 
@@ -5419,8 +5239,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OidcReadOpenIdConfiguration
 
 Query OIDC configurations
@@ -5470,8 +5288,6 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## OidcReadProvider
 
@@ -5532,8 +5348,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OidcReadProviderOpenIdConfiguration
 
 
@@ -5592,8 +5406,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## OidcReadProviderPublicKeys
 
@@ -5654,8 +5466,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OidcReadPublicKeys
 
 Retrieve public keys
@@ -5705,8 +5515,6 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## OidcReadRole
 
@@ -5767,8 +5575,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OidcReadScope
 
 
@@ -5827,8 +5633,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## OidcRotateKey
 
@@ -5892,8 +5696,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OidcWriteAssignment
 
 
@@ -5955,8 +5757,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## OidcWriteClient
 
@@ -6020,8 +5820,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OidcWriteKey
 
 CRUD operations for OIDC keys.
@@ -6083,8 +5881,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## OidcWriteProvider
 
@@ -6148,8 +5944,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OidcWriteRole
 
 CRUD operations on OIDC Roles
@@ -6211,8 +6005,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## OidcWriteScope
 
@@ -6276,8 +6068,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## PersonaCreate
 
 Create a new alias.
@@ -6332,8 +6122,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## PersonaDeleteById
 
@@ -6394,8 +6182,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## PersonaListById
 
 List all the alias IDs.
@@ -6448,8 +6234,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## PersonaReadById
 
@@ -6509,8 +6293,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## PersonaUpdateById
 
@@ -6573,6 +6355,4 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 

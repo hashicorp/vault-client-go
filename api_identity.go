@@ -1850,7 +1850,7 @@ func (i *Identity) OidcListProviders(ctx context.Context, allowedClientId string
 	requestPath := "/v1/identity/oidc/provider/"
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("allowed_client_id", url.QueryEscape(parameterToString(allowedClientId)))
+	requestQueryParameters.Add("allowed_client_id", parameterToString(allowedClientId))
 	requestQueryParameters.Add("list", "true")
 
 	return sendRequestParseResponse[schema.StandardListResponse](
@@ -1931,15 +1931,15 @@ func (i *Identity) OidcProviderAuthorize(ctx context.Context, name string, clien
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("client_id", url.QueryEscape(parameterToString(clientId)))
-	requestQueryParameters.Add("code_challenge", url.QueryEscape(parameterToString(codeChallenge)))
-	requestQueryParameters.Add("code_challenge_method", url.QueryEscape(parameterToString(codeChallengeMethod)))
-	requestQueryParameters.Add("max_age", url.QueryEscape(parameterToString(maxAge)))
-	requestQueryParameters.Add("nonce", url.QueryEscape(parameterToString(nonce)))
-	requestQueryParameters.Add("redirect_uri", url.QueryEscape(parameterToString(redirectUri)))
-	requestQueryParameters.Add("response_type", url.QueryEscape(parameterToString(responseType)))
-	requestQueryParameters.Add("scope", url.QueryEscape(parameterToString(scope)))
-	requestQueryParameters.Add("state", url.QueryEscape(parameterToString(state)))
+	requestQueryParameters.Add("client_id", parameterToString(clientId))
+	requestQueryParameters.Add("code_challenge", parameterToString(codeChallenge))
+	requestQueryParameters.Add("code_challenge_method", parameterToString(codeChallengeMethod))
+	requestQueryParameters.Add("max_age", parameterToString(maxAge))
+	requestQueryParameters.Add("nonce", parameterToString(nonce))
+	requestQueryParameters.Add("redirect_uri", parameterToString(redirectUri))
+	requestQueryParameters.Add("response_type", parameterToString(responseType))
+	requestQueryParameters.Add("scope", parameterToString(scope))
+	requestQueryParameters.Add("state", parameterToString(state))
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,

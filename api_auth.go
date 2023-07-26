@@ -3893,9 +3893,9 @@ func (a *Auth) JwtOidcCallback(ctx context.Context, clientNonce string, code str
 	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("jwt")), -1)
 
 	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("client_nonce", url.QueryEscape(parameterToString(clientNonce)))
-	requestQueryParameters.Add("code", url.QueryEscape(parameterToString(code)))
-	requestQueryParameters.Add("state", url.QueryEscape(parameterToString(state)))
+	requestQueryParameters.Add("client_nonce", parameterToString(clientNonce))
+	requestQueryParameters.Add("code", parameterToString(code))
+	requestQueryParameters.Add("state", parameterToString(state))
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,

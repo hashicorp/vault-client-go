@@ -38,9 +38,14 @@ func ({{lower (substring classname 0 1)}} *{{cut classname "Api"}}) {{nickname}}
 	requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape(requestModifiers.mountPathOr({{#with defaultValue}}{{{.}}}{{/with}})), -1){{/endsWith}}{{/each}}{{#each pathParams}}{{#endsWith baseName "_mount_path"}}{{else}}
     requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape({{paramName}}), -1){{/endsWith}}{{/each}}
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault(){{#each queryParams}}{{#eq paramName "list"}}
-	requestQueryParameters.Add("{{baseName}}", "true"){{/eq}}{{#neq paramName "list"}}
-	requestQueryParameters.Add("{{baseName}}", url.QueryEscape(parameterToString({{paramName}}))){{/neq}}{{/each}}
+	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+{{~#each queryParams}}
+{{~#eq paramName "list"}}
+	requestQueryParameters.Add("{{baseName}}", "true")
+{{~else}}
+	requestQueryParameters.Add("{{baseName}}", parameterToString({{paramName}}))
+{{~/eq}}
+{{~/each}}
 
 {{#each bodyParams}}
 	return sendStructuredRequestParseResponse[{{#with returnType}}schema.{{{.}}}{{/with}}{{#unless returnType}}map[string]interface{}{{/unless}}](

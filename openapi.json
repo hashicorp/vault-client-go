@@ -10634,7 +10634,7 @@
     },
     "/sys/config/control-group": {
       "get": {
-        "operationId": "system-read-config-control-group",
+        "operationId": "enterprise-stub-read-config-control-group",
         "tags": [
           "system"
         ],
@@ -10645,7 +10645,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-config-control-group",
+        "operationId": "enterprise-stub-write-config-control-group",
         "tags": [
           "system"
         ],
@@ -10656,7 +10656,7 @@
         }
       },
       "delete": {
-        "operationId": "system-delete-config-control-group",
+        "operationId": "enterprise-stub-delete-config-control-group",
         "tags": [
           "system"
         ],
@@ -10726,7 +10726,7 @@
     },
     "/sys/config/group-policy-application": {
       "get": {
-        "operationId": "system-read-config-group-policy-application",
+        "operationId": "enterprise-stub-read-config-group-policy-application",
         "tags": [
           "system"
         ],
@@ -10737,7 +10737,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-config-group-policy-application",
+        "operationId": "enterprise-stub-write-config-group-policy-application",
         "tags": [
           "system"
         ],
@@ -10894,7 +10894,7 @@
     },
     "/sys/control-group/authorize": {
       "post": {
-        "operationId": "system-write-control-group-authorize",
+        "operationId": "enterprise-stub-write-control-group-authorize",
         "tags": [
           "system"
         ],
@@ -10907,7 +10907,7 @@
     },
     "/sys/control-group/request": {
       "post": {
-        "operationId": "system-write-control-group-request",
+        "operationId": "enterprise-stub-write-control-group-request",
         "tags": [
           "system"
         ],
@@ -11961,7 +11961,7 @@
     },
     "/sys/license/status": {
       "get": {
-        "operationId": "system-read-license-status",
+        "operationId": "enterprise-stub-read-license-status",
         "tags": [
           "system"
         ],
@@ -12141,7 +12141,7 @@
         }
       ],
       "get": {
-        "operationId": "system-list-managed-keys-type",
+        "operationId": "enterprise-stub-list-managed-keys-type",
         "tags": [
           "system"
         ],
@@ -12194,7 +12194,7 @@
       ],
       "x-vault-createSupported": true,
       "get": {
-        "operationId": "system-read-managed-keys-type-name",
+        "operationId": "enterprise-stub-read-managed-keys-type-name",
         "tags": [
           "system"
         ],
@@ -12205,7 +12205,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-managed-keys-type-name",
+        "operationId": "enterprise-stub-write-managed-keys-type-name",
         "tags": [
           "system"
         ],
@@ -12216,7 +12216,7 @@
         }
       },
       "delete": {
-        "operationId": "system-delete-managed-keys-type-name",
+        "operationId": "enterprise-stub-delete-managed-keys-type-name",
         "tags": [
           "system"
         ],
@@ -12248,7 +12248,7 @@
       ],
       "x-vault-createSupported": true,
       "post": {
-        "operationId": "system-write-managed-keys-type-name-test-sign",
+        "operationId": "enterprise-stub-write-managed-keys-type-name-test-sign",
         "tags": [
           "system"
         ],
@@ -12285,7 +12285,7 @@
     },
     "/sys/mfa/method/": {
       "get": {
-        "operationId": "system-list-mfa-method",
+        "operationId": "enterprise-stub-list-mfa-method",
         "tags": [
           "system"
         ],
@@ -12329,7 +12329,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-mfa-method-duo-name",
+        "operationId": "enterprise-stub-read-mfa-method-duo-name",
         "tags": [
           "system"
         ],
@@ -12340,7 +12340,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-mfa-method-duo-name",
+        "operationId": "enterprise-stub-write-mfa-method-duo-name",
         "tags": [
           "system"
         ],
@@ -12351,7 +12351,7 @@
         }
       },
       "delete": {
-        "operationId": "system-delete-mfa-method-duo-name",
+        "operationId": "enterprise-stub-delete-mfa-method-duo-name",
         "tags": [
           "system"
         ],
@@ -12374,7 +12374,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-mfa-method-okta-name",
+        "operationId": "enterprise-stub-read-mfa-method-okta-name",
         "tags": [
           "system"
         ],
@@ -12385,7 +12385,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-mfa-method-okta-name",
+        "operationId": "enterprise-stub-write-mfa-method-okta-name",
         "tags": [
           "system"
         ],
@@ -12396,7 +12396,7 @@
         }
       },
       "delete": {
-        "operationId": "system-delete-mfa-method-okta-name",
+        "operationId": "enterprise-stub-delete-mfa-method-okta-name",
         "tags": [
           "system"
         ],
@@ -12419,7 +12419,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-mfa-method-pingid-name",
+        "operationId": "enterprise-stub-read-mfa-method-pingid-name",
         "tags": [
           "system"
         ],
@@ -12430,7 +12430,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-mfa-method-pingid-name",
+        "operationId": "enterprise-stub-write-mfa-method-pingid-name",
         "tags": [
           "system"
         ],
@@ -12441,7 +12441,7 @@
         }
       },
       "delete": {
-        "operationId": "system-delete-mfa-method-pingid-name",
+        "operationId": "enterprise-stub-delete-mfa-method-pingid-name",
         "tags": [
           "system"
         ],
@@ -12464,7 +12464,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-mfa-method-totp-name",
+        "operationId": "enterprise-stub-read-mfa-method-totp-name",
         "tags": [
           "system"
         ],
@@ -12475,7 +12475,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-mfa-method-totp-name",
+        "operationId": "enterprise-stub-write-mfa-method-totp-name",
         "tags": [
           "system"
         ],
@@ -12486,7 +12486,7 @@
         }
       },
       "delete": {
-        "operationId": "system-delete-mfa-method-totp-name",
+        "operationId": "enterprise-stub-delete-mfa-method-totp-name",
         "tags": [
           "system"
         ],
@@ -12509,7 +12509,7 @@
         }
       ],
       "post": {
-        "operationId": "system-write-mfa-method-totp-name-admin-destroy",
+        "operationId": "enterprise-stub-write-mfa-method-totp-name-admin-destroy",
         "tags": [
           "system"
         ],
@@ -12532,7 +12532,7 @@
         }
       ],
       "post": {
-        "operationId": "system-write-mfa-method-totp-name-admin-generate",
+        "operationId": "enterprise-stub-write-mfa-method-totp-name-admin-generate",
         "tags": [
           "system"
         ],
@@ -12555,7 +12555,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-mfa-method-totp-name-generate",
+        "operationId": "enterprise-stub-read-mfa-method-totp-name-generate",
         "tags": [
           "system"
         ],
@@ -12759,7 +12759,7 @@
     },
     "/sys/namespaces/": {
       "get": {
-        "operationId": "system-list-namespaces",
+        "operationId": "enterprise-stub-list-namespaces",
         "tags": [
           "system"
         ],
@@ -12793,7 +12793,7 @@
     },
     "/sys/namespaces/api-lock/lock": {
       "post": {
-        "operationId": "system-write-namespaces-api-lock-lock",
+        "operationId": "enterprise-stub-write-namespaces-api-lock-lock",
         "tags": [
           "system"
         ],
@@ -12816,7 +12816,7 @@
         }
       ],
       "post": {
-        "operationId": "system-write-namespaces-api-lock-lock-path",
+        "operationId": "enterprise-stub-write-namespaces-api-lock-lock-path",
         "tags": [
           "system"
         ],
@@ -12829,7 +12829,7 @@
     },
     "/sys/namespaces/api-lock/unlock": {
       "post": {
-        "operationId": "system-write-namespaces-api-lock-unlock",
+        "operationId": "enterprise-stub-write-namespaces-api-lock-unlock",
         "tags": [
           "system"
         ],
@@ -12852,7 +12852,7 @@
         }
       ],
       "post": {
-        "operationId": "system-write-namespaces-api-lock-unlock-path",
+        "operationId": "enterprise-stub-write-namespaces-api-lock-unlock-path",
         "tags": [
           "system"
         ],
@@ -12875,7 +12875,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-namespaces-path",
+        "operationId": "enterprise-stub-read-namespaces-path",
         "tags": [
           "system"
         ],
@@ -12886,7 +12886,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-namespaces-path",
+        "operationId": "enterprise-stub-write-namespaces-path",
         "tags": [
           "system"
         ],
@@ -12897,7 +12897,7 @@
         }
       },
       "delete": {
-        "operationId": "system-delete-namespaces-path",
+        "operationId": "enterprise-stub-delete-namespaces-path",
         "tags": [
           "system"
         ],
@@ -13167,7 +13167,7 @@
     },
     "/sys/plugins/reload/backend/status": {
       "get": {
-        "operationId": "system-read-plugins-reload-backend-status",
+        "operationId": "enterprise-stub-read-plugins-reload-backend-status",
         "tags": [
           "system"
         ],
@@ -13282,7 +13282,7 @@
     },
     "/sys/policies/egp/": {
       "get": {
-        "operationId": "system-list-policies-egp",
+        "operationId": "enterprise-stub-list-policies-egp",
         "tags": [
           "system"
         ],
@@ -13326,7 +13326,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-policies-egp-name",
+        "operationId": "enterprise-stub-read-policies-egp-name",
         "tags": [
           "system"
         ],
@@ -13337,7 +13337,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-policies-egp-name",
+        "operationId": "enterprise-stub-write-policies-egp-name",
         "tags": [
           "system"
         ],
@@ -13348,7 +13348,7 @@
         }
       },
       "delete": {
-        "operationId": "system-delete-policies-egp-name",
+        "operationId": "enterprise-stub-delete-policies-egp-name",
         "tags": [
           "system"
         ],
@@ -13496,7 +13496,7 @@
     },
     "/sys/policies/rgp/": {
       "get": {
-        "operationId": "system-list-policies-rgp",
+        "operationId": "enterprise-stub-list-policies-rgp",
         "tags": [
           "system"
         ],
@@ -13540,7 +13540,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-policies-rgp-name",
+        "operationId": "enterprise-stub-read-policies-rgp-name",
         "tags": [
           "system"
         ],
@@ -13551,7 +13551,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-policies-rgp-name",
+        "operationId": "enterprise-stub-write-policies-rgp-name",
         "tags": [
           "system"
         ],
@@ -13562,7 +13562,7 @@
         }
       },
       "delete": {
-        "operationId": "system-delete-policies-rgp-name",
+        "operationId": "enterprise-stub-delete-policies-rgp-name",
         "tags": [
           "system"
         ],
@@ -13905,7 +13905,7 @@
     },
     "/sys/quotas/lease-count/": {
       "get": {
-        "operationId": "system-list-quotas-lease-count",
+        "operationId": "enterprise-stub-list-quotas-lease-count",
         "tags": [
           "system"
         ],
@@ -13949,7 +13949,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-quotas-lease-count-name",
+        "operationId": "enterprise-stub-read-quotas-lease-count-name",
         "tags": [
           "system"
         ],
@@ -13960,7 +13960,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-quotas-lease-count-name",
+        "operationId": "enterprise-stub-write-quotas-lease-count-name",
         "tags": [
           "system"
         ],
@@ -13971,7 +13971,7 @@
         }
       },
       "delete": {
-        "operationId": "system-delete-quotas-lease-count-name",
+        "operationId": "enterprise-stub-delete-quotas-lease-count-name",
         "tags": [
           "system"
         ],
@@ -14559,7 +14559,7 @@
     },
     "/sys/replication/dr/primary/demote": {
       "post": {
-        "operationId": "system-write-replication-dr-primary-demote",
+        "operationId": "enterprise-stub-write-replication-dr-primary-demote",
         "tags": [
           "system"
         ],
@@ -14572,7 +14572,7 @@
     },
     "/sys/replication/dr/primary/disable": {
       "post": {
-        "operationId": "system-write-replication-dr-primary-disable",
+        "operationId": "enterprise-stub-write-replication-dr-primary-disable",
         "tags": [
           "system"
         ],
@@ -14585,7 +14585,7 @@
     },
     "/sys/replication/dr/primary/enable": {
       "post": {
-        "operationId": "system-write-replication-dr-primary-enable",
+        "operationId": "enterprise-stub-write-replication-dr-primary-enable",
         "tags": [
           "system"
         ],
@@ -14598,7 +14598,7 @@
     },
     "/sys/replication/dr/primary/revoke-secondary": {
       "post": {
-        "operationId": "system-write-replication-dr-primary-revoke-secondary",
+        "operationId": "enterprise-stub-write-replication-dr-primary-revoke-secondary",
         "tags": [
           "system"
         ],
@@ -14612,7 +14612,7 @@
     "/sys/replication/dr/primary/secondary-token": {
       "x-vault-sudo": true,
       "post": {
-        "operationId": "system-write-replication-dr-primary-secondary-token",
+        "operationId": "enterprise-stub-write-replication-dr-primary-secondary-token",
         "tags": [
           "system"
         ],
@@ -14635,7 +14635,7 @@
         }
       ],
       "post": {
-        "operationId": "system-write-replication-dr-secondary-config-reload-subsystem",
+        "operationId": "enterprise-stub-write-replication-dr-secondary-config-reload-subsystem",
         "tags": [
           "system"
         ],
@@ -14649,7 +14649,7 @@
     "/sys/replication/dr/secondary/disable": {
       "x-vault-unauthenticated": true,
       "post": {
-        "operationId": "system-write-replication-dr-secondary-disable",
+        "operationId": "enterprise-stub-write-replication-dr-secondary-disable",
         "tags": [
           "system"
         ],
@@ -14662,7 +14662,7 @@
     },
     "/sys/replication/dr/secondary/enable": {
       "post": {
-        "operationId": "system-write-replication-dr-secondary-enable",
+        "operationId": "enterprise-stub-write-replication-dr-secondary-enable",
         "tags": [
           "system"
         ],
@@ -14675,7 +14675,7 @@
     },
     "/sys/replication/dr/secondary/generate-public-key": {
       "post": {
-        "operationId": "system-write-replication-dr-secondary-generate-public-key",
+        "operationId": "enterprise-stub-write-replication-dr-secondary-generate-public-key",
         "tags": [
           "system"
         ],
@@ -14689,7 +14689,7 @@
     "/sys/replication/dr/secondary/license/status": {
       "x-vault-unauthenticated": true,
       "get": {
-        "operationId": "system-read-replication-dr-secondary-license-status",
+        "operationId": "enterprise-stub-read-replication-dr-secondary-license-status",
         "tags": [
           "system"
         ],
@@ -14703,7 +14703,7 @@
     "/sys/replication/dr/secondary/operation-token/delete": {
       "x-vault-unauthenticated": true,
       "post": {
-        "operationId": "system-write-replication-dr-secondary-operation-token-delete",
+        "operationId": "enterprise-stub-write-replication-dr-secondary-operation-token-delete",
         "tags": [
           "system"
         ],
@@ -14717,7 +14717,7 @@
     "/sys/replication/dr/secondary/promote": {
       "x-vault-unauthenticated": true,
       "post": {
-        "operationId": "system-write-replication-dr-secondary-promote",
+        "operationId": "enterprise-stub-write-replication-dr-secondary-promote",
         "tags": [
           "system"
         ],
@@ -14731,7 +14731,7 @@
     "/sys/replication/dr/secondary/recover": {
       "x-vault-unauthenticated": true,
       "post": {
-        "operationId": "system-write-replication-dr-secondary-recover",
+        "operationId": "enterprise-stub-write-replication-dr-secondary-recover",
         "tags": [
           "system"
         ],
@@ -14745,7 +14745,7 @@
     "/sys/replication/dr/secondary/reindex": {
       "x-vault-unauthenticated": true,
       "post": {
-        "operationId": "system-write-replication-dr-secondary-reindex",
+        "operationId": "enterprise-stub-write-replication-dr-secondary-reindex",
         "tags": [
           "system"
         ],
@@ -14759,7 +14759,7 @@
     "/sys/replication/dr/secondary/update-primary": {
       "x-vault-unauthenticated": true,
       "post": {
-        "operationId": "system-write-replication-dr-secondary-update-primary",
+        "operationId": "enterprise-stub-write-replication-dr-secondary-update-primary",
         "tags": [
           "system"
         ],
@@ -14773,7 +14773,7 @@
     "/sys/replication/dr/status": {
       "x-vault-unauthenticated": true,
       "get": {
-        "operationId": "system-read-replication-dr-status",
+        "operationId": "enterprise-stub-read-replication-dr-status",
         "tags": [
           "system"
         ],
@@ -14786,7 +14786,7 @@
     },
     "/sys/replication/performance/primary/demote": {
       "post": {
-        "operationId": "system-write-replication-performance-primary-demote",
+        "operationId": "enterprise-stub-write-replication-performance-primary-demote",
         "tags": [
           "system"
         ],
@@ -14799,7 +14799,7 @@
     },
     "/sys/replication/performance/primary/disable": {
       "post": {
-        "operationId": "system-write-replication-performance-primary-disable",
+        "operationId": "enterprise-stub-write-replication-performance-primary-disable",
         "tags": [
           "system"
         ],
@@ -14822,7 +14822,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-replication-performance-primary-dynamic-filter-id",
+        "operationId": "enterprise-stub-read-replication-performance-primary-dynamic-filter-id",
         "tags": [
           "system"
         ],
@@ -14835,7 +14835,7 @@
     },
     "/sys/replication/performance/primary/enable": {
       "post": {
-        "operationId": "system-write-replication-performance-primary-enable",
+        "operationId": "enterprise-stub-write-replication-performance-primary-enable",
         "tags": [
           "system"
         ],
@@ -14858,7 +14858,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-replication-performance-primary-paths-filter-id",
+        "operationId": "enterprise-stub-read-replication-performance-primary-paths-filter-id",
         "tags": [
           "system"
         ],
@@ -14869,7 +14869,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-replication-performance-primary-paths-filter-id",
+        "operationId": "enterprise-stub-write-replication-performance-primary-paths-filter-id",
         "tags": [
           "system"
         ],
@@ -14880,7 +14880,7 @@
         }
       },
       "delete": {
-        "operationId": "system-delete-replication-performance-primary-paths-filter-id",
+        "operationId": "enterprise-stub-delete-replication-performance-primary-paths-filter-id",
         "tags": [
           "system"
         ],
@@ -14893,7 +14893,7 @@
     },
     "/sys/replication/performance/primary/revoke-secondary": {
       "post": {
-        "operationId": "system-write-replication-performance-primary-revoke-secondary",
+        "operationId": "enterprise-stub-write-replication-performance-primary-revoke-secondary",
         "tags": [
           "system"
         ],
@@ -14907,7 +14907,7 @@
     "/sys/replication/performance/primary/secondary-token": {
       "x-vault-sudo": true,
       "post": {
-        "operationId": "system-write-replication-performance-primary-secondary-token",
+        "operationId": "enterprise-stub-write-replication-performance-primary-secondary-token",
         "tags": [
           "system"
         ],
@@ -14920,7 +14920,7 @@
     },
     "/sys/replication/performance/secondary/disable": {
       "post": {
-        "operationId": "system-write-replication-performance-secondary-disable",
+        "operationId": "enterprise-stub-write-replication-performance-secondary-disable",
         "tags": [
           "system"
         ],
@@ -14943,7 +14943,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-replication-performance-secondary-dynamic-filter-id",
+        "operationId": "enterprise-stub-read-replication-performance-secondary-dynamic-filter-id",
         "tags": [
           "system"
         ],
@@ -14956,7 +14956,7 @@
     },
     "/sys/replication/performance/secondary/enable": {
       "post": {
-        "operationId": "system-write-replication-performance-secondary-enable",
+        "operationId": "enterprise-stub-write-replication-performance-secondary-enable",
         "tags": [
           "system"
         ],
@@ -14969,7 +14969,7 @@
     },
     "/sys/replication/performance/secondary/generate-public-key": {
       "post": {
-        "operationId": "system-write-replication-performance-secondary-generate-public-key",
+        "operationId": "enterprise-stub-write-replication-performance-secondary-generate-public-key",
         "tags": [
           "system"
         ],
@@ -14982,7 +14982,7 @@
     },
     "/sys/replication/performance/secondary/promote": {
       "post": {
-        "operationId": "system-write-replication-performance-secondary-promote",
+        "operationId": "enterprise-stub-write-replication-performance-secondary-promote",
         "tags": [
           "system"
         ],
@@ -14995,7 +14995,7 @@
     },
     "/sys/replication/performance/secondary/update-primary": {
       "post": {
-        "operationId": "system-write-replication-performance-secondary-update-primary",
+        "operationId": "enterprise-stub-write-replication-performance-secondary-update-primary",
         "tags": [
           "system"
         ],
@@ -15009,7 +15009,7 @@
     "/sys/replication/performance/status": {
       "x-vault-unauthenticated": true,
       "get": {
-        "operationId": "system-read-replication-performance-status",
+        "operationId": "enterprise-stub-read-replication-performance-status",
         "tags": [
           "system"
         ],
@@ -15022,7 +15022,7 @@
     },
     "/sys/replication/primary/demote": {
       "post": {
-        "operationId": "system-write-replication-primary-demote",
+        "operationId": "enterprise-stub-write-replication-primary-demote",
         "tags": [
           "system"
         ],
@@ -15035,7 +15035,7 @@
     },
     "/sys/replication/primary/disable": {
       "post": {
-        "operationId": "system-write-replication-primary-disable",
+        "operationId": "enterprise-stub-write-replication-primary-disable",
         "tags": [
           "system"
         ],
@@ -15048,7 +15048,7 @@
     },
     "/sys/replication/primary/enable": {
       "post": {
-        "operationId": "system-write-replication-primary-enable",
+        "operationId": "enterprise-stub-write-replication-primary-enable",
         "tags": [
           "system"
         ],
@@ -15061,7 +15061,7 @@
     },
     "/sys/replication/primary/revoke-secondary": {
       "post": {
-        "operationId": "system-write-replication-primary-revoke-secondary",
+        "operationId": "enterprise-stub-write-replication-primary-revoke-secondary",
         "tags": [
           "system"
         ],
@@ -15075,7 +15075,7 @@
     "/sys/replication/primary/secondary-token": {
       "x-vault-sudo": true,
       "post": {
-        "operationId": "system-write-replication-primary-secondary-token",
+        "operationId": "enterprise-stub-write-replication-primary-secondary-token",
         "tags": [
           "system"
         ],
@@ -15088,7 +15088,7 @@
     },
     "/sys/replication/recover": {
       "post": {
-        "operationId": "system-write-replication-recover",
+        "operationId": "enterprise-stub-write-replication-recover",
         "tags": [
           "system"
         ],
@@ -15102,7 +15102,7 @@
     "/sys/replication/reindex": {
       "x-vault-sudo": true,
       "post": {
-        "operationId": "system-write-replication-reindex",
+        "operationId": "enterprise-stub-write-replication-reindex",
         "tags": [
           "system"
         ],
@@ -15115,7 +15115,7 @@
     },
     "/sys/replication/secondary/disable": {
       "post": {
-        "operationId": "system-write-replication-secondary-disable",
+        "operationId": "enterprise-stub-write-replication-secondary-disable",
         "tags": [
           "system"
         ],
@@ -15128,7 +15128,7 @@
     },
     "/sys/replication/secondary/enable": {
       "post": {
-        "operationId": "system-write-replication-secondary-enable",
+        "operationId": "enterprise-stub-write-replication-secondary-enable",
         "tags": [
           "system"
         ],
@@ -15141,7 +15141,7 @@
     },
     "/sys/replication/secondary/promote": {
       "post": {
-        "operationId": "system-write-replication-secondary-promote",
+        "operationId": "enterprise-stub-write-replication-secondary-promote",
         "tags": [
           "system"
         ],
@@ -15154,7 +15154,7 @@
     },
     "/sys/replication/secondary/update-primary": {
       "post": {
-        "operationId": "system-write-replication-secondary-update-primary",
+        "operationId": "enterprise-stub-write-replication-secondary-update-primary",
         "tags": [
           "system"
         ],
@@ -15168,7 +15168,7 @@
     "/sys/replication/status": {
       "x-vault-unauthenticated": true,
       "get": {
-        "operationId": "system-read-replication-status",
+        "operationId": "read-replication-status",
         "tags": [
           "system"
         ],
@@ -15403,7 +15403,7 @@
     },
     "/sys/sealwrap/rewrap": {
       "get": {
-        "operationId": "system-read-sealwrap-rewrap",
+        "operationId": "enterprise-stub-read-sealwrap-rewrap",
         "tags": [
           "system"
         ],
@@ -15414,7 +15414,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-sealwrap-rewrap",
+        "operationId": "enterprise-stub-write-sealwrap-rewrap",
         "tags": [
           "system"
         ],
@@ -15444,7 +15444,7 @@
     "/sys/storage/raft/snapshot-auto/config/": {
       "x-vault-sudo": true,
       "get": {
-        "operationId": "system-list-storage-raft-snapshot-auto-config",
+        "operationId": "enterprise-stub-list-storage-raft-snapshot-auto-config",
         "tags": [
           "system"
         ],
@@ -15489,7 +15489,7 @@
       ],
       "x-vault-sudo": true,
       "get": {
-        "operationId": "system-read-storage-raft-snapshot-auto-config-name",
+        "operationId": "enterprise-stub-read-storage-raft-snapshot-auto-config-name",
         "tags": [
           "system"
         ],
@@ -15500,7 +15500,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-storage-raft-snapshot-auto-config-name",
+        "operationId": "enterprise-stub-write-storage-raft-snapshot-auto-config-name",
         "tags": [
           "system"
         ],
@@ -15511,7 +15511,7 @@
         }
       },
       "delete": {
-        "operationId": "system-delete-storage-raft-snapshot-auto-config-name",
+        "operationId": "enterprise-stub-delete-storage-raft-snapshot-auto-config-name",
         "tags": [
           "system"
         ],
@@ -15534,7 +15534,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-storage-raft-snapshot-auto-status-name",
+        "operationId": "enterprise-stub-read-storage-raft-snapshot-auto-status-name",
         "tags": [
           "system"
         ],

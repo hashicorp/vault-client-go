@@ -41558,14 +41558,6 @@
             "type": "string",
             "description": "Issuing Certificate Authority"
           },
-          "private_key": {
-            "type": "string",
-            "description": "Private key"
-          },
-          "private_key_type": {
-            "type": "string",
-            "description": "Private key type"
-          },
           "serial_number": {
             "type": "string",
             "description": "Serial Number"
@@ -41752,14 +41744,6 @@
             "type": "string",
             "description": "Issuing Certificate Authority"
           },
-          "private_key": {
-            "type": "string",
-            "description": "Private key"
-          },
-          "private_key_type": {
-            "type": "string",
-            "description": "Private key type"
-          },
           "serial_number": {
             "type": "string",
             "description": "Serial Number"
@@ -41905,14 +41889,6 @@
           "issuing_ca": {
             "type": "string",
             "description": "Issuing Certificate Authority"
-          },
-          "private_key": {
-            "type": "string",
-            "description": "Private key"
-          },
-          "private_key_type": {
-            "type": "string",
-            "description": "Private key type"
           },
           "serial_number": {
             "type": "string",
@@ -44858,14 +44834,6 @@
             "type": "string",
             "description": "Issuing Certificate Authority"
           },
-          "private_key": {
-            "type": "string",
-            "description": "Private key"
-          },
-          "private_key_type": {
-            "type": "string",
-            "description": "Private key type"
-          },
           "serial_number": {
             "type": "string",
             "description": "Serial Number"
@@ -45057,14 +45025,6 @@
             "type": "string",
             "description": "Issuing Certificate Authority"
           },
-          "private_key": {
-            "type": "string",
-            "description": "Private key"
-          },
-          "private_key_type": {
-            "type": "string",
-            "description": "Private key type"
-          },
           "serial_number": {
             "type": "string",
             "description": "Serial Number"
@@ -45215,14 +45175,6 @@
           "issuing_ca": {
             "type": "string",
             "description": "Issuing Certificate Authority"
-          },
-          "private_key": {
-            "type": "string",
-            "description": "Private key"
-          },
-          "private_key_type": {
-            "type": "string",
-            "description": "Private key type"
           },
           "serial_number": {
             "type": "string",

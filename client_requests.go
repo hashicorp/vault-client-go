@@ -31,9 +31,9 @@ func (c *Client) Read(ctx context.Context, path string, options ...RequestOption
 		c,
 		http.MethodGet,
 		v1Path(path),
-		nil,                                    // request body
-		requestModifiers.customQueryParameters, // request query parameters
-		requestModifiers,                       // request modifiers (headers & callbacks)
+		nil, // request body
+		requestModifiers.additionalQueryParameters,
+		requestModifiers,
 	)
 }
 
@@ -53,9 +53,9 @@ func (c *Client) ReadRaw(ctx context.Context, path string, options ...RequestOpt
 		c,
 		http.MethodGet,
 		v1Path(path),
-		nil,                                    // request body
-		requestModifiers.customQueryParameters, // request query parameters
-		requestModifiers,                       // request modifiers (headers & callbacks)
+		nil, // request body
+		requestModifiers.additionalQueryParameters,
+		requestModifiers,
 	)
 }
 
@@ -87,9 +87,9 @@ func (c *Client) WriteFromReader(ctx context.Context, path string, body io.Reade
 		c,
 		http.MethodPost,
 		v1Path(path),
-		body,                                   // request body
-		requestModifiers.customQueryParameters, // request query parameters
-		requestModifiers,                       // request modifiers (headers & callbacks)
+		body,
+		requestModifiers.additionalQueryParameters,
+		requestModifiers,
 	)
 }
 
@@ -100,7 +100,7 @@ func (c *Client) List(ctx context.Context, path string, options ...RequestOption
 		return nil, err
 	}
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
 	return sendRequestParseResponse[map[string]interface{}](
@@ -108,9 +108,9 @@ func (c *Client) List(ctx context.Context, path string, options ...RequestOption
 		c,
 		http.MethodGet,
 		v1Path(path),
-		nil,                    // request body
-		requestQueryParameters, // request query parameters
-		requestModifiers,       // request modifiers (headers & callbacks)
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
 	)
 }
 
@@ -126,9 +126,9 @@ func (c *Client) Delete(ctx context.Context, path string, options ...RequestOpti
 		c,
 		http.MethodDelete,
 		v1Path(path),
-		nil,                                    // request body
-		requestModifiers.customQueryParameters, // request query parameters
-		requestModifiers,                       // request modifiers (headers & callbacks)
+		nil, // request body
+		requestModifiers.additionalQueryParameters,
+		requestModifiers,
 	)
 }
 

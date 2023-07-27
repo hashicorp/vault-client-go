@@ -234,9 +234,11 @@ secret, err := client.Secrets.KvV2Read(
 )
 ```
 
-#### Adding Custom Headers and Custom Query Parameters
+#### Adding Custom Headers and Query Parameters
 
-The library allows adding custom headers and query parameters to all requests:
+The library allows adding custom headers and query parameters to all requests.
+`vault.WithQueryParameters` is primarily intended for the generic
+`client.Read`, `client.ReadRaw`, `client.List`, and `client.Delete`:
 
 ```go
 resp, err := client.Read(
@@ -246,7 +248,7 @@ resp, err := client.Read(
         "x-test-header1": {"a", "b"},
         "x-test-header2": {"c", "d"},
     }),
-    vault.WithCustomQueryParameters(url.Values{
+    vault.WithQueryParameters(url.Values{
         "param1": {"a"},
         "param2": {"b"},
     }),

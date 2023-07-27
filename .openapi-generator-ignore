@@ -4,12 +4,18 @@ api/openapi.yaml
 
 README.md
 
+# We exclude some operations from the generated library by ID. openapi-generator does not have a way for us to do that
+# directly, so we must do it by filename here, and also separately by Handlebars expressions in the
+# partial_filter_operation template.
+
 model_*2_request.go
 model_*2_response.go
 model_*3_request.go
 model_*3_response.go
 model_*4_request.go
 model_*4_response.go
+model_enterprise_stub*_request.go
+model_enterprise_stub*_response.go
 
 docs/*2Request.md
 docs/*2Response.md
@@ -17,6 +23,8 @@ docs/*3Request.md
 docs/*3Response.md
 docs/*4Request.md
 docs/*4Response.md
+docs/EnterpriseStub*Request.md
+docs/EnterpriseStub*Response.md
 
 configuration.go
 response.go

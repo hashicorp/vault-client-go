@@ -6,22 +6,14 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 {{#with operations ~}}
 {{#each operation ~}}
-{{#endsWith operationId "2"}}{{else ~}}
-{{#endsWith operationId "3"}}{{else ~}}
-{{#endsWith operationId "4"}}{{else ~}}
-[**{{operationId}}**]({{classname}}.md#{{operationId}}) | **{{httpMethod}}** {{path}} | {{#if summary}}{{summary}}{{/if}}
-{{/endsWith ~}}
-{{/endsWith ~}}
-{{/endsWith ~}}
-{{/each ~}}
+{{#>partial_filter_operation}}[**{{operationId}}**]({{classname}}.md#{{operationId}}) | **{{httpMethod}}** {{path}} | {{#if summary}}{{summary}}{{/if}}
+{{/partial_filter_operation}}
+{{~/each ~}}
 {{/with ~}}
 
 {{#with operations}}
 {{#each operation ~}}
-{{#endsWith operationId "2"}}{{else ~}}
-{{#endsWith operationId "3"}}{{else ~}}
-{{#endsWith operationId "4"}}{{else ~}}
-## {{{operationId}}}
+{{#>partial_filter_operation}}## {{{operationId}}}
 
 {{#if summary}}{{{summary}}}{{/if}}{{#if notes}}
 
@@ -87,8 +79,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-{{/endsWith ~}}
-{{/endsWith ~}}
-{{/endsWith ~}}
-{{/each ~}}
+{{/partial_filter_operation}}
+{{~/each ~}}
 {{/with ~}}

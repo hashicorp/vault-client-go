@@ -61,6 +61,12 @@ func isResponseError(req *http.Request, resp *http.Response) *ResponseError {
 	if resp.StatusCode == http.StatusTooManyRequests /* 429 */ && req.URL.Path == "/v1/sys/health" {
 		return nil
 	}
+	
+	// 472 & 473 are returned by (performance/secondary) standby instances for /sys/health requests and should
+	// not be treated as an error
+	if (resp.StatusCode == 472 || resp.StatusCode == 473) && req.URL.Path == "/v1/sys/health" {
+		return nil
+	}
 
 	responseError := &ResponseError{
 		StatusCode:      resp.StatusCode,

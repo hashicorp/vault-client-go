@@ -10,6 +10,8 @@ import (
 	"io"
 	"net/http"
 	"strings"
+
+	"golang.org/x/exp/slices"
 )
 
 // IsErrorStatus returns true if the given error is either a ResponseError or a
@@ -55,16 +57,15 @@ func isResponseError(req *http.Request, resp *http.Response) *ResponseError {
 		return nil
 	}
 
-	// 429 is returned by standby instances for /sys/health requests and should
-	// not be treated as an error; for other paths the status code indicates
-	// that the quota limit has been reached.
-	if resp.StatusCode == http.StatusTooManyRequests /* 429 */ && req.URL.Path == "/v1/sys/health" {
-		return nil
-	}
-
-	// 472 & 473 are returned by (performance/secondary) standby instances for /sys/health requests and should
-	// not be treated as an error
-	if (resp.StatusCode == 472 || resp.StatusCode == 473) && req.URL.Path == "/v1/sys/health" {
+	// /v1/sys/health returns a few special 4xx status codes that should not be
+	// treated as errors:
+	//
+	//  - 429 if unsealed and standby
+	//  - 472 if disaster recovery mode replication secondary and active
+	//  - 473 if performance standby
+	//
+	// See: https://developer.hashicorp.com/vault/api-docs/system/health
+	if req.URL.Path == "/v1/sys/health" && slices.Contains([]int{429, 472, 473}, resp.StatusCode) {
 		return nil
 	}
 

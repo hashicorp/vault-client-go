@@ -19,7 +19,7 @@ A simple [HashiCorp Vault][vault] Go client library.
 1. [Examples](#examples)
    - [Getting Started](#getting-started)
    - [Authentication](#authentication)
-   - [Using Generic Accessors](#using-generic-accessors)
+   - [Using Generic Methods](#using-generic-methods)
    - [Using Generated Methods](#using-generated-methods)
    - [Modifying Requests](#modifying-requests)
      - [Overriding Default Mount Path](#overriding-default-mount-path)
@@ -136,9 +136,9 @@ if err := client.SetToken(resp.Auth.ClientToken); err != nil {
 The secret identifier is often delivered as a wrapped token. In this case, you
 should unwrap it first as demonstrated [here](#response-wrapping--unwrapping).
 
-### Using Generic Accessors
+### Using Generic Methods
 
-The library provides the following generic accessors which let you read, modify,
+The library provides the following generic methods which let you read, modify,
 list, and delete an arbitrary path within Vault:
 
 ```go
@@ -154,12 +154,12 @@ client.List(...)
 client.Delete(...)
 ```
 
-For example, `client.Secrets.KvV2Write(...)` from
+For example, `client.Secrets.KvV2Write(...)` from the
 [Getting Started](#getting-started) section could be rewritten using a generic
 `client.Write(...)` like so:
 
 ```go
-_, err = client.Write(ctx, "/secret/data/my-secret", map[string]any{
+_, err = client.Write(ctx, "/secret/data/foo", map[string]any{
 	"data": map[string]any{
 		"password1": "abc123",
 		"password2": "correct horse battery staple",
@@ -268,7 +268,7 @@ resp, err := client.Secrets.KvV2Read(
 wrapped := resp.WrapInfo.Token
 
 // unwrap the response (usually done elsewhere)
-unwrapped, err := vault.Unwrap[map[string]any](ctx, client, wrapped)
+unwrapped, err := vault.Unwrap[schema.KvV2ReadResponse](ctx, client, wrapped)
 ```
 
 ### Error Handling

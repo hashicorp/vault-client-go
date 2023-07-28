@@ -12,6 +12,7 @@ import (
 	"unicode"
 
 	"github.com/hashicorp/go-multierror"
+	"golang.org/x/exp/maps"
 )
 
 type (
@@ -245,47 +246,50 @@ func (m *requestModifiers) additionalQueryParametersOrDefault() url.Values {
 	return m.additionalQueryParameters
 }
 
-// mergeRequestModifiers merges the two objects, preferring the per-request modifiers
-func mergeRequestModifiers(perClient, perRequest requestModifiers) requestModifiers {
-	merged := perClient
-
-	if perRequest.headers.userAgent != "" {
-		merged.headers.userAgent = perRequest.headers.userAgent
+// mergeRequestModifiers merges the values in *rhs into *lhs. The merging is
+// done according the following rules:
+//
+//   - for scalaras : the rhs values, if present, will overwrite the lhs values
+//   - for slices   : the rhs values will be appended to the lhs values
+//   - for maps     : the rhs values will be copied into the lhs using maps.Copy
+func mergeRequestModifiers(lhs, rhs *requestModifiers) {
+	if rhs.headers.userAgent != "" {
+		lhs.headers.userAgent = rhs.headers.userAgent
 	}
 
-	if perRequest.headers.token != "" {
-		merged.headers.token = perRequest.headers.token
+	if rhs.headers.token != "" {
+		lhs.headers.token = rhs.headers.token
 	}
 
-	if perRequest.headers.namespace != "" {
-		merged.headers.namespace = perRequest.headers.namespace
+	if rhs.headers.namespace != "" {
+		lhs.headers.namespace = rhs.headers.namespace
 	}
 
-	if len(perRequest.headers.mfaCredentials) != 0 {
-		merged.headers.mfaCredentials = perRequest.headers.mfaCredentials
+	lhs.headers.mfaCredentials = append(
+		lhs.headers.mfaCredentials,
+		rhs.headers.mfaCredentials...,
+	)
+
+	if rhs.headers.responseWrappingTTL != 0 {
+		lhs.headers.responseWrappingTTL = rhs.headers.responseWrappingTTL
 	}
 
-	if perRequest.headers.responseWrappingTTL != 0 {
-		merged.headers.responseWrappingTTL = perRequest.headers.responseWrappingTTL
+	if rhs.headers.replicationForwardingMode != ReplicationForwardNone {
+		lhs.headers.replicationForwardingMode = rhs.headers.replicationForwardingMode
 	}
 
-	if perRequest.headers.replicationForwardingMode != ReplicationForwardNone {
-		merged.headers.replicationForwardingMode = perRequest.headers.replicationForwardingMode
-	}
+	// in case of key collisions, the rhs keys will take precedence
+	maps.Copy(lhs.headers.customHeaders, rhs.headers.customHeaders)
 
-	if len(perRequest.headers.customHeaders) != 0 {
-		merged.headers.customHeaders = perRequest.headers.customHeaders
-	}
+	lhs.requestCallbacks = append(
+		lhs.requestCallbacks,
+		rhs.requestCallbacks...,
+	)
 
-	if len(perRequest.requestCallbacks) != 0 {
-		merged.requestCallbacks = perRequest.requestCallbacks
-	}
-
-	if len(perRequest.responseCallbacks) != 0 {
-		merged.responseCallbacks = perRequest.responseCallbacks
-	}
-
-	return merged
+	lhs.responseCallbacks = append(
+		lhs.responseCallbacks,
+		rhs.responseCallbacks...,
+	)
 }
 
 func validateToken(token string) error {

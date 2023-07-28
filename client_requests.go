@@ -140,7 +140,7 @@ func sendStructuredRequestParseResponse[ResponseT any](
 	path string,
 	body any,
 	parameters url.Values,
-	requestModifiersPerRequest requestModifiers,
+	requestModifiers requestModifiers,
 ) (*Response[ResponseT], error) {
 	var buf bytes.Buffer
 
@@ -155,7 +155,7 @@ func sendStructuredRequestParseResponse[ResponseT any](
 		path,
 		&buf,
 		parameters,
-		requestModifiersPerRequest,
+		requestModifiers,
 	)
 }
 
@@ -167,7 +167,7 @@ func sendRequestParseResponse[ResponseT any](
 	path string,
 	body io.Reader,
 	parameters url.Values,
-	requestModifiersPerRequest requestModifiers,
+	requestModifiers requestModifiers,
 ) (*Response[ResponseT], error) {
 	// apply the client-level request timeout, if set
 	if client.configuration.RequestTimeout > 0 {
@@ -177,13 +177,10 @@ func sendRequestParseResponse[ResponseT any](
 	}
 
 	// clone the client-level request modifiers to prevent race conditions
-	requestModifiersClient := client.cloneClientRequestModifiers()
+	modifiers := client.cloneClientRequestModifiers()
 
-	// merge the client-level & request-level modifiers, preferring the later
-	modifiers := mergeRequestModifiers(
-		requestModifiersClient,
-		requestModifiersPerRequest,
-	)
+	// merge in the request-level request modifiers
+	mergeRequestModifiers(&modifiers, &requestModifiers)
 
 	req, err := client.newRequest(ctx, method, path, body, parameters, modifiers.headers)
 	if err != nil {
@@ -215,16 +212,13 @@ func sendRequestReturnRawResponse(
 	path string,
 	body io.Reader,
 	parameters url.Values,
-	requestModifiersPerRequest requestModifiers,
+	requestModifiers requestModifiers,
 ) (*http.Response, error) {
 	// clone the client-level request modifiers to prevent race conditions
-	requestModifiersClient := client.cloneClientRequestModifiers()
+	modifiers := client.cloneClientRequestModifiers()
 
-	// merge the client-level & request-level modifiers, preferring the later
-	modifiers := mergeRequestModifiers(
-		requestModifiersClient,
-		requestModifiersPerRequest,
-	)
+	// merge in the request-level request modifiers
+	mergeRequestModifiers(&modifiers, &requestModifiers)
 
 	req, err := client.newRequest(ctx, method, path, body, parameters, modifiers.headers)
 	if err != nil {

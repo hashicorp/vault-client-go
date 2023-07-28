@@ -23,7 +23,7 @@ A simple [HashiCorp Vault][vault] Go client library.
    - [Using Generated Methods](#using-generated-methods)
    - [Modifying Requests](#modifying-requests)
      - [Overriding Default Mount Path](#overriding-default-mount-path)
-     - [Adding Custom Headers and Query Parameters](#adding-custom-headers-and-query-parameters)
+     - [Adding Custom Headers and Appending Query Parameters](#adding-custom-headers-and-appending-query-parameters)
      - [Response Wrapping \& Unwrapping](#response-wrapping--unwrapping)
    - [Error Handling](#error-handling)
    - [Using TLS](#using-tls)

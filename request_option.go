@@ -115,10 +115,12 @@ func WithMountPath(path string) RequestOption {
 	}
 }
 
-// WithCustomQueryParameters appends the given list of query parameters to the request.
-func WithCustomQueryParameters(parameters url.Values) RequestOption {
+// WithQueryParameters appends the given list of query parameters to the request.
+// This is primarily intended to be used with client.Read, client.ReadRaw,
+// client.List, and client.Delete methods.
+func WithQueryParameters(parameters url.Values) RequestOption {
 	return func(m *requestModifiers) error {
-		m.customQueryParameters = parameters
+		m.additionalQueryParameters = parameters
 		return nil
 	}
 }

@@ -35,7 +35,7 @@ func ({{lower (substring classname 0 1)}} *{{cut classname "Api"}}) {{nickname}}
 	requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape(requestModifiers.mountPathOr({{#with defaultValue}}{{{.}}}{{/with}})), -1){{/endsWith}}{{/each}}{{#each pathParams}}{{#endsWith baseName "_mount_path"}}{{else}}
     requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape({{paramName}}), -1){{/endsWith}}{{/each}}
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 {{~#each queryParams}}
 {{~#eq paramName "list"}}
 	requestQueryParameters.Add("{{baseName}}", "true")

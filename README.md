@@ -23,7 +23,7 @@ A simple [HashiCorp Vault][vault] Go client library.
    - [Using Generated Methods](#using-generated-methods)
    - [Modifying Requests](#modifying-requests)
      - [Overriding Default Mount Path](#overriding-default-mount-path)
-     - [Adding Custom Headers and Custom Query Parameters](#adding-custom-headers-and-custom-query-parameters)
+     - [Adding Custom Headers and Appending Query Parameters](#adding-custom-headers-and-appending-query-parameters)
      - [Response Wrapping \& Unwrapping](#response-wrapping--unwrapping)
    - [Error Handling](#error-handling)
    - [Using TLS](#using-tls)
@@ -234,9 +234,11 @@ secret, err := client.Secrets.KvV2Read(
 )
 ```
 
-#### Adding Custom Headers and Custom Query Parameters
+#### Adding Custom Headers and Appending Query Parameters
 
-The library allows adding custom headers and query parameters to all requests:
+The library allows adding custom headers and appending query parameters to all
+requests. `vault.WithQueryParameters` is primarily intended for the generic
+`client.Read`, `client.ReadRaw`, `client.List`, and `client.Delete`:
 
 ```go
 resp, err := client.Read(
@@ -246,7 +248,7 @@ resp, err := client.Read(
         "x-test-header1": {"a", "b"},
         "x-test-header2": {"c", "d"},
     }),
-    vault.WithCustomQueryParameters(url.Values{
+    vault.WithQueryParameters(url.Values{
         "param1": {"a"},
         "param2": {"b"},
     }),

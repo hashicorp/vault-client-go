@@ -28,12 +28,12 @@ type requestModifiers struct {
 	responseCallbacks []ResponseCallback
 
 	// mountPath, if specified, will overwrite the default mount path used in
-	// client.Auth & client.Secrets requests
+	// client.Auth & client.Secrets requests.
 	mountPath string
 
-	// customQueryParameters, if specified will be appended to the list of
-	// query parameters included with the request
-	customQueryParameters url.Values
+	// additionalQueryParameters, if specified will be appended to the list of
+	// query parameters included with the request.
+	additionalQueryParameters url.Values
 }
 
 // requestHeaders contains headers that will be added to requests
@@ -237,12 +237,12 @@ func (m *requestModifiers) mountPathOr(defaultMountPath string) string {
 	return m.mountPath
 }
 
-// customQueryParametersOrDefault returns object's query parameters or an empty map.
-func (m *requestModifiers) customQueryParametersOrDefault() url.Values {
-	if m.customQueryParameters == nil {
+// additionalQueryParametersOrDefault returns object's query parameters or an empty map.
+func (m *requestModifiers) additionalQueryParametersOrDefault() url.Values {
+	if m.additionalQueryParameters == nil {
 		return make(url.Values)
 	}
-	return m.customQueryParameters
+	return m.additionalQueryParameters
 }
 
 // mergeRequestModifiers merges the two objects, preferring the per-request modifiers

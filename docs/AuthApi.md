@@ -396,7 +396,7 @@ func main() {
 
 	resp, err := client.Auth.AliCloudLogin(
 		context.Background(),
-		AliCloudLoginRequest{ /* populate request parameters */ },
+		schema.AliCloudLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
@@ -519,7 +519,7 @@ func main() {
 	resp, err := client.Auth.AliCloudWriteAuthRole(
 		context.Background(),
 		role,
-		AliCloudWriteAuthRoleRequest{ /* populate request parameters */ },
+		schema.AliCloudWriteAuthRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
@@ -1315,7 +1315,7 @@ func main() {
 	resp, err := client.Auth.AppRoleDestroySecretId(
 		context.Background(),
 		roleName,
-		AppRoleDestroySecretIdRequest{ /* populate request parameters */ },
+		schema.AppRoleDestroySecretIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -1379,7 +1379,7 @@ func main() {
 	resp, err := client.Auth.AppRoleDestroySecretIdByAccessor(
 		context.Background(),
 		roleName,
-		AppRoleDestroySecretIdByAccessorRequest{ /* populate request parameters */ },
+		schema.AppRoleDestroySecretIdByAccessorRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -1561,7 +1561,7 @@ func main() {
 
 	resp, err := client.Auth.AppRoleLogin(
 		context.Background(),
-		AppRoleLoginRequest{ /* populate request parameters */ },
+		schema.AppRoleLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -1623,7 +1623,7 @@ func main() {
 	resp, err := client.Auth.AppRoleLookUpSecretId(
 		context.Background(),
 		roleName,
-		AppRoleLookUpSecretIdRequest{ /* populate request parameters */ },
+		schema.AppRoleLookUpSecretIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -1687,7 +1687,7 @@ func main() {
 	resp, err := client.Auth.AppRoleLookUpSecretIdByAccessor(
 		context.Background(),
 		roleName,
-		AppRoleLookUpSecretIdByAccessorRequest{ /* populate request parameters */ },
+		schema.AppRoleLookUpSecretIdByAccessorRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -2662,7 +2662,7 @@ func main() {
 	resp, err := client.Auth.AppRoleWriteBindSecretId(
 		context.Background(),
 		roleName,
-		AppRoleWriteBindSecretIdRequest{ /* populate request parameters */ },
+		schema.AppRoleWriteBindSecretIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -2726,7 +2726,7 @@ func main() {
 	resp, err := client.Auth.AppRoleWriteBoundCidrList(
 		context.Background(),
 		roleName,
-		AppRoleWriteBoundCidrListRequest{ /* populate request parameters */ },
+		schema.AppRoleWriteBoundCidrListRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -2790,7 +2790,7 @@ func main() {
 	resp, err := client.Auth.AppRoleWriteCustomSecretId(
 		context.Background(),
 		roleName,
-		AppRoleWriteCustomSecretIdRequest{ /* populate request parameters */ },
+		schema.AppRoleWriteCustomSecretIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -2854,7 +2854,7 @@ func main() {
 	resp, err := client.Auth.AppRoleWritePeriod(
 		context.Background(),
 		roleName,
-		AppRoleWritePeriodRequest{ /* populate request parameters */ },
+		schema.AppRoleWritePeriodRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -2918,7 +2918,7 @@ func main() {
 	resp, err := client.Auth.AppRoleWritePolicies(
 		context.Background(),
 		roleName,
-		AppRoleWritePoliciesRequest{ /* populate request parameters */ },
+		schema.AppRoleWritePoliciesRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -2982,7 +2982,7 @@ func main() {
 	resp, err := client.Auth.AppRoleWriteRole(
 		context.Background(),
 		roleName,
-		AppRoleWriteRoleRequest{ /* populate request parameters */ },
+		schema.AppRoleWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -3046,7 +3046,7 @@ func main() {
 	resp, err := client.Auth.AppRoleWriteRoleId(
 		context.Background(),
 		roleName,
-		AppRoleWriteRoleIdRequest{ /* populate request parameters */ },
+		schema.AppRoleWriteRoleIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -3110,7 +3110,7 @@ func main() {
 	resp, err := client.Auth.AppRoleWriteSecretId(
 		context.Background(),
 		roleName,
-		AppRoleWriteSecretIdRequest{ /* populate request parameters */ },
+		schema.AppRoleWriteSecretIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -3174,7 +3174,7 @@ func main() {
 	resp, err := client.Auth.AppRoleWriteSecretIdBoundCidrs(
 		context.Background(),
 		roleName,
-		AppRoleWriteSecretIdBoundCidrsRequest{ /* populate request parameters */ },
+		schema.AppRoleWriteSecretIdBoundCidrsRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -3238,7 +3238,7 @@ func main() {
 	resp, err := client.Auth.AppRoleWriteSecretIdNumUses(
 		context.Background(),
 		roleName,
-		AppRoleWriteSecretIdNumUsesRequest{ /* populate request parameters */ },
+		schema.AppRoleWriteSecretIdNumUsesRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -3302,7 +3302,7 @@ func main() {
 	resp, err := client.Auth.AppRoleWriteSecretIdTtl(
 		context.Background(),
 		roleName,
-		AppRoleWriteSecretIdTtlRequest{ /* populate request parameters */ },
+		schema.AppRoleWriteSecretIdTtlRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -3366,7 +3366,7 @@ func main() {
 	resp, err := client.Auth.AppRoleWriteTokenBoundCidrs(
 		context.Background(),
 		roleName,
-		AppRoleWriteTokenBoundCidrsRequest{ /* populate request parameters */ },
+		schema.AppRoleWriteTokenBoundCidrsRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -3430,7 +3430,7 @@ func main() {
 	resp, err := client.Auth.AppRoleWriteTokenMaxTtl(
 		context.Background(),
 		roleName,
-		AppRoleWriteTokenMaxTtlRequest{ /* populate request parameters */ },
+		schema.AppRoleWriteTokenMaxTtlRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -3494,7 +3494,7 @@ func main() {
 	resp, err := client.Auth.AppRoleWriteTokenNumUses(
 		context.Background(),
 		roleName,
-		AppRoleWriteTokenNumUsesRequest{ /* populate request parameters */ },
+		schema.AppRoleWriteTokenNumUsesRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -3558,7 +3558,7 @@ func main() {
 	resp, err := client.Auth.AppRoleWriteTokenTtl(
 		context.Background(),
 		roleName,
-		AppRoleWriteTokenTtlRequest{ /* populate request parameters */ },
+		schema.AppRoleWriteTokenTtlRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
@@ -3622,7 +3622,7 @@ func main() {
 	resp, err := client.Auth.AwsConfigureCertificate(
 		context.Background(),
 		certName,
-		AwsConfigureCertificateRequest{ /* populate request parameters */ },
+		schema.AwsConfigureCertificateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -3684,7 +3684,7 @@ func main() {
 
 	resp, err := client.Auth.AwsConfigureClient(
 		context.Background(),
-		AwsConfigureClientRequest{ /* populate request parameters */ },
+		schema.AwsConfigureClientRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -3744,7 +3744,7 @@ func main() {
 
 	resp, err := client.Auth.AwsConfigureIdentityAccessListTidyOperation(
 		context.Background(),
-		AwsConfigureIdentityAccessListTidyOperationRequest{ /* populate request parameters */ },
+		schema.AwsConfigureIdentityAccessListTidyOperationRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -3804,7 +3804,7 @@ func main() {
 
 	resp, err := client.Auth.AwsConfigureIdentityIntegration(
 		context.Background(),
-		AwsConfigureIdentityIntegrationRequest{ /* populate request parameters */ },
+		schema.AwsConfigureIdentityIntegrationRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -3864,7 +3864,7 @@ func main() {
 
 	resp, err := client.Auth.AwsConfigureIdentityWhitelistTidyOperation(
 		context.Background(),
-		AwsConfigureIdentityWhitelistTidyOperationRequest{ /* populate request parameters */ },
+		schema.AwsConfigureIdentityWhitelistTidyOperationRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -3924,7 +3924,7 @@ func main() {
 
 	resp, err := client.Auth.AwsConfigureRoleTagBlacklistTidyOperation(
 		context.Background(),
-		AwsConfigureRoleTagBlacklistTidyOperationRequest{ /* populate request parameters */ },
+		schema.AwsConfigureRoleTagBlacklistTidyOperationRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -3984,7 +3984,7 @@ func main() {
 
 	resp, err := client.Auth.AwsConfigureRoleTagDenyListTidyOperation(
 		context.Background(),
-		AwsConfigureRoleTagDenyListTidyOperationRequest{ /* populate request parameters */ },
+		schema.AwsConfigureRoleTagDenyListTidyOperationRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -5162,7 +5162,7 @@ func main() {
 
 	resp, err := client.Auth.AwsLogin(
 		context.Background(),
-		AwsLoginRequest{ /* populate request parameters */ },
+		schema.AwsLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -6048,7 +6048,7 @@ func main() {
 
 	resp, err := client.Auth.AwsTidyIdentityAccessList(
 		context.Background(),
-		AwsTidyIdentityAccessListRequest{ /* populate request parameters */ },
+		schema.AwsTidyIdentityAccessListRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -6108,7 +6108,7 @@ func main() {
 
 	resp, err := client.Auth.AwsTidyIdentityWhitelist(
 		context.Background(),
-		AwsTidyIdentityWhitelistRequest{ /* populate request parameters */ },
+		schema.AwsTidyIdentityWhitelistRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -6168,7 +6168,7 @@ func main() {
 
 	resp, err := client.Auth.AwsTidyRoleTagBlacklist(
 		context.Background(),
-		AwsTidyRoleTagBlacklistRequest{ /* populate request parameters */ },
+		schema.AwsTidyRoleTagBlacklistRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -6228,7 +6228,7 @@ func main() {
 
 	resp, err := client.Auth.AwsTidyRoleTagDenyList(
 		context.Background(),
-		AwsTidyRoleTagDenyListRequest{ /* populate request parameters */ },
+		schema.AwsTidyRoleTagDenyListRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -6290,7 +6290,7 @@ func main() {
 	resp, err := client.Auth.AwsWriteAuthRole(
 		context.Background(),
 		role,
-		AwsWriteAuthRoleRequest{ /* populate request parameters */ },
+		schema.AwsWriteAuthRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -6354,7 +6354,7 @@ func main() {
 	resp, err := client.Auth.AwsWriteRoleTag(
 		context.Background(),
 		role,
-		AwsWriteRoleTagRequest{ /* populate request parameters */ },
+		schema.AwsWriteRoleTagRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -6540,7 +6540,7 @@ func main() {
 	resp, err := client.Auth.AwsWriteStsRole(
 		context.Background(),
 		accountId,
-		AwsWriteStsRoleRequest{ /* populate request parameters */ },
+		schema.AwsWriteStsRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -6602,7 +6602,7 @@ func main() {
 
 	resp, err := client.Auth.AzureConfigureAuth(
 		context.Background(),
-		AzureConfigureAuthRequest{ /* populate request parameters */ },
+		schema.AzureConfigureAuthRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
@@ -6838,7 +6838,7 @@ func main() {
 
 	resp, err := client.Auth.AzureLogin(
 		context.Background(),
-		AzureLoginRequest{ /* populate request parameters */ },
+		schema.AzureLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
@@ -7075,7 +7075,7 @@ func main() {
 	resp, err := client.Auth.AzureWriteAuthRole(
 		context.Background(),
 		name,
-		AzureWriteAuthRoleRequest{ /* populate request parameters */ },
+		schema.AzureWriteAuthRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
@@ -7137,7 +7137,7 @@ func main() {
 
 	resp, err := client.Auth.CentrifyConfigure(
 		context.Background(),
-		CentrifyConfigureRequest{ /* populate request parameters */ },
+		schema.CentrifyConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("centrify"),
 	)
@@ -7197,7 +7197,7 @@ func main() {
 
 	resp, err := client.Auth.CentrifyLogin(
 		context.Background(),
-		CentrifyLoginRequest{ /* populate request parameters */ },
+		schema.CentrifyLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("centrify"),
 	)
@@ -7314,7 +7314,7 @@ func main() {
 
 	resp, err := client.Auth.CertConfigure(
 		context.Background(),
-		CertConfigureRequest{ /* populate request parameters */ },
+		schema.CertConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
@@ -7612,7 +7612,7 @@ func main() {
 
 	resp, err := client.Auth.CertLogin(
 		context.Background(),
-		CertLoginRequest{ /* populate request parameters */ },
+		schema.CertLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
@@ -7853,7 +7853,7 @@ func main() {
 	resp, err := client.Auth.CertWriteCertificate(
 		context.Background(),
 		name,
-		CertWriteCertificateRequest{ /* populate request parameters */ },
+		schema.CertWriteCertificateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
@@ -7917,7 +7917,7 @@ func main() {
 	resp, err := client.Auth.CertWriteCrl(
 		context.Background(),
 		name,
-		CertWriteCrlRequest{ /* populate request parameters */ },
+		schema.CertWriteCrlRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
@@ -7979,7 +7979,7 @@ func main() {
 
 	resp, err := client.Auth.CloudFoundryConfigure(
 		context.Background(),
-		CloudFoundryConfigureRequest{ /* populate request parameters */ },
+		schema.CloudFoundryConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
@@ -8215,7 +8215,7 @@ func main() {
 
 	resp, err := client.Auth.CloudFoundryLogin(
 		context.Background(),
-		CloudFoundryLoginRequest{ /* populate request parameters */ },
+		schema.CloudFoundryLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
@@ -8395,7 +8395,7 @@ func main() {
 	resp, err := client.Auth.CloudFoundryWriteRole(
 		context.Background(),
 		role,
-		CloudFoundryWriteRoleRequest{ /* populate request parameters */ },
+		schema.CloudFoundryWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
@@ -8457,7 +8457,7 @@ func main() {
 
 	resp, err := client.Auth.GithubConfigure(
 		context.Background(),
-		GithubConfigureRequest{ /* populate request parameters */ },
+		schema.GithubConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
@@ -8755,7 +8755,7 @@ func main() {
 
 	resp, err := client.Auth.GithubLogin(
 		context.Background(),
-		GithubLoginRequest{ /* populate request parameters */ },
+		schema.GithubLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
@@ -8996,7 +8996,7 @@ func main() {
 	resp, err := client.Auth.GithubWriteTeamMapping(
 		context.Background(),
 		key,
-		GithubWriteTeamMappingRequest{ /* populate request parameters */ },
+		schema.GithubWriteTeamMappingRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
@@ -9060,7 +9060,7 @@ func main() {
 	resp, err := client.Auth.GithubWriteUserMapping(
 		context.Background(),
 		key,
-		GithubWriteUserMappingRequest{ /* populate request parameters */ },
+		schema.GithubWriteUserMappingRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
@@ -9122,7 +9122,7 @@ func main() {
 
 	resp, err := client.Auth.GoogleCloudConfigureAuth(
 		context.Background(),
-		GoogleCloudConfigureAuthRequest{ /* populate request parameters */ },
+		schema.GoogleCloudConfigureAuthRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
@@ -9245,7 +9245,7 @@ func main() {
 	resp, err := client.Auth.GoogleCloudEditLabelsForRole(
 		context.Background(),
 		name,
-		GoogleCloudEditLabelsForRoleRequest{ /* populate request parameters */ },
+		schema.GoogleCloudEditLabelsForRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
@@ -9309,7 +9309,7 @@ func main() {
 	resp, err := client.Auth.GoogleCloudEditServiceAccountsForRole(
 		context.Background(),
 		name,
-		GoogleCloudEditServiceAccountsForRoleRequest{ /* populate request parameters */ },
+		schema.GoogleCloudEditServiceAccountsForRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
@@ -9429,7 +9429,7 @@ func main() {
 
 	resp, err := client.Auth.GoogleCloudLogin(
 		context.Background(),
-		GoogleCloudLoginRequest{ /* populate request parameters */ },
+		schema.GoogleCloudLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
@@ -9609,7 +9609,7 @@ func main() {
 	resp, err := client.Auth.GoogleCloudWriteRole(
 		context.Background(),
 		name,
-		GoogleCloudWriteRoleRequest{ /* populate request parameters */ },
+		schema.GoogleCloudWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
@@ -9676,7 +9676,7 @@ func main() {
 
 	resp, err := client.Auth.JwtConfigure(
 		context.Background(),
-		JwtConfigureRequest{ /* populate request parameters */ },
+		schema.JwtConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
@@ -9857,7 +9857,7 @@ func main() {
 
 	resp, err := client.Auth.JwtLogin(
 		context.Background(),
-		JwtLoginRequest{ /* populate request parameters */ },
+		schema.JwtLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
@@ -9983,7 +9983,7 @@ func main() {
 
 	resp, err := client.Auth.JwtOidcCallbackFormPost(
 		context.Background(),
-		JwtOidcCallbackFormPostRequest{ /* populate request parameters */ },
+		schema.JwtOidcCallbackFormPostRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
@@ -10043,7 +10043,7 @@ func main() {
 
 	resp, err := client.Auth.JwtOidcRequestAuthorizationUrl(
 		context.Background(),
-		JwtOidcRequestAuthorizationUrlRequest{ /* populate request parameters */ },
+		schema.JwtOidcRequestAuthorizationUrlRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
@@ -10228,7 +10228,7 @@ func main() {
 	resp, err := client.Auth.JwtWriteRole(
 		context.Background(),
 		name,
-		JwtWriteRoleRequest{ /* populate request parameters */ },
+		schema.JwtWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
@@ -10290,7 +10290,7 @@ func main() {
 
 	resp, err := client.Auth.KerberosConfigure(
 		context.Background(),
-		KerberosConfigureRequest{ /* populate request parameters */ },
+		schema.KerberosConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
@@ -10350,7 +10350,7 @@ func main() {
 
 	resp, err := client.Auth.KerberosConfigureLdap(
 		context.Background(),
-		KerberosConfigureLdapRequest{ /* populate request parameters */ },
+		schema.KerberosConfigureLdapRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
@@ -10529,7 +10529,7 @@ func main() {
 
 	resp, err := client.Auth.KerberosLogin(
 		context.Background(),
-		KerberosLoginRequest{ /* populate request parameters */ },
+		schema.KerberosLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
@@ -10766,7 +10766,7 @@ func main() {
 	resp, err := client.Auth.KerberosWriteGroup(
 		context.Background(),
 		name,
-		KerberosWriteGroupRequest{ /* populate request parameters */ },
+		schema.KerberosWriteGroupRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
@@ -10828,7 +10828,7 @@ func main() {
 
 	resp, err := client.Auth.KubernetesConfigureAuth(
 		context.Background(),
-		KubernetesConfigureAuthRequest{ /* populate request parameters */ },
+		schema.KubernetesConfigureAuthRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
@@ -11007,7 +11007,7 @@ func main() {
 
 	resp, err := client.Auth.KubernetesLogin(
 		context.Background(),
-		KubernetesLoginRequest{ /* populate request parameters */ },
+		schema.KubernetesLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
@@ -11187,7 +11187,7 @@ func main() {
 	resp, err := client.Auth.KubernetesWriteAuthRole(
 		context.Background(),
 		name,
-		KubernetesWriteAuthRoleRequest{ /* populate request parameters */ },
+		schema.KubernetesWriteAuthRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
@@ -11249,7 +11249,7 @@ func main() {
 
 	resp, err := client.Auth.LdapConfigureAuth(
 		context.Background(),
-		LdapConfigureAuthRequest{ /* populate request parameters */ },
+		schema.LdapConfigureAuthRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
@@ -11549,7 +11549,7 @@ func main() {
 	resp, err := client.Auth.LdapLogin(
 		context.Background(),
 		username,
-		LdapLoginRequest{ /* populate request parameters */ },
+		schema.LdapLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
@@ -11792,7 +11792,7 @@ func main() {
 	resp, err := client.Auth.LdapWriteGroup(
 		context.Background(),
 		name,
-		LdapWriteGroupRequest{ /* populate request parameters */ },
+		schema.LdapWriteGroupRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
@@ -11856,7 +11856,7 @@ func main() {
 	resp, err := client.Auth.LdapWriteUser(
 		context.Background(),
 		name,
-		LdapWriteUserRequest{ /* populate request parameters */ },
+		schema.LdapWriteUserRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
@@ -11918,7 +11918,7 @@ func main() {
 
 	resp, err := client.Auth.OciConfigure(
 		context.Background(),
-		OciConfigureRequest{ /* populate request parameters */ },
+		schema.OciConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
@@ -12156,7 +12156,7 @@ func main() {
 	resp, err := client.Auth.OciLogin(
 		context.Background(),
 		role,
-		OciLoginRequest{ /* populate request parameters */ },
+		schema.OciLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
@@ -12338,7 +12338,7 @@ func main() {
 	resp, err := client.Auth.OciWriteRole(
 		context.Background(),
 		role,
-		OciWriteRoleRequest{ /* populate request parameters */ },
+		schema.OciWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
@@ -12400,7 +12400,7 @@ func main() {
 
 	resp, err := client.Auth.OktaConfigure(
 		context.Background(),
-		OktaConfigureRequest{ /* populate request parameters */ },
+		schema.OktaConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
@@ -12700,7 +12700,7 @@ func main() {
 	resp, err := client.Auth.OktaLogin(
 		context.Background(),
 		username,
-		OktaLoginRequest{ /* populate request parameters */ },
+		schema.OktaLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
@@ -13004,7 +13004,7 @@ func main() {
 	resp, err := client.Auth.OktaWriteGroup(
 		context.Background(),
 		name,
-		OktaWriteGroupRequest{ /* populate request parameters */ },
+		schema.OktaWriteGroupRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
@@ -13068,7 +13068,7 @@ func main() {
 	resp, err := client.Auth.OktaWriteUser(
 		context.Background(),
 		name,
-		OktaWriteUserRequest{ /* populate request parameters */ },
+		schema.OktaWriteUserRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
@@ -13130,7 +13130,7 @@ func main() {
 
 	resp, err := client.Auth.RadiusConfigure(
 		context.Background(),
-		RadiusConfigureRequest{ /* populate request parameters */ },
+		schema.RadiusConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
@@ -13309,7 +13309,7 @@ func main() {
 
 	resp, err := client.Auth.RadiusLogin(
 		context.Background(),
-		RadiusLoginRequest{ /* populate request parameters */ },
+		schema.RadiusLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
@@ -13371,7 +13371,7 @@ func main() {
 	resp, err := client.Auth.RadiusLoginWithUsername(
 		context.Background(),
 		urlusername,
-		RadiusLoginWithUsernameRequest{ /* populate request parameters */ },
+		schema.RadiusLoginWithUsernameRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
@@ -13553,7 +13553,7 @@ func main() {
 	resp, err := client.Auth.RadiusWriteUser(
 		context.Background(),
 		name,
-		RadiusWriteUserRequest{ /* populate request parameters */ },
+		schema.RadiusWriteUserRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
@@ -13615,7 +13615,7 @@ func main() {
 
 	resp, err := client.Auth.TokenCreate(
 		context.Background(),
-		TokenCreateRequest{ /* populate request parameters */ },
+		schema.TokenCreateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -13672,7 +13672,7 @@ func main() {
 	resp, err := client.Auth.TokenCreateAgainstRole(
 		context.Background(),
 		roleName,
-		TokenCreateAgainstRoleRequest{ /* populate request parameters */ },
+		schema.TokenCreateAgainstRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -13732,7 +13732,7 @@ func main() {
 
 	resp, err := client.Auth.TokenCreateOrphan(
 		context.Background(),
-		TokenCreateOrphanRequest{ /* populate request parameters */ },
+		schema.TokenCreateOrphanRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -13952,7 +13952,7 @@ func main() {
 
 	resp, err := client.Auth.TokenLookUp(
 		context.Background(),
-		TokenLookUpRequest{ /* populate request parameters */ },
+		schema.TokenLookUpRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14007,7 +14007,7 @@ func main() {
 
 	resp, err := client.Auth.TokenLookUpAccessor(
 		context.Background(),
-		TokenLookUpAccessorRequest{ /* populate request parameters */ },
+		schema.TokenLookUpAccessorRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14171,7 +14171,7 @@ func main() {
 
 	resp, err := client.Auth.TokenRenew(
 		context.Background(),
-		TokenRenewRequest{ /* populate request parameters */ },
+		schema.TokenRenewRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14226,7 +14226,7 @@ func main() {
 
 	resp, err := client.Auth.TokenRenewAccessor(
 		context.Background(),
-		TokenRenewAccessorRequest{ /* populate request parameters */ },
+		schema.TokenRenewAccessorRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14281,7 +14281,7 @@ func main() {
 
 	resp, err := client.Auth.TokenRenewSelf(
 		context.Background(),
-		TokenRenewSelfRequest{ /* populate request parameters */ },
+		schema.TokenRenewSelfRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14336,7 +14336,7 @@ func main() {
 
 	resp, err := client.Auth.TokenRevoke(
 		context.Background(),
-		TokenRevokeRequest{ /* populate request parameters */ },
+		schema.TokenRevokeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14391,7 +14391,7 @@ func main() {
 
 	resp, err := client.Auth.TokenRevokeAccessor(
 		context.Background(),
-		TokenRevokeAccessorRequest{ /* populate request parameters */ },
+		schema.TokenRevokeAccessorRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14446,7 +14446,7 @@ func main() {
 
 	resp, err := client.Auth.TokenRevokeOrphan(
 		context.Background(),
-		TokenRevokeOrphanRequest{ /* populate request parameters */ },
+		schema.TokenRevokeOrphanRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14603,7 +14603,7 @@ func main() {
 	resp, err := client.Auth.TokenWriteRole(
 		context.Background(),
 		roleName,
-		TokenWriteRoleRequest{ /* populate request parameters */ },
+		schema.TokenWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14784,7 +14784,7 @@ func main() {
 	resp, err := client.Auth.UserpassLogin(
 		context.Background(),
 		username,
-		UserpassLoginRequest{ /* populate request parameters */ },
+		schema.UserpassLoginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)
@@ -14909,7 +14909,7 @@ func main() {
 	resp, err := client.Auth.UserpassResetPassword(
 		context.Background(),
 		username,
-		UserpassResetPasswordRequest{ /* populate request parameters */ },
+		schema.UserpassResetPasswordRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)
@@ -14973,7 +14973,7 @@ func main() {
 	resp, err := client.Auth.UserpassUpdatePolicies(
 		context.Background(),
 		username,
-		UserpassUpdatePoliciesRequest{ /* populate request parameters */ },
+		schema.UserpassUpdatePoliciesRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)
@@ -15037,7 +15037,7 @@ func main() {
 	resp, err := client.Auth.UserpassWriteUser(
 		context.Background(),
 		username,
-		UserpassWriteUserRequest{ /* populate request parameters */ },
+		schema.UserpassWriteUserRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)

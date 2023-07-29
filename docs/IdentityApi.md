@@ -139,7 +139,7 @@ func main() {
 
 	resp, err := client.Identity.AliasCreate(
 		context.Background(),
-		AliasCreateRequest{ /* populate request parameters */ },
+		schema.AliasCreateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -367,7 +367,7 @@ func main() {
 	resp, err := client.Identity.AliasUpdateById(
 		context.Background(),
 		id,
-		AliasUpdateByIdRequest{ /* populate request parameters */ },
+		schema.AliasUpdateByIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -427,7 +427,7 @@ func main() {
 
 	resp, err := client.Identity.EntityBatchDelete(
 		context.Background(),
-		EntityBatchDeleteRequest{ /* populate request parameters */ },
+		schema.EntityBatchDeleteRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -482,7 +482,7 @@ func main() {
 
 	resp, err := client.Identity.EntityCreate(
 		context.Background(),
-		EntityCreateRequest{ /* populate request parameters */ },
+		schema.EntityCreateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -537,7 +537,7 @@ func main() {
 
 	resp, err := client.Identity.EntityCreateAlias(
 		context.Background(),
-		EntityCreateAliasRequest{ /* populate request parameters */ },
+		schema.EntityCreateAliasRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -928,7 +928,7 @@ func main() {
 
 	resp, err := client.Identity.EntityLookUp(
 		context.Background(),
-		EntityLookUpRequest{ /* populate request parameters */ },
+		schema.EntityLookUpRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -983,7 +983,7 @@ func main() {
 
 	resp, err := client.Identity.EntityMerge(
 		context.Background(),
-		EntityMergeRequest{ /* populate request parameters */ },
+		schema.EntityMergeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1217,7 +1217,7 @@ func main() {
 	resp, err := client.Identity.EntityUpdateAliasById(
 		context.Background(),
 		id,
-		EntityUpdateAliasByIdRequest{ /* populate request parameters */ },
+		schema.EntityUpdateAliasByIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1279,7 +1279,7 @@ func main() {
 	resp, err := client.Identity.EntityUpdateById(
 		context.Background(),
 		id,
-		EntityUpdateByIdRequest{ /* populate request parameters */ },
+		schema.EntityUpdateByIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1341,7 +1341,7 @@ func main() {
 	resp, err := client.Identity.EntityUpdateByName(
 		context.Background(),
 		name,
-		EntityUpdateByNameRequest{ /* populate request parameters */ },
+		schema.EntityUpdateByNameRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1401,7 +1401,7 @@ func main() {
 
 	resp, err := client.Identity.GroupCreate(
 		context.Background(),
-		GroupCreateRequest{ /* populate request parameters */ },
+		schema.GroupCreateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1456,7 +1456,7 @@ func main() {
 
 	resp, err := client.Identity.GroupCreateAlias(
 		context.Background(),
-		GroupCreateAliasRequest{ /* populate request parameters */ },
+		schema.GroupCreateAliasRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1847,7 +1847,7 @@ func main() {
 
 	resp, err := client.Identity.GroupLookUp(
 		context.Background(),
-		GroupLookUpRequest{ /* populate request parameters */ },
+		schema.GroupLookUpRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2081,7 +2081,7 @@ func main() {
 	resp, err := client.Identity.GroupUpdateAliasById(
 		context.Background(),
 		id,
-		GroupUpdateAliasByIdRequest{ /* populate request parameters */ },
+		schema.GroupUpdateAliasByIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2143,7 +2143,7 @@ func main() {
 	resp, err := client.Identity.GroupUpdateById(
 		context.Background(),
 		id,
-		GroupUpdateByIdRequest{ /* populate request parameters */ },
+		schema.GroupUpdateByIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2205,7 +2205,7 @@ func main() {
 	resp, err := client.Identity.GroupUpdateByName(
 		context.Background(),
 		name,
-		GroupUpdateByNameRequest{ /* populate request parameters */ },
+		schema.GroupUpdateByNameRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2265,7 +2265,7 @@ func main() {
 
 	resp, err := client.Identity.MfaAdminDestroyTotpSecret(
 		context.Background(),
-		MfaAdminDestroyTotpSecretRequest{ /* populate request parameters */ },
+		schema.MfaAdminDestroyTotpSecretRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2320,7 +2320,7 @@ func main() {
 
 	resp, err := client.Identity.MfaAdminGenerateTotpSecret(
 		context.Background(),
-		MfaAdminGenerateTotpSecretRequest{ /* populate request parameters */ },
+		schema.MfaAdminGenerateTotpSecretRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2375,7 +2375,7 @@ func main() {
 
 	resp, err := client.Identity.MfaCreateDuoMethod(
 		context.Background(),
-		MfaCreateDuoMethodRequest{ /* populate request parameters */ },
+		schema.MfaCreateDuoMethodRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2430,7 +2430,7 @@ func main() {
 
 	resp, err := client.Identity.MfaCreateOktaMethod(
 		context.Background(),
-		MfaCreateOktaMethodRequest{ /* populate request parameters */ },
+		schema.MfaCreateOktaMethodRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2485,7 +2485,7 @@ func main() {
 
 	resp, err := client.Identity.MfaCreatePingIdMethod(
 		context.Background(),
-		MfaCreatePingIdMethodRequest{ /* populate request parameters */ },
+		schema.MfaCreatePingIdMethodRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2540,7 +2540,7 @@ func main() {
 
 	resp, err := client.Identity.MfaCreateTotpMethod(
 		context.Background(),
-		MfaCreateTotpMethodRequest{ /* populate request parameters */ },
+		schema.MfaCreateTotpMethodRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2890,7 +2890,7 @@ func main() {
 
 	resp, err := client.Identity.MfaGenerateTotpSecret(
 		context.Background(),
-		MfaGenerateTotpSecretRequest{ /* populate request parameters */ },
+		schema.MfaGenerateTotpSecretRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3619,7 +3619,7 @@ func main() {
 	resp, err := client.Identity.MfaUpdateDuoMethod(
 		context.Background(),
 		methodId,
-		MfaUpdateDuoMethodRequest{ /* populate request parameters */ },
+		schema.MfaUpdateDuoMethodRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3681,7 +3681,7 @@ func main() {
 	resp, err := client.Identity.MfaUpdateOktaMethod(
 		context.Background(),
 		methodId,
-		MfaUpdateOktaMethodRequest{ /* populate request parameters */ },
+		schema.MfaUpdateOktaMethodRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3743,7 +3743,7 @@ func main() {
 	resp, err := client.Identity.MfaUpdatePingIdMethod(
 		context.Background(),
 		methodId,
-		MfaUpdatePingIdMethodRequest{ /* populate request parameters */ },
+		schema.MfaUpdatePingIdMethodRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3805,7 +3805,7 @@ func main() {
 	resp, err := client.Identity.MfaUpdateTotpMethod(
 		context.Background(),
 		methodId,
-		MfaUpdateTotpMethodRequest{ /* populate request parameters */ },
+		schema.MfaUpdateTotpMethodRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3867,7 +3867,7 @@ func main() {
 	resp, err := client.Identity.MfaWriteLoginEnforcement(
 		context.Background(),
 		name,
-		MfaWriteLoginEnforcementRequest{ /* populate request parameters */ },
+		schema.MfaWriteLoginEnforcementRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3927,7 +3927,7 @@ func main() {
 
 	resp, err := client.Identity.OidcConfigure(
 		context.Background(),
-		OidcConfigureRequest{ /* populate request parameters */ },
+		schema.OidcConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4395,7 +4395,7 @@ func main() {
 
 	resp, err := client.Identity.OidcIntrospect(
 		context.Background(),
-		OidcIntrospectRequest{ /* populate request parameters */ },
+		schema.OidcIntrospectRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4859,7 +4859,7 @@ func main() {
 	resp, err := client.Identity.OidcProviderAuthorizeWithParameters(
 		context.Background(),
 		name,
-		OidcProviderAuthorizeWithParametersRequest{ /* populate request parameters */ },
+		schema.OidcProviderAuthorizeWithParametersRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4921,7 +4921,7 @@ func main() {
 	resp, err := client.Identity.OidcProviderToken(
 		context.Background(),
 		name,
-		OidcProviderTokenRequest{ /* populate request parameters */ },
+		schema.OidcProviderTokenRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5664,7 +5664,7 @@ func main() {
 	resp, err := client.Identity.OidcRotateKey(
 		context.Background(),
 		name,
-		OidcRotateKeyRequest{ /* populate request parameters */ },
+		schema.OidcRotateKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5726,7 +5726,7 @@ func main() {
 	resp, err := client.Identity.OidcWriteAssignment(
 		context.Background(),
 		name,
-		OidcWriteAssignmentRequest{ /* populate request parameters */ },
+		schema.OidcWriteAssignmentRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5788,7 +5788,7 @@ func main() {
 	resp, err := client.Identity.OidcWriteClient(
 		context.Background(),
 		name,
-		OidcWriteClientRequest{ /* populate request parameters */ },
+		schema.OidcWriteClientRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5850,7 +5850,7 @@ func main() {
 	resp, err := client.Identity.OidcWriteKey(
 		context.Background(),
 		name,
-		OidcWriteKeyRequest{ /* populate request parameters */ },
+		schema.OidcWriteKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5912,7 +5912,7 @@ func main() {
 	resp, err := client.Identity.OidcWriteProvider(
 		context.Background(),
 		name,
-		OidcWriteProviderRequest{ /* populate request parameters */ },
+		schema.OidcWriteProviderRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5974,7 +5974,7 @@ func main() {
 	resp, err := client.Identity.OidcWriteRole(
 		context.Background(),
 		name,
-		OidcWriteRoleRequest{ /* populate request parameters */ },
+		schema.OidcWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6036,7 +6036,7 @@ func main() {
 	resp, err := client.Identity.OidcWriteScope(
 		context.Background(),
 		name,
-		OidcWriteScopeRequest{ /* populate request parameters */ },
+		schema.OidcWriteScopeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6096,7 +6096,7 @@ func main() {
 
 	resp, err := client.Identity.PersonaCreate(
 		context.Background(),
-		PersonaCreateRequest{ /* populate request parameters */ },
+		schema.PersonaCreateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6324,7 +6324,7 @@ func main() {
 	resp, err := client.Identity.PersonaUpdateById(
 		context.Background(),
 		id,
-		PersonaUpdateByIdRequest{ /* populate request parameters */ },
+		schema.PersonaUpdateByIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {

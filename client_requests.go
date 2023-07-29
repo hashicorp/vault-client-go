@@ -9,7 +9,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"net"
 	"net/http"
 	"net/url"
 	"strings"
@@ -247,15 +246,6 @@ func (c *Client) newRequest(
 	url, err := c.parsedBaseAddress.Parse(path)
 	if err != nil {
 		return nil, fmt.Errorf("could not join %q with the base address: %w", path, err)
-	}
-
-	// if configured, look up the DNS service record (SRV) and take the highest match
-	if c.configuration.EnableSRVLookup {
-		_, addrs, err := net.LookupSRV("http", "tcp", url.Hostname())
-		// don't return the error: address might not have a service record
-		if err == nil && len(addrs) > 0 {
-			url.Host = fmt.Sprintf("%s:%d", addrs[0].Target, addrs[0].Port)
-		}
 	}
 
 	// add query parameters (if any)

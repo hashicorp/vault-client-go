@@ -28,7 +28,6 @@ func Test_walkconfigurationfields(t *testing.T) {
 			"VAULT_RETRY_WAIT_MAX",
 			"VAULT_MAX_RETRIES",
 			"VAULT_RATE_LIMIT",
-			"VAULT_SRV_LOOKUP",
 			"VAULT_DISABLE_REDIRECTS",
 		}
 	)

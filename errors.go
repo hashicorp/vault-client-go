@@ -10,8 +10,6 @@ import (
 	"io"
 	"net/http"
 	"strings"
-
-	"golang.org/x/exp/slices"
 )
 
 // IsErrorStatus returns true if the given error is either a ResponseError or a

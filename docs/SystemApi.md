@@ -188,7 +188,7 @@ func main() {
 	resp, err := client.System.AuditingCalculateHash(
 		context.Background(),
 		path,
-		AuditingCalculateHashRequest{ /* populate request parameters */ },
+		schema.AuditingCalculateHashRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -368,7 +368,7 @@ func main() {
 	resp, err := client.System.AuditingEnableDevice(
 		context.Background(),
 		path,
-		AuditingEnableDeviceRequest{ /* populate request parameters */ },
+		schema.AuditingEnableDeviceRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -430,7 +430,7 @@ func main() {
 	resp, err := client.System.AuditingEnableRequestHeader(
 		context.Background(),
 		header,
-		AuditingEnableRequestHeaderRequest{ /* populate request parameters */ },
+		schema.AuditingEnableRequestHeaderRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -714,7 +714,7 @@ func main() {
 	resp, err := client.System.AuthEnableMethod(
 		context.Background(),
 		path,
-		AuthEnableMethodRequest{ /* populate request parameters */ },
+		schema.AuthEnableMethodRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -948,7 +948,7 @@ func main() {
 	resp, err := client.System.AuthTuneConfigurationParameters(
 		context.Background(),
 		path,
-		AuthTuneConfigurationParametersRequest{ /* populate request parameters */ },
+		schema.AuthTuneConfigurationParametersRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1116,7 +1116,7 @@ func main() {
 
 	resp, err := client.System.CorsConfigure(
 		context.Background(),
-		CorsConfigureRequest{ /* populate request parameters */ },
+		schema.CorsConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1271,7 +1271,7 @@ func main() {
 
 	resp, err := client.System.Decode(
 		context.Background(),
-		DecodeRequest{ /* populate request parameters */ },
+		schema.DecodeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1326,7 +1326,7 @@ func main() {
 
 	resp, err := client.System.EncryptionKeyConfigureRotation(
 		context.Background(),
-		EncryptionKeyConfigureRotationRequest{ /* populate request parameters */ },
+		schema.EncryptionKeyConfigureRotationRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1531,7 +1531,7 @@ func main() {
 
 	resp, err := client.System.GenerateHash(
 		context.Background(),
-		GenerateHashRequest{ /* populate request parameters */ },
+		schema.GenerateHashRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1588,7 +1588,7 @@ func main() {
 	resp, err := client.System.GenerateHashWithAlgorithm(
 		context.Background(),
 		urlalgorithm,
-		GenerateHashWithAlgorithmRequest{ /* populate request parameters */ },
+		schema.GenerateHashWithAlgorithmRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1648,7 +1648,7 @@ func main() {
 
 	resp, err := client.System.GenerateRandom(
 		context.Background(),
-		GenerateRandomRequest{ /* populate request parameters */ },
+		schema.GenerateRandomRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1705,7 +1705,7 @@ func main() {
 	resp, err := client.System.GenerateRandomWithBytes(
 		context.Background(),
 		urlbytes,
-		GenerateRandomWithBytesRequest{ /* populate request parameters */ },
+		schema.GenerateRandomWithBytesRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1767,7 +1767,7 @@ func main() {
 	resp, err := client.System.GenerateRandomWithSource(
 		context.Background(),
 		source,
-		GenerateRandomWithSourceRequest{ /* populate request parameters */ },
+		schema.GenerateRandomWithSourceRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1831,7 +1831,7 @@ func main() {
 		context.Background(),
 		source,
 		urlbytes,
-		GenerateRandomWithSourceAndBytesRequest{ /* populate request parameters */ },
+		schema.GenerateRandomWithSourceAndBytesRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1945,7 +1945,7 @@ func main() {
 
 	resp, err := client.System.Initialize(
 		context.Background(),
-		InitializeRequest{ /* populate request parameters */ },
+		schema.InitializeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2000,7 +2000,7 @@ func main() {
 
 	resp, err := client.System.InternalClientActivityConfigure(
 		context.Background(),
-		InternalClientActivityConfigureRequest{ /* populate request parameters */ },
+		schema.InternalClientActivityConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2463,7 +2463,7 @@ func main() {
 
 	resp, err := client.System.InternalGenerateOpenApiDocumentWithParameters(
 		context.Background(),
-		InternalGenerateOpenApiDocumentWithParametersRequest{ /* populate request parameters */ },
+		schema.InternalGenerateOpenApiDocumentWithParametersRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3109,7 +3109,7 @@ func main() {
 
 	resp, err := client.System.LeasesReadLease(
 		context.Background(),
-		LeasesReadLeaseRequest{ /* populate request parameters */ },
+		schema.LeasesReadLeaseRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3164,7 +3164,7 @@ func main() {
 
 	resp, err := client.System.LeasesRenewLease(
 		context.Background(),
-		LeasesRenewLeaseRequest{ /* populate request parameters */ },
+		schema.LeasesRenewLeaseRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3221,7 +3221,7 @@ func main() {
 	resp, err := client.System.LeasesRenewLeaseWithId(
 		context.Background(),
 		urlLeaseId,
-		LeasesRenewLeaseWithIdRequest{ /* populate request parameters */ },
+		schema.LeasesRenewLeaseWithIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3281,7 +3281,7 @@ func main() {
 
 	resp, err := client.System.LeasesRevokeLease(
 		context.Background(),
-		LeasesRevokeLeaseRequest{ /* populate request parameters */ },
+		schema.LeasesRevokeLeaseRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3338,7 +3338,7 @@ func main() {
 	resp, err := client.System.LeasesRevokeLeaseWithId(
 		context.Background(),
 		urlLeaseId,
-		LeasesRevokeLeaseWithIdRequest{ /* populate request parameters */ },
+		schema.LeasesRevokeLeaseWithIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3400,7 +3400,7 @@ func main() {
 	resp, err := client.System.LeasesRevokeLeaseWithPrefix(
 		context.Background(),
 		prefix,
-		LeasesRevokeLeaseWithPrefixRequest{ /* populate request parameters */ },
+		schema.LeasesRevokeLeaseWithPrefixRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3891,7 +3891,7 @@ func main() {
 
 	resp, err := client.System.LoggersUpdateVerbosityLevel(
 		context.Background(),
-		LoggersUpdateVerbosityLevelRequest{ /* populate request parameters */ },
+		schema.LoggersUpdateVerbosityLevelRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3948,7 +3948,7 @@ func main() {
 	resp, err := client.System.LoggersUpdateVerbosityLevelFor(
 		context.Background(),
 		name,
-		LoggersUpdateVerbosityLevelForRequest{ /* populate request parameters */ },
+		schema.LoggersUpdateVerbosityLevelForRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4063,7 +4063,7 @@ func main() {
 
 	resp, err := client.System.MfaValidate(
 		context.Background(),
-		MfaValidateRequest{ /* populate request parameters */ },
+		schema.MfaValidateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4237,7 +4237,7 @@ func main() {
 	resp, err := client.System.MountsEnableSecretsEngine(
 		context.Background(),
 		path,
-		MountsEnableSecretsEngineRequest{ /* populate request parameters */ },
+		schema.MountsEnableSecretsEngineRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4467,7 +4467,7 @@ func main() {
 	resp, err := client.System.MountsTuneConfigurationParameters(
 		context.Background(),
 		path,
-		MountsTuneConfigurationParametersRequest{ /* populate request parameters */ },
+		schema.MountsTuneConfigurationParametersRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4761,7 +4761,7 @@ func main() {
 	resp, err := client.System.PluginsCatalogRegisterPlugin(
 		context.Background(),
 		name,
-		PluginsCatalogRegisterPluginRequest{ /* populate request parameters */ },
+		schema.PluginsCatalogRegisterPluginRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4825,7 +4825,7 @@ func main() {
 		context.Background(),
 		name,
 		type_,
-		PluginsCatalogRegisterPluginWithTypeRequest{ /* populate request parameters */ },
+		schema.PluginsCatalogRegisterPluginWithTypeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5011,7 +5011,7 @@ func main() {
 
 	resp, err := client.System.PluginsReloadBackends(
 		context.Background(),
-		PluginsReloadBackendsRequest{ /* populate request parameters */ },
+		schema.PluginsReloadBackendsRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5469,7 +5469,7 @@ func main() {
 	resp, err := client.System.PoliciesWriteAclPolicy(
 		context.Background(),
 		name,
-		PoliciesWriteAclPolicyRequest{ /* populate request parameters */ },
+		schema.PoliciesWriteAclPolicyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5531,7 +5531,7 @@ func main() {
 	resp, err := client.System.PoliciesWritePasswordPolicy(
 		context.Background(),
 		name,
-		PoliciesWritePasswordPolicyRequest{ /* populate request parameters */ },
+		schema.PoliciesWritePasswordPolicyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6165,7 +6165,7 @@ func main() {
 
 	resp, err := client.System.QueryTokenAccessorCapabilities(
 		context.Background(),
-		QueryTokenAccessorCapabilitiesRequest{ /* populate request parameters */ },
+		schema.QueryTokenAccessorCapabilitiesRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6220,7 +6220,7 @@ func main() {
 
 	resp, err := client.System.QueryTokenCapabilities(
 		context.Background(),
-		QueryTokenCapabilitiesRequest{ /* populate request parameters */ },
+		schema.QueryTokenCapabilitiesRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6275,7 +6275,7 @@ func main() {
 
 	resp, err := client.System.QueryTokenSelfCapabilities(
 		context.Background(),
-		QueryTokenSelfCapabilitiesRequest{ /* populate request parameters */ },
+		schema.QueryTokenSelfCapabilitiesRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6330,7 +6330,7 @@ func main() {
 
 	resp, err := client.System.RateLimitQuotasConfigure(
 		context.Background(),
-		RateLimitQuotasConfigureRequest{ /* populate request parameters */ },
+		schema.RateLimitQuotasConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6608,7 +6608,7 @@ func main() {
 	resp, err := client.System.RateLimitQuotasWrite(
 		context.Background(),
 		name,
-		RateLimitQuotasWriteRequest{ /* populate request parameters */ },
+		schema.RateLimitQuotasWriteRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6848,7 +6848,7 @@ func main() {
 	resp, err := client.System.RawWrite(
 		context.Background(),
 		path,
-		RawWriteRequest{ /* populate request parameters */ },
+		schema.RawWriteRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7110,7 +7110,7 @@ func main() {
 
 	resp, err := client.System.ReadWrappingProperties(
 		context.Background(),
-		ReadWrappingPropertiesRequest{ /* populate request parameters */ },
+		schema.ReadWrappingPropertiesRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7219,7 +7219,7 @@ func main() {
 
 	resp, err := client.System.RekeyAttemptInitialize(
 		context.Background(),
-		RekeyAttemptInitializeRequest{ /* populate request parameters */ },
+		schema.RekeyAttemptInitializeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7324,7 +7324,7 @@ func main() {
 
 	resp, err := client.System.RekeyAttemptUpdate(
 		context.Background(),
-		RekeyAttemptUpdateRequest{ /* populate request parameters */ },
+		schema.RekeyAttemptUpdateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7681,7 +7681,7 @@ func main() {
 
 	resp, err := client.System.RekeyVerificationUpdate(
 		context.Background(),
-		RekeyVerificationUpdateRequest{ /* populate request parameters */ },
+		schema.RekeyVerificationUpdateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7795,7 +7795,7 @@ func main() {
 
 	resp, err := client.System.Remount(
 		context.Background(),
-		RemountRequest{ /* populate request parameters */ },
+		schema.RemountRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7909,7 +7909,7 @@ func main() {
 
 	resp, err := client.System.Rewrap(
 		context.Background(),
-		RewrapRequest{ /* populate request parameters */ },
+		schema.RewrapRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8016,7 +8016,7 @@ func main() {
 
 	resp, err := client.System.RootTokenGenerationInitialize(
 		context.Background(),
-		RootTokenGenerationInitializeRequest{ /* populate request parameters */ },
+		schema.RootTokenGenerationInitializeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8123,7 +8123,7 @@ func main() {
 
 	resp, err := client.System.RootTokenGenerationUpdate(
 		context.Background(),
-		RootTokenGenerationUpdateRequest{ /* populate request parameters */ },
+		schema.RootTokenGenerationUpdateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8332,7 +8332,7 @@ func main() {
 	resp, err := client.System.UiHeadersConfigure(
 		context.Background(),
 		header,
-		UiHeadersConfigureRequest{ /* populate request parameters */ },
+		schema.UiHeadersConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8563,7 +8563,7 @@ func main() {
 
 	resp, err := client.System.Unseal(
 		context.Background(),
-		UnsealRequest{ /* populate request parameters */ },
+		schema.UnsealRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8618,7 +8618,7 @@ func main() {
 
 	resp, err := client.System.Unwrap(
 		context.Background(),
-		UnwrapRequest{ /* populate request parameters */ },
+		schema.UnwrapRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 	)
 	if err != nil {

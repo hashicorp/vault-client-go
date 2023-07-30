@@ -65,8 +65,12 @@ func isResponseError(req *http.Request, resp *http.Response) *ResponseError {
 	//  - 473 if performance standby
 	//
 	// See: https://developer.hashicorp.com/vault/api-docs/system/health
-	if req.URL.Path == "/v1/sys/health" && slices.Contains([]int{429, 472, 473}, resp.StatusCode) {
-		return nil
+	if req.URL.Path == "/v1/sys/health" {
+		switch resp.StatusCode {
+		case 429, 472, 473:
+			return nil
+		}
+	}
 	}
 
 	responseError := &ResponseError{

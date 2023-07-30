@@ -385,9 +385,10 @@ client.SetResponseCallbacks(func(req *http.Request, resp *http.Response) {
 })
 ```
 
-Alternatively, `vault.WithRequestCallbacks(..)` /
+Additionally, `vault.WithRequestCallbacks(..)` /
 `vault.WithResponseCallbacks(..)` can be used to inject callbacks for individual
-requests:
+requests. These request-level callbacks will be appended to the list of the
+respective client-level callbacks for the given request.
 
 ```go
 resp, err := client.Secrets.KvV2Read(

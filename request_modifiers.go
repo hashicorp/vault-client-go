@@ -12,6 +12,7 @@ import (
 	"unicode"
 
 	"github.com/hashicorp/go-multierror"
+	"golang.org/x/exp/maps"
 )
 
 type (

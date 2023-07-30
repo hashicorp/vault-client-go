@@ -4,6 +4,7 @@
 package vault
 
 import (
+	"fmt"
 	"net/http"
 	"testing"
 

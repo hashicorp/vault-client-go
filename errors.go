@@ -69,7 +69,6 @@ func isResponseError(req *http.Request, resp *http.Response) *ResponseError {
 			return nil
 		}
 	}
-	}
 
 	responseError := &ResponseError{
 		StatusCode:      resp.StatusCode,

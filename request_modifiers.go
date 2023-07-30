@@ -246,7 +246,12 @@ func (m *requestModifiers) additionalQueryParametersOrDefault() url.Values {
 	return m.additionalQueryParameters
 }
 
-// mergeRequestModifiers merges the values from *rhs into *lhs.
+// mergeRequestModifiers merges the values in *rhs into *lhs. The merging is
+// done according the following rules:
+//
+//   - for scalaras : the rhs values, if present, will overwrite the lhs values
+//   - for slices   : the rhs values will be appended to the lhs values
+//   - for maps     : the rhs values will be copied into the lhs using maps.Copy
 func mergeRequestModifiers(lhs, rhs *requestModifiers) {
 	if rhs.headers.userAgent != "" {
 		lhs.headers.userAgent = rhs.headers.userAgent
@@ -260,9 +265,10 @@ func mergeRequestModifiers(lhs, rhs *requestModifiers) {
 		lhs.headers.namespace = rhs.headers.namespace
 	}
 
-	if len(rhs.headers.mfaCredentials) != 0 {
-		lhs.headers.mfaCredentials = rhs.headers.mfaCredentials
-	}
+	lhs.headers.mfaCredentials = append(
+		lhs.headers.mfaCredentials,
+		rhs.headers.mfaCredentials...,
+	)
 
 	if rhs.headers.responseWrappingTTL != 0 {
 		lhs.headers.responseWrappingTTL = rhs.headers.responseWrappingTTL
@@ -272,17 +278,18 @@ func mergeRequestModifiers(lhs, rhs *requestModifiers) {
 		lhs.headers.replicationForwardingMode = rhs.headers.replicationForwardingMode
 	}
 
-	if len(rhs.headers.customHeaders) != 0 {
-		lhs.headers.customHeaders = rhs.headers.customHeaders
-	}
+	// in case of key collisions, the rhs keys will take precedence
+	maps.Copy(lhs.headers.customHeaders, rhs.headers.customHeaders)
 
-	if len(rhs.requestCallbacks) != 0 {
-		lhs.requestCallbacks = rhs.requestCallbacks
-	}
+	lhs.requestCallbacks = append(
+		lhs.requestCallbacks,
+		rhs.requestCallbacks...,
+	)
 
-	if len(rhs.responseCallbacks) != 0 {
-		lhs.responseCallbacks = rhs.responseCallbacks
-	}
+	lhs.responseCallbacks = append(
+		lhs.responseCallbacks,
+		rhs.responseCallbacks...,
+	)
 }
 
 func validateToken(token string) error {

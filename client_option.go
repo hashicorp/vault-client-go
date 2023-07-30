@@ -104,21 +104,6 @@ func WithEnforceReadYourWritesConsistency() ClientOption {
 	}
 }
 
-// WithEnableSRVLookup enables the client to look up the Vault server host
-// through DNS SRV lookup. The lookup will happen on each request. The base
-// address' port must be empty for this setting to be respected.
-//
-// Note: this feature is not designed for high availability, just discovery.
-//
-// See https://datatracker.ietf.org/doc/html/draft-andrews-http-srv-02 for more
-// information
-func WithEnableSRVLookup() ClientOption {
-	return func(c *ClientConfiguration) error {
-		c.EnableSRVLookup = true
-		return nil
-	}
-}
-
 // WithDisableRedirects prevents the client from automatically following
 // redirects. Any redirect responses will result in `RedirectError` instead.
 //
@@ -150,7 +135,6 @@ func WithConfiguration(configuration ClientConfiguration) ClientOption {
 //	VAULT_ADDR, VAULT_AGENT_ADDR (vault's address, e.g. https://127.0.0.1:8200/)
 //	VAULT_CLIENT_TIMEOUT         (request timeout)
 //	VAULT_RATE_LIMIT             (rate[:burst] in operations per second)
-//	VAULT_SRV_LOOKUP             (enable DNS SRV lookup)
 //	VAULT_DISABLE_REDIRECTS      (prevents vault client from following redirects)
 //	VAULT_TOKEN                  (the initial authentication token)
 //	VAULT_NAMESPACE              (the initial namespace to use)

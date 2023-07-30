@@ -74,8 +74,8 @@ func WithResponseWrapping(ttl time.Duration) RequestOption {
 }
 
 // WithCustomHeaders sets custom headers for the next request; these headers
-// will be appended to any custom headers set at the client level. The internal
-// prefix 'X-Vault-' is not permitted for the header keys.
+// take precedence over the client-level custom headers. The internal prefix
+// 'X-Vault-' is not permitted for the header keys.
 func WithCustomHeaders(headers http.Header) RequestOption {
 	return func(m *requestModifiers) error {
 		if err := validateCustomHeaders(headers); err != nil {
@@ -87,8 +87,7 @@ func WithCustomHeaders(headers http.Header) RequestOption {
 }
 
 // WithRequestCallbacks sets callbacks which will be invoked before the next
-// request; these callbacks will be appended to the list of the callbacks set
-// at the client-level.
+// request; these take precedence over the client-level request callbacks.
 func WithRequestCallbacks(callbacks ...RequestCallback) RequestOption {
 	return func(m *requestModifiers) error {
 		m.requestCallbacks = callbacks
@@ -97,8 +96,8 @@ func WithRequestCallbacks(callbacks ...RequestCallback) RequestOption {
 }
 
 // WithResponseCallbacks sets callbacks which will be invoked after a
-// successful response within the next request; these callbacks will be
-// appended to the list of the callbacks set at the client-level.
+// successful response within the next request; these take precedence over the
+// client-level response callbacks.
 func WithResponseCallbacks(callbacks ...ResponseCallback) RequestOption {
 	return func(m *requestModifiers) error {
 		m.responseCallbacks = callbacks

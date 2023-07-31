@@ -245,47 +245,43 @@ func (m *requestModifiers) additionalQueryParametersOrDefault() url.Values {
 	return m.additionalQueryParameters
 }
 
-// mergeRequestModifiers merges the two objects, preferring the per-request modifiers
-func mergeRequestModifiers(perClient, perRequest requestModifiers) requestModifiers {
-	merged := perClient
-
-	if perRequest.headers.userAgent != "" {
-		merged.headers.userAgent = perRequest.headers.userAgent
+// mergeRequestModifiers merges the values from *rhs into *lhs.
+func mergeRequestModifiers(lhs, rhs *requestModifiers) {
+	if rhs.headers.userAgent != "" {
+		lhs.headers.userAgent = rhs.headers.userAgent
 	}
 
-	if perRequest.headers.token != "" {
-		merged.headers.token = perRequest.headers.token
+	if rhs.headers.token != "" {
+		lhs.headers.token = rhs.headers.token
 	}
 
-	if perRequest.headers.namespace != "" {
-		merged.headers.namespace = perRequest.headers.namespace
+	if rhs.headers.namespace != "" {
+		lhs.headers.namespace = rhs.headers.namespace
 	}
 
-	if len(perRequest.headers.mfaCredentials) != 0 {
-		merged.headers.mfaCredentials = perRequest.headers.mfaCredentials
+	if len(rhs.headers.mfaCredentials) != 0 {
+		lhs.headers.mfaCredentials = rhs.headers.mfaCredentials
 	}
 
-	if perRequest.headers.responseWrappingTTL != 0 {
-		merged.headers.responseWrappingTTL = perRequest.headers.responseWrappingTTL
+	if rhs.headers.responseWrappingTTL != 0 {
+		lhs.headers.responseWrappingTTL = rhs.headers.responseWrappingTTL
 	}
 
-	if perRequest.headers.replicationForwardingMode != ReplicationForwardNone {
-		merged.headers.replicationForwardingMode = perRequest.headers.replicationForwardingMode
+	if rhs.headers.replicationForwardingMode != ReplicationForwardNone {
+		lhs.headers.replicationForwardingMode = rhs.headers.replicationForwardingMode
 	}
 
-	if len(perRequest.headers.customHeaders) != 0 {
-		merged.headers.customHeaders = perRequest.headers.customHeaders
+	if len(rhs.headers.customHeaders) != 0 {
+		lhs.headers.customHeaders = rhs.headers.customHeaders
 	}
 
-	if len(perRequest.requestCallbacks) != 0 {
-		merged.requestCallbacks = perRequest.requestCallbacks
+	if len(rhs.requestCallbacks) != 0 {
+		lhs.requestCallbacks = rhs.requestCallbacks
 	}
 
-	if len(perRequest.responseCallbacks) != 0 {
-		merged.responseCallbacks = perRequest.responseCallbacks
+	if len(rhs.responseCallbacks) != 0 {
+		lhs.responseCallbacks = rhs.responseCallbacks
 	}
-
-	return merged
 }
 
 func validateToken(token string) error {

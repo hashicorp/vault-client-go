@@ -88,43 +88,44 @@ func Test_validateCustomHeaders(t *testing.T) {
 	}
 }
 
-func Test_mergeRequestModifiers(t *testing.T) {
+func Test_mergeRequestModifiers_overwrite(t *testing.T) {
 	cases := map[string]struct {
 		name     string
-		a        requestModifiers
-		b        requestModifiers
+		lhs      requestModifiers
+		rhs      requestModifiers
 		expected requestModifiers
 	}{
 		"empty": {
-			a:        requestModifiers{},
-			b:        requestModifiers{},
+			lhs:      requestModifiers{},
+			rhs:      requestModifiers{},
 			expected: requestModifiers{},
 		},
-		"token-a": {
-			a:        requestModifiers{headers: requestHeaders{token: "token-a"}},
-			b:        requestModifiers{},
-			expected: requestModifiers{headers: requestHeaders{token: "token-a"}},
+		"token-in-lhs": {
+			lhs:      requestModifiers{headers: requestHeaders{token: "token-lhs"}},
+			rhs:      requestModifiers{},
+			expected: requestModifiers{headers: requestHeaders{token: "token-lhs"}},
 		},
-		"token-b": {
-			a:        requestModifiers{},
-			b:        requestModifiers{headers: requestHeaders{token: "token-b"}},
-			expected: requestModifiers{headers: requestHeaders{token: "token-b"}},
+		"token-in-rhs": {
+			lhs:      requestModifiers{},
+			rhs:      requestModifiers{headers: requestHeaders{token: "token-rhs"}},
+			expected: requestModifiers{headers: requestHeaders{token: "token-rhs"}},
 		},
-		"token-a-b": {
-			a:        requestModifiers{headers: requestHeaders{token: "token-a"}},
-			b:        requestModifiers{headers: requestHeaders{token: "token-b"}},
-			expected: requestModifiers{headers: requestHeaders{token: "token-b"}},
+		"token-in-both": {
+			lhs:      requestModifiers{headers: requestHeaders{token: "token-lhs"}},
+			rhs:      requestModifiers{headers: requestHeaders{token: "token-rhs"}},
+			expected: requestModifiers{headers: requestHeaders{token: "token-rhs"}},
 		},
-		"token-namespace": {
-			a:        requestModifiers{headers: requestHeaders{token: "token-a"}},
-			b:        requestModifiers{headers: requestHeaders{namespace: "namespace-b"}},
-			expected: requestModifiers{headers: requestHeaders{token: "token-a", namespace: "namespace-b"}},
+		"token-lhs-and-namespace-rhs": {
+			lhs:      requestModifiers{headers: requestHeaders{token: "token-lhs"}},
+			rhs:      requestModifiers{headers: requestHeaders{namespace: "namespace-rhs"}},
+			expected: requestModifiers{headers: requestHeaders{token: "token-lhs", namespace: "namespace-rhs"}},
 		},
 	}
 
 	for name, tc := range cases {
 		t.Run(name, func(t *testing.T) {
-			require.Equal(t, tc.expected, mergeRequestModifiers(tc.a, tc.b))
+			mergeRequestModifiers(&tc.lhs, &tc.rhs)
+			require.Equal(t, tc.expected, tc.lhs)
 		})
 	}
 }

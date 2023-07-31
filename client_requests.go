@@ -14,8 +14,6 @@ import (
 	"strings"
 
 	"github.com/hashicorp/go-retryablehttp"
-
-	"golang.org/x/exp/slices"
 )
 
 // Read attempts to read the value stored at the given Vault path.
@@ -371,13 +369,12 @@ func (c *Client) do(req *http.Request, retry bool) (*http.Response, error) {
 // handleRedirect checks the given response for a redirect status & modifies
 // the request accordingly if the redirect is needed
 func (c *Client) handleRedirect(req *http.Request, resp *http.Response, redirectCount *int) (bool, *RedirectError) {
-	redirectStatuses := [...]int{
+	switch resp.StatusCode {
+	case
 		http.StatusMovedPermanently,  // 301
 		http.StatusFound,             // 302
-		http.StatusTemporaryRedirect, // 307
-	}
-
-	if !slices.Contains(redirectStatuses[:], resp.StatusCode) {
+		http.StatusTemporaryRedirect: // 307
+	default:
 		return false, nil
 	}
 

@@ -9,14 +9,11 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"net"
 	"net/http"
 	"net/url"
 	"strings"
 
 	"github.com/hashicorp/go-retryablehttp"
-
-	"golang.org/x/exp/slices"
 )
 
 // Read attempts to read the value stored at the given Vault path.
@@ -243,15 +240,6 @@ func (c *Client) newRequest(
 		return nil, fmt.Errorf("could not join %q with the base address: %w", path, err)
 	}
 
-	// if configured, look up the DNS service record (SRV) and take the highest match
-	if c.configuration.EnableSRVLookup {
-		_, addrs, err := net.LookupSRV("http", "tcp", url.Hostname())
-		// don't return the error: address might not have a service record
-		if err == nil && len(addrs) > 0 {
-			url.Host = fmt.Sprintf("%s:%d", addrs[0].Target, addrs[0].Port)
-		}
-	}
-
 	// add query parameters (if any)
 	if len(parameters) != 0 {
 		url.RawQuery = parameters.Encode()
@@ -375,13 +363,12 @@ func (c *Client) do(req *http.Request, retry bool) (*http.Response, error) {
 // handleRedirect checks the given response for a redirect status & modifies
 // the request accordingly if the redirect is needed
 func (c *Client) handleRedirect(req *http.Request, resp *http.Response, redirectCount *int) (bool, *RedirectError) {
-	redirectStatuses := [...]int{
+	switch resp.StatusCode {
+	case
 		http.StatusMovedPermanently,  // 301
 		http.StatusFound,             // 302
-		http.StatusTemporaryRedirect, // 307
-	}
-
-	if !slices.Contains(redirectStatuses[:], resp.StatusCode) {
+		http.StatusTemporaryRedirect: // 307
+	default:
 		return false, nil
 	}
 

@@ -423,7 +423,7 @@ func main() {
 
 	resp, err := client.Secrets.AliCloudConfigure(
 		context.Background(),
-		AliCloudConfigureRequest{ /* populate request parameters */ },
+		schema.AliCloudConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
@@ -840,7 +840,7 @@ func main() {
 	resp, err := client.Secrets.AliCloudWriteRole(
 		context.Background(),
 		name,
-		AliCloudWriteRoleRequest{ /* populate request parameters */ },
+		schema.AliCloudWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
@@ -902,7 +902,7 @@ func main() {
 
 	resp, err := client.Secrets.AwsConfigureLease(
 		context.Background(),
-		AwsConfigureLeaseRequest{ /* populate request parameters */ },
+		schema.AwsConfigureLeaseRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -962,7 +962,7 @@ func main() {
 
 	resp, err := client.Secrets.AwsConfigureRootIamCredentials(
 		context.Background(),
-		AwsConfigureRootIamCredentialsRequest{ /* populate request parameters */ },
+		schema.AwsConfigureRootIamCredentialsRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -1216,7 +1216,7 @@ func main() {
 	resp, err := client.Secrets.AwsGenerateCredentialsWithParameters(
 		context.Background(),
 		name,
-		AwsGenerateCredentialsWithParametersRequest{ /* populate request parameters */ },
+		schema.AwsGenerateCredentialsWithParametersRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -1350,7 +1350,7 @@ func main() {
 	resp, err := client.Secrets.AwsGenerateStsCredentialsWithParameters(
 		context.Background(),
 		name,
-		AwsGenerateStsCredentialsWithParametersRequest{ /* populate request parameters */ },
+		schema.AwsGenerateStsCredentialsWithParametersRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -1826,7 +1826,7 @@ func main() {
 	resp, err := client.Secrets.AwsWriteRole(
 		context.Background(),
 		name,
-		AwsWriteRoleRequest{ /* populate request parameters */ },
+		schema.AwsWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -1890,7 +1890,7 @@ func main() {
 	resp, err := client.Secrets.AwsWriteStaticRolesName(
 		context.Background(),
 		name,
-		AwsWriteStaticRolesNameRequest{ /* populate request parameters */ },
+		schema.AwsWriteStaticRolesNameRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
@@ -1952,7 +1952,7 @@ func main() {
 
 	resp, err := client.Secrets.AzureConfigure(
 		context.Background(),
-		AzureConfigureRequest{ /* populate request parameters */ },
+		schema.AzureConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
@@ -2426,7 +2426,7 @@ func main() {
 	resp, err := client.Secrets.AzureWriteRole(
 		context.Background(),
 		name,
-		AzureWriteRoleRequest{ /* populate request parameters */ },
+		schema.AzureWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
@@ -2488,7 +2488,7 @@ func main() {
 
 	resp, err := client.Secrets.ConsulConfigureAccess(
 		context.Background(),
-		ConsulConfigureAccessRequest{ /* populate request parameters */ },
+		schema.ConsulConfigureAccessRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("consul"),
 	)
@@ -2848,7 +2848,7 @@ func main() {
 	resp, err := client.Secrets.ConsulWriteRole(
 		context.Background(),
 		name,
-		ConsulWriteRoleRequest{ /* populate request parameters */ },
+		schema.ConsulWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("consul"),
 	)
@@ -3153,7 +3153,7 @@ func main() {
 	resp, err := client.Secrets.DatabaseConfigureConnection(
 		context.Background(),
 		name,
-		DatabaseConfigureConnectionRequest{ /* populate request parameters */ },
+		schema.DatabaseConfigureConnectionRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("database"),
 	)
@@ -4062,7 +4062,7 @@ func main() {
 	resp, err := client.Secrets.DatabaseWriteRole(
 		context.Background(),
 		name,
-		DatabaseWriteRoleRequest{ /* populate request parameters */ },
+		schema.DatabaseWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("database"),
 	)
@@ -4126,7 +4126,7 @@ func main() {
 	resp, err := client.Secrets.DatabaseWriteStaticRole(
 		context.Background(),
 		name,
-		DatabaseWriteStaticRoleRequest{ /* populate request parameters */ },
+		schema.DatabaseWriteStaticRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("database"),
 	)
@@ -4188,7 +4188,7 @@ func main() {
 
 	resp, err := client.Secrets.GoogleCloudConfigure(
 		context.Background(),
-		GoogleCloudConfigureRequest{ /* populate request parameters */ },
+		schema.GoogleCloudConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
@@ -4555,7 +4555,7 @@ func main() {
 	resp, err := client.Secrets.GoogleCloudGenerateRolesetKey(
 		context.Background(),
 		roleset,
-		GoogleCloudGenerateRolesetKeyRequest{ /* populate request parameters */ },
+		schema.GoogleCloudGenerateRolesetKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
@@ -4680,7 +4680,7 @@ func main() {
 	resp, err := client.Secrets.GoogleCloudGenerateStaticAccountKey(
 		context.Background(),
 		name,
-		GoogleCloudGenerateStaticAccountKeyRequest{ /* populate request parameters */ },
+		schema.GoogleCloudGenerateStaticAccountKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
@@ -4742,7 +4742,7 @@ func main() {
 
 	resp, err := client.Secrets.GoogleCloudKmsConfigure(
 		context.Background(),
-		GoogleCloudKmsConfigureRequest{ /* populate request parameters */ },
+		schema.GoogleCloudKmsConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
@@ -4804,7 +4804,7 @@ func main() {
 	resp, err := client.Secrets.GoogleCloudKmsConfigureKey(
 		context.Background(),
 		key,
-		GoogleCloudKmsConfigureKeyRequest{ /* populate request parameters */ },
+		schema.GoogleCloudKmsConfigureKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
@@ -4868,7 +4868,7 @@ func main() {
 	resp, err := client.Secrets.GoogleCloudKmsDecrypt(
 		context.Background(),
 		key,
-		GoogleCloudKmsDecryptRequest{ /* populate request parameters */ },
+		schema.GoogleCloudKmsDecryptRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
@@ -5111,7 +5111,7 @@ func main() {
 	resp, err := client.Secrets.GoogleCloudKmsEncrypt(
 		context.Background(),
 		key,
-		GoogleCloudKmsEncryptRequest{ /* populate request parameters */ },
+		schema.GoogleCloudKmsEncryptRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
@@ -5412,7 +5412,7 @@ func main() {
 	resp, err := client.Secrets.GoogleCloudKmsReencrypt(
 		context.Background(),
 		key,
-		GoogleCloudKmsReencryptRequest{ /* populate request parameters */ },
+		schema.GoogleCloudKmsReencryptRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
@@ -5476,7 +5476,7 @@ func main() {
 	resp, err := client.Secrets.GoogleCloudKmsRegisterKey(
 		context.Background(),
 		key,
-		GoogleCloudKmsRegisterKeyRequest{ /* populate request parameters */ },
+		schema.GoogleCloudKmsRegisterKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
@@ -5662,7 +5662,7 @@ func main() {
 	resp, err := client.Secrets.GoogleCloudKmsSign(
 		context.Background(),
 		key,
-		GoogleCloudKmsSignRequest{ /* populate request parameters */ },
+		schema.GoogleCloudKmsSignRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
@@ -5787,7 +5787,7 @@ func main() {
 	resp, err := client.Secrets.GoogleCloudKmsVerify(
 		context.Background(),
 		key,
-		GoogleCloudKmsVerifyRequest{ /* populate request parameters */ },
+		schema.GoogleCloudKmsVerifyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
@@ -5851,7 +5851,7 @@ func main() {
 	resp, err := client.Secrets.GoogleCloudKmsWriteKey(
 		context.Background(),
 		key,
-		GoogleCloudKmsWriteKeyRequest{ /* populate request parameters */ },
+		schema.GoogleCloudKmsWriteKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
@@ -6569,7 +6569,7 @@ func main() {
 	resp, err := client.Secrets.GoogleCloudWriteImpersonatedAccount(
 		context.Background(),
 		name,
-		GoogleCloudWriteImpersonatedAccountRequest{ /* populate request parameters */ },
+		schema.GoogleCloudWriteImpersonatedAccountRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
@@ -6633,7 +6633,7 @@ func main() {
 	resp, err := client.Secrets.GoogleCloudWriteRoleset(
 		context.Background(),
 		name,
-		GoogleCloudWriteRolesetRequest{ /* populate request parameters */ },
+		schema.GoogleCloudWriteRolesetRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
@@ -6697,7 +6697,7 @@ func main() {
 	resp, err := client.Secrets.GoogleCloudWriteStaticAccount(
 		context.Background(),
 		name,
-		GoogleCloudWriteStaticAccountRequest{ /* populate request parameters */ },
+		schema.GoogleCloudWriteStaticAccountRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
@@ -6816,7 +6816,7 @@ func main() {
 
 	resp, err := client.Secrets.KubernetesConfigure(
 		context.Background(),
-		KubernetesConfigureRequest{ /* populate request parameters */ },
+		schema.KubernetesConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
@@ -6996,7 +6996,7 @@ func main() {
 	resp, err := client.Secrets.KubernetesGenerateCredentials(
 		context.Background(),
 		name,
-		KubernetesGenerateCredentialsRequest{ /* populate request parameters */ },
+		schema.KubernetesGenerateCredentialsRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
@@ -7236,7 +7236,7 @@ func main() {
 	resp, err := client.Secrets.KubernetesWriteRole(
 		context.Background(),
 		name,
-		KubernetesWriteRoleRequest{ /* populate request parameters */ },
+		schema.KubernetesWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
@@ -7545,7 +7545,7 @@ func main() {
 
 	resp, err := client.Secrets.KvV2Configure(
 		context.Background(),
-		KvV2ConfigureRequest{ /* populate request parameters */ },
+		schema.KvV2ConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kv-v2"),
 	)
@@ -7729,7 +7729,7 @@ func main() {
 	resp, err := client.Secrets.KvV2DeleteVersions(
 		context.Background(),
 		path,
-		KvV2DeleteVersionsRequest{ /* populate request parameters */ },
+		schema.KvV2DeleteVersionsRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kv-v2"),
 	)
@@ -7793,7 +7793,7 @@ func main() {
 	resp, err := client.Secrets.KvV2DestroyVersions(
 		context.Background(),
 		path,
-		KvV2DestroyVersionsRequest{ /* populate request parameters */ },
+		schema.KvV2DestroyVersionsRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kv-v2"),
 	)
@@ -8159,7 +8159,7 @@ func main() {
 	resp, err := client.Secrets.KvV2UndeleteVersions(
 		context.Background(),
 		path,
-		KvV2UndeleteVersionsRequest{ /* populate request parameters */ },
+		schema.KvV2UndeleteVersionsRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kv-v2"),
 	)
@@ -8223,7 +8223,7 @@ func main() {
 	resp, err := client.Secrets.KvV2Write(
 		context.Background(),
 		path,
-		KvV2WriteRequest{ /* populate request parameters */ },
+		schema.KvV2WriteRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kv-v2"),
 	)
@@ -8287,7 +8287,7 @@ func main() {
 	resp, err := client.Secrets.KvV2WriteMetadata(
 		context.Background(),
 		path,
-		KvV2WriteMetadataRequest{ /* populate request parameters */ },
+		schema.KvV2WriteMetadataRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("kv-v2"),
 	)
@@ -8349,7 +8349,7 @@ func main() {
 
 	resp, err := client.Secrets.LdapConfigure(
 		context.Background(),
-		LdapConfigureRequest{ /* populate request parameters */ },
+		schema.LdapConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
@@ -8590,7 +8590,7 @@ func main() {
 	resp, err := client.Secrets.LdapLibraryCheckIn(
 		context.Background(),
 		name,
-		LdapLibraryCheckInRequest{ /* populate request parameters */ },
+		schema.LdapLibraryCheckInRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
@@ -8654,7 +8654,7 @@ func main() {
 	resp, err := client.Secrets.LdapLibraryCheckOut(
 		context.Background(),
 		name,
-		LdapLibraryCheckOutRequest{ /* populate request parameters */ },
+		schema.LdapLibraryCheckOutRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
@@ -8779,7 +8779,7 @@ func main() {
 	resp, err := client.Secrets.LdapLibraryConfigure(
 		context.Background(),
 		name,
-		LdapLibraryConfigureRequest{ /* populate request parameters */ },
+		schema.LdapLibraryConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
@@ -8904,7 +8904,7 @@ func main() {
 	resp, err := client.Secrets.LdapLibraryForceCheckIn(
 		context.Background(),
 		name,
-		LdapLibraryForceCheckInRequest{ /* populate request parameters */ },
+		schema.LdapLibraryForceCheckInRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
@@ -9622,7 +9622,7 @@ func main() {
 	resp, err := client.Secrets.LdapWriteDynamicRole(
 		context.Background(),
 		name,
-		LdapWriteDynamicRoleRequest{ /* populate request parameters */ },
+		schema.LdapWriteDynamicRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
@@ -9686,7 +9686,7 @@ func main() {
 	resp, err := client.Secrets.LdapWriteStaticRole(
 		context.Background(),
 		name,
-		LdapWriteStaticRoleRequest{ /* populate request parameters */ },
+		schema.LdapWriteStaticRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
@@ -9748,7 +9748,7 @@ func main() {
 
 	resp, err := client.Secrets.MongoDbAtlasConfigure(
 		context.Background(),
-		MongoDbAtlasConfigureRequest{ /* populate request parameters */ },
+		schema.MongoDbAtlasConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("mongodbatlas"),
 	)
@@ -10108,7 +10108,7 @@ func main() {
 	resp, err := client.Secrets.MongoDbAtlasWriteRole(
 		context.Background(),
 		name,
-		MongoDbAtlasWriteRoleRequest{ /* populate request parameters */ },
+		schema.MongoDbAtlasWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("mongodbatlas"),
 	)
@@ -10170,7 +10170,7 @@ func main() {
 
 	resp, err := client.Secrets.NomadConfigureAccess(
 		context.Background(),
-		NomadConfigureAccessRequest{ /* populate request parameters */ },
+		schema.NomadConfigureAccessRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("nomad"),
 	)
@@ -10230,7 +10230,7 @@ func main() {
 
 	resp, err := client.Secrets.NomadConfigureLease(
 		context.Background(),
-		NomadConfigureLeaseRequest{ /* populate request parameters */ },
+		schema.NomadConfigureLeaseRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("nomad"),
 	)
@@ -10761,7 +10761,7 @@ func main() {
 	resp, err := client.Secrets.NomadWriteRole(
 		context.Background(),
 		name,
-		NomadWriteRoleRequest{ /* populate request parameters */ },
+		schema.NomadWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("nomad"),
 	)
@@ -10823,7 +10823,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiConfigureAcme(
 		context.Background(),
-		PkiConfigureAcmeRequest{ /* populate request parameters */ },
+		schema.PkiConfigureAcmeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -10883,7 +10883,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiConfigureAutoTidy(
 		context.Background(),
-		PkiConfigureAutoTidyRequest{ /* populate request parameters */ },
+		schema.PkiConfigureAutoTidyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -10943,7 +10943,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiConfigureCa(
 		context.Background(),
-		PkiConfigureCaRequest{ /* populate request parameters */ },
+		schema.PkiConfigureCaRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -11003,7 +11003,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiConfigureCluster(
 		context.Background(),
-		PkiConfigureClusterRequest{ /* populate request parameters */ },
+		schema.PkiConfigureClusterRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -11063,7 +11063,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiConfigureCrl(
 		context.Background(),
-		PkiConfigureCrlRequest{ /* populate request parameters */ },
+		schema.PkiConfigureCrlRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -11123,7 +11123,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiConfigureIssuers(
 		context.Background(),
-		PkiConfigureIssuersRequest{ /* populate request parameters */ },
+		schema.PkiConfigureIssuersRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -11183,7 +11183,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiConfigureKeys(
 		context.Background(),
-		PkiConfigureKeysRequest{ /* populate request parameters */ },
+		schema.PkiConfigureKeysRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -11243,7 +11243,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiConfigureUrls(
 		context.Background(),
-		PkiConfigureUrlsRequest{ /* populate request parameters */ },
+		schema.PkiConfigureUrlsRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -11303,7 +11303,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiCrossSignIntermediate(
 		context.Background(),
-		PkiCrossSignIntermediateRequest{ /* populate request parameters */ },
+		schema.PkiCrossSignIntermediateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -11908,7 +11908,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiGenerateExportedKey(
 		context.Background(),
-		PkiGenerateExportedKeyRequest{ /* populate request parameters */ },
+		schema.PkiGenerateExportedKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -11970,7 +11970,7 @@ func main() {
 	resp, err := client.Secrets.PkiGenerateIntermediate(
 		context.Background(),
 		exported,
-		PkiGenerateIntermediateRequest{ /* populate request parameters */ },
+		schema.PkiGenerateIntermediateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -12032,7 +12032,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiGenerateInternalKey(
 		context.Background(),
-		PkiGenerateInternalKeyRequest{ /* populate request parameters */ },
+		schema.PkiGenerateInternalKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -12092,7 +12092,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiGenerateKmsKey(
 		context.Background(),
-		PkiGenerateKmsKeyRequest{ /* populate request parameters */ },
+		schema.PkiGenerateKmsKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -12154,7 +12154,7 @@ func main() {
 	resp, err := client.Secrets.PkiGenerateRoot(
 		context.Background(),
 		exported,
-		PkiGenerateRootRequest{ /* populate request parameters */ },
+		schema.PkiGenerateRootRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -12216,7 +12216,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiImportKey(
 		context.Background(),
-		PkiImportKeyRequest{ /* populate request parameters */ },
+		schema.PkiImportKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -12278,7 +12278,7 @@ func main() {
 	resp, err := client.Secrets.PkiIssueWithRole(
 		context.Background(),
 		role,
-		PkiIssueWithRoleRequest{ /* populate request parameters */ },
+		schema.PkiIssueWithRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -12344,7 +12344,7 @@ func main() {
 		context.Background(),
 		issuerRef,
 		role,
-		PkiIssuerIssueWithRoleRequest{ /* populate request parameters */ },
+		schema.PkiIssuerIssueWithRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -12776,7 +12776,7 @@ func main() {
 	resp, err := client.Secrets.PkiIssuerResignCrls(
 		context.Background(),
 		issuerRef,
-		PkiIssuerResignCrlsRequest{ /* populate request parameters */ },
+		schema.PkiIssuerResignCrlsRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -12840,7 +12840,7 @@ func main() {
 	resp, err := client.Secrets.PkiIssuerSignIntermediate(
 		context.Background(),
 		issuerRef,
-		PkiIssuerSignIntermediateRequest{ /* populate request parameters */ },
+		schema.PkiIssuerSignIntermediateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -12904,7 +12904,7 @@ func main() {
 	resp, err := client.Secrets.PkiIssuerSignRevocationList(
 		context.Background(),
 		issuerRef,
-		PkiIssuerSignRevocationListRequest{ /* populate request parameters */ },
+		schema.PkiIssuerSignRevocationListRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -12968,7 +12968,7 @@ func main() {
 	resp, err := client.Secrets.PkiIssuerSignSelfIssued(
 		context.Background(),
 		issuerRef,
-		PkiIssuerSignSelfIssuedRequest{ /* populate request parameters */ },
+		schema.PkiIssuerSignSelfIssuedRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -13032,7 +13032,7 @@ func main() {
 	resp, err := client.Secrets.PkiIssuerSignVerbatim(
 		context.Background(),
 		issuerRef,
-		PkiIssuerSignVerbatimRequest{ /* populate request parameters */ },
+		schema.PkiIssuerSignVerbatimRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -13098,7 +13098,7 @@ func main() {
 		context.Background(),
 		issuerRef,
 		role,
-		PkiIssuerSignVerbatimWithRoleRequest{ /* populate request parameters */ },
+		schema.PkiIssuerSignVerbatimWithRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -13166,7 +13166,7 @@ func main() {
 		context.Background(),
 		issuerRef,
 		role,
-		PkiIssuerSignWithRoleRequest{ /* populate request parameters */ },
+		schema.PkiIssuerSignWithRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -13232,7 +13232,7 @@ func main() {
 	resp, err := client.Secrets.PkiIssuersGenerateIntermediate(
 		context.Background(),
 		exported,
-		PkiIssuersGenerateIntermediateRequest{ /* populate request parameters */ },
+		schema.PkiIssuersGenerateIntermediateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -13296,7 +13296,7 @@ func main() {
 	resp, err := client.Secrets.PkiIssuersGenerateRoot(
 		context.Background(),
 		exported,
-		PkiIssuersGenerateRootRequest{ /* populate request parameters */ },
+		schema.PkiIssuersGenerateRootRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -13358,7 +13358,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiIssuersImportBundle(
 		context.Background(),
-		PkiIssuersImportBundleRequest{ /* populate request parameters */ },
+		schema.PkiIssuersImportBundleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -13418,7 +13418,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiIssuersImportCert(
 		context.Background(),
-		PkiIssuersImportCertRequest{ /* populate request parameters */ },
+		schema.PkiIssuersImportCertRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -15950,7 +15950,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiReplaceRoot(
 		context.Background(),
-		PkiReplaceRootRequest{ /* populate request parameters */ },
+		schema.PkiReplaceRootRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -16010,7 +16010,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiRevoke(
 		context.Background(),
-		PkiRevokeRequest{ /* populate request parameters */ },
+		schema.PkiRevokeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -16131,7 +16131,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiRevokeWithKey(
 		context.Background(),
-		PkiRevokeWithKeyRequest{ /* populate request parameters */ },
+		schema.PkiRevokeWithKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -16191,7 +16191,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiRootSignIntermediate(
 		context.Background(),
-		PkiRootSignIntermediateRequest{ /* populate request parameters */ },
+		schema.PkiRootSignIntermediateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -16251,7 +16251,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiRootSignSelfIssued(
 		context.Background(),
-		PkiRootSignSelfIssuedRequest{ /* populate request parameters */ },
+		schema.PkiRootSignSelfIssuedRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -16427,7 +16427,7 @@ func main() {
 	resp, err := client.Secrets.PkiRotateRoot(
 		context.Background(),
 		exported,
-		PkiRotateRootRequest{ /* populate request parameters */ },
+		schema.PkiRotateRootRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -16489,7 +16489,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiSetSignedIntermediate(
 		context.Background(),
-		PkiSetSignedIntermediateRequest{ /* populate request parameters */ },
+		schema.PkiSetSignedIntermediateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -16549,7 +16549,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiSignVerbatim(
 		context.Background(),
-		PkiSignVerbatimRequest{ /* populate request parameters */ },
+		schema.PkiSignVerbatimRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -16611,7 +16611,7 @@ func main() {
 	resp, err := client.Secrets.PkiSignVerbatimWithRole(
 		context.Background(),
 		role,
-		PkiSignVerbatimWithRoleRequest{ /* populate request parameters */ },
+		schema.PkiSignVerbatimWithRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -16675,7 +16675,7 @@ func main() {
 	resp, err := client.Secrets.PkiSignWithRole(
 		context.Background(),
 		role,
-		PkiSignWithRoleRequest{ /* populate request parameters */ },
+		schema.PkiSignWithRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -16737,7 +16737,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiTidy(
 		context.Background(),
-		PkiTidyRequest{ /* populate request parameters */ },
+		schema.PkiTidyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -16913,7 +16913,7 @@ func main() {
 	resp, err := client.Secrets.PkiWriteAcmeAccountKid(
 		context.Background(),
 		kid,
-		PkiWriteAcmeAccountKidRequest{ /* populate request parameters */ },
+		schema.PkiWriteAcmeAccountKidRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -16977,7 +16977,7 @@ func main() {
 	resp, err := client.Secrets.PkiWriteAcmeAuthorizationAuthId(
 		context.Background(),
 		authId,
-		PkiWriteAcmeAuthorizationAuthIdRequest{ /* populate request parameters */ },
+		schema.PkiWriteAcmeAuthorizationAuthIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17043,7 +17043,7 @@ func main() {
 		context.Background(),
 		authId,
 		challengeType,
-		PkiWriteAcmeChallengeAuthIdChallengeTypeRequest{ /* populate request parameters */ },
+		schema.PkiWriteAcmeChallengeAuthIdChallengeTypeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17107,7 +17107,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiWriteAcmeNewAccount(
 		context.Background(),
-		PkiWriteAcmeNewAccountRequest{ /* populate request parameters */ },
+		schema.PkiWriteAcmeNewAccountRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17167,7 +17167,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiWriteAcmeNewOrder(
 		context.Background(),
-		PkiWriteAcmeNewOrderRequest{ /* populate request parameters */ },
+		schema.PkiWriteAcmeNewOrderRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17229,7 +17229,7 @@ func main() {
 	resp, err := client.Secrets.PkiWriteAcmeOrderOrderId(
 		context.Background(),
 		orderId,
-		PkiWriteAcmeOrderOrderIdRequest{ /* populate request parameters */ },
+		schema.PkiWriteAcmeOrderOrderIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17293,7 +17293,7 @@ func main() {
 	resp, err := client.Secrets.PkiWriteAcmeOrderOrderIdCert(
 		context.Background(),
 		orderId,
-		PkiWriteAcmeOrderOrderIdCertRequest{ /* populate request parameters */ },
+		schema.PkiWriteAcmeOrderOrderIdCertRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17357,7 +17357,7 @@ func main() {
 	resp, err := client.Secrets.PkiWriteAcmeOrderOrderIdFinalize(
 		context.Background(),
 		orderId,
-		PkiWriteAcmeOrderOrderIdFinalizeRequest{ /* populate request parameters */ },
+		schema.PkiWriteAcmeOrderOrderIdFinalizeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17419,7 +17419,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiWriteAcmeOrders(
 		context.Background(),
-		PkiWriteAcmeOrdersRequest{ /* populate request parameters */ },
+		schema.PkiWriteAcmeOrdersRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17479,7 +17479,7 @@ func main() {
 
 	resp, err := client.Secrets.PkiWriteAcmeRevokeCert(
 		context.Background(),
-		PkiWriteAcmeRevokeCertRequest{ /* populate request parameters */ },
+		schema.PkiWriteAcmeRevokeCertRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17541,7 +17541,7 @@ func main() {
 	resp, err := client.Secrets.PkiWriteIssuer(
 		context.Background(),
 		issuerRef,
-		PkiWriteIssuerRequest{ /* populate request parameters */ },
+		schema.PkiWriteIssuerRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17607,7 +17607,7 @@ func main() {
 		context.Background(),
 		issuerRef,
 		kid,
-		PkiWriteIssuerIssuerRefAcmeAccountKidRequest{ /* populate request parameters */ },
+		schema.PkiWriteIssuerIssuerRefAcmeAccountKidRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17675,7 +17675,7 @@ func main() {
 		context.Background(),
 		authId,
 		issuerRef,
-		PkiWriteIssuerIssuerRefAcmeAuthorizationAuthIdRequest{ /* populate request parameters */ },
+		schema.PkiWriteIssuerIssuerRefAcmeAuthorizationAuthIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17745,7 +17745,7 @@ func main() {
 		authId,
 		challengeType,
 		issuerRef,
-		PkiWriteIssuerIssuerRefAcmeChallengeAuthIdChallengeTypeRequest{ /* populate request parameters */ },
+		schema.PkiWriteIssuerIssuerRefAcmeChallengeAuthIdChallengeTypeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17813,7 +17813,7 @@ func main() {
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeNewAccount(
 		context.Background(),
 		issuerRef,
-		PkiWriteIssuerIssuerRefAcmeNewAccountRequest{ /* populate request parameters */ },
+		schema.PkiWriteIssuerIssuerRefAcmeNewAccountRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17877,7 +17877,7 @@ func main() {
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeNewOrder(
 		context.Background(),
 		issuerRef,
-		PkiWriteIssuerIssuerRefAcmeNewOrderRequest{ /* populate request parameters */ },
+		schema.PkiWriteIssuerIssuerRefAcmeNewOrderRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -17943,7 +17943,7 @@ func main() {
 		context.Background(),
 		issuerRef,
 		orderId,
-		PkiWriteIssuerIssuerRefAcmeOrderOrderIdRequest{ /* populate request parameters */ },
+		schema.PkiWriteIssuerIssuerRefAcmeOrderOrderIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18011,7 +18011,7 @@ func main() {
 		context.Background(),
 		issuerRef,
 		orderId,
-		PkiWriteIssuerIssuerRefAcmeOrderOrderIdCertRequest{ /* populate request parameters */ },
+		schema.PkiWriteIssuerIssuerRefAcmeOrderOrderIdCertRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18079,7 +18079,7 @@ func main() {
 		context.Background(),
 		issuerRef,
 		orderId,
-		PkiWriteIssuerIssuerRefAcmeOrderOrderIdFinalizeRequest{ /* populate request parameters */ },
+		schema.PkiWriteIssuerIssuerRefAcmeOrderOrderIdFinalizeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18145,7 +18145,7 @@ func main() {
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeOrders(
 		context.Background(),
 		issuerRef,
-		PkiWriteIssuerIssuerRefAcmeOrdersRequest{ /* populate request parameters */ },
+		schema.PkiWriteIssuerIssuerRefAcmeOrdersRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18209,7 +18209,7 @@ func main() {
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeRevokeCert(
 		context.Background(),
 		issuerRef,
-		PkiWriteIssuerIssuerRefAcmeRevokeCertRequest{ /* populate request parameters */ },
+		schema.PkiWriteIssuerIssuerRefAcmeRevokeCertRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18277,7 +18277,7 @@ func main() {
 		issuerRef,
 		kid,
 		role,
-		PkiWriteIssuerIssuerRefRolesRoleAcmeAccountKidRequest{ /* populate request parameters */ },
+		schema.PkiWriteIssuerIssuerRefRolesRoleAcmeAccountKidRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18349,7 +18349,7 @@ func main() {
 		authId,
 		issuerRef,
 		role,
-		PkiWriteIssuerIssuerRefRolesRoleAcmeAuthorizationAuthIdRequest{ /* populate request parameters */ },
+		schema.PkiWriteIssuerIssuerRefRolesRoleAcmeAuthorizationAuthIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18423,7 +18423,7 @@ func main() {
 		challengeType,
 		issuerRef,
 		role,
-		PkiWriteIssuerIssuerRefRolesRoleAcmeChallengeAuthIdChallengeTypeRequest{ /* populate request parameters */ },
+		schema.PkiWriteIssuerIssuerRefRolesRoleAcmeChallengeAuthIdChallengeTypeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18495,7 +18495,7 @@ func main() {
 		context.Background(),
 		issuerRef,
 		role,
-		PkiWriteIssuerIssuerRefRolesRoleAcmeNewAccountRequest{ /* populate request parameters */ },
+		schema.PkiWriteIssuerIssuerRefRolesRoleAcmeNewAccountRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18563,7 +18563,7 @@ func main() {
 		context.Background(),
 		issuerRef,
 		role,
-		PkiWriteIssuerIssuerRefRolesRoleAcmeNewOrderRequest{ /* populate request parameters */ },
+		schema.PkiWriteIssuerIssuerRefRolesRoleAcmeNewOrderRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18633,7 +18633,7 @@ func main() {
 		issuerRef,
 		orderId,
 		role,
-		PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdRequest{ /* populate request parameters */ },
+		schema.PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18705,7 +18705,7 @@ func main() {
 		issuerRef,
 		orderId,
 		role,
-		PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdCertRequest{ /* populate request parameters */ },
+		schema.PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdCertRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18777,7 +18777,7 @@ func main() {
 		issuerRef,
 		orderId,
 		role,
-		PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdFinalizeRequest{ /* populate request parameters */ },
+		schema.PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdFinalizeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18847,7 +18847,7 @@ func main() {
 		context.Background(),
 		issuerRef,
 		role,
-		PkiWriteIssuerIssuerRefRolesRoleAcmeOrdersRequest{ /* populate request parameters */ },
+		schema.PkiWriteIssuerIssuerRefRolesRoleAcmeOrdersRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18915,7 +18915,7 @@ func main() {
 		context.Background(),
 		issuerRef,
 		role,
-		PkiWriteIssuerIssuerRefRolesRoleAcmeRevokeCertRequest{ /* populate request parameters */ },
+		schema.PkiWriteIssuerIssuerRefRolesRoleAcmeRevokeCertRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -18981,7 +18981,7 @@ func main() {
 	resp, err := client.Secrets.PkiWriteKey(
 		context.Background(),
 		keyRef,
-		PkiWriteKeyRequest{ /* populate request parameters */ },
+		schema.PkiWriteKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19045,7 +19045,7 @@ func main() {
 	resp, err := client.Secrets.PkiWriteRole(
 		context.Background(),
 		name,
-		PkiWriteRoleRequest{ /* populate request parameters */ },
+		schema.PkiWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19111,7 +19111,7 @@ func main() {
 		context.Background(),
 		kid,
 		role,
-		PkiWriteRolesRoleAcmeAccountKidRequest{ /* populate request parameters */ },
+		schema.PkiWriteRolesRoleAcmeAccountKidRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19179,7 +19179,7 @@ func main() {
 		context.Background(),
 		authId,
 		role,
-		PkiWriteRolesRoleAcmeAuthorizationAuthIdRequest{ /* populate request parameters */ },
+		schema.PkiWriteRolesRoleAcmeAuthorizationAuthIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19249,7 +19249,7 @@ func main() {
 		authId,
 		challengeType,
 		role,
-		PkiWriteRolesRoleAcmeChallengeAuthIdChallengeTypeRequest{ /* populate request parameters */ },
+		schema.PkiWriteRolesRoleAcmeChallengeAuthIdChallengeTypeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19317,7 +19317,7 @@ func main() {
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeNewAccount(
 		context.Background(),
 		role,
-		PkiWriteRolesRoleAcmeNewAccountRequest{ /* populate request parameters */ },
+		schema.PkiWriteRolesRoleAcmeNewAccountRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19381,7 +19381,7 @@ func main() {
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeNewOrder(
 		context.Background(),
 		role,
-		PkiWriteRolesRoleAcmeNewOrderRequest{ /* populate request parameters */ },
+		schema.PkiWriteRolesRoleAcmeNewOrderRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19447,7 +19447,7 @@ func main() {
 		context.Background(),
 		orderId,
 		role,
-		PkiWriteRolesRoleAcmeOrderOrderIdRequest{ /* populate request parameters */ },
+		schema.PkiWriteRolesRoleAcmeOrderOrderIdRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19515,7 +19515,7 @@ func main() {
 		context.Background(),
 		orderId,
 		role,
-		PkiWriteRolesRoleAcmeOrderOrderIdCertRequest{ /* populate request parameters */ },
+		schema.PkiWriteRolesRoleAcmeOrderOrderIdCertRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19583,7 +19583,7 @@ func main() {
 		context.Background(),
 		orderId,
 		role,
-		PkiWriteRolesRoleAcmeOrderOrderIdFinalizeRequest{ /* populate request parameters */ },
+		schema.PkiWriteRolesRoleAcmeOrderOrderIdFinalizeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19649,7 +19649,7 @@ func main() {
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeOrders(
 		context.Background(),
 		role,
-		PkiWriteRolesRoleAcmeOrdersRequest{ /* populate request parameters */ },
+		schema.PkiWriteRolesRoleAcmeOrdersRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19713,7 +19713,7 @@ func main() {
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeRevokeCert(
 		context.Background(),
 		role,
-		PkiWriteRolesRoleAcmeRevokeCertRequest{ /* populate request parameters */ },
+		schema.PkiWriteRolesRoleAcmeRevokeCertRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
@@ -19775,7 +19775,7 @@ func main() {
 
 	resp, err := client.Secrets.RabbitMqConfigureConnection(
 		context.Background(),
-		RabbitMqConfigureConnectionRequest{ /* populate request parameters */ },
+		schema.RabbitMqConfigureConnectionRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("rabbitmq"),
 	)
@@ -19835,7 +19835,7 @@ func main() {
 
 	resp, err := client.Secrets.RabbitMqConfigureLease(
 		context.Background(),
-		RabbitMqConfigureLeaseRequest{ /* populate request parameters */ },
+		schema.RabbitMqConfigureLeaseRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("rabbitmq"),
 	)
@@ -20195,7 +20195,7 @@ func main() {
 	resp, err := client.Secrets.RabbitMqWriteRole(
 		context.Background(),
 		name,
-		RabbitMqWriteRoleRequest{ /* populate request parameters */ },
+		schema.RabbitMqWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("rabbitmq"),
 	)
@@ -20257,7 +20257,7 @@ func main() {
 
 	resp, err := client.Secrets.SshConfigureCa(
 		context.Background(),
-		SshConfigureCaRequest{ /* populate request parameters */ },
+		schema.SshConfigureCaRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
@@ -20317,7 +20317,7 @@ func main() {
 
 	resp, err := client.Secrets.SshConfigureZeroAddress(
 		context.Background(),
-		SshConfigureZeroAddressRequest{ /* populate request parameters */ },
+		schema.SshConfigureZeroAddressRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
@@ -20554,7 +20554,7 @@ func main() {
 	resp, err := client.Secrets.SshGenerateCredentials(
 		context.Background(),
 		role,
-		SshGenerateCredentialsRequest{ /* populate request parameters */ },
+		schema.SshGenerateCredentialsRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
@@ -20618,7 +20618,7 @@ func main() {
 	resp, err := client.Secrets.SshIssueCertificate(
 		context.Background(),
 		role,
-		SshIssueCertificateRequest{ /* populate request parameters */ },
+		schema.SshIssueCertificateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
@@ -20738,7 +20738,7 @@ func main() {
 
 	resp, err := client.Secrets.SshListRolesByIp(
 		context.Background(),
-		SshListRolesByIpRequest{ /* populate request parameters */ },
+		schema.SshListRolesByIpRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
@@ -21032,7 +21032,7 @@ func main() {
 	resp, err := client.Secrets.SshSignCertificate(
 		context.Background(),
 		role,
-		SshSignCertificateRequest{ /* populate request parameters */ },
+		schema.SshSignCertificateRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
@@ -21151,7 +21151,7 @@ func main() {
 
 	resp, err := client.Secrets.SshVerifyOtp(
 		context.Background(),
-		SshVerifyOtpRequest{ /* populate request parameters */ },
+		schema.SshVerifyOtpRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
@@ -21213,7 +21213,7 @@ func main() {
 	resp, err := client.Secrets.SshWriteRole(
 		context.Background(),
 		role,
-		SshWriteRoleRequest{ /* populate request parameters */ },
+		schema.SshWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
@@ -21275,7 +21275,7 @@ func main() {
 
 	resp, err := client.Secrets.TerraformCloudConfigure(
 		context.Background(),
-		TerraformCloudConfigureRequest{ /* populate request parameters */ },
+		schema.TerraformCloudConfigureRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("terraform"),
 	)
@@ -21753,7 +21753,7 @@ func main() {
 	resp, err := client.Secrets.TerraformCloudWriteRole(
 		context.Background(),
 		name,
-		TerraformCloudWriteRoleRequest{ /* populate request parameters */ },
+		schema.TerraformCloudWriteRoleRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("terraform"),
 	)
@@ -21817,7 +21817,7 @@ func main() {
 	resp, err := client.Secrets.TotpCreateKey(
 		context.Background(),
 		name,
-		TotpCreateKeyRequest{ /* populate request parameters */ },
+		schema.TotpCreateKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("totp"),
 	)
@@ -22122,7 +22122,7 @@ func main() {
 	resp, err := client.Secrets.TotpValidateCode(
 		context.Background(),
 		name,
-		TotpValidateCodeRequest{ /* populate request parameters */ },
+		schema.TotpValidateCodeRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("totp"),
 	)
@@ -22379,7 +22379,7 @@ func main() {
 
 	resp, err := client.Secrets.TransitConfigureCache(
 		context.Background(),
-		TransitConfigureCacheRequest{ /* populate request parameters */ },
+		schema.TransitConfigureCacheRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -22441,7 +22441,7 @@ func main() {
 	resp, err := client.Secrets.TransitConfigureKey(
 		context.Background(),
 		name,
-		TransitConfigureKeyRequest{ /* populate request parameters */ },
+		schema.TransitConfigureKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -22503,7 +22503,7 @@ func main() {
 
 	resp, err := client.Secrets.TransitConfigureKeys(
 		context.Background(),
-		TransitConfigureKeysRequest{ /* populate request parameters */ },
+		schema.TransitConfigureKeysRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -22565,7 +22565,7 @@ func main() {
 	resp, err := client.Secrets.TransitCreateKey(
 		context.Background(),
 		name,
-		TransitCreateKeyRequest{ /* populate request parameters */ },
+		schema.TransitCreateKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -22629,7 +22629,7 @@ func main() {
 	resp, err := client.Secrets.TransitDecrypt(
 		context.Background(),
 		name,
-		TransitDecryptRequest{ /* populate request parameters */ },
+		schema.TransitDecryptRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -22754,7 +22754,7 @@ func main() {
 	resp, err := client.Secrets.TransitEncrypt(
 		context.Background(),
 		name,
-		TransitEncryptRequest{ /* populate request parameters */ },
+		schema.TransitEncryptRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -22954,7 +22954,7 @@ func main() {
 		context.Background(),
 		name,
 		plaintext,
-		TransitGenerateDataKeyRequest{ /* populate request parameters */ },
+		schema.TransitGenerateDataKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -23020,7 +23020,7 @@ func main() {
 	resp, err := client.Secrets.TransitGenerateHmac(
 		context.Background(),
 		name,
-		TransitGenerateHmacRequest{ /* populate request parameters */ },
+		schema.TransitGenerateHmacRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -23086,7 +23086,7 @@ func main() {
 		context.Background(),
 		name,
 		urlalgorithm,
-		TransitGenerateHmacWithAlgorithmRequest{ /* populate request parameters */ },
+		schema.TransitGenerateHmacWithAlgorithmRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -23150,7 +23150,7 @@ func main() {
 
 	resp, err := client.Secrets.TransitGenerateRandom(
 		context.Background(),
-		TransitGenerateRandomRequest{ /* populate request parameters */ },
+		schema.TransitGenerateRandomRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -23212,7 +23212,7 @@ func main() {
 	resp, err := client.Secrets.TransitGenerateRandomWithBytes(
 		context.Background(),
 		urlbytes,
-		TransitGenerateRandomWithBytesRequest{ /* populate request parameters */ },
+		schema.TransitGenerateRandomWithBytesRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -23276,7 +23276,7 @@ func main() {
 	resp, err := client.Secrets.TransitGenerateRandomWithSource(
 		context.Background(),
 		source,
-		TransitGenerateRandomWithSourceRequest{ /* populate request parameters */ },
+		schema.TransitGenerateRandomWithSourceRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -23342,7 +23342,7 @@ func main() {
 		context.Background(),
 		source,
 		urlbytes,
-		TransitGenerateRandomWithSourceAndBytesRequest{ /* populate request parameters */ },
+		schema.TransitGenerateRandomWithSourceAndBytesRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -23406,7 +23406,7 @@ func main() {
 
 	resp, err := client.Secrets.TransitHash(
 		context.Background(),
-		TransitHashRequest{ /* populate request parameters */ },
+		schema.TransitHashRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -23468,7 +23468,7 @@ func main() {
 	resp, err := client.Secrets.TransitHashWithAlgorithm(
 		context.Background(),
 		urlalgorithm,
-		TransitHashWithAlgorithmRequest{ /* populate request parameters */ },
+		schema.TransitHashWithAlgorithmRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -23532,7 +23532,7 @@ func main() {
 	resp, err := client.Secrets.TransitImportKey(
 		context.Background(),
 		name,
-		TransitImportKeyRequest{ /* populate request parameters */ },
+		schema.TransitImportKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -23596,7 +23596,7 @@ func main() {
 	resp, err := client.Secrets.TransitImportKeyVersion(
 		context.Background(),
 		name,
-		TransitImportKeyVersionRequest{ /* populate request parameters */ },
+		schema.TransitImportKeyVersionRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -23950,7 +23950,7 @@ func main() {
 	resp, err := client.Secrets.TransitRestoreAndRenameKey(
 		context.Background(),
 		name,
-		TransitRestoreAndRenameKeyRequest{ /* populate request parameters */ },
+		schema.TransitRestoreAndRenameKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -24012,7 +24012,7 @@ func main() {
 
 	resp, err := client.Secrets.TransitRestoreKey(
 		context.Background(),
-		TransitRestoreKeyRequest{ /* populate request parameters */ },
+		schema.TransitRestoreKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -24074,7 +24074,7 @@ func main() {
 	resp, err := client.Secrets.TransitRewrap(
 		context.Background(),
 		name,
-		TransitRewrapRequest{ /* populate request parameters */ },
+		schema.TransitRewrapRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -24138,7 +24138,7 @@ func main() {
 	resp, err := client.Secrets.TransitRotateKey(
 		context.Background(),
 		name,
-		TransitRotateKeyRequest{ /* populate request parameters */ },
+		schema.TransitRotateKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -24202,7 +24202,7 @@ func main() {
 	resp, err := client.Secrets.TransitSign(
 		context.Background(),
 		name,
-		TransitSignRequest{ /* populate request parameters */ },
+		schema.TransitSignRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -24268,7 +24268,7 @@ func main() {
 		context.Background(),
 		name,
 		urlalgorithm,
-		TransitSignWithAlgorithmRequest{ /* populate request parameters */ },
+		schema.TransitSignWithAlgorithmRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -24334,7 +24334,7 @@ func main() {
 	resp, err := client.Secrets.TransitTrimKey(
 		context.Background(),
 		name,
-		TransitTrimKeyRequest{ /* populate request parameters */ },
+		schema.TransitTrimKeyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -24398,7 +24398,7 @@ func main() {
 	resp, err := client.Secrets.TransitVerify(
 		context.Background(),
 		name,
-		TransitVerifyRequest{ /* populate request parameters */ },
+		schema.TransitVerifyRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
@@ -24464,7 +24464,7 @@ func main() {
 		context.Background(),
 		name,
 		urlalgorithm,
-		TransitVerifyWithAlgorithmRequest{ /* populate request parameters */ },
+		schema.TransitVerifyWithAlgorithmRequest{ /* populate request parameters */ },
 		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)

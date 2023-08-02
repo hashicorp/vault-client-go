@@ -9,7 +9,6 @@ require (
 	github.com/hashicorp/go-rootcerts v1.0.2
 	github.com/hashicorp/go-secure-stdlib/strutil v0.1.2
 	github.com/stretchr/testify v1.8.0
-	golang.org/x/exp v0.0.0-20220921164117-439092de6870
 	golang.org/x/sys v0.4.0
 	golang.org/x/time v0.0.0-20220922220347-f3bd1da661af
 )

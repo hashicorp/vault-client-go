@@ -249,7 +249,7 @@ func (m *requestModifiers) additionalQueryParametersOrDefault() url.Values {
 // mergeRequestModifiers merges the values in *rhs into *lhs. The merging is
 // done according the following rules:
 //
-//   - for scalaras : the rhs values, if present, will overwrite the lhs values
+//   - for scalars : the rhs values, if present, will overwrite the lhs values
 //   - for slices   : the rhs values will be appended to the lhs values
 //   - for maps     : the rhs values will be copied into the lhs using maps.Copy
 func mergeRequestModifiers(lhs, rhs *requestModifiers) {

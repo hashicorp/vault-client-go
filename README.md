@@ -199,13 +199,13 @@ You can modify the requests in one of two ways, either at the client level or by
 decorating individual requests. In case both client-level and request-level
 modifiers are present, the following rules will apply:
 
-- For scalar values (such as `vault.WithToken` example below), request-level
+- For scalar values (such as `vault.WithToken` example below), the request-level
   decorators will take precedence over the client-level settings.
-- For slices (e.g. `vault.WithResponseCallbacks`), request-level decorators will
-  be appended to the client-level settings for the given request.
+- For slices (e.g. `vault.WithResponseCallbacks`), the request-level decorators
+  will be appended to the client-level settings for the given request.
 - For maps (e.g. `vault.WithCustomHeaders`), the request-level decorators will
-  be merged into the client-level ones using `maps.Copy` semantics (appended,
-  overwriting the existing keys) for the given request.
+  be merged into the client-level settings using `maps.Copy` semantics
+  (appended, overwriting the existing keys) for the given request.
 
 ```go
 // all subsequent requests will use the given token & namespace

@@ -196,14 +196,25 @@ for engine := range resp.Data {
 ### Modifying Requests
 
 You can modify the requests in one of two ways, either at the client level or by
-decorating individual requests:
+decorating individual requests. In case both client-level and request-specific
+modifiers are present, the following rules will apply:
+
+- For scalar values (such as `vault.WithToken` example below), the
+  request-specific decorators will take precedence over the client-level
+  settings.
+- For slices (e.g. `vault.WithResponseCallbacks`), the request-specific
+  decorators will be appended to the client-level settings for the given
+  request.
+- For maps (e.g. `vault.WithCustomHeaders`), the request-specific decorators
+  will be merged into the client-level settings using `maps.Copy` semantics
+  (appended, overwriting the existing keys) for the given request.
 
 ```go
 // all subsequent requests will use the given token & namespace
 _ = client.SetToken("my-token")
 _ = client.SetNamespace("my-namespace")
 
-// per-request decorators take precedence over the client-level settings
+// for scalar settings, request-specific decorators take precedence
 resp, err := client.Secrets.KvV2Read(
 	ctx,
 	"my-secret",
@@ -382,9 +393,10 @@ client.SetResponseCallbacks(func(req *http.Request, resp *http.Response) {
 })
 ```
 
-Alternatively, `vault.WithRequestCallbacks(..)` /
+Additionally, `vault.WithRequestCallbacks(..)` /
 `vault.WithResponseCallbacks(..)` can be used to inject callbacks for individual
-requests:
+requests. These request-level callbacks will be appended to the list of the
+respective client-level callbacks for the given request.
 
 ```go
 resp, err := client.Secrets.KvV2Read(

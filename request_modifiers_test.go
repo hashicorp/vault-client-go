@@ -4,6 +4,7 @@
 package vault
 
 import (
+	"fmt"
 	"net/http"
 	"testing"
 
@@ -126,6 +127,53 @@ func Test_mergeRequestModifiers_overwrite(t *testing.T) {
 		t.Run(name, func(t *testing.T) {
 			mergeRequestModifiers(&tc.lhs, &tc.rhs)
 			require.Equal(t, tc.expected, tc.lhs)
+		})
+	}
+}
+
+func Test_mergeRequestModifiers_append(t *testing.T) {
+	requestCallback1 := func(r *http.Request) {
+		t.Logf("callback 1: %v", *r)
+	}
+	requestCallback2 := func(r *http.Request) {
+		t.Logf("callback 2: %v", *r)
+	}
+	responseCallback := func(req *http.Request, resp *http.Response) {
+		t.Logf("callback 3: %v, %v", *req, *resp)
+	}
+
+	cases := map[string]struct {
+		name     string
+		lhs      requestModifiers
+		rhs      requestModifiers
+		expected requestModifiers
+	}{
+		"custom-headers": {
+			lhs:      requestModifiers{headers: requestHeaders{customHeaders: http.Header{"a": []string{"hi"}, "b": nil}}},
+			rhs:      requestModifiers{headers: requestHeaders{customHeaders: http.Header{"b": nil, "c": nil}}},
+			expected: requestModifiers{headers: requestHeaders{customHeaders: http.Header{"a": []string{"hi"}, "b": nil, "c": nil}}},
+		},
+		"request-callbacks": {
+			lhs:      requestModifiers{requestCallbacks: []RequestCallback{requestCallback1}},
+			rhs:      requestModifiers{requestCallbacks: []RequestCallback{requestCallback2}},
+			expected: requestModifiers{requestCallbacks: []RequestCallback{requestCallback1, requestCallback2}},
+		},
+		"response-callbacks": {
+			lhs:      requestModifiers{responseCallbacks: []ResponseCallback{}},
+			rhs:      requestModifiers{responseCallbacks: []ResponseCallback{responseCallback}},
+			expected: requestModifiers{responseCallbacks: []ResponseCallback{responseCallback}},
+		},
+	}
+
+	for name, tc := range cases {
+		t.Run(name, func(t *testing.T) {
+			mergeRequestModifiers(&tc.lhs, &tc.rhs)
+
+			// testify doesn't currently work with func types; stringify instead
+			require.Equal(t, fmt.Sprintf("%v", tc.expected.requestCallbacks), fmt.Sprintf("%v", tc.lhs.requestCallbacks))
+			require.Equal(t, fmt.Sprintf("%v", tc.expected.responseCallbacks), fmt.Sprintf("%v", tc.lhs.responseCallbacks))
+
+			require.Equal(t, tc.expected.headers.customHeaders, tc.lhs.headers.customHeaders)
 		})
 	}
 }

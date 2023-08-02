@@ -251,8 +251,9 @@ func (m *requestModifiers) additionalQueryParametersOrDefault() url.Values {
 //
 //   - for scalars : the rhs values, if present, will overwrite the lhs values
 //   - for slices  : the rhs values will be appended to the lhs values
-//   - for maps    : the rhs values for the new keys will be appended to lhs
-//     the rhs values for the existing keys will overwrite lhs
+//   - for maps
+//     -- new keys      : the rhs values will be appended to the lhs values
+//     -- existing keys : the rhs values will overwrite the corresponding lhs values
 func mergeRequestModifiers(lhs, rhs *requestModifiers) {
 	if rhs.headers.userAgent != "" {
 		lhs.headers.userAgent = rhs.headers.userAgent

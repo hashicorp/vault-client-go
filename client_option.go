@@ -26,9 +26,9 @@ func WithAddress(address string) ClientOption {
 }
 
 // WithHTTPClient sets the HTTP client to use for all API requests.
-// The library sets reasonable defaults for the BaseClient and its associated
+// The library sets reasonable defaults for the HTTPClient and its associated
 // http.Transport. If you must modify Vault's defaults, it is suggested that
-// you start with DefaultConfiguration().BaseClient and modify it as needed
+// you start with DefaultConfiguration().HTTPClient and modify it as needed
 // rather than starting with an empty client or http.DefaultClient.
 func WithHTTPClient(client *http.Client) ClientOption {
 	return func(c *ClientConfiguration) error {

@@ -10,6 +10,9 @@ type RateLimitQuotasWriteRequest struct {
 	// If set, when a client reaches a rate limit threshold, the client will be prohibited from any further requests until after the 'block_interval' has elapsed.
 	BlockInterval string `json:"block_interval,omitempty"`
 
+	// Whether all child namespaces can inherit this namespace quota.
+	Inheritable bool `json:"inheritable,omitempty"`
+
 	// The duration to enforce rate limiting for (default '1s').
 	Interval string `json:"interval,omitempty"`
 

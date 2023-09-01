@@ -13178,6 +13178,119 @@
         }
       }
     },
+    "/sys/plugins/runtimes/catalog/": {
+      "description": "List all plugin runtimes in the catalog as a map of type to names.",
+      "x-vault-sudo": true,
+      "get": {
+        "operationId": "plugins-runtimes-catalog-list-plugins-runtimes",
+        "tags": [
+          "system"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PluginsRuntimesCatalogListPluginsRuntimesResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sys/plugins/runtimes/catalog/{type}/{name}": {
+      "description": "Configures plugin runtimes",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "The name of the plugin runtime",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "type",
+          "description": "The type of the plugin runtime",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-sudo": true,
+      "get": {
+        "summary": "Return the configuration data for the plugin runtime with the given name.",
+        "operationId": "plugins-runtimes-catalog-read-plugin-runtime-configuration",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PluginsRuntimesCatalogReadPluginRuntimeConfigurationResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Register a new plugin runtime, or updates an existing one with the supplied name.",
+        "operationId": "plugins-runtimes-catalog-register-plugin-runtime",
+        "tags": [
+          "system"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PluginsRuntimesCatalogRegisterPluginRuntimeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove the plugin runtime with the given name.",
+        "operationId": "plugins-runtimes-catalog-remove-plugin-runtime",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/sys/policies/acl/": {
       "description": "List the configured access control policies.",
       "get": {
@@ -42725,7 +42838,7 @@
           },
           "ocsp_servers": {
             "type": "array",
-            "description": "OSCP Servers",
+            "description": "OCSP Servers",
             "items": {
               "type": "string"
             }
@@ -43594,7 +43707,7 @@
           },
           "ocsp_servers": {
             "type": "array",
-            "description": "OSCP Servers",
+            "description": "OCSP Servers",
             "items": {
               "type": "string"
             }
@@ -46236,7 +46349,7 @@
           },
           "ocsp_servers": {
             "type": "array",
-            "description": "OSCP Servers",
+            "description": "OCSP Servers",
             "items": {
               "type": "string"
             }
@@ -47226,6 +47339,72 @@
         "properties": {
           "reload_id": {
             "type": "string"
+          }
+        }
+      },
+      "PluginsRuntimesCatalogListPluginsRuntimesResponse": {
+        "type": "object",
+        "properties": {
+          "runtimes": {
+            "type": "array",
+            "description": "List of all plugin runtimes in the catalog",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "PluginsRuntimesCatalogReadPluginRuntimeConfigurationResponse": {
+        "type": "object",
+        "properties": {
+          "cgroup_parent": {
+            "type": "string",
+            "description": "Optional parent cgroup for the container"
+          },
+          "cpu_nanos": {
+            "type": "integer",
+            "description": "The limit of runtime CPU in nanos",
+            "format": "int64"
+          },
+          "memory_bytes": {
+            "type": "integer",
+            "description": "The limit of runtime memory in bytes",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the plugin runtime"
+          },
+          "oci_runtime": {
+            "type": "string",
+            "description": "The OCI-compatible runtime (default \"runsc\")"
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of the plugin runtime"
+          }
+        }
+      },
+      "PluginsRuntimesCatalogRegisterPluginRuntimeRequest": {
+        "type": "object",
+        "properties": {
+          "cgroup_parent": {
+            "type": "string",
+            "description": "Optional parent cgroup for the container"
+          },
+          "cpu_nanos": {
+            "type": "integer",
+            "description": "The limit of runtime CPU in nanos",
+            "format": "int64"
+          },
+          "memory_bytes": {
+            "type": "integer",
+            "description": "The limit of runtime memory in bytes",
+            "format": "int64"
+          },
+          "oci_runtime": {
+            "type": "string",
+            "description": "The OCI-compatible runtime (default \"runsc\")"
           }
         }
       },

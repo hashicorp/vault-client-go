@@ -25,7 +25,7 @@ type AuthEnableMethodRequest struct {
 	// Name of the auth plugin to use based from the name in the plugin catalog.
 	PluginName string `json:"plugin_name,omitempty"`
 
-	// The semantic version of the plugin to use.
+	// The semantic version of the plugin to use, or image tag if oci_image is provided.
 	PluginVersion string `json:"plugin_version,omitempty"`
 
 	// Whether to turn on seal wrapping for the mount.

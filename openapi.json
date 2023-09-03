@@ -31757,7 +31757,7 @@
           },
           "plugin_version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           },
           "seal_wrap": {
             "type": "boolean",
@@ -31948,7 +31948,7 @@
           },
           "plugin_version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           },
           "token_type": {
             "type": "string",
@@ -38389,7 +38389,7 @@
           },
           "plugin_version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           },
           "seal_wrap": {
             "type": "boolean",
@@ -38435,7 +38435,7 @@
           },
           "plugin_version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           },
           "running_plugin_version": {
             "type": "string"
@@ -38519,7 +38519,7 @@
           },
           "plugin_version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           },
           "token_type": {
             "type": "string",
@@ -38602,7 +38602,7 @@
           },
           "plugin_version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           },
           "token_type": {
             "type": "string",
@@ -47209,13 +47209,17 @@
             "type": "string",
             "description": "The name of the plugin"
           },
+          "oci_image": {
+            "type": "string",
+            "description": "The name of the OCI image to be run, without the tag or SHA256. Must already be present on the machine."
+          },
           "sha256": {
             "type": "string",
-            "description": "The SHA256 sum of the executable used in the command field. This should be HEX encoded."
+            "description": "The SHA256 sum of the executable or container to be run. This should be HEX encoded."
           },
           "version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           }
         }
       },
@@ -47243,13 +47247,17 @@
             "type": "string",
             "description": "The name of the plugin"
           },
+          "oci_image": {
+            "type": "string",
+            "description": "The name of the OCI image to be run, without the tag or SHA256. Must already be present on the machine."
+          },
           "sha256": {
             "type": "string",
-            "description": "The SHA256 sum of the executable used in the command field. This should be HEX encoded."
+            "description": "The SHA256 sum of the executable or container to be run. This should be HEX encoded."
           },
           "version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           }
         }
       },
@@ -47274,13 +47282,17 @@
               "type": "string"
             }
           },
+          "oci_image": {
+            "type": "string",
+            "description": "The name of the OCI image to be run, without the tag or SHA256. Must already be present on the machine."
+          },
           "sha256": {
             "type": "string",
-            "description": "The SHA256 sum of the executable used in the command field. This should be HEX encoded."
+            "description": "The SHA256 sum of the executable or container to be run. This should be HEX encoded."
           },
           "version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           }
         }
       },
@@ -47305,13 +47317,17 @@
               "type": "string"
             }
           },
+          "oci_image": {
+            "type": "string",
+            "description": "The name of the OCI image to be run, without the tag or SHA256. Must already be present on the machine."
+          },
           "sha256": {
             "type": "string",
-            "description": "The SHA256 sum of the executable used in the command field. This should be HEX encoded."
+            "description": "The SHA256 sum of the executable or container to be run. This should be HEX encoded."
           },
           "version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           }
         }
       },

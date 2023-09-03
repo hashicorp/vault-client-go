@@ -25,7 +25,7 @@ type MountsReadConfigurationResponse struct {
 	// The options to pass into the backend. Should be a json object with string keys and values.
 	Options map[string]interface{} `json:"options,omitempty"`
 
-	// The semantic version of the plugin to use.
+	// The semantic version of the plugin to use, or image tag if oci_image is provided.
 	PluginVersion string `json:"plugin_version,omitempty"`
 
 	RunningPluginVersion string `json:"running_plugin_version,omitempty"`

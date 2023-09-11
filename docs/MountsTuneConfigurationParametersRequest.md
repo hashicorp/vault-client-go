@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **MaxLeaseTtl** | Pointer to **string** | The max lease TTL for this mount. | [optional] 
 **Options** | Pointer to **map[string]interface{}** | The options to pass into the backend. Should be a json object with string keys and values. | [optional] 
 **PassthroughRequestHeaders** | Pointer to **[]string** | A list of headers to whitelist and pass from the request to the plugin. | [optional] 
-**PluginVersion** | Pointer to **string** | The semantic version of the plugin to use. | [optional] 
+**PluginVersion** | Pointer to **string** | The semantic version of the plugin to use, or image tag if oci_image is provided. | [optional] 
 **TokenType** | Pointer to **string** | The type of token to issue (service or batch). | [optional] 
 **UserLockoutConfig** | Pointer to **map[string]interface{}** | The user lockout configuration to pass into the backend. Should be a json object with string keys and values. | [optional] 
 

@@ -89,6 +89,10 @@ Method | HTTP request | Description
 [**PluginsCatalogRemovePlugin**](SystemApi.md#PluginsCatalogRemovePlugin) | **Delete** /sys/plugins/catalog/{name} | Remove the plugin with the given name.
 [**PluginsCatalogRemovePluginWithType**](SystemApi.md#PluginsCatalogRemovePluginWithType) | **Delete** /sys/plugins/catalog/{type}/{name} | Remove the plugin with the given name.
 [**PluginsReloadBackends**](SystemApi.md#PluginsReloadBackends) | **Post** /sys/plugins/reload/backend | Reload mounted plugin backends.
+[**PluginsRuntimesCatalogListPluginsRuntimes**](SystemApi.md#PluginsRuntimesCatalogListPluginsRuntimes) | **Get** /sys/plugins/runtimes/catalog/ | 
+[**PluginsRuntimesCatalogReadPluginRuntimeConfiguration**](SystemApi.md#PluginsRuntimesCatalogReadPluginRuntimeConfiguration) | **Get** /sys/plugins/runtimes/catalog/{type}/{name} | Return the configuration data for the plugin runtime with the given name.
+[**PluginsRuntimesCatalogRegisterPluginRuntime**](SystemApi.md#PluginsRuntimesCatalogRegisterPluginRuntime) | **Post** /sys/plugins/runtimes/catalog/{type}/{name} | Register a new plugin runtime, or updates an existing one with the supplied name.
+[**PluginsRuntimesCatalogRemovePluginRuntime**](SystemApi.md#PluginsRuntimesCatalogRemovePluginRuntime) | **Delete** /sys/plugins/runtimes/catalog/{type}/{name} | Remove the plugin runtime with the given name.
 [**PoliciesDeleteAclPolicy**](SystemApi.md#PoliciesDeleteAclPolicy) | **Delete** /sys/policies/acl/{name} | Delete the ACL policy with the given name.
 [**PoliciesDeletePasswordPolicy**](SystemApi.md#PoliciesDeletePasswordPolicy) | **Delete** /sys/policies/password/{name} | Delete a password policy.
 [**PoliciesGeneratePasswordFromPasswordPolicy**](SystemApi.md#PoliciesGeneratePasswordFromPasswordPolicy) | **Get** /sys/policies/password/{name}/generate | Generate a password from an existing password policy.
@@ -5034,6 +5038,251 @@ Name | Type | Description  | Notes
  **pluginsReloadBackendsRequest** | [**PluginsReloadBackendsRequest**](PluginsReloadBackendsRequest.md) |  | 
 
 [**PluginsReloadBackendsResponse**](PluginsReloadBackendsResponse.md)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+## PluginsRuntimesCatalogListPluginsRuntimes
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	resp, err := client.System.PluginsRuntimesCatalogListPluginsRuntimes(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+[**PluginsRuntimesCatalogListPluginsRuntimesResponse**](PluginsRuntimesCatalogListPluginsRuntimesResponse.md)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+## PluginsRuntimesCatalogReadPluginRuntimeConfiguration
+
+Return the configuration data for the plugin runtime with the given name.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | The name of the plugin runtime
+	type_ := "type__example" // string | The type of the plugin runtime
+	resp, err := client.System.PluginsRuntimesCatalogReadPluginRuntimeConfiguration(
+		context.Background(),
+		name,
+		type_,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | The name of the plugin runtime | 
+**type_** | **string** | The type of the plugin runtime | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+[**PluginsRuntimesCatalogReadPluginRuntimeConfigurationResponse**](PluginsRuntimesCatalogReadPluginRuntimeConfigurationResponse.md)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+## PluginsRuntimesCatalogRegisterPluginRuntime
+
+Register a new plugin runtime, or updates an existing one with the supplied name.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | The name of the plugin runtime
+	type_ := "type__example" // string | The type of the plugin runtime
+	resp, err := client.System.PluginsRuntimesCatalogRegisterPluginRuntime(
+		context.Background(),
+		name,
+		type_,
+		schema.PluginsRuntimesCatalogRegisterPluginRuntimeRequest{ /* populate request parameters */ },
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | The name of the plugin runtime | 
+**type_** | **string** | The type of the plugin runtime | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **pluginsRuntimesCatalogRegisterPluginRuntimeRequest** | [**PluginsRuntimesCatalogRegisterPluginRuntimeRequest**](PluginsRuntimesCatalogRegisterPluginRuntimeRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+## PluginsRuntimesCatalogRemovePluginRuntime
+
+Remove the plugin runtime with the given name.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | The name of the plugin runtime
+	type_ := "type__example" // string | The type of the plugin runtime
+	resp, err := client.System.PluginsRuntimesCatalogRemovePluginRuntime(
+		context.Background(),
+		name,
+		type_,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | The name of the plugin runtime | 
+**type_** | **string** | The type of the plugin runtime | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)

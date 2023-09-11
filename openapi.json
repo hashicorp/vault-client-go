@@ -13178,6 +13178,119 @@
         }
       }
     },
+    "/sys/plugins/runtimes/catalog/": {
+      "description": "List all plugin runtimes in the catalog as a map of type to names.",
+      "x-vault-sudo": true,
+      "get": {
+        "operationId": "plugins-runtimes-catalog-list-plugins-runtimes",
+        "tags": [
+          "system"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PluginsRuntimesCatalogListPluginsRuntimesResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sys/plugins/runtimes/catalog/{type}/{name}": {
+      "description": "Configures plugin runtimes",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "The name of the plugin runtime",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "type",
+          "description": "The type of the plugin runtime",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-sudo": true,
+      "get": {
+        "summary": "Return the configuration data for the plugin runtime with the given name.",
+        "operationId": "plugins-runtimes-catalog-read-plugin-runtime-configuration",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PluginsRuntimesCatalogReadPluginRuntimeConfigurationResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Register a new plugin runtime, or updates an existing one with the supplied name.",
+        "operationId": "plugins-runtimes-catalog-register-plugin-runtime",
+        "tags": [
+          "system"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PluginsRuntimesCatalogRegisterPluginRuntimeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove the plugin runtime with the given name.",
+        "operationId": "plugins-runtimes-catalog-remove-plugin-runtime",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/sys/policies/acl/": {
       "description": "List the configured access control policies.",
       "get": {
@@ -29713,6 +29826,51 @@
         }
       }
     },
+    "/{transit_mount_path}/keys/{name}/csr": {
+      "description": "Create a CSR from a key in transit",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the key",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "transit_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "transit"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "transit-generate-csr-for-key",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransitGenerateCsrForKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/{transit_mount_path}/keys/{name}/import": {
       "description": "Imports an externally-generated key into a new transit key",
       "parameters": [
@@ -29840,6 +29998,51 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/TransitRotateKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{transit_mount_path}/keys/{name}/set-certificate": {
+      "description": "Imports an externally-signed certificate chain into an existing key version",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the key",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "transit_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "transit"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "transit-set-certificate-for-key",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransitSetCertificateForKeyRequest"
               }
             }
           }
@@ -31554,7 +31757,7 @@
           },
           "plugin_version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           },
           "seal_wrap": {
             "type": "boolean",
@@ -31745,7 +31948,7 @@
           },
           "plugin_version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           },
           "token_type": {
             "type": "string",
@@ -31821,6 +32024,11 @@
             "type": "string",
             "description": "The region ID for the sts_endpoint, if set.",
             "default": ""
+          },
+          "use_sts_region_from_client": {
+            "type": "boolean",
+            "description": "Uses the STS region from client requests for making AWS STS API calls.",
+            "default": false
           }
         }
       },
@@ -32021,7 +32229,7 @@
         "properties": {
           "iam_http_request_method": {
             "type": "string",
-            "description": "HTTP method to use for the AWS request when auth_type is iam. This must match what has been signed in the presigned request. Currently, POST is the only supported value"
+            "description": "HTTP method to use for the AWS request when auth_type is iam. This must match what has been signed in the presigned request."
           },
           "iam_request_body": {
             "type": "string",
@@ -33891,8 +34099,12 @@
           },
           "rotation_period": {
             "type": "string",
-            "description": "Period for automatic credential rotation of the given username. Not valid unless used with \"username\".",
+            "description": "Period for automatic credential rotation of the given username. Not valid unless used with \"username\". Mutually exclusive with \"rotation_schedule.\"",
             "format": "duration"
+          },
+          "rotation_schedule": {
+            "type": "string",
+            "description": "Schedule for automatic credential rotation of the given username. Mutually exclusive with \"rotation_period.\""
           },
           "rotation_statements": {
             "type": "array",
@@ -33900,6 +34112,11 @@
             "items": {
               "type": "string"
             }
+          },
+          "rotation_window": {
+            "type": "string",
+            "description": "The window of time in which rotations are allowed to occur starting from a given \"rotation_schedule\". Requires \"rotation_schedule\" to be specified",
+            "format": "duration"
           },
           "username": {
             "type": "string",
@@ -38172,7 +38389,7 @@
           },
           "plugin_version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           },
           "seal_wrap": {
             "type": "boolean",
@@ -38218,7 +38435,7 @@
           },
           "plugin_version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           },
           "running_plugin_version": {
             "type": "string"
@@ -38302,7 +38519,7 @@
           },
           "plugin_version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           },
           "token_type": {
             "type": "string",
@@ -38385,7 +38602,7 @@
           },
           "plugin_version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           },
           "token_type": {
             "type": "string",
@@ -42621,7 +42838,7 @@
           },
           "ocsp_servers": {
             "type": "array",
-            "description": "OSCP Servers",
+            "description": "OCSP Servers",
             "items": {
               "type": "string"
             }
@@ -43490,7 +43707,7 @@
           },
           "ocsp_servers": {
             "type": "array",
-            "description": "OSCP Servers",
+            "description": "OCSP Servers",
             "items": {
               "type": "string"
             }
@@ -46132,7 +46349,7 @@
           },
           "ocsp_servers": {
             "type": "array",
-            "description": "OSCP Servers",
+            "description": "OCSP Servers",
             "items": {
               "type": "string"
             }
@@ -46992,13 +47209,17 @@
             "type": "string",
             "description": "The name of the plugin"
           },
+          "oci_image": {
+            "type": "string",
+            "description": "The name of the OCI image to be run, without the tag or SHA256. Must already be present on the machine."
+          },
           "sha256": {
             "type": "string",
-            "description": "The SHA256 sum of the executable used in the command field. This should be HEX encoded."
+            "description": "The SHA256 sum of the executable or container to be run. This should be HEX encoded."
           },
           "version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           }
         }
       },
@@ -47026,13 +47247,17 @@
             "type": "string",
             "description": "The name of the plugin"
           },
+          "oci_image": {
+            "type": "string",
+            "description": "The name of the OCI image to be run, without the tag or SHA256. Must already be present on the machine."
+          },
           "sha256": {
             "type": "string",
-            "description": "The SHA256 sum of the executable used in the command field. This should be HEX encoded."
+            "description": "The SHA256 sum of the executable or container to be run. This should be HEX encoded."
           },
           "version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           }
         }
       },
@@ -47057,13 +47282,17 @@
               "type": "string"
             }
           },
+          "oci_image": {
+            "type": "string",
+            "description": "The name of the OCI image to be run, without the tag or SHA256. Must already be present on the machine."
+          },
           "sha256": {
             "type": "string",
-            "description": "The SHA256 sum of the executable used in the command field. This should be HEX encoded."
+            "description": "The SHA256 sum of the executable or container to be run. This should be HEX encoded."
           },
           "version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           }
         }
       },
@@ -47088,13 +47317,17 @@
               "type": "string"
             }
           },
+          "oci_image": {
+            "type": "string",
+            "description": "The name of the OCI image to be run, without the tag or SHA256. Must already be present on the machine."
+          },
           "sha256": {
             "type": "string",
-            "description": "The SHA256 sum of the executable used in the command field. This should be HEX encoded."
+            "description": "The SHA256 sum of the executable or container to be run. This should be HEX encoded."
           },
           "version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           }
         }
       },
@@ -47122,6 +47355,72 @@
         "properties": {
           "reload_id": {
             "type": "string"
+          }
+        }
+      },
+      "PluginsRuntimesCatalogListPluginsRuntimesResponse": {
+        "type": "object",
+        "properties": {
+          "runtimes": {
+            "type": "array",
+            "description": "List of all plugin runtimes in the catalog",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "PluginsRuntimesCatalogReadPluginRuntimeConfigurationResponse": {
+        "type": "object",
+        "properties": {
+          "cgroup_parent": {
+            "type": "string",
+            "description": "Optional parent cgroup for the container"
+          },
+          "cpu_nanos": {
+            "type": "integer",
+            "description": "The limit of runtime CPU in nanos",
+            "format": "int64"
+          },
+          "memory_bytes": {
+            "type": "integer",
+            "description": "The limit of runtime memory in bytes",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the plugin runtime"
+          },
+          "oci_runtime": {
+            "type": "string",
+            "description": "The OCI-compatible runtime (default \"runsc\")"
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of the plugin runtime"
+          }
+        }
+      },
+      "PluginsRuntimesCatalogRegisterPluginRuntimeRequest": {
+        "type": "object",
+        "properties": {
+          "cgroup_parent": {
+            "type": "string",
+            "description": "Optional parent cgroup for the container"
+          },
+          "cpu_nanos": {
+            "type": "integer",
+            "description": "The limit of runtime CPU in nanos",
+            "format": "int64"
+          },
+          "memory_bytes": {
+            "type": "integer",
+            "description": "The limit of runtime memory in bytes",
+            "format": "int64"
+          },
+          "oci_runtime": {
+            "type": "string",
+            "description": "The OCI-compatible runtime (default \"runsc\")"
           }
         }
       },
@@ -47625,6 +47924,9 @@
           "block_interval": {
             "type": "integer"
           },
+          "inheritable": {
+            "type": "boolean"
+          },
           "interval": {
             "type": "integer"
           },
@@ -47653,6 +47955,10 @@
             "type": "string",
             "description": "If set, when a client reaches a rate limit threshold, the client will be prohibited from any further requests until after the 'block_interval' has elapsed.",
             "format": "duration"
+          },
+          "inheritable": {
+            "type": "boolean",
+            "description": "Whether all child namespaces can inherit this namespace quota."
           },
           "interval": {
             "type": "string",
@@ -49365,6 +49671,19 @@
           }
         }
       },
+      "TransitGenerateCsrForKeyRequest": {
+        "type": "object",
+        "properties": {
+          "csr": {
+            "type": "string",
+            "description": "PEM encoded CSR template. The information attributes will be used as a basis for the CSR with the key in transit. If not set, an empty CSR is returned."
+          },
+          "version": {
+            "type": "integer",
+            "description": "Optional version of key, 'latest' if not set"
+          }
+        }
+      },
       "TransitGenerateDataKeyRequest": {
         "type": "object",
         "properties": {
@@ -49674,6 +49993,22 @@
             "description": "The name of the managed key to use for the new version of this transit key"
           }
         }
+      },
+      "TransitSetCertificateForKeyRequest": {
+        "type": "object",
+        "properties": {
+          "certificate_chain": {
+            "type": "string",
+            "description": "PEM encoded certificate chain. It should be composed by one or more concatenated PEM blocks and ordered starting from the end-entity certificate."
+          },
+          "version": {
+            "type": "integer",
+            "description": "Optional version of key, 'latest' if not set"
+          }
+        },
+        "required": [
+          "certificate_chain"
+        ]
       },
       "TransitSignRequest": {
         "type": "object",

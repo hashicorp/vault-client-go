@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **KeyId** | Pointer to **string** | Key Id | [optional] 
 **LeafNotAfterBehavior** | Pointer to **string** | Leaf Not After Behavior | [optional] 
 **ManualChain** | Pointer to **[]string** | Manual Chain | [optional] 
-**OcspServers** | Pointer to **[]string** | OSCP Servers | [optional] 
+**OcspServers** | Pointer to **[]string** | OCSP Servers | [optional] 
 **RevocationSignatureAlgorithm** | Pointer to **string** | Revocation Signature Alogrithm | [optional] 
 **RevocationTime** | Pointer to **int32** |  | [optional] 
 **RevocationTimeRfc3339** | Pointer to **string** |  | [optional] 

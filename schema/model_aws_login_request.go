@@ -7,7 +7,7 @@ package schema
 
 // AwsLoginRequest struct for AwsLoginRequest
 type AwsLoginRequest struct {
-	// HTTP method to use for the AWS request when auth_type is iam. This must match what has been signed in the presigned request. Currently, POST is the only supported value
+	// HTTP method to use for the AWS request when auth_type is iam. This must match what has been signed in the presigned request.
 	IamHttpRequestMethod string `json:"iam_http_request_method,omitempty"`
 
 	// Base64-encoded request body when auth_type is iam. This must match the request body included in the signature.

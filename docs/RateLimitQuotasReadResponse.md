@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BlockInterval** | Pointer to **int32** |  | [optional] 
+**Inheritable** | Pointer to **bool** |  | [optional] 
 **Interval** | Pointer to **int32** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Path** | Pointer to **string** |  | [optional] 

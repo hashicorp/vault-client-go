@@ -369,6 +369,7 @@ Method | HTTP request | Description
 [**TransitEncrypt**](SecretsApi.md#TransitEncrypt) | **Post** /{transit_mount_path}/encrypt/{name} | Encrypt a plaintext value or a batch of plaintext blocks using a named key
 [**TransitExportKey**](SecretsApi.md#TransitExportKey) | **Get** /{transit_mount_path}/export/{type}/{name} | Export named encryption or signing key
 [**TransitExportKeyVersion**](SecretsApi.md#TransitExportKeyVersion) | **Get** /{transit_mount_path}/export/{type}/{name}/{version} | Export named encryption or signing key
+[**TransitGenerateCsrForKey**](SecretsApi.md#TransitGenerateCsrForKey) | **Post** /{transit_mount_path}/keys/{name}/csr | 
 [**TransitGenerateDataKey**](SecretsApi.md#TransitGenerateDataKey) | **Post** /{transit_mount_path}/datakey/{plaintext}/{name} | Generate a data key
 [**TransitGenerateHmac**](SecretsApi.md#TransitGenerateHmac) | **Post** /{transit_mount_path}/hmac/{name} | Generate an HMAC for input data using the named key
 [**TransitGenerateHmacWithAlgorithm**](SecretsApi.md#TransitGenerateHmacWithAlgorithm) | **Post** /{transit_mount_path}/hmac/{name}/{urlalgorithm} | Generate an HMAC for input data using the named key
@@ -389,6 +390,7 @@ Method | HTTP request | Description
 [**TransitRestoreKey**](SecretsApi.md#TransitRestoreKey) | **Post** /{transit_mount_path}/restore | Restore the named key
 [**TransitRewrap**](SecretsApi.md#TransitRewrap) | **Post** /{transit_mount_path}/rewrap/{name} | Rewrap ciphertext
 [**TransitRotateKey**](SecretsApi.md#TransitRotateKey) | **Post** /{transit_mount_path}/keys/{name}/rotate | Rotate named encryption key
+[**TransitSetCertificateForKey**](SecretsApi.md#TransitSetCertificateForKey) | **Post** /{transit_mount_path}/keys/{name}/set-certificate | 
 [**TransitSign**](SecretsApi.md#TransitSign) | **Post** /{transit_mount_path}/sign/{name} | Generate a signature for input data using the named key
 [**TransitSignWithAlgorithm**](SecretsApi.md#TransitSignWithAlgorithm) | **Post** /{transit_mount_path}/sign/{name}/{urlalgorithm} | Generate a signature for input data using the named key
 [**TransitTrimKey**](SecretsApi.md#TransitTrimKey) | **Post** /{transit_mount_path}/keys/{name}/trim | Trim key versions of a named key
@@ -22922,6 +22924,70 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
+## TransitGenerateCsrForKey
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the key
+	resp, err := client.Secrets.TransitGenerateCsrForKey(
+		context.Background(),
+		name,
+		schema.TransitGenerateCsrForKeyRequest{ /* populate request parameters */ },
+		vault.WithToken("my-token"),
+		vault.WithMountPath("transit"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the key | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **transitGenerateCsrForKeyRequest** | [**TransitGenerateCsrForKeyRequest**](TransitGenerateCsrForKeyRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
 ## TransitGenerateDataKey
 
 Generate a data key
@@ -24166,6 +24232,70 @@ Name | Type | Description  | Notes
 
 
  **transitRotateKeyRequest** | [**TransitRotateKeyRequest**](TransitRotateKeyRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+## TransitSetCertificateForKey
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the key
+	resp, err := client.Secrets.TransitSetCertificateForKey(
+		context.Background(),
+		name,
+		schema.TransitSetCertificateForKeyRequest{ /* populate request parameters */ },
+		vault.WithToken("my-token"),
+		vault.WithMountPath("transit"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the key | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **transitSetCertificateForKeyRequest** | [**TransitSetCertificateForKeyRequest**](TransitSetCertificateForKeyRequest.md) |  | 
 
  (empty response body)
 

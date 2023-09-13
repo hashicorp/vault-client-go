@@ -130,17 +130,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.AliasCreate(
 		context.Background(),
 		schema.AliasCreateRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -184,18 +178,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	id := "id_example" // string | ID of the alias
 	resp, err := client.Identity.AliasDeleteById(
 		context.Background(),
 		id,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -243,16 +231,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.AliasListById(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -296,18 +278,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	id := "id_example" // string | ID of the alias
 	resp, err := client.Identity.AliasReadById(
 		context.Background(),
 		id,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -356,19 +332,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	id := "id_example" // string | ID of the alias
 	resp, err := client.Identity.AliasUpdateById(
 		context.Background(),
 		id,
 		schema.AliasUpdateByIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -418,17 +388,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.EntityBatchDelete(
 		context.Background(),
 		schema.EntityBatchDeleteRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -473,17 +437,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.EntityCreate(
 		context.Background(),
 		schema.EntityCreateRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -528,17 +486,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.EntityCreateAlias(
 		context.Background(),
 		schema.EntityCreateAliasRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -582,18 +534,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	id := "id_example" // string | ID of the alias
 	resp, err := client.Identity.EntityDeleteAliasById(
 		context.Background(),
 		id,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -641,18 +587,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
 	resp, err := client.Identity.EntityDeleteById(
 		context.Background(),
 		id,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -700,18 +640,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the entity
 	resp, err := client.Identity.EntityDeleteByName(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -759,16 +693,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.EntityListAliasesById(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -812,16 +740,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.EntityListById(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -865,16 +787,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.EntityListByName(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -919,17 +835,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.EntityLookUp(
 		context.Background(),
 		schema.EntityLookUpRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -974,17 +884,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.EntityMerge(
 		context.Background(),
 		schema.EntityMergeRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1028,18 +932,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	id := "id_example" // string | ID of the alias
 	resp, err := client.Identity.EntityReadAliasById(
 		context.Background(),
 		id,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1087,18 +985,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
 	resp, err := client.Identity.EntityReadById(
 		context.Background(),
 		id,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1146,18 +1038,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the entity
 	resp, err := client.Identity.EntityReadByName(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1206,19 +1092,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	id := "id_example" // string | ID of the alias
 	resp, err := client.Identity.EntityUpdateAliasById(
 		context.Background(),
 		id,
 		schema.EntityUpdateAliasByIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1268,19 +1148,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
 	resp, err := client.Identity.EntityUpdateById(
 		context.Background(),
 		id,
 		schema.EntityUpdateByIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1330,19 +1204,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the entity
 	resp, err := client.Identity.EntityUpdateByName(
 		context.Background(),
 		name,
 		schema.EntityUpdateByNameRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1392,17 +1260,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.GroupCreate(
 		context.Background(),
 		schema.GroupCreateRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1447,17 +1309,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.GroupCreateAlias(
 		context.Background(),
 		schema.GroupCreateAliasRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1501,18 +1357,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	id := "id_example" // string | ID of the group alias.
 	resp, err := client.Identity.GroupDeleteAliasById(
 		context.Background(),
 		id,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1560,18 +1410,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
 	resp, err := client.Identity.GroupDeleteById(
 		context.Background(),
 		id,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1619,18 +1463,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the group.
 	resp, err := client.Identity.GroupDeleteByName(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1678,16 +1516,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.GroupListAliasesById(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1731,16 +1563,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.GroupListById(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1784,16 +1610,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.GroupListByName(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1838,17 +1658,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.GroupLookUp(
 		context.Background(),
 		schema.GroupLookUpRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1892,18 +1706,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	id := "id_example" // string | ID of the group alias.
 	resp, err := client.Identity.GroupReadAliasById(
 		context.Background(),
 		id,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1951,18 +1759,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
 	resp, err := client.Identity.GroupReadById(
 		context.Background(),
 		id,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2010,18 +1812,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the group.
 	resp, err := client.Identity.GroupReadByName(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2070,19 +1866,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	id := "id_example" // string | ID of the group alias.
 	resp, err := client.Identity.GroupUpdateAliasById(
 		context.Background(),
 		id,
 		schema.GroupUpdateAliasByIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2132,19 +1922,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
 	resp, err := client.Identity.GroupUpdateById(
 		context.Background(),
 		id,
 		schema.GroupUpdateByIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2194,19 +1978,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the group.
 	resp, err := client.Identity.GroupUpdateByName(
 		context.Background(),
 		name,
 		schema.GroupUpdateByNameRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2256,17 +2034,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.MfaAdminDestroyTotpSecret(
 		context.Background(),
 		schema.MfaAdminDestroyTotpSecretRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2311,17 +2083,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.MfaAdminGenerateTotpSecret(
 		context.Background(),
 		schema.MfaAdminGenerateTotpSecretRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2366,17 +2132,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.MfaCreateDuoMethod(
 		context.Background(),
 		schema.MfaCreateDuoMethodRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2421,17 +2181,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.MfaCreateOktaMethod(
 		context.Background(),
 		schema.MfaCreateOktaMethodRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2476,17 +2230,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.MfaCreatePingIdMethod(
 		context.Background(),
 		schema.MfaCreatePingIdMethodRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2531,17 +2279,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.MfaCreateTotpMethod(
 		context.Background(),
 		schema.MfaCreateTotpMethodRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2585,18 +2327,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaDeleteDuoMethod(
 		context.Background(),
 		methodId,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2644,18 +2380,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name for this login enforcement configuration
 	resp, err := client.Identity.MfaDeleteLoginEnforcement(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2703,18 +2433,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaDeleteOktaMethod(
 		context.Background(),
 		methodId,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2762,18 +2486,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaDeletePingIdMethod(
 		context.Background(),
 		methodId,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2821,18 +2539,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaDeleteTotpMethod(
 		context.Background(),
 		methodId,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2881,17 +2593,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.MfaGenerateTotpSecret(
 		context.Background(),
 		schema.MfaGenerateTotpSecretRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2935,16 +2641,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.MfaListDuoMethods(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2988,16 +2688,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.MfaListLoginEnforcements(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3041,16 +2735,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.MfaListMethods(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3094,16 +2782,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.MfaListOktaMethods(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3147,16 +2829,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.MfaListPingIdMethods(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3200,16 +2876,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.MfaListTotpMethods(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3253,18 +2923,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaReadDuoMethod(
 		context.Background(),
 		methodId,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3312,18 +2976,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name for this login enforcement configuration
 	resp, err := client.Identity.MfaReadLoginEnforcement(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3371,18 +3029,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaReadMethod(
 		context.Background(),
 		methodId,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3430,18 +3082,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaReadOktaMethod(
 		context.Background(),
 		methodId,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3489,18 +3135,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaReadPingIdMethod(
 		context.Background(),
 		methodId,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3548,18 +3188,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaReadTotpMethod(
 		context.Background(),
 		methodId,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3608,19 +3242,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaUpdateDuoMethod(
 		context.Background(),
 		methodId,
 		schema.MfaUpdateDuoMethodRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3670,19 +3298,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaUpdateOktaMethod(
 		context.Background(),
 		methodId,
 		schema.MfaUpdateOktaMethodRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3732,19 +3354,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaUpdatePingIdMethod(
 		context.Background(),
 		methodId,
 		schema.MfaUpdatePingIdMethodRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3794,19 +3410,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaUpdateTotpMethod(
 		context.Background(),
 		methodId,
 		schema.MfaUpdateTotpMethodRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3856,19 +3466,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name for this login enforcement configuration
 	resp, err := client.Identity.MfaWriteLoginEnforcement(
 		context.Background(),
 		name,
 		schema.MfaWriteLoginEnforcementRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3918,17 +3522,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.OidcConfigure(
 		context.Background(),
 		schema.OidcConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3972,18 +3570,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the assignment
 	resp, err := client.Identity.OidcDeleteAssignment(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4031,18 +3623,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the client.
 	resp, err := client.Identity.OidcDeleteClient(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4090,18 +3676,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the key
 	resp, err := client.Identity.OidcDeleteKey(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4149,18 +3729,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcDeleteProvider(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4208,18 +3782,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Identity.OidcDeleteRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4267,18 +3835,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the scope
 	resp, err := client.Identity.OidcDeleteScope(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4326,18 +3888,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Identity.OidcGenerateToken(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4386,17 +3942,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.OidcIntrospect(
 		context.Background(),
 		schema.OidcIntrospectRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4440,16 +3990,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.OidcListAssignments(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4493,16 +4037,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.OidcListClients(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4546,16 +4084,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.OidcListKeys(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4599,18 +4131,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	allowedClientId := "allowedClientId_example" // string | Filters the list of OIDC providers to those that allow the given client ID in their set of allowed_client_ids. (defaults to "")
 	resp, err := client.Identity.OidcListProviders(
 		context.Background(),
 		allowedClientId,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4655,16 +4181,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.OidcListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4708,16 +4228,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.OidcListScopes(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4761,12 +4275,7 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the provider
 	clientId := "clientId_example" // string | The ID of the requesting client.
@@ -4790,7 +4299,6 @@ func main() {
 		responseType,
 		scope,
 		state,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4848,19 +4356,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcProviderAuthorizeWithParameters(
 		context.Background(),
 		name,
 		schema.OidcProviderAuthorizeWithParametersRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4910,19 +4412,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcProviderToken(
 		context.Background(),
 		name,
 		schema.OidcProviderTokenRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4971,18 +4467,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcProviderUserInfo(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5030,18 +4520,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the assignment
 	resp, err := client.Identity.OidcReadAssignment(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5089,18 +4573,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the client.
 	resp, err := client.Identity.OidcReadClient(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5148,16 +4626,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.OidcReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5198,18 +4670,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the key
 	resp, err := client.Identity.OidcReadKey(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5257,16 +4723,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.OidcReadOpenIdConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5307,18 +4767,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcReadProvider(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5366,18 +4820,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcReadProviderOpenIdConfiguration(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5425,18 +4873,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcReadProviderPublicKeys(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5484,16 +4926,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.OidcReadPublicKeys(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5534,18 +4970,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Identity.OidcReadRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5593,18 +5023,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the scope
 	resp, err := client.Identity.OidcReadScope(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5653,19 +5077,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the key
 	resp, err := client.Identity.OidcRotateKey(
 		context.Background(),
 		name,
 		schema.OidcRotateKeyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5715,19 +5133,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the assignment
 	resp, err := client.Identity.OidcWriteAssignment(
 		context.Background(),
 		name,
 		schema.OidcWriteAssignmentRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5777,19 +5189,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the client.
 	resp, err := client.Identity.OidcWriteClient(
 		context.Background(),
 		name,
 		schema.OidcWriteClientRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5839,19 +5245,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the key
 	resp, err := client.Identity.OidcWriteKey(
 		context.Background(),
 		name,
 		schema.OidcWriteKeyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5901,19 +5301,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcWriteProvider(
 		context.Background(),
 		name,
 		schema.OidcWriteProviderRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5963,19 +5357,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Identity.OidcWriteRole(
 		context.Background(),
 		name,
 		schema.OidcWriteRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6025,19 +5413,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the scope
 	resp, err := client.Identity.OidcWriteScope(
 		context.Background(),
 		name,
 		schema.OidcWriteScopeRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6087,17 +5469,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.PersonaCreate(
 		context.Background(),
 		schema.PersonaCreateRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6141,18 +5517,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	id := "id_example" // string | ID of the persona
 	resp, err := client.Identity.PersonaDeleteById(
 		context.Background(),
 		id,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6200,16 +5570,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Identity.PersonaListById(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6253,18 +5617,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	id := "id_example" // string | ID of the persona
 	resp, err := client.Identity.PersonaReadById(
 		context.Background(),
 		id,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6313,19 +5671,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	id := "id_example" // string | ID of the persona
 	resp, err := client.Identity.PersonaUpdateById(
 		context.Background(),
 		id,
 		schema.PersonaUpdateByIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)

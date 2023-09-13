@@ -267,18 +267,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	role := "role_example" // string | The name of the role as it should appear in Vault.
 	resp, err := client.Auth.AliCloudDeleteAuthRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -328,16 +322,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AliCloudListAuthRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -387,17 +375,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AliCloudLogin(
 		context.Background(),
 		schema.AliCloudLoginRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -446,18 +428,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	role := "role_example" // string | The name of the role as it should appear in Vault.
 	resp, err := client.Auth.AliCloudReadAuthRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -508,19 +484,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	role := "role_example" // string | The name of the role as it should appear in Vault.
 	resp, err := client.Auth.AliCloudWriteAuthRole(
 		context.Background(),
 		role,
 		schema.AliCloudWriteAuthRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -571,18 +541,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteBindSecretId(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -632,18 +596,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteBoundCidrList(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -693,18 +651,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeletePeriod(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -754,18 +706,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeletePolicies(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -815,18 +761,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteRole(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -876,18 +816,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteSecretIdBoundCidrs(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -937,18 +871,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteSecretIdNumUses(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -998,18 +926,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteSecretIdTtl(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1059,18 +981,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteTokenBoundCidrs(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1120,18 +1036,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteTokenMaxTtl(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1181,18 +1091,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteTokenNumUses(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1242,18 +1146,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteTokenTtl(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1304,19 +1202,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDestroySecretId(
 		context.Background(),
 		roleName,
 		schema.AppRoleDestroySecretIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1368,19 +1260,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDestroySecretIdByAccessor(
 		context.Background(),
 		roleName,
 		schema.AppRoleDestroySecretIdByAccessorRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1431,16 +1317,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AppRoleListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1489,18 +1369,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleListSecretIds(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1552,17 +1426,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AppRoleLogin(
 		context.Background(),
 		schema.AppRoleLoginRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1612,19 +1480,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleLookUpSecretId(
 		context.Background(),
 		roleName,
 		schema.AppRoleLookUpSecretIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1676,19 +1538,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleLookUpSecretIdByAccessor(
 		context.Background(),
 		roleName,
 		schema.AppRoleLookUpSecretIdByAccessorRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1739,18 +1595,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadBindSecretId(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1800,18 +1650,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadBoundCidrList(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1861,18 +1705,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadLocalSecretIds(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1922,18 +1760,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadPeriod(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1983,18 +1815,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadPolicies(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2044,18 +1870,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadRole(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2105,18 +1925,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadRoleId(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2166,18 +1980,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadSecretIdBoundCidrs(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2227,18 +2035,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadSecretIdNumUses(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2288,18 +2090,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadSecretIdTtl(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2349,18 +2145,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadTokenBoundCidrs(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2410,18 +2200,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadTokenMaxTtl(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2471,18 +2255,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadTokenNumUses(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2532,18 +2310,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadTokenTtl(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2593,16 +2365,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AppRoleTidySecretId(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2651,19 +2417,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteBindSecretId(
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteBindSecretIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2715,19 +2475,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteBoundCidrList(
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteBoundCidrListRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2779,19 +2533,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteCustomSecretId(
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteCustomSecretIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2843,19 +2591,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWritePeriod(
 		context.Background(),
 		roleName,
 		schema.AppRoleWritePeriodRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2907,19 +2649,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWritePolicies(
 		context.Background(),
 		roleName,
 		schema.AppRoleWritePoliciesRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2971,19 +2707,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteRole(
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3035,19 +2765,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteRoleId(
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteRoleIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3099,19 +2823,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteSecretId(
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteSecretIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3163,19 +2881,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteSecretIdBoundCidrs(
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteSecretIdBoundCidrsRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3227,19 +2939,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteSecretIdNumUses(
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteSecretIdNumUsesRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3291,19 +2997,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteSecretIdTtl(
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteSecretIdTtlRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3355,19 +3055,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteTokenBoundCidrs(
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteTokenBoundCidrsRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3419,19 +3113,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteTokenMaxTtl(
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteTokenMaxTtlRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3483,19 +3171,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteTokenNumUses(
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteTokenNumUsesRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3547,19 +3229,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteTokenTtl(
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteTokenTtlRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3611,19 +3287,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	certName := "certName_example" // string | Name of the certificate.
 	resp, err := client.Auth.AwsConfigureCertificate(
 		context.Background(),
 		certName,
 		schema.AwsConfigureCertificateRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -3675,17 +3345,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsConfigureClient(
 		context.Background(),
 		schema.AwsConfigureClientRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -3735,17 +3399,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsConfigureIdentityAccessListTidyOperation(
 		context.Background(),
 		schema.AwsConfigureIdentityAccessListTidyOperationRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -3795,17 +3453,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsConfigureIdentityIntegration(
 		context.Background(),
 		schema.AwsConfigureIdentityIntegrationRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -3855,17 +3507,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsConfigureIdentityWhitelistTidyOperation(
 		context.Background(),
 		schema.AwsConfigureIdentityWhitelistTidyOperationRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -3915,17 +3561,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsConfigureRoleTagBlacklistTidyOperation(
 		context.Background(),
 		schema.AwsConfigureRoleTagBlacklistTidyOperationRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -3975,17 +3615,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsConfigureRoleTagDenyListTidyOperation(
 		context.Background(),
 		schema.AwsConfigureRoleTagDenyListTidyOperationRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4034,18 +3668,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	role := "role_example" // string | Name of the role.
 	resp, err := client.Auth.AwsDeleteAuthRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4095,18 +3723,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	certName := "certName_example" // string | Name of the certificate.
 	resp, err := client.Auth.AwsDeleteCertificateConfiguration(
 		context.Background(),
 		certName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4156,16 +3778,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsDeleteClientConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4213,18 +3829,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 	resp, err := client.Auth.AwsDeleteIdentityAccessList(
 		context.Background(),
 		instanceId,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4274,16 +3884,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsDeleteIdentityAccessListTidySettings(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4331,18 +3935,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 	resp, err := client.Auth.AwsDeleteIdentityWhitelist(
 		context.Background(),
 		instanceId,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4392,16 +3990,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsDeleteIdentityWhitelistTidySettings(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4449,18 +4041,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 	resp, err := client.Auth.AwsDeleteRoleTagBlacklist(
 		context.Background(),
 		roleTag,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4510,16 +4096,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsDeleteRoleTagBlacklistTidySettings(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4567,18 +4147,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 	resp, err := client.Auth.AwsDeleteRoleTagDenyList(
 		context.Background(),
 		roleTag,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4628,16 +4202,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsDeleteRoleTagDenyListTidySettings(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4685,18 +4253,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 	resp, err := client.Auth.AwsDeleteStsRole(
 		context.Background(),
 		accountId,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4746,16 +4308,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsListAuthRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4804,16 +4360,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsListCertificateConfigurations(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4862,16 +4412,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsListIdentityAccessList(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4920,16 +4464,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsListIdentityWhitelist(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4978,16 +4516,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsListRoleTagBlacklists(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5036,16 +4568,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsListRoleTagDenyLists(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5094,16 +4620,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsListStsRoleRelationships(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5153,17 +4673,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsLogin(
 		context.Background(),
 		schema.AwsLoginRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5212,18 +4726,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	role := "role_example" // string | Name of the role.
 	resp, err := client.Auth.AwsReadAuthRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5273,18 +4781,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	certName := "certName_example" // string | Name of the certificate.
 	resp, err := client.Auth.AwsReadCertificateConfiguration(
 		context.Background(),
 		certName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5334,16 +4836,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsReadClientConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5391,18 +4887,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 	resp, err := client.Auth.AwsReadIdentityAccessList(
 		context.Background(),
 		instanceId,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5452,16 +4942,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsReadIdentityAccessListTidySettings(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5509,16 +4993,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsReadIdentityIntegrationConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5566,18 +5044,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 	resp, err := client.Auth.AwsReadIdentityWhitelist(
 		context.Background(),
 		instanceId,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5627,16 +5099,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsReadIdentityWhitelistTidySettings(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5684,18 +5150,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 	resp, err := client.Auth.AwsReadRoleTagBlacklist(
 		context.Background(),
 		roleTag,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5745,16 +5205,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsReadRoleTagBlacklistTidySettings(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5802,18 +5256,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 	resp, err := client.Auth.AwsReadRoleTagDenyList(
 		context.Background(),
 		roleTag,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5863,16 +5311,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsReadRoleTagDenyListTidySettings(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5920,18 +5362,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 	resp, err := client.Auth.AwsReadStsRole(
 		context.Background(),
 		accountId,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5981,16 +5417,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsRotateRootCredentials(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6039,17 +5469,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsTidyIdentityAccessList(
 		context.Background(),
 		schema.AwsTidyIdentityAccessListRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6099,17 +5523,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsTidyIdentityWhitelist(
 		context.Background(),
 		schema.AwsTidyIdentityWhitelistRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6159,17 +5577,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsTidyRoleTagBlacklist(
 		context.Background(),
 		schema.AwsTidyRoleTagBlacklistRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6219,17 +5631,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AwsTidyRoleTagDenyList(
 		context.Background(),
 		schema.AwsTidyRoleTagDenyListRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6279,19 +5685,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	role := "role_example" // string | Name of the role.
 	resp, err := client.Auth.AwsWriteAuthRole(
 		context.Background(),
 		role,
 		schema.AwsWriteAuthRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6343,19 +5743,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	role := "role_example" // string | Name of the role.
 	resp, err := client.Auth.AwsWriteRoleTag(
 		context.Background(),
 		role,
 		schema.AwsWriteRoleTagRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6406,18 +5800,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 	resp, err := client.Auth.AwsWriteRoleTagBlacklist(
 		context.Background(),
 		roleTag,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6467,18 +5855,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 	resp, err := client.Auth.AwsWriteRoleTagDenyList(
 		context.Background(),
 		roleTag,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6529,19 +5911,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 	resp, err := client.Auth.AwsWriteStsRole(
 		context.Background(),
 		accountId,
 		schema.AwsWriteStsRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6593,17 +5969,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AzureConfigureAuth(
 		context.Background(),
 		schema.AzureConfigureAuthRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -6652,16 +6022,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AzureDeleteAuthConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -6709,18 +6073,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.AzureDeleteAuthRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -6770,16 +6128,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AzureListAuthRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -6829,17 +6181,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AzureLogin(
 		context.Background(),
 		schema.AzureLoginRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -6888,16 +6234,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AzureReadAuthConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -6945,18 +6285,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.AzureReadAuthRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -7006,16 +6340,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.AzureRotateRootCredentials(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -7064,19 +6392,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.AzureWriteAuthRole(
 		context.Background(),
 		name,
 		schema.AzureWriteAuthRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -7128,17 +6450,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.CentrifyConfigure(
 		context.Background(),
 		schema.CentrifyConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("centrify"),
 	)
 	if err != nil {
@@ -7188,17 +6504,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.CentrifyLogin(
 		context.Background(),
 		schema.CentrifyLoginRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("centrify"),
 	)
 	if err != nil {
@@ -7247,16 +6557,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.CentrifyReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("centrify"),
 	)
 	if err != nil {
@@ -7305,17 +6609,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.CertConfigure(
 		context.Background(),
 		schema.CertConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -7364,18 +6662,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | The name of the certificate
 	resp, err := client.Auth.CertDeleteCertificate(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -7425,18 +6717,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | The name of the certificate
 	resp, err := client.Auth.CertDeleteCrl(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -7486,16 +6772,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.CertListCertificates(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -7544,16 +6824,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.CertListCrls(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -7603,17 +6877,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.CertLogin(
 		context.Background(),
 		schema.CertLoginRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -7662,18 +6930,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | The name of the certificate
 	resp, err := client.Auth.CertReadCertificate(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -7723,16 +6985,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.CertReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -7780,18 +7036,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | The name of the certificate
 	resp, err := client.Auth.CertReadCrl(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -7842,19 +7092,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | The name of the certificate
 	resp, err := client.Auth.CertWriteCertificate(
 		context.Background(),
 		name,
 		schema.CertWriteCertificateRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -7906,19 +7150,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | The name of the certificate
 	resp, err := client.Auth.CertWriteCrl(
 		context.Background(),
 		name,
 		schema.CertWriteCrlRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -7970,17 +7208,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.CloudFoundryConfigure(
 		context.Background(),
 		schema.CloudFoundryConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8029,16 +7261,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.CloudFoundryDeleteConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8086,18 +7312,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	role := "role_example" // string | The name of the role.
 	resp, err := client.Auth.CloudFoundryDeleteRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8147,16 +7367,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.CloudFoundryListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8206,17 +7420,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.CloudFoundryLogin(
 		context.Background(),
 		schema.CloudFoundryLoginRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8265,16 +7473,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.CloudFoundryReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8322,18 +7524,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	role := "role_example" // string | The name of the role.
 	resp, err := client.Auth.CloudFoundryReadRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8384,19 +7580,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	role := "role_example" // string | The name of the role.
 	resp, err := client.Auth.CloudFoundryWriteRole(
 		context.Background(),
 		role,
 		schema.CloudFoundryWriteRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8448,17 +7638,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.GithubConfigure(
 		context.Background(),
 		schema.GithubConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -8507,18 +7691,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	key := "key_example" // string | Key for the teams mapping
 	resp, err := client.Auth.GithubDeleteTeamMapping(
 		context.Background(),
 		key,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -8568,18 +7746,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	key := "key_example" // string | Key for the users mapping
 	resp, err := client.Auth.GithubDeleteUserMapping(
 		context.Background(),
 		key,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -8629,16 +7801,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.GithubListTeams(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -8687,16 +7853,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.GithubListUsers(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -8746,17 +7906,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.GithubLogin(
 		context.Background(),
 		schema.GithubLoginRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -8805,16 +7959,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.GithubReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -8862,18 +8010,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	key := "key_example" // string | Key for the teams mapping
 	resp, err := client.Auth.GithubReadTeamMapping(
 		context.Background(),
 		key,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -8923,18 +8065,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	key := "key_example" // string | Key for the users mapping
 	resp, err := client.Auth.GithubReadUserMapping(
 		context.Background(),
 		key,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -8985,19 +8121,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	key := "key_example" // string | Key for the teams mapping
 	resp, err := client.Auth.GithubWriteTeamMapping(
 		context.Background(),
 		key,
 		schema.GithubWriteTeamMappingRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -9049,19 +8179,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	key := "key_example" // string | Key for the users mapping
 	resp, err := client.Auth.GithubWriteUserMapping(
 		context.Background(),
 		key,
 		schema.GithubWriteUserMappingRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -9113,17 +8237,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.GoogleCloudConfigureAuth(
 		context.Background(),
 		schema.GoogleCloudConfigureAuthRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9172,18 +8290,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.GoogleCloudDeleteRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9234,19 +8346,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.GoogleCloudEditLabelsForRole(
 		context.Background(),
 		name,
 		schema.GoogleCloudEditLabelsForRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9298,19 +8404,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.GoogleCloudEditServiceAccountsForRole(
 		context.Background(),
 		name,
 		schema.GoogleCloudEditServiceAccountsForRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9361,16 +8461,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.GoogleCloudListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9420,17 +8514,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.GoogleCloudLogin(
 		context.Background(),
 		schema.GoogleCloudLoginRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9479,16 +8567,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.GoogleCloudReadAuthConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9536,18 +8618,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.GoogleCloudReadRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9598,19 +8674,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.GoogleCloudWriteRole(
 		context.Background(),
 		name,
 		schema.GoogleCloudWriteRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9667,17 +8737,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.JwtConfigure(
 		context.Background(),
 		schema.JwtConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -9726,18 +8790,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.JwtDeleteRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -9789,16 +8847,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.JwtListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -9848,17 +8900,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.JwtLogin(
 		context.Background(),
 		schema.JwtLoginRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -9907,12 +8953,7 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	clientNonce := "clientNonce_example" // string | 
 	code := "code_example" // string | 
@@ -9922,7 +8963,6 @@ func main() {
 		clientNonce,
 		code,
 		state,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -9974,17 +9014,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.JwtOidcCallbackFormPost(
 		context.Background(),
 		schema.JwtOidcCallbackFormPostRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10034,17 +9068,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.JwtOidcRequestAuthorizationUrl(
 		context.Background(),
 		schema.JwtOidcRequestAuthorizationUrlRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10093,16 +9121,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.JwtReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10150,18 +9172,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.JwtReadRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10217,19 +9233,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.JwtWriteRole(
 		context.Background(),
 		name,
 		schema.JwtWriteRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10281,17 +9291,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.KerberosConfigure(
 		context.Background(),
 		schema.KerberosConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -10341,17 +9345,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.KerberosConfigureLdap(
 		context.Background(),
 		schema.KerberosConfigureLdapRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -10400,18 +9398,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the LDAP group.
 	resp, err := client.Auth.KerberosDeleteGroup(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -10461,16 +9453,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.KerberosListGroups(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -10520,17 +9506,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.KerberosLogin(
 		context.Background(),
 		schema.KerberosLoginRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -10579,16 +9559,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.KerberosReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -10636,18 +9610,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the LDAP group.
 	resp, err := client.Auth.KerberosReadGroup(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -10697,16 +9665,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.KerberosReadLdapConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -10755,19 +9717,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the LDAP group.
 	resp, err := client.Auth.KerberosWriteGroup(
 		context.Background(),
 		name,
 		schema.KerberosWriteGroupRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -10819,17 +9775,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.KubernetesConfigureAuth(
 		context.Background(),
 		schema.KubernetesConfigureAuthRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -10878,18 +9828,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.KubernetesDeleteAuthRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -10939,16 +9883,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.KubernetesListAuthRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -10998,17 +9936,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.KubernetesLogin(
 		context.Background(),
 		schema.KubernetesLoginRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -11057,16 +9989,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.KubernetesReadAuthConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -11114,18 +10040,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.KubernetesReadAuthRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -11176,19 +10096,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.KubernetesWriteAuthRole(
 		context.Background(),
 		name,
 		schema.KubernetesWriteAuthRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -11240,17 +10154,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.LdapConfigureAuth(
 		context.Background(),
 		schema.LdapConfigureAuthRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -11299,18 +10207,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the LDAP group.
 	resp, err := client.Auth.LdapDeleteGroup(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -11360,18 +10262,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the LDAP user.
 	resp, err := client.Auth.LdapDeleteUser(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -11421,16 +10317,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.LdapListGroups(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -11479,16 +10369,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.LdapListUsers(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -11538,19 +10422,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	username := "username_example" // string | DN (distinguished name) to be used for login.
 	resp, err := client.Auth.LdapLogin(
 		context.Background(),
 		username,
 		schema.LdapLoginRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -11601,16 +10479,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.LdapReadAuthConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -11658,18 +10530,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the LDAP group.
 	resp, err := client.Auth.LdapReadGroup(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -11719,18 +10585,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the LDAP user.
 	resp, err := client.Auth.LdapReadUser(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -11781,19 +10641,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the LDAP group.
 	resp, err := client.Auth.LdapWriteGroup(
 		context.Background(),
 		name,
 		schema.LdapWriteGroupRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -11845,19 +10699,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the LDAP user.
 	resp, err := client.Auth.LdapWriteUser(
 		context.Background(),
 		name,
 		schema.LdapWriteUserRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -11909,17 +10757,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.OciConfigure(
 		context.Background(),
 		schema.OciConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -11968,16 +10810,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.OciDeleteConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12025,18 +10861,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	role := "role_example" // string | Name of the role.
 	resp, err := client.Auth.OciDeleteRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12086,16 +10916,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.OciListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12145,19 +10969,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	role := "role_example" // string | Name of the role.
 	resp, err := client.Auth.OciLogin(
 		context.Background(),
 		role,
 		schema.OciLoginRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12208,16 +11026,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.OciReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12265,18 +11077,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	role := "role_example" // string | Name of the role.
 	resp, err := client.Auth.OciReadRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12327,19 +11133,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	role := "role_example" // string | Name of the role.
 	resp, err := client.Auth.OciWriteRole(
 		context.Background(),
 		role,
 		schema.OciWriteRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12391,17 +11191,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.OktaConfigure(
 		context.Background(),
 		schema.OktaConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -12450,18 +11244,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the Okta group.
 	resp, err := client.Auth.OktaDeleteGroup(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -12511,18 +11299,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the user.
 	resp, err := client.Auth.OktaDeleteUser(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -12572,16 +11354,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.OktaListGroups(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -12630,16 +11406,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.OktaListUsers(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -12689,19 +11459,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	username := "username_example" // string | Username to be used for login.
 	resp, err := client.Auth.OktaLogin(
 		context.Background(),
 		username,
 		schema.OktaLoginRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -12752,16 +11516,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.OktaReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -12809,18 +11567,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the Okta group.
 	resp, err := client.Auth.OktaReadGroup(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -12870,18 +11622,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the user.
 	resp, err := client.Auth.OktaReadUser(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -12931,18 +11677,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	nonce := "nonce_example" // string | Nonce provided during a login request to retrieve the number verification challenge for the matching request.
 	resp, err := client.Auth.OktaVerify(
 		context.Background(),
 		nonce,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -12993,19 +11733,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the Okta group.
 	resp, err := client.Auth.OktaWriteGroup(
 		context.Background(),
 		name,
 		schema.OktaWriteGroupRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13057,19 +11791,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the user.
 	resp, err := client.Auth.OktaWriteUser(
 		context.Background(),
 		name,
 		schema.OktaWriteUserRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13121,17 +11849,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.RadiusConfigure(
 		context.Background(),
 		schema.RadiusConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -13180,18 +11902,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the RADIUS user.
 	resp, err := client.Auth.RadiusDeleteUser(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -13241,16 +11957,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.RadiusListUsers(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -13300,17 +12010,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.RadiusLogin(
 		context.Background(),
 		schema.RadiusLoginRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -13360,19 +12064,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	urlusername := "urlusername_example" // string | Username to be used for login. (URL parameter)
 	resp, err := client.Auth.RadiusLoginWithUsername(
 		context.Background(),
 		urlusername,
 		schema.RadiusLoginWithUsernameRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -13423,16 +12121,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.RadiusReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -13480,18 +12172,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the RADIUS user.
 	resp, err := client.Auth.RadiusReadUser(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -13542,19 +12228,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	name := "name_example" // string | Name of the RADIUS user.
 	resp, err := client.Auth.RadiusWriteUser(
 		context.Background(),
 		name,
 		schema.RadiusWriteUserRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -13606,17 +12286,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.TokenCreate(
 		context.Background(),
 		schema.TokenCreateRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13661,19 +12335,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role
 	resp, err := client.Auth.TokenCreateAgainstRole(
 		context.Background(),
 		roleName,
 		schema.TokenCreateAgainstRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13723,17 +12391,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.TokenCreateOrphan(
 		context.Background(),
 		schema.TokenCreateOrphanRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13777,18 +12439,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role
 	resp, err := client.Auth.TokenDeleteRole(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13836,16 +12492,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.TokenListAccessors(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13889,16 +12539,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.TokenListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13943,17 +12587,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.TokenLookUp(
 		context.Background(),
 		schema.TokenLookUpRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -13998,17 +12636,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.TokenLookUpAccessor(
 		context.Background(),
 		schema.TokenLookUpAccessorRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14052,16 +12684,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.TokenLookUpSelf(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14102,18 +12728,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role
 	resp, err := client.Auth.TokenReadRole(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14162,17 +12782,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.TokenRenew(
 		context.Background(),
 		schema.TokenRenewRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14217,17 +12831,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.TokenRenewAccessor(
 		context.Background(),
 		schema.TokenRenewAccessorRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14272,17 +12880,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.TokenRenewSelf(
 		context.Background(),
 		schema.TokenRenewSelfRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14327,17 +12929,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.TokenRevoke(
 		context.Background(),
 		schema.TokenRevokeRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14382,17 +12978,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.TokenRevokeAccessor(
 		context.Background(),
 		schema.TokenRevokeAccessorRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14437,17 +13027,11 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.TokenRevokeOrphan(
 		context.Background(),
 		schema.TokenRevokeOrphanRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14491,16 +13075,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.TokenRevokeSelf(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14541,16 +13119,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.TokenTidy(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14592,19 +13164,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role
 	resp, err := client.Auth.TokenWriteRole(
 		context.Background(),
 		roleName,
 		schema.TokenWriteRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14653,18 +13219,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	username := "username_example" // string | Username for this user.
 	resp, err := client.Auth.UserpassDeleteUser(
 		context.Background(),
 		username,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {
@@ -14714,16 +13274,10 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	resp, err := client.Auth.UserpassListUsers(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {
@@ -14773,19 +13327,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	username := "username_example" // string | Username of the user.
 	resp, err := client.Auth.UserpassLogin(
 		context.Background(),
 		username,
 		schema.UserpassLoginRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {
@@ -14836,18 +13384,12 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	username := "username_example" // string | Username for this user.
 	resp, err := client.Auth.UserpassReadUser(
 		context.Background(),
 		username,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {
@@ -14898,19 +13440,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	username := "username_example" // string | Username for this user.
 	resp, err := client.Auth.UserpassResetPassword(
 		context.Background(),
 		username,
 		schema.UserpassResetPasswordRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {
@@ -14962,19 +13498,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	username := "username_example" // string | Username for this user.
 	resp, err := client.Auth.UserpassUpdatePolicies(
 		context.Background(),
 		username,
 		schema.UserpassUpdatePoliciesRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {
@@ -15026,19 +13556,13 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 
 	username := "username_example" // string | Username for this user.
 	resp, err := client.Auth.UserpassWriteUser(
 		context.Background(),
 		username,
 		schema.UserpassWriteUserRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {

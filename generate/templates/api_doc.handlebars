@@ -40,6 +40,8 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	// TODO: authenticate if necessary (see the top-level README.md)
 {{! Oddly, vendorExtensions.x-go-example seems to only be available within allParams,
 	and not within pathParams, queryParams, etc. }}
 {{~#each allParams}}
@@ -56,12 +58,13 @@ func main() {
 		{{paramName}},
 {{~/not}}{{/each}}
 {{~#each bodyParams}}
-		{{#if isModel}}schema.{{/if}}{{dataType}}{ /* populate request parameters */ },
+		{{#if isModel}}schema.{{/if}}{{dataType}}{
+			// populate request parameters
+		},
 {{~/each}}
 {{~#each queryParams}}{{#neq baseName "list"}}
 		{{paramName}},
 {{~/neq}}{{/each}}
-		vault.WithToken("my-token"),
 {{~#each pathParams}}{{#endsWith baseName "_mount_path"}}
 		vault.WithMountPath({{#with defaultValue}}{{{.}}}{{/with}}),
 {{~/endsWith}}{{/each}}

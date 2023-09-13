@@ -188,12 +188,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
 	resp, err := client.System.AuditingCalculateHash(
 		context.Background(),
 		path,
-		schema.AuditingCalculateHashRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.AuditingCalculateHashRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -249,11 +252,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
 	resp, err := client.System.AuditingDisableDevice(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -308,11 +312,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	header := "header_example" // string | 
 	resp, err := client.System.AuditingDisableRequestHeader(
 		context.Background(),
 		header,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -368,12 +373,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
 	resp, err := client.System.AuditingEnableDevice(
 		context.Background(),
 		path,
-		schema.AuditingEnableDeviceRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.AuditingEnableDeviceRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -430,12 +438,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	header := "header_example" // string | 
 	resp, err := client.System.AuditingEnableRequestHeader(
 		context.Background(),
 		header,
-		schema.AuditingEnableRequestHeaderRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.AuditingEnableRequestHeaderRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -491,9 +502,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.AuditingListEnabledDevices(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -541,9 +553,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.AuditingListRequestHeaders(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -591,11 +604,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	header := "header_example" // string | 
 	resp, err := client.System.AuditingReadRequestHeaderInformation(
 		context.Background(),
 		header,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -650,11 +664,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
 	resp, err := client.System.AuthDisableMethod(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -714,12 +729,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
 	resp, err := client.System.AuthEnableMethod(
 		context.Background(),
 		path,
-		schema.AuthEnableMethodRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.AuthEnableMethodRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -775,9 +793,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.AuthListEnabledMethods(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -825,11 +844,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
 	resp, err := client.System.AuthReadConfiguration(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -886,11 +906,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | Tune the configuration parameters for an auth path.
 	resp, err := client.System.AuthReadTuningInformation(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -948,12 +969,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | Tune the configuration parameters for an auth path.
 	resp, err := client.System.AuthTuneConfigurationParameters(
 		context.Background(),
 		path,
-		schema.AuthTuneConfigurationParametersRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.AuthTuneConfigurationParametersRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1013,9 +1037,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.CollectHostInformation(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1067,9 +1092,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.CollectInFlightRequestInformation(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1118,10 +1144,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.CorsConfigure(
 		context.Background(),
-		schema.CorsConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.CorsConfigureRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1172,9 +1201,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.CorsDeleteConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1222,9 +1252,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.CorsReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1273,10 +1304,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.Decode(
 		context.Background(),
-		schema.DecodeRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.DecodeRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1328,10 +1362,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.EncryptionKeyConfigureRotation(
 		context.Background(),
-		schema.EncryptionKeyConfigureRotationRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.EncryptionKeyConfigureRotationRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1382,9 +1419,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.EncryptionKeyReadRotationConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1432,9 +1470,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.EncryptionKeyRotate(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1482,9 +1521,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.EncryptionKeyStatus(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1533,10 +1573,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.GenerateHash(
 		context.Background(),
-		schema.GenerateHashRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GenerateHashRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1588,12 +1631,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
 	resp, err := client.System.GenerateHashWithAlgorithm(
 		context.Background(),
 		urlalgorithm,
-		schema.GenerateHashWithAlgorithmRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GenerateHashWithAlgorithmRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1650,10 +1696,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.GenerateRandom(
 		context.Background(),
-		schema.GenerateRandomRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GenerateRandomRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1705,12 +1754,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
 	resp, err := client.System.GenerateRandomWithBytes(
 		context.Background(),
 		urlbytes,
-		schema.GenerateRandomWithBytesRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GenerateRandomWithBytesRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1767,12 +1819,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 	resp, err := client.System.GenerateRandomWithSource(
 		context.Background(),
 		source,
-		schema.GenerateRandomWithSourceRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GenerateRandomWithSourceRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1829,14 +1884,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
 	resp, err := client.System.GenerateRandomWithSourceAndBytes(
 		context.Background(),
 		source,
 		urlbytes,
-		schema.GenerateRandomWithSourceAndBytesRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GenerateRandomWithSourceAndBytesRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1894,9 +1952,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.HaStatus(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1947,10 +2006,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.Initialize(
 		context.Background(),
-		schema.InitializeRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.InitializeRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2002,10 +2064,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.InternalClientActivityConfigure(
 		context.Background(),
-		schema.InternalClientActivityConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.InternalClientActivityConfigureRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2056,9 +2121,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.InternalClientActivityExport(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2106,9 +2172,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.InternalClientActivityReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2156,9 +2223,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.InternalClientActivityReportCounts(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2206,9 +2274,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.InternalClientActivityReportCountsThisMonth(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2256,9 +2325,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.InternalCountEntities(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2306,9 +2376,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.InternalCountRequests(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2356,9 +2427,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.InternalCountTokens(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2406,13 +2478,14 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	context := "context_example" // string | Context string appended to every operationId
 	genericMountPaths := true // bool | Use generic mount paths (defaults to false)
 	resp, err := client.System.InternalGenerateOpenApiDocument(
 		context.Background(),
 		context,
 		genericMountPaths,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2465,10 +2538,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.InternalGenerateOpenApiDocumentWithParameters(
 		context.Background(),
-		schema.InternalGenerateOpenApiDocumentWithParametersRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.InternalGenerateOpenApiDocumentWithParametersRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2519,11 +2595,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	tag := "tag_example" // string | Name of subtree being observed
 	resp, err := client.System.InternalInspectRouter(
 		context.Background(),
 		tag,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2578,9 +2655,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.InternalUiListEnabledFeatureFlags(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2628,9 +2706,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.InternalUiListEnabledVisibleMounts(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2678,9 +2757,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.InternalUiListNamespaces(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2728,11 +2808,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | The path of the mount.
 	resp, err := client.System.InternalUiReadMountInformation(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2787,9 +2868,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.InternalUiReadResultantAcl(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2837,9 +2919,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.LeaderStatus(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2887,9 +2970,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.LeasesCount(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2941,11 +3025,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
 	resp, err := client.System.LeasesForceRevokeLeaseWithPrefix(
 		context.Background(),
 		prefix,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3000,9 +3085,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.LeasesList(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3050,11 +3136,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	prefix := "prefix_example" // string | The path to list leases under. Example: \"aws/creds/deploy\"
 	resp, err := client.System.LeasesLookUp(
 		context.Background(),
 		prefix,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3111,10 +3198,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.LeasesReadLease(
 		context.Background(),
-		schema.LeasesReadLeaseRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.LeasesReadLeaseRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3166,10 +3256,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.LeasesRenewLease(
 		context.Background(),
-		schema.LeasesRenewLeaseRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.LeasesRenewLeaseRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3221,12 +3314,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
 	resp, err := client.System.LeasesRenewLeaseWithId(
 		context.Background(),
 		urlLeaseId,
-		schema.LeasesRenewLeaseWithIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.LeasesRenewLeaseWithIdRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3283,10 +3379,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.LeasesRevokeLease(
 		context.Background(),
-		schema.LeasesRevokeLeaseRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.LeasesRevokeLeaseRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3338,12 +3437,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
 	resp, err := client.System.LeasesRevokeLeaseWithId(
 		context.Background(),
 		urlLeaseId,
-		schema.LeasesRevokeLeaseWithIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.LeasesRevokeLeaseWithIdRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3400,12 +3502,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
 	resp, err := client.System.LeasesRevokeLeaseWithPrefix(
 		context.Background(),
 		prefix,
-		schema.LeasesRevokeLeaseWithPrefixRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.LeasesRevokeLeaseWithPrefixRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3461,9 +3566,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.LeasesTidy(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3511,9 +3617,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.ListExperimentalFeatures(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3561,9 +3668,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.LockedUsersList(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3611,13 +3719,14 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	aliasIdentifier := "aliasIdentifier_example" // string | It is the name of the alias (user). For example, if the alias belongs to userpass backend, the name should be a valid username within userpass auth method. If the alias belongs to an approle auth method, the name should be a valid RoleID
 	mountAccessor := "mountAccessor_example" // string | MountAccessor is the identifier of the mount entry to which the user belongs
 	resp, err := client.System.LockedUsersUnlock(
 		context.Background(),
 		aliasIdentifier,
 		mountAccessor,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3674,9 +3783,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.LoggersReadVerbosityLevel(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3724,11 +3834,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the logger to be modified.
 	resp, err := client.System.LoggersReadVerbosityLevelFor(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3783,9 +3894,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.LoggersRevertVerbosityLevel(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3833,11 +3945,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the logger to be modified.
 	resp, err := client.System.LoggersRevertVerbosityLevelFor(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3893,10 +4006,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.LoggersUpdateVerbosityLevel(
 		context.Background(),
-		schema.LoggersUpdateVerbosityLevelRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.LoggersUpdateVerbosityLevelRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3948,12 +4064,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the logger to be modified.
 	resp, err := client.System.LoggersUpdateVerbosityLevelFor(
 		context.Background(),
 		name,
-		schema.LoggersUpdateVerbosityLevelForRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.LoggersUpdateVerbosityLevelForRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4009,11 +4128,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	format := "format_example" // string | Format to export metrics into. Currently accepts only \"prometheus\".
 	resp, err := client.System.Metrics(
 		context.Background(),
 		format,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4065,10 +4185,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.MfaValidate(
 		context.Background(),
-		schema.MfaValidateRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.MfaValidateRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4119,13 +4242,14 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	logFormat := "logFormat_example" // string | Output format of logs. Supported values are \"standard\" and \"json\". The default is \"standard\". (defaults to "standard")
 	logLevel := "logLevel_example" // string | Log level to view system logs at. Currently supported values are \"trace\", \"debug\", \"info\", \"warn\", \"error\".
 	resp, err := client.System.Monitor(
 		context.Background(),
 		logFormat,
 		logLevel,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4177,11 +4301,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
 	resp, err := client.System.MountsDisableSecretsEngine(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4237,12 +4362,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
 	resp, err := client.System.MountsEnableSecretsEngine(
 		context.Background(),
 		path,
-		schema.MountsEnableSecretsEngineRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.MountsEnableSecretsEngineRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4298,9 +4426,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.MountsListSecretsEngines(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4348,11 +4477,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
 	resp, err := client.System.MountsReadConfiguration(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4407,11 +4537,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
 	resp, err := client.System.MountsReadTuningInformation(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4467,12 +4598,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
 	resp, err := client.System.MountsTuneConfigurationParameters(
 		context.Background(),
 		path,
-		schema.MountsTuneConfigurationParametersRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.MountsTuneConfigurationParametersRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4528,9 +4662,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.PluginsCatalogListPlugins(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4578,11 +4713,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
 	resp, err := client.System.PluginsCatalogListPluginsWithType(
 		context.Background(),
 		type_,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4638,11 +4774,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the plugin
 	resp, err := client.System.PluginsCatalogReadPluginConfiguration(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4697,13 +4834,14 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the plugin
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
 	resp, err := client.System.PluginsCatalogReadPluginConfigurationWithType(
 		context.Background(),
 		name,
 		type_,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4761,12 +4899,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the plugin
 	resp, err := client.System.PluginsCatalogRegisterPlugin(
 		context.Background(),
 		name,
-		schema.PluginsCatalogRegisterPluginRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PluginsCatalogRegisterPluginRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4823,14 +4964,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the plugin
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
 	resp, err := client.System.PluginsCatalogRegisterPluginWithType(
 		context.Background(),
 		name,
 		type_,
-		schema.PluginsCatalogRegisterPluginWithTypeRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PluginsCatalogRegisterPluginWithTypeRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4888,11 +5032,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the plugin
 	resp, err := client.System.PluginsCatalogRemovePlugin(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4947,13 +5092,14 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the plugin
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
 	resp, err := client.System.PluginsCatalogRemovePluginWithType(
 		context.Background(),
 		name,
 		type_,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5013,10 +5159,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.PluginsReloadBackends(
 		context.Background(),
-		schema.PluginsReloadBackendsRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PluginsReloadBackendsRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5067,9 +5216,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.PluginsRuntimesCatalogListPluginsRuntimes(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5120,13 +5270,14 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the plugin runtime
 	type_ := "type__example" // string | The type of the plugin runtime
 	resp, err := client.System.PluginsRuntimesCatalogReadPluginRuntimeConfiguration(
 		context.Background(),
 		name,
 		type_,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5184,14 +5335,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the plugin runtime
 	type_ := "type__example" // string | The type of the plugin runtime
 	resp, err := client.System.PluginsRuntimesCatalogRegisterPluginRuntime(
 		context.Background(),
 		name,
 		type_,
-		schema.PluginsRuntimesCatalogRegisterPluginRuntimeRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PluginsRuntimesCatalogRegisterPluginRuntimeRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5249,13 +5403,14 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the plugin runtime
 	type_ := "type__example" // string | The type of the plugin runtime
 	resp, err := client.System.PluginsRuntimesCatalogRemovePluginRuntime(
 		context.Background(),
 		name,
 		type_,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5312,11 +5467,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
 	resp, err := client.System.PoliciesDeleteAclPolicy(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5371,11 +5527,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the password policy.
 	resp, err := client.System.PoliciesDeletePasswordPolicy(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5430,11 +5587,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the password policy.
 	resp, err := client.System.PoliciesGeneratePasswordFromPasswordPolicy(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5489,9 +5647,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.PoliciesListAclPolicies(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5542,9 +5701,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.PoliciesListPasswordPolicies(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5595,11 +5755,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
 	resp, err := client.System.PoliciesReadAclPolicy(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5654,11 +5815,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the password policy.
 	resp, err := client.System.PoliciesReadPasswordPolicy(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5714,12 +5876,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
 	resp, err := client.System.PoliciesWriteAclPolicy(
 		context.Background(),
 		name,
-		schema.PoliciesWriteAclPolicyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PoliciesWriteAclPolicyRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5776,12 +5941,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the password policy.
 	resp, err := client.System.PoliciesWritePasswordPolicy(
 		context.Background(),
 		name,
-		schema.PoliciesWritePasswordPolicyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PoliciesWritePasswordPolicyRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5839,9 +6007,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.PprofBlocking(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5891,9 +6060,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.PprofCommandLine(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5943,9 +6113,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.PprofCpuProfile(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5995,9 +6166,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.PprofExecutionTrace(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6047,9 +6219,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.PprofGoroutines(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6101,9 +6274,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.PprofIndex(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6153,9 +6327,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.PprofMemoryAllocations(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6205,9 +6380,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.PprofMemoryAllocationsLive(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6257,9 +6433,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.PprofMutexes(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6309,9 +6486,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.PprofSymbols(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6361,9 +6539,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.PprofThreadCreations(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6412,10 +6591,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.QueryTokenAccessorCapabilities(
 		context.Background(),
-		schema.QueryTokenAccessorCapabilitiesRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.QueryTokenAccessorCapabilitiesRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6467,10 +6649,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.QueryTokenCapabilities(
 		context.Background(),
-		schema.QueryTokenCapabilitiesRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.QueryTokenCapabilitiesRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6522,10 +6707,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.QueryTokenSelfCapabilities(
 		context.Background(),
-		schema.QueryTokenSelfCapabilitiesRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.QueryTokenSelfCapabilitiesRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6577,10 +6765,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.RateLimitQuotasConfigure(
 		context.Background(),
-		schema.RateLimitQuotasConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.RateLimitQuotasConfigureRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6631,11 +6822,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the quota rule.
 	resp, err := client.System.RateLimitQuotasDelete(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6690,9 +6882,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.RateLimitQuotasList(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6743,11 +6936,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the quota rule.
 	resp, err := client.System.RateLimitQuotasRead(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6802,9 +6996,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.RateLimitQuotasReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6853,12 +7048,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the quota rule.
 	resp, err := client.System.RateLimitQuotasWrite(
 		context.Background(),
 		name,
-		schema.RateLimitQuotasWriteRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.RateLimitQuotasWriteRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6914,11 +7112,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | 
 	resp, err := client.System.RawDelete(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6973,11 +7172,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | 
 	resp, err := client.System.RawList(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7033,11 +7233,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | 
 	resp, err := client.System.RawRead(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7093,12 +7294,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | 
 	resp, err := client.System.RawWrite(
 		context.Background(),
 		path,
-		schema.RawWriteRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.RawWriteRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7154,9 +7358,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.ReadHealthStatus(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7204,9 +7409,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.ReadInitializationStatus(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7254,9 +7460,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.ReadReplicationStatus(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7306,9 +7513,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.ReadSanitizedConfigurationState(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7357,10 +7565,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.ReadWrappingProperties(
 		context.Background(),
-		schema.ReadWrappingPropertiesRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.ReadWrappingPropertiesRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7413,9 +7624,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.RekeyAttemptCancel(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7466,10 +7678,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.RekeyAttemptInitialize(
 		context.Background(),
-		schema.RekeyAttemptInitializeRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.RekeyAttemptInitializeRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7520,9 +7735,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.RekeyAttemptReadProgress(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7571,10 +7787,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.RekeyAttemptUpdate(
 		context.Background(),
-		schema.RekeyAttemptUpdateRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.RekeyAttemptUpdateRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7625,9 +7844,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.RekeyDeleteBackupKey(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7675,9 +7895,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.RekeyDeleteBackupRecoveryKey(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7725,9 +7946,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.RekeyReadBackupKey(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7775,9 +7997,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.RekeyReadBackupRecoveryKey(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7827,9 +8050,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.RekeyVerificationCancel(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7877,9 +8101,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.RekeyVerificationReadProgress(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7928,10 +8153,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.RekeyVerificationUpdate(
 		context.Background(),
-		schema.RekeyVerificationUpdateRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.RekeyVerificationUpdateRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7982,11 +8210,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	subsystem := "subsystem_example" // string | 
 	resp, err := client.System.ReloadSubsystem(
 		context.Background(),
 		subsystem,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8042,10 +8271,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.Remount(
 		context.Background(),
-		schema.RemountRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.RemountRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8096,11 +8328,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	migrationId := "migrationId_example" // string | The ID of the migration operation
 	resp, err := client.System.RemountStatus(
 		context.Background(),
 		migrationId,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8156,10 +8389,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.Rewrap(
 		context.Background(),
-		schema.RewrapRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.RewrapRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8210,9 +8446,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.RootTokenGenerationCancel(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8263,10 +8500,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.RootTokenGenerationInitialize(
 		context.Background(),
-		schema.RootTokenGenerationInitializeRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.RootTokenGenerationInitializeRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8317,9 +8557,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.RootTokenGenerationReadProgress(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8370,10 +8611,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.RootTokenGenerationUpdate(
 		context.Background(),
-		schema.RootTokenGenerationUpdateRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.RootTokenGenerationUpdateRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8424,9 +8668,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.Seal(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8474,9 +8719,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.SealStatus(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8526,9 +8772,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.StepDownLeader(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8577,12 +8824,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	header := "header_example" // string | The name of the header.
 	resp, err := client.System.UiHeadersConfigure(
 		context.Background(),
 		header,
-		schema.UiHeadersConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.UiHeadersConfigureRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8638,11 +8888,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	header := "header_example" // string | The name of the header.
 	resp, err := client.System.UiHeadersDeleteConfiguration(
 		context.Background(),
 		header,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8697,9 +8948,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.UiHeadersList(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8750,11 +9002,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	header := "header_example" // string | The name of the header.
 	resp, err := client.System.UiHeadersReadConfiguration(
 		context.Background(),
 		header,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8810,10 +9063,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.Unseal(
 		context.Background(),
-		schema.UnsealRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.UnsealRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8865,10 +9121,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.Unwrap(
 		context.Background(),
-		schema.UnwrapRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.UnwrapRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8919,9 +9178,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.VersionHistory(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8972,10 +9232,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.System.Wrap(
 		context.Background(),
-		map[string]interface{}{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		map[string]interface{}{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)

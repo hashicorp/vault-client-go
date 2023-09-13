@@ -401,8 +401,8 @@ func main() {
 	resp, err := client.Auth.AliCloudLogin(
 		context.Background(),
 		schema.AliCloudLoginRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -528,8 +528,8 @@ func main() {
 		context.Background(),
 		role,
 		schema.AliCloudWriteAuthRoleRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -1339,8 +1339,8 @@ func main() {
 		context.Background(),
 		roleName,
 		schema.AppRoleDestroySecretIdRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1406,8 +1406,8 @@ func main() {
 		context.Background(),
 		roleName,
 		schema.AppRoleDestroySecretIdByAccessorRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1593,8 +1593,8 @@ func main() {
 	resp, err := client.Auth.AppRoleLogin(
 		context.Background(),
 		schema.AppRoleLoginRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1658,8 +1658,8 @@ func main() {
 		context.Background(),
 		roleName,
 		schema.AppRoleLookUpSecretIdRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1725,8 +1725,8 @@ func main() {
 		context.Background(),
 		roleName,
 		schema.AppRoleLookUpSecretIdByAccessorRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2718,8 +2718,8 @@ func main() {
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteBindSecretIdRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2785,8 +2785,8 @@ func main() {
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteBoundCidrListRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2852,8 +2852,8 @@ func main() {
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteCustomSecretIdRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2919,8 +2919,8 @@ func main() {
 		context.Background(),
 		roleName,
 		schema.AppRoleWritePeriodRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2986,8 +2986,8 @@ func main() {
 		context.Background(),
 		roleName,
 		schema.AppRoleWritePoliciesRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3053,8 +3053,8 @@ func main() {
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteRoleRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3120,8 +3120,8 @@ func main() {
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteRoleIdRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3187,8 +3187,8 @@ func main() {
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteSecretIdRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3254,8 +3254,8 @@ func main() {
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteSecretIdBoundCidrsRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3321,8 +3321,8 @@ func main() {
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteSecretIdNumUsesRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3388,8 +3388,8 @@ func main() {
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteSecretIdTtlRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3455,8 +3455,8 @@ func main() {
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteTokenBoundCidrsRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3522,8 +3522,8 @@ func main() {
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteTokenMaxTtlRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3589,8 +3589,8 @@ func main() {
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteTokenNumUsesRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3656,8 +3656,8 @@ func main() {
 		context.Background(),
 		roleName,
 		schema.AppRoleWriteTokenTtlRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3723,8 +3723,8 @@ func main() {
 		context.Background(),
 		certName,
 		schema.AwsConfigureCertificateRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -3788,8 +3788,8 @@ func main() {
 	resp, err := client.Auth.AwsConfigureClient(
 		context.Background(),
 		schema.AwsConfigureClientRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -3851,8 +3851,8 @@ func main() {
 	resp, err := client.Auth.AwsConfigureIdentityAccessListTidyOperation(
 		context.Background(),
 		schema.AwsConfigureIdentityAccessListTidyOperationRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -3914,8 +3914,8 @@ func main() {
 	resp, err := client.Auth.AwsConfigureIdentityIntegration(
 		context.Background(),
 		schema.AwsConfigureIdentityIntegrationRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -3977,8 +3977,8 @@ func main() {
 	resp, err := client.Auth.AwsConfigureIdentityWhitelistTidyOperation(
 		context.Background(),
 		schema.AwsConfigureIdentityWhitelistTidyOperationRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4040,8 +4040,8 @@ func main() {
 	resp, err := client.Auth.AwsConfigureRoleTagBlacklistTidyOperation(
 		context.Background(),
 		schema.AwsConfigureRoleTagBlacklistTidyOperationRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4103,8 +4103,8 @@ func main() {
 	resp, err := client.Auth.AwsConfigureRoleTagDenyListTidyOperation(
 		context.Background(),
 		schema.AwsConfigureRoleTagDenyListTidyOperationRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5303,8 +5303,8 @@ func main() {
 	resp, err := client.Auth.AwsLogin(
 		context.Background(),
 		schema.AwsLoginRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6206,8 +6206,8 @@ func main() {
 	resp, err := client.Auth.AwsTidyIdentityAccessList(
 		context.Background(),
 		schema.AwsTidyIdentityAccessListRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6269,8 +6269,8 @@ func main() {
 	resp, err := client.Auth.AwsTidyIdentityWhitelist(
 		context.Background(),
 		schema.AwsTidyIdentityWhitelistRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6332,8 +6332,8 @@ func main() {
 	resp, err := client.Auth.AwsTidyRoleTagBlacklist(
 		context.Background(),
 		schema.AwsTidyRoleTagBlacklistRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6395,8 +6395,8 @@ func main() {
 	resp, err := client.Auth.AwsTidyRoleTagDenyList(
 		context.Background(),
 		schema.AwsTidyRoleTagDenyListRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6460,8 +6460,8 @@ func main() {
 		context.Background(),
 		role,
 		schema.AwsWriteAuthRoleRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6527,8 +6527,8 @@ func main() {
 		context.Background(),
 		role,
 		schema.AwsWriteRoleTagRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6718,8 +6718,8 @@ func main() {
 		context.Background(),
 		accountId,
 		schema.AwsWriteStsRoleRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6783,8 +6783,8 @@ func main() {
 	resp, err := client.Auth.AzureConfigureAuth(
 		context.Background(),
 		schema.AzureConfigureAuthRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -7025,8 +7025,8 @@ func main() {
 	resp, err := client.Auth.AzureLogin(
 		context.Background(),
 		schema.AzureLoginRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -7268,8 +7268,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.AzureWriteAuthRoleRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -7333,8 +7333,8 @@ func main() {
 	resp, err := client.Auth.CentrifyConfigure(
 		context.Background(),
 		schema.CentrifyConfigureRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("centrify"),
 	)
 	if err != nil {
@@ -7396,8 +7396,8 @@ func main() {
 	resp, err := client.Auth.CentrifyLogin(
 		context.Background(),
 		schema.CentrifyLoginRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("centrify"),
 	)
 	if err != nil {
@@ -7517,8 +7517,8 @@ func main() {
 	resp, err := client.Auth.CertConfigure(
 		context.Background(),
 		schema.CertConfigureRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -7822,8 +7822,8 @@ func main() {
 	resp, err := client.Auth.CertLogin(
 		context.Background(),
 		schema.CertLoginRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -8069,8 +8069,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.CertWriteCertificateRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -8136,8 +8136,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.CertWriteCrlRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -8201,8 +8201,8 @@ func main() {
 	resp, err := client.Auth.CloudFoundryConfigure(
 		context.Background(),
 		schema.CloudFoundryConfigureRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8443,8 +8443,8 @@ func main() {
 	resp, err := client.Auth.CloudFoundryLogin(
 		context.Background(),
 		schema.CloudFoundryLoginRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8628,8 +8628,8 @@ func main() {
 		context.Background(),
 		role,
 		schema.CloudFoundryWriteRoleRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8693,8 +8693,8 @@ func main() {
 	resp, err := client.Auth.GithubConfigure(
 		context.Background(),
 		schema.GithubConfigureRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -8998,8 +8998,8 @@ func main() {
 	resp, err := client.Auth.GithubLogin(
 		context.Background(),
 		schema.GithubLoginRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -9245,8 +9245,8 @@ func main() {
 		context.Background(),
 		key,
 		schema.GithubWriteTeamMappingRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -9312,8 +9312,8 @@ func main() {
 		context.Background(),
 		key,
 		schema.GithubWriteUserMappingRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -9377,8 +9377,8 @@ func main() {
 	resp, err := client.Auth.GoogleCloudConfigureAuth(
 		context.Background(),
 		schema.GoogleCloudConfigureAuthRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9504,8 +9504,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.GoogleCloudEditLabelsForRoleRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9571,8 +9571,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.GoogleCloudEditServiceAccountsForRoleRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9695,8 +9695,8 @@ func main() {
 	resp, err := client.Auth.GoogleCloudLogin(
 		context.Background(),
 		schema.GoogleCloudLoginRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9880,8 +9880,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.GoogleCloudWriteRoleRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9950,8 +9950,8 @@ func main() {
 	resp, err := client.Auth.JwtConfigure(
 		context.Background(),
 		schema.JwtConfigureRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10136,8 +10136,8 @@ func main() {
 	resp, err := client.Auth.JwtLogin(
 		context.Background(),
 		schema.JwtLoginRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10266,8 +10266,8 @@ func main() {
 	resp, err := client.Auth.JwtOidcCallbackFormPost(
 		context.Background(),
 		schema.JwtOidcCallbackFormPostRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10329,8 +10329,8 @@ func main() {
 	resp, err := client.Auth.JwtOidcRequestAuthorizationUrl(
 		context.Background(),
 		schema.JwtOidcRequestAuthorizationUrlRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10519,8 +10519,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.JwtWriteRoleRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10584,8 +10584,8 @@ func main() {
 	resp, err := client.Auth.KerberosConfigure(
 		context.Background(),
 		schema.KerberosConfigureRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -10647,8 +10647,8 @@ func main() {
 	resp, err := client.Auth.KerberosConfigureLdap(
 		context.Background(),
 		schema.KerberosConfigureLdapRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -10831,8 +10831,8 @@ func main() {
 	resp, err := client.Auth.KerberosLogin(
 		context.Background(),
 		schema.KerberosLoginRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -11074,8 +11074,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.KerberosWriteGroupRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -11139,8 +11139,8 @@ func main() {
 	resp, err := client.Auth.KubernetesConfigureAuth(
 		context.Background(),
 		schema.KubernetesConfigureAuthRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -11323,8 +11323,8 @@ func main() {
 	resp, err := client.Auth.KubernetesLogin(
 		context.Background(),
 		schema.KubernetesLoginRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -11508,8 +11508,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.KubernetesWriteAuthRoleRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -11573,8 +11573,8 @@ func main() {
 	resp, err := client.Auth.LdapConfigureAuth(
 		context.Background(),
 		schema.LdapConfigureAuthRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -11880,8 +11880,8 @@ func main() {
 		context.Background(),
 		username,
 		schema.LdapLoginRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -12129,8 +12129,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.LdapWriteGroupRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -12196,8 +12196,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.LdapWriteUserRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -12261,8 +12261,8 @@ func main() {
 	resp, err := client.Auth.OciConfigure(
 		context.Background(),
 		schema.OciConfigureRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12505,8 +12505,8 @@ func main() {
 		context.Background(),
 		role,
 		schema.OciLoginRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12692,8 +12692,8 @@ func main() {
 		context.Background(),
 		role,
 		schema.OciWriteRoleRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12757,8 +12757,8 @@ func main() {
 	resp, err := client.Auth.OktaConfigure(
 		context.Background(),
 		schema.OktaConfigureRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13064,8 +13064,8 @@ func main() {
 		context.Background(),
 		username,
 		schema.OktaLoginRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13375,8 +13375,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.OktaWriteGroupRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13442,8 +13442,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.OktaWriteUserRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13507,8 +13507,8 @@ func main() {
 	resp, err := client.Auth.RadiusConfigure(
 		context.Background(),
 		schema.RadiusConfigureRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -13691,8 +13691,8 @@ func main() {
 	resp, err := client.Auth.RadiusLogin(
 		context.Background(),
 		schema.RadiusLoginRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -13756,8 +13756,8 @@ func main() {
 		context.Background(),
 		urlusername,
 		schema.RadiusLoginWithUsernameRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -13943,8 +13943,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.RadiusWriteUserRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -14008,8 +14008,8 @@ func main() {
 	resp, err := client.Auth.TokenCreate(
 		context.Background(),
 		schema.TokenCreateRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14068,8 +14068,8 @@ func main() {
 		context.Background(),
 		roleName,
 		schema.TokenCreateAgainstRoleRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14131,8 +14131,8 @@ func main() {
 	resp, err := client.Auth.TokenCreateOrphan(
 		context.Background(),
 		schema.TokenCreateOrphanRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14357,8 +14357,8 @@ func main() {
 	resp, err := client.Auth.TokenLookUp(
 		context.Background(),
 		schema.TokenLookUpRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14415,8 +14415,8 @@ func main() {
 	resp, err := client.Auth.TokenLookUpAccessor(
 		context.Background(),
 		schema.TokenLookUpAccessorRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14584,8 +14584,8 @@ func main() {
 	resp, err := client.Auth.TokenRenew(
 		context.Background(),
 		schema.TokenRenewRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14642,8 +14642,8 @@ func main() {
 	resp, err := client.Auth.TokenRenewAccessor(
 		context.Background(),
 		schema.TokenRenewAccessorRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14700,8 +14700,8 @@ func main() {
 	resp, err := client.Auth.TokenRenewSelf(
 		context.Background(),
 		schema.TokenRenewSelfRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14758,8 +14758,8 @@ func main() {
 	resp, err := client.Auth.TokenRevoke(
 		context.Background(),
 		schema.TokenRevokeRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14816,8 +14816,8 @@ func main() {
 	resp, err := client.Auth.TokenRevokeAccessor(
 		context.Background(),
 		schema.TokenRevokeAccessorRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14874,8 +14874,8 @@ func main() {
 	resp, err := client.Auth.TokenRevokeOrphan(
 		context.Background(),
 		schema.TokenRevokeOrphanRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15036,8 +15036,8 @@ func main() {
 		context.Background(),
 		roleName,
 		schema.TokenWriteRoleRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15222,8 +15222,8 @@ func main() {
 		context.Background(),
 		username,
 		schema.UserpassLoginRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {
@@ -15351,8 +15351,8 @@ func main() {
 		context.Background(),
 		username,
 		schema.UserpassResetPasswordRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {
@@ -15418,8 +15418,8 @@ func main() {
 		context.Background(),
 		username,
 		schema.UserpassUpdatePoliciesRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {
@@ -15485,8 +15485,8 @@ func main() {
 		context.Background(),
 		username,
 		schema.UserpassWriteUserRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {

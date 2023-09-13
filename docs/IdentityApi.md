@@ -142,8 +142,8 @@ func main() {
 	resp, err := client.Identity.AliasCreate(
 		context.Background(),
 		schema.AliasCreateRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -376,8 +376,8 @@ func main() {
 		context.Background(),
 		id,
 		schema.AliasUpdateByIdRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -439,8 +439,8 @@ func main() {
 	resp, err := client.Identity.EntityBatchDelete(
 		context.Background(),
 		schema.EntityBatchDeleteRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -497,8 +497,8 @@ func main() {
 	resp, err := client.Identity.EntityCreate(
 		context.Background(),
 		schema.EntityCreateRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -555,8 +555,8 @@ func main() {
 	resp, err := client.Identity.EntityCreateAlias(
 		context.Background(),
 		schema.EntityCreateAliasRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -955,8 +955,8 @@ func main() {
 	resp, err := client.Identity.EntityLookUp(
 		context.Background(),
 		schema.EntityLookUpRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1013,8 +1013,8 @@ func main() {
 	resp, err := client.Identity.EntityMerge(
 		context.Background(),
 		schema.EntityMergeRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1253,8 +1253,8 @@ func main() {
 		context.Background(),
 		id,
 		schema.EntityUpdateAliasByIdRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1318,8 +1318,8 @@ func main() {
 		context.Background(),
 		id,
 		schema.EntityUpdateByIdRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1383,8 +1383,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.EntityUpdateByNameRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1446,8 +1446,8 @@ func main() {
 	resp, err := client.Identity.GroupCreate(
 		context.Background(),
 		schema.GroupCreateRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1504,8 +1504,8 @@ func main() {
 	resp, err := client.Identity.GroupCreateAlias(
 		context.Background(),
 		schema.GroupCreateAliasRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1904,8 +1904,8 @@ func main() {
 	resp, err := client.Identity.GroupLookUp(
 		context.Background(),
 		schema.GroupLookUpRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2144,8 +2144,8 @@ func main() {
 		context.Background(),
 		id,
 		schema.GroupUpdateAliasByIdRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2209,8 +2209,8 @@ func main() {
 		context.Background(),
 		id,
 		schema.GroupUpdateByIdRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2274,8 +2274,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.GroupUpdateByNameRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2337,8 +2337,8 @@ func main() {
 	resp, err := client.Identity.MfaAdminDestroyTotpSecret(
 		context.Background(),
 		schema.MfaAdminDestroyTotpSecretRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2395,8 +2395,8 @@ func main() {
 	resp, err := client.Identity.MfaAdminGenerateTotpSecret(
 		context.Background(),
 		schema.MfaAdminGenerateTotpSecretRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2453,8 +2453,8 @@ func main() {
 	resp, err := client.Identity.MfaCreateDuoMethod(
 		context.Background(),
 		schema.MfaCreateDuoMethodRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2511,8 +2511,8 @@ func main() {
 	resp, err := client.Identity.MfaCreateOktaMethod(
 		context.Background(),
 		schema.MfaCreateOktaMethodRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2569,8 +2569,8 @@ func main() {
 	resp, err := client.Identity.MfaCreatePingIdMethod(
 		context.Background(),
 		schema.MfaCreatePingIdMethodRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2627,8 +2627,8 @@ func main() {
 	resp, err := client.Identity.MfaCreateTotpMethod(
 		context.Background(),
 		schema.MfaCreateTotpMethodRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2985,8 +2985,8 @@ func main() {
 	resp, err := client.Identity.MfaGenerateTotpSecret(
 		context.Background(),
 		schema.MfaGenerateTotpSecretRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3729,8 +3729,8 @@ func main() {
 		context.Background(),
 		methodId,
 		schema.MfaUpdateDuoMethodRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3794,8 +3794,8 @@ func main() {
 		context.Background(),
 		methodId,
 		schema.MfaUpdateOktaMethodRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3859,8 +3859,8 @@ func main() {
 		context.Background(),
 		methodId,
 		schema.MfaUpdatePingIdMethodRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3924,8 +3924,8 @@ func main() {
 		context.Background(),
 		methodId,
 		schema.MfaUpdateTotpMethodRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3989,8 +3989,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.MfaWriteLoginEnforcementRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4052,8 +4052,8 @@ func main() {
 	resp, err := client.Identity.OidcConfigure(
 		context.Background(),
 		schema.OidcConfigureRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4530,8 +4530,8 @@ func main() {
 	resp, err := client.Identity.OidcIntrospect(
 		context.Background(),
 		schema.OidcIntrospectRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5004,8 +5004,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.OidcProviderAuthorizeWithParametersRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5069,8 +5069,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.OidcProviderTokenRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5827,8 +5827,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.OidcRotateKeyRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5892,8 +5892,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.OidcWriteAssignmentRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5957,8 +5957,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.OidcWriteClientRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6022,8 +6022,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.OidcWriteKeyRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6087,8 +6087,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.OidcWriteProviderRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6152,8 +6152,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.OidcWriteRoleRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6217,8 +6217,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.OidcWriteScopeRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6280,8 +6280,8 @@ func main() {
 	resp, err := client.Identity.PersonaCreate(
 		context.Background(),
 		schema.PersonaCreateRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6514,8 +6514,8 @@ func main() {
 		context.Background(),
 		id,
 		schema.PersonaUpdateByIdRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)

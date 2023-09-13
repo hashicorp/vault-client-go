@@ -195,8 +195,8 @@ func main() {
 		context.Background(),
 		path,
 		schema.AuditingCalculateHashRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -380,8 +380,8 @@ func main() {
 		context.Background(),
 		path,
 		schema.AuditingEnableDeviceRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -445,8 +445,8 @@ func main() {
 		context.Background(),
 		header,
 		schema.AuditingEnableRequestHeaderRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -736,8 +736,8 @@ func main() {
 		context.Background(),
 		path,
 		schema.AuthEnableMethodRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -976,8 +976,8 @@ func main() {
 		context.Background(),
 		path,
 		schema.AuthTuneConfigurationParametersRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1149,8 +1149,8 @@ func main() {
 	resp, err := client.System.CorsConfigure(
 		context.Background(),
 		schema.CorsConfigureRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1309,8 +1309,8 @@ func main() {
 	resp, err := client.System.Decode(
 		context.Background(),
 		schema.DecodeRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1367,8 +1367,8 @@ func main() {
 	resp, err := client.System.EncryptionKeyConfigureRotation(
 		context.Background(),
 		schema.EncryptionKeyConfigureRotationRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1578,8 +1578,8 @@ func main() {
 	resp, err := client.System.GenerateHash(
 		context.Background(),
 		schema.GenerateHashRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1638,8 +1638,8 @@ func main() {
 		context.Background(),
 		urlalgorithm,
 		schema.GenerateHashWithAlgorithmRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1701,8 +1701,8 @@ func main() {
 	resp, err := client.System.GenerateRandom(
 		context.Background(),
 		schema.GenerateRandomRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1761,8 +1761,8 @@ func main() {
 		context.Background(),
 		urlbytes,
 		schema.GenerateRandomWithBytesRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1826,8 +1826,8 @@ func main() {
 		context.Background(),
 		source,
 		schema.GenerateRandomWithSourceRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1893,8 +1893,8 @@ func main() {
 		source,
 		urlbytes,
 		schema.GenerateRandomWithSourceAndBytesRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2011,8 +2011,8 @@ func main() {
 	resp, err := client.System.Initialize(
 		context.Background(),
 		schema.InitializeRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2069,8 +2069,8 @@ func main() {
 	resp, err := client.System.InternalClientActivityConfigure(
 		context.Background(),
 		schema.InternalClientActivityConfigureRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2543,8 +2543,8 @@ func main() {
 	resp, err := client.System.InternalGenerateOpenApiDocumentWithParameters(
 		context.Background(),
 		schema.InternalGenerateOpenApiDocumentWithParametersRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3203,8 +3203,8 @@ func main() {
 	resp, err := client.System.LeasesReadLease(
 		context.Background(),
 		schema.LeasesReadLeaseRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3261,8 +3261,8 @@ func main() {
 	resp, err := client.System.LeasesRenewLease(
 		context.Background(),
 		schema.LeasesRenewLeaseRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3321,8 +3321,8 @@ func main() {
 		context.Background(),
 		urlLeaseId,
 		schema.LeasesRenewLeaseWithIdRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3384,8 +3384,8 @@ func main() {
 	resp, err := client.System.LeasesRevokeLease(
 		context.Background(),
 		schema.LeasesRevokeLeaseRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3444,8 +3444,8 @@ func main() {
 		context.Background(),
 		urlLeaseId,
 		schema.LeasesRevokeLeaseWithIdRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3509,8 +3509,8 @@ func main() {
 		context.Background(),
 		prefix,
 		schema.LeasesRevokeLeaseWithPrefixRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4011,8 +4011,8 @@ func main() {
 	resp, err := client.System.LoggersUpdateVerbosityLevel(
 		context.Background(),
 		schema.LoggersUpdateVerbosityLevelRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4071,8 +4071,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.LoggersUpdateVerbosityLevelForRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4190,8 +4190,8 @@ func main() {
 	resp, err := client.System.MfaValidate(
 		context.Background(),
 		schema.MfaValidateRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4369,8 +4369,8 @@ func main() {
 		context.Background(),
 		path,
 		schema.MountsEnableSecretsEngineRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4605,8 +4605,8 @@ func main() {
 		context.Background(),
 		path,
 		schema.MountsTuneConfigurationParametersRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4906,8 +4906,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.PluginsCatalogRegisterPluginRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4973,8 +4973,8 @@ func main() {
 		name,
 		type_,
 		schema.PluginsCatalogRegisterPluginWithTypeRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5164,8 +5164,8 @@ func main() {
 	resp, err := client.System.PluginsReloadBackends(
 		context.Background(),
 		schema.PluginsReloadBackendsRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5344,8 +5344,8 @@ func main() {
 		name,
 		type_,
 		schema.PluginsRuntimesCatalogRegisterPluginRuntimeRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5883,8 +5883,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.PoliciesWriteAclPolicyRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5948,8 +5948,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.PoliciesWritePasswordPolicyRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6596,8 +6596,8 @@ func main() {
 	resp, err := client.System.QueryTokenAccessorCapabilities(
 		context.Background(),
 		schema.QueryTokenAccessorCapabilitiesRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6654,8 +6654,8 @@ func main() {
 	resp, err := client.System.QueryTokenCapabilities(
 		context.Background(),
 		schema.QueryTokenCapabilitiesRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6712,8 +6712,8 @@ func main() {
 	resp, err := client.System.QueryTokenSelfCapabilities(
 		context.Background(),
 		schema.QueryTokenSelfCapabilitiesRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6770,8 +6770,8 @@ func main() {
 	resp, err := client.System.RateLimitQuotasConfigure(
 		context.Background(),
 		schema.RateLimitQuotasConfigureRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7055,8 +7055,8 @@ func main() {
 		context.Background(),
 		name,
 		schema.RateLimitQuotasWriteRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7301,8 +7301,8 @@ func main() {
 		context.Background(),
 		path,
 		schema.RawWriteRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7570,8 +7570,8 @@ func main() {
 	resp, err := client.System.ReadWrappingProperties(
 		context.Background(),
 		schema.ReadWrappingPropertiesRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7683,8 +7683,8 @@ func main() {
 	resp, err := client.System.RekeyAttemptInitialize(
 		context.Background(),
 		schema.RekeyAttemptInitializeRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7792,8 +7792,8 @@ func main() {
 	resp, err := client.System.RekeyAttemptUpdate(
 		context.Background(),
 		schema.RekeyAttemptUpdateRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8158,8 +8158,8 @@ func main() {
 	resp, err := client.System.RekeyVerificationUpdate(
 		context.Background(),
 		schema.RekeyVerificationUpdateRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8276,8 +8276,8 @@ func main() {
 	resp, err := client.System.Remount(
 		context.Background(),
 		schema.RemountRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8394,8 +8394,8 @@ func main() {
 	resp, err := client.System.Rewrap(
 		context.Background(),
 		schema.RewrapRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8505,8 +8505,8 @@ func main() {
 	resp, err := client.System.RootTokenGenerationInitialize(
 		context.Background(),
 		schema.RootTokenGenerationInitializeRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8616,8 +8616,8 @@ func main() {
 	resp, err := client.System.RootTokenGenerationUpdate(
 		context.Background(),
 		schema.RootTokenGenerationUpdateRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8831,8 +8831,8 @@ func main() {
 		context.Background(),
 		header,
 		schema.UiHeadersConfigureRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9068,8 +9068,8 @@ func main() {
 	resp, err := client.System.Unseal(
 		context.Background(),
 		schema.UnsealRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9126,8 +9126,8 @@ func main() {
 	resp, err := client.System.Unwrap(
 		context.Background(),
 		schema.UnwrapRequest{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9237,8 +9237,8 @@ func main() {
 	resp, err := client.System.Wrap(
 		context.Background(),
 		map[string]interface{}{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)

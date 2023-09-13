@@ -40,7 +40,8 @@ func Test_Client_Clone(t *testing.T) {
 	assert.Equal(t, "test-namespace", clone.clientRequestModifiers.headers.namespace)
 }
 
-// assertEqual compares the two clients, accounting for nested func pointers
+// assertEqual compares the two clients, accounting for the nested func pointers,
+// which are not comparable in Go (https://go.dev/ref/spec#Comparison_operators)
 func assertEqual(t *testing.T, c1 *Client, c2 *Client) {
 	assert.Equal(t, fmt.Sprintf("%v", c1.configuration), fmt.Sprintf("%v", c2.configuration))
 	assert.Equal(t, fmt.Sprintf("%v", c1.parsedBaseAddress), fmt.Sprintf("%v", c2.parsedBaseAddress))

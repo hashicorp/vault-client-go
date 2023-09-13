@@ -280,7 +280,6 @@ func main() {
 	resp, err := client.Auth.AliCloudDeleteAuthRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -341,7 +340,6 @@ func main() {
 
 	resp, err := client.Auth.AliCloudListAuthRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -405,7 +403,6 @@ func main() {
 		schema.AliCloudLoginRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -467,7 +464,6 @@ func main() {
 	resp, err := client.Auth.AliCloudReadAuthRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -534,7 +530,6 @@ func main() {
 		schema.AliCloudWriteAuthRoleRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -598,7 +593,6 @@ func main() {
 	resp, err := client.Auth.AppRoleDeleteBindSecretId(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -661,7 +655,6 @@ func main() {
 	resp, err := client.Auth.AppRoleDeleteBoundCidrList(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -724,7 +717,6 @@ func main() {
 	resp, err := client.Auth.AppRoleDeletePeriod(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -787,7 +779,6 @@ func main() {
 	resp, err := client.Auth.AppRoleDeletePolicies(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -850,7 +841,6 @@ func main() {
 	resp, err := client.Auth.AppRoleDeleteRole(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -913,7 +903,6 @@ func main() {
 	resp, err := client.Auth.AppRoleDeleteSecretIdBoundCidrs(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -976,7 +965,6 @@ func main() {
 	resp, err := client.Auth.AppRoleDeleteSecretIdNumUses(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1039,7 +1027,6 @@ func main() {
 	resp, err := client.Auth.AppRoleDeleteSecretIdTtl(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1102,7 +1089,6 @@ func main() {
 	resp, err := client.Auth.AppRoleDeleteTokenBoundCidrs(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1165,7 +1151,6 @@ func main() {
 	resp, err := client.Auth.AppRoleDeleteTokenMaxTtl(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1228,7 +1213,6 @@ func main() {
 	resp, err := client.Auth.AppRoleDeleteTokenNumUses(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1291,7 +1275,6 @@ func main() {
 	resp, err := client.Auth.AppRoleDeleteTokenTtl(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1358,7 +1341,6 @@ func main() {
 		schema.AppRoleDestroySecretIdRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1426,7 +1408,6 @@ func main() {
 		schema.AppRoleDestroySecretIdByAccessorRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1488,7 +1469,6 @@ func main() {
 
 	resp, err := client.Auth.AppRoleListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1550,7 +1530,6 @@ func main() {
 	resp, err := client.Auth.AppRoleListSecretIds(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1616,7 +1595,6 @@ func main() {
 		schema.AppRoleLoginRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1682,7 +1660,6 @@ func main() {
 		schema.AppRoleLookUpSecretIdRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1750,7 +1727,6 @@ func main() {
 		schema.AppRoleLookUpSecretIdByAccessorRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1814,7 +1790,6 @@ func main() {
 	resp, err := client.Auth.AppRoleReadBindSecretId(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1877,7 +1852,6 @@ func main() {
 	resp, err := client.Auth.AppRoleReadBoundCidrList(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1940,7 +1914,6 @@ func main() {
 	resp, err := client.Auth.AppRoleReadLocalSecretIds(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2003,7 +1976,6 @@ func main() {
 	resp, err := client.Auth.AppRoleReadPeriod(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2066,7 +2038,6 @@ func main() {
 	resp, err := client.Auth.AppRoleReadPolicies(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2129,7 +2100,6 @@ func main() {
 	resp, err := client.Auth.AppRoleReadRole(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2192,7 +2162,6 @@ func main() {
 	resp, err := client.Auth.AppRoleReadRoleId(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2255,7 +2224,6 @@ func main() {
 	resp, err := client.Auth.AppRoleReadSecretIdBoundCidrs(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2318,7 +2286,6 @@ func main() {
 	resp, err := client.Auth.AppRoleReadSecretIdNumUses(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2381,7 +2348,6 @@ func main() {
 	resp, err := client.Auth.AppRoleReadSecretIdTtl(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2444,7 +2410,6 @@ func main() {
 	resp, err := client.Auth.AppRoleReadTokenBoundCidrs(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2507,7 +2472,6 @@ func main() {
 	resp, err := client.Auth.AppRoleReadTokenMaxTtl(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2570,7 +2534,6 @@ func main() {
 	resp, err := client.Auth.AppRoleReadTokenNumUses(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2633,7 +2596,6 @@ func main() {
 	resp, err := client.Auth.AppRoleReadTokenTtl(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2694,7 +2656,6 @@ func main() {
 
 	resp, err := client.Auth.AppRoleTidySecretId(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2759,7 +2720,6 @@ func main() {
 		schema.AppRoleWriteBindSecretIdRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2827,7 +2787,6 @@ func main() {
 		schema.AppRoleWriteBoundCidrListRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2895,7 +2854,6 @@ func main() {
 		schema.AppRoleWriteCustomSecretIdRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2963,7 +2921,6 @@ func main() {
 		schema.AppRoleWritePeriodRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3031,7 +2988,6 @@ func main() {
 		schema.AppRoleWritePoliciesRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3099,7 +3055,6 @@ func main() {
 		schema.AppRoleWriteRoleRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3167,7 +3122,6 @@ func main() {
 		schema.AppRoleWriteRoleIdRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3235,7 +3189,6 @@ func main() {
 		schema.AppRoleWriteSecretIdRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3303,7 +3256,6 @@ func main() {
 		schema.AppRoleWriteSecretIdBoundCidrsRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3371,7 +3323,6 @@ func main() {
 		schema.AppRoleWriteSecretIdNumUsesRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3439,7 +3390,6 @@ func main() {
 		schema.AppRoleWriteSecretIdTtlRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3507,7 +3457,6 @@ func main() {
 		schema.AppRoleWriteTokenBoundCidrsRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3575,7 +3524,6 @@ func main() {
 		schema.AppRoleWriteTokenMaxTtlRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3643,7 +3591,6 @@ func main() {
 		schema.AppRoleWriteTokenNumUsesRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3711,7 +3658,6 @@ func main() {
 		schema.AppRoleWriteTokenTtlRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3779,7 +3725,6 @@ func main() {
 		schema.AwsConfigureCertificateRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -3845,7 +3790,6 @@ func main() {
 		schema.AwsConfigureClientRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -3909,7 +3853,6 @@ func main() {
 		schema.AwsConfigureIdentityAccessListTidyOperationRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -3973,7 +3916,6 @@ func main() {
 		schema.AwsConfigureIdentityIntegrationRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4037,7 +3979,6 @@ func main() {
 		schema.AwsConfigureIdentityWhitelistTidyOperationRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4101,7 +4042,6 @@ func main() {
 		schema.AwsConfigureRoleTagBlacklistTidyOperationRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4165,7 +4105,6 @@ func main() {
 		schema.AwsConfigureRoleTagDenyListTidyOperationRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4227,7 +4166,6 @@ func main() {
 	resp, err := client.Auth.AwsDeleteAuthRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4290,7 +4228,6 @@ func main() {
 	resp, err := client.Auth.AwsDeleteCertificateConfiguration(
 		context.Background(),
 		certName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4351,7 +4288,6 @@ func main() {
 
 	resp, err := client.Auth.AwsDeleteClientConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4412,7 +4348,6 @@ func main() {
 	resp, err := client.Auth.AwsDeleteIdentityAccessList(
 		context.Background(),
 		instanceId,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4473,7 +4408,6 @@ func main() {
 
 	resp, err := client.Auth.AwsDeleteIdentityAccessListTidySettings(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4534,7 +4468,6 @@ func main() {
 	resp, err := client.Auth.AwsDeleteIdentityWhitelist(
 		context.Background(),
 		instanceId,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4595,7 +4528,6 @@ func main() {
 
 	resp, err := client.Auth.AwsDeleteIdentityWhitelistTidySettings(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4656,7 +4588,6 @@ func main() {
 	resp, err := client.Auth.AwsDeleteRoleTagBlacklist(
 		context.Background(),
 		roleTag,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4717,7 +4648,6 @@ func main() {
 
 	resp, err := client.Auth.AwsDeleteRoleTagBlacklistTidySettings(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4778,7 +4708,6 @@ func main() {
 	resp, err := client.Auth.AwsDeleteRoleTagDenyList(
 		context.Background(),
 		roleTag,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4839,7 +4768,6 @@ func main() {
 
 	resp, err := client.Auth.AwsDeleteRoleTagDenyListTidySettings(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4900,7 +4828,6 @@ func main() {
 	resp, err := client.Auth.AwsDeleteStsRole(
 		context.Background(),
 		accountId,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4961,7 +4888,6 @@ func main() {
 
 	resp, err := client.Auth.AwsListAuthRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5021,7 +4947,6 @@ func main() {
 
 	resp, err := client.Auth.AwsListCertificateConfigurations(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5081,7 +5006,6 @@ func main() {
 
 	resp, err := client.Auth.AwsListIdentityAccessList(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5141,7 +5065,6 @@ func main() {
 
 	resp, err := client.Auth.AwsListIdentityWhitelist(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5201,7 +5124,6 @@ func main() {
 
 	resp, err := client.Auth.AwsListRoleTagBlacklists(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5261,7 +5183,6 @@ func main() {
 
 	resp, err := client.Auth.AwsListRoleTagDenyLists(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5321,7 +5242,6 @@ func main() {
 
 	resp, err := client.Auth.AwsListStsRoleRelationships(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5385,7 +5305,6 @@ func main() {
 		schema.AwsLoginRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5447,7 +5366,6 @@ func main() {
 	resp, err := client.Auth.AwsReadAuthRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5510,7 +5428,6 @@ func main() {
 	resp, err := client.Auth.AwsReadCertificateConfiguration(
 		context.Background(),
 		certName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5571,7 +5488,6 @@ func main() {
 
 	resp, err := client.Auth.AwsReadClientConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5632,7 +5548,6 @@ func main() {
 	resp, err := client.Auth.AwsReadIdentityAccessList(
 		context.Background(),
 		instanceId,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5693,7 +5608,6 @@ func main() {
 
 	resp, err := client.Auth.AwsReadIdentityAccessListTidySettings(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5752,7 +5666,6 @@ func main() {
 
 	resp, err := client.Auth.AwsReadIdentityIntegrationConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5813,7 +5726,6 @@ func main() {
 	resp, err := client.Auth.AwsReadIdentityWhitelist(
 		context.Background(),
 		instanceId,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5874,7 +5786,6 @@ func main() {
 
 	resp, err := client.Auth.AwsReadIdentityWhitelistTidySettings(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5935,7 +5846,6 @@ func main() {
 	resp, err := client.Auth.AwsReadRoleTagBlacklist(
 		context.Background(),
 		roleTag,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5996,7 +5906,6 @@ func main() {
 
 	resp, err := client.Auth.AwsReadRoleTagBlacklistTidySettings(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6057,7 +5966,6 @@ func main() {
 	resp, err := client.Auth.AwsReadRoleTagDenyList(
 		context.Background(),
 		roleTag,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6118,7 +6026,6 @@ func main() {
 
 	resp, err := client.Auth.AwsReadRoleTagDenyListTidySettings(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6179,7 +6086,6 @@ func main() {
 	resp, err := client.Auth.AwsReadStsRole(
 		context.Background(),
 		accountId,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6240,7 +6146,6 @@ func main() {
 
 	resp, err := client.Auth.AwsRotateRootCredentials(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6303,7 +6208,6 @@ func main() {
 		schema.AwsTidyIdentityAccessListRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6367,7 +6271,6 @@ func main() {
 		schema.AwsTidyIdentityWhitelistRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6431,7 +6334,6 @@ func main() {
 		schema.AwsTidyRoleTagBlacklistRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6495,7 +6397,6 @@ func main() {
 		schema.AwsTidyRoleTagDenyListRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6561,7 +6462,6 @@ func main() {
 		schema.AwsWriteAuthRoleRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6629,7 +6529,6 @@ func main() {
 		schema.AwsWriteRoleTagRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6693,7 +6592,6 @@ func main() {
 	resp, err := client.Auth.AwsWriteRoleTagBlacklist(
 		context.Background(),
 		roleTag,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6756,7 +6654,6 @@ func main() {
 	resp, err := client.Auth.AwsWriteRoleTagDenyList(
 		context.Background(),
 		roleTag,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6823,7 +6720,6 @@ func main() {
 		schema.AwsWriteStsRoleRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6889,7 +6785,6 @@ func main() {
 		schema.AzureConfigureAuthRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -6949,7 +6844,6 @@ func main() {
 
 	resp, err := client.Auth.AzureDeleteAuthConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -7010,7 +6904,6 @@ func main() {
 	resp, err := client.Auth.AzureDeleteAuthRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -7071,7 +6964,6 @@ func main() {
 
 	resp, err := client.Auth.AzureListAuthRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -7135,7 +7027,6 @@ func main() {
 		schema.AzureLoginRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -7195,7 +7086,6 @@ func main() {
 
 	resp, err := client.Auth.AzureReadAuthConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -7256,7 +7146,6 @@ func main() {
 	resp, err := client.Auth.AzureReadAuthRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -7317,7 +7206,6 @@ func main() {
 
 	resp, err := client.Auth.AzureRotateRootCredentials(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -7382,7 +7270,6 @@ func main() {
 		schema.AzureWriteAuthRoleRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -7448,7 +7335,6 @@ func main() {
 		schema.CentrifyConfigureRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("centrify"),
 	)
 	if err != nil {
@@ -7512,7 +7398,6 @@ func main() {
 		schema.CentrifyLoginRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("centrify"),
 	)
 	if err != nil {
@@ -7572,7 +7457,6 @@ func main() {
 
 	resp, err := client.Auth.CentrifyReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("centrify"),
 	)
 	if err != nil {
@@ -7635,7 +7519,6 @@ func main() {
 		schema.CertConfigureRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -7697,7 +7580,6 @@ func main() {
 	resp, err := client.Auth.CertDeleteCertificate(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -7760,7 +7642,6 @@ func main() {
 	resp, err := client.Auth.CertDeleteCrl(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -7821,7 +7702,6 @@ func main() {
 
 	resp, err := client.Auth.CertListCertificates(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -7881,7 +7761,6 @@ func main() {
 
 	resp, err := client.Auth.CertListCrls(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -7945,7 +7824,6 @@ func main() {
 		schema.CertLoginRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -8007,7 +7885,6 @@ func main() {
 	resp, err := client.Auth.CertReadCertificate(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -8068,7 +7945,6 @@ func main() {
 
 	resp, err := client.Auth.CertReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -8129,7 +8005,6 @@ func main() {
 	resp, err := client.Auth.CertReadCrl(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -8196,7 +8071,6 @@ func main() {
 		schema.CertWriteCertificateRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -8264,7 +8138,6 @@ func main() {
 		schema.CertWriteCrlRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -8330,7 +8203,6 @@ func main() {
 		schema.CloudFoundryConfigureRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8390,7 +8262,6 @@ func main() {
 
 	resp, err := client.Auth.CloudFoundryDeleteConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8451,7 +8322,6 @@ func main() {
 	resp, err := client.Auth.CloudFoundryDeleteRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8512,7 +8382,6 @@ func main() {
 
 	resp, err := client.Auth.CloudFoundryListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8576,7 +8445,6 @@ func main() {
 		schema.CloudFoundryLoginRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8636,7 +8504,6 @@ func main() {
 
 	resp, err := client.Auth.CloudFoundryReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8697,7 +8564,6 @@ func main() {
 	resp, err := client.Auth.CloudFoundryReadRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8764,7 +8630,6 @@ func main() {
 		schema.CloudFoundryWriteRoleRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8830,7 +8695,6 @@ func main() {
 		schema.GithubConfigureRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -8892,7 +8756,6 @@ func main() {
 	resp, err := client.Auth.GithubDeleteTeamMapping(
 		context.Background(),
 		key,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -8955,7 +8818,6 @@ func main() {
 	resp, err := client.Auth.GithubDeleteUserMapping(
 		context.Background(),
 		key,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -9016,7 +8878,6 @@ func main() {
 
 	resp, err := client.Auth.GithubListTeams(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -9076,7 +8937,6 @@ func main() {
 
 	resp, err := client.Auth.GithubListUsers(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -9140,7 +9000,6 @@ func main() {
 		schema.GithubLoginRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -9200,7 +9059,6 @@ func main() {
 
 	resp, err := client.Auth.GithubReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -9261,7 +9119,6 @@ func main() {
 	resp, err := client.Auth.GithubReadTeamMapping(
 		context.Background(),
 		key,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -9324,7 +9181,6 @@ func main() {
 	resp, err := client.Auth.GithubReadUserMapping(
 		context.Background(),
 		key,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -9391,7 +9247,6 @@ func main() {
 		schema.GithubWriteTeamMappingRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -9459,7 +9314,6 @@ func main() {
 		schema.GithubWriteUserMappingRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -9525,7 +9379,6 @@ func main() {
 		schema.GoogleCloudConfigureAuthRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9587,7 +9440,6 @@ func main() {
 	resp, err := client.Auth.GoogleCloudDeleteRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9654,7 +9506,6 @@ func main() {
 		schema.GoogleCloudEditLabelsForRoleRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9722,7 +9573,6 @@ func main() {
 		schema.GoogleCloudEditServiceAccountsForRoleRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9784,7 +9634,6 @@ func main() {
 
 	resp, err := client.Auth.GoogleCloudListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9848,7 +9697,6 @@ func main() {
 		schema.GoogleCloudLoginRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9908,7 +9756,6 @@ func main() {
 
 	resp, err := client.Auth.GoogleCloudReadAuthConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9969,7 +9816,6 @@ func main() {
 	resp, err := client.Auth.GoogleCloudReadRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -10036,7 +9882,6 @@ func main() {
 		schema.GoogleCloudWriteRoleRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -10107,7 +9952,6 @@ func main() {
 		schema.JwtConfigureRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10169,7 +10013,6 @@ func main() {
 	resp, err := client.Auth.JwtDeleteRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10232,7 +10075,6 @@ func main() {
 
 	resp, err := client.Auth.JwtListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10296,7 +10138,6 @@ func main() {
 		schema.JwtLoginRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10362,7 +10203,6 @@ func main() {
 		clientNonce,
 		code,
 		state,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10428,7 +10268,6 @@ func main() {
 		schema.JwtOidcCallbackFormPostRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10492,7 +10331,6 @@ func main() {
 		schema.JwtOidcRequestAuthorizationUrlRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10552,7 +10390,6 @@ func main() {
 
 	resp, err := client.Auth.JwtReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10613,7 +10450,6 @@ func main() {
 	resp, err := client.Auth.JwtReadRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10685,7 +10521,6 @@ func main() {
 		schema.JwtWriteRoleRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10751,7 +10586,6 @@ func main() {
 		schema.KerberosConfigureRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -10815,7 +10649,6 @@ func main() {
 		schema.KerberosConfigureLdapRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -10877,7 +10710,6 @@ func main() {
 	resp, err := client.Auth.KerberosDeleteGroup(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -10938,7 +10770,6 @@ func main() {
 
 	resp, err := client.Auth.KerberosListGroups(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -11002,7 +10833,6 @@ func main() {
 		schema.KerberosLoginRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -11062,7 +10892,6 @@ func main() {
 
 	resp, err := client.Auth.KerberosReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -11123,7 +10952,6 @@ func main() {
 	resp, err := client.Auth.KerberosReadGroup(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -11184,7 +11012,6 @@ func main() {
 
 	resp, err := client.Auth.KerberosReadLdapConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -11249,7 +11076,6 @@ func main() {
 		schema.KerberosWriteGroupRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -11315,7 +11141,6 @@ func main() {
 		schema.KubernetesConfigureAuthRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -11377,7 +11202,6 @@ func main() {
 	resp, err := client.Auth.KubernetesDeleteAuthRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -11438,7 +11262,6 @@ func main() {
 
 	resp, err := client.Auth.KubernetesListAuthRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -11502,7 +11325,6 @@ func main() {
 		schema.KubernetesLoginRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -11562,7 +11384,6 @@ func main() {
 
 	resp, err := client.Auth.KubernetesReadAuthConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -11623,7 +11444,6 @@ func main() {
 	resp, err := client.Auth.KubernetesReadAuthRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -11690,7 +11510,6 @@ func main() {
 		schema.KubernetesWriteAuthRoleRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -11756,7 +11575,6 @@ func main() {
 		schema.LdapConfigureAuthRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -11818,7 +11636,6 @@ func main() {
 	resp, err := client.Auth.LdapDeleteGroup(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -11881,7 +11698,6 @@ func main() {
 	resp, err := client.Auth.LdapDeleteUser(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -11942,7 +11758,6 @@ func main() {
 
 	resp, err := client.Auth.LdapListGroups(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -12002,7 +11817,6 @@ func main() {
 
 	resp, err := client.Auth.LdapListUsers(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -12068,7 +11882,6 @@ func main() {
 		schema.LdapLoginRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -12130,7 +11943,6 @@ func main() {
 
 	resp, err := client.Auth.LdapReadAuthConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -12191,7 +12003,6 @@ func main() {
 	resp, err := client.Auth.LdapReadGroup(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -12254,7 +12065,6 @@ func main() {
 	resp, err := client.Auth.LdapReadUser(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -12321,7 +12131,6 @@ func main() {
 		schema.LdapWriteGroupRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -12389,7 +12198,6 @@ func main() {
 		schema.LdapWriteUserRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -12455,7 +12263,6 @@ func main() {
 		schema.OciConfigureRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12515,7 +12322,6 @@ func main() {
 
 	resp, err := client.Auth.OciDeleteConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12576,7 +12382,6 @@ func main() {
 	resp, err := client.Auth.OciDeleteRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12637,7 +12442,6 @@ func main() {
 
 	resp, err := client.Auth.OciListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12703,7 +12507,6 @@ func main() {
 		schema.OciLoginRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12765,7 +12568,6 @@ func main() {
 
 	resp, err := client.Auth.OciReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12826,7 +12628,6 @@ func main() {
 	resp, err := client.Auth.OciReadRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12893,7 +12694,6 @@ func main() {
 		schema.OciWriteRoleRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12959,7 +12759,6 @@ func main() {
 		schema.OktaConfigureRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13021,7 +12820,6 @@ func main() {
 	resp, err := client.Auth.OktaDeleteGroup(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13084,7 +12882,6 @@ func main() {
 	resp, err := client.Auth.OktaDeleteUser(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13145,7 +12942,6 @@ func main() {
 
 	resp, err := client.Auth.OktaListGroups(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13205,7 +13001,6 @@ func main() {
 
 	resp, err := client.Auth.OktaListUsers(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13271,7 +13066,6 @@ func main() {
 		schema.OktaLoginRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13333,7 +13127,6 @@ func main() {
 
 	resp, err := client.Auth.OktaReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13394,7 +13187,6 @@ func main() {
 	resp, err := client.Auth.OktaReadGroup(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13457,7 +13249,6 @@ func main() {
 	resp, err := client.Auth.OktaReadUser(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13520,7 +13311,6 @@ func main() {
 	resp, err := client.Auth.OktaVerify(
 		context.Background(),
 		nonce,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13587,7 +13377,6 @@ func main() {
 		schema.OktaWriteGroupRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13655,7 +13444,6 @@ func main() {
 		schema.OktaWriteUserRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13721,7 +13509,6 @@ func main() {
 		schema.RadiusConfigureRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -13783,7 +13570,6 @@ func main() {
 	resp, err := client.Auth.RadiusDeleteUser(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -13844,7 +13630,6 @@ func main() {
 
 	resp, err := client.Auth.RadiusListUsers(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -13908,7 +13693,6 @@ func main() {
 		schema.RadiusLoginRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -13974,7 +13758,6 @@ func main() {
 		schema.RadiusLoginWithUsernameRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -14036,7 +13819,6 @@ func main() {
 
 	resp, err := client.Auth.RadiusReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -14097,7 +13879,6 @@ func main() {
 	resp, err := client.Auth.RadiusReadUser(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -14164,7 +13945,6 @@ func main() {
 		schema.RadiusWriteUserRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -14230,7 +14010,6 @@ func main() {
 		schema.TokenCreateRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14291,7 +14070,6 @@ func main() {
 		schema.TokenCreateAgainstRoleRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14355,7 +14133,6 @@ func main() {
 		schema.TokenCreateOrphanRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14412,7 +14189,6 @@ func main() {
 	resp, err := client.Auth.TokenDeleteRole(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14471,7 +14247,6 @@ func main() {
 
 	resp, err := client.Auth.TokenListAccessors(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14526,7 +14301,6 @@ func main() {
 
 	resp, err := client.Auth.TokenListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14585,7 +14359,6 @@ func main() {
 		schema.TokenLookUpRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14644,7 +14417,6 @@ func main() {
 		schema.TokenLookUpAccessorRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14699,7 +14471,6 @@ func main() {
 
 	resp, err := client.Auth.TokenLookUpSelf(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14753,7 +14524,6 @@ func main() {
 	resp, err := client.Auth.TokenReadRole(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14816,7 +14586,6 @@ func main() {
 		schema.TokenRenewRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14875,7 +14644,6 @@ func main() {
 		schema.TokenRenewAccessorRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14934,7 +14702,6 @@ func main() {
 		schema.TokenRenewSelfRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14993,7 +14760,6 @@ func main() {
 		schema.TokenRevokeRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15052,7 +14818,6 @@ func main() {
 		schema.TokenRevokeAccessorRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15111,7 +14876,6 @@ func main() {
 		schema.TokenRevokeOrphanRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15166,7 +14930,6 @@ func main() {
 
 	resp, err := client.Auth.TokenRevokeSelf(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15218,7 +14981,6 @@ func main() {
 
 	resp, err := client.Auth.TokenTidy(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15276,7 +15038,6 @@ func main() {
 		schema.TokenWriteRoleRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15338,7 +15099,6 @@ func main() {
 	resp, err := client.Auth.UserpassDeleteUser(
 		context.Background(),
 		username,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {
@@ -15399,7 +15159,6 @@ func main() {
 
 	resp, err := client.Auth.UserpassListUsers(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {
@@ -15465,7 +15224,6 @@ func main() {
 		schema.UserpassLoginRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {
@@ -15529,7 +15287,6 @@ func main() {
 	resp, err := client.Auth.UserpassReadUser(
 		context.Background(),
 		username,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {
@@ -15596,7 +15353,6 @@ func main() {
 		schema.UserpassResetPasswordRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {
@@ -15664,7 +15420,6 @@ func main() {
 		schema.UserpassUpdatePoliciesRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {
@@ -15732,7 +15487,6 @@ func main() {
 		schema.UserpassWriteUserRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {

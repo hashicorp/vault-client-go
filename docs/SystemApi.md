@@ -197,7 +197,6 @@ func main() {
 		schema.AuditingCalculateHashRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -259,7 +258,6 @@ func main() {
 	resp, err := client.System.AuditingDisableDevice(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -320,7 +318,6 @@ func main() {
 	resp, err := client.System.AuditingDisableRequestHeader(
 		context.Background(),
 		header,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -385,7 +382,6 @@ func main() {
 		schema.AuditingEnableDeviceRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -451,7 +447,6 @@ func main() {
 		schema.AuditingEnableRequestHeaderRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -511,7 +506,6 @@ func main() {
 
 	resp, err := client.System.AuditingListEnabledDevices(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -563,7 +557,6 @@ func main() {
 
 	resp, err := client.System.AuditingListRequestHeaders(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -617,7 +610,6 @@ func main() {
 	resp, err := client.System.AuditingReadRequestHeaderInformation(
 		context.Background(),
 		header,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -678,7 +670,6 @@ func main() {
 	resp, err := client.System.AuthDisableMethod(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -747,7 +738,6 @@ func main() {
 		schema.AuthEnableMethodRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -807,7 +797,6 @@ func main() {
 
 	resp, err := client.System.AuthListEnabledMethods(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -861,7 +850,6 @@ func main() {
 	resp, err := client.System.AuthReadConfiguration(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -924,7 +912,6 @@ func main() {
 	resp, err := client.System.AuthReadTuningInformation(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -991,7 +978,6 @@ func main() {
 		schema.AuthTuneConfigurationParametersRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1055,7 +1041,6 @@ func main() {
 
 	resp, err := client.System.CollectHostInformation(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1111,7 +1096,6 @@ func main() {
 
 	resp, err := client.System.CollectInFlightRequestInformation(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1167,7 +1151,6 @@ func main() {
 		schema.CorsConfigureRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1222,7 +1205,6 @@ func main() {
 
 	resp, err := client.System.CorsDeleteConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1274,7 +1256,6 @@ func main() {
 
 	resp, err := client.System.CorsReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1330,7 +1311,6 @@ func main() {
 		schema.DecodeRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1389,7 +1369,6 @@ func main() {
 		schema.EncryptionKeyConfigureRotationRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1444,7 +1423,6 @@ func main() {
 
 	resp, err := client.System.EncryptionKeyReadRotationConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1496,7 +1474,6 @@ func main() {
 
 	resp, err := client.System.EncryptionKeyRotate(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1548,7 +1525,6 @@ func main() {
 
 	resp, err := client.System.EncryptionKeyStatus(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1604,7 +1580,6 @@ func main() {
 		schema.GenerateHashRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1665,7 +1640,6 @@ func main() {
 		schema.GenerateHashWithAlgorithmRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1729,7 +1703,6 @@ func main() {
 		schema.GenerateRandomRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1790,7 +1763,6 @@ func main() {
 		schema.GenerateRandomWithBytesRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1856,7 +1828,6 @@ func main() {
 		schema.GenerateRandomWithSourceRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1924,7 +1895,6 @@ func main() {
 		schema.GenerateRandomWithSourceAndBytesRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1986,7 +1956,6 @@ func main() {
 
 	resp, err := client.System.HaStatus(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2044,7 +2013,6 @@ func main() {
 		schema.InitializeRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2103,7 +2071,6 @@ func main() {
 		schema.InternalClientActivityConfigureRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2158,7 +2125,6 @@ func main() {
 
 	resp, err := client.System.InternalClientActivityExport(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2210,7 +2176,6 @@ func main() {
 
 	resp, err := client.System.InternalClientActivityReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2262,7 +2227,6 @@ func main() {
 
 	resp, err := client.System.InternalClientActivityReportCounts(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2314,7 +2278,6 @@ func main() {
 
 	resp, err := client.System.InternalClientActivityReportCountsThisMonth(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2366,7 +2329,6 @@ func main() {
 
 	resp, err := client.System.InternalCountEntities(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2418,7 +2380,6 @@ func main() {
 
 	resp, err := client.System.InternalCountRequests(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2470,7 +2431,6 @@ func main() {
 
 	resp, err := client.System.InternalCountTokens(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2526,7 +2486,6 @@ func main() {
 		context.Background(),
 		context,
 		genericMountPaths,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2586,7 +2545,6 @@ func main() {
 		schema.InternalGenerateOpenApiDocumentWithParametersRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2643,7 +2601,6 @@ func main() {
 	resp, err := client.System.InternalInspectRouter(
 		context.Background(),
 		tag,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2702,7 +2659,6 @@ func main() {
 
 	resp, err := client.System.InternalUiListEnabledFeatureFlags(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2754,7 +2710,6 @@ func main() {
 
 	resp, err := client.System.InternalUiListEnabledVisibleMounts(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2806,7 +2761,6 @@ func main() {
 
 	resp, err := client.System.InternalUiListNamespaces(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2860,7 +2814,6 @@ func main() {
 	resp, err := client.System.InternalUiReadMountInformation(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2919,7 +2872,6 @@ func main() {
 
 	resp, err := client.System.InternalUiReadResultantAcl(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2971,7 +2923,6 @@ func main() {
 
 	resp, err := client.System.LeaderStatus(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3023,7 +2974,6 @@ func main() {
 
 	resp, err := client.System.LeasesCount(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3081,7 +3031,6 @@ func main() {
 	resp, err := client.System.LeasesForceRevokeLeaseWithPrefix(
 		context.Background(),
 		prefix,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3140,7 +3089,6 @@ func main() {
 
 	resp, err := client.System.LeasesList(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3194,7 +3142,6 @@ func main() {
 	resp, err := client.System.LeasesLookUp(
 		context.Background(),
 		prefix,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3258,7 +3205,6 @@ func main() {
 		schema.LeasesReadLeaseRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3317,7 +3263,6 @@ func main() {
 		schema.LeasesRenewLeaseRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3378,7 +3323,6 @@ func main() {
 		schema.LeasesRenewLeaseWithIdRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3442,7 +3386,6 @@ func main() {
 		schema.LeasesRevokeLeaseRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3503,7 +3446,6 @@ func main() {
 		schema.LeasesRevokeLeaseWithIdRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3569,7 +3511,6 @@ func main() {
 		schema.LeasesRevokeLeaseWithPrefixRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3629,7 +3570,6 @@ func main() {
 
 	resp, err := client.System.LeasesTidy(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3681,7 +3621,6 @@ func main() {
 
 	resp, err := client.System.ListExperimentalFeatures(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3733,7 +3672,6 @@ func main() {
 
 	resp, err := client.System.LockedUsersList(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3789,7 +3727,6 @@ func main() {
 		context.Background(),
 		aliasIdentifier,
 		mountAccessor,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3850,7 +3787,6 @@ func main() {
 
 	resp, err := client.System.LoggersReadVerbosityLevel(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3904,7 +3840,6 @@ func main() {
 	resp, err := client.System.LoggersReadVerbosityLevelFor(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3963,7 +3898,6 @@ func main() {
 
 	resp, err := client.System.LoggersRevertVerbosityLevel(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4017,7 +3951,6 @@ func main() {
 	resp, err := client.System.LoggersRevertVerbosityLevelFor(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4080,7 +4013,6 @@ func main() {
 		schema.LoggersUpdateVerbosityLevelRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4141,7 +4073,6 @@ func main() {
 		schema.LoggersUpdateVerbosityLevelForRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4203,7 +4134,6 @@ func main() {
 	resp, err := client.System.Metrics(
 		context.Background(),
 		format,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4262,7 +4192,6 @@ func main() {
 		schema.MfaValidateRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4321,7 +4250,6 @@ func main() {
 		context.Background(),
 		logFormat,
 		logLevel,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4379,7 +4307,6 @@ func main() {
 	resp, err := client.System.MountsDisableSecretsEngine(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4444,7 +4371,6 @@ func main() {
 		schema.MountsEnableSecretsEngineRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4504,7 +4430,6 @@ func main() {
 
 	resp, err := client.System.MountsListSecretsEngines(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4558,7 +4483,6 @@ func main() {
 	resp, err := client.System.MountsReadConfiguration(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4619,7 +4543,6 @@ func main() {
 	resp, err := client.System.MountsReadTuningInformation(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4684,7 +4607,6 @@ func main() {
 		schema.MountsTuneConfigurationParametersRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4744,7 +4666,6 @@ func main() {
 
 	resp, err := client.System.PluginsCatalogListPlugins(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4798,7 +4719,6 @@ func main() {
 	resp, err := client.System.PluginsCatalogListPluginsWithType(
 		context.Background(),
 		type_,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4860,7 +4780,6 @@ func main() {
 	resp, err := client.System.PluginsCatalogReadPluginConfiguration(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4923,7 +4842,6 @@ func main() {
 		context.Background(),
 		name,
 		type_,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4990,7 +4908,6 @@ func main() {
 		schema.PluginsCatalogRegisterPluginRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5058,7 +4975,6 @@ func main() {
 		schema.PluginsCatalogRegisterPluginWithTypeRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5122,7 +5038,6 @@ func main() {
 	resp, err := client.System.PluginsCatalogRemovePlugin(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5185,7 +5100,6 @@ func main() {
 		context.Background(),
 		name,
 		type_,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5252,7 +5166,6 @@ func main() {
 		schema.PluginsReloadBackendsRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5307,7 +5220,6 @@ func main() {
 
 	resp, err := client.System.PluginsRuntimesCatalogListPluginsRuntimes(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5366,7 +5278,6 @@ func main() {
 		context.Background(),
 		name,
 		type_,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5435,7 +5346,6 @@ func main() {
 		schema.PluginsRuntimesCatalogRegisterPluginRuntimeRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5501,7 +5411,6 @@ func main() {
 		context.Background(),
 		name,
 		type_,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5564,7 +5473,6 @@ func main() {
 	resp, err := client.System.PoliciesDeleteAclPolicy(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5625,7 +5533,6 @@ func main() {
 	resp, err := client.System.PoliciesDeletePasswordPolicy(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5686,7 +5593,6 @@ func main() {
 	resp, err := client.System.PoliciesGeneratePasswordFromPasswordPolicy(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5745,7 +5651,6 @@ func main() {
 
 	resp, err := client.System.PoliciesListAclPolicies(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5800,7 +5705,6 @@ func main() {
 
 	resp, err := client.System.PoliciesListPasswordPolicies(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5857,7 +5761,6 @@ func main() {
 	resp, err := client.System.PoliciesReadAclPolicy(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5918,7 +5821,6 @@ func main() {
 	resp, err := client.System.PoliciesReadPasswordPolicy(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5983,7 +5885,6 @@ func main() {
 		schema.PoliciesWriteAclPolicyRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6049,7 +5950,6 @@ func main() {
 		schema.PoliciesWritePasswordPolicyRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6111,7 +6011,6 @@ func main() {
 
 	resp, err := client.System.PprofBlocking(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6165,7 +6064,6 @@ func main() {
 
 	resp, err := client.System.PprofCommandLine(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6219,7 +6117,6 @@ func main() {
 
 	resp, err := client.System.PprofCpuProfile(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6273,7 +6170,6 @@ func main() {
 
 	resp, err := client.System.PprofExecutionTrace(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6327,7 +6223,6 @@ func main() {
 
 	resp, err := client.System.PprofGoroutines(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6383,7 +6278,6 @@ func main() {
 
 	resp, err := client.System.PprofIndex(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6437,7 +6331,6 @@ func main() {
 
 	resp, err := client.System.PprofMemoryAllocations(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6491,7 +6384,6 @@ func main() {
 
 	resp, err := client.System.PprofMemoryAllocationsLive(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6545,7 +6437,6 @@ func main() {
 
 	resp, err := client.System.PprofMutexes(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6599,7 +6490,6 @@ func main() {
 
 	resp, err := client.System.PprofSymbols(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6653,7 +6543,6 @@ func main() {
 
 	resp, err := client.System.PprofThreadCreations(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6709,7 +6598,6 @@ func main() {
 		schema.QueryTokenAccessorCapabilitiesRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6768,7 +6656,6 @@ func main() {
 		schema.QueryTokenCapabilitiesRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6827,7 +6714,6 @@ func main() {
 		schema.QueryTokenSelfCapabilitiesRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6886,7 +6772,6 @@ func main() {
 		schema.RateLimitQuotasConfigureRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6943,7 +6828,6 @@ func main() {
 	resp, err := client.System.RateLimitQuotasDelete(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7002,7 +6886,6 @@ func main() {
 
 	resp, err := client.System.RateLimitQuotasList(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7059,7 +6942,6 @@ func main() {
 	resp, err := client.System.RateLimitQuotasRead(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7118,7 +7000,6 @@ func main() {
 
 	resp, err := client.System.RateLimitQuotasReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7176,7 +7057,6 @@ func main() {
 		schema.RateLimitQuotasWriteRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7238,7 +7118,6 @@ func main() {
 	resp, err := client.System.RawDelete(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7299,7 +7178,6 @@ func main() {
 	resp, err := client.System.RawList(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7361,7 +7239,6 @@ func main() {
 	resp, err := client.System.RawRead(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7426,7 +7303,6 @@ func main() {
 		schema.RawWriteRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7486,7 +7362,6 @@ func main() {
 
 	resp, err := client.System.ReadHealthStatus(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7538,7 +7413,6 @@ func main() {
 
 	resp, err := client.System.ReadInitializationStatus(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7590,7 +7464,6 @@ func main() {
 
 	resp, err := client.System.ReadReplicationStatus(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7644,7 +7517,6 @@ func main() {
 
 	resp, err := client.System.ReadSanitizedConfigurationState(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7700,7 +7572,6 @@ func main() {
 		schema.ReadWrappingPropertiesRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7757,7 +7628,6 @@ func main() {
 
 	resp, err := client.System.RekeyAttemptCancel(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7815,7 +7685,6 @@ func main() {
 		schema.RekeyAttemptInitializeRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7870,7 +7739,6 @@ func main() {
 
 	resp, err := client.System.RekeyAttemptReadProgress(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7926,7 +7794,6 @@ func main() {
 		schema.RekeyAttemptUpdateRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7981,7 +7848,6 @@ func main() {
 
 	resp, err := client.System.RekeyDeleteBackupKey(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8033,7 +7899,6 @@ func main() {
 
 	resp, err := client.System.RekeyDeleteBackupRecoveryKey(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8085,7 +7950,6 @@ func main() {
 
 	resp, err := client.System.RekeyReadBackupKey(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8137,7 +8001,6 @@ func main() {
 
 	resp, err := client.System.RekeyReadBackupRecoveryKey(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8191,7 +8054,6 @@ func main() {
 
 	resp, err := client.System.RekeyVerificationCancel(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8243,7 +8105,6 @@ func main() {
 
 	resp, err := client.System.RekeyVerificationReadProgress(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8299,7 +8160,6 @@ func main() {
 		schema.RekeyVerificationUpdateRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8356,7 +8216,6 @@ func main() {
 	resp, err := client.System.ReloadSubsystem(
 		context.Background(),
 		subsystem,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8419,7 +8278,6 @@ func main() {
 		schema.RemountRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8476,7 +8334,6 @@ func main() {
 	resp, err := client.System.RemountStatus(
 		context.Background(),
 		migrationId,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8539,7 +8396,6 @@ func main() {
 		schema.RewrapRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8594,7 +8450,6 @@ func main() {
 
 	resp, err := client.System.RootTokenGenerationCancel(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8652,7 +8507,6 @@ func main() {
 		schema.RootTokenGenerationInitializeRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8707,7 +8561,6 @@ func main() {
 
 	resp, err := client.System.RootTokenGenerationReadProgress(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8765,7 +8618,6 @@ func main() {
 		schema.RootTokenGenerationUpdateRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8820,7 +8672,6 @@ func main() {
 
 	resp, err := client.System.Seal(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8872,7 +8723,6 @@ func main() {
 
 	resp, err := client.System.SealStatus(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8926,7 +8776,6 @@ func main() {
 
 	resp, err := client.System.StepDownLeader(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8984,7 +8833,6 @@ func main() {
 		schema.UiHeadersConfigureRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9046,7 +8894,6 @@ func main() {
 	resp, err := client.System.UiHeadersDeleteConfiguration(
 		context.Background(),
 		header,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9105,7 +8952,6 @@ func main() {
 
 	resp, err := client.System.UiHeadersList(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9162,7 +9008,6 @@ func main() {
 	resp, err := client.System.UiHeadersReadConfiguration(
 		context.Background(),
 		header,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9225,7 +9070,6 @@ func main() {
 		schema.UnsealRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9284,7 +9128,6 @@ func main() {
 		schema.UnwrapRequest{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9339,7 +9182,6 @@ func main() {
 
 	resp, err := client.System.VersionHistory(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9397,7 +9239,6 @@ func main() {
 		map[string]interface{}{
             // populate request parameters
         },
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)

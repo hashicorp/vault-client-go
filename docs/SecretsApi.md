@@ -423,7 +423,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.AliCloudConfigure(
 		context.Background(),
@@ -485,7 +485,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.AliCloudDeleteConfiguration(
 		context.Background(),
@@ -543,7 +543,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the role.
 	resp, err := client.Secrets.AliCloudDeleteRole(
@@ -605,7 +605,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the role.
 	resp, err := client.Secrets.AliCloudGenerateCredentials(
@@ -667,7 +667,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.AliCloudListRoles(
 		context.Background(),
@@ -726,7 +726,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.AliCloudReadConfiguration(
 		context.Background(),
@@ -784,7 +784,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the role.
 	resp, err := client.Secrets.AliCloudReadRole(
@@ -847,7 +847,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the role.
 	resp, err := client.Secrets.AliCloudWriteRole(
@@ -914,7 +914,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.AwsConfigureLease(
 		context.Background(),
@@ -977,7 +977,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.AwsConfigureRootIamCredentials(
 		context.Background(),
@@ -1039,7 +1039,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.AwsDeleteRole(
@@ -1101,7 +1101,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of this role.
 	resp, err := client.Secrets.AwsDeleteStaticRolesName(
@@ -1163,7 +1163,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	roleArn := "roleArn_example" // string | ARN of role to assume when credential_type is assumed_role
@@ -1235,7 +1235,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.AwsGenerateCredentialsWithParameters(
@@ -1301,7 +1301,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	roleArn := "roleArn_example" // string | ARN of role to assume when credential_type is assumed_role
@@ -1373,7 +1373,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.AwsGenerateStsCredentialsWithParameters(
@@ -1439,7 +1439,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.AwsListRoles(
 		context.Background(),
@@ -1498,7 +1498,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.AwsReadLeaseConfiguration(
 		context.Background(),
@@ -1556,7 +1556,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.AwsReadRole(
@@ -1618,7 +1618,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.AwsReadRootIamCredentialsConfiguration(
 		context.Background(),
@@ -1676,7 +1676,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of this role.
 	resp, err := client.Secrets.AwsReadStaticCredsName(
@@ -1738,7 +1738,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of this role.
 	resp, err := client.Secrets.AwsReadStaticRolesName(
@@ -1800,7 +1800,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.AwsRotateRootIamCredentials(
 		context.Background(),
@@ -1859,7 +1859,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.AwsWriteRole(
@@ -1926,7 +1926,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of this role.
 	resp, err := client.Secrets.AwsWriteStaticRolesName(
@@ -1993,7 +1993,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.AzureConfigure(
 		context.Background(),
@@ -2055,7 +2055,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.AzureDeleteConfiguration(
 		context.Background(),
@@ -2113,7 +2113,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.AzureDeleteRole(
@@ -2175,7 +2175,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.AzureListRoles(
 		context.Background(),
@@ -2234,7 +2234,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.AzureReadConfiguration(
 		context.Background(),
@@ -2292,7 +2292,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.AzureReadRole(
@@ -2354,7 +2354,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | Name of the Vault role
 	resp, err := client.Secrets.AzureRequestServicePrincipalCredentials(
@@ -2416,7 +2416,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.AzureRotateRoot(
 		context.Background(),
@@ -2475,7 +2475,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.AzureWriteRole(
@@ -2542,7 +2542,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.ConsulConfigureAccess(
 		context.Background(),
@@ -2604,7 +2604,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.ConsulDeleteRole(
@@ -2666,7 +2666,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | Name of the role.
 	resp, err := client.Secrets.ConsulGenerateCredentials(
@@ -2728,7 +2728,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.ConsulListRoles(
 		context.Background(),
@@ -2787,7 +2787,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.ConsulReadAccessConfiguration(
 		context.Background(),
@@ -2845,7 +2845,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.ConsulReadRole(
@@ -2908,7 +2908,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.ConsulWriteRole(
@@ -2974,7 +2974,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | Specifies the path of the secret.
 	resp, err := client.Secrets.CubbyholeDelete(
@@ -3036,7 +3036,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | Specifies the path of the secret.
 	resp, err := client.Secrets.CubbyholeList(
@@ -3097,7 +3097,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | Specifies the path of the secret.
 	resp, err := client.Secrets.CubbyholeRead(
@@ -3157,7 +3157,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | Specifies the path of the secret.
 	resp, err := client.Secrets.CubbyholeWrite(
@@ -3222,7 +3222,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of this database connection
 	resp, err := client.Secrets.DatabaseConfigureConnection(
@@ -3288,7 +3288,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of this database connection
 	resp, err := client.Secrets.DatabaseDeleteConnectionConfiguration(
@@ -3350,7 +3350,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.DatabaseDeleteRole(
@@ -3412,7 +3412,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.DatabaseDeleteStaticRole(
@@ -3474,7 +3474,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.DatabaseGenerateCredentials(
@@ -3536,7 +3536,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.DatabaseListConnections(
 		context.Background(),
@@ -3595,7 +3595,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.DatabaseListRoles(
 		context.Background(),
@@ -3654,7 +3654,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.DatabaseListStaticRoles(
 		context.Background(),
@@ -3713,7 +3713,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of this database connection
 	resp, err := client.Secrets.DatabaseReadConnectionConfiguration(
@@ -3775,7 +3775,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.DatabaseReadRole(
@@ -3837,7 +3837,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.DatabaseReadStaticRole(
@@ -3899,7 +3899,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the static role.
 	resp, err := client.Secrets.DatabaseReadStaticRoleCredentials(
@@ -3961,7 +3961,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of this database connection
 	resp, err := client.Secrets.DatabaseResetConnection(
@@ -4023,7 +4023,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of this database connection
 	resp, err := client.Secrets.DatabaseRotateRootCredentials(
@@ -4085,7 +4085,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the static role
 	resp, err := client.Secrets.DatabaseRotateStaticRoleCredentials(
@@ -4148,7 +4148,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.DatabaseWriteRole(
@@ -4215,7 +4215,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.DatabaseWriteStaticRole(
@@ -4282,7 +4282,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.GoogleCloudConfigure(
 		context.Background(),
@@ -4344,7 +4344,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Required. Name to refer to this impersonated account in Vault. Cannot be updated.
 	resp, err := client.Secrets.GoogleCloudDeleteImpersonatedAccount(
@@ -4406,7 +4406,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Required. Name of the role.
 	resp, err := client.Secrets.GoogleCloudDeleteRoleset(
@@ -4468,7 +4468,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
 	resp, err := client.Secrets.GoogleCloudDeleteStaticAccount(
@@ -4530,7 +4530,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Required. Name of the impersonated account.
 	resp, err := client.Secrets.GoogleCloudGenerateImpersonatedAccountAccessToken(
@@ -4592,7 +4592,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
 	resp, err := client.Secrets.GoogleCloudGenerateRolesetAccessToken(
@@ -4655,7 +4655,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
 	resp, err := client.Secrets.GoogleCloudGenerateRolesetKey(
@@ -4721,7 +4721,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Required. Name of the static account.
 	resp, err := client.Secrets.GoogleCloudGenerateStaticAccountAccessToken(
@@ -4784,7 +4784,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Required. Name of the static account.
 	resp, err := client.Secrets.GoogleCloudGenerateStaticAccountKey(
@@ -4851,7 +4851,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.GoogleCloudKmsConfigure(
 		context.Background(),
@@ -4914,7 +4914,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	key := "key_example" // string | Name of the key in Vault.
 	resp, err := client.Secrets.GoogleCloudKmsConfigureKey(
@@ -4981,7 +4981,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	key := "key_example" // string | Name of the key in Vault to use for decryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
 	resp, err := client.Secrets.GoogleCloudKmsDecrypt(
@@ -5047,7 +5047,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.GoogleCloudKmsDeleteConfiguration(
 		context.Background(),
@@ -5105,7 +5105,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	key := "key_example" // string | Name of the key in Vault.
 	resp, err := client.Secrets.GoogleCloudKmsDeleteKey(
@@ -5167,7 +5167,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	key := "key_example" // string | Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
 	resp, err := client.Secrets.GoogleCloudKmsDeregisterKey(
@@ -5230,7 +5230,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	key := "key_example" // string | Name of the key in Vault to use for encryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
 	resp, err := client.Secrets.GoogleCloudKmsEncrypt(
@@ -5296,7 +5296,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.GoogleCloudKmsListKeys(
 		context.Background(),
@@ -5355,7 +5355,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.GoogleCloudKmsReadConfiguration(
 		context.Background(),
@@ -5413,7 +5413,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	key := "key_example" // string | Name of the key in Vault.
 	resp, err := client.Secrets.GoogleCloudKmsReadKey(
@@ -5475,7 +5475,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	key := "key_example" // string | Name of the key in Vault.
 	resp, err := client.Secrets.GoogleCloudKmsReadKeyConfiguration(
@@ -5538,7 +5538,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	key := "key_example" // string | Name of the key to use for encryption. This key must already exist in Vault and Google Cloud KMS.
 	resp, err := client.Secrets.GoogleCloudKmsReencrypt(
@@ -5605,7 +5605,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	key := "key_example" // string | Name of the key to register in Vault. This will be the named used to refer to the underlying crypto key when encrypting or decrypting data.
 	resp, err := client.Secrets.GoogleCloudKmsRegisterKey(
@@ -5671,7 +5671,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	key := "key_example" // string | Name of the key for which to get the public key. This key must already exist in Vault and Google Cloud KMS.
 	resp, err := client.Secrets.GoogleCloudKmsRetrievePublicKey(
@@ -5733,7 +5733,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	key := "key_example" // string | Name of the key to rotate. This key must already be registered with Vault and point to a valid Google Cloud KMS crypto key.
 	resp, err := client.Secrets.GoogleCloudKmsRotateKey(
@@ -5796,7 +5796,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	key := "key_example" // string | Name of the key in Vault to use for signing. This key must already exist in Vault and must map back to a Google Cloud KMS key.
 	resp, err := client.Secrets.GoogleCloudKmsSign(
@@ -5862,7 +5862,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	key := "key_example" // string | Name of the key in Vault.
 	resp, err := client.Secrets.GoogleCloudKmsTrimKeyVersions(
@@ -5925,7 +5925,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	key := "key_example" // string | Name of the key in Vault to use for verification. This key must already exist in Vault and must map back to a Google Cloud KMS key.
 	resp, err := client.Secrets.GoogleCloudKmsVerify(
@@ -5992,7 +5992,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	key := "key_example" // string | Name of the key in Vault.
 	resp, err := client.Secrets.GoogleCloudKmsWriteKey(
@@ -6058,7 +6058,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.GoogleCloudListImpersonatedAccounts(
 		context.Background(),
@@ -6117,7 +6117,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.GoogleCloudListRolesets(
 		context.Background(),
@@ -6176,7 +6176,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.GoogleCloudListStaticAccounts(
 		context.Background(),
@@ -6235,7 +6235,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.GoogleCloudReadConfiguration(
 		context.Background(),
@@ -6293,7 +6293,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Required. Name to refer to this impersonated account in Vault. Cannot be updated.
 	resp, err := client.Secrets.GoogleCloudReadImpersonatedAccount(
@@ -6355,7 +6355,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Required. Name of the role.
 	resp, err := client.Secrets.GoogleCloudReadRoleset(
@@ -6417,7 +6417,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
 	resp, err := client.Secrets.GoogleCloudReadStaticAccount(
@@ -6479,7 +6479,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.GoogleCloudRotateRoleset(
@@ -6541,7 +6541,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.GoogleCloudRotateRolesetKey(
@@ -6603,7 +6603,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.GoogleCloudRotateRootCredentials(
 		context.Background(),
@@ -6661,7 +6661,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the account.
 	resp, err := client.Secrets.GoogleCloudRotateStaticAccountKey(
@@ -6724,7 +6724,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Required. Name to refer to this impersonated account in Vault. Cannot be updated.
 	resp, err := client.Secrets.GoogleCloudWriteImpersonatedAccount(
@@ -6791,7 +6791,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Required. Name of the role.
 	resp, err := client.Secrets.GoogleCloudWriteRoleset(
@@ -6858,7 +6858,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
 	resp, err := client.Secrets.GoogleCloudWriteStaticAccount(
@@ -6924,7 +6924,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.KubernetesCheckConfiguration(
 		context.Background(),
@@ -6983,7 +6983,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.KubernetesConfigure(
 		context.Background(),
@@ -7045,7 +7045,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.KubernetesDeleteConfiguration(
 		context.Background(),
@@ -7103,7 +7103,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.KubernetesDeleteRole(
@@ -7166,7 +7166,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the Vault role
 	resp, err := client.Secrets.KubernetesGenerateCredentials(
@@ -7232,7 +7232,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.KubernetesListRoles(
 		context.Background(),
@@ -7291,7 +7291,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.KubernetesReadConfiguration(
 		context.Background(),
@@ -7349,7 +7349,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.KubernetesReadRole(
@@ -7412,7 +7412,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.KubernetesWriteRole(
@@ -7478,7 +7478,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV1Delete(
@@ -7540,7 +7540,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV1List(
@@ -7603,7 +7603,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV1Read(
@@ -7665,7 +7665,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV1Write(
@@ -7732,7 +7732,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.KvV2Configure(
 		context.Background(),
@@ -7794,7 +7794,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV2Delete(
@@ -7856,7 +7856,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV2DeleteMetadataAndAllVersions(
@@ -7919,7 +7919,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV2DeleteVersions(
@@ -7986,7 +7986,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV2DestroyVersions(
@@ -8052,7 +8052,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV2List(
@@ -8115,7 +8115,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV2Read(
@@ -8177,7 +8177,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.KvV2ReadConfiguration(
 		context.Background(),
@@ -8235,7 +8235,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV2ReadMetadata(
@@ -8297,7 +8297,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV2ReadSubkeys(
@@ -8360,7 +8360,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV2UndeleteVersions(
@@ -8427,7 +8427,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV2Write(
@@ -8494,7 +8494,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV2WriteMetadata(
@@ -8561,7 +8561,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.LdapConfigure(
 		context.Background(),
@@ -8623,7 +8623,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.LdapDeleteConfiguration(
 		context.Background(),
@@ -8681,7 +8681,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role (lowercase)
 	resp, err := client.Secrets.LdapDeleteDynamicRole(
@@ -8743,7 +8743,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.LdapDeleteStaticRole(
@@ -8806,7 +8806,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the set.
 	resp, err := client.Secrets.LdapLibraryCheckIn(
@@ -8873,7 +8873,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the set
 	resp, err := client.Secrets.LdapLibraryCheckOut(
@@ -8939,7 +8939,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the set.
 	resp, err := client.Secrets.LdapLibraryCheckStatus(
@@ -9002,7 +9002,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the set.
 	resp, err := client.Secrets.LdapLibraryConfigure(
@@ -9068,7 +9068,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the set.
 	resp, err := client.Secrets.LdapLibraryDelete(
@@ -9131,7 +9131,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the set.
 	resp, err := client.Secrets.LdapLibraryForceCheckIn(
@@ -9197,7 +9197,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.LdapLibraryList(
 		context.Background(),
@@ -9256,7 +9256,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the set.
 	resp, err := client.Secrets.LdapLibraryRead(
@@ -9318,7 +9318,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.LdapListDynamicRoles(
 		context.Background(),
@@ -9377,7 +9377,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.LdapListStaticRoles(
 		context.Background(),
@@ -9436,7 +9436,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.LdapReadConfiguration(
 		context.Background(),
@@ -9494,7 +9494,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role (lowercase)
 	resp, err := client.Secrets.LdapReadDynamicRole(
@@ -9556,7 +9556,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.LdapReadStaticRole(
@@ -9618,7 +9618,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the dynamic role.
 	resp, err := client.Secrets.LdapRequestDynamicRoleCredentials(
@@ -9680,7 +9680,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the static role.
 	resp, err := client.Secrets.LdapRequestStaticRoleCredentials(
@@ -9742,7 +9742,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.LdapRotateRootCredentials(
 		context.Background(),
@@ -9800,7 +9800,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the static role
 	resp, err := client.Secrets.LdapRotateStaticRole(
@@ -9863,7 +9863,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role (lowercase)
 	resp, err := client.Secrets.LdapWriteDynamicRole(
@@ -9930,7 +9930,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.LdapWriteStaticRole(
@@ -9997,7 +9997,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.MongoDbAtlasConfigure(
 		context.Background(),
@@ -10059,7 +10059,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the Roles
 	resp, err := client.Secrets.MongoDbAtlasDeleteRole(
@@ -10121,7 +10121,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.MongoDbAtlasGenerateCredentials(
@@ -10183,7 +10183,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.MongoDbAtlasListRoles(
 		context.Background(),
@@ -10242,7 +10242,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.MongoDbAtlasReadConfiguration(
 		context.Background(),
@@ -10300,7 +10300,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the Roles
 	resp, err := client.Secrets.MongoDbAtlasReadRole(
@@ -10363,7 +10363,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the Roles
 	resp, err := client.Secrets.MongoDbAtlasWriteRole(
@@ -10430,7 +10430,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.NomadConfigureAccess(
 		context.Background(),
@@ -10493,7 +10493,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.NomadConfigureLease(
 		context.Background(),
@@ -10555,7 +10555,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.NomadDeleteAccessConfiguration(
 		context.Background(),
@@ -10613,7 +10613,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.NomadDeleteLeaseConfiguration(
 		context.Background(),
@@ -10671,7 +10671,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.NomadDeleteRole(
@@ -10733,7 +10733,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.NomadGenerateCredentials(
@@ -10795,7 +10795,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.NomadListRoles(
 		context.Background(),
@@ -10854,7 +10854,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.NomadReadAccessConfiguration(
 		context.Background(),
@@ -10912,7 +10912,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.NomadReadLeaseConfiguration(
 		context.Background(),
@@ -10970,7 +10970,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.NomadReadRole(
@@ -11033,7 +11033,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.NomadWriteRole(
@@ -11100,7 +11100,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiConfigureAcme(
 		context.Background(),
@@ -11163,7 +11163,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiConfigureAutoTidy(
 		context.Background(),
@@ -11226,7 +11226,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiConfigureCa(
 		context.Background(),
@@ -11289,7 +11289,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiConfigureCluster(
 		context.Background(),
@@ -11352,7 +11352,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiConfigureCrl(
 		context.Background(),
@@ -11415,7 +11415,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiConfigureIssuers(
 		context.Background(),
@@ -11478,7 +11478,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiConfigureKeys(
 		context.Background(),
@@ -11541,7 +11541,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiConfigureUrls(
 		context.Background(),
@@ -11604,7 +11604,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiCrossSignIntermediate(
 		context.Background(),
@@ -11666,7 +11666,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	keyId := "keyId_example" // string | EAB key identifier
 	resp, err := client.Secrets.PkiDeleteEabKey(
@@ -11728,7 +11728,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiDeleteIssuer(
@@ -11790,7 +11790,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
 	resp, err := client.Secrets.PkiDeleteKey(
@@ -11852,7 +11852,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.PkiDeleteRole(
@@ -11914,7 +11914,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiDeleteRoot(
 		context.Background(),
@@ -11972,7 +11972,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiGenerateEabKey(
 		context.Background(),
@@ -12030,7 +12030,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	resp, err := client.Secrets.PkiGenerateEabKeyForIssuer(
@@ -12092,7 +12092,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	role := "role_example" // string | The desired role for the acme request
@@ -12158,7 +12158,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiGenerateEabKeyForRole(
@@ -12221,7 +12221,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiGenerateExportedKey(
 		context.Background(),
@@ -12284,7 +12284,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
 	resp, err := client.Secrets.PkiGenerateIntermediate(
@@ -12351,7 +12351,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiGenerateInternalKey(
 		context.Background(),
@@ -12414,7 +12414,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiGenerateKmsKey(
 		context.Background(),
@@ -12477,7 +12477,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
 	resp, err := client.Secrets.PkiGenerateRoot(
@@ -12544,7 +12544,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiImportKey(
 		context.Background(),
@@ -12607,7 +12607,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | The desired role with configuration for this request
 	resp, err := client.Secrets.PkiIssueWithRole(
@@ -12674,7 +12674,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
@@ -12744,7 +12744,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiIssuerReadCrl(
@@ -12806,7 +12806,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiIssuerReadCrlDelta(
@@ -12868,7 +12868,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiIssuerReadCrlDeltaDer(
@@ -12930,7 +12930,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiIssuerReadCrlDeltaPem(
@@ -12992,7 +12992,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiIssuerReadCrlDer(
@@ -13054,7 +13054,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiIssuerReadCrlPem(
@@ -13117,7 +13117,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiIssuerResignCrls(
@@ -13184,7 +13184,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiIssuerSignIntermediate(
@@ -13251,7 +13251,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiIssuerSignRevocationList(
@@ -13318,7 +13318,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiIssuerSignSelfIssued(
@@ -13385,7 +13385,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiIssuerSignVerbatim(
@@ -13452,7 +13452,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
@@ -13523,7 +13523,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
@@ -13594,7 +13594,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
 	resp, err := client.Secrets.PkiIssuersGenerateIntermediate(
@@ -13661,7 +13661,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
 	resp, err := client.Secrets.PkiIssuersGenerateRoot(
@@ -13728,7 +13728,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiIssuersImportBundle(
 		context.Background(),
@@ -13791,7 +13791,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiIssuersImportCert(
 		context.Background(),
@@ -13853,7 +13853,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiListCerts(
 		context.Background(),
@@ -13912,7 +13912,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiListEabKeys(
 		context.Background(),
@@ -13971,7 +13971,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiListIssuers(
 		context.Background(),
@@ -14030,7 +14030,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiListKeys(
 		context.Background(),
@@ -14089,7 +14089,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiListRevokedCerts(
 		context.Background(),
@@ -14148,7 +14148,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiListRoles(
 		context.Background(),
@@ -14207,7 +14207,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiQueryOcsp(
 		context.Background(),
@@ -14265,7 +14265,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	req := "req_example" // string | base-64 encoded ocsp request
 	resp, err := client.Secrets.PkiQueryOcspWithGetReq(
@@ -14327,7 +14327,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiReadAcmeConfiguration(
 		context.Background(),
@@ -14385,7 +14385,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiReadAcmeDirectory(
 		context.Background(),
@@ -14443,7 +14443,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiReadAcmeNewNonce(
 		context.Background(),
@@ -14501,7 +14501,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiReadAutoTidyConfiguration(
 		context.Background(),
@@ -14559,7 +14559,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiReadCaChainPem(
 		context.Background(),
@@ -14617,7 +14617,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiReadCaDer(
 		context.Background(),
@@ -14675,7 +14675,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiReadCaPem(
 		context.Background(),
@@ -14733,7 +14733,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
 	resp, err := client.Secrets.PkiReadCert(
@@ -14795,7 +14795,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiReadCertCaChain(
 		context.Background(),
@@ -14853,7 +14853,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiReadCertCrl(
 		context.Background(),
@@ -14911,7 +14911,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiReadCertDeltaCrl(
 		context.Background(),
@@ -14969,7 +14969,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
 	resp, err := client.Secrets.PkiReadCertRawDer(
@@ -15031,7 +15031,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
 	resp, err := client.Secrets.PkiReadCertRawPem(
@@ -15093,7 +15093,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiReadClusterConfiguration(
 		context.Background(),
@@ -15151,7 +15151,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiReadCrlConfiguration(
 		context.Background(),
@@ -15209,7 +15209,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiReadCrlDelta(
 		context.Background(),
@@ -15267,7 +15267,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiReadCrlDeltaPem(
 		context.Background(),
@@ -15325,7 +15325,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiReadCrlDer(
 		context.Background(),
@@ -15383,7 +15383,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiReadCrlPem(
 		context.Background(),
@@ -15441,7 +15441,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiReadIssuer(
@@ -15503,7 +15503,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiReadIssuerDer(
@@ -15565,7 +15565,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	resp, err := client.Secrets.PkiReadIssuerIssuerRefAcmeDirectory(
@@ -15627,7 +15627,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	resp, err := client.Secrets.PkiReadIssuerIssuerRefAcmeNewNonce(
@@ -15689,7 +15689,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	role := "role_example" // string | The desired role for the acme request
@@ -15755,7 +15755,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	role := "role_example" // string | The desired role for the acme request
@@ -15821,7 +15821,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiReadIssuerJson(
@@ -15883,7 +15883,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiReadIssuerPem(
@@ -15945,7 +15945,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiReadIssuersConfiguration(
 		context.Background(),
@@ -16003,7 +16003,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
 	resp, err := client.Secrets.PkiReadKey(
@@ -16065,7 +16065,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiReadKeysConfiguration(
 		context.Background(),
@@ -16123,7 +16123,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.PkiReadRole(
@@ -16185,7 +16185,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiReadRolesRoleAcmeDirectory(
@@ -16247,7 +16247,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiReadRolesRoleAcmeNewNonce(
@@ -16309,7 +16309,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiReadUrlsConfiguration(
 		context.Background(),
@@ -16368,7 +16368,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiReplaceRoot(
 		context.Background(),
@@ -16431,7 +16431,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiRevoke(
 		context.Background(),
@@ -16493,7 +16493,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiRevokeIssuer(
@@ -16556,7 +16556,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiRevokeWithKey(
 		context.Background(),
@@ -16619,7 +16619,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiRootSignIntermediate(
 		context.Background(),
@@ -16682,7 +16682,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiRootSignSelfIssued(
 		context.Background(),
@@ -16744,7 +16744,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiRotateCrl(
 		context.Background(),
@@ -16802,7 +16802,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiRotateDeltaCrl(
 		context.Background(),
@@ -16861,7 +16861,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
 	resp, err := client.Secrets.PkiRotateRoot(
@@ -16928,7 +16928,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiSetSignedIntermediate(
 		context.Background(),
@@ -16991,7 +16991,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiSignVerbatim(
 		context.Background(),
@@ -17054,7 +17054,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | The desired role with configuration for this request
 	resp, err := client.Secrets.PkiSignVerbatimWithRole(
@@ -17121,7 +17121,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | The desired role with configuration for this request
 	resp, err := client.Secrets.PkiSignWithRole(
@@ -17188,7 +17188,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiTidy(
 		context.Background(),
@@ -17250,7 +17250,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiTidyCancel(
 		context.Background(),
@@ -17308,7 +17308,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiTidyStatus(
 		context.Background(),
@@ -17367,7 +17367,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	kid := "kid_example" // string | The key identifier provided by the CA
 	resp, err := client.Secrets.PkiWriteAcmeAccountKid(
@@ -17434,7 +17434,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	authId := "authId_example" // string | ACME authorization identifier value
 	resp, err := client.Secrets.PkiWriteAcmeAuthorizationAuthId(
@@ -17501,7 +17501,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	authId := "authId_example" // string | ACME authorization identifier value
 	challengeType := "challengeType_example" // string | ACME challenge type
@@ -17572,7 +17572,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiWriteAcmeNewAccount(
 		context.Background(),
@@ -17635,7 +17635,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiWriteAcmeNewOrder(
 		context.Background(),
@@ -17698,7 +17698,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
 	resp, err := client.Secrets.PkiWriteAcmeOrderOrderId(
@@ -17765,7 +17765,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
 	resp, err := client.Secrets.PkiWriteAcmeOrderOrderIdCert(
@@ -17832,7 +17832,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
 	resp, err := client.Secrets.PkiWriteAcmeOrderOrderIdFinalize(
@@ -17899,7 +17899,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiWriteAcmeOrders(
 		context.Background(),
@@ -17962,7 +17962,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.PkiWriteAcmeRevokeCert(
 		context.Background(),
@@ -18025,7 +18025,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiWriteIssuer(
@@ -18092,7 +18092,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	kid := "kid_example" // string | The key identifier provided by the CA
@@ -18163,7 +18163,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	authId := "authId_example" // string | ACME authorization identifier value
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
@@ -18234,7 +18234,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	authId := "authId_example" // string | ACME authorization identifier value
 	challengeType := "challengeType_example" // string | ACME challenge type
@@ -18309,7 +18309,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeNewAccount(
@@ -18376,7 +18376,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeNewOrder(
@@ -18443,7 +18443,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
@@ -18514,7 +18514,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
@@ -18585,7 +18585,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
@@ -18656,7 +18656,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeOrders(
@@ -18723,7 +18723,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeRevokeCert(
@@ -18790,7 +18790,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	kid := "kid_example" // string | The key identifier provided by the CA
@@ -18865,7 +18865,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	authId := "authId_example" // string | ACME authorization identifier value
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
@@ -18940,7 +18940,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	authId := "authId_example" // string | ACME authorization identifier value
 	challengeType := "challengeType_example" // string | ACME challenge type
@@ -19019,7 +19019,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	role := "role_example" // string | The desired role for the acme request
@@ -19090,7 +19090,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	role := "role_example" // string | The desired role for the acme request
@@ -19161,7 +19161,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
@@ -19236,7 +19236,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
@@ -19311,7 +19311,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
@@ -19386,7 +19386,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	role := "role_example" // string | The desired role for the acme request
@@ -19457,7 +19457,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	role := "role_example" // string | The desired role for the acme request
@@ -19528,7 +19528,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
 	resp, err := client.Secrets.PkiWriteKey(
@@ -19595,7 +19595,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.PkiWriteRole(
@@ -19662,7 +19662,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	kid := "kid_example" // string | The key identifier provided by the CA
 	role := "role_example" // string | The desired role for the acme request
@@ -19733,7 +19733,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	authId := "authId_example" // string | ACME authorization identifier value
 	role := "role_example" // string | The desired role for the acme request
@@ -19804,7 +19804,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	authId := "authId_example" // string | ACME authorization identifier value
 	challengeType := "challengeType_example" // string | ACME challenge type
@@ -19879,7 +19879,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeNewAccount(
@@ -19946,7 +19946,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeNewOrder(
@@ -20013,7 +20013,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
 	role := "role_example" // string | The desired role for the acme request
@@ -20084,7 +20084,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
 	role := "role_example" // string | The desired role for the acme request
@@ -20155,7 +20155,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
 	role := "role_example" // string | The desired role for the acme request
@@ -20226,7 +20226,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeOrders(
@@ -20293,7 +20293,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeRevokeCert(
@@ -20360,7 +20360,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.RabbitMqConfigureConnection(
 		context.Background(),
@@ -20423,7 +20423,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.RabbitMqConfigureLease(
 		context.Background(),
@@ -20485,7 +20485,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.RabbitMqDeleteRole(
@@ -20547,7 +20547,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.RabbitMqListRoles(
 		context.Background(),
@@ -20606,7 +20606,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.RabbitMqReadLeaseConfiguration(
 		context.Background(),
@@ -20664,7 +20664,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.RabbitMqReadRole(
@@ -20726,7 +20726,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.RabbitMqRequestCredentials(
@@ -20789,7 +20789,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.RabbitMqWriteRole(
@@ -20856,7 +20856,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.SshConfigureCa(
 		context.Background(),
@@ -20919,7 +20919,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.SshConfigureZeroAddress(
 		context.Background(),
@@ -20981,7 +20981,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.SshDeleteCaConfiguration(
 		context.Background(),
@@ -21039,7 +21039,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | [Required for all types] Name of the role being created.
 	resp, err := client.Secrets.SshDeleteRole(
@@ -21101,7 +21101,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.SshDeleteZeroAddressConfiguration(
 		context.Background(),
@@ -21160,7 +21160,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | [Required] Name of the role
 	resp, err := client.Secrets.SshGenerateCredentials(
@@ -21227,7 +21227,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | The desired role with configuration for this request.
 	resp, err := client.Secrets.SshIssueCertificate(
@@ -21293,7 +21293,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.SshListRoles(
 		context.Background(),
@@ -21353,7 +21353,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.SshListRolesByIp(
 		context.Background(),
@@ -21415,7 +21415,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.SshReadCaConfiguration(
 		context.Background(),
@@ -21473,7 +21473,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.SshReadPublicKey(
 		context.Background(),
@@ -21531,7 +21531,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | [Required for all types] Name of the role being created.
 	resp, err := client.Secrets.SshReadRole(
@@ -21593,7 +21593,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.SshReadZeroAddressConfiguration(
 		context.Background(),
@@ -21652,7 +21652,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | The desired role with configuration for this request.
 	resp, err := client.Secrets.SshSignCertificate(
@@ -21718,7 +21718,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.SshTidyDynamicHostKeys(
 		context.Background(),
@@ -21777,7 +21777,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.SshVerifyOtp(
 		context.Background(),
@@ -21840,7 +21840,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | [Required for all types] Name of the role being created.
 	resp, err := client.Secrets.SshWriteRole(
@@ -21907,7 +21907,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.TerraformCloudConfigure(
 		context.Background(),
@@ -21969,7 +21969,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.TerraformCloudDeleteConfiguration(
 		context.Background(),
@@ -22027,7 +22027,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.TerraformCloudDeleteRole(
@@ -22089,7 +22089,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.TerraformCloudGenerateCredentials(
@@ -22151,7 +22151,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.TerraformCloudListRoles(
 		context.Background(),
@@ -22210,7 +22210,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.TerraformCloudReadConfiguration(
 		context.Background(),
@@ -22268,7 +22268,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.TerraformCloudReadRole(
@@ -22330,7 +22330,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the team or organization role
 	resp, err := client.Secrets.TerraformCloudRotateRole(
@@ -22393,7 +22393,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.TerraformCloudWriteRole(
@@ -22460,7 +22460,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the key.
 	resp, err := client.Secrets.TotpCreateKey(
@@ -22526,7 +22526,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the key.
 	resp, err := client.Secrets.TotpDeleteKey(
@@ -22588,7 +22588,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the key.
 	resp, err := client.Secrets.TotpGenerateCode(
@@ -22650,7 +22650,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.TotpListKeys(
 		context.Background(),
@@ -22709,7 +22709,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the key.
 	resp, err := client.Secrets.TotpReadKey(
@@ -22772,7 +22772,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the key.
 	resp, err := client.Secrets.TotpValidateCode(
@@ -22838,7 +22838,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the key
 	resp, err := client.Secrets.TransitBackUpKey(
@@ -22900,7 +22900,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	destination := "destination_example" // string | Destination key to export to; usually the public wrapping key of another Transit instance.
 	source := "source_example" // string | Source key to export; could be any present key within Transit.
@@ -22966,7 +22966,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	destination := "destination_example" // string | Destination key to export to; usually the public wrapping key of another Transit instance.
 	source := "source_example" // string | Source key to export; could be any present key within Transit.
@@ -23037,7 +23037,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.TransitConfigureCache(
 		context.Background(),
@@ -23100,7 +23100,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the key
 	resp, err := client.Secrets.TransitConfigureKey(
@@ -23167,7 +23167,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.TransitConfigureKeys(
 		context.Background(),
@@ -23230,7 +23230,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the key
 	resp, err := client.Secrets.TransitCreateKey(
@@ -23297,7 +23297,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the key
 	resp, err := client.Secrets.TransitDecrypt(
@@ -23363,7 +23363,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the key
 	resp, err := client.Secrets.TransitDeleteKey(
@@ -23426,7 +23426,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the key
 	resp, err := client.Secrets.TransitEncrypt(
@@ -23492,7 +23492,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the key
 	type_ := "type__example" // string | Type of key to export (encryption-key, signing-key, hmac-key, public-key)
@@ -23558,7 +23558,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the key
 	type_ := "type__example" // string | Type of key to export (encryption-key, signing-key, hmac-key, public-key)
@@ -23629,7 +23629,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the key
 	resp, err := client.Secrets.TransitGenerateCsrForKey(
@@ -23696,7 +23696,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The backend key used for encrypting the data key
 	plaintext := "plaintext_example" // string | \"plaintext\" will return the key in both plaintext and ciphertext; \"wrapped\" will return the ciphertext only.
@@ -23767,7 +23767,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The key to use for the HMAC function
 	resp, err := client.Secrets.TransitGenerateHmac(
@@ -23834,7 +23834,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The key to use for the HMAC function
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
@@ -23905,7 +23905,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.TransitGenerateRandom(
 		context.Background(),
@@ -23968,7 +23968,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
 	resp, err := client.Secrets.TransitGenerateRandomWithBytes(
@@ -24035,7 +24035,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 	resp, err := client.Secrets.TransitGenerateRandomWithSource(
@@ -24102,7 +24102,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
@@ -24173,7 +24173,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.TransitHash(
 		context.Background(),
@@ -24236,7 +24236,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
 	resp, err := client.Secrets.TransitHashWithAlgorithm(
@@ -24303,7 +24303,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the key
 	resp, err := client.Secrets.TransitImportKey(
@@ -24370,7 +24370,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the key
 	resp, err := client.Secrets.TransitImportKeyVersion(
@@ -24436,7 +24436,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.TransitListKeys(
 		context.Background(),
@@ -24495,7 +24495,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.TransitReadCacheConfiguration(
 		context.Background(),
@@ -24553,7 +24553,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the key
 	resp, err := client.Secrets.TransitReadKey(
@@ -24615,7 +24615,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.TransitReadKeysConfiguration(
 		context.Background(),
@@ -24673,7 +24673,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.TransitReadWrappingKey(
 		context.Background(),
@@ -24732,7 +24732,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | If set, this will be the name of the restored key.
 	resp, err := client.Secrets.TransitRestoreAndRenameKey(
@@ -24799,7 +24799,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Secrets.TransitRestoreKey(
 		context.Background(),
@@ -24862,7 +24862,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the key
 	resp, err := client.Secrets.TransitRewrap(
@@ -24929,7 +24929,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the key
 	resp, err := client.Secrets.TransitRotateKey(
@@ -24996,7 +24996,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the key
 	resp, err := client.Secrets.TransitSetCertificateForKey(
@@ -25063,7 +25063,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The key to use
 	resp, err := client.Secrets.TransitSign(
@@ -25130,7 +25130,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The key to use
 	urlalgorithm := "urlalgorithm_example" // string | Hash algorithm to use (POST URL parameter)
@@ -25201,7 +25201,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the key
 	resp, err := client.Secrets.TransitTrimKey(
@@ -25268,7 +25268,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The key to use
 	resp, err := client.Secrets.TransitVerify(
@@ -25335,7 +25335,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The key to use
 	urlalgorithm := "urlalgorithm_example" // string | Hash algorithm to use (POST URL parameter)

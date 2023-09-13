@@ -188,7 +188,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
 	resp, err := client.System.AuditingCalculateHash(
@@ -252,7 +252,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
 	resp, err := client.System.AuditingDisableDevice(
@@ -312,7 +312,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	header := "header_example" // string | 
 	resp, err := client.System.AuditingDisableRequestHeader(
@@ -373,7 +373,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
 	resp, err := client.System.AuditingEnableDevice(
@@ -438,7 +438,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	header := "header_example" // string | 
 	resp, err := client.System.AuditingEnableRequestHeader(
@@ -502,7 +502,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.AuditingListEnabledDevices(
 		context.Background(),
@@ -553,7 +553,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.AuditingListRequestHeaders(
 		context.Background(),
@@ -604,7 +604,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	header := "header_example" // string | 
 	resp, err := client.System.AuditingReadRequestHeaderInformation(
@@ -664,7 +664,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
 	resp, err := client.System.AuthDisableMethod(
@@ -729,7 +729,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
 	resp, err := client.System.AuthEnableMethod(
@@ -793,7 +793,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.AuthListEnabledMethods(
 		context.Background(),
@@ -844,7 +844,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
 	resp, err := client.System.AuthReadConfiguration(
@@ -906,7 +906,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | Tune the configuration parameters for an auth path.
 	resp, err := client.System.AuthReadTuningInformation(
@@ -969,7 +969,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | Tune the configuration parameters for an auth path.
 	resp, err := client.System.AuthTuneConfigurationParameters(
@@ -1037,7 +1037,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.CollectHostInformation(
 		context.Background(),
@@ -1092,7 +1092,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.CollectInFlightRequestInformation(
 		context.Background(),
@@ -1144,7 +1144,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.CorsConfigure(
 		context.Background(),
@@ -1201,7 +1201,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.CorsDeleteConfiguration(
 		context.Background(),
@@ -1252,7 +1252,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.CorsReadConfiguration(
 		context.Background(),
@@ -1304,7 +1304,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.Decode(
 		context.Background(),
@@ -1362,7 +1362,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.EncryptionKeyConfigureRotation(
 		context.Background(),
@@ -1419,7 +1419,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.EncryptionKeyReadRotationConfiguration(
 		context.Background(),
@@ -1470,7 +1470,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.EncryptionKeyRotate(
 		context.Background(),
@@ -1521,7 +1521,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.EncryptionKeyStatus(
 		context.Background(),
@@ -1573,7 +1573,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.GenerateHash(
 		context.Background(),
@@ -1631,7 +1631,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
 	resp, err := client.System.GenerateHashWithAlgorithm(
@@ -1696,7 +1696,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.GenerateRandom(
 		context.Background(),
@@ -1754,7 +1754,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
 	resp, err := client.System.GenerateRandomWithBytes(
@@ -1819,7 +1819,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 	resp, err := client.System.GenerateRandomWithSource(
@@ -1884,7 +1884,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
@@ -1952,7 +1952,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.HaStatus(
 		context.Background(),
@@ -2006,7 +2006,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.Initialize(
 		context.Background(),
@@ -2064,7 +2064,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.InternalClientActivityConfigure(
 		context.Background(),
@@ -2121,7 +2121,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.InternalClientActivityExport(
 		context.Background(),
@@ -2172,7 +2172,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.InternalClientActivityReadConfiguration(
 		context.Background(),
@@ -2223,7 +2223,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.InternalClientActivityReportCounts(
 		context.Background(),
@@ -2274,7 +2274,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.InternalClientActivityReportCountsThisMonth(
 		context.Background(),
@@ -2325,7 +2325,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.InternalCountEntities(
 		context.Background(),
@@ -2376,7 +2376,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.InternalCountRequests(
 		context.Background(),
@@ -2427,7 +2427,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.InternalCountTokens(
 		context.Background(),
@@ -2478,7 +2478,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	context := "context_example" // string | Context string appended to every operationId
 	genericMountPaths := true // bool | Use generic mount paths (defaults to false)
@@ -2538,7 +2538,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.InternalGenerateOpenApiDocumentWithParameters(
 		context.Background(),
@@ -2595,7 +2595,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	tag := "tag_example" // string | Name of subtree being observed
 	resp, err := client.System.InternalInspectRouter(
@@ -2655,7 +2655,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.InternalUiListEnabledFeatureFlags(
 		context.Background(),
@@ -2706,7 +2706,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.InternalUiListEnabledVisibleMounts(
 		context.Background(),
@@ -2757,7 +2757,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.InternalUiListNamespaces(
 		context.Background(),
@@ -2808,7 +2808,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | The path of the mount.
 	resp, err := client.System.InternalUiReadMountInformation(
@@ -2868,7 +2868,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.InternalUiReadResultantAcl(
 		context.Background(),
@@ -2919,7 +2919,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.LeaderStatus(
 		context.Background(),
@@ -2970,7 +2970,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.LeasesCount(
 		context.Background(),
@@ -3025,7 +3025,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
 	resp, err := client.System.LeasesForceRevokeLeaseWithPrefix(
@@ -3085,7 +3085,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.LeasesList(
 		context.Background(),
@@ -3136,7 +3136,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	prefix := "prefix_example" // string | The path to list leases under. Example: \"aws/creds/deploy\"
 	resp, err := client.System.LeasesLookUp(
@@ -3198,7 +3198,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.LeasesReadLease(
 		context.Background(),
@@ -3256,7 +3256,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.LeasesRenewLease(
 		context.Background(),
@@ -3314,7 +3314,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
 	resp, err := client.System.LeasesRenewLeaseWithId(
@@ -3379,7 +3379,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.LeasesRevokeLease(
 		context.Background(),
@@ -3437,7 +3437,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
 	resp, err := client.System.LeasesRevokeLeaseWithId(
@@ -3502,7 +3502,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
 	resp, err := client.System.LeasesRevokeLeaseWithPrefix(
@@ -3566,7 +3566,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.LeasesTidy(
 		context.Background(),
@@ -3617,7 +3617,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.ListExperimentalFeatures(
 		context.Background(),
@@ -3668,7 +3668,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.LockedUsersList(
 		context.Background(),
@@ -3719,7 +3719,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	aliasIdentifier := "aliasIdentifier_example" // string | It is the name of the alias (user). For example, if the alias belongs to userpass backend, the name should be a valid username within userpass auth method. If the alias belongs to an approle auth method, the name should be a valid RoleID
 	mountAccessor := "mountAccessor_example" // string | MountAccessor is the identifier of the mount entry to which the user belongs
@@ -3783,7 +3783,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.LoggersReadVerbosityLevel(
 		context.Background(),
@@ -3834,7 +3834,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the logger to be modified.
 	resp, err := client.System.LoggersReadVerbosityLevelFor(
@@ -3894,7 +3894,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.LoggersRevertVerbosityLevel(
 		context.Background(),
@@ -3945,7 +3945,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the logger to be modified.
 	resp, err := client.System.LoggersRevertVerbosityLevelFor(
@@ -4006,7 +4006,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.LoggersUpdateVerbosityLevel(
 		context.Background(),
@@ -4064,7 +4064,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the logger to be modified.
 	resp, err := client.System.LoggersUpdateVerbosityLevelFor(
@@ -4128,7 +4128,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	format := "format_example" // string | Format to export metrics into. Currently accepts only \"prometheus\".
 	resp, err := client.System.Metrics(
@@ -4185,7 +4185,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.MfaValidate(
 		context.Background(),
@@ -4242,7 +4242,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	logFormat := "logFormat_example" // string | Output format of logs. Supported values are \"standard\" and \"json\". The default is \"standard\". (defaults to "standard")
 	logLevel := "logLevel_example" // string | Log level to view system logs at. Currently supported values are \"trace\", \"debug\", \"info\", \"warn\", \"error\".
@@ -4301,7 +4301,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
 	resp, err := client.System.MountsDisableSecretsEngine(
@@ -4362,7 +4362,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
 	resp, err := client.System.MountsEnableSecretsEngine(
@@ -4426,7 +4426,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.MountsListSecretsEngines(
 		context.Background(),
@@ -4477,7 +4477,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
 	resp, err := client.System.MountsReadConfiguration(
@@ -4537,7 +4537,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
 	resp, err := client.System.MountsReadTuningInformation(
@@ -4598,7 +4598,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
 	resp, err := client.System.MountsTuneConfigurationParameters(
@@ -4662,7 +4662,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.PluginsCatalogListPlugins(
 		context.Background(),
@@ -4713,7 +4713,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
 	resp, err := client.System.PluginsCatalogListPluginsWithType(
@@ -4774,7 +4774,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the plugin
 	resp, err := client.System.PluginsCatalogReadPluginConfiguration(
@@ -4834,7 +4834,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the plugin
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
@@ -4899,7 +4899,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the plugin
 	resp, err := client.System.PluginsCatalogRegisterPlugin(
@@ -4964,7 +4964,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the plugin
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
@@ -5032,7 +5032,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the plugin
 	resp, err := client.System.PluginsCatalogRemovePlugin(
@@ -5092,7 +5092,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the plugin
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
@@ -5159,7 +5159,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.PluginsReloadBackends(
 		context.Background(),
@@ -5216,7 +5216,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.PluginsRuntimesCatalogListPluginsRuntimes(
 		context.Background(),
@@ -5270,7 +5270,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the plugin runtime
 	type_ := "type__example" // string | The type of the plugin runtime
@@ -5335,7 +5335,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the plugin runtime
 	type_ := "type__example" // string | The type of the plugin runtime
@@ -5403,7 +5403,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the plugin runtime
 	type_ := "type__example" // string | The type of the plugin runtime
@@ -5467,7 +5467,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
 	resp, err := client.System.PoliciesDeleteAclPolicy(
@@ -5527,7 +5527,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the password policy.
 	resp, err := client.System.PoliciesDeletePasswordPolicy(
@@ -5587,7 +5587,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the password policy.
 	resp, err := client.System.PoliciesGeneratePasswordFromPasswordPolicy(
@@ -5647,7 +5647,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.PoliciesListAclPolicies(
 		context.Background(),
@@ -5701,7 +5701,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.PoliciesListPasswordPolicies(
 		context.Background(),
@@ -5755,7 +5755,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
 	resp, err := client.System.PoliciesReadAclPolicy(
@@ -5815,7 +5815,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the password policy.
 	resp, err := client.System.PoliciesReadPasswordPolicy(
@@ -5876,7 +5876,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
 	resp, err := client.System.PoliciesWriteAclPolicy(
@@ -5941,7 +5941,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the password policy.
 	resp, err := client.System.PoliciesWritePasswordPolicy(
@@ -6007,7 +6007,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.PprofBlocking(
 		context.Background(),
@@ -6060,7 +6060,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.PprofCommandLine(
 		context.Background(),
@@ -6113,7 +6113,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.PprofCpuProfile(
 		context.Background(),
@@ -6166,7 +6166,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.PprofExecutionTrace(
 		context.Background(),
@@ -6219,7 +6219,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.PprofGoroutines(
 		context.Background(),
@@ -6274,7 +6274,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.PprofIndex(
 		context.Background(),
@@ -6327,7 +6327,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.PprofMemoryAllocations(
 		context.Background(),
@@ -6380,7 +6380,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.PprofMemoryAllocationsLive(
 		context.Background(),
@@ -6433,7 +6433,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.PprofMutexes(
 		context.Background(),
@@ -6486,7 +6486,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.PprofSymbols(
 		context.Background(),
@@ -6539,7 +6539,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.PprofThreadCreations(
 		context.Background(),
@@ -6591,7 +6591,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.QueryTokenAccessorCapabilities(
 		context.Background(),
@@ -6649,7 +6649,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.QueryTokenCapabilities(
 		context.Background(),
@@ -6707,7 +6707,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.QueryTokenSelfCapabilities(
 		context.Background(),
@@ -6765,7 +6765,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.RateLimitQuotasConfigure(
 		context.Background(),
@@ -6822,7 +6822,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the quota rule.
 	resp, err := client.System.RateLimitQuotasDelete(
@@ -6882,7 +6882,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.RateLimitQuotasList(
 		context.Background(),
@@ -6936,7 +6936,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the quota rule.
 	resp, err := client.System.RateLimitQuotasRead(
@@ -6996,7 +6996,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.RateLimitQuotasReadConfiguration(
 		context.Background(),
@@ -7048,7 +7048,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the quota rule.
 	resp, err := client.System.RateLimitQuotasWrite(
@@ -7112,7 +7112,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | 
 	resp, err := client.System.RawDelete(
@@ -7172,7 +7172,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | 
 	resp, err := client.System.RawList(
@@ -7233,7 +7233,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | 
 	resp, err := client.System.RawRead(
@@ -7294,7 +7294,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	path := "path_example" // string | 
 	resp, err := client.System.RawWrite(
@@ -7358,7 +7358,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.ReadHealthStatus(
 		context.Background(),
@@ -7409,7 +7409,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.ReadInitializationStatus(
 		context.Background(),
@@ -7460,7 +7460,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.ReadReplicationStatus(
 		context.Background(),
@@ -7513,7 +7513,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.ReadSanitizedConfigurationState(
 		context.Background(),
@@ -7565,7 +7565,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.ReadWrappingProperties(
 		context.Background(),
@@ -7624,7 +7624,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.RekeyAttemptCancel(
 		context.Background(),
@@ -7678,7 +7678,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.RekeyAttemptInitialize(
 		context.Background(),
@@ -7735,7 +7735,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.RekeyAttemptReadProgress(
 		context.Background(),
@@ -7787,7 +7787,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.RekeyAttemptUpdate(
 		context.Background(),
@@ -7844,7 +7844,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.RekeyDeleteBackupKey(
 		context.Background(),
@@ -7895,7 +7895,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.RekeyDeleteBackupRecoveryKey(
 		context.Background(),
@@ -7946,7 +7946,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.RekeyReadBackupKey(
 		context.Background(),
@@ -7997,7 +7997,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.RekeyReadBackupRecoveryKey(
 		context.Background(),
@@ -8050,7 +8050,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.RekeyVerificationCancel(
 		context.Background(),
@@ -8101,7 +8101,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.RekeyVerificationReadProgress(
 		context.Background(),
@@ -8153,7 +8153,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.RekeyVerificationUpdate(
 		context.Background(),
@@ -8210,7 +8210,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	subsystem := "subsystem_example" // string | 
 	resp, err := client.System.ReloadSubsystem(
@@ -8271,7 +8271,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.Remount(
 		context.Background(),
@@ -8328,7 +8328,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	migrationId := "migrationId_example" // string | The ID of the migration operation
 	resp, err := client.System.RemountStatus(
@@ -8389,7 +8389,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.Rewrap(
 		context.Background(),
@@ -8446,7 +8446,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.RootTokenGenerationCancel(
 		context.Background(),
@@ -8500,7 +8500,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.RootTokenGenerationInitialize(
 		context.Background(),
@@ -8557,7 +8557,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.RootTokenGenerationReadProgress(
 		context.Background(),
@@ -8611,7 +8611,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.RootTokenGenerationUpdate(
 		context.Background(),
@@ -8668,7 +8668,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.Seal(
 		context.Background(),
@@ -8719,7 +8719,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.SealStatus(
 		context.Background(),
@@ -8772,7 +8772,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.StepDownLeader(
 		context.Background(),
@@ -8824,7 +8824,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	header := "header_example" // string | The name of the header.
 	resp, err := client.System.UiHeadersConfigure(
@@ -8888,7 +8888,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	header := "header_example" // string | The name of the header.
 	resp, err := client.System.UiHeadersDeleteConfiguration(
@@ -8948,7 +8948,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.UiHeadersList(
 		context.Background(),
@@ -9002,7 +9002,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	header := "header_example" // string | The name of the header.
 	resp, err := client.System.UiHeadersReadConfiguration(
@@ -9063,7 +9063,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.Unseal(
 		context.Background(),
@@ -9121,7 +9121,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.Unwrap(
 		context.Background(),
@@ -9178,7 +9178,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.VersionHistory(
 		context.Background(),
@@ -9232,7 +9232,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.System.Wrap(
 		context.Background(),

@@ -137,7 +137,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.AliasCreate(
 		context.Background(),
@@ -194,7 +194,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	id := "id_example" // string | ID of the alias
 	resp, err := client.Identity.AliasDeleteById(
@@ -254,7 +254,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.AliasListById(
 		context.Background(),
@@ -308,7 +308,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	id := "id_example" // string | ID of the alias
 	resp, err := client.Identity.AliasReadById(
@@ -369,7 +369,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	id := "id_example" // string | ID of the alias
 	resp, err := client.Identity.AliasUpdateById(
@@ -434,7 +434,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.EntityBatchDelete(
 		context.Background(),
@@ -492,7 +492,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.EntityCreate(
 		context.Background(),
@@ -550,7 +550,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.EntityCreateAlias(
 		context.Background(),
@@ -607,7 +607,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	id := "id_example" // string | ID of the alias
 	resp, err := client.Identity.EntityDeleteAliasById(
@@ -667,7 +667,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
 	resp, err := client.Identity.EntityDeleteById(
@@ -727,7 +727,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the entity
 	resp, err := client.Identity.EntityDeleteByName(
@@ -787,7 +787,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.EntityListAliasesById(
 		context.Background(),
@@ -841,7 +841,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.EntityListById(
 		context.Background(),
@@ -895,7 +895,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.EntityListByName(
 		context.Background(),
@@ -950,7 +950,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.EntityLookUp(
 		context.Background(),
@@ -1008,7 +1008,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.EntityMerge(
 		context.Background(),
@@ -1065,7 +1065,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	id := "id_example" // string | ID of the alias
 	resp, err := client.Identity.EntityReadAliasById(
@@ -1125,7 +1125,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
 	resp, err := client.Identity.EntityReadById(
@@ -1185,7 +1185,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the entity
 	resp, err := client.Identity.EntityReadByName(
@@ -1246,7 +1246,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	id := "id_example" // string | ID of the alias
 	resp, err := client.Identity.EntityUpdateAliasById(
@@ -1311,7 +1311,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
 	resp, err := client.Identity.EntityUpdateById(
@@ -1376,7 +1376,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the entity
 	resp, err := client.Identity.EntityUpdateByName(
@@ -1441,7 +1441,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.GroupCreate(
 		context.Background(),
@@ -1499,7 +1499,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.GroupCreateAlias(
 		context.Background(),
@@ -1556,7 +1556,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	id := "id_example" // string | ID of the group alias.
 	resp, err := client.Identity.GroupDeleteAliasById(
@@ -1616,7 +1616,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
 	resp, err := client.Identity.GroupDeleteById(
@@ -1676,7 +1676,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the group.
 	resp, err := client.Identity.GroupDeleteByName(
@@ -1736,7 +1736,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.GroupListAliasesById(
 		context.Background(),
@@ -1790,7 +1790,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.GroupListById(
 		context.Background(),
@@ -1844,7 +1844,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.GroupListByName(
 		context.Background(),
@@ -1899,7 +1899,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.GroupLookUp(
 		context.Background(),
@@ -1956,7 +1956,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	id := "id_example" // string | ID of the group alias.
 	resp, err := client.Identity.GroupReadAliasById(
@@ -2016,7 +2016,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
 	resp, err := client.Identity.GroupReadById(
@@ -2076,7 +2076,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the group.
 	resp, err := client.Identity.GroupReadByName(
@@ -2137,7 +2137,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	id := "id_example" // string | ID of the group alias.
 	resp, err := client.Identity.GroupUpdateAliasById(
@@ -2202,7 +2202,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
 	resp, err := client.Identity.GroupUpdateById(
@@ -2267,7 +2267,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the group.
 	resp, err := client.Identity.GroupUpdateByName(
@@ -2332,7 +2332,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.MfaAdminDestroyTotpSecret(
 		context.Background(),
@@ -2390,7 +2390,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.MfaAdminGenerateTotpSecret(
 		context.Background(),
@@ -2448,7 +2448,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.MfaCreateDuoMethod(
 		context.Background(),
@@ -2506,7 +2506,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.MfaCreateOktaMethod(
 		context.Background(),
@@ -2564,7 +2564,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.MfaCreatePingIdMethod(
 		context.Background(),
@@ -2622,7 +2622,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.MfaCreateTotpMethod(
 		context.Background(),
@@ -2679,7 +2679,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaDeleteDuoMethod(
@@ -2739,7 +2739,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name for this login enforcement configuration
 	resp, err := client.Identity.MfaDeleteLoginEnforcement(
@@ -2799,7 +2799,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaDeleteOktaMethod(
@@ -2859,7 +2859,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaDeletePingIdMethod(
@@ -2919,7 +2919,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaDeleteTotpMethod(
@@ -2980,7 +2980,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.MfaGenerateTotpSecret(
 		context.Background(),
@@ -3037,7 +3037,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.MfaListDuoMethods(
 		context.Background(),
@@ -3091,7 +3091,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.MfaListLoginEnforcements(
 		context.Background(),
@@ -3145,7 +3145,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.MfaListMethods(
 		context.Background(),
@@ -3199,7 +3199,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.MfaListOktaMethods(
 		context.Background(),
@@ -3253,7 +3253,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.MfaListPingIdMethods(
 		context.Background(),
@@ -3307,7 +3307,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.MfaListTotpMethods(
 		context.Background(),
@@ -3361,7 +3361,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaReadDuoMethod(
@@ -3421,7 +3421,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name for this login enforcement configuration
 	resp, err := client.Identity.MfaReadLoginEnforcement(
@@ -3481,7 +3481,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaReadMethod(
@@ -3541,7 +3541,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaReadOktaMethod(
@@ -3601,7 +3601,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaReadPingIdMethod(
@@ -3661,7 +3661,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaReadTotpMethod(
@@ -3722,7 +3722,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaUpdateDuoMethod(
@@ -3787,7 +3787,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaUpdateOktaMethod(
@@ -3852,7 +3852,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaUpdatePingIdMethod(
@@ -3917,7 +3917,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaUpdateTotpMethod(
@@ -3982,7 +3982,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name for this login enforcement configuration
 	resp, err := client.Identity.MfaWriteLoginEnforcement(
@@ -4047,7 +4047,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.OidcConfigure(
 		context.Background(),
@@ -4104,7 +4104,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the assignment
 	resp, err := client.Identity.OidcDeleteAssignment(
@@ -4164,7 +4164,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the client.
 	resp, err := client.Identity.OidcDeleteClient(
@@ -4224,7 +4224,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the key
 	resp, err := client.Identity.OidcDeleteKey(
@@ -4284,7 +4284,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcDeleteProvider(
@@ -4344,7 +4344,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Identity.OidcDeleteRole(
@@ -4404,7 +4404,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the scope
 	resp, err := client.Identity.OidcDeleteScope(
@@ -4464,7 +4464,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Identity.OidcGenerateToken(
@@ -4525,7 +4525,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.OidcIntrospect(
 		context.Background(),
@@ -4582,7 +4582,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.OidcListAssignments(
 		context.Background(),
@@ -4636,7 +4636,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.OidcListClients(
 		context.Background(),
@@ -4690,7 +4690,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.OidcListKeys(
 		context.Background(),
@@ -4744,7 +4744,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	allowedClientId := "allowedClientId_example" // string | Filters the list of OIDC providers to those that allow the given client ID in their set of allowed_client_ids. (defaults to "")
 	resp, err := client.Identity.OidcListProviders(
@@ -4801,7 +4801,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.OidcListRoles(
 		context.Background(),
@@ -4855,7 +4855,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.OidcListScopes(
 		context.Background(),
@@ -4909,7 +4909,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the provider
 	clientId := "clientId_example" // string | The ID of the requesting client.
@@ -4997,7 +4997,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcProviderAuthorizeWithParameters(
@@ -5062,7 +5062,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcProviderToken(
@@ -5126,7 +5126,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcProviderUserInfo(
@@ -5186,7 +5186,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the assignment
 	resp, err := client.Identity.OidcReadAssignment(
@@ -5246,7 +5246,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the client.
 	resp, err := client.Identity.OidcReadClient(
@@ -5306,7 +5306,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.OidcReadConfiguration(
 		context.Background(),
@@ -5357,7 +5357,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the key
 	resp, err := client.Identity.OidcReadKey(
@@ -5417,7 +5417,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.OidcReadOpenIdConfiguration(
 		context.Background(),
@@ -5468,7 +5468,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcReadProvider(
@@ -5528,7 +5528,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcReadProviderOpenIdConfiguration(
@@ -5588,7 +5588,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcReadProviderPublicKeys(
@@ -5648,7 +5648,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.OidcReadPublicKeys(
 		context.Background(),
@@ -5699,7 +5699,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Identity.OidcReadRole(
@@ -5759,7 +5759,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the scope
 	resp, err := client.Identity.OidcReadScope(
@@ -5820,7 +5820,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the key
 	resp, err := client.Identity.OidcRotateKey(
@@ -5885,7 +5885,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the assignment
 	resp, err := client.Identity.OidcWriteAssignment(
@@ -5950,7 +5950,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the client.
 	resp, err := client.Identity.OidcWriteClient(
@@ -6015,7 +6015,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the key
 	resp, err := client.Identity.OidcWriteKey(
@@ -6080,7 +6080,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcWriteProvider(
@@ -6145,7 +6145,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role
 	resp, err := client.Identity.OidcWriteRole(
@@ -6210,7 +6210,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the scope
 	resp, err := client.Identity.OidcWriteScope(
@@ -6275,7 +6275,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.PersonaCreate(
 		context.Background(),
@@ -6332,7 +6332,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	id := "id_example" // string | ID of the persona
 	resp, err := client.Identity.PersonaDeleteById(
@@ -6392,7 +6392,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Identity.PersonaListById(
 		context.Background(),
@@ -6446,7 +6446,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	id := "id_example" // string | ID of the persona
 	resp, err := client.Identity.PersonaReadById(
@@ -6507,7 +6507,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	id := "id_example" // string | ID of the persona
 	resp, err := client.Identity.PersonaUpdateById(

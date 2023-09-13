@@ -274,7 +274,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | The name of the role as it should appear in Vault.
 	resp, err := client.Auth.AliCloudDeleteAuthRole(
@@ -336,7 +336,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AliCloudListAuthRoles(
 		context.Background(),
@@ -396,7 +396,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AliCloudLogin(
 		context.Background(),
@@ -458,7 +458,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | The name of the role as it should appear in Vault.
 	resp, err := client.Auth.AliCloudReadAuthRole(
@@ -521,7 +521,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | The name of the role as it should appear in Vault.
 	resp, err := client.Auth.AliCloudWriteAuthRole(
@@ -587,7 +587,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteBindSecretId(
@@ -649,7 +649,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteBoundCidrList(
@@ -711,7 +711,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeletePeriod(
@@ -773,7 +773,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeletePolicies(
@@ -835,7 +835,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteRole(
@@ -897,7 +897,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteSecretIdBoundCidrs(
@@ -959,7 +959,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteSecretIdNumUses(
@@ -1021,7 +1021,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteSecretIdTtl(
@@ -1083,7 +1083,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteTokenBoundCidrs(
@@ -1145,7 +1145,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteTokenMaxTtl(
@@ -1207,7 +1207,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteTokenNumUses(
@@ -1269,7 +1269,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteTokenTtl(
@@ -1332,7 +1332,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDestroySecretId(
@@ -1399,7 +1399,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDestroySecretIdByAccessor(
@@ -1465,7 +1465,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AppRoleListRoles(
 		context.Background(),
@@ -1524,7 +1524,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleListSecretIds(
@@ -1588,7 +1588,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AppRoleLogin(
 		context.Background(),
@@ -1651,7 +1651,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleLookUpSecretId(
@@ -1718,7 +1718,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleLookUpSecretIdByAccessor(
@@ -1784,7 +1784,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadBindSecretId(
@@ -1846,7 +1846,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadBoundCidrList(
@@ -1908,7 +1908,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadLocalSecretIds(
@@ -1970,7 +1970,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadPeriod(
@@ -2032,7 +2032,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadPolicies(
@@ -2094,7 +2094,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadRole(
@@ -2156,7 +2156,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadRoleId(
@@ -2218,7 +2218,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadSecretIdBoundCidrs(
@@ -2280,7 +2280,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadSecretIdNumUses(
@@ -2342,7 +2342,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadSecretIdTtl(
@@ -2404,7 +2404,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadTokenBoundCidrs(
@@ -2466,7 +2466,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadTokenMaxTtl(
@@ -2528,7 +2528,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadTokenNumUses(
@@ -2590,7 +2590,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadTokenTtl(
@@ -2652,7 +2652,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AppRoleTidySecretId(
 		context.Background(),
@@ -2711,7 +2711,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteBindSecretId(
@@ -2778,7 +2778,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteBoundCidrList(
@@ -2845,7 +2845,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteCustomSecretId(
@@ -2912,7 +2912,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWritePeriod(
@@ -2979,7 +2979,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWritePolicies(
@@ -3046,7 +3046,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteRole(
@@ -3113,7 +3113,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteRoleId(
@@ -3180,7 +3180,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteSecretId(
@@ -3247,7 +3247,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteSecretIdBoundCidrs(
@@ -3314,7 +3314,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteSecretIdNumUses(
@@ -3381,7 +3381,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteSecretIdTtl(
@@ -3448,7 +3448,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteTokenBoundCidrs(
@@ -3515,7 +3515,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteTokenMaxTtl(
@@ -3582,7 +3582,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteTokenNumUses(
@@ -3649,7 +3649,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleWriteTokenTtl(
@@ -3716,7 +3716,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	certName := "certName_example" // string | Name of the certificate.
 	resp, err := client.Auth.AwsConfigureCertificate(
@@ -3783,7 +3783,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsConfigureClient(
 		context.Background(),
@@ -3846,7 +3846,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsConfigureIdentityAccessListTidyOperation(
 		context.Background(),
@@ -3909,7 +3909,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsConfigureIdentityIntegration(
 		context.Background(),
@@ -3972,7 +3972,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsConfigureIdentityWhitelistTidyOperation(
 		context.Background(),
@@ -4035,7 +4035,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsConfigureRoleTagBlacklistTidyOperation(
 		context.Background(),
@@ -4098,7 +4098,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsConfigureRoleTagDenyListTidyOperation(
 		context.Background(),
@@ -4160,7 +4160,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | Name of the role.
 	resp, err := client.Auth.AwsDeleteAuthRole(
@@ -4222,7 +4222,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	certName := "certName_example" // string | Name of the certificate.
 	resp, err := client.Auth.AwsDeleteCertificateConfiguration(
@@ -4284,7 +4284,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsDeleteClientConfiguration(
 		context.Background(),
@@ -4342,7 +4342,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 	resp, err := client.Auth.AwsDeleteIdentityAccessList(
@@ -4404,7 +4404,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsDeleteIdentityAccessListTidySettings(
 		context.Background(),
@@ -4462,7 +4462,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 	resp, err := client.Auth.AwsDeleteIdentityWhitelist(
@@ -4524,7 +4524,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsDeleteIdentityWhitelistTidySettings(
 		context.Background(),
@@ -4582,7 +4582,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 	resp, err := client.Auth.AwsDeleteRoleTagBlacklist(
@@ -4644,7 +4644,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsDeleteRoleTagBlacklistTidySettings(
 		context.Background(),
@@ -4702,7 +4702,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 	resp, err := client.Auth.AwsDeleteRoleTagDenyList(
@@ -4764,7 +4764,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsDeleteRoleTagDenyListTidySettings(
 		context.Background(),
@@ -4822,7 +4822,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 	resp, err := client.Auth.AwsDeleteStsRole(
@@ -4884,7 +4884,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsListAuthRoles(
 		context.Background(),
@@ -4943,7 +4943,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsListCertificateConfigurations(
 		context.Background(),
@@ -5002,7 +5002,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsListIdentityAccessList(
 		context.Background(),
@@ -5061,7 +5061,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsListIdentityWhitelist(
 		context.Background(),
@@ -5120,7 +5120,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsListRoleTagBlacklists(
 		context.Background(),
@@ -5179,7 +5179,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsListRoleTagDenyLists(
 		context.Background(),
@@ -5238,7 +5238,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsListStsRoleRelationships(
 		context.Background(),
@@ -5298,7 +5298,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsLogin(
 		context.Background(),
@@ -5360,7 +5360,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | Name of the role.
 	resp, err := client.Auth.AwsReadAuthRole(
@@ -5422,7 +5422,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	certName := "certName_example" // string | Name of the certificate.
 	resp, err := client.Auth.AwsReadCertificateConfiguration(
@@ -5484,7 +5484,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsReadClientConfiguration(
 		context.Background(),
@@ -5542,7 +5542,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 	resp, err := client.Auth.AwsReadIdentityAccessList(
@@ -5604,7 +5604,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsReadIdentityAccessListTidySettings(
 		context.Background(),
@@ -5662,7 +5662,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsReadIdentityIntegrationConfiguration(
 		context.Background(),
@@ -5720,7 +5720,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 	resp, err := client.Auth.AwsReadIdentityWhitelist(
@@ -5782,7 +5782,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsReadIdentityWhitelistTidySettings(
 		context.Background(),
@@ -5840,7 +5840,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 	resp, err := client.Auth.AwsReadRoleTagBlacklist(
@@ -5902,7 +5902,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsReadRoleTagBlacklistTidySettings(
 		context.Background(),
@@ -5960,7 +5960,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 	resp, err := client.Auth.AwsReadRoleTagDenyList(
@@ -6022,7 +6022,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsReadRoleTagDenyListTidySettings(
 		context.Background(),
@@ -6080,7 +6080,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 	resp, err := client.Auth.AwsReadStsRole(
@@ -6142,7 +6142,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsRotateRootCredentials(
 		context.Background(),
@@ -6201,7 +6201,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsTidyIdentityAccessList(
 		context.Background(),
@@ -6264,7 +6264,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsTidyIdentityWhitelist(
 		context.Background(),
@@ -6327,7 +6327,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsTidyRoleTagBlacklist(
 		context.Background(),
@@ -6390,7 +6390,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AwsTidyRoleTagDenyList(
 		context.Background(),
@@ -6453,7 +6453,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | Name of the role.
 	resp, err := client.Auth.AwsWriteAuthRole(
@@ -6520,7 +6520,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | Name of the role.
 	resp, err := client.Auth.AwsWriteRoleTag(
@@ -6586,7 +6586,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 	resp, err := client.Auth.AwsWriteRoleTagBlacklist(
@@ -6648,7 +6648,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 	resp, err := client.Auth.AwsWriteRoleTagDenyList(
@@ -6711,7 +6711,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 	resp, err := client.Auth.AwsWriteStsRole(
@@ -6778,7 +6778,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AzureConfigureAuth(
 		context.Background(),
@@ -6840,7 +6840,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AzureDeleteAuthConfiguration(
 		context.Background(),
@@ -6898,7 +6898,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.AzureDeleteAuthRole(
@@ -6960,7 +6960,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AzureListAuthRoles(
 		context.Background(),
@@ -7020,7 +7020,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AzureLogin(
 		context.Background(),
@@ -7082,7 +7082,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AzureReadAuthConfiguration(
 		context.Background(),
@@ -7140,7 +7140,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.AzureReadAuthRole(
@@ -7202,7 +7202,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.AzureRotateRootCredentials(
 		context.Background(),
@@ -7261,7 +7261,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.AzureWriteAuthRole(
@@ -7328,7 +7328,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.CentrifyConfigure(
 		context.Background(),
@@ -7391,7 +7391,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.CentrifyLogin(
 		context.Background(),
@@ -7453,7 +7453,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.CentrifyReadConfiguration(
 		context.Background(),
@@ -7512,7 +7512,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.CertConfigure(
 		context.Background(),
@@ -7574,7 +7574,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the certificate
 	resp, err := client.Auth.CertDeleteCertificate(
@@ -7636,7 +7636,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the certificate
 	resp, err := client.Auth.CertDeleteCrl(
@@ -7698,7 +7698,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.CertListCertificates(
 		context.Background(),
@@ -7757,7 +7757,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.CertListCrls(
 		context.Background(),
@@ -7817,7 +7817,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.CertLogin(
 		context.Background(),
@@ -7879,7 +7879,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the certificate
 	resp, err := client.Auth.CertReadCertificate(
@@ -7941,7 +7941,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.CertReadConfiguration(
 		context.Background(),
@@ -7999,7 +7999,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the certificate
 	resp, err := client.Auth.CertReadCrl(
@@ -8062,7 +8062,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the certificate
 	resp, err := client.Auth.CertWriteCertificate(
@@ -8129,7 +8129,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | The name of the certificate
 	resp, err := client.Auth.CertWriteCrl(
@@ -8196,7 +8196,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.CloudFoundryConfigure(
 		context.Background(),
@@ -8258,7 +8258,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.CloudFoundryDeleteConfiguration(
 		context.Background(),
@@ -8316,7 +8316,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | The name of the role.
 	resp, err := client.Auth.CloudFoundryDeleteRole(
@@ -8378,7 +8378,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.CloudFoundryListRoles(
 		context.Background(),
@@ -8438,7 +8438,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.CloudFoundryLogin(
 		context.Background(),
@@ -8500,7 +8500,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.CloudFoundryReadConfiguration(
 		context.Background(),
@@ -8558,7 +8558,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | The name of the role.
 	resp, err := client.Auth.CloudFoundryReadRole(
@@ -8621,7 +8621,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | The name of the role.
 	resp, err := client.Auth.CloudFoundryWriteRole(
@@ -8688,7 +8688,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.GithubConfigure(
 		context.Background(),
@@ -8750,7 +8750,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	key := "key_example" // string | Key for the teams mapping
 	resp, err := client.Auth.GithubDeleteTeamMapping(
@@ -8812,7 +8812,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	key := "key_example" // string | Key for the users mapping
 	resp, err := client.Auth.GithubDeleteUserMapping(
@@ -8874,7 +8874,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.GithubListTeams(
 		context.Background(),
@@ -8933,7 +8933,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.GithubListUsers(
 		context.Background(),
@@ -8993,7 +8993,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.GithubLogin(
 		context.Background(),
@@ -9055,7 +9055,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.GithubReadConfiguration(
 		context.Background(),
@@ -9113,7 +9113,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	key := "key_example" // string | Key for the teams mapping
 	resp, err := client.Auth.GithubReadTeamMapping(
@@ -9175,7 +9175,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	key := "key_example" // string | Key for the users mapping
 	resp, err := client.Auth.GithubReadUserMapping(
@@ -9238,7 +9238,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	key := "key_example" // string | Key for the teams mapping
 	resp, err := client.Auth.GithubWriteTeamMapping(
@@ -9305,7 +9305,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	key := "key_example" // string | Key for the users mapping
 	resp, err := client.Auth.GithubWriteUserMapping(
@@ -9372,7 +9372,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.GoogleCloudConfigureAuth(
 		context.Background(),
@@ -9434,7 +9434,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.GoogleCloudDeleteRole(
@@ -9497,7 +9497,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.GoogleCloudEditLabelsForRole(
@@ -9564,7 +9564,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.GoogleCloudEditServiceAccountsForRole(
@@ -9630,7 +9630,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.GoogleCloudListRoles(
 		context.Background(),
@@ -9690,7 +9690,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.GoogleCloudLogin(
 		context.Background(),
@@ -9752,7 +9752,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.GoogleCloudReadAuthConfiguration(
 		context.Background(),
@@ -9810,7 +9810,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.GoogleCloudReadRole(
@@ -9873,7 +9873,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.GoogleCloudWriteRole(
@@ -9945,7 +9945,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.JwtConfigure(
 		context.Background(),
@@ -10007,7 +10007,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.JwtDeleteRole(
@@ -10071,7 +10071,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.JwtListRoles(
 		context.Background(),
@@ -10131,7 +10131,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.JwtLogin(
 		context.Background(),
@@ -10193,7 +10193,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	clientNonce := "clientNonce_example" // string | 
 	code := "code_example" // string | 
@@ -10261,7 +10261,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.JwtOidcCallbackFormPost(
 		context.Background(),
@@ -10324,7 +10324,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.JwtOidcRequestAuthorizationUrl(
 		context.Background(),
@@ -10386,7 +10386,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.JwtReadConfiguration(
 		context.Background(),
@@ -10444,7 +10444,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.JwtReadRole(
@@ -10512,7 +10512,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.JwtWriteRole(
@@ -10579,7 +10579,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.KerberosConfigure(
 		context.Background(),
@@ -10642,7 +10642,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.KerberosConfigureLdap(
 		context.Background(),
@@ -10704,7 +10704,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the LDAP group.
 	resp, err := client.Auth.KerberosDeleteGroup(
@@ -10766,7 +10766,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.KerberosListGroups(
 		context.Background(),
@@ -10826,7 +10826,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.KerberosLogin(
 		context.Background(),
@@ -10888,7 +10888,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.KerberosReadConfiguration(
 		context.Background(),
@@ -10946,7 +10946,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the LDAP group.
 	resp, err := client.Auth.KerberosReadGroup(
@@ -11008,7 +11008,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.KerberosReadLdapConfiguration(
 		context.Background(),
@@ -11067,7 +11067,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the LDAP group.
 	resp, err := client.Auth.KerberosWriteGroup(
@@ -11134,7 +11134,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.KubernetesConfigureAuth(
 		context.Background(),
@@ -11196,7 +11196,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.KubernetesDeleteAuthRole(
@@ -11258,7 +11258,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.KubernetesListAuthRoles(
 		context.Background(),
@@ -11318,7 +11318,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.KubernetesLogin(
 		context.Background(),
@@ -11380,7 +11380,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.KubernetesReadAuthConfiguration(
 		context.Background(),
@@ -11438,7 +11438,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.KubernetesReadAuthRole(
@@ -11501,7 +11501,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.KubernetesWriteAuthRole(
@@ -11568,7 +11568,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.LdapConfigureAuth(
 		context.Background(),
@@ -11630,7 +11630,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the LDAP group.
 	resp, err := client.Auth.LdapDeleteGroup(
@@ -11692,7 +11692,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the LDAP user.
 	resp, err := client.Auth.LdapDeleteUser(
@@ -11754,7 +11754,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.LdapListGroups(
 		context.Background(),
@@ -11813,7 +11813,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.LdapListUsers(
 		context.Background(),
@@ -11873,7 +11873,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	username := "username_example" // string | DN (distinguished name) to be used for login.
 	resp, err := client.Auth.LdapLogin(
@@ -11939,7 +11939,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.LdapReadAuthConfiguration(
 		context.Background(),
@@ -11997,7 +11997,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the LDAP group.
 	resp, err := client.Auth.LdapReadGroup(
@@ -12059,7 +12059,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the LDAP user.
 	resp, err := client.Auth.LdapReadUser(
@@ -12122,7 +12122,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the LDAP group.
 	resp, err := client.Auth.LdapWriteGroup(
@@ -12189,7 +12189,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the LDAP user.
 	resp, err := client.Auth.LdapWriteUser(
@@ -12256,7 +12256,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.OciConfigure(
 		context.Background(),
@@ -12318,7 +12318,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.OciDeleteConfiguration(
 		context.Background(),
@@ -12376,7 +12376,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | Name of the role.
 	resp, err := client.Auth.OciDeleteRole(
@@ -12438,7 +12438,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.OciListRoles(
 		context.Background(),
@@ -12498,7 +12498,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | Name of the role.
 	resp, err := client.Auth.OciLogin(
@@ -12564,7 +12564,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.OciReadConfiguration(
 		context.Background(),
@@ -12622,7 +12622,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | Name of the role.
 	resp, err := client.Auth.OciReadRole(
@@ -12685,7 +12685,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	role := "role_example" // string | Name of the role.
 	resp, err := client.Auth.OciWriteRole(
@@ -12752,7 +12752,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.OktaConfigure(
 		context.Background(),
@@ -12814,7 +12814,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the Okta group.
 	resp, err := client.Auth.OktaDeleteGroup(
@@ -12876,7 +12876,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the user.
 	resp, err := client.Auth.OktaDeleteUser(
@@ -12938,7 +12938,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.OktaListGroups(
 		context.Background(),
@@ -12997,7 +12997,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.OktaListUsers(
 		context.Background(),
@@ -13057,7 +13057,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	username := "username_example" // string | Username to be used for login.
 	resp, err := client.Auth.OktaLogin(
@@ -13123,7 +13123,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.OktaReadConfiguration(
 		context.Background(),
@@ -13181,7 +13181,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the Okta group.
 	resp, err := client.Auth.OktaReadGroup(
@@ -13243,7 +13243,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the user.
 	resp, err := client.Auth.OktaReadUser(
@@ -13305,7 +13305,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	nonce := "nonce_example" // string | Nonce provided during a login request to retrieve the number verification challenge for the matching request.
 	resp, err := client.Auth.OktaVerify(
@@ -13368,7 +13368,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the Okta group.
 	resp, err := client.Auth.OktaWriteGroup(
@@ -13435,7 +13435,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the user.
 	resp, err := client.Auth.OktaWriteUser(
@@ -13502,7 +13502,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.RadiusConfigure(
 		context.Background(),
@@ -13564,7 +13564,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the RADIUS user.
 	resp, err := client.Auth.RadiusDeleteUser(
@@ -13626,7 +13626,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.RadiusListUsers(
 		context.Background(),
@@ -13686,7 +13686,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.RadiusLogin(
 		context.Background(),
@@ -13749,7 +13749,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	urlusername := "urlusername_example" // string | Username to be used for login. (URL parameter)
 	resp, err := client.Auth.RadiusLoginWithUsername(
@@ -13815,7 +13815,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.RadiusReadConfiguration(
 		context.Background(),
@@ -13873,7 +13873,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the RADIUS user.
 	resp, err := client.Auth.RadiusReadUser(
@@ -13936,7 +13936,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	name := "name_example" // string | Name of the RADIUS user.
 	resp, err := client.Auth.RadiusWriteUser(
@@ -14003,7 +14003,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.TokenCreate(
 		context.Background(),
@@ -14061,7 +14061,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role
 	resp, err := client.Auth.TokenCreateAgainstRole(
@@ -14126,7 +14126,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.TokenCreateOrphan(
 		context.Background(),
@@ -14183,7 +14183,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role
 	resp, err := client.Auth.TokenDeleteRole(
@@ -14243,7 +14243,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.TokenListAccessors(
 		context.Background(),
@@ -14297,7 +14297,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.TokenListRoles(
 		context.Background(),
@@ -14352,7 +14352,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.TokenLookUp(
 		context.Background(),
@@ -14410,7 +14410,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.TokenLookUpAccessor(
 		context.Background(),
@@ -14467,7 +14467,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.TokenLookUpSelf(
 		context.Background(),
@@ -14518,7 +14518,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role
 	resp, err := client.Auth.TokenReadRole(
@@ -14579,7 +14579,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.TokenRenew(
 		context.Background(),
@@ -14637,7 +14637,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.TokenRenewAccessor(
 		context.Background(),
@@ -14695,7 +14695,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.TokenRenewSelf(
 		context.Background(),
@@ -14753,7 +14753,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.TokenRevoke(
 		context.Background(),
@@ -14811,7 +14811,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.TokenRevokeAccessor(
 		context.Background(),
@@ -14869,7 +14869,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.TokenRevokeOrphan(
 		context.Background(),
@@ -14926,7 +14926,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.TokenRevokeSelf(
 		context.Background(),
@@ -14977,7 +14977,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.TokenTidy(
 		context.Background(),
@@ -15029,7 +15029,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	roleName := "roleName_example" // string | Name of the role
 	resp, err := client.Auth.TokenWriteRole(
@@ -15093,7 +15093,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	username := "username_example" // string | Username for this user.
 	resp, err := client.Auth.UserpassDeleteUser(
@@ -15155,7 +15155,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	resp, err := client.Auth.UserpassListUsers(
 		context.Background(),
@@ -15215,7 +15215,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	username := "username_example" // string | Username of the user.
 	resp, err := client.Auth.UserpassLogin(
@@ -15281,7 +15281,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	username := "username_example" // string | Username for this user.
 	resp, err := client.Auth.UserpassReadUser(
@@ -15344,7 +15344,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	username := "username_example" // string | Username for this user.
 	resp, err := client.Auth.UserpassResetPassword(
@@ -15411,7 +15411,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	username := "username_example" // string | Username for this user.
 	resp, err := client.Auth.UserpassUpdatePolicies(
@@ -15478,7 +15478,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // TODO: authenticate if necessary (see the top-level README.md)
+	// TODO: authenticate if necessary (see the top-level README.md)
 
 	username := "username_example" // string | Username for this user.
 	resp, err := client.Auth.UserpassWriteUser(

@@ -54,18 +54,34 @@ func WithRequestTimeout(timeout time.Duration) ClientOption {
 }
 
 // WithTLS configures the TLS settings in the base http.Client.
-func WithTLS(configuration TLSConfiguration) ClientOption {
+func WithTLS(tls TLSConfiguration) ClientOption {
 	return func(c *ClientConfiguration) error {
-		c.TLS = configuration
+		c.TLS = tls
 		return nil
 	}
 }
 
 // WithRetryConfiguration configures the internal go-retryablehttp client.
 // The library sets reasonable defaults for this setting.
-func WithRetryConfiguration(configuration RetryConfiguration) ClientOption {
+func WithRetryConfiguration(retry RetryConfiguration) ClientOption {
 	return func(c *ClientConfiguration) error {
-		c.RetryConfiguration = configuration
+		// if any of the required RetryConfiguration values are missing, use defaults
+		defaultRetryConfiguration := DefaultConfiguration().RetryConfiguration
+
+		if retry.CheckRetry == nil {
+			retry.CheckRetry = defaultRetryConfiguration.CheckRetry
+		}
+
+		if retry.Backoff == nil {
+			retry.Backoff = defaultRetryConfiguration.Backoff
+		}
+
+		if retry.ErrorHandler == nil {
+			retry.ErrorHandler = defaultRetryConfiguration.ErrorHandler
+		}
+
+		c.RetryConfiguration = retry
+
 		return nil
 	}
 }

@@ -166,7 +166,7 @@ type RetryConfiguration struct {
 	// Default: 1000 milliseconds
 	RetryWaitMin time.Duration `env:"VAULT_RETRY_WAIT_MIN"`
 
-	// MaxRetryWait controls the maximum time to wait before retrying when
+	// RetryWaitMax controls the maximum time to wait before retrying when
 	// a 5xx or 412 error occurs.
 	// Default: 1500 milliseconds
 	RetryWaitMax time.Duration `env:"VAULT_RETRY_WAIT_MAX"`

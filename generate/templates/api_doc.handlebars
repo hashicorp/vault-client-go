@@ -34,12 +34,7 @@ import (
 )
 
 func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
+	client := // a suitably configured *vault.Client (see top-level README.md)
 {{! Oddly, vendorExtensions.x-go-example seems to only be available within allParams,
 	and not within pathParams, queryParams, etc. }}
 {{~#each allParams}}
@@ -61,7 +56,6 @@ func main() {
 {{~#each queryParams}}{{#neq baseName "list"}}
 		{{paramName}},
 {{~/neq}}{{/each}}
-		vault.WithToken("my-token"),
 {{~#each pathParams}}{{#endsWith baseName "_mount_path"}}
 		vault.WithMountPath({{#with defaultValue}}{{{.}}}{{/with}}),
 {{~/endsWith}}{{/each}}

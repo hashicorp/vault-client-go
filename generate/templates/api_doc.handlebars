@@ -59,8 +59,8 @@ func main() {
 {{~/not}}{{/each}}
 {{~#each bodyParams}}
 		{{#if isModel}}schema.{{/if}}{{dataType}}{
-            // populate request parameters
-        },
+			// populate request parameters
+		},
 {{~/each}}
 {{~#each queryParams}}{{#neq baseName "list"}}
 		{{paramName}},

@@ -8,8 +8,6 @@ import (
 	"net/url"
 	"strings"
 	"time"
-
-	"github.com/hashicorp/go-multierror"
 )
 
 // RequestOption is a functional parameter used to modify a request
@@ -143,17 +141,13 @@ func WithReplicationForwardingMode(mode ReplicationForwardingMode) RequestOption
 }
 
 // requestOptionsToRequestModifiers constructs `requestModifiers` propagating the errors, if any
-func requestOptionsToRequestModifiers(options []RequestOption) (_ requestModifiers, errs error) {
+func requestOptionsToRequestModifiers(options []RequestOption) (requestModifiers, error) {
 	var modifiers requestModifiers
 
 	for _, option := range options {
 		if err := option(&modifiers); err != nil {
-			errs = multierror.Append(errs, err)
+			return requestModifiers{}, err
 		}
-	}
-
-	if errs != nil {
-		return requestModifiers{}, errs
 	}
 
 	return modifiers, nil

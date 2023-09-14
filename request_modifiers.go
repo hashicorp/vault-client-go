@@ -5,14 +5,12 @@ package vault
 
 import (
 	"fmt"
+	"maps"
 	"net/http"
 	"net/url"
 	"strings"
 	"time"
 	"unicode"
-
-	"github.com/hashicorp/go-multierror"
-	"golang.org/x/exp/maps"
 )
 
 type (
@@ -310,17 +308,14 @@ func validateNamespace(namespace string) error {
 	return nil
 }
 
-func validateCustomHeaders(headers http.Header) (errs error) {
+func validateCustomHeaders(headers http.Header) error {
 	for key := range headers {
 		if strings.HasPrefix(strings.ToLower(key), "x-vault-") {
-			errs = multierror.Append(
-				errs,
-				fmt.Errorf("custom header key %q is not allowed: 'X-Vault-' prefix is for internal use only", key),
-			)
+			return fmt.Errorf("custom header key %q is not allowed: 'X-Vault-' prefix is for internal use only", key)
 		}
 	}
 
-	return errs
+	return nil
 }
 
 // printable returns true if the given string has no non-printable characters

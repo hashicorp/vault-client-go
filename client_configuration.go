@@ -359,6 +359,47 @@ func DefaultRetryPolicy(ctx context.Context, resp *http.Response, err error) (bo
 	return false, nil
 }
 
+// empty returns true if t is equivalent to an empty TLSConfiguration{} object.
+func (t *TLSConfiguration) empty() bool {
+	if t.ServerCertificate.FromFile != "" {
+		return false
+	}
+
+	if len(t.ServerCertificate.FromBytes) != 0 {
+		return false
+	}
+
+	if t.ServerCertificate.FromDirectory != "" {
+		return false
+	}
+
+	if t.ClientCertificate.FromFile != "" {
+		return false
+	}
+
+	if len(t.ClientCertificate.FromBytes) != 0 {
+		return false
+	}
+
+	if t.ClientCertificateKey.FromFile != "" {
+		return false
+	}
+
+	if len(t.ClientCertificateKey.FromBytes) != 0 {
+		return false
+	}
+
+	if t.ServerName != "" {
+		return false
+	}
+
+	if t.InsecureSkipVerify {
+		return false
+	}
+
+	return true
+}
+
 // applyTo applies the user-defined TLS configuration to the given client's
 // *tls.Config pointer; it is used to configure the internal http.Client
 func (from *TLSConfiguration) applyTo(to *tls.Config) error {

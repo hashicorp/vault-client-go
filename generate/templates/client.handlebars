@@ -87,20 +87,33 @@ func newClient(configuration ClientConfiguration) (*Client, error) {
 	}
 	c.parsedBaseAddress = address
 
-	transport, ok := c.client.Transport.(*http.Transport);
-	if !ok {
-		return nil, fmt.Errorf("the configured base client's transport (%T) is not of type *http.Transport", c.client.Transport)
-	}
-
-	// Adjust the dial context for unix domain socket addresses.
 	if strings.HasPrefix(configuration.Address, "unix://") {
-		transport.DialContext = func(context.Context, string, string) (net.Conn, error) {
-			return net.Dial("unix", strings.TrimPrefix(configuration.Address, "unix://"))
+		// Adjust the dial context for unix domain socket addresses in the
+		// internal HTTP transport, if exists.
+		if httpTransport, ok := c.client.Transport.(*http.Transport); ok {
+			httpTransport.DialContext = func(context.Context, string, string) (net.Conn, error) {
+				return net.Dial("unix", strings.TrimPrefix(configuration.Address, "unix://"))
+			}
+		} else {
+			return nil, fmt.Errorf(
+				"the configured base client's transport (%T) is not of type *http.Transport and cannot be used with the unix:// address",
+				c.client.Transport,
+			)
 		}
 	}
 
-	if err := configuration.TLS.applyTo(transport.TLSClientConfig); err != nil {
-		return nil, err
+	if !configuration.TLS.empty() {
+		// Apply TLS configuration to the internal HTTP transport, if exists.
+		if httpTransport, ok := c.client.Transport.(*http.Transport); ok {
+			if err := configuration.TLS.applyTo(httpTransport.TLSClientConfig); err != nil {
+				return nil, err
+			}
+		} else {
+			return nil, fmt.Errorf(
+				"the configured base client's transport (%T) is not of type *http.Transport and cannot be used with TLS configuration",
+				c.client.Transport,
+			)
+		}
 	}
 
 {{#with apiInfo}}

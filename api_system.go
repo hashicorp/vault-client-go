@@ -2037,6 +2037,107 @@ func (s *System) PluginsReloadBackends(ctx context.Context, request schema.Plugi
 	)
 }
 
+// PluginsRuntimesCatalogListPluginsRuntimes
+func (s *System) PluginsRuntimesCatalogListPluginsRuntimes(ctx context.Context, options ...RequestOption) (*Response[schema.PluginsRuntimesCatalogListPluginsRuntimesResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/plugins/runtimes/catalog/"
+
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
+	requestQueryParameters.Add("list", "true")
+
+	return sendRequestParseResponse[schema.PluginsRuntimesCatalogListPluginsRuntimesResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PluginsRuntimesCatalogReadPluginRuntimeConfiguration Return the configuration data for the plugin runtime with the given name.
+// name: The name of the plugin runtime
+// type_: The type of the plugin runtime
+func (s *System) PluginsRuntimesCatalogReadPluginRuntimeConfiguration(ctx context.Context, name string, type_ string, options ...RequestOption) (*Response[schema.PluginsRuntimesCatalogReadPluginRuntimeConfigurationResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/plugins/runtimes/catalog/{type}/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
+
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
+
+	return sendRequestParseResponse[schema.PluginsRuntimesCatalogReadPluginRuntimeConfigurationResponse](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PluginsRuntimesCatalogRegisterPluginRuntime Register a new plugin runtime, or updates an existing one with the supplied name.
+// name: The name of the plugin runtime
+// type_: The type of the plugin runtime
+func (s *System) PluginsRuntimesCatalogRegisterPluginRuntime(ctx context.Context, name string, type_ string, request schema.PluginsRuntimesCatalogRegisterPluginRuntimeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/plugins/runtimes/catalog/{type}/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
+
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// PluginsRuntimesCatalogRemovePluginRuntime Remove the plugin runtime with the given name.
+// name: The name of the plugin runtime
+// type_: The type of the plugin runtime
+func (s *System) PluginsRuntimesCatalogRemovePluginRuntime(ctx context.Context, name string, type_ string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/plugins/runtimes/catalog/{type}/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
+
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
 // PoliciesDeleteAclPolicy Delete the ACL policy with the given name.
 // name: The name of the policy. Example: \&quot;ops\&quot;
 func (s *System) PoliciesDeleteAclPolicy(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {

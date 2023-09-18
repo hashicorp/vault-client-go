@@ -36,7 +36,7 @@ type MountsReadTuningInformationResponse struct {
 
 	PassthroughRequestHeaders []string `json:"passthrough_request_headers,omitempty"`
 
-	// The semantic version of the plugin to use.
+	// The semantic version of the plugin to use, or image tag if oci_image is provided.
 	PluginVersion string `json:"plugin_version,omitempty"`
 
 	// The type of token to issue (service or batch).

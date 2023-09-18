@@ -37,7 +37,7 @@ type PkiReadIssuerResponse struct {
 	// Manual Chain
 	ManualChain []string `json:"manual_chain,omitempty"`
 
-	// OSCP Servers
+	// OCSP Servers
 	OcspServers []string `json:"ocsp_servers,omitempty"`
 
 	// Revocation Signature Alogrithm

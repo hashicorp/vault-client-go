@@ -73,17 +73,6 @@ type ClientConfiguration struct {
 	// This feature requires enterprise server-side.
 	EnforceReadYourWritesConsistency bool
 
-	// EnableSRVLookup enables the client to look up the Vault server host
-	// through DNS SRV lookup. The lookup will happen on each request. The base
-	// address' port must be empty for this setting to be respected.
-	//
-	// Note: this feature is not designed for high availability, just
-	// discovery.
-	//
-	// See https://datatracker.ietf.org/doc/html/draft-andrews-http-srv-02
-	// for more information
-	EnableSRVLookup bool `env:"VAULT_SRV_LOOKUP"`
-
 	// DisableRedirects prevents the client from automatically following
 	// redirects. Any redirect responses will result in `RedirectError` instead.
 	//
@@ -177,7 +166,7 @@ type RetryConfiguration struct {
 	// Default: 1000 milliseconds
 	RetryWaitMin time.Duration `env:"VAULT_RETRY_WAIT_MIN"`
 
-	// MaxRetryWait controls the maximum time to wait before retrying when
+	// RetryWaitMax controls the maximum time to wait before retrying when
 	// a 5xx or 412 error occurs.
 	// Default: 1500 milliseconds
 	RetryWaitMax time.Duration `env:"VAULT_RETRY_WAIT_MAX"`
@@ -251,7 +240,6 @@ func DefaultConfiguration() ClientConfiguration {
 //	VAULT_ADDR, VAULT_AGENT_ADDR (vault's address, e.g. https://127.0.0.1:8200/)
 //	VAULT_CLIENT_TIMEOUT         (request timeout)
 //	VAULT_RATE_LIMIT             (rate[:burst] in operations per second)
-//	VAULT_SRV_LOOKUP             (enable DNS SRV lookup)
 //	VAULT_DISABLE_REDIRECTS      (prevents vault client from following redirects)
 //	VAULT_TOKEN                  (the initial authentication token)
 //	VAULT_NAMESPACE              (the initial namespace to use)
@@ -369,6 +357,47 @@ func DefaultRetryPolicy(ctx context.Context, resp *http.Response, err error) (bo
 	}
 
 	return false, nil
+}
+
+// empty returns true if t is equivalent to an empty TLSConfiguration{} object.
+func (t *TLSConfiguration) empty() bool {
+	if t.ServerCertificate.FromFile != "" {
+		return false
+	}
+
+	if len(t.ServerCertificate.FromBytes) != 0 {
+		return false
+	}
+
+	if t.ServerCertificate.FromDirectory != "" {
+		return false
+	}
+
+	if t.ClientCertificate.FromFile != "" {
+		return false
+	}
+
+	if len(t.ClientCertificate.FromBytes) != 0 {
+		return false
+	}
+
+	if t.ClientCertificateKey.FromFile != "" {
+		return false
+	}
+
+	if len(t.ClientCertificateKey.FromBytes) != 0 {
+		return false
+	}
+
+	if t.ServerName != "" {
+		return false
+	}
+
+	if t.InsecureSkipVerify {
+		return false
+	}
+
+	return true
 }
 
 // applyTo applies the user-defined TLS configuration to the given client's

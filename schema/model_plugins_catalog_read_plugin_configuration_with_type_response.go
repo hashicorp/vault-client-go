@@ -20,9 +20,12 @@ type PluginsCatalogReadPluginConfigurationWithTypeResponse struct {
 	// The name of the plugin
 	Name string `json:"name,omitempty"`
 
-	// The SHA256 sum of the executable used in the command field. This should be HEX encoded.
+	// The name of the OCI image to be run, without the tag or SHA256. Must already be present on the machine.
+	OciImage string `json:"oci_image,omitempty"`
+
+	// The SHA256 sum of the executable or container to be run. This should be HEX encoded.
 	Sha256 string `json:"sha256,omitempty"`
 
-	// The semantic version of the plugin to use.
+	// The semantic version of the plugin to use, or image tag if oci_image is provided.
 	Version string `json:"version,omitempty"`
 }

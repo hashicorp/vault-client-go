@@ -8,8 +8,6 @@ import (
 	"net/url"
 	"strings"
 	"time"
-
-	"github.com/hashicorp/go-multierror"
 )
 
 // RequestOption is a functional parameter used to modify a request
@@ -74,8 +72,8 @@ func WithResponseWrapping(ttl time.Duration) RequestOption {
 }
 
 // WithCustomHeaders sets custom headers for the next request; these headers
-// take precedence over the client-level custom headers. The internal prefix
-// 'X-Vault-' is not permitted for the header keys.
+// will be appended to any custom headers set at the client level. The internal
+// prefix 'X-Vault-' is not permitted for the header keys.
 func WithCustomHeaders(headers http.Header) RequestOption {
 	return func(m *requestModifiers) error {
 		if err := validateCustomHeaders(headers); err != nil {
@@ -87,7 +85,8 @@ func WithCustomHeaders(headers http.Header) RequestOption {
 }
 
 // WithRequestCallbacks sets callbacks which will be invoked before the next
-// request; these take precedence over the client-level request callbacks.
+// request; these callbacks will be appended to the list of the callbacks set
+// at the client-level.
 func WithRequestCallbacks(callbacks ...RequestCallback) RequestOption {
 	return func(m *requestModifiers) error {
 		m.requestCallbacks = callbacks
@@ -96,8 +95,8 @@ func WithRequestCallbacks(callbacks ...RequestCallback) RequestOption {
 }
 
 // WithResponseCallbacks sets callbacks which will be invoked after a
-// successful response within the next request; these take precedence over the
-// client-level response callbacks.
+// successful response within the next request; these callbacks will be
+// appended to the list of the callbacks set at the client-level.
 func WithResponseCallbacks(callbacks ...ResponseCallback) RequestOption {
 	return func(m *requestModifiers) error {
 		m.responseCallbacks = callbacks
@@ -142,17 +141,13 @@ func WithReplicationForwardingMode(mode ReplicationForwardingMode) RequestOption
 }
 
 // requestOptionsToRequestModifiers constructs `requestModifiers` propagating the errors, if any
-func requestOptionsToRequestModifiers(options []RequestOption) (_ requestModifiers, errs error) {
+func requestOptionsToRequestModifiers(options []RequestOption) (requestModifiers, error) {
 	var modifiers requestModifiers
 
 	for _, option := range options {
 		if err := option(&modifiers); err != nil {
-			errs = multierror.Append(errs, err)
+			return requestModifiers{}, err
 		}
-	}
-
-	if errs != nil {
-		return requestModifiers{}, errs
 	}
 
 	return modifiers, nil

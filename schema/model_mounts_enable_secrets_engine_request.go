@@ -25,7 +25,7 @@ type MountsEnableSecretsEngineRequest struct {
 	// Name of the plugin to mount based from the name registered in the plugin catalog.
 	PluginName string `json:"plugin_name,omitempty"`
 
-	// The semantic version of the plugin to use.
+	// The semantic version of the plugin to use, or image tag if oci_image is provided.
 	PluginVersion string `json:"plugin_version,omitempty"`
 
 	// Whether to turn on seal wrapping for the mount.

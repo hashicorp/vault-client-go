@@ -9049,6 +9049,31 @@ func (s *Secrets) TransitExportKeyVersion(ctx context.Context, name string, type
 	)
 }
 
+// TransitGenerateCsrForKey
+// name: Name of the key
+func (s *Secrets) TransitGenerateCsrForKey(ctx context.Context, name string, request schema.TransitGenerateCsrForKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{transit_mount_path}/keys/{name}/csr"
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("transit")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
 // TransitGenerateDataKey Generate a data key
 // name: The backend key used for encrypting the data key
 // plaintext: \&quot;plaintext\&quot; will return the key in both plaintext and ciphertext; \&quot;wrapped\&quot; will return the ciphertext only.
@@ -9526,6 +9551,31 @@ func (s *Secrets) TransitRotateKey(ctx context.Context, name string, request sch
 	}
 
 	requestPath := "/v1/{transit_mount_path}/keys/{name}/rotate"
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("transit")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// TransitSetCertificateForKey
+// name: Name of the key
+func (s *Secrets) TransitSetCertificateForKey(ctx context.Context, name string, request schema.TransitSetCertificateForKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{transit_mount_path}/keys/{name}/set-certificate"
 	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("transit")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 

@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func Test_walkconfigurationfields(t *testing.T) {
+func Test_walkConfigurationFields(t *testing.T) {
 	var (
 		actual   = []string{}
 		expected = []string{
@@ -28,7 +28,6 @@ func Test_walkconfigurationfields(t *testing.T) {
 			"VAULT_RETRY_WAIT_MAX",
 			"VAULT_MAX_RETRIES",
 			"VAULT_RATE_LIMIT",
-			"VAULT_SRV_LOOKUP",
 			"VAULT_DISABLE_REDIRECTS",
 		}
 	)
@@ -44,4 +43,48 @@ func Test_walkconfigurationfields(t *testing.T) {
 	))
 
 	require.Subset(t, actual, expected)
+}
+
+func Test_TLSConfiguration_empty(t *testing.T) {
+	cases := map[string]struct {
+		tls           TLSConfiguration
+		expectedEmpty bool
+	}{
+		"empty": {
+			tls:           TLSConfiguration{},
+			expectedEmpty: true,
+		},
+		"with-server-name": {
+			tls: TLSConfiguration{
+				ServerName: "my-server",
+			},
+			expectedEmpty: false,
+		},
+		"with-server-certificate-from-file": {
+			tls: TLSConfiguration{
+				ServerCertificate: ServerCertificateEntry{
+					FromFile: "./cert.pem",
+				},
+			},
+			expectedEmpty: false,
+		},
+		"with-server-certificate-from-bytes": {
+			tls: TLSConfiguration{
+				ServerCertificate: ServerCertificateEntry{
+					FromBytes: []byte{1, 1, 2, 3, 5},
+				},
+			},
+			expectedEmpty: false,
+		},
+	}
+
+	for name, tc := range cases {
+		t.Run(name, func(t *testing.T) {
+			if tc.expectedEmpty {
+				require.True(t, tc.tls.empty())
+			} else {
+				require.False(t, tc.tls.empty())
+			}
+		})
+	}
 }

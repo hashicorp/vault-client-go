@@ -137,10 +137,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.AliasCreate(
 		context.Background(),
-		AliasCreateRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.AliasCreateRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -191,11 +194,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	id := "id_example" // string | ID of the alias
 	resp, err := client.Identity.AliasDeleteById(
 		context.Background(),
 		id,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -250,9 +254,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.AliasListById(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -303,11 +308,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	id := "id_example" // string | ID of the alias
 	resp, err := client.Identity.AliasReadById(
 		context.Background(),
 		id,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -363,12 +369,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	id := "id_example" // string | ID of the alias
 	resp, err := client.Identity.AliasUpdateById(
 		context.Background(),
 		id,
-		AliasUpdateByIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.AliasUpdateByIdRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -425,10 +434,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.EntityBatchDelete(
 		context.Background(),
-		EntityBatchDeleteRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.EntityBatchDeleteRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -480,10 +492,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.EntityCreate(
 		context.Background(),
-		EntityCreateRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.EntityCreateRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -535,10 +550,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.EntityCreateAlias(
 		context.Background(),
-		EntityCreateAliasRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.EntityCreateAliasRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -589,11 +607,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	id := "id_example" // string | ID of the alias
 	resp, err := client.Identity.EntityDeleteAliasById(
 		context.Background(),
 		id,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -648,11 +667,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
 	resp, err := client.Identity.EntityDeleteById(
 		context.Background(),
 		id,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -707,11 +727,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the entity
 	resp, err := client.Identity.EntityDeleteByName(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -766,9 +787,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.EntityListAliasesById(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -819,9 +841,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.EntityListById(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -872,9 +895,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.EntityListByName(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -926,10 +950,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.EntityLookUp(
 		context.Background(),
-		EntityLookUpRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.EntityLookUpRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -981,10 +1008,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.EntityMerge(
 		context.Background(),
-		EntityMergeRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.EntityMergeRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1035,11 +1065,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	id := "id_example" // string | ID of the alias
 	resp, err := client.Identity.EntityReadAliasById(
 		context.Background(),
 		id,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1094,11 +1125,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
 	resp, err := client.Identity.EntityReadById(
 		context.Background(),
 		id,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1153,11 +1185,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the entity
 	resp, err := client.Identity.EntityReadByName(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1213,12 +1246,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	id := "id_example" // string | ID of the alias
 	resp, err := client.Identity.EntityUpdateAliasById(
 		context.Background(),
 		id,
-		EntityUpdateAliasByIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.EntityUpdateAliasByIdRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1275,12 +1311,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
 	resp, err := client.Identity.EntityUpdateById(
 		context.Background(),
 		id,
-		EntityUpdateByIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.EntityUpdateByIdRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1337,12 +1376,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the entity
 	resp, err := client.Identity.EntityUpdateByName(
 		context.Background(),
 		name,
-		EntityUpdateByNameRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.EntityUpdateByNameRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1399,10 +1441,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.GroupCreate(
 		context.Background(),
-		GroupCreateRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GroupCreateRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1454,10 +1499,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.GroupCreateAlias(
 		context.Background(),
-		GroupCreateAliasRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GroupCreateAliasRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1508,11 +1556,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	id := "id_example" // string | ID of the group alias.
 	resp, err := client.Identity.GroupDeleteAliasById(
 		context.Background(),
 		id,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1567,11 +1616,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
 	resp, err := client.Identity.GroupDeleteById(
 		context.Background(),
 		id,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1626,11 +1676,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the group.
 	resp, err := client.Identity.GroupDeleteByName(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1685,9 +1736,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.GroupListAliasesById(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1738,9 +1790,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.GroupListById(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1791,9 +1844,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.GroupListByName(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1845,10 +1899,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.GroupLookUp(
 		context.Background(),
-		GroupLookUpRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GroupLookUpRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1899,11 +1956,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	id := "id_example" // string | ID of the group alias.
 	resp, err := client.Identity.GroupReadAliasById(
 		context.Background(),
 		id,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1958,11 +2016,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
 	resp, err := client.Identity.GroupReadById(
 		context.Background(),
 		id,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2017,11 +2076,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the group.
 	resp, err := client.Identity.GroupReadByName(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2077,12 +2137,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	id := "id_example" // string | ID of the group alias.
 	resp, err := client.Identity.GroupUpdateAliasById(
 		context.Background(),
 		id,
-		GroupUpdateAliasByIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GroupUpdateAliasByIdRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2139,12 +2202,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
 	resp, err := client.Identity.GroupUpdateById(
 		context.Background(),
 		id,
-		GroupUpdateByIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GroupUpdateByIdRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2201,12 +2267,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the group.
 	resp, err := client.Identity.GroupUpdateByName(
 		context.Background(),
 		name,
-		GroupUpdateByNameRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GroupUpdateByNameRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2263,10 +2332,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.MfaAdminDestroyTotpSecret(
 		context.Background(),
-		MfaAdminDestroyTotpSecretRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.MfaAdminDestroyTotpSecretRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2318,10 +2390,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.MfaAdminGenerateTotpSecret(
 		context.Background(),
-		MfaAdminGenerateTotpSecretRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.MfaAdminGenerateTotpSecretRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2373,10 +2448,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.MfaCreateDuoMethod(
 		context.Background(),
-		MfaCreateDuoMethodRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.MfaCreateDuoMethodRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2428,10 +2506,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.MfaCreateOktaMethod(
 		context.Background(),
-		MfaCreateOktaMethodRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.MfaCreateOktaMethodRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2483,10 +2564,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.MfaCreatePingIdMethod(
 		context.Background(),
-		MfaCreatePingIdMethodRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.MfaCreatePingIdMethodRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2538,10 +2622,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.MfaCreateTotpMethod(
 		context.Background(),
-		MfaCreateTotpMethodRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.MfaCreateTotpMethodRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2592,11 +2679,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaDeleteDuoMethod(
 		context.Background(),
 		methodId,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2651,11 +2739,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name for this login enforcement configuration
 	resp, err := client.Identity.MfaDeleteLoginEnforcement(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2710,11 +2799,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaDeleteOktaMethod(
 		context.Background(),
 		methodId,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2769,11 +2859,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaDeletePingIdMethod(
 		context.Background(),
 		methodId,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2828,11 +2919,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaDeleteTotpMethod(
 		context.Background(),
 		methodId,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2888,10 +2980,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.MfaGenerateTotpSecret(
 		context.Background(),
-		MfaGenerateTotpSecretRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.MfaGenerateTotpSecretRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2942,9 +3037,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.MfaListDuoMethods(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2995,9 +3091,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.MfaListLoginEnforcements(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3048,9 +3145,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.MfaListMethods(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3101,9 +3199,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.MfaListOktaMethods(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3154,9 +3253,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.MfaListPingIdMethods(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3207,9 +3307,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.MfaListTotpMethods(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3260,11 +3361,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaReadDuoMethod(
 		context.Background(),
 		methodId,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3319,11 +3421,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name for this login enforcement configuration
 	resp, err := client.Identity.MfaReadLoginEnforcement(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3378,11 +3481,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaReadMethod(
 		context.Background(),
 		methodId,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3437,11 +3541,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaReadOktaMethod(
 		context.Background(),
 		methodId,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3496,11 +3601,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaReadPingIdMethod(
 		context.Background(),
 		methodId,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3555,11 +3661,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaReadTotpMethod(
 		context.Background(),
 		methodId,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3615,12 +3722,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaUpdateDuoMethod(
 		context.Background(),
 		methodId,
-		MfaUpdateDuoMethodRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.MfaUpdateDuoMethodRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3677,12 +3787,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaUpdateOktaMethod(
 		context.Background(),
 		methodId,
-		MfaUpdateOktaMethodRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.MfaUpdateOktaMethodRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3739,12 +3852,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaUpdatePingIdMethod(
 		context.Background(),
 		methodId,
-		MfaUpdatePingIdMethodRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.MfaUpdatePingIdMethodRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3801,12 +3917,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	resp, err := client.Identity.MfaUpdateTotpMethod(
 		context.Background(),
 		methodId,
-		MfaUpdateTotpMethodRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.MfaUpdateTotpMethodRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3863,12 +3982,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name for this login enforcement configuration
 	resp, err := client.Identity.MfaWriteLoginEnforcement(
 		context.Background(),
 		name,
-		MfaWriteLoginEnforcementRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.MfaWriteLoginEnforcementRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3925,10 +4047,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.OidcConfigure(
 		context.Background(),
-		OidcConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.OidcConfigureRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3979,11 +4104,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the assignment
 	resp, err := client.Identity.OidcDeleteAssignment(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4038,11 +4164,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the client.
 	resp, err := client.Identity.OidcDeleteClient(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4097,11 +4224,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the key
 	resp, err := client.Identity.OidcDeleteKey(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4156,11 +4284,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcDeleteProvider(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4215,11 +4344,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Identity.OidcDeleteRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4274,11 +4404,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the scope
 	resp, err := client.Identity.OidcDeleteScope(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4333,11 +4464,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Identity.OidcGenerateToken(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4393,10 +4525,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.OidcIntrospect(
 		context.Background(),
-		OidcIntrospectRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.OidcIntrospectRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4447,9 +4582,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.OidcListAssignments(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4500,9 +4636,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.OidcListClients(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4553,9 +4690,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.OidcListKeys(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4606,11 +4744,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	allowedClientId := "allowedClientId_example" // string | Filters the list of OIDC providers to those that allow the given client ID in their set of allowed_client_ids. (defaults to "")
 	resp, err := client.Identity.OidcListProviders(
 		context.Background(),
 		allowedClientId,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4662,9 +4801,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.OidcListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4715,9 +4855,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.OidcListScopes(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4768,6 +4909,8 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the provider
 	clientId := "clientId_example" // string | The ID of the requesting client.
 	codeChallenge := "codeChallenge_example" // string | The code challenge derived from the code verifier.
@@ -4790,7 +4933,6 @@ func main() {
 		responseType,
 		scope,
 		state,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4855,12 +4997,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcProviderAuthorizeWithParameters(
 		context.Background(),
 		name,
-		OidcProviderAuthorizeWithParametersRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.OidcProviderAuthorizeWithParametersRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4917,12 +5062,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcProviderToken(
 		context.Background(),
 		name,
-		OidcProviderTokenRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.OidcProviderTokenRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4978,11 +5126,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcProviderUserInfo(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5037,11 +5186,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the assignment
 	resp, err := client.Identity.OidcReadAssignment(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5096,11 +5246,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the client.
 	resp, err := client.Identity.OidcReadClient(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5155,9 +5306,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.OidcReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5205,11 +5357,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the key
 	resp, err := client.Identity.OidcReadKey(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5264,9 +5417,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.OidcReadOpenIdConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5314,11 +5468,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcReadProvider(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5373,11 +5528,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcReadProviderOpenIdConfiguration(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5432,11 +5588,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcReadProviderPublicKeys(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5491,9 +5648,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.OidcReadPublicKeys(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5541,11 +5699,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Identity.OidcReadRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5600,11 +5759,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the scope
 	resp, err := client.Identity.OidcReadScope(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5660,12 +5820,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the key
 	resp, err := client.Identity.OidcRotateKey(
 		context.Background(),
 		name,
-		OidcRotateKeyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.OidcRotateKeyRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5722,12 +5885,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the assignment
 	resp, err := client.Identity.OidcWriteAssignment(
 		context.Background(),
 		name,
-		OidcWriteAssignmentRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.OidcWriteAssignmentRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5784,12 +5950,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the client.
 	resp, err := client.Identity.OidcWriteClient(
 		context.Background(),
 		name,
-		OidcWriteClientRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.OidcWriteClientRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5846,12 +6015,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the key
 	resp, err := client.Identity.OidcWriteKey(
 		context.Background(),
 		name,
-		OidcWriteKeyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.OidcWriteKeyRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5908,12 +6080,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the provider
 	resp, err := client.Identity.OidcWriteProvider(
 		context.Background(),
 		name,
-		OidcWriteProviderRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.OidcWriteProviderRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5970,12 +6145,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Identity.OidcWriteRole(
 		context.Background(),
 		name,
-		OidcWriteRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.OidcWriteRoleRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6032,12 +6210,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the scope
 	resp, err := client.Identity.OidcWriteScope(
 		context.Background(),
 		name,
-		OidcWriteScopeRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.OidcWriteScopeRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6094,10 +6275,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.PersonaCreate(
 		context.Background(),
-		PersonaCreateRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PersonaCreateRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6148,11 +6332,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	id := "id_example" // string | ID of the persona
 	resp, err := client.Identity.PersonaDeleteById(
 		context.Background(),
 		id,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6207,9 +6392,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Identity.PersonaListById(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6260,11 +6446,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	id := "id_example" // string | ID of the persona
 	resp, err := client.Identity.PersonaReadById(
 		context.Background(),
 		id,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6320,12 +6507,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	id := "id_example" // string | ID of the persona
 	resp, err := client.Identity.PersonaUpdateById(
 		context.Background(),
 		id,
-		PersonaUpdateByIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PersonaUpdateByIdRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)

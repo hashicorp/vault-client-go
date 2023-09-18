@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **SecretKey** | Pointer to **string** | AWS Secret Access Key for the account used to make AWS API requests. | [optional] [default to ""]
 **StsEndpoint** | Pointer to **string** | URL to override the default generated endpoint for making AWS STS API calls. | [optional] [default to ""]
 **StsRegion** | Pointer to **string** | The region ID for the sts_endpoint, if set. | [optional] [default to ""]
+**UseStsRegionFromClient** | Pointer to **bool** | Uses the STS region from client requests for making AWS STS API calls. | [optional] [default to false]
 
 
 

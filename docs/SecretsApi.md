@@ -369,6 +369,7 @@ Method | HTTP request | Description
 [**TransitEncrypt**](SecretsApi.md#TransitEncrypt) | **Post** /{transit_mount_path}/encrypt/{name} | Encrypt a plaintext value or a batch of plaintext blocks using a named key
 [**TransitExportKey**](SecretsApi.md#TransitExportKey) | **Get** /{transit_mount_path}/export/{type}/{name} | Export named encryption or signing key
 [**TransitExportKeyVersion**](SecretsApi.md#TransitExportKeyVersion) | **Get** /{transit_mount_path}/export/{type}/{name}/{version} | Export named encryption or signing key
+[**TransitGenerateCsrForKey**](SecretsApi.md#TransitGenerateCsrForKey) | **Post** /{transit_mount_path}/keys/{name}/csr | 
 [**TransitGenerateDataKey**](SecretsApi.md#TransitGenerateDataKey) | **Post** /{transit_mount_path}/datakey/{plaintext}/{name} | Generate a data key
 [**TransitGenerateHmac**](SecretsApi.md#TransitGenerateHmac) | **Post** /{transit_mount_path}/hmac/{name} | Generate an HMAC for input data using the named key
 [**TransitGenerateHmacWithAlgorithm**](SecretsApi.md#TransitGenerateHmacWithAlgorithm) | **Post** /{transit_mount_path}/hmac/{name}/{urlalgorithm} | Generate an HMAC for input data using the named key
@@ -389,6 +390,7 @@ Method | HTTP request | Description
 [**TransitRestoreKey**](SecretsApi.md#TransitRestoreKey) | **Post** /{transit_mount_path}/restore | Restore the named key
 [**TransitRewrap**](SecretsApi.md#TransitRewrap) | **Post** /{transit_mount_path}/rewrap/{name} | Rewrap ciphertext
 [**TransitRotateKey**](SecretsApi.md#TransitRotateKey) | **Post** /{transit_mount_path}/keys/{name}/rotate | Rotate named encryption key
+[**TransitSetCertificateForKey**](SecretsApi.md#TransitSetCertificateForKey) | **Post** /{transit_mount_path}/keys/{name}/set-certificate | 
 [**TransitSign**](SecretsApi.md#TransitSign) | **Post** /{transit_mount_path}/sign/{name} | Generate a signature for input data using the named key
 [**TransitSignWithAlgorithm**](SecretsApi.md#TransitSignWithAlgorithm) | **Post** /{transit_mount_path}/sign/{name}/{urlalgorithm} | Generate a signature for input data using the named key
 [**TransitTrimKey**](SecretsApi.md#TransitTrimKey) | **Post** /{transit_mount_path}/keys/{name}/trim | Trim key versions of a named key
@@ -421,10 +423,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.AliCloudConfigure(
 		context.Background(),
-		AliCloudConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.AliCloudConfigureRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -480,9 +485,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.AliCloudDeleteConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -537,11 +543,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the role.
 	resp, err := client.Secrets.AliCloudDeleteRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -598,11 +605,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the role.
 	resp, err := client.Secrets.AliCloudGenerateCredentials(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -659,9 +667,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.AliCloudListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -717,9 +726,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.AliCloudReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -774,11 +784,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the role.
 	resp, err := client.Secrets.AliCloudReadRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -836,12 +847,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the role.
 	resp, err := client.Secrets.AliCloudWriteRole(
 		context.Background(),
 		name,
-		AliCloudWriteRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.AliCloudWriteRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -900,10 +914,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.AwsConfigureLease(
 		context.Background(),
-		AwsConfigureLeaseRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.AwsConfigureLeaseRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -960,10 +977,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.AwsConfigureRootIamCredentials(
 		context.Background(),
-		AwsConfigureRootIamCredentialsRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.AwsConfigureRootIamCredentialsRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -1019,11 +1039,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.AwsDeleteRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -1080,11 +1101,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of this role.
 	resp, err := client.Secrets.AwsDeleteStaticRolesName(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -1141,6 +1163,8 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	roleArn := "roleArn_example" // string | ARN of role to assume when credential_type is assumed_role
 	roleSessionName := "roleSessionName_example" // string | Session name to use when assuming role. Max chars: 64
@@ -1151,7 +1175,6 @@ func main() {
 		roleArn,
 		roleSessionName,
 		ttl,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -1212,12 +1235,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.AwsGenerateCredentialsWithParameters(
 		context.Background(),
 		name,
-		AwsGenerateCredentialsWithParametersRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.AwsGenerateCredentialsWithParametersRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -1275,6 +1301,8 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	roleArn := "roleArn_example" // string | ARN of role to assume when credential_type is assumed_role
 	roleSessionName := "roleSessionName_example" // string | Session name to use when assuming role. Max chars: 64
@@ -1285,7 +1313,6 @@ func main() {
 		roleArn,
 		roleSessionName,
 		ttl,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -1346,12 +1373,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.AwsGenerateStsCredentialsWithParameters(
 		context.Background(),
 		name,
-		AwsGenerateStsCredentialsWithParametersRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.AwsGenerateStsCredentialsWithParametersRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -1409,9 +1439,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.AwsListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -1467,9 +1498,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.AwsReadLeaseConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -1524,11 +1556,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.AwsReadRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -1585,9 +1618,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.AwsReadRootIamCredentialsConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -1642,11 +1676,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of this role.
 	resp, err := client.Secrets.AwsReadStaticCredsName(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -1703,11 +1738,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of this role.
 	resp, err := client.Secrets.AwsReadStaticRolesName(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -1764,9 +1800,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.AwsRotateRootIamCredentials(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -1822,12 +1859,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.AwsWriteRole(
 		context.Background(),
 		name,
-		AwsWriteRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.AwsWriteRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -1886,12 +1926,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of this role.
 	resp, err := client.Secrets.AwsWriteStaticRolesName(
 		context.Background(),
 		name,
-		AwsWriteStaticRolesNameRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.AwsWriteStaticRolesNameRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -1950,10 +1993,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.AzureConfigure(
 		context.Background(),
-		AzureConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.AzureConfigureRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -2009,9 +2055,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.AzureDeleteConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -2066,11 +2113,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.AzureDeleteRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -2127,9 +2175,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.AzureListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -2185,9 +2234,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.AzureReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -2242,11 +2292,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.AzureReadRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -2303,11 +2354,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | Name of the Vault role
 	resp, err := client.Secrets.AzureRequestServicePrincipalCredentials(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -2364,9 +2416,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.AzureRotateRoot(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -2422,12 +2475,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.AzureWriteRole(
 		context.Background(),
 		name,
-		AzureWriteRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.AzureWriteRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -2486,10 +2542,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.ConsulConfigureAccess(
 		context.Background(),
-		ConsulConfigureAccessRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.ConsulConfigureAccessRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("consul"),
 	)
 	if err != nil {
@@ -2545,11 +2604,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.ConsulDeleteRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("consul"),
 	)
 	if err != nil {
@@ -2606,11 +2666,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | Name of the role.
 	resp, err := client.Secrets.ConsulGenerateCredentials(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("consul"),
 	)
 	if err != nil {
@@ -2667,9 +2728,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.ConsulListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("consul"),
 	)
 	if err != nil {
@@ -2725,9 +2787,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.ConsulReadAccessConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("consul"),
 	)
 	if err != nil {
@@ -2782,11 +2845,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.ConsulReadRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("consul"),
 	)
 	if err != nil {
@@ -2844,12 +2908,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.ConsulWriteRole(
 		context.Background(),
 		name,
-		ConsulWriteRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.ConsulWriteRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("consul"),
 	)
 	if err != nil {
@@ -2907,11 +2974,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | Specifies the path of the secret.
 	resp, err := client.Secrets.CubbyholeDelete(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2968,11 +3036,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | Specifies the path of the secret.
 	resp, err := client.Secrets.CubbyholeList(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3028,11 +3097,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | Specifies the path of the secret.
 	resp, err := client.Secrets.CubbyholeRead(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3087,12 +3157,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | Specifies the path of the secret.
 	resp, err := client.Secrets.CubbyholeWrite(
 		context.Background(),
 		path,
-		map[string]interface{}{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		map[string]interface{}{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3149,12 +3222,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of this database connection
 	resp, err := client.Secrets.DatabaseConfigureConnection(
 		context.Background(),
 		name,
-		DatabaseConfigureConnectionRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.DatabaseConfigureConnectionRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("database"),
 	)
 	if err != nil {
@@ -3212,11 +3288,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of this database connection
 	resp, err := client.Secrets.DatabaseDeleteConnectionConfiguration(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("database"),
 	)
 	if err != nil {
@@ -3273,11 +3350,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.DatabaseDeleteRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("database"),
 	)
 	if err != nil {
@@ -3334,11 +3412,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.DatabaseDeleteStaticRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("database"),
 	)
 	if err != nil {
@@ -3395,11 +3474,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.DatabaseGenerateCredentials(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("database"),
 	)
 	if err != nil {
@@ -3456,9 +3536,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.DatabaseListConnections(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("database"),
 	)
 	if err != nil {
@@ -3514,9 +3595,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.DatabaseListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("database"),
 	)
 	if err != nil {
@@ -3572,9 +3654,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.DatabaseListStaticRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("database"),
 	)
 	if err != nil {
@@ -3630,11 +3713,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of this database connection
 	resp, err := client.Secrets.DatabaseReadConnectionConfiguration(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("database"),
 	)
 	if err != nil {
@@ -3691,11 +3775,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.DatabaseReadRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("database"),
 	)
 	if err != nil {
@@ -3752,11 +3837,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.DatabaseReadStaticRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("database"),
 	)
 	if err != nil {
@@ -3813,11 +3899,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the static role.
 	resp, err := client.Secrets.DatabaseReadStaticRoleCredentials(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("database"),
 	)
 	if err != nil {
@@ -3874,11 +3961,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of this database connection
 	resp, err := client.Secrets.DatabaseResetConnection(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("database"),
 	)
 	if err != nil {
@@ -3935,11 +4023,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of this database connection
 	resp, err := client.Secrets.DatabaseRotateRootCredentials(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("database"),
 	)
 	if err != nil {
@@ -3996,11 +4085,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the static role
 	resp, err := client.Secrets.DatabaseRotateStaticRoleCredentials(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("database"),
 	)
 	if err != nil {
@@ -4058,12 +4148,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.DatabaseWriteRole(
 		context.Background(),
 		name,
-		DatabaseWriteRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.DatabaseWriteRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("database"),
 	)
 	if err != nil {
@@ -4122,12 +4215,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.DatabaseWriteStaticRole(
 		context.Background(),
 		name,
-		DatabaseWriteStaticRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.DatabaseWriteStaticRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("database"),
 	)
 	if err != nil {
@@ -4186,10 +4282,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.GoogleCloudConfigure(
 		context.Background(),
-		GoogleCloudConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GoogleCloudConfigureRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -4245,11 +4344,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Required. Name to refer to this impersonated account in Vault. Cannot be updated.
 	resp, err := client.Secrets.GoogleCloudDeleteImpersonatedAccount(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -4306,11 +4406,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Required. Name of the role.
 	resp, err := client.Secrets.GoogleCloudDeleteRoleset(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -4367,11 +4468,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
 	resp, err := client.Secrets.GoogleCloudDeleteStaticAccount(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -4428,11 +4530,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Required. Name of the impersonated account.
 	resp, err := client.Secrets.GoogleCloudGenerateImpersonatedAccountAccessToken(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -4489,11 +4592,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleset := "roleset_example" // string | Required. Name of the role set.
 	resp, err := client.Secrets.GoogleCloudGenerateRolesetAccessToken(
 		context.Background(),
 		roleset,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -4551,12 +4655,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleset := "roleset_example" // string | Required. Name of the role set.
 	resp, err := client.Secrets.GoogleCloudGenerateRolesetKey(
 		context.Background(),
 		roleset,
-		GoogleCloudGenerateRolesetKeyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GoogleCloudGenerateRolesetKeyRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -4614,11 +4721,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Required. Name of the static account.
 	resp, err := client.Secrets.GoogleCloudGenerateStaticAccountAccessToken(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -4676,12 +4784,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Required. Name of the static account.
 	resp, err := client.Secrets.GoogleCloudGenerateStaticAccountKey(
 		context.Background(),
 		name,
-		GoogleCloudGenerateStaticAccountKeyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GoogleCloudGenerateStaticAccountKeyRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -4740,10 +4851,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.GoogleCloudKmsConfigure(
 		context.Background(),
-		GoogleCloudKmsConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GoogleCloudKmsConfigureRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
@@ -4800,12 +4914,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	key := "key_example" // string | Name of the key in Vault.
 	resp, err := client.Secrets.GoogleCloudKmsConfigureKey(
 		context.Background(),
 		key,
-		GoogleCloudKmsConfigureKeyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GoogleCloudKmsConfigureKeyRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
@@ -4864,12 +4981,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	key := "key_example" // string | Name of the key in Vault to use for decryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
 	resp, err := client.Secrets.GoogleCloudKmsDecrypt(
 		context.Background(),
 		key,
-		GoogleCloudKmsDecryptRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GoogleCloudKmsDecryptRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
@@ -4927,9 +5047,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.GoogleCloudKmsDeleteConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
@@ -4984,11 +5105,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	key := "key_example" // string | Name of the key in Vault.
 	resp, err := client.Secrets.GoogleCloudKmsDeleteKey(
 		context.Background(),
 		key,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
@@ -5045,11 +5167,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	key := "key_example" // string | Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
 	resp, err := client.Secrets.GoogleCloudKmsDeregisterKey(
 		context.Background(),
 		key,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
@@ -5107,12 +5230,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	key := "key_example" // string | Name of the key in Vault to use for encryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
 	resp, err := client.Secrets.GoogleCloudKmsEncrypt(
 		context.Background(),
 		key,
-		GoogleCloudKmsEncryptRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GoogleCloudKmsEncryptRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
@@ -5170,9 +5296,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.GoogleCloudKmsListKeys(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
@@ -5228,9 +5355,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.GoogleCloudKmsReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
@@ -5285,11 +5413,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	key := "key_example" // string | Name of the key in Vault.
 	resp, err := client.Secrets.GoogleCloudKmsReadKey(
 		context.Background(),
 		key,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
@@ -5346,11 +5475,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	key := "key_example" // string | Name of the key in Vault.
 	resp, err := client.Secrets.GoogleCloudKmsReadKeyConfiguration(
 		context.Background(),
 		key,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
@@ -5408,12 +5538,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	key := "key_example" // string | Name of the key to use for encryption. This key must already exist in Vault and Google Cloud KMS.
 	resp, err := client.Secrets.GoogleCloudKmsReencrypt(
 		context.Background(),
 		key,
-		GoogleCloudKmsReencryptRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GoogleCloudKmsReencryptRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
@@ -5472,12 +5605,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	key := "key_example" // string | Name of the key to register in Vault. This will be the named used to refer to the underlying crypto key when encrypting or decrypting data.
 	resp, err := client.Secrets.GoogleCloudKmsRegisterKey(
 		context.Background(),
 		key,
-		GoogleCloudKmsRegisterKeyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GoogleCloudKmsRegisterKeyRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
@@ -5535,11 +5671,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	key := "key_example" // string | Name of the key for which to get the public key. This key must already exist in Vault and Google Cloud KMS.
 	resp, err := client.Secrets.GoogleCloudKmsRetrievePublicKey(
 		context.Background(),
 		key,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
@@ -5596,11 +5733,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	key := "key_example" // string | Name of the key to rotate. This key must already be registered with Vault and point to a valid Google Cloud KMS crypto key.
 	resp, err := client.Secrets.GoogleCloudKmsRotateKey(
 		context.Background(),
 		key,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
@@ -5658,12 +5796,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	key := "key_example" // string | Name of the key in Vault to use for signing. This key must already exist in Vault and must map back to a Google Cloud KMS key.
 	resp, err := client.Secrets.GoogleCloudKmsSign(
 		context.Background(),
 		key,
-		GoogleCloudKmsSignRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GoogleCloudKmsSignRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
@@ -5721,11 +5862,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	key := "key_example" // string | Name of the key in Vault.
 	resp, err := client.Secrets.GoogleCloudKmsTrimKeyVersions(
 		context.Background(),
 		key,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
@@ -5783,12 +5925,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	key := "key_example" // string | Name of the key in Vault to use for verification. This key must already exist in Vault and must map back to a Google Cloud KMS key.
 	resp, err := client.Secrets.GoogleCloudKmsVerify(
 		context.Background(),
 		key,
-		GoogleCloudKmsVerifyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GoogleCloudKmsVerifyRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
@@ -5847,12 +5992,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	key := "key_example" // string | Name of the key in Vault.
 	resp, err := client.Secrets.GoogleCloudKmsWriteKey(
 		context.Background(),
 		key,
-		GoogleCloudKmsWriteKeyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GoogleCloudKmsWriteKeyRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("gcpkms"),
 	)
 	if err != nil {
@@ -5910,9 +6058,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.GoogleCloudListImpersonatedAccounts(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -5968,9 +6117,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.GoogleCloudListRolesets(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -6026,9 +6176,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.GoogleCloudListStaticAccounts(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -6084,9 +6235,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.GoogleCloudReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -6141,11 +6293,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Required. Name to refer to this impersonated account in Vault. Cannot be updated.
 	resp, err := client.Secrets.GoogleCloudReadImpersonatedAccount(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -6202,11 +6355,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Required. Name of the role.
 	resp, err := client.Secrets.GoogleCloudReadRoleset(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -6263,11 +6417,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
 	resp, err := client.Secrets.GoogleCloudReadStaticAccount(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -6324,11 +6479,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.GoogleCloudRotateRoleset(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -6385,11 +6541,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.GoogleCloudRotateRolesetKey(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -6446,9 +6603,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.GoogleCloudRotateRootCredentials(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -6503,11 +6661,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the account.
 	resp, err := client.Secrets.GoogleCloudRotateStaticAccountKey(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -6565,12 +6724,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Required. Name to refer to this impersonated account in Vault. Cannot be updated.
 	resp, err := client.Secrets.GoogleCloudWriteImpersonatedAccount(
 		context.Background(),
 		name,
-		GoogleCloudWriteImpersonatedAccountRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GoogleCloudWriteImpersonatedAccountRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -6629,12 +6791,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Required. Name of the role.
 	resp, err := client.Secrets.GoogleCloudWriteRoleset(
 		context.Background(),
 		name,
-		GoogleCloudWriteRolesetRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GoogleCloudWriteRolesetRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -6693,12 +6858,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
 	resp, err := client.Secrets.GoogleCloudWriteStaticAccount(
 		context.Background(),
 		name,
-		GoogleCloudWriteStaticAccountRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.GoogleCloudWriteStaticAccountRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -6756,9 +6924,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.KubernetesCheckConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -6814,10 +6983,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.KubernetesConfigure(
 		context.Background(),
-		KubernetesConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.KubernetesConfigureRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -6873,9 +7045,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.KubernetesDeleteConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -6930,11 +7103,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.KubernetesDeleteRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -6992,12 +7166,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the Vault role
 	resp, err := client.Secrets.KubernetesGenerateCredentials(
 		context.Background(),
 		name,
-		KubernetesGenerateCredentialsRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.KubernetesGenerateCredentialsRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -7055,9 +7232,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.KubernetesListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -7113,9 +7291,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.KubernetesReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -7170,11 +7349,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.KubernetesReadRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -7232,12 +7412,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.KubernetesWriteRole(
 		context.Background(),
 		name,
-		KubernetesWriteRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.KubernetesWriteRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -7295,11 +7478,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV1Delete(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kv-v1"),
 	)
 	if err != nil {
@@ -7356,11 +7540,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV1List(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kv-v1"),
 	)
 	if err != nil {
@@ -7418,11 +7603,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV1Read(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kv-v1"),
 	)
 	if err != nil {
@@ -7479,12 +7665,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV1Write(
 		context.Background(),
 		path,
-		map[string]interface{}{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		map[string]interface{}{
+			// populate request parameters
+		},
 		vault.WithMountPath("kv-v1"),
 	)
 	if err != nil {
@@ -7543,10 +7732,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.KvV2Configure(
 		context.Background(),
-		KvV2ConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.KvV2ConfigureRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
@@ -7602,11 +7794,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV2Delete(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
@@ -7663,11 +7856,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV2DeleteMetadataAndAllVersions(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
@@ -7725,12 +7919,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV2DeleteVersions(
 		context.Background(),
 		path,
-		KvV2DeleteVersionsRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.KvV2DeleteVersionsRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
@@ -7789,12 +7986,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV2DestroyVersions(
 		context.Background(),
 		path,
-		KvV2DestroyVersionsRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.KvV2DestroyVersionsRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
@@ -7852,11 +8052,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV2List(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
@@ -7914,11 +8115,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV2Read(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
@@ -7975,9 +8177,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.KvV2ReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
@@ -8032,11 +8235,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV2ReadMetadata(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
@@ -8093,11 +8297,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV2ReadSubkeys(
 		context.Background(),
 		path,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
@@ -8155,12 +8360,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV2UndeleteVersions(
 		context.Background(),
 		path,
-		KvV2UndeleteVersionsRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.KvV2UndeleteVersionsRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
@@ -8219,12 +8427,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV2Write(
 		context.Background(),
 		path,
-		KvV2WriteRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.KvV2WriteRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
@@ -8283,12 +8494,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	path := "path_example" // string | Location of the secret.
 	resp, err := client.Secrets.KvV2WriteMetadata(
 		context.Background(),
 		path,
-		KvV2WriteMetadataRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.KvV2WriteMetadataRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("kv-v2"),
 	)
 	if err != nil {
@@ -8347,10 +8561,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.LdapConfigure(
 		context.Background(),
-		LdapConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.LdapConfigureRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -8406,9 +8623,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.LdapDeleteConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -8463,11 +8681,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role (lowercase)
 	resp, err := client.Secrets.LdapDeleteDynamicRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -8524,11 +8743,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.LdapDeleteStaticRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -8586,12 +8806,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the set.
 	resp, err := client.Secrets.LdapLibraryCheckIn(
 		context.Background(),
 		name,
-		LdapLibraryCheckInRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.LdapLibraryCheckInRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -8650,12 +8873,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the set
 	resp, err := client.Secrets.LdapLibraryCheckOut(
 		context.Background(),
 		name,
-		LdapLibraryCheckOutRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.LdapLibraryCheckOutRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -8713,11 +8939,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the set.
 	resp, err := client.Secrets.LdapLibraryCheckStatus(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -8775,12 +9002,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the set.
 	resp, err := client.Secrets.LdapLibraryConfigure(
 		context.Background(),
 		name,
-		LdapLibraryConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.LdapLibraryConfigureRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -8838,11 +9068,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the set.
 	resp, err := client.Secrets.LdapLibraryDelete(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -8900,12 +9131,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the set.
 	resp, err := client.Secrets.LdapLibraryForceCheckIn(
 		context.Background(),
 		name,
-		LdapLibraryForceCheckInRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.LdapLibraryForceCheckInRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -8963,9 +9197,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.LdapLibraryList(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -9021,11 +9256,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the set.
 	resp, err := client.Secrets.LdapLibraryRead(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -9082,9 +9318,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.LdapListDynamicRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -9140,9 +9377,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.LdapListStaticRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -9198,9 +9436,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.LdapReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -9255,11 +9494,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role (lowercase)
 	resp, err := client.Secrets.LdapReadDynamicRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -9316,11 +9556,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.LdapReadStaticRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -9377,11 +9618,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the dynamic role.
 	resp, err := client.Secrets.LdapRequestDynamicRoleCredentials(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -9438,11 +9680,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the static role.
 	resp, err := client.Secrets.LdapRequestStaticRoleCredentials(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -9499,9 +9742,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.LdapRotateRootCredentials(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -9556,11 +9800,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the static role
 	resp, err := client.Secrets.LdapRotateStaticRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -9618,12 +9863,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role (lowercase)
 	resp, err := client.Secrets.LdapWriteDynamicRole(
 		context.Background(),
 		name,
-		LdapWriteDynamicRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.LdapWriteDynamicRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -9682,12 +9930,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.LdapWriteStaticRole(
 		context.Background(),
 		name,
-		LdapWriteStaticRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.LdapWriteStaticRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -9746,10 +9997,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.MongoDbAtlasConfigure(
 		context.Background(),
-		MongoDbAtlasConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.MongoDbAtlasConfigureRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("mongodbatlas"),
 	)
 	if err != nil {
@@ -9805,11 +10059,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the Roles
 	resp, err := client.Secrets.MongoDbAtlasDeleteRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("mongodbatlas"),
 	)
 	if err != nil {
@@ -9866,11 +10121,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.MongoDbAtlasGenerateCredentials(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("mongodbatlas"),
 	)
 	if err != nil {
@@ -9927,9 +10183,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.MongoDbAtlasListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("mongodbatlas"),
 	)
 	if err != nil {
@@ -9985,9 +10242,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.MongoDbAtlasReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("mongodbatlas"),
 	)
 	if err != nil {
@@ -10042,11 +10300,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the Roles
 	resp, err := client.Secrets.MongoDbAtlasReadRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("mongodbatlas"),
 	)
 	if err != nil {
@@ -10104,12 +10363,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the Roles
 	resp, err := client.Secrets.MongoDbAtlasWriteRole(
 		context.Background(),
 		name,
-		MongoDbAtlasWriteRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.MongoDbAtlasWriteRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("mongodbatlas"),
 	)
 	if err != nil {
@@ -10168,10 +10430,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.NomadConfigureAccess(
 		context.Background(),
-		NomadConfigureAccessRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.NomadConfigureAccessRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("nomad"),
 	)
 	if err != nil {
@@ -10228,10 +10493,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.NomadConfigureLease(
 		context.Background(),
-		NomadConfigureLeaseRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.NomadConfigureLeaseRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("nomad"),
 	)
 	if err != nil {
@@ -10287,9 +10555,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.NomadDeleteAccessConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("nomad"),
 	)
 	if err != nil {
@@ -10344,9 +10613,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.NomadDeleteLeaseConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("nomad"),
 	)
 	if err != nil {
@@ -10401,11 +10671,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.NomadDeleteRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("nomad"),
 	)
 	if err != nil {
@@ -10462,11 +10733,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.NomadGenerateCredentials(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("nomad"),
 	)
 	if err != nil {
@@ -10523,9 +10795,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.NomadListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("nomad"),
 	)
 	if err != nil {
@@ -10581,9 +10854,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.NomadReadAccessConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("nomad"),
 	)
 	if err != nil {
@@ -10638,9 +10912,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.NomadReadLeaseConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("nomad"),
 	)
 	if err != nil {
@@ -10695,11 +10970,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.NomadReadRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("nomad"),
 	)
 	if err != nil {
@@ -10757,12 +11033,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.NomadWriteRole(
 		context.Background(),
 		name,
-		NomadWriteRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.NomadWriteRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("nomad"),
 	)
 	if err != nil {
@@ -10821,10 +11100,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiConfigureAcme(
 		context.Background(),
-		PkiConfigureAcmeRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiConfigureAcmeRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -10881,10 +11163,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiConfigureAutoTidy(
 		context.Background(),
-		PkiConfigureAutoTidyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiConfigureAutoTidyRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -10941,10 +11226,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiConfigureCa(
 		context.Background(),
-		PkiConfigureCaRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiConfigureCaRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -11001,10 +11289,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiConfigureCluster(
 		context.Background(),
-		PkiConfigureClusterRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiConfigureClusterRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -11061,10 +11352,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiConfigureCrl(
 		context.Background(),
-		PkiConfigureCrlRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiConfigureCrlRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -11121,10 +11415,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiConfigureIssuers(
 		context.Background(),
-		PkiConfigureIssuersRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiConfigureIssuersRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -11181,10 +11478,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiConfigureKeys(
 		context.Background(),
-		PkiConfigureKeysRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiConfigureKeysRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -11241,10 +11541,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiConfigureUrls(
 		context.Background(),
-		PkiConfigureUrlsRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiConfigureUrlsRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -11301,10 +11604,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiCrossSignIntermediate(
 		context.Background(),
-		PkiCrossSignIntermediateRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiCrossSignIntermediateRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -11360,11 +11666,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	keyId := "keyId_example" // string | EAB key identifier
 	resp, err := client.Secrets.PkiDeleteEabKey(
 		context.Background(),
 		keyId,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -11421,11 +11728,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiDeleteIssuer(
 		context.Background(),
 		issuerRef,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -11482,11 +11790,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
 	resp, err := client.Secrets.PkiDeleteKey(
 		context.Background(),
 		keyRef,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -11543,11 +11852,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.PkiDeleteRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -11604,9 +11914,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiDeleteRoot(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -11661,9 +11972,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiGenerateEabKey(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -11718,11 +12030,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	resp, err := client.Secrets.PkiGenerateEabKeyForIssuer(
 		context.Background(),
 		issuerRef,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -11779,13 +12092,14 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiGenerateEabKeyForIssuerAndRole(
 		context.Background(),
 		issuerRef,
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -11844,11 +12158,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiGenerateEabKeyForRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -11906,10 +12221,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiGenerateExportedKey(
 		context.Background(),
-		PkiGenerateExportedKeyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiGenerateExportedKeyRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -11966,12 +12284,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
 	resp, err := client.Secrets.PkiGenerateIntermediate(
 		context.Background(),
 		exported,
-		PkiGenerateIntermediateRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiGenerateIntermediateRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -12030,10 +12351,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiGenerateInternalKey(
 		context.Background(),
-		PkiGenerateInternalKeyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiGenerateInternalKeyRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -12090,10 +12414,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiGenerateKmsKey(
 		context.Background(),
-		PkiGenerateKmsKeyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiGenerateKmsKeyRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -12150,12 +12477,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
 	resp, err := client.Secrets.PkiGenerateRoot(
 		context.Background(),
 		exported,
-		PkiGenerateRootRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiGenerateRootRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -12214,10 +12544,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiImportKey(
 		context.Background(),
-		PkiImportKeyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiImportKeyRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -12274,12 +12607,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | The desired role with configuration for this request
 	resp, err := client.Secrets.PkiIssueWithRole(
 		context.Background(),
 		role,
-		PkiIssueWithRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiIssueWithRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -12338,14 +12674,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
 	resp, err := client.Secrets.PkiIssuerIssueWithRole(
 		context.Background(),
 		issuerRef,
 		role,
-		PkiIssuerIssueWithRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiIssuerIssueWithRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -12405,11 +12744,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiIssuerReadCrl(
 		context.Background(),
 		issuerRef,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -12466,11 +12806,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiIssuerReadCrlDelta(
 		context.Background(),
 		issuerRef,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -12527,11 +12868,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiIssuerReadCrlDeltaDer(
 		context.Background(),
 		issuerRef,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -12588,11 +12930,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiIssuerReadCrlDeltaPem(
 		context.Background(),
 		issuerRef,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -12649,11 +12992,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiIssuerReadCrlDer(
 		context.Background(),
 		issuerRef,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -12710,11 +13054,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiIssuerReadCrlPem(
 		context.Background(),
 		issuerRef,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -12772,12 +13117,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiIssuerResignCrls(
 		context.Background(),
 		issuerRef,
-		PkiIssuerResignCrlsRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiIssuerResignCrlsRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -12836,12 +13184,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiIssuerSignIntermediate(
 		context.Background(),
 		issuerRef,
-		PkiIssuerSignIntermediateRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiIssuerSignIntermediateRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -12900,12 +13251,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiIssuerSignRevocationList(
 		context.Background(),
 		issuerRef,
-		PkiIssuerSignRevocationListRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiIssuerSignRevocationListRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -12964,12 +13318,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiIssuerSignSelfIssued(
 		context.Background(),
 		issuerRef,
-		PkiIssuerSignSelfIssuedRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiIssuerSignSelfIssuedRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -13028,12 +13385,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiIssuerSignVerbatim(
 		context.Background(),
 		issuerRef,
-		PkiIssuerSignVerbatimRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiIssuerSignVerbatimRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -13092,14 +13452,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
 	resp, err := client.Secrets.PkiIssuerSignVerbatimWithRole(
 		context.Background(),
 		issuerRef,
 		role,
-		PkiIssuerSignVerbatimWithRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiIssuerSignVerbatimWithRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -13160,14 +13523,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
 	resp, err := client.Secrets.PkiIssuerSignWithRole(
 		context.Background(),
 		issuerRef,
 		role,
-		PkiIssuerSignWithRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiIssuerSignWithRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -13228,12 +13594,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
 	resp, err := client.Secrets.PkiIssuersGenerateIntermediate(
 		context.Background(),
 		exported,
-		PkiIssuersGenerateIntermediateRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiIssuersGenerateIntermediateRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -13292,12 +13661,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
 	resp, err := client.Secrets.PkiIssuersGenerateRoot(
 		context.Background(),
 		exported,
-		PkiIssuersGenerateRootRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiIssuersGenerateRootRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -13356,10 +13728,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiIssuersImportBundle(
 		context.Background(),
-		PkiIssuersImportBundleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiIssuersImportBundleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -13416,10 +13791,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiIssuersImportCert(
 		context.Background(),
-		PkiIssuersImportCertRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiIssuersImportCertRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -13475,9 +13853,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiListCerts(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -13533,9 +13912,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiListEabKeys(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -13591,9 +13971,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiListIssuers(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -13649,9 +14030,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiListKeys(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -13707,9 +14089,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiListRevokedCerts(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -13765,9 +14148,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -13823,9 +14207,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiQueryOcsp(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -13880,11 +14265,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	req := "req_example" // string | base-64 encoded ocsp request
 	resp, err := client.Secrets.PkiQueryOcspWithGetReq(
 		context.Background(),
 		req,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -13941,9 +14327,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiReadAcmeConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -13998,9 +14385,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiReadAcmeDirectory(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -14055,9 +14443,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiReadAcmeNewNonce(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -14112,9 +14501,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiReadAutoTidyConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -14169,9 +14559,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiReadCaChainPem(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -14226,9 +14617,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiReadCaDer(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -14283,9 +14675,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiReadCaPem(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -14340,11 +14733,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
 	resp, err := client.Secrets.PkiReadCert(
 		context.Background(),
 		serial,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -14401,9 +14795,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiReadCertCaChain(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -14458,9 +14853,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiReadCertCrl(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -14515,9 +14911,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiReadCertDeltaCrl(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -14572,11 +14969,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
 	resp, err := client.Secrets.PkiReadCertRawDer(
 		context.Background(),
 		serial,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -14633,11 +15031,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
 	resp, err := client.Secrets.PkiReadCertRawPem(
 		context.Background(),
 		serial,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -14694,9 +15093,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiReadClusterConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -14751,9 +15151,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiReadCrlConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -14808,9 +15209,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiReadCrlDelta(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -14865,9 +15267,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiReadCrlDeltaPem(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -14922,9 +15325,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiReadCrlDer(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -14979,9 +15383,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiReadCrlPem(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -15036,11 +15441,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiReadIssuer(
 		context.Background(),
 		issuerRef,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -15097,11 +15503,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiReadIssuerDer(
 		context.Background(),
 		issuerRef,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -15158,11 +15565,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	resp, err := client.Secrets.PkiReadIssuerIssuerRefAcmeDirectory(
 		context.Background(),
 		issuerRef,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -15219,11 +15627,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	resp, err := client.Secrets.PkiReadIssuerIssuerRefAcmeNewNonce(
 		context.Background(),
 		issuerRef,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -15280,13 +15689,14 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiReadIssuerIssuerRefRolesRoleAcmeDirectory(
 		context.Background(),
 		issuerRef,
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -15345,13 +15755,14 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiReadIssuerIssuerRefRolesRoleAcmeNewNonce(
 		context.Background(),
 		issuerRef,
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -15410,11 +15821,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiReadIssuerJson(
 		context.Background(),
 		issuerRef,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -15471,11 +15883,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiReadIssuerPem(
 		context.Background(),
 		issuerRef,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -15532,9 +15945,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiReadIssuersConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -15589,11 +16003,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
 	resp, err := client.Secrets.PkiReadKey(
 		context.Background(),
 		keyRef,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -15650,9 +16065,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiReadKeysConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -15707,11 +16123,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.PkiReadRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -15768,11 +16185,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiReadRolesRoleAcmeDirectory(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -15829,11 +16247,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiReadRolesRoleAcmeNewNonce(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -15890,9 +16309,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiReadUrlsConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -15948,10 +16368,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiReplaceRoot(
 		context.Background(),
-		PkiReplaceRootRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiReplaceRootRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -16008,10 +16431,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiRevoke(
 		context.Background(),
-		PkiRevokeRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiRevokeRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -16067,11 +16493,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiRevokeIssuer(
 		context.Background(),
 		issuerRef,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -16129,10 +16556,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiRevokeWithKey(
 		context.Background(),
-		PkiRevokeWithKeyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiRevokeWithKeyRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -16189,10 +16619,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiRootSignIntermediate(
 		context.Background(),
-		PkiRootSignIntermediateRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiRootSignIntermediateRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -16249,10 +16682,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiRootSignSelfIssued(
 		context.Background(),
-		PkiRootSignSelfIssuedRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiRootSignSelfIssuedRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -16308,9 +16744,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiRotateCrl(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -16365,9 +16802,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiRotateDeltaCrl(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -16423,12 +16861,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
 	resp, err := client.Secrets.PkiRotateRoot(
 		context.Background(),
 		exported,
-		PkiRotateRootRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiRotateRootRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -16487,10 +16928,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiSetSignedIntermediate(
 		context.Background(),
-		PkiSetSignedIntermediateRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiSetSignedIntermediateRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -16547,10 +16991,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiSignVerbatim(
 		context.Background(),
-		PkiSignVerbatimRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiSignVerbatimRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -16607,12 +17054,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | The desired role with configuration for this request
 	resp, err := client.Secrets.PkiSignVerbatimWithRole(
 		context.Background(),
 		role,
-		PkiSignVerbatimWithRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiSignVerbatimWithRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -16671,12 +17121,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | The desired role with configuration for this request
 	resp, err := client.Secrets.PkiSignWithRole(
 		context.Background(),
 		role,
-		PkiSignWithRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiSignWithRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -16735,10 +17188,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiTidy(
 		context.Background(),
-		PkiTidyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiTidyRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -16794,9 +17250,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiTidyCancel(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -16851,9 +17308,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiTidyStatus(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -16909,12 +17367,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	kid := "kid_example" // string | The key identifier provided by the CA
 	resp, err := client.Secrets.PkiWriteAcmeAccountKid(
 		context.Background(),
 		kid,
-		PkiWriteAcmeAccountKidRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteAcmeAccountKidRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -16973,12 +17434,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	authId := "authId_example" // string | ACME authorization identifier value
 	resp, err := client.Secrets.PkiWriteAcmeAuthorizationAuthId(
 		context.Background(),
 		authId,
-		PkiWriteAcmeAuthorizationAuthIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteAcmeAuthorizationAuthIdRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -17037,14 +17501,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	authId := "authId_example" // string | ACME authorization identifier value
 	challengeType := "challengeType_example" // string | ACME challenge type
 	resp, err := client.Secrets.PkiWriteAcmeChallengeAuthIdChallengeType(
 		context.Background(),
 		authId,
 		challengeType,
-		PkiWriteAcmeChallengeAuthIdChallengeTypeRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteAcmeChallengeAuthIdChallengeTypeRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -17105,10 +17572,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiWriteAcmeNewAccount(
 		context.Background(),
-		PkiWriteAcmeNewAccountRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteAcmeNewAccountRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -17165,10 +17635,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiWriteAcmeNewOrder(
 		context.Background(),
-		PkiWriteAcmeNewOrderRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteAcmeNewOrderRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -17225,12 +17698,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
 	resp, err := client.Secrets.PkiWriteAcmeOrderOrderId(
 		context.Background(),
 		orderId,
-		PkiWriteAcmeOrderOrderIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteAcmeOrderOrderIdRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -17289,12 +17765,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
 	resp, err := client.Secrets.PkiWriteAcmeOrderOrderIdCert(
 		context.Background(),
 		orderId,
-		PkiWriteAcmeOrderOrderIdCertRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteAcmeOrderOrderIdCertRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -17353,12 +17832,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
 	resp, err := client.Secrets.PkiWriteAcmeOrderOrderIdFinalize(
 		context.Background(),
 		orderId,
-		PkiWriteAcmeOrderOrderIdFinalizeRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteAcmeOrderOrderIdFinalizeRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -17417,10 +17899,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiWriteAcmeOrders(
 		context.Background(),
-		PkiWriteAcmeOrdersRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteAcmeOrdersRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -17477,10 +17962,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.PkiWriteAcmeRevokeCert(
 		context.Background(),
-		PkiWriteAcmeRevokeCertRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteAcmeRevokeCertRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -17537,12 +18025,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	resp, err := client.Secrets.PkiWriteIssuer(
 		context.Background(),
 		issuerRef,
-		PkiWriteIssuerRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteIssuerRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -17601,14 +18092,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	kid := "kid_example" // string | The key identifier provided by the CA
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeAccountKid(
 		context.Background(),
 		issuerRef,
 		kid,
-		PkiWriteIssuerIssuerRefAcmeAccountKidRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteIssuerIssuerRefAcmeAccountKidRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -17669,14 +18163,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	authId := "authId_example" // string | ACME authorization identifier value
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeAuthorizationAuthId(
 		context.Background(),
 		authId,
 		issuerRef,
-		PkiWriteIssuerIssuerRefAcmeAuthorizationAuthIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteIssuerIssuerRefAcmeAuthorizationAuthIdRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -17737,6 +18234,8 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	authId := "authId_example" // string | ACME authorization identifier value
 	challengeType := "challengeType_example" // string | ACME challenge type
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
@@ -17745,8 +18244,9 @@ func main() {
 		authId,
 		challengeType,
 		issuerRef,
-		PkiWriteIssuerIssuerRefAcmeChallengeAuthIdChallengeTypeRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteIssuerIssuerRefAcmeChallengeAuthIdChallengeTypeRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -17809,12 +18309,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeNewAccount(
 		context.Background(),
 		issuerRef,
-		PkiWriteIssuerIssuerRefAcmeNewAccountRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteIssuerIssuerRefAcmeNewAccountRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -17873,12 +18376,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeNewOrder(
 		context.Background(),
 		issuerRef,
-		PkiWriteIssuerIssuerRefAcmeNewOrderRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteIssuerIssuerRefAcmeNewOrderRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -17937,14 +18443,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeOrderOrderId(
 		context.Background(),
 		issuerRef,
 		orderId,
-		PkiWriteIssuerIssuerRefAcmeOrderOrderIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteIssuerIssuerRefAcmeOrderOrderIdRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -18005,14 +18514,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeOrderOrderIdCert(
 		context.Background(),
 		issuerRef,
 		orderId,
-		PkiWriteIssuerIssuerRefAcmeOrderOrderIdCertRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteIssuerIssuerRefAcmeOrderOrderIdCertRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -18073,14 +18585,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeOrderOrderIdFinalize(
 		context.Background(),
 		issuerRef,
 		orderId,
-		PkiWriteIssuerIssuerRefAcmeOrderOrderIdFinalizeRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteIssuerIssuerRefAcmeOrderOrderIdFinalizeRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -18141,12 +18656,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeOrders(
 		context.Background(),
 		issuerRef,
-		PkiWriteIssuerIssuerRefAcmeOrdersRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteIssuerIssuerRefAcmeOrdersRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -18205,12 +18723,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefAcmeRevokeCert(
 		context.Background(),
 		issuerRef,
-		PkiWriteIssuerIssuerRefAcmeRevokeCertRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteIssuerIssuerRefAcmeRevokeCertRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -18269,6 +18790,8 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	kid := "kid_example" // string | The key identifier provided by the CA
 	role := "role_example" // string | The desired role for the acme request
@@ -18277,8 +18800,9 @@ func main() {
 		issuerRef,
 		kid,
 		role,
-		PkiWriteIssuerIssuerRefRolesRoleAcmeAccountKidRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteIssuerIssuerRefRolesRoleAcmeAccountKidRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -18341,6 +18865,8 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	authId := "authId_example" // string | ACME authorization identifier value
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	role := "role_example" // string | The desired role for the acme request
@@ -18349,8 +18875,9 @@ func main() {
 		authId,
 		issuerRef,
 		role,
-		PkiWriteIssuerIssuerRefRolesRoleAcmeAuthorizationAuthIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteIssuerIssuerRefRolesRoleAcmeAuthorizationAuthIdRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -18413,6 +18940,8 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	authId := "authId_example" // string | ACME authorization identifier value
 	challengeType := "challengeType_example" // string | ACME challenge type
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
@@ -18423,8 +18952,9 @@ func main() {
 		challengeType,
 		issuerRef,
 		role,
-		PkiWriteIssuerIssuerRefRolesRoleAcmeChallengeAuthIdChallengeTypeRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteIssuerIssuerRefRolesRoleAcmeChallengeAuthIdChallengeTypeRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -18489,14 +19019,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefRolesRoleAcmeNewAccount(
 		context.Background(),
 		issuerRef,
 		role,
-		PkiWriteIssuerIssuerRefRolesRoleAcmeNewAccountRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteIssuerIssuerRefRolesRoleAcmeNewAccountRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -18557,14 +19090,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefRolesRoleAcmeNewOrder(
 		context.Background(),
 		issuerRef,
 		role,
-		PkiWriteIssuerIssuerRefRolesRoleAcmeNewOrderRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteIssuerIssuerRefRolesRoleAcmeNewOrderRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -18625,6 +19161,8 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
 	role := "role_example" // string | The desired role for the acme request
@@ -18633,8 +19171,9 @@ func main() {
 		issuerRef,
 		orderId,
 		role,
-		PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -18697,6 +19236,8 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
 	role := "role_example" // string | The desired role for the acme request
@@ -18705,8 +19246,9 @@ func main() {
 		issuerRef,
 		orderId,
 		role,
-		PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdCertRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdCertRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -18769,6 +19311,8 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
 	role := "role_example" // string | The desired role for the acme request
@@ -18777,8 +19321,9 @@ func main() {
 		issuerRef,
 		orderId,
 		role,
-		PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdFinalizeRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteIssuerIssuerRefRolesRoleAcmeOrderOrderIdFinalizeRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -18841,14 +19386,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefRolesRoleAcmeOrders(
 		context.Background(),
 		issuerRef,
 		role,
-		PkiWriteIssuerIssuerRefRolesRoleAcmeOrdersRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteIssuerIssuerRefRolesRoleAcmeOrdersRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -18909,14 +19457,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	issuerRef := "issuerRef_example" // string | Reference to an existing issuer name or issuer id
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiWriteIssuerIssuerRefRolesRoleAcmeRevokeCert(
 		context.Background(),
 		issuerRef,
 		role,
-		PkiWriteIssuerIssuerRefRolesRoleAcmeRevokeCertRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteIssuerIssuerRefRolesRoleAcmeRevokeCertRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -18977,12 +19528,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
 	resp, err := client.Secrets.PkiWriteKey(
 		context.Background(),
 		keyRef,
-		PkiWriteKeyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteKeyRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -19041,12 +19595,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.PkiWriteRole(
 		context.Background(),
 		name,
-		PkiWriteRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -19105,14 +19662,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	kid := "kid_example" // string | The key identifier provided by the CA
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeAccountKid(
 		context.Background(),
 		kid,
 		role,
-		PkiWriteRolesRoleAcmeAccountKidRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteRolesRoleAcmeAccountKidRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -19173,14 +19733,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	authId := "authId_example" // string | ACME authorization identifier value
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeAuthorizationAuthId(
 		context.Background(),
 		authId,
 		role,
-		PkiWriteRolesRoleAcmeAuthorizationAuthIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteRolesRoleAcmeAuthorizationAuthIdRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -19241,6 +19804,8 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	authId := "authId_example" // string | ACME authorization identifier value
 	challengeType := "challengeType_example" // string | ACME challenge type
 	role := "role_example" // string | The desired role for the acme request
@@ -19249,8 +19814,9 @@ func main() {
 		authId,
 		challengeType,
 		role,
-		PkiWriteRolesRoleAcmeChallengeAuthIdChallengeTypeRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteRolesRoleAcmeChallengeAuthIdChallengeTypeRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -19313,12 +19879,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeNewAccount(
 		context.Background(),
 		role,
-		PkiWriteRolesRoleAcmeNewAccountRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteRolesRoleAcmeNewAccountRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -19377,12 +19946,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeNewOrder(
 		context.Background(),
 		role,
-		PkiWriteRolesRoleAcmeNewOrderRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteRolesRoleAcmeNewOrderRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -19441,14 +20013,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeOrderOrderId(
 		context.Background(),
 		orderId,
 		role,
-		PkiWriteRolesRoleAcmeOrderOrderIdRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteRolesRoleAcmeOrderOrderIdRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -19509,14 +20084,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeOrderOrderIdCert(
 		context.Background(),
 		orderId,
 		role,
-		PkiWriteRolesRoleAcmeOrderOrderIdCertRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteRolesRoleAcmeOrderOrderIdCertRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -19577,14 +20155,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	orderId := "orderId_example" // string | The ACME order identifier to fetch
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeOrderOrderIdFinalize(
 		context.Background(),
 		orderId,
 		role,
-		PkiWriteRolesRoleAcmeOrderOrderIdFinalizeRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteRolesRoleAcmeOrderOrderIdFinalizeRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -19645,12 +20226,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeOrders(
 		context.Background(),
 		role,
-		PkiWriteRolesRoleAcmeOrdersRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteRolesRoleAcmeOrdersRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -19709,12 +20293,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | The desired role for the acme request
 	resp, err := client.Secrets.PkiWriteRolesRoleAcmeRevokeCert(
 		context.Background(),
 		role,
-		PkiWriteRolesRoleAcmeRevokeCertRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.PkiWriteRolesRoleAcmeRevokeCertRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("pki"),
 	)
 	if err != nil {
@@ -19773,10 +20360,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.RabbitMqConfigureConnection(
 		context.Background(),
-		RabbitMqConfigureConnectionRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.RabbitMqConfigureConnectionRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("rabbitmq"),
 	)
 	if err != nil {
@@ -19833,10 +20423,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.RabbitMqConfigureLease(
 		context.Background(),
-		RabbitMqConfigureLeaseRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.RabbitMqConfigureLeaseRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("rabbitmq"),
 	)
 	if err != nil {
@@ -19892,11 +20485,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.RabbitMqDeleteRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("rabbitmq"),
 	)
 	if err != nil {
@@ -19953,9 +20547,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.RabbitMqListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("rabbitmq"),
 	)
 	if err != nil {
@@ -20011,9 +20606,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.RabbitMqReadLeaseConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("rabbitmq"),
 	)
 	if err != nil {
@@ -20068,11 +20664,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.RabbitMqReadRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("rabbitmq"),
 	)
 	if err != nil {
@@ -20129,11 +20726,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.RabbitMqRequestCredentials(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("rabbitmq"),
 	)
 	if err != nil {
@@ -20191,12 +20789,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Secrets.RabbitMqWriteRole(
 		context.Background(),
 		name,
-		RabbitMqWriteRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.RabbitMqWriteRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("rabbitmq"),
 	)
 	if err != nil {
@@ -20255,10 +20856,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.SshConfigureCa(
 		context.Background(),
-		SshConfigureCaRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.SshConfigureCaRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
@@ -20315,10 +20919,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.SshConfigureZeroAddress(
 		context.Background(),
-		SshConfigureZeroAddressRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.SshConfigureZeroAddressRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
@@ -20374,9 +20981,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.SshDeleteCaConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
@@ -20431,11 +21039,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | [Required for all types] Name of the role being created.
 	resp, err := client.Secrets.SshDeleteRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
@@ -20492,9 +21101,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.SshDeleteZeroAddressConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
@@ -20550,12 +21160,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | [Required] Name of the role
 	resp, err := client.Secrets.SshGenerateCredentials(
 		context.Background(),
 		role,
-		SshGenerateCredentialsRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.SshGenerateCredentialsRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
@@ -20614,12 +21227,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | The desired role with configuration for this request.
 	resp, err := client.Secrets.SshIssueCertificate(
 		context.Background(),
 		role,
-		SshIssueCertificateRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.SshIssueCertificateRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
@@ -20677,9 +21293,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.SshListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
@@ -20736,10 +21353,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.SshListRolesByIp(
 		context.Background(),
-		SshListRolesByIpRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.SshListRolesByIpRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
@@ -20795,9 +21415,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.SshReadCaConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
@@ -20852,9 +21473,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.SshReadPublicKey(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
@@ -20909,11 +21531,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | [Required for all types] Name of the role being created.
 	resp, err := client.Secrets.SshReadRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
@@ -20970,9 +21593,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.SshReadZeroAddressConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
@@ -21028,12 +21652,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | The desired role with configuration for this request.
 	resp, err := client.Secrets.SshSignCertificate(
 		context.Background(),
 		role,
-		SshSignCertificateRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.SshSignCertificateRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
@@ -21091,9 +21718,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.SshTidyDynamicHostKeys(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
@@ -21149,10 +21777,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.SshVerifyOtp(
 		context.Background(),
-		SshVerifyOtpRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.SshVerifyOtpRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
@@ -21209,12 +21840,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | [Required for all types] Name of the role being created.
 	resp, err := client.Secrets.SshWriteRole(
 		context.Background(),
 		role,
-		SshWriteRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.SshWriteRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("ssh"),
 	)
 	if err != nil {
@@ -21273,10 +21907,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.TerraformCloudConfigure(
 		context.Background(),
-		TerraformCloudConfigureRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TerraformCloudConfigureRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("terraform"),
 	)
 	if err != nil {
@@ -21332,9 +21969,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.TerraformCloudDeleteConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("terraform"),
 	)
 	if err != nil {
@@ -21389,11 +22027,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.TerraformCloudDeleteRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("terraform"),
 	)
 	if err != nil {
@@ -21450,11 +22089,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.TerraformCloudGenerateCredentials(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("terraform"),
 	)
 	if err != nil {
@@ -21511,9 +22151,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.TerraformCloudListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("terraform"),
 	)
 	if err != nil {
@@ -21569,9 +22210,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.TerraformCloudReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("terraform"),
 	)
 	if err != nil {
@@ -21626,11 +22268,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.TerraformCloudReadRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("terraform"),
 	)
 	if err != nil {
@@ -21687,11 +22330,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the team or organization role
 	resp, err := client.Secrets.TerraformCloudRotateRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("terraform"),
 	)
 	if err != nil {
@@ -21749,12 +22393,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role
 	resp, err := client.Secrets.TerraformCloudWriteRole(
 		context.Background(),
 		name,
-		TerraformCloudWriteRoleRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TerraformCloudWriteRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("terraform"),
 	)
 	if err != nil {
@@ -21813,12 +22460,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the key.
 	resp, err := client.Secrets.TotpCreateKey(
 		context.Background(),
 		name,
-		TotpCreateKeyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TotpCreateKeyRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("totp"),
 	)
 	if err != nil {
@@ -21876,11 +22526,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the key.
 	resp, err := client.Secrets.TotpDeleteKey(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("totp"),
 	)
 	if err != nil {
@@ -21937,11 +22588,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the key.
 	resp, err := client.Secrets.TotpGenerateCode(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("totp"),
 	)
 	if err != nil {
@@ -21998,9 +22650,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.TotpListKeys(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("totp"),
 	)
 	if err != nil {
@@ -22056,11 +22709,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the key.
 	resp, err := client.Secrets.TotpReadKey(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("totp"),
 	)
 	if err != nil {
@@ -22118,12 +22772,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the key.
 	resp, err := client.Secrets.TotpValidateCode(
 		context.Background(),
 		name,
-		TotpValidateCodeRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TotpValidateCodeRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("totp"),
 	)
 	if err != nil {
@@ -22181,11 +22838,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the key
 	resp, err := client.Secrets.TransitBackUpKey(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -22242,13 +22900,14 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	destination := "destination_example" // string | Destination key to export to; usually the public wrapping key of another Transit instance.
 	source := "source_example" // string | Source key to export; could be any present key within Transit.
 	resp, err := client.Secrets.TransitByokKey(
 		context.Background(),
 		destination,
 		source,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -22307,6 +22966,8 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	destination := "destination_example" // string | Destination key to export to; usually the public wrapping key of another Transit instance.
 	source := "source_example" // string | Source key to export; could be any present key within Transit.
 	version := "version_example" // string | Optional version of the key to export, else all key versions are exported.
@@ -22315,7 +22976,6 @@ func main() {
 		destination,
 		source,
 		version,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -22377,10 +23037,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.TransitConfigureCache(
 		context.Background(),
-		TransitConfigureCacheRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitConfigureCacheRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -22437,12 +23100,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the key
 	resp, err := client.Secrets.TransitConfigureKey(
 		context.Background(),
 		name,
-		TransitConfigureKeyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitConfigureKeyRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -22501,10 +23167,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.TransitConfigureKeys(
 		context.Background(),
-		TransitConfigureKeysRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitConfigureKeysRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -22561,12 +23230,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the key
 	resp, err := client.Secrets.TransitCreateKey(
 		context.Background(),
 		name,
-		TransitCreateKeyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitCreateKeyRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -22625,12 +23297,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the key
 	resp, err := client.Secrets.TransitDecrypt(
 		context.Background(),
 		name,
-		TransitDecryptRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitDecryptRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -22688,11 +23363,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the key
 	resp, err := client.Secrets.TransitDeleteKey(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -22750,12 +23426,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the key
 	resp, err := client.Secrets.TransitEncrypt(
 		context.Background(),
 		name,
-		TransitEncryptRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitEncryptRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -22813,13 +23492,14 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the key
 	type_ := "type__example" // string | Type of key to export (encryption-key, signing-key, hmac-key, public-key)
 	resp, err := client.Secrets.TransitExportKey(
 		context.Background(),
 		name,
 		type_,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -22878,6 +23558,8 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the key
 	type_ := "type__example" // string | Type of key to export (encryption-key, signing-key, hmac-key, public-key)
 	version := "version_example" // string | Version of the key
@@ -22886,7 +23568,6 @@ func main() {
 		name,
 		type_,
 		version,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -22922,6 +23603,73 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
+## TransitGenerateCsrForKey
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// TODO: authenticate if necessary (see the top-level README.md)
+
+	name := "name_example" // string | Name of the key
+	resp, err := client.Secrets.TransitGenerateCsrForKey(
+		context.Background(),
+		name,
+		schema.TransitGenerateCsrForKeyRequest{
+			// populate request parameters
+		},
+		vault.WithMountPath("transit"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the key | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **transitGenerateCsrForKeyRequest** | [**TransitGenerateCsrForKeyRequest**](TransitGenerateCsrForKeyRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
 ## TransitGenerateDataKey
 
 Generate a data key
@@ -22948,14 +23696,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The backend key used for encrypting the data key
 	plaintext := "plaintext_example" // string | \"plaintext\" will return the key in both plaintext and ciphertext; \"wrapped\" will return the ciphertext only.
 	resp, err := client.Secrets.TransitGenerateDataKey(
 		context.Background(),
 		name,
 		plaintext,
-		TransitGenerateDataKeyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitGenerateDataKeyRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -23016,12 +23767,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The key to use for the HMAC function
 	resp, err := client.Secrets.TransitGenerateHmac(
 		context.Background(),
 		name,
-		TransitGenerateHmacRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitGenerateHmacRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -23080,14 +23834,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The key to use for the HMAC function
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
 	resp, err := client.Secrets.TransitGenerateHmacWithAlgorithm(
 		context.Background(),
 		name,
 		urlalgorithm,
-		TransitGenerateHmacWithAlgorithmRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitGenerateHmacWithAlgorithmRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -23148,10 +23905,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.TransitGenerateRandom(
 		context.Background(),
-		TransitGenerateRandomRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitGenerateRandomRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -23208,12 +23968,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
 	resp, err := client.Secrets.TransitGenerateRandomWithBytes(
 		context.Background(),
 		urlbytes,
-		TransitGenerateRandomWithBytesRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitGenerateRandomWithBytesRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -23272,12 +24035,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 	resp, err := client.Secrets.TransitGenerateRandomWithSource(
 		context.Background(),
 		source,
-		TransitGenerateRandomWithSourceRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitGenerateRandomWithSourceRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -23336,14 +24102,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
 	resp, err := client.Secrets.TransitGenerateRandomWithSourceAndBytes(
 		context.Background(),
 		source,
 		urlbytes,
-		TransitGenerateRandomWithSourceAndBytesRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitGenerateRandomWithSourceAndBytesRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -23404,10 +24173,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.TransitHash(
 		context.Background(),
-		TransitHashRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitHashRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -23464,12 +24236,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
 	resp, err := client.Secrets.TransitHashWithAlgorithm(
 		context.Background(),
 		urlalgorithm,
-		TransitHashWithAlgorithmRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitHashWithAlgorithmRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -23528,12 +24303,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the key
 	resp, err := client.Secrets.TransitImportKey(
 		context.Background(),
 		name,
-		TransitImportKeyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitImportKeyRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -23592,12 +24370,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the key
 	resp, err := client.Secrets.TransitImportKeyVersion(
 		context.Background(),
 		name,
-		TransitImportKeyVersionRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitImportKeyVersionRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -23655,9 +24436,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.TransitListKeys(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -23713,9 +24495,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.TransitReadCacheConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -23770,11 +24553,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the key
 	resp, err := client.Secrets.TransitReadKey(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -23831,9 +24615,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.TransitReadKeysConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -23888,9 +24673,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.TransitReadWrappingKey(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -23946,12 +24732,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | If set, this will be the name of the restored key.
 	resp, err := client.Secrets.TransitRestoreAndRenameKey(
 		context.Background(),
 		name,
-		TransitRestoreAndRenameKeyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitRestoreAndRenameKeyRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -24010,10 +24799,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Secrets.TransitRestoreKey(
 		context.Background(),
-		TransitRestoreKeyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitRestoreKeyRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -24070,12 +24862,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the key
 	resp, err := client.Secrets.TransitRewrap(
 		context.Background(),
 		name,
-		TransitRewrapRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitRewrapRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -24134,12 +24929,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the key
 	resp, err := client.Secrets.TransitRotateKey(
 		context.Background(),
 		name,
-		TransitRotateKeyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitRotateKeyRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -24172,6 +24970,73 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
+## TransitSetCertificateForKey
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// TODO: authenticate if necessary (see the top-level README.md)
+
+	name := "name_example" // string | Name of the key
+	resp, err := client.Secrets.TransitSetCertificateForKey(
+		context.Background(),
+		name,
+		schema.TransitSetCertificateForKeyRequest{
+			// populate request parameters
+		},
+		vault.WithMountPath("transit"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the key | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **transitSetCertificateForKeyRequest** | [**TransitSetCertificateForKeyRequest**](TransitSetCertificateForKeyRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
 ## TransitSign
 
 Generate a signature for input data using the named key
@@ -24198,12 +25063,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The key to use
 	resp, err := client.Secrets.TransitSign(
 		context.Background(),
 		name,
-		TransitSignRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitSignRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -24262,14 +25130,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The key to use
 	urlalgorithm := "urlalgorithm_example" // string | Hash algorithm to use (POST URL parameter)
 	resp, err := client.Secrets.TransitSignWithAlgorithm(
 		context.Background(),
 		name,
 		urlalgorithm,
-		TransitSignWithAlgorithmRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitSignWithAlgorithmRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -24330,12 +25201,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the key
 	resp, err := client.Secrets.TransitTrimKey(
 		context.Background(),
 		name,
-		TransitTrimKeyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitTrimKeyRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -24394,12 +25268,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The key to use
 	resp, err := client.Secrets.TransitVerify(
 		context.Background(),
 		name,
-		TransitVerifyRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitVerifyRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {
@@ -24458,14 +25335,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The key to use
 	urlalgorithm := "urlalgorithm_example" // string | Hash algorithm to use (POST URL parameter)
 	resp, err := client.Secrets.TransitVerifyWithAlgorithm(
 		context.Background(),
 		name,
 		urlalgorithm,
-		TransitVerifyWithAlgorithmRequest{ /* populate request parameters */ },
-		vault.WithToken("my-token"),
+		schema.TransitVerifyWithAlgorithmRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("transit"),
 	)
 	if err != nil {

@@ -55,19 +55,13 @@ func isResponseError(req *http.Request, resp *http.Response) *ResponseError {
 		return nil
 	}
 
-	// /v1/sys/health returns a few special 4xx status codes that should not be
-	// treated as errors:
-	//
-	//  - 429 if unsealed and standby
-	//  - 472 if disaster recovery mode replication secondary and active
-	//  - 473 if performance standby
+	// /v1/sys/health returns a few special 4xx and 5xx status codes that
+	// should not be treated as errors; the response will contain valuable
+	// health status information.
 	//
 	// See: https://developer.hashicorp.com/vault/api-docs/system/health
-	if req.URL.Path == "/v1/sys/health" {
-		switch resp.StatusCode {
-		case 429, 472, 473:
-			return nil
-		}
+	if req.URL.Path == "/v1/sys/health" && resp != nil {
+		return nil
 	}
 
 	responseError := &ResponseError{

@@ -12,46 +12,46 @@ and this project adheres to
 
 ### Added
 
-- Added a way to pass extra options to `openapi-generator-cli`.
+- Added a way to pass extra options to `openapi-generator-cli` (#204).
 - Added support for custom non-HTTP transports.
 
 ### Changed
 
 - A number of generated method names and request/response schemas have changed.
-- Renamed `WithCustomQueryParameters` => `WithQueryParameters`.
-- Changed how request modifiers behave for slices and maps.
-- Switched to Go 1.21.
+- Renamed `WithCustomQueryParameters` => `WithQueryParameters` (#217).
+- Changed how request modifiers behave for slices and maps (#225).
+- Switched to Go 1.21 (#234).
 
 ### Removed
 
-- Removed support for SRV DNS lookups.
-- Removed `ReadWithParameters` (previously deprecated in 0.3.2).
-- Removed `ReadRawWithParameters` (previously deprecated in 0.3.2).
-- Removed `DeleteWithParameters` (previously deprecated in 0.3.2).
+- Removed support for SRV DNS lookups (#222).
+- Removed `ReadWithParameters` (previously deprecated in 0.3.2) (#189).
+- Removed `ReadRawWithParameters` (previously deprecated in 0.3.2) (#189).
+- Removed `DeleteWithParameters` (previously deprecated in 0.3.2) (#189).
 
 ### Fixed
 
-- Improved exclusion of operation IDs.
-- Improved generated documentation.
-- Improved performance of request modifiers.
-- Fixed logic for methods with both `GET` and `LIST` (e.g. `KvV1List`).
-- Fixed warnings during generation due to missing summary and description.
-- Fixed small issues in GitHub actions.
-- Fixed `TokenCreate*` generated methods.
-- Fixed duplication of `sys/raw/` and `sys/leases/lookup/` APIs.
-- Fixed templates to deal with arbitrary input APIs.
-- Fixed generation of `Query: true` parameters.
-- Fixed `CubbyholeWrite` with `TakesArbitraryInput` logic.
-- Fixed query parameter casing.
-- Fixed query parameters being double-encoded.
-- Fixed `/sys/health` to no longer return errors on 4xx & 5xx.
+- Improved exclusion of operation IDs (#215).
+- Improved generated documentation (#223, #232).
+- Improved performance of request modifiers (#224).
+- Fixed logic for methods with both `GET` and `LIST` (e.g. `KvV1List`) (#197).
+- Fixed warnings during generation due to missing summary and description (#178).
+- Fixed small issues in GitHub actions (#182).
+- Fixed `TokenCreate*` generated methods (#192).
+- Fixed duplication of `sys/raw/` and `sys/leases/lookup/` APIs (#203).
+- Fixed templates to deal with arbitrary input APIs (#205).
+- Fixed generation of `Query: true` parameters (#206).
+- Fixed `CubbyholeWrite` with `TakesArbitraryInput` logic (#206).
+- Fixed query parameter casing (#207).
+- Fixed query parameters being double-encoded (#213).
+- Fixed `/sys/health` to no longer return errors on 4xx & 5xx (#220, #221).
 - Fixed `vault.WithRetryConfiguration` to not error on missing parameters.
 
 ## [0.3.3][] ([diff][0.3.3-diff]) - 2023-05-26
 
 ### Fixed
 
-- Fixed PkiListResponse encoding issue.
+- Fixed PkiListResponse encoding issue (#175).
 
 ## [0.3.2][] ([diff][0.3.2-diff]) - 2023-05-16
 

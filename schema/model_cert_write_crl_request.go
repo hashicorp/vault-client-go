@@ -13,12 +13,3 @@ type CertWriteCrlRequest struct {
 	// The URL of a CRL distribution point. Only one of 'crl' or 'url' parameters should be specified.
 	Url string `json:"url,omitempty"`
 }
-
-// NewCertWriteCrlRequestWithDefaults instantiates a new CertWriteCrlRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCertWriteCrlRequestWithDefaults() *CertWriteCrlRequest {
-	var this CertWriteCrlRequest
-
-	return &this
-}

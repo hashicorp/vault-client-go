@@ -19,12 +19,3 @@ type KerberosConfigureRequest struct {
 	// Service Account
 	ServiceAccount string `json:"service_account,omitempty"`
 }
-
-// NewKerberosConfigureRequestWithDefaults instantiates a new KerberosConfigureRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewKerberosConfigureRequestWithDefaults() *KerberosConfigureRequest {
-	var this KerberosConfigureRequest
-
-	return &this
-}

@@ -13,12 +13,3 @@ type MfaValidateRequest struct {
 	// ID for this MFA request
 	MfaRequestId string `json:"mfa_request_id"`
 }
-
-// NewMfaValidateRequestWithDefaults instantiates a new MfaValidateRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMfaValidateRequestWithDefaults() *MfaValidateRequest {
-	var this MfaValidateRequest
-
-	return &this
-}

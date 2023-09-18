@@ -19,12 +19,3 @@ type KvV2WriteResponse struct {
 
 	Version int64 `json:"version,omitempty"`
 }
-
-// NewKvV2WriteResponseWithDefaults instantiates a new KvV2WriteResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewKvV2WriteResponseWithDefaults() *KvV2WriteResponse {
-	var this KvV2WriteResponse
-
-	return &this
-}

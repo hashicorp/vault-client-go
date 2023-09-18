@@ -19,12 +19,3 @@ type KvV2PatchResponse struct {
 
 	Version int64 `json:"version,omitempty"`
 }
-
-// NewKvV2PatchResponseWithDefaults instantiates a new KvV2PatchResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewKvV2PatchResponseWithDefaults() *KvV2PatchResponse {
-	var this KvV2PatchResponse
-
-	return &this
-}

@@ -19,21 +19,6 @@ type PkiSignWithRoleResponse struct {
 	// Issuing Certificate Authority
 	IssuingCa string `json:"issuing_ca,omitempty"`
 
-	// Private key
-	PrivateKey string `json:"private_key,omitempty"`
-
-	// Private key type
-	PrivateKeyType string `json:"private_key_type,omitempty"`
-
 	// Serial Number
 	SerialNumber string `json:"serial_number,omitempty"`
-}
-
-// NewPkiSignWithRoleResponseWithDefaults instantiates a new PkiSignWithRoleResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiSignWithRoleResponseWithDefaults() *PkiSignWithRoleResponse {
-	var this PkiSignWithRoleResponse
-
-	return &this
 }

@@ -56,15 +56,3 @@ type CloudFoundryConfigureRequest struct {
 	// Deprecated
 	PcfUsername string `json:"pcf_username,omitempty"`
 }
-
-// NewCloudFoundryConfigureRequestWithDefaults instantiates a new CloudFoundryConfigureRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCloudFoundryConfigureRequestWithDefaults() *CloudFoundryConfigureRequest {
-	var this CloudFoundryConfigureRequest
-
-	this.LoginMaxSecondsNotAfter = 60
-	this.LoginMaxSecondsNotBefore = "300"
-
-	return &this
-}

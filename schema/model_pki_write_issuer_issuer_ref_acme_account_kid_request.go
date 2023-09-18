@@ -16,12 +16,3 @@ type PkiWriteIssuerIssuerRefAcmeAccountKidRequest struct {
 	// ACME request 'signature' value
 	Signature string `json:"signature,omitempty"`
 }
-
-// NewPkiWriteIssuerIssuerRefAcmeAccountKidRequestWithDefaults instantiates a new PkiWriteIssuerIssuerRefAcmeAccountKidRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiWriteIssuerIssuerRefAcmeAccountKidRequestWithDefaults() *PkiWriteIssuerIssuerRefAcmeAccountKidRequest {
-	var this PkiWriteIssuerIssuerRefAcmeAccountKidRequest
-
-	return &this
-}

@@ -13,12 +13,3 @@ type RemountRequest struct {
 	// The new mount point.
 	To string `json:"to,omitempty"`
 }
-
-// NewRemountRequestWithDefaults instantiates a new RemountRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRemountRequestWithDefaults() *RemountRequest {
-	var this RemountRequest
-
-	return &this
-}

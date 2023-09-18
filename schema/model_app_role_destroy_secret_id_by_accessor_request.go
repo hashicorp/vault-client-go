@@ -10,12 +10,3 @@ type AppRoleDestroySecretIdByAccessorRequest struct {
 	// Accessor of the SecretID
 	SecretIdAccessor string `json:"secret_id_accessor,omitempty"`
 }
-
-// NewAppRoleDestroySecretIdByAccessorRequestWithDefaults instantiates a new AppRoleDestroySecretIdByAccessorRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAppRoleDestroySecretIdByAccessorRequestWithDefaults() *AppRoleDestroySecretIdByAccessorRequest {
-	var this AppRoleDestroySecretIdByAccessorRequest
-
-	return &this
-}

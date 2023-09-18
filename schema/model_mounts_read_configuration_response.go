@@ -25,7 +25,7 @@ type MountsReadConfigurationResponse struct {
 	// The options to pass into the backend. Should be a json object with string keys and values.
 	Options map[string]interface{} `json:"options,omitempty"`
 
-	// The semantic version of the plugin to use.
+	// The semantic version of the plugin to use, or image tag if oci_image is provided.
 	PluginVersion string `json:"plugin_version,omitempty"`
 
 	RunningPluginVersion string `json:"running_plugin_version,omitempty"`
@@ -39,16 +39,4 @@ type MountsReadConfigurationResponse struct {
 	Type string `json:"type,omitempty"`
 
 	Uuid string `json:"uuid,omitempty"`
-}
-
-// NewMountsReadConfigurationResponseWithDefaults instantiates a new MountsReadConfigurationResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMountsReadConfigurationResponseWithDefaults() *MountsReadConfigurationResponse {
-	var this MountsReadConfigurationResponse
-
-	this.Local = false
-	this.SealWrap = false
-
-	return &this
 }

@@ -22,12 +22,3 @@ type AliCloudWriteRoleRequest struct {
 	// Duration in seconds after which the issued token should expire. Defaults to 0, in which case the value will fallback to the system/mount defaults.
 	Ttl string `json:"ttl,omitempty"`
 }
-
-// NewAliCloudWriteRoleRequestWithDefaults instantiates a new AliCloudWriteRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAliCloudWriteRoleRequestWithDefaults() *AliCloudWriteRoleRequest {
-	var this AliCloudWriteRoleRequest
-
-	return &this
-}

@@ -25,12 +25,3 @@ type OidcProviderTokenRequest struct {
 	// The callback location where the authentication response was sent.
 	RedirectUri string `json:"redirect_uri"`
 }
-
-// NewOidcProviderTokenRequestWithDefaults instantiates a new OidcProviderTokenRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewOidcProviderTokenRequestWithDefaults() *OidcProviderTokenRequest {
-	var this OidcProviderTokenRequest
-
-	return &this
-}

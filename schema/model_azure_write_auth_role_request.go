@@ -72,14 +72,3 @@ type AzureWriteAuthRoleRequest struct {
 	// Deprecated
 	Ttl string `json:"ttl,omitempty"`
 }
-
-// NewAzureWriteAuthRoleRequestWithDefaults instantiates a new AzureWriteAuthRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAzureWriteAuthRoleRequestWithDefaults() *AzureWriteAuthRoleRequest {
-	var this AzureWriteAuthRoleRequest
-
-	this.TokenType = "default-service"
-
-	return &this
-}

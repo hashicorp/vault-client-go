@@ -36,7 +36,7 @@ type MountsReadTuningInformationResponse struct {
 
 	PassthroughRequestHeaders []string `json:"passthrough_request_headers,omitempty"`
 
-	// The semantic version of the plugin to use.
+	// The semantic version of the plugin to use, or image tag if oci_image is provided.
 	PluginVersion string `json:"plugin_version,omitempty"`
 
 	// The type of token to issue (service or batch).
@@ -49,13 +49,4 @@ type MountsReadTuningInformationResponse struct {
 	UserLockoutDuration int64 `json:"user_lockout_duration,omitempty"`
 
 	UserLockoutThreshold int64 `json:"user_lockout_threshold,omitempty"`
-}
-
-// NewMountsReadTuningInformationResponseWithDefaults instantiates a new MountsReadTuningInformationResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMountsReadTuningInformationResponseWithDefaults() *MountsReadTuningInformationResponse {
-	var this MountsReadTuningInformationResponse
-
-	return &this
 }

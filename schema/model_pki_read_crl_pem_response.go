@@ -22,12 +22,3 @@ type PkiReadCrlPemResponse struct {
 	// Revocation time RFC 3339 formatted
 	RevocationTimeRfc3339 string `json:"revocation_time_rfc3339,omitempty"`
 }
-
-// NewPkiReadCrlPemResponseWithDefaults instantiates a new PkiReadCrlPemResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiReadCrlPemResponseWithDefaults() *PkiReadCrlPemResponse {
-	var this PkiReadCrlPemResponse
-
-	return &this
-}

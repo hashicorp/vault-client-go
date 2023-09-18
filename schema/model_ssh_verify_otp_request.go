@@ -10,12 +10,3 @@ type SshVerifyOtpRequest struct {
 	// [Required] One-Time-Key that needs to be validated
 	Otp string `json:"otp,omitempty"`
 }
-
-// NewSshVerifyOtpRequestWithDefaults instantiates a new SshVerifyOtpRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSshVerifyOtpRequestWithDefaults() *SshVerifyOtpRequest {
-	var this SshVerifyOtpRequest
-
-	return &this
-}

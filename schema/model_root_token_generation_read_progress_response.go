@@ -27,12 +27,3 @@ type RootTokenGenerationReadProgressResponse struct {
 
 	Started bool `json:"started,omitempty"`
 }
-
-// NewRootTokenGenerationReadProgressResponseWithDefaults instantiates a new RootTokenGenerationReadProgressResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRootTokenGenerationReadProgressResponseWithDefaults() *RootTokenGenerationReadProgressResponse {
-	var this RootTokenGenerationReadProgressResponse
-
-	return &this
-}

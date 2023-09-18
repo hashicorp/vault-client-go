@@ -19,8 +19,12 @@ type TokenCreateRequest struct {
 	// Value for the token
 	Id string `json:"id,omitempty"`
 
+	// Use 'ttl' instead
+	// Deprecated
+	Lease string `json:"lease,omitempty"`
+
 	// Arbitrary key=value metadata to associate with the token
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Meta map[string]interface{} `json:"meta,omitempty"`
 
 	// Do not include default policy for this token
 	NoDefaultPolicy bool `json:"no_default_policy,omitempty"`
@@ -45,13 +49,4 @@ type TokenCreateRequest struct {
 
 	// Token type
 	Type string `json:"type,omitempty"`
-}
-
-// NewTokenCreateRequestWithDefaults instantiates a new TokenCreateRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTokenCreateRequestWithDefaults() *TokenCreateRequest {
-	var this TokenCreateRequest
-
-	return &this
 }

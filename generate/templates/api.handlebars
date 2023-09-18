@@ -17,11 +17,7 @@ type {{cut classname "Api"}} struct {
 	client *Client
 }
 {{#each operation}}
-{{#endsWith nickname "2"}}
-{{else}}
-{{#endsWith nickname "3"}}
-{{else}}
-
+{{#>partial_filter_operation}}
 {{#if isDeprecated}}
 // Deprecated{{/if}}
 // {{operationId}} {{#if summary}}{{{summary}}}{{/if}}{{#if notes}}
@@ -29,7 +25,7 @@ type {{cut classname "Api"}} struct {
 // {{paramName}}: {{.}}{{/with}}{{/endsWith}}{{/each}}{{#each bodyParams}}{{#with description}}
 // {{paramName}}: {{.}}{{/with}}{{/each}}{{#each queryParams}}{{#neq paramName "list"}}{{#with description}}
 // {{paramName}}: {{.}}{{/with}}{{/neq}}{{/each}}
-func ({{lower (substring classname 0 1)}} *{{cut classname "Api"}}) {{nickname}}(ctx context.Context{{#each pathParams}}{{#endsWith baseName "_mount_path"}}{{else}}, {{paramName}} {{{dataType}}}{{/endsWith}}{{/each}}{{#each bodyParams}}, request schema.{{{dataType}}}{{/each}}{{#each queryParams}}{{#neq paramName "list"}}, {{paramName}} {{{dataType}}}{{/neq}}{{/each}}, options ...RequestOption) (*Response[{{#with returnType}}schema.{{{.}}}{{/with}}{{#unless returnType}}map[string]interface{}{{/unless}}], error) {
+func ({{lower (substring classname 0 1)}} *{{cut classname "Api"}}) {{nickname}}(ctx context.Context{{#each pathParams}}{{#endsWith baseName "_mount_path"}}{{else}}, {{paramName}} {{{dataType}}}{{/endsWith}}{{/each}}{{#each bodyParams}}, request {{#if isModel}}schema.{{/if}}{{{dataType}}}{{/each}}{{#each queryParams}}{{#neq paramName "list"}}, {{paramName}} {{{dataType}}}{{/neq}}{{/each}}, options ...RequestOption) (*Response[{{#with returnType}}schema.{{{.}}}{{/with}}{{#unless returnType}}map[string]interface{}{{/unless}}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -39,9 +35,14 @@ func ({{lower (substring classname 0 1)}} *{{cut classname "Api"}}) {{nickname}}
 	requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape(requestModifiers.mountPathOr({{#with defaultValue}}{{{.}}}{{/with}})), -1){{/endsWith}}{{/each}}{{#each pathParams}}{{#endsWith baseName "_mount_path"}}{{else}}
     requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape({{paramName}}), -1){{/endsWith}}{{/each}}
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault(){{#each queryParams}}{{#eq paramName "list"}}
-	requestQueryParameters.Add("{{paramName}}", "true"){{/eq}}{{#neq paramName "list"}}
-	requestQueryParameters.Add("{{paramName}}", url.QueryEscape(parameterToString({{paramName}}))){{/neq}}{{/each}}
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
+{{~#each queryParams}}
+{{~#eq paramName "list"}}
+	requestQueryParameters.Add("{{baseName}}", "true")
+{{~else}}
+	requestQueryParameters.Add("{{baseName}}", parameterToString({{paramName}}))
+{{~/eq}}
+{{~/each}}
 
 {{#each bodyParams}}
 	return sendStructuredRequestParseResponse[{{#with returnType}}schema.{{{.}}}{{/with}}{{#unless returnType}}map[string]interface{}{{/unless}}](
@@ -66,7 +67,6 @@ func ({{lower (substring classname 0 1)}} *{{cut classname "Api"}}) {{nickname}}
 	)
 {{/unless}}
 }
-{{/endsWith}}
-{{/endsWith}}
+{{/partial_filter_operation}}
 {{/each}}
 {{/with}}

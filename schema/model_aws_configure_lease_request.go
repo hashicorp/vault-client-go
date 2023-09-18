@@ -13,12 +13,3 @@ type AwsConfigureLeaseRequest struct {
 	// Maximum time a credential is valid for.
 	LeaseMax string `json:"lease_max,omitempty"`
 }
-
-// NewAwsConfigureLeaseRequestWithDefaults instantiates a new AwsConfigureLeaseRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAwsConfigureLeaseRequestWithDefaults() *AwsConfigureLeaseRequest {
-	var this AwsConfigureLeaseRequest
-
-	return &this
-}

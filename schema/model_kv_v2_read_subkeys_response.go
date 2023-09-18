@@ -11,12 +11,3 @@ type KvV2ReadSubkeysResponse struct {
 
 	Subkeys map[string]interface{} `json:"subkeys,omitempty"`
 }
-
-// NewKvV2ReadSubkeysResponseWithDefaults instantiates a new KvV2ReadSubkeysResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewKvV2ReadSubkeysResponseWithDefaults() *KvV2ReadSubkeysResponse {
-	var this KvV2ReadSubkeysResponse
-
-	return &this
-}

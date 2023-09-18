@@ -13,12 +13,3 @@ type UiHeadersConfigureRequest struct {
 	// The values to set the header.
 	Values []string `json:"values,omitempty"`
 }
-
-// NewUiHeadersConfigureRequestWithDefaults instantiates a new UiHeadersConfigureRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUiHeadersConfigureRequestWithDefaults() *UiHeadersConfigureRequest {
-	var this UiHeadersConfigureRequest
-
-	return &this
-}

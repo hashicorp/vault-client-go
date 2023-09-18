@@ -16,12 +16,3 @@ type RateLimitQuotasConfigureRequest struct {
 	// Specifies the list of exempt paths from all rate limit quotas. If empty no paths will be exempt.
 	RateLimitExemptPaths []string `json:"rate_limit_exempt_paths,omitempty"`
 }
-
-// NewRateLimitQuotasConfigureRequestWithDefaults instantiates a new RateLimitQuotasConfigureRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRateLimitQuotasConfigureRequestWithDefaults() *RateLimitQuotasConfigureRequest {
-	var this RateLimitQuotasConfigureRequest
-
-	return &this
-}

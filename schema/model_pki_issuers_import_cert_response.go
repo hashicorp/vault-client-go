@@ -22,12 +22,3 @@ type PkiIssuersImportCertResponse struct {
 	// A mapping of issuer_id to key_id for all issuers included in this request
 	Mapping map[string]interface{} `json:"mapping,omitempty"`
 }
-
-// NewPkiIssuersImportCertResponseWithDefaults instantiates a new PkiIssuersImportCertResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiIssuersImportCertResponseWithDefaults() *PkiIssuersImportCertResponse {
-	var this PkiIssuersImportCertResponse
-
-	return &this
-}

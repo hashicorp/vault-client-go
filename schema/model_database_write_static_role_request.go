@@ -16,23 +16,18 @@ type DatabaseWriteStaticRoleRequest struct {
 	// Name of the database this role acts on.
 	DbName string `json:"db_name,omitempty"`
 
-	// Period for automatic credential rotation of the given username. Not valid unless used with \"username\".
+	// Period for automatic credential rotation of the given username. Not valid unless used with \"username\". Mutually exclusive with \"rotation_schedule.\"
 	RotationPeriod string `json:"rotation_period,omitempty"`
+
+	// Schedule for automatic credential rotation of the given username. Mutually exclusive with \"rotation_period.\"
+	RotationSchedule string `json:"rotation_schedule,omitempty"`
 
 	// Specifies the database statements to be executed to rotate the accounts credentials. Not every plugin type will support this functionality. See the plugin's API page for more information on support and formatting for this parameter.
 	RotationStatements []string `json:"rotation_statements,omitempty"`
 
+	// The window of time in which rotations are allowed to occur starting from a given \"rotation_schedule\". Requires \"rotation_schedule\" to be specified
+	RotationWindow string `json:"rotation_window,omitempty"`
+
 	// Name of the static user account for Vault to manage. Requires \"rotation_period\" to be specified
 	Username string `json:"username,omitempty"`
-}
-
-// NewDatabaseWriteStaticRoleRequestWithDefaults instantiates a new DatabaseWriteStaticRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDatabaseWriteStaticRoleRequestWithDefaults() *DatabaseWriteStaticRoleRequest {
-	var this DatabaseWriteStaticRoleRequest
-
-	this.CredentialType = "password"
-
-	return &this
 }

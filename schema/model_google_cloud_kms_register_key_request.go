@@ -13,14 +13,3 @@ type GoogleCloudKmsRegisterKeyRequest struct {
 	// Verify that the given Google Cloud KMS crypto key exists and is accessible before creating the storage entry in Vault. Set this to \"false\" if the key will not exist at creation time.
 	Verify bool `json:"verify,omitempty"`
 }
-
-// NewGoogleCloudKmsRegisterKeyRequestWithDefaults instantiates a new GoogleCloudKmsRegisterKeyRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGoogleCloudKmsRegisterKeyRequestWithDefaults() *GoogleCloudKmsRegisterKeyRequest {
-	var this GoogleCloudKmsRegisterKeyRequest
-
-	this.Verify = true
-
-	return &this
-}

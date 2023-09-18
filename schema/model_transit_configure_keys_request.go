@@ -10,12 +10,3 @@ type TransitConfigureKeysRequest struct {
 	// Whether to allow automatic upserting (creation) of keys on the encrypt endpoint.
 	DisableUpsert bool `json:"disable_upsert,omitempty"`
 }
-
-// NewTransitConfigureKeysRequestWithDefaults instantiates a new TransitConfigureKeysRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTransitConfigureKeysRequestWithDefaults() *TransitConfigureKeysRequest {
-	var this TransitConfigureKeysRequest
-
-	return &this
-}

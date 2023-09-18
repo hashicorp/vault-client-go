@@ -10,7 +10,7 @@
     }
   },
   "paths": {
-    "/auth/token/accessors": {
+    "/auth/token/accessors/": {
       "description": "List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires 'sudo' capability in addition to 'list'.",
       "x-vault-sudo": true,
       "get": {
@@ -35,23 +35,20 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
     },
     "/auth/token/create": {
       "description": "The token create path is used to create new tokens.",
-      "parameters": [
-        {
-          "name": "format",
-          "description": "Return json formatted output",
-          "in": "query",
-          "schema": {
-            "type": "string"
-          }
-        }
-      ],
       "post": {
         "summary": "The token create path is used to create new tokens.",
         "operationId": "token-create",
@@ -77,16 +74,6 @@
     },
     "/auth/token/create-orphan": {
       "description": "The token create path is used to create new orphan tokens.",
-      "parameters": [
-        {
-          "name": "format",
-          "description": "Return json formatted output",
-          "in": "query",
-          "schema": {
-            "type": "string"
-          }
-        }
-      ],
       "post": {
         "summary": "The token create path is used to create new orphan tokens.",
         "operationId": "token-create-orphan",
@@ -113,14 +100,6 @@
     "/auth/token/create/{role_name}": {
       "description": "This token create path is used to create new tokens adhering to the given role.",
       "parameters": [
-        {
-          "name": "format",
-          "description": "Return json formatted output",
-          "in": "query",
-          "schema": {
-            "type": "string"
-          }
-        },
         {
           "name": "role_name",
           "description": "Name of the role",
@@ -160,6 +139,16 @@
         "operationId": "token-look-up-2",
         "tags": [
           "auth"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "description": "Token to lookup",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -376,6 +365,7 @@
     },
     "/auth/token/revoke-orphan": {
       "description": "This endpoint will delete the token and orphan its child tokens.",
+      "x-vault-sudo": true,
       "post": {
         "summary": "This endpoint will delete the token and orphan its child tokens.",
         "operationId": "token-revoke-orphan",
@@ -414,7 +404,7 @@
         }
       }
     },
-    "/auth/token/roles": {
+    "/auth/token/roles/": {
       "description": "This endpoint lists configured roles.",
       "get": {
         "summary": "This endpoint lists configured roles.",
@@ -438,7 +428,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -553,7 +550,7 @@
         }
       }
     },
-    "/auth/{alicloud_mount_path}/role": {
+    "/auth/{alicloud_mount_path}/role/": {
       "description": "Lists all the roles that are registered with Vault.",
       "parameters": [
         {
@@ -589,7 +586,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -665,7 +669,7 @@
         }
       }
     },
-    "/auth/{alicloud_mount_path}/roles": {
+    "/auth/{alicloud_mount_path}/roles/": {
       "description": "Lists all the roles that are registered with Vault.",
       "parameters": [
         {
@@ -701,7 +705,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -743,7 +754,7 @@
         }
       }
     },
-    "/auth/{approle_mount_path}/role": {
+    "/auth/{approle_mount_path}/role/": {
       "description": "Lists all the roles registered with the backend.",
       "parameters": [
         {
@@ -782,7 +793,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AppRoleListRolesResponse"
+                  "$ref": "#/components/schemas/StandardListResponse"
                 }
               }
             }
@@ -1341,38 +1352,6 @@
           "required": true
         }
       ],
-      "get": {
-        "operationId": "app-role-list-secret-ids",
-        "tags": [
-          "auth"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Must be set to `true`",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "true"
-              ]
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AppRoleListSecretIdsResponse"
-                }
-              }
-            }
-          }
-        }
-      },
       "post": {
         "operationId": "app-role-write-secret-id",
         "tags": [
@@ -1449,6 +1428,16 @@
         "operationId": "app-role-destroy-secret-id-by-accessor2",
         "tags": [
           "auth"
+        ],
+        "parameters": [
+          {
+            "name": "secret_id_accessor",
+            "description": "Accessor of the SecretID",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "204": {
@@ -1730,6 +1719,62 @@
         }
       }
     },
+    "/auth/{approle_mount_path}/role/{role_name}/secret-id/": {
+      "description": "Generate a SecretID against this role.",
+      "parameters": [
+        {
+          "name": "role_name",
+          "description": "Name of the role. Must be less than 4096 bytes.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "approle_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "approle"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "app-role-list-secret-ids",
+        "tags": [
+          "auth"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/auth/{approle_mount_path}/role/{role_name}/secret-id/destroy": {
       "description": "Invalidate an issued secret_id",
       "parameters": [
@@ -1778,6 +1823,16 @@
         "operationId": "app-role-destroy-secret-id2",
         "tags": [
           "auth"
+        ],
+        "parameters": [
+          {
+            "name": "secret_id",
+            "description": "SecretID attached to the role.",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "204": {
@@ -2228,7 +2283,7 @@
         }
       }
     },
-    "/auth/{aws_mount_path}/config/certificates": {
+    "/auth/{aws_mount_path}/config/certificates/": {
       "description": "Lists all the AWS public certificates that are registered with the backend.",
       "parameters": [
         {
@@ -2263,7 +2318,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -2400,7 +2462,7 @@
         }
       }
     },
-    "/auth/{aws_mount_path}/config/sts": {
+    "/auth/{aws_mount_path}/config/sts/": {
       "description": "List all the AWS account/STS role relationships registered with Vault.",
       "parameters": [
         {
@@ -2435,7 +2497,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -2744,7 +2813,7 @@
         }
       }
     },
-    "/auth/{aws_mount_path}/identity-accesslist": {
+    "/auth/{aws_mount_path}/identity-accesslist/": {
       "description": "Lists the items present in the identity access list.",
       "parameters": [
         {
@@ -2779,7 +2848,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -2830,7 +2906,7 @@
         }
       }
     },
-    "/auth/{aws_mount_path}/identity-whitelist": {
+    "/auth/{aws_mount_path}/identity-whitelist/": {
       "description": "Lists the items present in the identity access list.",
       "parameters": [
         {
@@ -2865,7 +2941,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -2953,7 +3036,7 @@
         }
       }
     },
-    "/auth/{aws_mount_path}/role": {
+    "/auth/{aws_mount_path}/role/": {
       "description": "Lists all the roles that are registered with Vault.",
       "parameters": [
         {
@@ -2988,7 +3071,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -3106,7 +3196,7 @@
         }
       }
     },
-    "/auth/{aws_mount_path}/roles": {
+    "/auth/{aws_mount_path}/roles/": {
       "description": "Lists all the roles that are registered with Vault.",
       "parameters": [
         {
@@ -3141,12 +3231,19 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
     },
-    "/auth/{aws_mount_path}/roletag-blacklist": {
+    "/auth/{aws_mount_path}/roletag-blacklist/": {
       "description": "Lists the deny list role tags.",
       "parameters": [
         {
@@ -3181,7 +3278,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -3243,7 +3347,7 @@
         }
       }
     },
-    "/auth/{aws_mount_path}/roletag-denylist": {
+    "/auth/{aws_mount_path}/roletag-denylist/": {
       "description": "Lists the deny list role tags.",
       "parameters": [
         {
@@ -3278,7 +3382,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -3580,7 +3691,7 @@
         }
       }
     },
-    "/auth/{azure_mount_path}/role": {
+    "/auth/{azure_mount_path}/role/": {
       "description": "Lists all the roles registered with the backend.",
       "parameters": [
         {
@@ -3615,7 +3726,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -3800,7 +3918,7 @@
         }
       }
     },
-    "/auth/{cert_mount_path}/certs": {
+    "/auth/{cert_mount_path}/certs/": {
       "description": "Manage trusted certificates used for authentication.",
       "parameters": [
         {
@@ -3840,7 +3958,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -3965,7 +4090,7 @@
         }
       }
     },
-    "/auth/{cert_mount_path}/crls": {
+    "/auth/{cert_mount_path}/crls/": {
       "description": "Manage Certificate Revocation Lists checked during authentication.",
       "parameters": [
         {
@@ -4000,7 +4125,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -4206,7 +4338,7 @@
         }
       }
     },
-    "/auth/{cf_mount_path}/roles": {
+    "/auth/{cf_mount_path}/roles/": {
       "description": "List the existing roles in this backend.",
       "parameters": [
         {
@@ -4241,7 +4373,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -4398,7 +4537,7 @@
         }
       }
     },
-    "/auth/{gcp_mount_path}/role": {
+    "/auth/{gcp_mount_path}/role/": {
       "description": "Lists all the roles that are registered with Vault.",
       "parameters": [
         {
@@ -4434,7 +4573,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -4602,7 +4748,7 @@
         }
       }
     },
-    "/auth/{gcp_mount_path}/roles": {
+    "/auth/{gcp_mount_path}/roles/": {
       "description": "Lists all the roles that are registered with Vault.",
       "parameters": [
         {
@@ -4638,7 +4784,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -4741,23 +4894,61 @@
       ],
       "get": {
         "summary": "Read mappings for teams",
-        "operationId": "github-read-teams",
+        "operationId": "github-list-teams2",
+        "tags": [
+          "auth"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/auth/{github_mount_path}/map/teams/": {
+      "description": "Read mappings for teams",
+      "parameters": [
+        {
+          "name": "github_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "github"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Read mappings for teams",
+        "operationId": "github-list-teams",
         "tags": [
           "auth"
         ],
         "parameters": [
           {
             "name": "list",
-            "description": "Return a list if `true`",
+            "description": "Must be set to `true`",
             "in": "query",
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
           }
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -4849,23 +5040,61 @@
       ],
       "get": {
         "summary": "Read mappings for users",
-        "operationId": "github-read-users",
+        "operationId": "github-list-users2",
+        "tags": [
+          "auth"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/auth/{github_mount_path}/map/users/": {
+      "description": "Read mappings for users",
+      "parameters": [
+        {
+          "name": "github_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "github"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Read mappings for users",
+        "operationId": "github-list-users",
         "tags": [
           "auth"
         ],
         "parameters": [
           {
             "name": "list",
-            "description": "Return a list if `true`",
+            "description": "Must be set to `true`",
             "in": "query",
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
           }
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -5086,6 +5315,29 @@
         "tags": [
           "auth"
         ],
+        "parameters": [
+          {
+            "name": "client_nonce",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "code",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -5094,7 +5346,7 @@
       },
       "post": {
         "summary": "Callback endpoint to handle form_posts.",
-        "operationId": "jwt-oidc-callback-with-parameters",
+        "operationId": "jwt-oidc-callback-form-post",
         "tags": [
           "auth"
         ],
@@ -5103,7 +5355,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/JwtOidcCallbackWithParametersRequest"
+                "$ref": "#/components/schemas/JwtOidcCallbackFormPostRequest"
               }
             }
           }
@@ -5115,7 +5367,7 @@
         }
       }
     },
-    "/auth/{jwt_mount_path}/role": {
+    "/auth/{jwt_mount_path}/role/": {
       "description": "Lists all the roles registered with the backend.",
       "parameters": [
         {
@@ -5152,7 +5404,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -5323,7 +5582,7 @@
         }
       }
     },
-    "/auth/{kerberos_mount_path}/groups": {
+    "/auth/{kerberos_mount_path}/groups/": {
       "description": "Manage users allowed to authenticate.",
       "parameters": [
         {
@@ -5358,7 +5617,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -5562,7 +5828,7 @@
         }
       }
     },
-    "/auth/{kubernetes_mount_path}/role": {
+    "/auth/{kubernetes_mount_path}/role/": {
       "description": "Lists all the roles registered with the backend.",
       "parameters": [
         {
@@ -5602,7 +5868,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -5732,7 +6005,7 @@
         }
       }
     },
-    "/auth/{ldap_mount_path}/groups": {
+    "/auth/{ldap_mount_path}/groups/": {
       "description": "Manage additional groups for users allowed to authenticate.",
       "parameters": [
         {
@@ -5772,7 +6045,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -5898,7 +6178,7 @@
         }
       }
     },
-    "/auth/{ldap_mount_path}/users": {
+    "/auth/{ldap_mount_path}/users/": {
       "description": "Manage users allowed to authenticate.",
       "parameters": [
         {
@@ -5938,7 +6218,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -6138,7 +6425,7 @@
         }
       }
     },
-    "/auth/{oci_mount_path}/role": {
+    "/auth/{oci_mount_path}/role/": {
       "description": "Lists all the roles that are registered with Vault.",
       "parameters": [
         {
@@ -6174,7 +6461,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -6301,7 +6595,7 @@
         }
       }
     },
-    "/auth/{okta_mount_path}/groups": {
+    "/auth/{okta_mount_path}/groups/": {
       "description": "Manage users allowed to authenticate.",
       "parameters": [
         {
@@ -6341,7 +6635,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -6467,7 +6768,7 @@
         }
       }
     },
-    "/auth/{okta_mount_path}/users": {
+    "/auth/{okta_mount_path}/users/": {
       "description": "Manage additional groups for users allowed to authenticate.",
       "parameters": [
         {
@@ -6507,7 +6808,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -6757,7 +7065,7 @@
         }
       }
     },
-    "/auth/{radius_mount_path}/users": {
+    "/auth/{radius_mount_path}/users/": {
       "description": "Manage users allowed to authenticate.",
       "parameters": [
         {
@@ -6797,7 +7105,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -6924,7 +7239,7 @@
         }
       }
     },
-    "/auth/{userpass_mount_path}/users": {
+    "/auth/{userpass_mount_path}/users/": {
       "description": "Manage users allowed to authenticate.",
       "parameters": [
         {
@@ -6964,7 +7279,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -7156,16 +7478,6 @@
         "tags": [
           "secrets"
         ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Return a list if `true`",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -7178,6 +7490,17 @@
         "tags": [
           "secrets"
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -7193,6 +7516,54 @@
         "responses": {
           "204": {
             "description": "empty body"
+          }
+        }
+      }
+    },
+    "/cubbyhole/{path}/": {
+      "description": "Pass-through secret storage to a token-specific cubbyhole in the storage backend, allowing you to read/write arbitrary data into secret storage.",
+      "parameters": [
+        {
+          "name": "path",
+          "description": "Specifies the path of the secret.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "List secret entries at the specified location.",
+        "description": "Folders are suffixed with /. The input must be a folder; list on a file will not return a value. The values themselves are not accessible via this command.",
+        "operationId": "cubbyhole-list",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -7222,7 +7593,7 @@
         }
       }
     },
-    "/identity/alias/id": {
+    "/identity/alias/id/": {
       "description": "List all the alias IDs.",
       "get": {
         "summary": "List all the alias IDs.",
@@ -7246,7 +7617,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -7358,7 +7736,7 @@
         }
       }
     },
-    "/identity/entity-alias/id": {
+    "/identity/entity-alias/id/": {
       "description": "List all the alias IDs.",
       "get": {
         "summary": "List all the alias IDs.",
@@ -7382,7 +7760,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -7469,7 +7854,7 @@
         }
       }
     },
-    "/identity/entity/id": {
+    "/identity/entity/id/": {
       "description": "List all the entity IDs",
       "get": {
         "summary": "List all the entity IDs",
@@ -7493,7 +7878,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -7580,7 +7972,7 @@
         }
       }
     },
-    "/identity/entity/name": {
+    "/identity/entity/name/": {
       "description": "List all the entity names",
       "get": {
         "summary": "List all the entity names",
@@ -7604,7 +7996,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -7715,7 +8114,7 @@
         }
       }
     },
-    "/identity/group-alias/id": {
+    "/identity/group-alias/id/": {
       "description": "List all the group alias IDs.",
       "get": {
         "summary": "List all the group alias IDs.",
@@ -7739,7 +8138,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -7800,7 +8206,7 @@
         }
       }
     },
-    "/identity/group/id": {
+    "/identity/group/id/": {
       "description": "List all the group IDs.",
       "get": {
         "summary": "List all the group IDs.",
@@ -7824,7 +8230,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -7886,7 +8299,7 @@
         }
       }
     },
-    "/identity/group/name": {
+    "/identity/group/name/": {
       "get": {
         "operationId": "group-list-by-name",
         "tags": [
@@ -7908,7 +8321,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -8019,7 +8439,7 @@
         }
       }
     },
-    "/identity/mfa/login-enforcement": {
+    "/identity/mfa/login-enforcement/": {
       "get": {
         "summary": "List login enforcements",
         "operationId": "mfa-list-login-enforcements",
@@ -8042,7 +8462,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -8106,7 +8533,7 @@
         }
       }
     },
-    "/identity/mfa/method": {
+    "/identity/mfa/method/": {
       "get": {
         "summary": "List MFA method configurations for all MFA methods",
         "operationId": "mfa-list-methods",
@@ -8129,12 +8556,43 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
     },
     "/identity/mfa/method/duo": {
+      "post": {
+        "summary": "Create the given MFA method",
+        "operationId": "mfa-create-duo-method",
+        "tags": [
+          "identity"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MfaCreateDuoMethodRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/identity/mfa/method/duo/": {
       "get": {
         "summary": "List MFA method configurations for the given MFA method",
         "operationId": "mfa-list-duo-methods",
@@ -8157,29 +8615,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "summary": "Create the given MFA method",
-        "operationId": "mfa-create-duo-method",
-        "tags": [
-          "identity"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MfaCreateDuoMethodRequest"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
               }
             }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
           }
         }
       }
@@ -8244,6 +8687,30 @@
       }
     },
     "/identity/mfa/method/okta": {
+      "post": {
+        "summary": "Create the given MFA method",
+        "operationId": "mfa-create-okta-method",
+        "tags": [
+          "identity"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MfaCreateOktaMethodRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/identity/mfa/method/okta/": {
       "get": {
         "summary": "List MFA method configurations for the given MFA method",
         "operationId": "mfa-list-okta-methods",
@@ -8266,29 +8733,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "summary": "Create the given MFA method",
-        "operationId": "mfa-create-okta-method",
-        "tags": [
-          "identity"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MfaCreateOktaMethodRequest"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
               }
             }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
           }
         }
       }
@@ -8353,6 +8805,30 @@
       }
     },
     "/identity/mfa/method/pingid": {
+      "post": {
+        "summary": "Create the given MFA method",
+        "operationId": "mfa-create-ping-id-method",
+        "tags": [
+          "identity"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MfaCreatePingIdMethodRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/identity/mfa/method/pingid/": {
       "get": {
         "summary": "List MFA method configurations for the given MFA method",
         "operationId": "mfa-list-ping-id-methods",
@@ -8375,29 +8851,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "summary": "Create the given MFA method",
-        "operationId": "mfa-create-ping-id-method",
-        "tags": [
-          "identity"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MfaCreatePingIdMethodRequest"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
               }
             }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
           }
         }
       }
@@ -8462,6 +8923,30 @@
       }
     },
     "/identity/mfa/method/totp": {
+      "post": {
+        "summary": "Create the given MFA method",
+        "operationId": "mfa-create-totp-method",
+        "tags": [
+          "identity"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MfaCreateTotpMethodRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/identity/mfa/method/totp/": {
       "get": {
         "summary": "List MFA method configurations for the given MFA method",
         "operationId": "mfa-list-totp-methods",
@@ -8484,29 +8969,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "summary": "Create the given MFA method",
-        "operationId": "mfa-create-totp-method",
-        "tags": [
-          "identity"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MfaCreateTotpMethodRequest"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
               }
             }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
           }
         }
       }
@@ -8699,7 +9169,7 @@
         }
       }
     },
-    "/identity/oidc/assignment": {
+    "/identity/oidc/assignment/": {
       "description": "List OIDC assignments",
       "get": {
         "operationId": "oidc-list-assignments",
@@ -8722,7 +9192,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -8785,7 +9262,7 @@
         }
       }
     },
-    "/identity/oidc/client": {
+    "/identity/oidc/client/": {
       "description": "List OIDC clients",
       "get": {
         "operationId": "oidc-list-clients",
@@ -8808,7 +9285,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -8931,7 +9415,7 @@
         }
       }
     },
-    "/identity/oidc/key": {
+    "/identity/oidc/key/": {
       "description": "List OIDC keys",
       "get": {
         "summary": "List OIDC keys",
@@ -8955,7 +9439,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -9057,25 +9548,23 @@
         }
       }
     },
-    "/identity/oidc/provider": {
+    "/identity/oidc/provider/": {
       "description": "List OIDC providers",
-      "parameters": [
-        {
-          "name": "allowed_client_id",
-          "description": "Filters the list of OIDC providers to those that allow the given client ID in their set of allowed_client_ids.",
-          "in": "query",
-          "schema": {
-            "type": "string",
-            "default": ""
-          }
-        }
-      ],
       "get": {
         "operationId": "oidc-list-providers",
         "tags": [
           "identity"
         ],
         "parameters": [
+          {
+            "name": "allowed_client_id",
+            "description": "Filters the list of OIDC providers to those that allow the given client ID in their set of allowed_client_ids.",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": ""
+            }
+          },
           {
             "name": "list",
             "description": "Must be set to `true`",
@@ -9091,7 +9580,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -9224,6 +9720,81 @@
         "tags": [
           "identity"
         ],
+        "parameters": [
+          {
+            "name": "client_id",
+            "description": "The ID of the requesting client.",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "code_challenge",
+            "description": "The code challenge derived from the code verifier.",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "code_challenge_method",
+            "description": "The method that was used to derive the code challenge. The following methods are supported: 'S256', 'plain'. Defaults to 'plain'.",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "plain"
+            }
+          },
+          {
+            "name": "max_age",
+            "description": "The allowable elapsed time in seconds since the last time the end-user was actively authenticated.",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "nonce",
+            "description": "The value that will be returned in the ID token nonce claim after a token exchange.",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "redirect_uri",
+            "description": "The redirection URI to which the response will be sent.",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "response_type",
+            "description": "The OIDC authentication flow to be used. The following response types are supported: 'code'",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "scope",
+            "description": "A space-delimited, case-sensitive list of scopes to be requested. The 'openid' scope is required.",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state",
+            "description": "The value used to maintain state between the authentication request and client.",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -9324,7 +9895,7 @@
         }
       }
     },
-    "/identity/oidc/role": {
+    "/identity/oidc/role/": {
       "description": "List configured OIDC roles",
       "get": {
         "summary": "List configured OIDC roles",
@@ -9348,7 +9919,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -9414,7 +9992,7 @@
         }
       }
     },
-    "/identity/oidc/scope": {
+    "/identity/oidc/scope/": {
       "description": "List OIDC scopes",
       "get": {
         "operationId": "oidc-list-scopes",
@@ -9437,7 +10015,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -9551,7 +10136,7 @@
         }
       }
     },
-    "/identity/persona/id": {
+    "/identity/persona/id/": {
       "description": "List all the alias IDs.",
       "get": {
         "summary": "List all the alias IDs.",
@@ -9575,7 +10160,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -10042,7 +10634,7 @@
     },
     "/sys/config/control-group": {
       "get": {
-        "operationId": "system-read-config-control-group",
+        "operationId": "enterprise-stub-read-config-control-group",
         "tags": [
           "system"
         ],
@@ -10053,7 +10645,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-config-control-group",
+        "operationId": "enterprise-stub-write-config-control-group",
         "tags": [
           "system"
         ],
@@ -10064,7 +10656,7 @@
         }
       },
       "delete": {
-        "operationId": "system-delete-config-control-group",
+        "operationId": "enterprise-stub-delete-config-control-group",
         "tags": [
           "system"
         ],
@@ -10134,7 +10726,7 @@
     },
     "/sys/config/group-policy-application": {
       "get": {
-        "operationId": "system-read-config-group-policy-application",
+        "operationId": "enterprise-stub-read-config-group-policy-application",
         "tags": [
           "system"
         ],
@@ -10145,7 +10737,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-config-group-policy-application",
+        "operationId": "enterprise-stub-write-config-group-policy-application",
         "tags": [
           "system"
         ],
@@ -10195,8 +10787,9 @@
         }
       }
     },
-    "/sys/config/ui/headers": {
+    "/sys/config/ui/headers/": {
       "description": "This path responds to the following HTTP methods. GET /<header> Returns the header value. POST /<header> Sets the header value for the UI. DELETE /<header> Clears the header value for UI. LIST / List the headers configured for the UI.",
+      "x-vault-sudo": true,
       "get": {
         "summary": "Return a list of configured UI headers.",
         "operationId": "ui-headers-list",
@@ -10301,7 +10894,7 @@
     },
     "/sys/control-group/authorize": {
       "post": {
-        "operationId": "system-write-control-group-authorize",
+        "operationId": "enterprise-stub-write-control-group-authorize",
         "tags": [
           "system"
         ],
@@ -10314,7 +10907,7 @@
     },
     "/sys/control-group/request": {
       "post": {
-        "operationId": "system-write-control-group-request",
+        "operationId": "enterprise-stub-write-control-group-request",
         "tags": [
           "system"
         ],
@@ -10826,22 +11419,30 @@
     },
     "/sys/internal/specs/openapi": {
       "description": "Generate an OpenAPI 3 document of all mounted paths.",
-      "parameters": [
-        {
-          "name": "generic_mount_paths",
-          "description": "Use generic mount paths",
-          "in": "query",
-          "schema": {
-            "type": "boolean",
-            "default": false
-          }
-        }
-      ],
       "x-vault-unauthenticated": true,
       "get": {
         "operationId": "internal-generate-open-api-document",
         "tags": [
           "system"
+        ],
+        "parameters": [
+          {
+            "name": "context",
+            "description": "Context string appended to every operationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "generic_mount_paths",
+            "description": "Use generic mount paths",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -11110,8 +11711,19 @@
         }
       }
     },
-    "/sys/leases/lookup/": {
+    "/sys/leases/lookup/{prefix}/": {
       "description": "View or list lease metadata.",
+      "parameters": [
+        {
+          "name": "prefix",
+          "description": "The path to list leases under. Example: \"aws/creds/deploy\"",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
       "x-vault-sudo": true,
       "get": {
         "operationId": "leases-look-up",
@@ -11139,53 +11751,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/LeasesLookUpResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/sys/leases/lookup/{prefix}": {
-      "description": "View or list lease metadata.",
-      "parameters": [
-        {
-          "name": "prefix",
-          "description": "The path to list leases under. Example: \"aws/creds/deploy\"",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        }
-      ],
-      "x-vault-sudo": true,
-      "get": {
-        "operationId": "leases-look-up-with-prefix",
-        "tags": [
-          "system"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Must be set to `true`",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "true"
-              ]
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/LeasesLookUpWithPrefixResponse"
                 }
               }
             }
@@ -11396,7 +11961,7 @@
     },
     "/sys/license/status": {
       "get": {
-        "operationId": "system-read-license-status",
+        "operationId": "enterprise-stub-read-license-status",
         "tags": [
           "system"
         ],
@@ -11564,7 +12129,7 @@
         }
       }
     },
-    "/sys/managed-keys/{type}": {
+    "/sys/managed-keys/{type}/": {
       "parameters": [
         {
           "name": "type",
@@ -11576,7 +12141,7 @@
         }
       ],
       "get": {
-        "operationId": "system-list-managed-keys-type",
+        "operationId": "enterprise-stub-list-managed-keys-type",
         "tags": [
           "system"
         ],
@@ -11596,7 +12161,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -11622,7 +12194,7 @@
       ],
       "x-vault-createSupported": true,
       "get": {
-        "operationId": "system-read-managed-keys-type-name",
+        "operationId": "enterprise-stub-read-managed-keys-type-name",
         "tags": [
           "system"
         ],
@@ -11633,7 +12205,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-managed-keys-type-name",
+        "operationId": "enterprise-stub-write-managed-keys-type-name",
         "tags": [
           "system"
         ],
@@ -11644,7 +12216,7 @@
         }
       },
       "delete": {
-        "operationId": "system-delete-managed-keys-type-name",
+        "operationId": "enterprise-stub-delete-managed-keys-type-name",
         "tags": [
           "system"
         ],
@@ -11676,7 +12248,7 @@
       ],
       "x-vault-createSupported": true,
       "post": {
-        "operationId": "system-write-managed-keys-type-name-test-sign",
+        "operationId": "enterprise-stub-write-managed-keys-type-name-test-sign",
         "tags": [
           "system"
         ],
@@ -11689,20 +12261,20 @@
     },
     "/sys/metrics": {
       "description": "Export the metrics aggregated for telemetry purpose.",
-      "parameters": [
-        {
-          "name": "format",
-          "description": "Format to export metrics into. Currently accepts only \"prometheus\".",
-          "in": "query",
-          "schema": {
-            "type": "string"
-          }
-        }
-      ],
       "get": {
         "operationId": "metrics",
         "tags": [
           "system"
+        ],
+        "parameters": [
+          {
+            "name": "format",
+            "description": "Format to export metrics into. Currently accepts only \"prometheus\".",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -11711,9 +12283,9 @@
         }
       }
     },
-    "/sys/mfa/method": {
+    "/sys/mfa/method/": {
       "get": {
-        "operationId": "system-list-mfa-method",
+        "operationId": "enterprise-stub-list-mfa-method",
         "tags": [
           "system"
         ],
@@ -11733,7 +12305,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -11750,7 +12329,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-mfa-method-duo-name",
+        "operationId": "enterprise-stub-read-mfa-method-duo-name",
         "tags": [
           "system"
         ],
@@ -11761,7 +12340,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-mfa-method-duo-name",
+        "operationId": "enterprise-stub-write-mfa-method-duo-name",
         "tags": [
           "system"
         ],
@@ -11772,7 +12351,7 @@
         }
       },
       "delete": {
-        "operationId": "system-delete-mfa-method-duo-name",
+        "operationId": "enterprise-stub-delete-mfa-method-duo-name",
         "tags": [
           "system"
         ],
@@ -11795,7 +12374,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-mfa-method-okta-name",
+        "operationId": "enterprise-stub-read-mfa-method-okta-name",
         "tags": [
           "system"
         ],
@@ -11806,7 +12385,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-mfa-method-okta-name",
+        "operationId": "enterprise-stub-write-mfa-method-okta-name",
         "tags": [
           "system"
         ],
@@ -11817,7 +12396,7 @@
         }
       },
       "delete": {
-        "operationId": "system-delete-mfa-method-okta-name",
+        "operationId": "enterprise-stub-delete-mfa-method-okta-name",
         "tags": [
           "system"
         ],
@@ -11840,7 +12419,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-mfa-method-pingid-name",
+        "operationId": "enterprise-stub-read-mfa-method-pingid-name",
         "tags": [
           "system"
         ],
@@ -11851,7 +12430,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-mfa-method-pingid-name",
+        "operationId": "enterprise-stub-write-mfa-method-pingid-name",
         "tags": [
           "system"
         ],
@@ -11862,7 +12441,7 @@
         }
       },
       "delete": {
-        "operationId": "system-delete-mfa-method-pingid-name",
+        "operationId": "enterprise-stub-delete-mfa-method-pingid-name",
         "tags": [
           "system"
         ],
@@ -11885,7 +12464,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-mfa-method-totp-name",
+        "operationId": "enterprise-stub-read-mfa-method-totp-name",
         "tags": [
           "system"
         ],
@@ -11896,7 +12475,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-mfa-method-totp-name",
+        "operationId": "enterprise-stub-write-mfa-method-totp-name",
         "tags": [
           "system"
         ],
@@ -11907,7 +12486,7 @@
         }
       },
       "delete": {
-        "operationId": "system-delete-mfa-method-totp-name",
+        "operationId": "enterprise-stub-delete-mfa-method-totp-name",
         "tags": [
           "system"
         ],
@@ -11930,7 +12509,7 @@
         }
       ],
       "post": {
-        "operationId": "system-write-mfa-method-totp-name-admin-destroy",
+        "operationId": "enterprise-stub-write-mfa-method-totp-name-admin-destroy",
         "tags": [
           "system"
         ],
@@ -11953,7 +12532,7 @@
         }
       ],
       "post": {
-        "operationId": "system-write-mfa-method-totp-name-admin-generate",
+        "operationId": "enterprise-stub-write-mfa-method-totp-name-admin-generate",
         "tags": [
           "system"
         ],
@@ -11976,7 +12555,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-mfa-method-totp-name-generate",
+        "operationId": "enterprise-stub-read-mfa-method-totp-name-generate",
         "tags": [
           "system"
         ],
@@ -12013,29 +12592,29 @@
       }
     },
     "/sys/monitor": {
-      "parameters": [
-        {
-          "name": "log_format",
-          "description": "Output format of logs. Supported values are \"standard\" and \"json\". The default is \"standard\".",
-          "in": "query",
-          "schema": {
-            "type": "string",
-            "default": "standard"
-          }
-        },
-        {
-          "name": "log_level",
-          "description": "Log level to view system logs at. Currently supported values are \"trace\", \"debug\", \"info\", \"warn\", \"error\".",
-          "in": "query",
-          "schema": {
-            "type": "string"
-          }
-        }
-      ],
       "get": {
         "operationId": "monitor",
         "tags": [
           "system"
+        ],
+        "parameters": [
+          {
+            "name": "log_format",
+            "description": "Output format of logs. Supported values are \"standard\" and \"json\". The default is \"standard\".",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "standard"
+            }
+          },
+          {
+            "name": "log_level",
+            "description": "Log level to view system logs at. Currently supported values are \"trace\", \"debug\", \"info\", \"warn\", \"error\".",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -12178,9 +12757,9 @@
         }
       }
     },
-    "/sys/namespaces": {
+    "/sys/namespaces/": {
       "get": {
-        "operationId": "system-list-namespaces",
+        "operationId": "enterprise-stub-list-namespaces",
         "tags": [
           "system"
         ],
@@ -12200,27 +12779,24 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
     },
     "/sys/namespaces/api-lock/lock": {
       "post": {
-        "operationId": "system-write-namespaces-api-lock-lock",
+        "operationId": "enterprise-stub-write-namespaces-api-lock-lock",
         "tags": [
           "system"
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SystemWriteNamespacesApiLockLockRequest"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -12240,7 +12816,7 @@
         }
       ],
       "post": {
-        "operationId": "system-write-namespaces-api-lock-lock-path",
+        "operationId": "enterprise-stub-write-namespaces-api-lock-lock-path",
         "tags": [
           "system"
         ],
@@ -12253,20 +12829,10 @@
     },
     "/sys/namespaces/api-lock/unlock": {
       "post": {
-        "operationId": "system-write-namespaces-api-lock-unlock",
+        "operationId": "enterprise-stub-write-namespaces-api-lock-unlock",
         "tags": [
           "system"
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SystemWriteNamespacesApiLockUnlockRequest"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -12286,7 +12852,7 @@
         }
       ],
       "post": {
-        "operationId": "system-write-namespaces-api-lock-unlock-path",
+        "operationId": "enterprise-stub-write-namespaces-api-lock-unlock-path",
         "tags": [
           "system"
         ],
@@ -12309,7 +12875,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-namespaces-path",
+        "operationId": "enterprise-stub-read-namespaces-path",
         "tags": [
           "system"
         ],
@@ -12320,7 +12886,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-namespaces-path",
+        "operationId": "enterprise-stub-write-namespaces-path",
         "tags": [
           "system"
         ],
@@ -12331,7 +12897,7 @@
         }
       },
       "delete": {
-        "operationId": "system-delete-namespaces-path",
+        "operationId": "enterprise-stub-delete-namespaces-path",
         "tags": [
           "system"
         ],
@@ -12431,7 +12997,7 @@
         }
       }
     },
-    "/sys/plugins/catalog/{type}": {
+    "/sys/plugins/catalog/{type}/": {
       "description": "Configures the plugins known to Vault",
       "parameters": [
         {
@@ -12601,7 +13167,7 @@
     },
     "/sys/plugins/reload/backend/status": {
       "get": {
-        "operationId": "system-read-plugins-reload-backend-status",
+        "operationId": "enterprise-stub-read-plugins-reload-backend-status",
         "tags": [
           "system"
         ],
@@ -12612,7 +13178,120 @@
         }
       }
     },
-    "/sys/policies/acl": {
+    "/sys/plugins/runtimes/catalog/": {
+      "description": "List all plugin runtimes in the catalog as a map of type to names.",
+      "x-vault-sudo": true,
+      "get": {
+        "operationId": "plugins-runtimes-catalog-list-plugins-runtimes",
+        "tags": [
+          "system"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PluginsRuntimesCatalogListPluginsRuntimesResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sys/plugins/runtimes/catalog/{type}/{name}": {
+      "description": "Configures plugin runtimes",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "The name of the plugin runtime",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "type",
+          "description": "The type of the plugin runtime",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-sudo": true,
+      "get": {
+        "summary": "Return the configuration data for the plugin runtime with the given name.",
+        "operationId": "plugins-runtimes-catalog-read-plugin-runtime-configuration",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PluginsRuntimesCatalogReadPluginRuntimeConfigurationResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Register a new plugin runtime, or updates an existing one with the supplied name.",
+        "operationId": "plugins-runtimes-catalog-register-plugin-runtime",
+        "tags": [
+          "system"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PluginsRuntimesCatalogRegisterPluginRuntimeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove the plugin runtime with the given name.",
+        "operationId": "plugins-runtimes-catalog-remove-plugin-runtime",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/sys/policies/acl/": {
       "description": "List the configured access control policies.",
       "get": {
         "operationId": "policies-list-acl-policies",
@@ -12714,9 +13393,9 @@
         }
       }
     },
-    "/sys/policies/egp": {
+    "/sys/policies/egp/": {
       "get": {
-        "operationId": "system-list-policies-egp",
+        "operationId": "enterprise-stub-list-policies-egp",
         "tags": [
           "system"
         ],
@@ -12736,7 +13415,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -12753,7 +13439,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-policies-egp-name",
+        "operationId": "enterprise-stub-read-policies-egp-name",
         "tags": [
           "system"
         ],
@@ -12764,7 +13450,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-policies-egp-name",
+        "operationId": "enterprise-stub-write-policies-egp-name",
         "tags": [
           "system"
         ],
@@ -12775,7 +13461,7 @@
         }
       },
       "delete": {
-        "operationId": "system-delete-policies-egp-name",
+        "operationId": "enterprise-stub-delete-policies-egp-name",
         "tags": [
           "system"
         ],
@@ -12786,7 +13472,7 @@
         }
       }
     },
-    "/sys/policies/password": {
+    "/sys/policies/password/": {
       "get": {
         "summary": "List the existing password policies.",
         "operationId": "policies-list-password-policies",
@@ -12813,7 +13499,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PoliciesListPasswordPoliciesResponse"
+                  "$ref": "#/components/schemas/StandardListResponse"
                 }
               }
             }
@@ -12921,9 +13607,9 @@
         }
       }
     },
-    "/sys/policies/rgp": {
+    "/sys/policies/rgp/": {
       "get": {
-        "operationId": "system-list-policies-rgp",
+        "operationId": "enterprise-stub-list-policies-rgp",
         "tags": [
           "system"
         ],
@@ -12943,7 +13629,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -12960,7 +13653,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-policies-rgp-name",
+        "operationId": "enterprise-stub-read-policies-rgp-name",
         "tags": [
           "system"
         ],
@@ -12971,7 +13664,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-policies-rgp-name",
+        "operationId": "enterprise-stub-write-policies-rgp-name",
         "tags": [
           "system"
         ],
@@ -12982,7 +13675,7 @@
         }
       },
       "delete": {
-        "operationId": "system-delete-policies-rgp-name",
+        "operationId": "enterprise-stub-delete-policies-rgp-name",
         "tags": [
           "system"
         ],
@@ -12996,18 +13689,43 @@
     "/sys/policy": {
       "description": "List the configured access control policies.",
       "get": {
-        "operationId": "policies-list",
+        "operationId": "policies-list-acl-policies2",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PoliciesListAclPolicies2Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sys/policy/": {
+      "description": "List the configured access control policies.",
+      "get": {
+        "operationId": "policies-list-acl-policies3",
         "tags": [
           "system"
         ],
         "parameters": [
           {
             "name": "list",
-            "description": "Return a list if `true`",
+            "description": "Must be set to `true`",
             "in": "query",
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
           }
         ],
         "responses": {
@@ -13016,7 +13734,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PoliciesListResponse"
+                  "$ref": "#/components/schemas/PoliciesListAclPolicies3Response"
                 }
               }
             }
@@ -13298,9 +14016,9 @@
         }
       }
     },
-    "/sys/quotas/lease-count": {
+    "/sys/quotas/lease-count/": {
       "get": {
-        "operationId": "system-list-quotas-lease-count",
+        "operationId": "enterprise-stub-list-quotas-lease-count",
         "tags": [
           "system"
         ],
@@ -13320,7 +14038,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -13337,7 +14062,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-quotas-lease-count-name",
+        "operationId": "enterprise-stub-read-quotas-lease-count-name",
         "tags": [
           "system"
         ],
@@ -13348,7 +14073,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-quotas-lease-count-name",
+        "operationId": "enterprise-stub-write-quotas-lease-count-name",
         "tags": [
           "system"
         ],
@@ -13359,7 +14084,7 @@
         }
       },
       "delete": {
-        "operationId": "system-delete-quotas-lease-count-name",
+        "operationId": "enterprise-stub-delete-quotas-lease-count-name",
         "tags": [
           "system"
         ],
@@ -13370,7 +14095,7 @@
         }
       }
     },
-    "/sys/quotas/rate-limit": {
+    "/sys/quotas/rate-limit/": {
       "description": "Lists the names of all the rate limit quotas.",
       "get": {
         "operationId": "rate-limit-quotas-list",
@@ -13397,7 +14122,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RateLimitQuotasListResponse"
+                  "$ref": "#/components/schemas/StandardListResponse"
                 }
               }
             }
@@ -13469,8 +14194,18 @@
         }
       }
     },
-    "/sys/raw": {
+    "/sys/raw/{path}": {
       "description": "Write, Read, and Delete data directly in the Storage backend.",
+      "parameters": [
+        {
+          "name": "path",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
       "x-vault-sudo": true,
       "x-vault-createSupported": true,
       "get": {
@@ -13478,16 +14213,6 @@
         "operationId": "raw-read",
         "tags": [
           "system"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Return a list if `true`",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -13537,7 +14262,7 @@
         }
       }
     },
-    "/sys/raw/{path}": {
+    "/sys/raw/{path}/": {
       "description": "Write, Read, and Delete data directly in the Storage backend.",
       "parameters": [
         {
@@ -13550,21 +14275,24 @@
         }
       ],
       "x-vault-sudo": true,
-      "x-vault-createSupported": true,
       "get": {
-        "summary": "Read the value of the key at the given path.",
-        "operationId": "raw-read-path",
+        "summary": "Return a list keys for a given path prefix.",
+        "operationId": "raw-list",
         "tags": [
           "system"
         ],
         "parameters": [
           {
             "name": "list",
-            "description": "Return a list if `true`",
+            "description": "Must be set to `true`",
             "in": "query",
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
           }
         ],
         "responses": {
@@ -13573,44 +14301,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RawReadPathResponse"
+                  "$ref": "#/components/schemas/StandardListResponse"
                 }
               }
             }
-          }
-        }
-      },
-      "post": {
-        "summary": "Update the value of the key at the given path.",
-        "operationId": "raw-write-path",
-        "tags": [
-          "system"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RawWritePathRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "summary": "Delete the key with given path.",
-        "operationId": "raw-delete-path",
-        "tags": [
-          "system"
-        ],
-        "responses": {
-          "204": {
-            "description": "OK"
           }
         }
       }
@@ -13978,7 +14672,7 @@
     },
     "/sys/replication/dr/primary/demote": {
       "post": {
-        "operationId": "system-write-replication-dr-primary-demote",
+        "operationId": "enterprise-stub-write-replication-dr-primary-demote",
         "tags": [
           "system"
         ],
@@ -13991,7 +14685,7 @@
     },
     "/sys/replication/dr/primary/disable": {
       "post": {
-        "operationId": "system-write-replication-dr-primary-disable",
+        "operationId": "enterprise-stub-write-replication-dr-primary-disable",
         "tags": [
           "system"
         ],
@@ -14004,7 +14698,7 @@
     },
     "/sys/replication/dr/primary/enable": {
       "post": {
-        "operationId": "system-write-replication-dr-primary-enable",
+        "operationId": "enterprise-stub-write-replication-dr-primary-enable",
         "tags": [
           "system"
         ],
@@ -14017,7 +14711,7 @@
     },
     "/sys/replication/dr/primary/revoke-secondary": {
       "post": {
-        "operationId": "system-write-replication-dr-primary-revoke-secondary",
+        "operationId": "enterprise-stub-write-replication-dr-primary-revoke-secondary",
         "tags": [
           "system"
         ],
@@ -14031,7 +14725,7 @@
     "/sys/replication/dr/primary/secondary-token": {
       "x-vault-sudo": true,
       "post": {
-        "operationId": "system-write-replication-dr-primary-secondary-token",
+        "operationId": "enterprise-stub-write-replication-dr-primary-secondary-token",
         "tags": [
           "system"
         ],
@@ -14054,7 +14748,7 @@
         }
       ],
       "post": {
-        "operationId": "system-write-replication-dr-secondary-config-reload-subsystem",
+        "operationId": "enterprise-stub-write-replication-dr-secondary-config-reload-subsystem",
         "tags": [
           "system"
         ],
@@ -14068,7 +14762,7 @@
     "/sys/replication/dr/secondary/disable": {
       "x-vault-unauthenticated": true,
       "post": {
-        "operationId": "system-write-replication-dr-secondary-disable",
+        "operationId": "enterprise-stub-write-replication-dr-secondary-disable",
         "tags": [
           "system"
         ],
@@ -14081,7 +14775,7 @@
     },
     "/sys/replication/dr/secondary/enable": {
       "post": {
-        "operationId": "system-write-replication-dr-secondary-enable",
+        "operationId": "enterprise-stub-write-replication-dr-secondary-enable",
         "tags": [
           "system"
         ],
@@ -14094,7 +14788,7 @@
     },
     "/sys/replication/dr/secondary/generate-public-key": {
       "post": {
-        "operationId": "system-write-replication-dr-secondary-generate-public-key",
+        "operationId": "enterprise-stub-write-replication-dr-secondary-generate-public-key",
         "tags": [
           "system"
         ],
@@ -14108,7 +14802,7 @@
     "/sys/replication/dr/secondary/license/status": {
       "x-vault-unauthenticated": true,
       "get": {
-        "operationId": "system-read-replication-dr-secondary-license-status",
+        "operationId": "enterprise-stub-read-replication-dr-secondary-license-status",
         "tags": [
           "system"
         ],
@@ -14122,7 +14816,7 @@
     "/sys/replication/dr/secondary/operation-token/delete": {
       "x-vault-unauthenticated": true,
       "post": {
-        "operationId": "system-write-replication-dr-secondary-operation-token-delete",
+        "operationId": "enterprise-stub-write-replication-dr-secondary-operation-token-delete",
         "tags": [
           "system"
         ],
@@ -14136,7 +14830,7 @@
     "/sys/replication/dr/secondary/promote": {
       "x-vault-unauthenticated": true,
       "post": {
-        "operationId": "system-write-replication-dr-secondary-promote",
+        "operationId": "enterprise-stub-write-replication-dr-secondary-promote",
         "tags": [
           "system"
         ],
@@ -14150,7 +14844,7 @@
     "/sys/replication/dr/secondary/recover": {
       "x-vault-unauthenticated": true,
       "post": {
-        "operationId": "system-write-replication-dr-secondary-recover",
+        "operationId": "enterprise-stub-write-replication-dr-secondary-recover",
         "tags": [
           "system"
         ],
@@ -14164,7 +14858,7 @@
     "/sys/replication/dr/secondary/reindex": {
       "x-vault-unauthenticated": true,
       "post": {
-        "operationId": "system-write-replication-dr-secondary-reindex",
+        "operationId": "enterprise-stub-write-replication-dr-secondary-reindex",
         "tags": [
           "system"
         ],
@@ -14178,7 +14872,7 @@
     "/sys/replication/dr/secondary/update-primary": {
       "x-vault-unauthenticated": true,
       "post": {
-        "operationId": "system-write-replication-dr-secondary-update-primary",
+        "operationId": "enterprise-stub-write-replication-dr-secondary-update-primary",
         "tags": [
           "system"
         ],
@@ -14192,7 +14886,7 @@
     "/sys/replication/dr/status": {
       "x-vault-unauthenticated": true,
       "get": {
-        "operationId": "system-read-replication-dr-status",
+        "operationId": "enterprise-stub-read-replication-dr-status",
         "tags": [
           "system"
         ],
@@ -14205,7 +14899,7 @@
     },
     "/sys/replication/performance/primary/demote": {
       "post": {
-        "operationId": "system-write-replication-performance-primary-demote",
+        "operationId": "enterprise-stub-write-replication-performance-primary-demote",
         "tags": [
           "system"
         ],
@@ -14218,7 +14912,7 @@
     },
     "/sys/replication/performance/primary/disable": {
       "post": {
-        "operationId": "system-write-replication-performance-primary-disable",
+        "operationId": "enterprise-stub-write-replication-performance-primary-disable",
         "tags": [
           "system"
         ],
@@ -14241,7 +14935,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-replication-performance-primary-dynamic-filter-id",
+        "operationId": "enterprise-stub-read-replication-performance-primary-dynamic-filter-id",
         "tags": [
           "system"
         ],
@@ -14254,7 +14948,7 @@
     },
     "/sys/replication/performance/primary/enable": {
       "post": {
-        "operationId": "system-write-replication-performance-primary-enable",
+        "operationId": "enterprise-stub-write-replication-performance-primary-enable",
         "tags": [
           "system"
         ],
@@ -14277,7 +14971,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-replication-performance-primary-paths-filter-id",
+        "operationId": "enterprise-stub-read-replication-performance-primary-paths-filter-id",
         "tags": [
           "system"
         ],
@@ -14288,7 +14982,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-replication-performance-primary-paths-filter-id",
+        "operationId": "enterprise-stub-write-replication-performance-primary-paths-filter-id",
         "tags": [
           "system"
         ],
@@ -14299,7 +14993,7 @@
         }
       },
       "delete": {
-        "operationId": "system-delete-replication-performance-primary-paths-filter-id",
+        "operationId": "enterprise-stub-delete-replication-performance-primary-paths-filter-id",
         "tags": [
           "system"
         ],
@@ -14312,7 +15006,7 @@
     },
     "/sys/replication/performance/primary/revoke-secondary": {
       "post": {
-        "operationId": "system-write-replication-performance-primary-revoke-secondary",
+        "operationId": "enterprise-stub-write-replication-performance-primary-revoke-secondary",
         "tags": [
           "system"
         ],
@@ -14326,7 +15020,7 @@
     "/sys/replication/performance/primary/secondary-token": {
       "x-vault-sudo": true,
       "post": {
-        "operationId": "system-write-replication-performance-primary-secondary-token",
+        "operationId": "enterprise-stub-write-replication-performance-primary-secondary-token",
         "tags": [
           "system"
         ],
@@ -14339,7 +15033,7 @@
     },
     "/sys/replication/performance/secondary/disable": {
       "post": {
-        "operationId": "system-write-replication-performance-secondary-disable",
+        "operationId": "enterprise-stub-write-replication-performance-secondary-disable",
         "tags": [
           "system"
         ],
@@ -14362,7 +15056,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-replication-performance-secondary-dynamic-filter-id",
+        "operationId": "enterprise-stub-read-replication-performance-secondary-dynamic-filter-id",
         "tags": [
           "system"
         ],
@@ -14375,7 +15069,7 @@
     },
     "/sys/replication/performance/secondary/enable": {
       "post": {
-        "operationId": "system-write-replication-performance-secondary-enable",
+        "operationId": "enterprise-stub-write-replication-performance-secondary-enable",
         "tags": [
           "system"
         ],
@@ -14388,7 +15082,7 @@
     },
     "/sys/replication/performance/secondary/generate-public-key": {
       "post": {
-        "operationId": "system-write-replication-performance-secondary-generate-public-key",
+        "operationId": "enterprise-stub-write-replication-performance-secondary-generate-public-key",
         "tags": [
           "system"
         ],
@@ -14401,7 +15095,7 @@
     },
     "/sys/replication/performance/secondary/promote": {
       "post": {
-        "operationId": "system-write-replication-performance-secondary-promote",
+        "operationId": "enterprise-stub-write-replication-performance-secondary-promote",
         "tags": [
           "system"
         ],
@@ -14414,7 +15108,7 @@
     },
     "/sys/replication/performance/secondary/update-primary": {
       "post": {
-        "operationId": "system-write-replication-performance-secondary-update-primary",
+        "operationId": "enterprise-stub-write-replication-performance-secondary-update-primary",
         "tags": [
           "system"
         ],
@@ -14428,7 +15122,7 @@
     "/sys/replication/performance/status": {
       "x-vault-unauthenticated": true,
       "get": {
-        "operationId": "system-read-replication-performance-status",
+        "operationId": "enterprise-stub-read-replication-performance-status",
         "tags": [
           "system"
         ],
@@ -14441,7 +15135,7 @@
     },
     "/sys/replication/primary/demote": {
       "post": {
-        "operationId": "system-write-replication-primary-demote",
+        "operationId": "enterprise-stub-write-replication-primary-demote",
         "tags": [
           "system"
         ],
@@ -14454,7 +15148,7 @@
     },
     "/sys/replication/primary/disable": {
       "post": {
-        "operationId": "system-write-replication-primary-disable",
+        "operationId": "enterprise-stub-write-replication-primary-disable",
         "tags": [
           "system"
         ],
@@ -14467,7 +15161,7 @@
     },
     "/sys/replication/primary/enable": {
       "post": {
-        "operationId": "system-write-replication-primary-enable",
+        "operationId": "enterprise-stub-write-replication-primary-enable",
         "tags": [
           "system"
         ],
@@ -14480,7 +15174,7 @@
     },
     "/sys/replication/primary/revoke-secondary": {
       "post": {
-        "operationId": "system-write-replication-primary-revoke-secondary",
+        "operationId": "enterprise-stub-write-replication-primary-revoke-secondary",
         "tags": [
           "system"
         ],
@@ -14494,7 +15188,7 @@
     "/sys/replication/primary/secondary-token": {
       "x-vault-sudo": true,
       "post": {
-        "operationId": "system-write-replication-primary-secondary-token",
+        "operationId": "enterprise-stub-write-replication-primary-secondary-token",
         "tags": [
           "system"
         ],
@@ -14507,7 +15201,7 @@
     },
     "/sys/replication/recover": {
       "post": {
-        "operationId": "system-write-replication-recover",
+        "operationId": "enterprise-stub-write-replication-recover",
         "tags": [
           "system"
         ],
@@ -14521,7 +15215,7 @@
     "/sys/replication/reindex": {
       "x-vault-sudo": true,
       "post": {
-        "operationId": "system-write-replication-reindex",
+        "operationId": "enterprise-stub-write-replication-reindex",
         "tags": [
           "system"
         ],
@@ -14534,7 +15228,7 @@
     },
     "/sys/replication/secondary/disable": {
       "post": {
-        "operationId": "system-write-replication-secondary-disable",
+        "operationId": "enterprise-stub-write-replication-secondary-disable",
         "tags": [
           "system"
         ],
@@ -14547,7 +15241,7 @@
     },
     "/sys/replication/secondary/enable": {
       "post": {
-        "operationId": "system-write-replication-secondary-enable",
+        "operationId": "enterprise-stub-write-replication-secondary-enable",
         "tags": [
           "system"
         ],
@@ -14560,7 +15254,7 @@
     },
     "/sys/replication/secondary/promote": {
       "post": {
-        "operationId": "system-write-replication-secondary-promote",
+        "operationId": "enterprise-stub-write-replication-secondary-promote",
         "tags": [
           "system"
         ],
@@ -14573,7 +15267,7 @@
     },
     "/sys/replication/secondary/update-primary": {
       "post": {
-        "operationId": "system-write-replication-secondary-update-primary",
+        "operationId": "enterprise-stub-write-replication-secondary-update-primary",
         "tags": [
           "system"
         ],
@@ -14587,7 +15281,7 @@
     "/sys/replication/status": {
       "x-vault-unauthenticated": true,
       "get": {
-        "operationId": "system-read-replication-status",
+        "operationId": "read-replication-status",
         "tags": [
           "system"
         ],
@@ -14783,6 +15477,7 @@
     },
     "/sys/seal": {
       "description": "Seals the Vault.",
+      "x-vault-sudo": true,
       "post": {
         "summary": "Seal the Vault.",
         "operationId": "seal",
@@ -14821,7 +15516,7 @@
     },
     "/sys/sealwrap/rewrap": {
       "get": {
-        "operationId": "system-read-sealwrap-rewrap",
+        "operationId": "enterprise-stub-read-sealwrap-rewrap",
         "tags": [
           "system"
         ],
@@ -14832,7 +15527,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-sealwrap-rewrap",
+        "operationId": "enterprise-stub-write-sealwrap-rewrap",
         "tags": [
           "system"
         ],
@@ -14844,6 +15539,7 @@
       }
     },
     "/sys/step-down": {
+      "x-vault-sudo": true,
       "post": {
         "summary": "Cause the node to give up active status.",
         "description": "This endpoint forces the node to give up active status. If the node does not have active status, this endpoint does nothing. Note that the node will sleep for ten seconds before attempting to grab the active lock again, but if no standby nodes grab the active lock in the interim, the same node may become the active node again.",
@@ -14861,7 +15557,7 @@
     "/sys/storage/raft/snapshot-auto/config/": {
       "x-vault-sudo": true,
       "get": {
-        "operationId": "system-list-storage-raft-snapshot-auto-config",
+        "operationId": "enterprise-stub-list-storage-raft-snapshot-auto-config",
         "tags": [
           "system"
         ],
@@ -14881,7 +15577,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -14899,7 +15602,7 @@
       ],
       "x-vault-sudo": true,
       "get": {
-        "operationId": "system-read-storage-raft-snapshot-auto-config-name",
+        "operationId": "enterprise-stub-read-storage-raft-snapshot-auto-config-name",
         "tags": [
           "system"
         ],
@@ -14910,7 +15613,7 @@
         }
       },
       "post": {
-        "operationId": "system-write-storage-raft-snapshot-auto-config-name",
+        "operationId": "enterprise-stub-write-storage-raft-snapshot-auto-config-name",
         "tags": [
           "system"
         ],
@@ -14921,7 +15624,7 @@
         }
       },
       "delete": {
-        "operationId": "system-delete-storage-raft-snapshot-auto-config-name",
+        "operationId": "enterprise-stub-delete-storage-raft-snapshot-auto-config-name",
         "tags": [
           "system"
         ],
@@ -14944,7 +15647,7 @@
         }
       ],
       "get": {
-        "operationId": "system-read-storage-raft-snapshot-auto-status-name",
+        "operationId": "enterprise-stub-read-storage-raft-snapshot-auto-status-name",
         "tags": [
           "system"
         ],
@@ -15229,7 +15932,7 @@
         }
       }
     },
-    "/sys/version-history": {
+    "/sys/version-history/": {
       "description": "List historical version changes sorted by installation time in ascending order.",
       "get": {
         "summary": "Returns map of historical version change entries",
@@ -15273,6 +15976,15 @@
         "operationId": "read-wrapping-properties2",
         "tags": [
           "system"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -15375,6 +16087,17 @@
         "tags": [
           "system"
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -15476,7 +16199,7 @@
         }
       }
     },
-    "/{alicloud_mount_path}/role": {
+    "/{alicloud_mount_path}/role/": {
       "description": "List the existing roles in this backend.",
       "parameters": [
         {
@@ -15512,7 +16235,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -15736,6 +16466,33 @@
         "tags": [
           "secrets"
         ],
+        "parameters": [
+          {
+            "name": "role_arn",
+            "description": "ARN of role to assume when credential_type is assumed_role",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "role_session_name",
+            "description": "Session name to use when assuming role. Max chars: 64",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ttl",
+            "description": "Lifetime of the returned credentials in seconds",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": 3600
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -15764,7 +16521,7 @@
         }
       }
     },
-    "/{aws_mount_path}/roles": {
+    "/{aws_mount_path}/roles/": {
       "description": "List the existing roles in this backend",
       "parameters": [
         {
@@ -15800,7 +16557,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -16029,6 +16793,33 @@
         "tags": [
           "secrets"
         ],
+        "parameters": [
+          {
+            "name": "role_arn",
+            "description": "ARN of role to assume when credential_type is assumed_role",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "role_session_name",
+            "description": "Session name to use when assuming role. Max chars: 64",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ttl",
+            "description": "Lifetime of the returned credentials in seconds",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": 3600
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -16151,7 +16942,7 @@
         }
       }
     },
-    "/{azure_mount_path}/roles": {
+    "/{azure_mount_path}/roles/": {
       "description": "List existing roles.",
       "parameters": [
         {
@@ -16187,7 +16978,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -16369,7 +17167,7 @@
         }
       }
     },
-    "/{consul_mount_path}/roles": {
+    "/{consul_mount_path}/roles/": {
       "parameters": [
         {
           "name": "consul_mount_path",
@@ -16403,7 +17201,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -16474,7 +17279,7 @@
         }
       }
     },
-    "/{database_mount_path}/config": {
+    "/{database_mount_path}/config/": {
       "description": "Configure connection details to a database plugin.",
       "parameters": [
         {
@@ -16510,7 +17315,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -16655,7 +17467,7 @@
         }
       }
     },
-    "/{database_mount_path}/roles": {
+    "/{database_mount_path}/roles/": {
       "description": "Manage the roles that can be created with this backend.",
       "parameters": [
         {
@@ -16691,7 +17503,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -16873,7 +17692,7 @@
         }
       }
     },
-    "/{database_mount_path}/static-roles": {
+    "/{database_mount_path}/static-roles/": {
       "description": "Manage the static roles that can be created with this backend.",
       "parameters": [
         {
@@ -16909,7 +17728,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -17058,7 +17884,7 @@
         }
       }
     },
-    "/{gcp_mount_path}/impersonated-account": {
+    "/{gcp_mount_path}/impersonated-account/": {
       "description": "List created impersonated accounts.",
       "parameters": [
         {
@@ -17093,7 +17919,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -17212,7 +18045,7 @@
         }
       }
     },
-    "/{gcp_mount_path}/impersonated-accounts": {
+    "/{gcp_mount_path}/impersonated-accounts/": {
       "description": "List created impersonated accounts.",
       "parameters": [
         {
@@ -17247,7 +18080,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -17276,9 +18116,37 @@
         }
       ],
       "get": {
-        "operationId": "google-cloud-generate-roleset-key2",
+        "operationId": "google-cloud-generate-roleset-key4",
         "tags": [
           "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "key_algorithm",
+            "description": "Private key algorithm for service account key - defaults to KEY_ALG_RSA_2048\"",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "KEY_ALG_RSA_2048"
+            }
+          },
+          {
+            "name": "key_type",
+            "description": "Private key type for service account key - defaults to TYPE_GOOGLE_CREDENTIALS_FILE\"",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "TYPE_GOOGLE_CREDENTIALS_FILE"
+            }
+          },
+          {
+            "name": "ttl",
+            "description": "Lifetime of the service account key",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -17287,7 +18155,7 @@
         }
       },
       "post": {
-        "operationId": "google-cloud-generate-roleset-key-with-parameters2",
+        "operationId": "google-cloud-generate-roleset-key3",
         "tags": [
           "secrets"
         ],
@@ -17296,7 +18164,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GoogleCloudGenerateRolesetKeyWithParameters2Request"
+                "$ref": "#/components/schemas/GoogleCloudGenerateRolesetKey3Request"
               }
             }
           }
@@ -17308,7 +18176,7 @@
         }
       }
     },
-    "/{gcp_mount_path}/roleset": {
+    "/{gcp_mount_path}/roleset/": {
       "description": "List existing rolesets.",
       "parameters": [
         {
@@ -17343,7 +18211,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -17510,9 +18385,37 @@
         }
       ],
       "get": {
-        "operationId": "google-cloud-generate-roleset-key",
+        "operationId": "google-cloud-generate-roleset-key2",
         "tags": [
           "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "key_algorithm",
+            "description": "Private key algorithm for service account key - defaults to KEY_ALG_RSA_2048\"",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "KEY_ALG_RSA_2048"
+            }
+          },
+          {
+            "name": "key_type",
+            "description": "Private key type for service account key - defaults to TYPE_GOOGLE_CREDENTIALS_FILE\"",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "TYPE_GOOGLE_CREDENTIALS_FILE"
+            }
+          },
+          {
+            "name": "ttl",
+            "description": "Lifetime of the service account key",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -17521,7 +18424,7 @@
         }
       },
       "post": {
-        "operationId": "google-cloud-generate-roleset-key-with-parameters",
+        "operationId": "google-cloud-generate-roleset-key",
         "tags": [
           "secrets"
         ],
@@ -17530,7 +18433,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GoogleCloudGenerateRolesetKeyWithParametersRequest"
+                "$ref": "#/components/schemas/GoogleCloudGenerateRolesetKeyRequest"
               }
             }
           }
@@ -17566,7 +18469,7 @@
         }
       ],
       "get": {
-        "operationId": "google-cloud-generate-roleset-access-token",
+        "operationId": "google-cloud-generate-roleset-access-token2",
         "tags": [
           "secrets"
         ],
@@ -17577,7 +18480,7 @@
         }
       },
       "post": {
-        "operationId": "google-cloud-generate-roleset-access-token-with-parameters",
+        "operationId": "google-cloud-generate-roleset-access-token",
         "tags": [
           "secrets"
         ],
@@ -17588,7 +18491,7 @@
         }
       }
     },
-    "/{gcp_mount_path}/rolesets": {
+    "/{gcp_mount_path}/rolesets/": {
       "description": "List existing rolesets.",
       "parameters": [
         {
@@ -17623,12 +18526,19 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
     },
-    "/{gcp_mount_path}/static-account": {
+    "/{gcp_mount_path}/static-account/": {
       "description": "List created static accounts.",
       "parameters": [
         {
@@ -17663,7 +18573,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -17760,9 +18677,37 @@
         }
       ],
       "get": {
-        "operationId": "google-cloud-generate-static-account-key",
+        "operationId": "google-cloud-generate-static-account-key2",
         "tags": [
           "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "key_algorithm",
+            "description": "Private key algorithm for service account key. Defaults to KEY_ALG_RSA_2048.\"",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "KEY_ALG_RSA_2048"
+            }
+          },
+          {
+            "name": "key_type",
+            "description": "Private key type for service account key. Defaults to TYPE_GOOGLE_CREDENTIALS_FILE.\"",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "TYPE_GOOGLE_CREDENTIALS_FILE"
+            }
+          },
+          {
+            "name": "ttl",
+            "description": "Lifetime of the service account key",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -17771,7 +18716,7 @@
         }
       },
       "post": {
-        "operationId": "google-cloud-generate-static-account-key-with-parameters",
+        "operationId": "google-cloud-generate-static-account-key",
         "tags": [
           "secrets"
         ],
@@ -17780,7 +18725,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GoogleCloudGenerateStaticAccountKeyWithParametersRequest"
+                "$ref": "#/components/schemas/GoogleCloudGenerateStaticAccountKeyRequest"
               }
             }
           }
@@ -17851,7 +18796,7 @@
         }
       ],
       "get": {
-        "operationId": "google-cloud-generate-static-account-access-token",
+        "operationId": "google-cloud-generate-static-account-access-token2",
         "tags": [
           "secrets"
         ],
@@ -17862,7 +18807,7 @@
         }
       },
       "post": {
-        "operationId": "google-cloud-generate-static-account-access-token-with-parameters",
+        "operationId": "google-cloud-generate-static-account-access-token",
         "tags": [
           "secrets"
         ],
@@ -17873,7 +18818,7 @@
         }
       }
     },
-    "/{gcp_mount_path}/static-accounts": {
+    "/{gcp_mount_path}/static-accounts/": {
       "description": "List created static accounts.",
       "parameters": [
         {
@@ -17908,7 +18853,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -17937,7 +18889,7 @@
         }
       ],
       "get": {
-        "operationId": "google-cloud-generate-roleset-access-token2",
+        "operationId": "google-cloud-generate-roleset-access-token4",
         "tags": [
           "secrets"
         ],
@@ -17948,7 +18900,7 @@
         }
       },
       "post": {
-        "operationId": "google-cloud-generate-roleset-access-token-with-parameters2",
+        "operationId": "google-cloud-generate-roleset-access-token3",
         "tags": [
           "secrets"
         ],
@@ -18110,7 +19062,7 @@
         }
       }
     },
-    "/{gcpkms_mount_path}/keys": {
+    "/{gcpkms_mount_path}/keys/": {
       "description": "List named keys",
       "parameters": [
         {
@@ -18146,7 +19098,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -18757,7 +19716,7 @@
         }
       }
     },
-    "/{kubernetes_mount_path}/roles": {
+    "/{kubernetes_mount_path}/roles/": {
       "description": "List the existing roles in this secrets engine.",
       "parameters": [
         {
@@ -18792,7 +19751,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -18894,16 +19860,6 @@
         "tags": [
           "secrets"
         ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Return a list if `true`",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -18915,6 +19871,17 @@
         "tags": [
           "secrets"
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
         "responses": {
           "204": {
             "description": "No Content"
@@ -18929,6 +19896,62 @@
         "responses": {
           "204": {
             "description": "No Content"
+          }
+        }
+      }
+    },
+    "/{kv_v1_mount_path}/{path}/": {
+      "description": "Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.",
+      "parameters": [
+        {
+          "name": "path",
+          "description": "Location of the secret.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "kv_v1_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "kv-v1"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "kv-v1-list",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -19204,16 +20227,6 @@
         "tags": [
           "secrets"
         ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Return a list if `true`",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -19249,13 +20262,69 @@
         }
       },
       "delete": {
-        "operationId": "kv-v2-delete-metadata",
+        "operationId": "kv-v2-delete-metadata-and-all-versions",
         "tags": [
           "secrets"
         ],
         "responses": {
           "204": {
             "description": "No Content"
+          }
+        }
+      }
+    },
+    "/{kv_v2_mount_path}/metadata/{path}/": {
+      "description": "Configures settings for the KV store",
+      "parameters": [
+        {
+          "name": "path",
+          "description": "Location of the secret.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "kv_v2_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "kv-v2"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "kv-v2-list",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -19441,7 +20510,7 @@
         }
       }
     },
-    "/{ldap_mount_path}/library": {
+    "/{ldap_mount_path}/library/": {
       "description": "List the name of each set of service accounts currently stored.",
       "parameters": [
         {
@@ -19476,7 +20545,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -19726,7 +20802,7 @@
         }
       }
     },
-    "/{ldap_mount_path}/role": {
+    "/{ldap_mount_path}/role/": {
       "description": "List all the dynamic roles Vault is currently managing in LDAP.",
       "parameters": [
         {
@@ -19761,7 +20837,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -19930,7 +21013,7 @@
         }
       }
     },
-    "/{ldap_mount_path}/static-role": {
+    "/{ldap_mount_path}/static-role/": {
       "description": "This path lists all the static roles Vault is currently managing within the LDAP system.",
       "parameters": [
         {
@@ -19965,7 +21048,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -20131,7 +21221,7 @@
         }
       }
     },
-    "/{mongodbatlas_mount_path}/roles": {
+    "/{mongodbatlas_mount_path}/roles/": {
       "description": "List the existing roles in this backend",
       "parameters": [
         {
@@ -20167,7 +21257,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -20392,7 +21489,7 @@
         }
       }
     },
-    "/{nomad_mount_path}/role": {
+    "/{nomad_mount_path}/role/": {
       "parameters": [
         {
           "name": "nomad_mount_path",
@@ -20426,7 +21523,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -21351,7 +22455,7 @@
         }
       }
     },
-    "/{pki_mount_path}/certs": {
+    "/{pki_mount_path}/certs/": {
       "description": "Fetch a CA, CRL, CA Chain, or non-revoked certificate.",
       "parameters": [
         {
@@ -21390,7 +22494,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PkiListCertsResponse"
+                  "$ref": "#/components/schemas/StandardListResponse"
                 }
               }
             }
@@ -21398,7 +22502,7 @@
         }
       }
     },
-    "/{pki_mount_path}/certs/revoked": {
+    "/{pki_mount_path}/certs/revoked/": {
       "description": "List all revoked serial numbers within the local cluster",
       "parameters": [
         {
@@ -21437,7 +22541,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PkiListRevokedCertsResponse"
+                  "$ref": "#/components/schemas/StandardListResponse"
                 }
               }
             }
@@ -22103,7 +23207,7 @@
         }
       }
     },
-    "/{pki_mount_path}/eab": {
+    "/{pki_mount_path}/eab/": {
       "description": "list external account bindings to be used for ACME",
       "parameters": [
         {
@@ -24752,7 +25856,7 @@
         }
       }
     },
-    "/{pki_mount_path}/issuers": {
+    "/{pki_mount_path}/issuers/": {
       "description": "Fetch a list of CA certificates.",
       "parameters": [
         {
@@ -24766,6 +25870,7 @@
           "required": true
         }
       ],
+      "x-vault-unauthenticated": true,
       "get": {
         "operationId": "pki-list-issuers",
         "tags": [
@@ -25081,7 +26186,7 @@
         }
       }
     },
-    "/{pki_mount_path}/keys": {
+    "/{pki_mount_path}/keys/": {
       "description": "Fetch a list of all issuer keys",
       "parameters": [
         {
@@ -25449,7 +26554,7 @@
         }
       }
     },
-    "/{pki_mount_path}/roles": {
+    "/{pki_mount_path}/roles/": {
       "description": "List the existing roles in this backend",
       "parameters": [
         {
@@ -25488,7 +26593,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PkiListRolesResponse"
+                  "$ref": "#/components/schemas/StandardListResponse"
                 }
               }
             }
@@ -26854,7 +27959,7 @@
         }
       }
     },
-    "/{rabbitmq_mount_path}/roles": {
+    "/{rabbitmq_mount_path}/roles/": {
       "description": "Manage the roles that can be created with this backend.",
       "parameters": [
         {
@@ -26890,7 +27995,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -27237,7 +28349,7 @@
         }
       }
     },
-    "/{ssh_mount_path}/roles": {
+    "/{ssh_mount_path}/roles/": {
       "description": "Manage the 'roles' that can be created with this backend.",
       "parameters": [
         {
@@ -27273,7 +28385,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -27564,7 +28683,7 @@
         }
       }
     },
-    "/{terraform_mount_path}/role": {
+    "/{terraform_mount_path}/role/": {
       "description": "List the existing roles in Terraform Cloud / Enterprise backend",
       "parameters": [
         {
@@ -27599,7 +28718,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -27762,7 +28888,7 @@
         }
       }
     },
-    "/{totp_mount_path}/keys": {
+    "/{totp_mount_path}/keys/": {
       "description": "Manage the keys that can be created with this backend.",
       "parameters": [
         {
@@ -27798,7 +28924,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -28019,7 +29152,6 @@
           "required": true
         }
       ],
-      "x-vault-createSupported": true,
       "get": {
         "summary": "Returns the size of the active cache",
         "operationId": "transit-read-cache-configuration",
@@ -28533,7 +29665,7 @@
         }
       }
     },
-    "/{transit_mount_path}/keys": {
+    "/{transit_mount_path}/keys/": {
       "description": "Managed named encryption keys",
       "parameters": [
         {
@@ -28569,7 +29701,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -28676,6 +29815,51 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/TransitConfigureKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{transit_mount_path}/keys/{name}/csr": {
+      "description": "Create a CSR from a key in transit",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the key",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "transit_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "transit"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "transit-generate-csr-for-key",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransitGenerateCsrForKeyRequest"
               }
             }
           }
@@ -28814,6 +29998,51 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/TransitRotateKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{transit_mount_path}/keys/{name}/set-certificate": {
+      "description": "Imports an externally-signed certificate chain into an existing key version",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the key",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "transit_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "transit"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "transit-set-certificate-for-key",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransitSetCertificateForKeyRequest"
               }
             }
           }
@@ -29673,28 +30902,6 @@
           }
         }
       },
-      "AppRoleListRolesResponse": {
-        "type": "object",
-        "properties": {
-          "keys": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "AppRoleListSecretIdsResponse": {
-        "type": "object",
-        "properties": {
-          "keys": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
       "AppRoleLoginRequest": {
         "type": "object",
         "properties": {
@@ -30550,7 +31757,7 @@
           },
           "plugin_version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           },
           "seal_wrap": {
             "type": "boolean",
@@ -30741,7 +31948,7 @@
           },
           "plugin_version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           },
           "token_type": {
             "type": "string",
@@ -30817,6 +32024,11 @@
             "type": "string",
             "description": "The region ID for the sts_endpoint, if set.",
             "default": ""
+          },
+          "use_sts_region_from_client": {
+            "type": "boolean",
+            "description": "Uses the STS region from client requests for making AWS STS API calls.",
+            "default": false
           }
         }
       },
@@ -31017,7 +32229,7 @@
         "properties": {
           "iam_http_request_method": {
             "type": "string",
-            "description": "HTTP method to use for the AWS request when auth_type is iam. This must match what has been signed in the presigned request. Currently, POST is the only supported value"
+            "description": "HTTP method to use for the AWS request when auth_type is iam. This must match what has been signed in the presigned request."
           },
           "iam_request_body": {
             "type": "string",
@@ -32887,8 +34099,12 @@
           },
           "rotation_period": {
             "type": "string",
-            "description": "Period for automatic credential rotation of the given username. Not valid unless used with \"username\".",
+            "description": "Period for automatic credential rotation of the given username. Not valid unless used with \"username\". Mutually exclusive with \"rotation_schedule.\"",
             "format": "duration"
+          },
+          "rotation_schedule": {
+            "type": "string",
+            "description": "Schedule for automatic credential rotation of the given username. Mutually exclusive with \"rotation_period.\""
           },
           "rotation_statements": {
             "type": "array",
@@ -32896,6 +34112,11 @@
             "items": {
               "type": "string"
             }
+          },
+          "rotation_window": {
+            "type": "string",
+            "description": "The window of time in which rotations are allowed to occur starting from a given \"rotation_schedule\". Requires \"rotation_schedule\" to be specified",
+            "format": "duration"
           },
           "username": {
             "type": "string",
@@ -33166,10 +34387,6 @@
           "input": {
             "type": "string",
             "description": "The base64-encoded input data"
-          },
-          "urlalgorithm": {
-            "type": "string",
-            "description": "Algorithm to use (POST URL parameter)"
           }
         }
       },
@@ -33220,15 +34437,6 @@
             "type": "string",
             "description": "Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".",
             "default": "base64"
-          },
-          "source": {
-            "type": "string",
-            "description": "Which system to source random data from, ether \"platform\", \"seal\", or \"all\".",
-            "default": "platform"
-          },
-          "urlbytes": {
-            "type": "string",
-            "description": "The number of bytes to generate (POST URL parameter)"
           }
         }
       },
@@ -33252,11 +34460,6 @@
             "type": "string",
             "description": "Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".",
             "default": "base64"
-          },
-          "source": {
-            "type": "string",
-            "description": "Which system to source random data from, ether \"platform\", \"seal\", or \"all\".",
-            "default": "platform"
           }
         }
       },
@@ -33303,10 +34506,6 @@
             "type": "string",
             "description": "Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".",
             "default": "base64"
-          },
-          "urlbytes": {
-            "type": "string",
-            "description": "The number of bytes to generate (POST URL parameter)"
           }
         }
       },
@@ -33584,7 +34783,7 @@
           }
         }
       },
-      "GoogleCloudGenerateRolesetKeyWithParameters2Request": {
+      "GoogleCloudGenerateRolesetKey3Request": {
         "type": "object",
         "properties": {
           "key_algorithm": {
@@ -33604,7 +34803,7 @@
           }
         }
       },
-      "GoogleCloudGenerateRolesetKeyWithParametersRequest": {
+      "GoogleCloudGenerateRolesetKeyRequest": {
         "type": "object",
         "properties": {
           "key_algorithm": {
@@ -33624,7 +34823,7 @@
           }
         }
       },
-      "GoogleCloudGenerateStaticAccountKeyWithParametersRequest": {
+      "GoogleCloudGenerateStaticAccountKeyRequest": {
         "type": "object",
         "properties": {
           "key_algorithm": {
@@ -34370,6 +35569,11 @@
           "context": {
             "type": "string",
             "description": "Context string appended to every operationId"
+          },
+          "generic_mount_paths": {
+            "type": "boolean",
+            "description": "Use generic mount paths",
+            "default": false
           }
         }
       },
@@ -34569,7 +35773,7 @@
           }
         }
       },
-      "JwtOidcCallbackWithParametersRequest": {
+      "JwtOidcCallbackFormPostRequest": {
         "type": "object",
         "properties": {
           "client_nonce": {
@@ -36518,18 +37722,6 @@
           }
         }
       },
-      "LeasesLookUpWithPrefixResponse": {
-        "type": "object",
-        "properties": {
-          "keys": {
-            "type": "array",
-            "description": "A list of lease ids",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
       "LeasesReadLeaseRequest": {
         "type": "object",
         "properties": {
@@ -36582,10 +37774,6 @@
           "lease_id": {
             "type": "string",
             "description": "The lease identifier to renew. This is included with a lease."
-          },
-          "url_lease_id": {
-            "type": "string",
-            "description": "The lease identifier to renew. This is included with a lease."
           }
         }
       },
@@ -36598,10 +37786,6 @@
             "format": "duration"
           },
           "lease_id": {
-            "type": "string",
-            "description": "The lease identifier to renew. This is included with a lease."
-          },
-          "url_lease_id": {
             "type": "string",
             "description": "The lease identifier to renew. This is included with a lease."
           }
@@ -36646,10 +37830,6 @@
             "type": "boolean",
             "description": "Whether or not to perform the revocation synchronously",
             "default": true
-          },
-          "url_lease_id": {
-            "type": "string",
-            "description": "The lease identifier to renew. This is included with a lease."
           }
         }
       },
@@ -36664,10 +37844,6 @@
             "type": "boolean",
             "description": "Whether or not to perform the revocation synchronously",
             "default": true
-          },
-          "url_lease_id": {
-            "type": "string",
-            "description": "The lease identifier to renew. This is included with a lease."
           }
         }
       },
@@ -37213,7 +38389,7 @@
           },
           "plugin_version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           },
           "seal_wrap": {
             "type": "boolean",
@@ -37259,7 +38435,7 @@
           },
           "plugin_version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           },
           "running_plugin_version": {
             "type": "string"
@@ -37343,7 +38519,7 @@
           },
           "plugin_version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           },
           "token_type": {
             "type": "string",
@@ -37426,7 +38602,7 @@
           },
           "plugin_version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           },
           "token_type": {
             "type": "string",
@@ -38135,6 +39311,11 @@
       "PkiConfigureAcmeRequest": {
         "type": "object",
         "properties": {
+          "allow_role_ext_key_usage": {
+            "type": "boolean",
+            "description": "whether the ExtKeyUsage field from a role is used, defaults to false meaning that certificate will be signed with ServerAuth.",
+            "default": false
+          },
           "allowed_issuers": {
             "type": "array",
             "description": "which issuers are allowed for use with ACME; by default, this will only be the primary (default) issuer",
@@ -40524,10 +41705,6 @@
             "description": "Whether or not to remove self-signed CA certificates in the output of the ca_chain field.",
             "default": false
           },
-          "role": {
-            "type": "string",
-            "description": "The desired role with configuration for this request"
-          },
           "serial_number": {
             "type": "string",
             "description": "The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field."
@@ -40597,14 +41774,6 @@
           "issuing_ca": {
             "type": "string",
             "description": "Issuing Certificate Authority"
-          },
-          "private_key": {
-            "type": "string",
-            "description": "Private key"
-          },
-          "private_key_type": {
-            "type": "string",
-            "description": "Private key type"
           },
           "serial_number": {
             "type": "string",
@@ -40792,14 +41961,6 @@
             "type": "string",
             "description": "Issuing Certificate Authority"
           },
-          "private_key": {
-            "type": "string",
-            "description": "Private key"
-          },
-          "private_key_type": {
-            "type": "string",
-            "description": "Private key type"
-          },
           "serial_number": {
             "type": "string",
             "description": "Serial Number"
@@ -40945,14 +42106,6 @@
           "issuing_ca": {
             "type": "string",
             "description": "Issuing Certificate Authority"
-          },
-          "private_key": {
-            "type": "string",
-            "description": "Private key"
-          },
-          "private_key_type": {
-            "type": "string",
-            "description": "Private key type"
           },
           "serial_number": {
             "type": "string",
@@ -41577,18 +42730,6 @@
           }
         }
       },
-      "PkiListCertsResponse": {
-        "type": "object",
-        "properties": {
-          "keys": {
-            "type": "array",
-            "description": "A list of keys",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
       "PkiListEabKeysResponse": {
         "type": "object",
         "properties": {
@@ -41634,30 +42775,6 @@
           "keys": {
             "type": "array",
             "description": "A list of keys",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "PkiListRevokedCertsResponse": {
-        "type": "object",
-        "properties": {
-          "keys": {
-            "type": "array",
-            "description": "List of Keys",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "PkiListRolesResponse": {
-        "type": "object",
-        "properties": {
-          "keys": {
-            "type": "array",
-            "description": "List of roles",
             "items": {
               "type": "string"
             }
@@ -41721,7 +42838,7 @@
           },
           "ocsp_servers": {
             "type": "array",
-            "description": "OSCP Servers",
+            "description": "OCSP Servers",
             "items": {
               "type": "string"
             }
@@ -42590,7 +43707,7 @@
           },
           "ocsp_servers": {
             "type": "array",
-            "description": "OSCP Servers",
+            "description": "OCSP Servers",
             "items": {
               "type": "string"
             }
@@ -43864,10 +44981,6 @@
             "description": "Whether or not to remove self-signed CA certificates in the output of the ca_chain field.",
             "default": false
           },
-          "role": {
-            "type": "string",
-            "description": "The desired role with configuration for this request"
-          },
           "serial_number": {
             "type": "string",
             "description": "The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field."
@@ -43937,14 +45050,6 @@
           "issuing_ca": {
             "type": "string",
             "description": "Issuing Certificate Authority"
-          },
-          "private_key": {
-            "type": "string",
-            "description": "Private key"
-          },
-          "private_key_type": {
-            "type": "string",
-            "description": "Private key type"
           },
           "serial_number": {
             "type": "string",
@@ -44137,14 +45242,6 @@
             "type": "string",
             "description": "Issuing Certificate Authority"
           },
-          "private_key": {
-            "type": "string",
-            "description": "Private key"
-          },
-          "private_key_type": {
-            "type": "string",
-            "description": "Private key type"
-          },
           "serial_number": {
             "type": "string",
             "description": "Serial Number"
@@ -44295,14 +45392,6 @@
           "issuing_ca": {
             "type": "string",
             "description": "Issuing Certificate Authority"
-          },
-          "private_key": {
-            "type": "string",
-            "description": "Private key"
-          },
-          "private_key_type": {
-            "type": "string",
-            "description": "Private key type"
           },
           "serial_number": {
             "type": "string",
@@ -45260,7 +46349,7 @@
           },
           "ocsp_servers": {
             "type": "array",
-            "description": "OSCP Servers",
+            "description": "OCSP Servers",
             "items": {
               "type": "string"
             }
@@ -46120,13 +47209,17 @@
             "type": "string",
             "description": "The name of the plugin"
           },
+          "oci_image": {
+            "type": "string",
+            "description": "The name of the OCI image to be run, without the tag or SHA256. Must already be present on the machine."
+          },
           "sha256": {
             "type": "string",
-            "description": "The SHA256 sum of the executable used in the command field. This should be HEX encoded."
+            "description": "The SHA256 sum of the executable or container to be run. This should be HEX encoded."
           },
           "version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           }
         }
       },
@@ -46154,13 +47247,17 @@
             "type": "string",
             "description": "The name of the plugin"
           },
+          "oci_image": {
+            "type": "string",
+            "description": "The name of the OCI image to be run, without the tag or SHA256. Must already be present on the machine."
+          },
           "sha256": {
             "type": "string",
-            "description": "The SHA256 sum of the executable used in the command field. This should be HEX encoded."
+            "description": "The SHA256 sum of the executable or container to be run. This should be HEX encoded."
           },
           "version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           }
         }
       },
@@ -46185,17 +47282,17 @@
               "type": "string"
             }
           },
+          "oci_image": {
+            "type": "string",
+            "description": "The name of the OCI image to be run, without the tag or SHA256. Must already be present on the machine."
+          },
           "sha256": {
             "type": "string",
-            "description": "The SHA256 sum of the executable used in the command field. This should be HEX encoded."
-          },
-          "type": {
-            "type": "string",
-            "description": "The type of the plugin, may be auth, secret, or database"
+            "description": "The SHA256 sum of the executable or container to be run. This should be HEX encoded."
           },
           "version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           }
         }
       },
@@ -46220,13 +47317,17 @@
               "type": "string"
             }
           },
+          "oci_image": {
+            "type": "string",
+            "description": "The name of the OCI image to be run, without the tag or SHA256. Must already be present on the machine."
+          },
           "sha256": {
             "type": "string",
-            "description": "The SHA256 sum of the executable used in the command field. This should be HEX encoded."
+            "description": "The SHA256 sum of the executable or container to be run. This should be HEX encoded."
           },
           "version": {
             "type": "string",
-            "description": "The semantic version of the plugin to use."
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           }
         }
       },
@@ -46257,6 +47358,72 @@
           }
         }
       },
+      "PluginsRuntimesCatalogListPluginsRuntimesResponse": {
+        "type": "object",
+        "properties": {
+          "runtimes": {
+            "type": "array",
+            "description": "List of all plugin runtimes in the catalog",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "PluginsRuntimesCatalogReadPluginRuntimeConfigurationResponse": {
+        "type": "object",
+        "properties": {
+          "cgroup_parent": {
+            "type": "string",
+            "description": "Optional parent cgroup for the container"
+          },
+          "cpu_nanos": {
+            "type": "integer",
+            "description": "The limit of runtime CPU in nanos",
+            "format": "int64"
+          },
+          "memory_bytes": {
+            "type": "integer",
+            "description": "The limit of runtime memory in bytes",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the plugin runtime"
+          },
+          "oci_runtime": {
+            "type": "string",
+            "description": "The OCI-compatible runtime (default \"runsc\")"
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of the plugin runtime"
+          }
+        }
+      },
+      "PluginsRuntimesCatalogRegisterPluginRuntimeRequest": {
+        "type": "object",
+        "properties": {
+          "cgroup_parent": {
+            "type": "string",
+            "description": "Optional parent cgroup for the container"
+          },
+          "cpu_nanos": {
+            "type": "integer",
+            "description": "The limit of runtime CPU in nanos",
+            "format": "int64"
+          },
+          "memory_bytes": {
+            "type": "integer",
+            "description": "The limit of runtime memory in bytes",
+            "format": "int64"
+          },
+          "oci_runtime": {
+            "type": "string",
+            "description": "The OCI-compatible runtime (default \"runsc\")"
+          }
+        }
+      },
       "PoliciesGeneratePasswordFromPasswordPolicyResponse": {
         "type": "object",
         "properties": {
@@ -46265,7 +47432,7 @@
           }
         }
       },
-      "PoliciesListAclPoliciesResponse": {
+      "PoliciesListAclPolicies2Response": {
         "type": "object",
         "properties": {
           "keys": {
@@ -46282,7 +47449,7 @@
           }
         }
       },
-      "PoliciesListPasswordPoliciesResponse": {
+      "PoliciesListAclPolicies3Response": {
         "type": "object",
         "properties": {
           "keys": {
@@ -46290,10 +47457,16 @@
             "items": {
               "type": "string"
             }
+          },
+          "policies": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
-      "PoliciesListResponse": {
+      "PoliciesListAclPoliciesResponse": {
         "type": "object",
         "properties": {
           "keys": {
@@ -46674,10 +47847,6 @@
             "type": "string",
             "description": "Password for this user."
           },
-          "urlusername": {
-            "type": "string",
-            "description": "Username to be used for login. (URL parameter)"
-          },
           "username": {
             "type": "string",
             "description": "Username to be used for login. (POST request body)"
@@ -46732,17 +47901,6 @@
           }
         }
       },
-      "RateLimitQuotasListResponse": {
-        "type": "object",
-        "properties": {
-          "keys": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
       "RateLimitQuotasReadConfigurationResponse": {
         "type": "object",
         "properties": {
@@ -46765,6 +47923,9 @@
         "properties": {
           "block_interval": {
             "type": "integer"
+          },
+          "inheritable": {
+            "type": "boolean"
           },
           "interval": {
             "type": "integer"
@@ -46795,6 +47956,10 @@
             "description": "If set, when a client reaches a rate limit threshold, the client will be prohibited from any further requests until after the 'block_interval' has elapsed.",
             "format": "duration"
           },
+          "inheritable": {
+            "type": "boolean",
+            "description": "Whether all child namespaces can inherit this namespace quota."
+          },
           "interval": {
             "type": "string",
             "description": "The duration to enforce rate limiting for (default '1s').",
@@ -46819,34 +47984,9 @@
           }
         }
       },
-      "RawReadPathResponse": {
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
       "RawReadResponse": {
         "type": "object",
         "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "RawWritePathRequest": {
-        "type": "object",
-        "properties": {
-          "compressed": {
-            "type": "boolean"
-          },
-          "compression_type": {
-            "type": "string"
-          },
-          "encoding": {
-            "type": "string"
-          },
           "value": {
             "type": "string"
           }
@@ -46862,9 +48002,6 @@
             "type": "string"
           },
           "encoding": {
-            "type": "string"
-          },
-          "path": {
             "type": "string"
           },
           "value": {
@@ -47796,27 +48933,16 @@
           }
         }
       },
-      "SystemWriteNamespacesApiLockLockRequest": {
+      "StandardListResponse": {
         "type": "object",
         "properties": {
-          "path": {
-            "type": "string"
+          "keys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
-        },
-        "required": [
-          "path"
-        ]
-      },
-      "SystemWriteNamespacesApiLockUnlockRequest": {
-        "type": "object",
-        "properties": {
-          "path": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "path"
-        ]
+        }
       },
       "TerraformCloudConfigureRequest": {
         "type": "object",
@@ -47890,10 +49016,15 @@
             "type": "string",
             "description": "Value for the token"
           },
-          "metadata": {
+          "lease": {
+            "type": "string",
+            "description": "Use 'ttl' instead",
+            "deprecated": true
+          },
+          "meta": {
             "type": "object",
             "description": "Arbitrary key=value metadata to associate with the token",
-            "format": "map"
+            "format": "kvpairs"
           },
           "no_default_policy": {
             "type": "boolean",
@@ -47920,7 +49051,8 @@
           },
           "renewable": {
             "type": "boolean",
-            "description": "Allow token to be renewed past its initial TTL up to system/mount maximum TTL"
+            "description": "Allow token to be renewed past its initial TTL up to system/mount maximum TTL",
+            "default": true
           },
           "ttl": {
             "type": "string",
@@ -47951,10 +49083,15 @@
             "type": "string",
             "description": "Value for the token"
           },
-          "metadata": {
+          "lease": {
+            "type": "string",
+            "description": "Use 'ttl' instead",
+            "deprecated": true
+          },
+          "meta": {
             "type": "object",
             "description": "Arbitrary key=value metadata to associate with the token",
-            "format": "map"
+            "format": "kvpairs"
           },
           "no_default_policy": {
             "type": "boolean",
@@ -47981,11 +49118,8 @@
           },
           "renewable": {
             "type": "boolean",
-            "description": "Allow token to be renewed past its initial TTL up to system/mount maximum TTL"
-          },
-          "role_name": {
-            "type": "string",
-            "description": "Name of the role"
+            "description": "Allow token to be renewed past its initial TTL up to system/mount maximum TTL",
+            "default": true
           },
           "ttl": {
             "type": "string",
@@ -48016,10 +49150,15 @@
             "type": "string",
             "description": "Value for the token"
           },
-          "metadata": {
+          "lease": {
+            "type": "string",
+            "description": "Use 'ttl' instead",
+            "deprecated": true
+          },
+          "meta": {
             "type": "object",
             "description": "Arbitrary key=value metadata to associate with the token",
-            "format": "map"
+            "format": "kvpairs"
           },
           "no_default_policy": {
             "type": "boolean",
@@ -48046,7 +49185,8 @@
           },
           "renewable": {
             "type": "boolean",
-            "description": "Allow token to be renewed past its initial TTL up to system/mount maximum TTL"
+            "description": "Allow token to be renewed past its initial TTL up to system/mount maximum TTL",
+            "default": true
           },
           "ttl": {
             "type": "string",
@@ -48072,7 +49212,7 @@
         "properties": {
           "token": {
             "type": "string",
-            "description": "Token to lookup (POST request body)"
+            "description": "Token to lookup"
           }
         }
       },
@@ -48531,6 +49671,19 @@
           }
         }
       },
+      "TransitGenerateCsrForKeyRequest": {
+        "type": "object",
+        "properties": {
+          "csr": {
+            "type": "string",
+            "description": "PEM encoded CSR template. The information attributes will be used as a basis for the CSR with the key in transit. If not set, an empty CSR is returned."
+          },
+          "version": {
+            "type": "integer",
+            "description": "Optional version of key, 'latest' if not set"
+          }
+        }
+      },
       "TransitGenerateDataKeyRequest": {
         "type": "object",
         "properties": {
@@ -48575,10 +49728,6 @@
           "key_version": {
             "type": "integer",
             "description": "The version of the key to use for generating the HMAC. Must be 0 (for latest) or a value greater than or equal to the min_encryption_version configured on the key."
-          },
-          "urlalgorithm": {
-            "type": "string",
-            "description": "Algorithm to use (POST URL parameter)"
           }
         }
       },
@@ -48619,15 +49768,6 @@
             "type": "string",
             "description": "Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".",
             "default": "base64"
-          },
-          "source": {
-            "type": "string",
-            "description": "Which system to source random data from, ether \"platform\", \"seal\", or \"all\".",
-            "default": "platform"
-          },
-          "urlbytes": {
-            "type": "string",
-            "description": "The number of bytes to generate (POST URL parameter)"
           }
         }
       },
@@ -48643,11 +49783,6 @@
             "type": "string",
             "description": "Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".",
             "default": "base64"
-          },
-          "source": {
-            "type": "string",
-            "description": "Which system to source random data from, ether \"platform\", \"seal\", or \"all\".",
-            "default": "platform"
           }
         }
       },
@@ -48678,10 +49813,6 @@
             "type": "string",
             "description": "Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".",
             "default": "base64"
-          },
-          "urlbytes": {
-            "type": "string",
-            "description": "The number of bytes to generate (POST URL parameter)"
           }
         }
       },
@@ -48701,10 +49832,6 @@
           "input": {
             "type": "string",
             "description": "The base64-encoded input data"
-          },
-          "urlalgorithm": {
-            "type": "string",
-            "description": "Algorithm to use (POST URL parameter)"
           }
         }
       },
@@ -48823,10 +49950,6 @@
             "type": "boolean",
             "description": "If set and a key by the given name exists, force the restore operation and override the key.",
             "default": false
-          },
-          "name": {
-            "type": "string",
-            "description": "If set, this will be the name of the restored key."
           }
         }
       },
@@ -48870,6 +49993,22 @@
             "description": "The name of the managed key to use for the new version of this transit key"
           }
         }
+      },
+      "TransitSetCertificateForKeyRequest": {
+        "type": "object",
+        "properties": {
+          "certificate_chain": {
+            "type": "string",
+            "description": "PEM encoded certificate chain. It should be composed by one or more concatenated PEM blocks and ordered starting from the end-entity certificate."
+          },
+          "version": {
+            "type": "integer",
+            "description": "Optional version of key, 'latest' if not set"
+          }
+        },
+        "required": [
+          "certificate_chain"
+        ]
       },
       "TransitSignRequest": {
         "type": "object",
@@ -48920,10 +50059,6 @@
           "signature_algorithm": {
             "type": "string",
             "description": "The signature algorithm to use for signing. Currently only applies to RSA key types. Options are 'pss' or 'pkcs1v15'. Defaults to 'pss'"
-          },
-          "urlalgorithm": {
-            "type": "string",
-            "description": "Hash algorithm to use (POST URL parameter)"
           }
         }
       },
@@ -49041,10 +50176,6 @@
           "signature_algorithm": {
             "type": "string",
             "description": "The signature algorithm to use for signature verification. Currently only applies to RSA key types. Options are 'pss' or 'pkcs1v15'. Defaults to 'pss'"
-          },
-          "urlalgorithm": {
-            "type": "string",
-            "description": "Hash algorithm to use (POST URL parameter)"
           }
         }
       },

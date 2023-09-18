@@ -19,11 +19,11 @@ A simple [HashiCorp Vault][vault] Go client library.
 1. [Examples](#examples)
    - [Getting Started](#getting-started)
    - [Authentication](#authentication)
-   - [Using Generic Accessors](#using-generic-accessors)
+   - [Using Generic Methods](#using-generic-methods)
    - [Using Generated Methods](#using-generated-methods)
    - [Modifying Requests](#modifying-requests)
      - [Overriding Default Mount Path](#overriding-default-mount-path)
-     - [Adding Custom Headers and Custom Query Parameters](#adding-custom-headers-and-custom-query-parameters)
+     - [Adding Custom Headers and Appending Query Parameters](#adding-custom-headers-and-appending-query-parameters)
      - [Response Wrapping \& Unwrapping](#response-wrapping--unwrapping)
    - [Error Handling](#error-handling)
    - [Using TLS](#using-tls)
@@ -83,19 +83,20 @@ func main() {
 	}
 
 	// write a secret
-	_, err = client.Secrets.KvV2Write(ctx, "my-secret", schema.KvV2WriteRequest{
+	_, err = client.Secrets.KvV2Write(ctx, "foo", schema.KvV2WriteRequest{
 		Data: map[string]any{
 			"password1": "abc123",
 			"password2": "correct horse battery staple",
-		},
-	})
+		}},
+		vault.WithMountPath("secret"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 	log.Println("secret written successfully")
 
-	// read a secret
-	s, err := client.Secrets.KvV2Read(ctx, "my-secret")
+	// read the secret
+	s, err := client.Secrets.KvV2Read(ctx, "foo", vault.WithMountPath("secret"))
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -135,9 +136,9 @@ if err := client.SetToken(resp.Auth.ClientToken); err != nil {
 The secret identifier is often delivered as a wrapped token. In this case, you
 should unwrap it first as demonstrated [here](#response-wrapping--unwrapping).
 
-### Using Generic Accessors
+### Using Generic Methods
 
-The library provides the following generic accessors which let you read, modify,
+The library provides the following generic methods which let you read, modify,
 list, and delete an arbitrary path within Vault:
 
 ```go
@@ -153,12 +154,12 @@ client.List(...)
 client.Delete(...)
 ```
 
-For example, `client.Secrets.KvV2Write(...)` from
+For example, `client.Secrets.KvV2Write(...)` from the
 [Getting Started](#getting-started) section could be rewritten using a generic
 `client.Write(...)` like so:
 
 ```go
-_, err = client.Write(ctx, "/secret/data/my-secret", map[string]any{
+_, err = client.Write(ctx, "/secret/data/foo", map[string]any{
 	"data": map[string]any{
 		"password1": "abc123",
 		"password2": "correct horse battery staple",
@@ -195,14 +196,25 @@ for engine := range resp.Data {
 ### Modifying Requests
 
 You can modify the requests in one of two ways, either at the client level or by
-decorating individual requests:
+decorating individual requests. In case both client-level and request-specific
+modifiers are present, the following rules will apply:
+
+- For scalar values (such as `vault.WithToken` example below), the
+  request-specific decorators will take precedence over the client-level
+  settings.
+- For slices (e.g. `vault.WithResponseCallbacks`), the request-specific
+  decorators will be appended to the client-level settings for the given
+  request.
+- For maps (e.g. `vault.WithCustomHeaders`), the request-specific decorators
+  will be merged into the client-level settings using `maps.Copy` semantics
+  (appended, overwriting the existing keys) for the given request.
 
 ```go
 // all subsequent requests will use the given token & namespace
 _ = client.SetToken("my-token")
 _ = client.SetNamespace("my-namespace")
 
-// per-request decorators take precedence over the client-level settings
+// for scalar settings, request-specific decorators take precedence
 resp, err := client.Secrets.KvV2Read(
 	ctx,
 	"my-secret",
@@ -233,9 +245,11 @@ secret, err := client.Secrets.KvV2Read(
 )
 ```
 
-#### Adding Custom Headers and Custom Query Parameters
+#### Adding Custom Headers and Appending Query Parameters
 
-The library allows adding custom headers and query parameters to all requests:
+The library allows adding custom headers and appending query parameters to all
+requests. `vault.WithQueryParameters` is primarily intended for the generic
+`client.Read`, `client.ReadRaw`, `client.List`, and `client.Delete`:
 
 ```go
 resp, err := client.Read(
@@ -245,7 +259,7 @@ resp, err := client.Read(
         "x-test-header1": {"a", "b"},
         "x-test-header2": {"c", "d"},
     }),
-    vault.WithCustomQueryParameters(url.Values{
+    vault.WithQueryParameters(url.Values{
         "param1": {"a"},
         "param2": {"b"},
     }),
@@ -267,7 +281,7 @@ resp, err := client.Secrets.KvV2Read(
 wrapped := resp.WrapInfo.Token
 
 // unwrap the response (usually done elsewhere)
-unwrapped, err := vault.Unwrap[map[string]any](ctx, client, wrapped)
+unwrapped, err := vault.Unwrap[schema.KvV2ReadResponse](ctx, client, wrapped)
 ```
 
 ### Error Handling
@@ -379,9 +393,10 @@ client.SetResponseCallbacks(func(req *http.Request, resp *http.Response) {
 })
 ```
 
-Alternatively, `vault.WithRequestCallbacks(..)` /
+Additionally, `vault.WithRequestCallbacks(..)` /
 `vault.WithResponseCallbacks(..)` can be used to inject callbacks for individual
-requests:
+requests. These request-level callbacks will be appended to the list of the
+respective client-level callbacks for the given request.
 
 ```go
 resp, err := client.Secrets.KvV2Read(

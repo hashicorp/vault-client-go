@@ -10,12 +10,3 @@ type KvV2DeleteVersionsRequest struct {
 	// The versions to be archived. The versioned data will not be deleted, but it will no longer be returned in normal get requests.
 	Versions []int32 `json:"versions,omitempty"`
 }
-
-// NewKvV2DeleteVersionsRequestWithDefaults instantiates a new KvV2DeleteVersionsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewKvV2DeleteVersionsRequestWithDefaults() *KvV2DeleteVersionsRequest {
-	var this KvV2DeleteVersionsRequest
-
-	return &this
-}

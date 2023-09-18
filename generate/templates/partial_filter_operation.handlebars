@@ -1,0 +1,8 @@
+{{#not (or
+               (endsWith operationId "2")
+               (endsWith operationId "3")
+               (endsWith operationId "4")
+               (startsWith operationId "EnterpriseStub")
+       ) ~}}
+{{> @partial-block }}
+{{~/not ~}}

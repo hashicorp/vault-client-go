@@ -31,7 +31,7 @@ func (a *Auth) AliCloudDeleteAuthRole(ctx context.Context, role string, options 
 	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("alicloud")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -45,19 +45,19 @@ func (a *Auth) AliCloudDeleteAuthRole(ctx context.Context, role string, options 
 }
 
 // AliCloudListAuthRoles Lists all the roles that are registered with Vault.
-func (a *Auth) AliCloudListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AliCloudListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{alicloud_mount_path}/role"
+	requestPath := "/v1/auth/{alicloud_mount_path}/role/"
 	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("alicloud")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -78,7 +78,7 @@ func (a *Auth) AliCloudLogin(ctx context.Context, request schema.AliCloudLoginRe
 	requestPath := "/v1/auth/{alicloud_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("alicloud")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -103,7 +103,7 @@ func (a *Auth) AliCloudReadAuthRole(ctx context.Context, role string, options ..
 	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("alicloud")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -128,7 +128,7 @@ func (a *Auth) AliCloudWriteAuthRole(ctx context.Context, role string, request s
 	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("alicloud")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -153,7 +153,7 @@ func (a *Auth) AppRoleDeleteBindSecretId(ctx context.Context, roleName string, o
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -178,7 +178,7 @@ func (a *Auth) AppRoleDeleteBoundCidrList(ctx context.Context, roleName string, 
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -203,7 +203,7 @@ func (a *Auth) AppRoleDeletePeriod(ctx context.Context, roleName string, options
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -228,7 +228,7 @@ func (a *Auth) AppRoleDeletePolicies(ctx context.Context, roleName string, optio
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -253,7 +253,7 @@ func (a *Auth) AppRoleDeleteRole(ctx context.Context, roleName string, options .
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -278,7 +278,7 @@ func (a *Auth) AppRoleDeleteSecretIdBoundCidrs(ctx context.Context, roleName str
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -303,7 +303,7 @@ func (a *Auth) AppRoleDeleteSecretIdNumUses(ctx context.Context, roleName string
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -328,7 +328,7 @@ func (a *Auth) AppRoleDeleteSecretIdTtl(ctx context.Context, roleName string, op
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -353,7 +353,7 @@ func (a *Auth) AppRoleDeleteTokenBoundCidrs(ctx context.Context, roleName string
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -378,7 +378,7 @@ func (a *Auth) AppRoleDeleteTokenMaxTtl(ctx context.Context, roleName string, op
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -403,7 +403,7 @@ func (a *Auth) AppRoleDeleteTokenNumUses(ctx context.Context, roleName string, o
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -428,7 +428,7 @@ func (a *Auth) AppRoleDeleteTokenTtl(ctx context.Context, roleName string, optio
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -453,7 +453,7 @@ func (a *Auth) AppRoleDestroySecretId(ctx context.Context, roleName string, requ
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -478,7 +478,7 @@ func (a *Auth) AppRoleDestroySecretIdByAccessor(ctx context.Context, roleName st
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -492,19 +492,19 @@ func (a *Auth) AppRoleDestroySecretIdByAccessor(ctx context.Context, roleName st
 }
 
 // AppRoleListRoles
-func (a *Auth) AppRoleListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.AppRoleListRolesResponse], error) {
+func (a *Auth) AppRoleListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{approle_mount_path}/role"
+	requestPath := "/v1/auth/{approle_mount_path}/role/"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[schema.AppRoleListRolesResponse](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -517,20 +517,20 @@ func (a *Auth) AppRoleListRoles(ctx context.Context, options ...RequestOption) (
 
 // AppRoleListSecretIds
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleListSecretIds(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleListSecretIdsResponse], error) {
+func (a *Auth) AppRoleListSecretIds(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id"
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id/"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[schema.AppRoleListSecretIdsResponse](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -551,7 +551,7 @@ func (a *Auth) AppRoleLogin(ctx context.Context, request schema.AppRoleLoginRequ
 	requestPath := "/v1/auth/{approle_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -576,7 +576,7 @@ func (a *Auth) AppRoleLookUpSecretId(ctx context.Context, roleName string, reque
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[schema.AppRoleLookUpSecretIdResponse](
 		ctx,
@@ -601,7 +601,7 @@ func (a *Auth) AppRoleLookUpSecretIdByAccessor(ctx context.Context, roleName str
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[schema.AppRoleLookUpSecretIdByAccessorResponse](
 		ctx,
@@ -626,7 +626,7 @@ func (a *Auth) AppRoleReadBindSecretId(ctx context.Context, roleName string, opt
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.AppRoleReadBindSecretIdResponse](
 		ctx,
@@ -651,7 +651,7 @@ func (a *Auth) AppRoleReadBoundCidrList(ctx context.Context, roleName string, op
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.AppRoleReadBoundCidrListResponse](
 		ctx,
@@ -676,7 +676,7 @@ func (a *Auth) AppRoleReadLocalSecretIds(ctx context.Context, roleName string, o
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.AppRoleReadLocalSecretIdsResponse](
 		ctx,
@@ -701,7 +701,7 @@ func (a *Auth) AppRoleReadPeriod(ctx context.Context, roleName string, options .
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.AppRoleReadPeriodResponse](
 		ctx,
@@ -726,7 +726,7 @@ func (a *Auth) AppRoleReadPolicies(ctx context.Context, roleName string, options
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.AppRoleReadPoliciesResponse](
 		ctx,
@@ -751,7 +751,7 @@ func (a *Auth) AppRoleReadRole(ctx context.Context, roleName string, options ...
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.AppRoleReadRoleResponse](
 		ctx,
@@ -776,7 +776,7 @@ func (a *Auth) AppRoleReadRoleId(ctx context.Context, roleName string, options .
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.AppRoleReadRoleIdResponse](
 		ctx,
@@ -801,7 +801,7 @@ func (a *Auth) AppRoleReadSecretIdBoundCidrs(ctx context.Context, roleName strin
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.AppRoleReadSecretIdBoundCidrsResponse](
 		ctx,
@@ -826,7 +826,7 @@ func (a *Auth) AppRoleReadSecretIdNumUses(ctx context.Context, roleName string, 
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.AppRoleReadSecretIdNumUsesResponse](
 		ctx,
@@ -851,7 +851,7 @@ func (a *Auth) AppRoleReadSecretIdTtl(ctx context.Context, roleName string, opti
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.AppRoleReadSecretIdTtlResponse](
 		ctx,
@@ -876,7 +876,7 @@ func (a *Auth) AppRoleReadTokenBoundCidrs(ctx context.Context, roleName string, 
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.AppRoleReadTokenBoundCidrsResponse](
 		ctx,
@@ -901,7 +901,7 @@ func (a *Auth) AppRoleReadTokenMaxTtl(ctx context.Context, roleName string, opti
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.AppRoleReadTokenMaxTtlResponse](
 		ctx,
@@ -926,7 +926,7 @@ func (a *Auth) AppRoleReadTokenNumUses(ctx context.Context, roleName string, opt
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.AppRoleReadTokenNumUsesResponse](
 		ctx,
@@ -951,7 +951,7 @@ func (a *Auth) AppRoleReadTokenTtl(ctx context.Context, roleName string, options
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[schema.AppRoleReadTokenTtlResponse](
 		ctx,
@@ -974,7 +974,7 @@ func (a *Auth) AppRoleTidySecretId(ctx context.Context, options ...RequestOption
 	requestPath := "/v1/auth/{approle_mount_path}/tidy/secret-id"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -999,7 +999,7 @@ func (a *Auth) AppRoleWriteBindSecretId(ctx context.Context, roleName string, re
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1024,7 +1024,7 @@ func (a *Auth) AppRoleWriteBoundCidrList(ctx context.Context, roleName string, r
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1049,7 +1049,7 @@ func (a *Auth) AppRoleWriteCustomSecretId(ctx context.Context, roleName string, 
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[schema.AppRoleWriteCustomSecretIdResponse](
 		ctx,
@@ -1074,7 +1074,7 @@ func (a *Auth) AppRoleWritePeriod(ctx context.Context, roleName string, request 
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1099,7 +1099,7 @@ func (a *Auth) AppRoleWritePolicies(ctx context.Context, roleName string, reques
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1124,7 +1124,7 @@ func (a *Auth) AppRoleWriteRole(ctx context.Context, roleName string, request sc
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1149,7 +1149,7 @@ func (a *Auth) AppRoleWriteRoleId(ctx context.Context, roleName string, request 
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1174,7 +1174,7 @@ func (a *Auth) AppRoleWriteSecretId(ctx context.Context, roleName string, reques
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[schema.AppRoleWriteSecretIdResponse](
 		ctx,
@@ -1199,7 +1199,7 @@ func (a *Auth) AppRoleWriteSecretIdBoundCidrs(ctx context.Context, roleName stri
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1224,7 +1224,7 @@ func (a *Auth) AppRoleWriteSecretIdNumUses(ctx context.Context, roleName string,
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1249,7 +1249,7 @@ func (a *Auth) AppRoleWriteSecretIdTtl(ctx context.Context, roleName string, req
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1274,7 +1274,7 @@ func (a *Auth) AppRoleWriteTokenBoundCidrs(ctx context.Context, roleName string,
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1299,7 +1299,7 @@ func (a *Auth) AppRoleWriteTokenMaxTtl(ctx context.Context, roleName string, req
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1324,7 +1324,7 @@ func (a *Auth) AppRoleWriteTokenNumUses(ctx context.Context, roleName string, re
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1349,7 +1349,7 @@ func (a *Auth) AppRoleWriteTokenTtl(ctx context.Context, roleName string, reques
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1374,7 +1374,7 @@ func (a *Auth) AwsConfigureCertificate(ctx context.Context, certName string, req
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"cert_name"+"}", url.PathEscape(certName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1397,7 +1397,7 @@ func (a *Auth) AwsConfigureClient(ctx context.Context, request schema.AwsConfigu
 	requestPath := "/v1/auth/{aws_mount_path}/config/client"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1420,7 +1420,7 @@ func (a *Auth) AwsConfigureIdentityAccessListTidyOperation(ctx context.Context, 
 	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/identity-accesslist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1443,7 +1443,7 @@ func (a *Auth) AwsConfigureIdentityIntegration(ctx context.Context, request sche
 	requestPath := "/v1/auth/{aws_mount_path}/config/identity"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1466,7 +1466,7 @@ func (a *Auth) AwsConfigureIdentityWhitelistTidyOperation(ctx context.Context, r
 	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/identity-whitelist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1489,7 +1489,7 @@ func (a *Auth) AwsConfigureRoleTagBlacklistTidyOperation(ctx context.Context, re
 	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/roletag-blacklist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1512,7 +1512,7 @@ func (a *Auth) AwsConfigureRoleTagDenyListTidyOperation(ctx context.Context, req
 	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/roletag-denylist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1537,7 +1537,7 @@ func (a *Auth) AwsDeleteAuthRole(ctx context.Context, role string, options ...Re
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1562,7 +1562,7 @@ func (a *Auth) AwsDeleteCertificateConfiguration(ctx context.Context, certName s
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"cert_name"+"}", url.PathEscape(certName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1585,7 +1585,7 @@ func (a *Auth) AwsDeleteClientConfiguration(ctx context.Context, options ...Requ
 	requestPath := "/v1/auth/{aws_mount_path}/config/client"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1610,7 +1610,7 @@ func (a *Auth) AwsDeleteIdentityAccessList(ctx context.Context, instanceId strin
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"instance_id"+"}", url.PathEscape(instanceId), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1633,7 +1633,7 @@ func (a *Auth) AwsDeleteIdentityAccessListTidySettings(ctx context.Context, opti
 	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/identity-accesslist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1658,7 +1658,7 @@ func (a *Auth) AwsDeleteIdentityWhitelist(ctx context.Context, instanceId string
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"instance_id"+"}", url.PathEscape(instanceId), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1681,7 +1681,7 @@ func (a *Auth) AwsDeleteIdentityWhitelistTidySettings(ctx context.Context, optio
 	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/identity-whitelist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1706,7 +1706,7 @@ func (a *Auth) AwsDeleteRoleTagBlacklist(ctx context.Context, roleTag string, op
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1729,7 +1729,7 @@ func (a *Auth) AwsDeleteRoleTagBlacklistTidySettings(ctx context.Context, option
 	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/roletag-blacklist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1754,7 +1754,7 @@ func (a *Auth) AwsDeleteRoleTagDenyList(ctx context.Context, roleTag string, opt
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1777,7 +1777,7 @@ func (a *Auth) AwsDeleteRoleTagDenyListTidySettings(ctx context.Context, options
 	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/roletag-denylist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1802,7 +1802,7 @@ func (a *Auth) AwsDeleteStsRole(ctx context.Context, accountId string, options .
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"account_id"+"}", url.PathEscape(accountId), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1816,19 +1816,19 @@ func (a *Auth) AwsDeleteStsRole(ctx context.Context, accountId string, options .
 }
 
 // AwsListAuthRoles
-func (a *Auth) AwsListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{aws_mount_path}/role"
+	requestPath := "/v1/auth/{aws_mount_path}/role/"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1840,19 +1840,19 @@ func (a *Auth) AwsListAuthRoles(ctx context.Context, options ...RequestOption) (
 }
 
 // AwsListCertificateConfigurations
-func (a *Auth) AwsListCertificateConfigurations(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsListCertificateConfigurations(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{aws_mount_path}/config/certificates"
+	requestPath := "/v1/auth/{aws_mount_path}/config/certificates/"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1864,19 +1864,19 @@ func (a *Auth) AwsListCertificateConfigurations(ctx context.Context, options ...
 }
 
 // AwsListIdentityAccessList
-func (a *Auth) AwsListIdentityAccessList(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsListIdentityAccessList(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{aws_mount_path}/identity-accesslist"
+	requestPath := "/v1/auth/{aws_mount_path}/identity-accesslist/"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1888,19 +1888,19 @@ func (a *Auth) AwsListIdentityAccessList(ctx context.Context, options ...Request
 }
 
 // AwsListIdentityWhitelist
-func (a *Auth) AwsListIdentityWhitelist(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsListIdentityWhitelist(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{aws_mount_path}/identity-whitelist"
+	requestPath := "/v1/auth/{aws_mount_path}/identity-whitelist/"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1912,19 +1912,19 @@ func (a *Auth) AwsListIdentityWhitelist(ctx context.Context, options ...RequestO
 }
 
 // AwsListRoleTagBlacklists
-func (a *Auth) AwsListRoleTagBlacklists(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsListRoleTagBlacklists(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{aws_mount_path}/roletag-blacklist"
+	requestPath := "/v1/auth/{aws_mount_path}/roletag-blacklist/"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1936,19 +1936,19 @@ func (a *Auth) AwsListRoleTagBlacklists(ctx context.Context, options ...RequestO
 }
 
 // AwsListRoleTagDenyLists
-func (a *Auth) AwsListRoleTagDenyLists(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsListRoleTagDenyLists(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{aws_mount_path}/roletag-denylist"
+	requestPath := "/v1/auth/{aws_mount_path}/roletag-denylist/"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1960,19 +1960,19 @@ func (a *Auth) AwsListRoleTagDenyLists(ctx context.Context, options ...RequestOp
 }
 
 // AwsListStsRoleRelationships
-func (a *Auth) AwsListStsRoleRelationships(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AwsListStsRoleRelationships(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{aws_mount_path}/config/sts"
+	requestPath := "/v1/auth/{aws_mount_path}/config/sts/"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1993,7 +1993,7 @@ func (a *Auth) AwsLogin(ctx context.Context, request schema.AwsLoginRequest, opt
 	requestPath := "/v1/auth/{aws_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2018,7 +2018,7 @@ func (a *Auth) AwsReadAuthRole(ctx context.Context, role string, options ...Requ
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2043,7 +2043,7 @@ func (a *Auth) AwsReadCertificateConfiguration(ctx context.Context, certName str
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"cert_name"+"}", url.PathEscape(certName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2066,7 +2066,7 @@ func (a *Auth) AwsReadClientConfiguration(ctx context.Context, options ...Reques
 	requestPath := "/v1/auth/{aws_mount_path}/config/client"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2091,7 +2091,7 @@ func (a *Auth) AwsReadIdentityAccessList(ctx context.Context, instanceId string,
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"instance_id"+"}", url.PathEscape(instanceId), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2114,7 +2114,7 @@ func (a *Auth) AwsReadIdentityAccessListTidySettings(ctx context.Context, option
 	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/identity-accesslist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2137,7 +2137,7 @@ func (a *Auth) AwsReadIdentityIntegrationConfiguration(ctx context.Context, opti
 	requestPath := "/v1/auth/{aws_mount_path}/config/identity"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2162,7 +2162,7 @@ func (a *Auth) AwsReadIdentityWhitelist(ctx context.Context, instanceId string, 
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"instance_id"+"}", url.PathEscape(instanceId), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2185,7 +2185,7 @@ func (a *Auth) AwsReadIdentityWhitelistTidySettings(ctx context.Context, options
 	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/identity-whitelist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2210,7 +2210,7 @@ func (a *Auth) AwsReadRoleTagBlacklist(ctx context.Context, roleTag string, opti
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2233,7 +2233,7 @@ func (a *Auth) AwsReadRoleTagBlacklistTidySettings(ctx context.Context, options 
 	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/roletag-blacklist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2258,7 +2258,7 @@ func (a *Auth) AwsReadRoleTagDenyList(ctx context.Context, roleTag string, optio
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2281,7 +2281,7 @@ func (a *Auth) AwsReadRoleTagDenyListTidySettings(ctx context.Context, options .
 	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/roletag-denylist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2306,7 +2306,7 @@ func (a *Auth) AwsReadStsRole(ctx context.Context, accountId string, options ...
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"account_id"+"}", url.PathEscape(accountId), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2329,7 +2329,7 @@ func (a *Auth) AwsRotateRootCredentials(ctx context.Context, options ...RequestO
 	requestPath := "/v1/auth/{aws_mount_path}/config/rotate-root"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2352,7 +2352,7 @@ func (a *Auth) AwsTidyIdentityAccessList(ctx context.Context, request schema.Aws
 	requestPath := "/v1/auth/{aws_mount_path}/tidy/identity-accesslist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2375,7 +2375,7 @@ func (a *Auth) AwsTidyIdentityWhitelist(ctx context.Context, request schema.AwsT
 	requestPath := "/v1/auth/{aws_mount_path}/tidy/identity-whitelist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2398,7 +2398,7 @@ func (a *Auth) AwsTidyRoleTagBlacklist(ctx context.Context, request schema.AwsTi
 	requestPath := "/v1/auth/{aws_mount_path}/tidy/roletag-blacklist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2421,7 +2421,7 @@ func (a *Auth) AwsTidyRoleTagDenyList(ctx context.Context, request schema.AwsTid
 	requestPath := "/v1/auth/{aws_mount_path}/tidy/roletag-denylist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2446,7 +2446,7 @@ func (a *Auth) AwsWriteAuthRole(ctx context.Context, role string, request schema
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2471,7 +2471,7 @@ func (a *Auth) AwsWriteRoleTag(ctx context.Context, role string, request schema.
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2496,7 +2496,7 @@ func (a *Auth) AwsWriteRoleTagBlacklist(ctx context.Context, roleTag string, opt
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2521,7 +2521,7 @@ func (a *Auth) AwsWriteRoleTagDenyList(ctx context.Context, roleTag string, opti
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2546,7 +2546,7 @@ func (a *Auth) AwsWriteStsRole(ctx context.Context, accountId string, request sc
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("aws")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"account_id"+"}", url.PathEscape(accountId), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2569,7 +2569,7 @@ func (a *Auth) AzureConfigureAuth(ctx context.Context, request schema.AzureConfi
 	requestPath := "/v1/auth/{azure_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("azure")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2592,7 +2592,7 @@ func (a *Auth) AzureDeleteAuthConfiguration(ctx context.Context, options ...Requ
 	requestPath := "/v1/auth/{azure_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("azure")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2617,7 +2617,7 @@ func (a *Auth) AzureDeleteAuthRole(ctx context.Context, name string, options ...
 	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("azure")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2631,19 +2631,19 @@ func (a *Auth) AzureDeleteAuthRole(ctx context.Context, name string, options ...
 }
 
 // AzureListAuthRoles
-func (a *Auth) AzureListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AzureListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{azure_mount_path}/role"
+	requestPath := "/v1/auth/{azure_mount_path}/role/"
 	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("azure")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -2664,7 +2664,7 @@ func (a *Auth) AzureLogin(ctx context.Context, request schema.AzureLoginRequest,
 	requestPath := "/v1/auth/{azure_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("azure")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2687,7 +2687,7 @@ func (a *Auth) AzureReadAuthConfiguration(ctx context.Context, options ...Reques
 	requestPath := "/v1/auth/{azure_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("azure")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2712,7 +2712,7 @@ func (a *Auth) AzureReadAuthRole(ctx context.Context, name string, options ...Re
 	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("azure")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2735,7 +2735,7 @@ func (a *Auth) AzureRotateRootCredentials(ctx context.Context, options ...Reques
 	requestPath := "/v1/auth/{azure_mount_path}/rotate-root"
 	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("azure")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2760,7 +2760,7 @@ func (a *Auth) AzureWriteAuthRole(ctx context.Context, name string, request sche
 	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("azure")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2783,7 +2783,7 @@ func (a *Auth) CentrifyConfigure(ctx context.Context, request schema.CentrifyCon
 	requestPath := "/v1/auth/{centrify_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"centrify_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("centrify")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2806,7 +2806,7 @@ func (a *Auth) CentrifyLogin(ctx context.Context, request schema.CentrifyLoginRe
 	requestPath := "/v1/auth/{centrify_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"centrify_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("centrify")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2829,7 +2829,7 @@ func (a *Auth) CentrifyReadConfiguration(ctx context.Context, options ...Request
 	requestPath := "/v1/auth/{centrify_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"centrify_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("centrify")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2852,7 +2852,7 @@ func (a *Auth) CertConfigure(ctx context.Context, request schema.CertConfigureRe
 	requestPath := "/v1/auth/{cert_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("cert")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2877,7 +2877,7 @@ func (a *Auth) CertDeleteCertificate(ctx context.Context, name string, options .
 	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("cert")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2902,7 +2902,7 @@ func (a *Auth) CertDeleteCrl(ctx context.Context, name string, options ...Reques
 	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("cert")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2916,19 +2916,19 @@ func (a *Auth) CertDeleteCrl(ctx context.Context, name string, options ...Reques
 }
 
 // CertListCertificates Manage trusted certificates used for authentication.
-func (a *Auth) CertListCertificates(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CertListCertificates(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{cert_mount_path}/certs"
+	requestPath := "/v1/auth/{cert_mount_path}/certs/"
 	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("cert")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -2940,19 +2940,19 @@ func (a *Auth) CertListCertificates(ctx context.Context, options ...RequestOptio
 }
 
 // CertListCrls
-func (a *Auth) CertListCrls(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CertListCrls(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{cert_mount_path}/crls"
+	requestPath := "/v1/auth/{cert_mount_path}/crls/"
 	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("cert")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -2973,7 +2973,7 @@ func (a *Auth) CertLogin(ctx context.Context, request schema.CertLoginRequest, o
 	requestPath := "/v1/auth/{cert_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("cert")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2998,7 +2998,7 @@ func (a *Auth) CertReadCertificate(ctx context.Context, name string, options ...
 	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("cert")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3021,7 +3021,7 @@ func (a *Auth) CertReadConfiguration(ctx context.Context, options ...RequestOpti
 	requestPath := "/v1/auth/{cert_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("cert")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3046,7 +3046,7 @@ func (a *Auth) CertReadCrl(ctx context.Context, name string, options ...RequestO
 	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("cert")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3071,7 +3071,7 @@ func (a *Auth) CertWriteCertificate(ctx context.Context, name string, request sc
 	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("cert")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3096,7 +3096,7 @@ func (a *Auth) CertWriteCrl(ctx context.Context, name string, request schema.Cer
 	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("cert")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3119,7 +3119,7 @@ func (a *Auth) CloudFoundryConfigure(ctx context.Context, request schema.CloudFo
 	requestPath := "/v1/auth/{cf_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"cf_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("cf")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3142,7 +3142,7 @@ func (a *Auth) CloudFoundryDeleteConfiguration(ctx context.Context, options ...R
 	requestPath := "/v1/auth/{cf_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"cf_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("cf")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3167,7 +3167,7 @@ func (a *Auth) CloudFoundryDeleteRole(ctx context.Context, role string, options 
 	requestPath = strings.Replace(requestPath, "{"+"cf_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("cf")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3181,19 +3181,19 @@ func (a *Auth) CloudFoundryDeleteRole(ctx context.Context, role string, options 
 }
 
 // CloudFoundryListRoles
-func (a *Auth) CloudFoundryListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CloudFoundryListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{cf_mount_path}/roles"
+	requestPath := "/v1/auth/{cf_mount_path}/roles/"
 	requestPath = strings.Replace(requestPath, "{"+"cf_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("cf")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -3214,7 +3214,7 @@ func (a *Auth) CloudFoundryLogin(ctx context.Context, request schema.CloudFoundr
 	requestPath := "/v1/auth/{cf_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"cf_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("cf")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3237,7 +3237,7 @@ func (a *Auth) CloudFoundryReadConfiguration(ctx context.Context, options ...Req
 	requestPath := "/v1/auth/{cf_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"cf_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("cf")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3262,7 +3262,7 @@ func (a *Auth) CloudFoundryReadRole(ctx context.Context, role string, options ..
 	requestPath = strings.Replace(requestPath, "{"+"cf_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("cf")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3287,7 +3287,7 @@ func (a *Auth) CloudFoundryWriteRole(ctx context.Context, role string, request s
 	requestPath = strings.Replace(requestPath, "{"+"cf_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("cf")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3310,7 +3310,7 @@ func (a *Auth) GithubConfigure(ctx context.Context, request schema.GithubConfigu
 	requestPath := "/v1/auth/{github_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("github")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3335,7 +3335,7 @@ func (a *Auth) GithubDeleteTeamMapping(ctx context.Context, key string, options 
 	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("github")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3360,12 +3360,60 @@ func (a *Auth) GithubDeleteUserMapping(ctx context.Context, key string, options 
 	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("github")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// GithubListTeams Read mappings for teams
+func (a *Auth) GithubListTeams(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/auth/{github_mount_path}/map/teams/"
+	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("github")), -1)
+
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
+	requestQueryParameters.Add("list", "true")
+
+	return sendRequestParseResponse[schema.StandardListResponse](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// GithubListUsers Read mappings for users
+func (a *Auth) GithubListUsers(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/auth/{github_mount_path}/map/users/"
+	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("github")), -1)
+
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
+	requestQueryParameters.Add("list", "true")
+
+	return sendRequestParseResponse[schema.StandardListResponse](
+		ctx,
+		a.client,
+		http.MethodGet,
 		requestPath,
 		nil, // request body
 		requestQueryParameters,
@@ -3383,7 +3431,7 @@ func (a *Auth) GithubLogin(ctx context.Context, request schema.GithubLoginReques
 	requestPath := "/v1/auth/{github_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("github")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3406,7 +3454,7 @@ func (a *Auth) GithubReadConfiguration(ctx context.Context, options ...RequestOp
 	requestPath := "/v1/auth/{github_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("github")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3431,31 +3479,7 @@ func (a *Auth) GithubReadTeamMapping(ctx context.Context, key string, options ..
 	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("github")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// GithubReadTeams Read mappings for teams
-func (a *Auth) GithubReadTeams(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/auth/{github_mount_path}/map/teams"
-	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("github")), -1)
-
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("list", "true")
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3480,31 +3504,7 @@ func (a *Auth) GithubReadUserMapping(ctx context.Context, key string, options ..
 	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("github")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodGet,
-		requestPath,
-		nil, // request body
-		requestQueryParameters,
-		requestModifiers,
-	)
-}
-
-// GithubReadUsers Read mappings for users
-func (a *Auth) GithubReadUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestModifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/auth/{github_mount_path}/map/users"
-	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("github")), -1)
-
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("list", "true")
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3529,7 +3529,7 @@ func (a *Auth) GithubWriteTeamMapping(ctx context.Context, key string, request s
 	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("github")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3554,7 +3554,7 @@ func (a *Auth) GithubWriteUserMapping(ctx context.Context, key string, request s
 	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("github")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3577,7 +3577,7 @@ func (a *Auth) GoogleCloudConfigureAuth(ctx context.Context, request schema.Goog
 	requestPath := "/v1/auth/{gcp_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3602,7 +3602,7 @@ func (a *Auth) GoogleCloudDeleteRole(ctx context.Context, name string, options .
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3627,7 +3627,7 @@ func (a *Auth) GoogleCloudEditLabelsForRole(ctx context.Context, name string, re
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3652,7 +3652,7 @@ func (a *Auth) GoogleCloudEditServiceAccountsForRole(ctx context.Context, name s
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3666,19 +3666,19 @@ func (a *Auth) GoogleCloudEditServiceAccountsForRole(ctx context.Context, name s
 }
 
 // GoogleCloudListRoles Lists all the roles that are registered with Vault.
-func (a *Auth) GoogleCloudListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GoogleCloudListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{gcp_mount_path}/role"
+	requestPath := "/v1/auth/{gcp_mount_path}/role/"
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -3699,7 +3699,7 @@ func (a *Auth) GoogleCloudLogin(ctx context.Context, request schema.GoogleCloudL
 	requestPath := "/v1/auth/{gcp_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3722,7 +3722,7 @@ func (a *Auth) GoogleCloudReadAuthConfiguration(ctx context.Context, options ...
 	requestPath := "/v1/auth/{gcp_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3747,7 +3747,7 @@ func (a *Auth) GoogleCloudReadRole(ctx context.Context, name string, options ...
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3772,7 +3772,7 @@ func (a *Auth) GoogleCloudWriteRole(ctx context.Context, name string, request sc
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("gcp")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3796,7 +3796,7 @@ func (a *Auth) JwtConfigure(ctx context.Context, request schema.JwtConfigureRequ
 	requestPath := "/v1/auth/{jwt_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("jwt")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3821,7 +3821,7 @@ func (a *Auth) JwtDeleteRole(ctx context.Context, name string, options ...Reques
 	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("jwt")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3836,19 +3836,19 @@ func (a *Auth) JwtDeleteRole(ctx context.Context, name string, options ...Reques
 
 // JwtListRoles Lists all the roles registered with the backend.
 // The list will contain the names of the roles.
-func (a *Auth) JwtListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) JwtListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{jwt_mount_path}/role"
+	requestPath := "/v1/auth/{jwt_mount_path}/role/"
 	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("jwt")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -3869,7 +3869,7 @@ func (a *Auth) JwtLogin(ctx context.Context, request schema.JwtLoginRequest, opt
 	requestPath := "/v1/auth/{jwt_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("jwt")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3883,7 +3883,7 @@ func (a *Auth) JwtLogin(ctx context.Context, request schema.JwtLoginRequest, opt
 }
 
 // JwtOidcCallback Callback endpoint to complete an OIDC login.
-func (a *Auth) JwtOidcCallback(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) JwtOidcCallback(ctx context.Context, clientNonce string, code string, state string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3892,7 +3892,10 @@ func (a *Auth) JwtOidcCallback(ctx context.Context, options ...RequestOption) (*
 	requestPath := "/v1/auth/{jwt_mount_path}/oidc/callback"
 	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("jwt")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
+	requestQueryParameters.Add("client_nonce", parameterToString(clientNonce))
+	requestQueryParameters.Add("code", parameterToString(code))
+	requestQueryParameters.Add("state", parameterToString(state))
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3905,8 +3908,8 @@ func (a *Auth) JwtOidcCallback(ctx context.Context, options ...RequestOption) (*
 	)
 }
 
-// JwtOidcCallbackWithParameters Callback endpoint to handle form_posts.
-func (a *Auth) JwtOidcCallbackWithParameters(ctx context.Context, request schema.JwtOidcCallbackWithParametersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// JwtOidcCallbackFormPost Callback endpoint to handle form_posts.
+func (a *Auth) JwtOidcCallbackFormPost(ctx context.Context, request schema.JwtOidcCallbackFormPostRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3915,7 +3918,7 @@ func (a *Auth) JwtOidcCallbackWithParameters(ctx context.Context, request schema
 	requestPath := "/v1/auth/{jwt_mount_path}/oidc/callback"
 	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("jwt")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3938,7 +3941,7 @@ func (a *Auth) JwtOidcRequestAuthorizationUrl(ctx context.Context, request schem
 	requestPath := "/v1/auth/{jwt_mount_path}/oidc/auth_url"
 	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("jwt")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3961,7 +3964,7 @@ func (a *Auth) JwtReadConfiguration(ctx context.Context, options ...RequestOptio
 	requestPath := "/v1/auth/{jwt_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("jwt")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3986,7 +3989,7 @@ func (a *Auth) JwtReadRole(ctx context.Context, name string, options ...RequestO
 	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("jwt")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4012,7 +4015,7 @@ func (a *Auth) JwtWriteRole(ctx context.Context, name string, request schema.Jwt
 	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("jwt")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4035,7 +4038,7 @@ func (a *Auth) KerberosConfigure(ctx context.Context, request schema.KerberosCon
 	requestPath := "/v1/auth/{kerberos_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kerberos")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4058,7 +4061,7 @@ func (a *Auth) KerberosConfigureLdap(ctx context.Context, request schema.Kerbero
 	requestPath := "/v1/auth/{kerberos_mount_path}/config/ldap"
 	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kerberos")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4083,7 +4086,7 @@ func (a *Auth) KerberosDeleteGroup(ctx context.Context, name string, options ...
 	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kerberos")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4097,19 +4100,19 @@ func (a *Auth) KerberosDeleteGroup(ctx context.Context, name string, options ...
 }
 
 // KerberosListGroups
-func (a *Auth) KerberosListGroups(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KerberosListGroups(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{kerberos_mount_path}/groups"
+	requestPath := "/v1/auth/{kerberos_mount_path}/groups/"
 	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kerberos")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -4130,7 +4133,7 @@ func (a *Auth) KerberosLogin(ctx context.Context, request schema.KerberosLoginRe
 	requestPath := "/v1/auth/{kerberos_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kerberos")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4153,7 +4156,7 @@ func (a *Auth) KerberosReadConfiguration(ctx context.Context, options ...Request
 	requestPath := "/v1/auth/{kerberos_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kerberos")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4178,7 +4181,7 @@ func (a *Auth) KerberosReadGroup(ctx context.Context, name string, options ...Re
 	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kerberos")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4201,7 +4204,7 @@ func (a *Auth) KerberosReadLdapConfiguration(ctx context.Context, options ...Req
 	requestPath := "/v1/auth/{kerberos_mount_path}/config/ldap"
 	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kerberos")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4226,7 +4229,7 @@ func (a *Auth) KerberosWriteGroup(ctx context.Context, name string, request sche
 	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kerberos")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4249,7 +4252,7 @@ func (a *Auth) KubernetesConfigureAuth(ctx context.Context, request schema.Kuber
 	requestPath := "/v1/auth/{kubernetes_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kubernetes")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4274,7 +4277,7 @@ func (a *Auth) KubernetesDeleteAuthRole(ctx context.Context, name string, option
 	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kubernetes")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4288,19 +4291,19 @@ func (a *Auth) KubernetesDeleteAuthRole(ctx context.Context, name string, option
 }
 
 // KubernetesListAuthRoles Lists all the roles registered with the backend.
-func (a *Auth) KubernetesListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KubernetesListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{kubernetes_mount_path}/role"
+	requestPath := "/v1/auth/{kubernetes_mount_path}/role/"
 	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kubernetes")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -4321,7 +4324,7 @@ func (a *Auth) KubernetesLogin(ctx context.Context, request schema.KubernetesLog
 	requestPath := "/v1/auth/{kubernetes_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kubernetes")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4344,7 +4347,7 @@ func (a *Auth) KubernetesReadAuthConfiguration(ctx context.Context, options ...R
 	requestPath := "/v1/auth/{kubernetes_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kubernetes")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4369,7 +4372,7 @@ func (a *Auth) KubernetesReadAuthRole(ctx context.Context, name string, options 
 	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kubernetes")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4394,7 +4397,7 @@ func (a *Auth) KubernetesWriteAuthRole(ctx context.Context, name string, request
 	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("kubernetes")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4417,7 +4420,7 @@ func (a *Auth) LdapConfigureAuth(ctx context.Context, request schema.LdapConfigu
 	requestPath := "/v1/auth/{ldap_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("ldap")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4442,7 +4445,7 @@ func (a *Auth) LdapDeleteGroup(ctx context.Context, name string, options ...Requ
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("ldap")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4467,7 +4470,7 @@ func (a *Auth) LdapDeleteUser(ctx context.Context, name string, options ...Reque
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("ldap")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4481,19 +4484,19 @@ func (a *Auth) LdapDeleteUser(ctx context.Context, name string, options ...Reque
 }
 
 // LdapListGroups Manage additional groups for users allowed to authenticate.
-func (a *Auth) LdapListGroups(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) LdapListGroups(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{ldap_mount_path}/groups"
+	requestPath := "/v1/auth/{ldap_mount_path}/groups/"
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("ldap")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -4505,19 +4508,19 @@ func (a *Auth) LdapListGroups(ctx context.Context, options ...RequestOption) (*R
 }
 
 // LdapListUsers Manage users allowed to authenticate.
-func (a *Auth) LdapListUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) LdapListUsers(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{ldap_mount_path}/users"
+	requestPath := "/v1/auth/{ldap_mount_path}/users/"
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("ldap")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -4540,7 +4543,7 @@ func (a *Auth) LdapLogin(ctx context.Context, username string, request schema.Ld
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("ldap")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4563,7 +4566,7 @@ func (a *Auth) LdapReadAuthConfiguration(ctx context.Context, options ...Request
 	requestPath := "/v1/auth/{ldap_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("ldap")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4588,7 +4591,7 @@ func (a *Auth) LdapReadGroup(ctx context.Context, name string, options ...Reques
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("ldap")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4613,7 +4616,7 @@ func (a *Auth) LdapReadUser(ctx context.Context, name string, options ...Request
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("ldap")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4638,7 +4641,7 @@ func (a *Auth) LdapWriteGroup(ctx context.Context, name string, request schema.L
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("ldap")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4663,7 +4666,7 @@ func (a *Auth) LdapWriteUser(ctx context.Context, name string, request schema.Ld
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("ldap")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4686,7 +4689,7 @@ func (a *Auth) OciConfigure(ctx context.Context, request schema.OciConfigureRequ
 	requestPath := "/v1/auth/{oci_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"oci_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("oci")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4709,7 +4712,7 @@ func (a *Auth) OciDeleteConfiguration(ctx context.Context, options ...RequestOpt
 	requestPath := "/v1/auth/{oci_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"oci_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("oci")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4734,7 +4737,7 @@ func (a *Auth) OciDeleteRole(ctx context.Context, role string, options ...Reques
 	requestPath = strings.Replace(requestPath, "{"+"oci_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("oci")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4748,19 +4751,19 @@ func (a *Auth) OciDeleteRole(ctx context.Context, role string, options ...Reques
 }
 
 // OciListRoles Lists all the roles that are registered with Vault.
-func (a *Auth) OciListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OciListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{oci_mount_path}/role"
+	requestPath := "/v1/auth/{oci_mount_path}/role/"
 	requestPath = strings.Replace(requestPath, "{"+"oci_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("oci")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -4783,7 +4786,7 @@ func (a *Auth) OciLogin(ctx context.Context, role string, request schema.OciLogi
 	requestPath = strings.Replace(requestPath, "{"+"oci_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("oci")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4806,7 +4809,7 @@ func (a *Auth) OciReadConfiguration(ctx context.Context, options ...RequestOptio
 	requestPath := "/v1/auth/{oci_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"oci_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("oci")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4831,7 +4834,7 @@ func (a *Auth) OciReadRole(ctx context.Context, role string, options ...RequestO
 	requestPath = strings.Replace(requestPath, "{"+"oci_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("oci")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4856,7 +4859,7 @@ func (a *Auth) OciWriteRole(ctx context.Context, role string, request schema.Oci
 	requestPath = strings.Replace(requestPath, "{"+"oci_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("oci")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4879,7 +4882,7 @@ func (a *Auth) OktaConfigure(ctx context.Context, request schema.OktaConfigureRe
 	requestPath := "/v1/auth/{okta_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("okta")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4904,7 +4907,7 @@ func (a *Auth) OktaDeleteGroup(ctx context.Context, name string, options ...Requ
 	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("okta")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4929,7 +4932,7 @@ func (a *Auth) OktaDeleteUser(ctx context.Context, name string, options ...Reque
 	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("okta")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4943,19 +4946,19 @@ func (a *Auth) OktaDeleteUser(ctx context.Context, name string, options ...Reque
 }
 
 // OktaListGroups Manage users allowed to authenticate.
-func (a *Auth) OktaListGroups(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OktaListGroups(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{okta_mount_path}/groups"
+	requestPath := "/v1/auth/{okta_mount_path}/groups/"
 	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("okta")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -4967,19 +4970,19 @@ func (a *Auth) OktaListGroups(ctx context.Context, options ...RequestOption) (*R
 }
 
 // OktaListUsers Manage additional groups for users allowed to authenticate.
-func (a *Auth) OktaListUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OktaListUsers(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{okta_mount_path}/users"
+	requestPath := "/v1/auth/{okta_mount_path}/users/"
 	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("okta")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -5002,7 +5005,7 @@ func (a *Auth) OktaLogin(ctx context.Context, username string, request schema.Ok
 	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("okta")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5025,7 +5028,7 @@ func (a *Auth) OktaReadConfiguration(ctx context.Context, options ...RequestOpti
 	requestPath := "/v1/auth/{okta_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("okta")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5050,7 +5053,7 @@ func (a *Auth) OktaReadGroup(ctx context.Context, name string, options ...Reques
 	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("okta")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5075,7 +5078,7 @@ func (a *Auth) OktaReadUser(ctx context.Context, name string, options ...Request
 	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("okta")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5100,7 +5103,7 @@ func (a *Auth) OktaVerify(ctx context.Context, nonce string, options ...RequestO
 	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("okta")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"nonce"+"}", url.PathEscape(nonce), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5125,7 +5128,7 @@ func (a *Auth) OktaWriteGroup(ctx context.Context, name string, request schema.O
 	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("okta")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5150,7 +5153,7 @@ func (a *Auth) OktaWriteUser(ctx context.Context, name string, request schema.Ok
 	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("okta")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5173,7 +5176,7 @@ func (a *Auth) RadiusConfigure(ctx context.Context, request schema.RadiusConfigu
 	requestPath := "/v1/auth/{radius_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"radius_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("radius")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5198,7 +5201,7 @@ func (a *Auth) RadiusDeleteUser(ctx context.Context, name string, options ...Req
 	requestPath = strings.Replace(requestPath, "{"+"radius_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("radius")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5212,19 +5215,19 @@ func (a *Auth) RadiusDeleteUser(ctx context.Context, name string, options ...Req
 }
 
 // RadiusListUsers Manage users allowed to authenticate.
-func (a *Auth) RadiusListUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) RadiusListUsers(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{radius_mount_path}/users"
+	requestPath := "/v1/auth/{radius_mount_path}/users/"
 	requestPath = strings.Replace(requestPath, "{"+"radius_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("radius")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -5245,7 +5248,7 @@ func (a *Auth) RadiusLogin(ctx context.Context, request schema.RadiusLoginReques
 	requestPath := "/v1/auth/{radius_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"radius_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("radius")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5270,7 +5273,7 @@ func (a *Auth) RadiusLoginWithUsername(ctx context.Context, urlusername string, 
 	requestPath = strings.Replace(requestPath, "{"+"radius_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("radius")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"urlusername"+"}", url.PathEscape(urlusername), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5293,7 +5296,7 @@ func (a *Auth) RadiusReadConfiguration(ctx context.Context, options ...RequestOp
 	requestPath := "/v1/auth/{radius_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"radius_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("radius")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5318,7 +5321,7 @@ func (a *Auth) RadiusReadUser(ctx context.Context, name string, options ...Reque
 	requestPath = strings.Replace(requestPath, "{"+"radius_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("radius")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5343,7 +5346,7 @@ func (a *Auth) RadiusWriteUser(ctx context.Context, name string, request schema.
 	requestPath = strings.Replace(requestPath, "{"+"radius_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("radius")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5357,8 +5360,7 @@ func (a *Auth) RadiusWriteUser(ctx context.Context, name string, request schema.
 }
 
 // TokenCreate The token create path is used to create new tokens.
-// format: Return json formatted output
-func (a *Auth) TokenCreate(ctx context.Context, request schema.TokenCreateRequest, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenCreate(ctx context.Context, request schema.TokenCreateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5366,8 +5368,7 @@ func (a *Auth) TokenCreate(ctx context.Context, request schema.TokenCreateReques
 
 	requestPath := "/v1/auth/token/create"
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("format", url.QueryEscape(parameterToString(format)))
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5382,8 +5383,7 @@ func (a *Auth) TokenCreate(ctx context.Context, request schema.TokenCreateReques
 
 // TokenCreateAgainstRole This token create path is used to create new tokens adhering to the given role.
 // roleName: Name of the role
-// format: Return json formatted output
-func (a *Auth) TokenCreateAgainstRole(ctx context.Context, roleName string, request schema.TokenCreateAgainstRoleRequest, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenCreateAgainstRole(ctx context.Context, roleName string, request schema.TokenCreateAgainstRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5392,8 +5392,7 @@ func (a *Auth) TokenCreateAgainstRole(ctx context.Context, roleName string, requ
 	requestPath := "/v1/auth/token/create/{role_name}"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("format", url.QueryEscape(parameterToString(format)))
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5407,8 +5406,7 @@ func (a *Auth) TokenCreateAgainstRole(ctx context.Context, roleName string, requ
 }
 
 // TokenCreateOrphan The token create path is used to create new orphan tokens.
-// format: Return json formatted output
-func (a *Auth) TokenCreateOrphan(ctx context.Context, request schema.TokenCreateOrphanRequest, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenCreateOrphan(ctx context.Context, request schema.TokenCreateOrphanRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5416,8 +5414,7 @@ func (a *Auth) TokenCreateOrphan(ctx context.Context, request schema.TokenCreate
 
 	requestPath := "/v1/auth/token/create-orphan"
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
-	requestQueryParameters.Add("format", url.QueryEscape(parameterToString(format)))
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5441,7 +5438,7 @@ func (a *Auth) TokenDeleteRole(ctx context.Context, roleName string, options ...
 	requestPath := "/v1/auth/token/roles/{role_name}"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5455,18 +5452,18 @@ func (a *Auth) TokenDeleteRole(ctx context.Context, roleName string, options ...
 }
 
 // TokenListAccessors List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires 'sudo' capability in addition to 'list'.
-func (a *Auth) TokenListAccessors(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenListAccessors(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/token/accessors"
+	requestPath := "/v1/auth/token/accessors/"
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -5478,18 +5475,18 @@ func (a *Auth) TokenListAccessors(ctx context.Context, options ...RequestOption)
 }
 
 // TokenListRoles This endpoint lists configured roles.
-func (a *Auth) TokenListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/token/roles"
+	requestPath := "/v1/auth/token/roles/"
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -5509,7 +5506,7 @@ func (a *Auth) TokenLookUp(ctx context.Context, request schema.TokenLookUpReques
 
 	requestPath := "/v1/auth/token/lookup"
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5531,7 +5528,7 @@ func (a *Auth) TokenLookUpAccessor(ctx context.Context, request schema.TokenLook
 
 	requestPath := "/v1/auth/token/lookup-accessor"
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5553,7 +5550,7 @@ func (a *Auth) TokenLookUpSelf(ctx context.Context, options ...RequestOption) (*
 
 	requestPath := "/v1/auth/token/lookup-self"
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5577,7 +5574,7 @@ func (a *Auth) TokenReadRole(ctx context.Context, roleName string, options ...Re
 	requestPath := "/v1/auth/token/roles/{role_name}"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5599,7 +5596,7 @@ func (a *Auth) TokenRenew(ctx context.Context, request schema.TokenRenewRequest,
 
 	requestPath := "/v1/auth/token/renew"
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5621,7 +5618,7 @@ func (a *Auth) TokenRenewAccessor(ctx context.Context, request schema.TokenRenew
 
 	requestPath := "/v1/auth/token/renew-accessor"
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5643,7 +5640,7 @@ func (a *Auth) TokenRenewSelf(ctx context.Context, request schema.TokenRenewSelf
 
 	requestPath := "/v1/auth/token/renew-self"
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5665,7 +5662,7 @@ func (a *Auth) TokenRevoke(ctx context.Context, request schema.TokenRevokeReques
 
 	requestPath := "/v1/auth/token/revoke"
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5687,7 +5684,7 @@ func (a *Auth) TokenRevokeAccessor(ctx context.Context, request schema.TokenRevo
 
 	requestPath := "/v1/auth/token/revoke-accessor"
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5709,7 +5706,7 @@ func (a *Auth) TokenRevokeOrphan(ctx context.Context, request schema.TokenRevoke
 
 	requestPath := "/v1/auth/token/revoke-orphan"
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5731,7 +5728,7 @@ func (a *Auth) TokenRevokeSelf(ctx context.Context, options ...RequestOption) (*
 
 	requestPath := "/v1/auth/token/revoke-self"
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5753,7 +5750,7 @@ func (a *Auth) TokenTidy(ctx context.Context, options ...RequestOption) (*Respon
 
 	requestPath := "/v1/auth/token/tidy"
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5777,7 +5774,7 @@ func (a *Auth) TokenWriteRole(ctx context.Context, roleName string, request sche
 	requestPath := "/v1/auth/token/roles/{role_name}"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5802,7 +5799,7 @@ func (a *Auth) UserpassDeleteUser(ctx context.Context, username string, options 
 	requestPath = strings.Replace(requestPath, "{"+"userpass_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("userpass")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5816,19 +5813,19 @@ func (a *Auth) UserpassDeleteUser(ctx context.Context, username string, options 
 }
 
 // UserpassListUsers Manage users allowed to authenticate.
-func (a *Auth) UserpassListUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) UserpassListUsers(ctx context.Context, options ...RequestOption) (*Response[schema.StandardListResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/auth/{userpass_mount_path}/users"
+	requestPath := "/v1/auth/{userpass_mount_path}/users/"
 	requestPath = strings.Replace(requestPath, "{"+"userpass_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("userpass")), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[schema.StandardListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -5851,7 +5848,7 @@ func (a *Auth) UserpassLogin(ctx context.Context, username string, request schem
 	requestPath = strings.Replace(requestPath, "{"+"userpass_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("userpass")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5876,7 +5873,7 @@ func (a *Auth) UserpassReadUser(ctx context.Context, username string, options ..
 	requestPath = strings.Replace(requestPath, "{"+"userpass_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("userpass")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5901,7 +5898,7 @@ func (a *Auth) UserpassResetPassword(ctx context.Context, username string, reque
 	requestPath = strings.Replace(requestPath, "{"+"userpass_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("userpass")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5926,7 +5923,7 @@ func (a *Auth) UserpassUpdatePolicies(ctx context.Context, username string, requ
 	requestPath = strings.Replace(requestPath, "{"+"userpass_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("userpass")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5951,7 +5948,7 @@ func (a *Auth) UserpassWriteUser(ctx context.Context, username string, request s
 	requestPath = strings.Replace(requestPath, "{"+"userpass_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("userpass")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,

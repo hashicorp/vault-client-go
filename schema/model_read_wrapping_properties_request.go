@@ -9,12 +9,3 @@ package schema
 type ReadWrappingPropertiesRequest struct {
 	Token string `json:"token,omitempty"`
 }
-
-// NewReadWrappingPropertiesRequestWithDefaults instantiates a new ReadWrappingPropertiesRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewReadWrappingPropertiesRequestWithDefaults() *ReadWrappingPropertiesRequest {
-	var this ReadWrappingPropertiesRequest
-
-	return &this
-}

@@ -13,12 +13,3 @@ type OidcWriteAssignmentRequest struct {
 	// Comma separated string or array of identity group IDs
 	GroupIds []string `json:"group_ids,omitempty"`
 }
-
-// NewOidcWriteAssignmentRequestWithDefaults instantiates a new OidcWriteAssignmentRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewOidcWriteAssignmentRequestWithDefaults() *OidcWriteAssignmentRequest {
-	var this OidcWriteAssignmentRequest
-
-	return &this
-}

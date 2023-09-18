@@ -10,12 +10,3 @@ type PkiConfigureKeysRequest struct {
 	// Reference (name or identifier) of the default key.
 	Default string `json:"default,omitempty"`
 }
-
-// NewPkiConfigureKeysRequestWithDefaults instantiates a new PkiConfigureKeysRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiConfigureKeysRequestWithDefaults() *PkiConfigureKeysRequest {
-	var this PkiConfigureKeysRequest
-
-	return &this
-}

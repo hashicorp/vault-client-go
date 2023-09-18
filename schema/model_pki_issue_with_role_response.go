@@ -28,12 +28,3 @@ type PkiIssueWithRoleResponse struct {
 	// Serial Number
 	SerialNumber string `json:"serial_number,omitempty"`
 }
-
-// NewPkiIssueWithRoleResponseWithDefaults instantiates a new PkiIssueWithRoleResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiIssueWithRoleResponseWithDefaults() *PkiIssueWithRoleResponse {
-	var this PkiIssueWithRoleResponse
-
-	return &this
-}

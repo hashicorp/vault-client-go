@@ -25,12 +25,3 @@ type GroupUpdateByNameRequest struct {
 	// Type of the group, 'internal' or 'external'. Defaults to 'internal'
 	Type string `json:"type,omitempty"`
 }
-
-// NewGroupUpdateByNameRequestWithDefaults instantiates a new GroupUpdateByNameRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGroupUpdateByNameRequestWithDefaults() *GroupUpdateByNameRequest {
-	var this GroupUpdateByNameRequest
-
-	return &this
-}

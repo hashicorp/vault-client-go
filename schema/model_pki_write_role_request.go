@@ -148,30 +148,3 @@ type PkiWriteRoleRequest struct {
 	// Whether or not to use PSS signatures when using a RSA key-type issuer. Defaults to false.
 	UsePss bool `json:"use_pss,omitempty"`
 }
-
-// NewPkiWriteRoleRequestWithDefaults instantiates a new PkiWriteRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiWriteRoleRequestWithDefaults() *PkiWriteRoleRequest {
-	var this PkiWriteRoleRequest
-
-	this.AllowIpSans = true
-	this.AllowLocalhost = true
-	this.AllowWildcardCertificates = true
-	this.AllowedDomainsTemplate = false
-	this.AllowedUriSansTemplate = false
-	this.ClientFlag = true
-	this.EnforceHostnames = true
-	this.IssuerRef = "default"
-	this.KeyBits = 0
-	this.KeyType = "rsa"
-	this.NotBeforeDuration = "30"
-	this.RequireCn = true
-	this.ServerFlag = true
-	this.SignatureBits = 0
-	this.UseCsrCommonName = true
-	this.UseCsrSans = true
-	this.UsePss = false
-
-	return &this
-}

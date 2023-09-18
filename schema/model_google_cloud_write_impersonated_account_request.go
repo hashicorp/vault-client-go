@@ -16,12 +16,3 @@ type GoogleCloudWriteImpersonatedAccountRequest struct {
 	// Lifetime of the token for the impersonated account.
 	Ttl string `json:"ttl,omitempty"`
 }
-
-// NewGoogleCloudWriteImpersonatedAccountRequestWithDefaults instantiates a new GoogleCloudWriteImpersonatedAccountRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGoogleCloudWriteImpersonatedAccountRequestWithDefaults() *GoogleCloudWriteImpersonatedAccountRequest {
-	var this GoogleCloudWriteImpersonatedAccountRequest
-
-	return &this
-}

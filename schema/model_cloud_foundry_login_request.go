@@ -19,12 +19,3 @@ type CloudFoundryLoginRequest struct {
 	// The date and time used to construct the signature.
 	SigningTime string `json:"signing_time"`
 }
-
-// NewCloudFoundryLoginRequestWithDefaults instantiates a new CloudFoundryLoginRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCloudFoundryLoginRequestWithDefaults() *CloudFoundryLoginRequest {
-	var this CloudFoundryLoginRequest
-
-	return &this
-}

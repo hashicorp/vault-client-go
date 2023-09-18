@@ -7,7 +7,7 @@ package schema
 
 // AwsLoginRequest struct for AwsLoginRequest
 type AwsLoginRequest struct {
-	// HTTP method to use for the AWS request when auth_type is iam. This must match what has been signed in the presigned request. Currently, POST is the only supported value
+	// HTTP method to use for the AWS request when auth_type is iam. This must match what has been signed in the presigned request.
 	IamHttpRequestMethod string `json:"iam_http_request_method,omitempty"`
 
 	// Base64-encoded request body when auth_type is iam. This must match the request body included in the signature.
@@ -33,13 +33,4 @@ type AwsLoginRequest struct {
 
 	// Base64 encoded SHA256 RSA signature of the instance identity document. This needs to be supplied along with 'identity' parameter.
 	Signature string `json:"signature,omitempty"`
-}
-
-// NewAwsLoginRequestWithDefaults instantiates a new AwsLoginRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAwsLoginRequestWithDefaults() *AwsLoginRequest {
-	var this AwsLoginRequest
-
-	return &this
 }

@@ -34,16 +34,3 @@ type PkiWriteIssuerRequest struct {
 	// Comma-separated list (or string slice) of usages for this issuer; valid values are \"read-only\", \"issuing-certificates\", \"crl-signing\", and \"ocsp-signing\". Multiple values may be specified. Read-only is implicit and always set.
 	Usage []string `json:"usage,omitempty"`
 }
-
-// NewPkiWriteIssuerRequestWithDefaults instantiates a new PkiWriteIssuerRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiWriteIssuerRequestWithDefaults() *PkiWriteIssuerRequest {
-	var this PkiWriteIssuerRequest
-
-	this.EnableAiaUrlTemplating = false
-	this.LeafNotAfterBehavior = "err"
-	this.RevocationSignatureAlgorithm = ""
-
-	return &this
-}

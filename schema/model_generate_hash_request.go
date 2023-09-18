@@ -15,19 +15,4 @@ type GenerateHashRequest struct {
 
 	// The base64-encoded input data
 	Input string `json:"input,omitempty"`
-
-	// Algorithm to use (POST URL parameter)
-	Urlalgorithm string `json:"urlalgorithm,omitempty"`
-}
-
-// NewGenerateHashRequestWithDefaults instantiates a new GenerateHashRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGenerateHashRequestWithDefaults() *GenerateHashRequest {
-	var this GenerateHashRequest
-
-	this.Algorithm = "sha2-256"
-	this.Format = "hex"
-
-	return &this
 }

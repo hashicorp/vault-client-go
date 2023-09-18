@@ -13,12 +13,3 @@ type CorsReadConfigurationResponse struct {
 
 	Enabled bool `json:"enabled,omitempty"`
 }
-
-// NewCorsReadConfigurationResponseWithDefaults instantiates a new CorsReadConfigurationResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCorsReadConfigurationResponseWithDefaults() *CorsReadConfigurationResponse {
-	var this CorsReadConfigurationResponse
-
-	return &this
-}

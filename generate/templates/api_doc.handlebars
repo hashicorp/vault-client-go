@@ -4,13 +4,16 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-{{#with operations}}{{#each operation}}{{#endsWith operationId "2"}}{{else}}{{#endsWith operationId "3"}}{{else}}[**{{operationId}}**]({{classname}}.md#{{operationId}}) | **{{httpMethod}}** {{path}} | {{#if summary}}{{summary}}{{/if}}
-{{/endsWith}}{{/endsWith}}{{/each}}{{/with}}
+{{#with operations ~}}
+{{#each operation ~}}
+{{#>partial_filter_operation}}[**{{operationId}}**]({{classname}}.md#{{operationId}}) | **{{httpMethod}}** {{path}} | {{#if summary}}{{summary}}{{/if}}
+{{/partial_filter_operation}}
+{{~/each ~}}
+{{/with ~}}
 
 {{#with operations}}
-{{#each operation}}{{#endsWith operationId "2"}}{{else}}{{#endsWith operationId "3"}}{{else}}
-
-## {{{operationId}}}
+{{#each operation ~}}
+{{#>partial_filter_operation}}## {{{operationId}}}
 
 {{#if summary}}{{{summary}}}{{/if}}{{#if notes}}
 
@@ -26,7 +29,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"{{#each bodyParams}}{{#if @first}}
+	"github.com/hashicorp/vault-client-go"{{#each bodyParams}}{{#if isModel}}
 	"github.com/hashicorp/vault-client-go/schema"{{/if}}{{/each}}
 )
 
@@ -37,17 +40,34 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-{{#each allParams}}{{#if isPathParam}}{{#endsWith baseName "_mount_path"}}{{else}}
-	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{#if description}}{{{description}}}{{/if}}{{#with defaultValue}} (defaults to {{{.}}}){{/with}}{{/endsWith}}{{/if}}{{/each}}{{#each bodyParams}}
-	request := schema.New{{{dataType}}}WithDefaults(){{/each}}{{#each allParams}}{{#if isQueryParam}}{{#neq paramName "list"}}
-	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{{description}}}{{#with defaultValue}} (defaults to {{{.}}}){{/with}}{{/neq}}{{/if}}{{/each}}
+
+	// TODO: authenticate if necessary (see the top-level README.md)
+{{! Oddly, vendorExtensions.x-go-example seems to only be available within allParams,
+	and not within pathParams, queryParams, etc. }}
+{{~#each allParams}}
+{{~#if (or
+		(and isPathParam (not (endsWith baseName "_mount_path")))
+		(and isQueryParam (neq baseName "list"))
+)}}
+	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{#if description}}{{{description}}}{{/if}}{{#with defaultValue}} (defaults to {{{.}}}){{/with}}
+{{~/if}}
+{{~/each}}
 	resp, err := client.{{cut classname "Api"}}.{{operationId}}(
-		context.Background(),{{#each pathParams}}{{#endsWith baseName "_mount_path"}}{{else}}
-		{{paramName}},{{/endsWith}}{{/each}}{{#each bodyParams}}
-		request,{{/each}}{{#each queryParams}}{{#neq paramName "list"}}
-		{{paramName}},{{/neq}}{{/each}}
-		vault.WithToken("my-token"),{{#each pathParams}}{{#endsWith baseName "_mount_path"}}
-		vault.WithMountPath({{#with defaultValue}}{{{.}}}{{/with}}),{{/endsWith}}{{/each}}
+		context.Background(),
+{{~#each pathParams}}{{#not (endsWith baseName "_mount_path")}}
+		{{paramName}},
+{{~/not}}{{/each}}
+{{~#each bodyParams}}
+		{{#if isModel}}schema.{{/if}}{{dataType}}{
+			// populate request parameters
+		},
+{{~/each}}
+{{~#each queryParams}}{{#neq baseName "list"}}
+		{{paramName}},
+{{~/neq}}{{/each}}
+{{~#each pathParams}}{{#endsWith baseName "_mount_path"}}
+		vault.WithMountPath({{#with defaultValue}}{{{.}}}{{/with}}),
+{{~/endsWith}}{{/each}}
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -77,5 +97,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-{{/endsWith}}{{/endsWith}}{{/each}}
-{{/with}}
+{{/partial_filter_operation}}
+{{~/each ~}}
+{{/with ~}}

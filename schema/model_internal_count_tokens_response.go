@@ -9,12 +9,3 @@ package schema
 type InternalCountTokensResponse struct {
 	Counters map[string]interface{} `json:"counters,omitempty"`
 }
-
-// NewInternalCountTokensResponseWithDefaults instantiates a new InternalCountTokensResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewInternalCountTokensResponseWithDefaults() *InternalCountTokensResponse {
-	var this InternalCountTokensResponse
-
-	return &this
-}

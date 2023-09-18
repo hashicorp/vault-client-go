@@ -16,12 +16,3 @@ type AwsReadStaticRolesNameResponse struct {
 	// The IAM user to adopt as a static role.
 	Username string `json:"username,omitempty"`
 }
-
-// NewAwsReadStaticRolesNameResponseWithDefaults instantiates a new AwsReadStaticRolesNameResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAwsReadStaticRolesNameResponseWithDefaults() *AwsReadStaticRolesNameResponse {
-	var this AwsReadStaticRolesNameResponse
-
-	return &this
-}

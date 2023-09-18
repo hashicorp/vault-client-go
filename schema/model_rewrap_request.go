@@ -9,12 +9,3 @@ package schema
 type RewrapRequest struct {
 	Token string `json:"token,omitempty"`
 }
-
-// NewRewrapRequestWithDefaults instantiates a new RewrapRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRewrapRequestWithDefaults() *RewrapRequest {
-	var this RewrapRequest
-
-	return &this
-}

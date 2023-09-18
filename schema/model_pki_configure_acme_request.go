@@ -7,6 +7,9 @@ package schema
 
 // PkiConfigureAcmeRequest struct for PkiConfigureAcmeRequest
 type PkiConfigureAcmeRequest struct {
+	// whether the ExtKeyUsage field from a role is used, defaults to false meaning that certificate will be signed with ServerAuth.
+	AllowRoleExtKeyUsage bool `json:"allow_role_ext_key_usage,omitempty"`
+
 	// which issuers are allowed for use with ACME; by default, this will only be the primary (default) issuer
 	AllowedIssuers []string `json:"allowed_issuers,omitempty"`
 
@@ -24,18 +27,4 @@ type PkiConfigureAcmeRequest struct {
 
 	// whether ACME is enabled, defaults to false meaning that clusters will by default not get ACME support
 	Enabled bool `json:"enabled,omitempty"`
-}
-
-// NewPkiConfigureAcmeRequestWithDefaults instantiates a new PkiConfigureAcmeRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiConfigureAcmeRequestWithDefaults() *PkiConfigureAcmeRequest {
-	var this PkiConfigureAcmeRequest
-
-	this.DefaultDirectoryPolicy = "sign-verbatim"
-	this.DnsResolver = ""
-	this.EabPolicy = "always-required"
-	this.Enabled = false
-
-	return &this
 }

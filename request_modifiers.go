@@ -5,13 +5,12 @@ package vault
 
 import (
 	"fmt"
+	"maps"
 	"net/http"
 	"net/url"
 	"strings"
 	"time"
 	"unicode"
-
-	"github.com/hashicorp/go-multierror"
 )
 
 type (
@@ -28,12 +27,12 @@ type requestModifiers struct {
 	responseCallbacks []ResponseCallback
 
 	// mountPath, if specified, will overwrite the default mount path used in
-	// client.Auth & client.Secrets requests
+	// client.Auth & client.Secrets requests.
 	mountPath string
 
-	// customQueryParameters, if specified will be appended to the list of
-	// query parameters included with the request
-	customQueryParameters url.Values
+	// additionalQueryParameters, if specified will be appended to the list of
+	// query parameters included with the request.
+	additionalQueryParameters url.Values
 }
 
 // requestHeaders contains headers that will be added to requests
@@ -237,55 +236,60 @@ func (m *requestModifiers) mountPathOr(defaultMountPath string) string {
 	return m.mountPath
 }
 
-// customQueryParametersOrDefault returns object's query parameters or an empty map.
-func (m *requestModifiers) customQueryParametersOrDefault() url.Values {
-	if m.customQueryParameters == nil {
+// additionalQueryParametersOrDefault returns object's query parameters or an empty map.
+func (m *requestModifiers) additionalQueryParametersOrDefault() url.Values {
+	if m.additionalQueryParameters == nil {
 		return make(url.Values)
 	}
-	return m.customQueryParameters
+	return m.additionalQueryParameters
 }
 
-// mergeRequestModifiers merges the two objects, preferring the per-request modifiers
-func mergeRequestModifiers(perClient, perRequest requestModifiers) requestModifiers {
-	merged := perClient
-
-	if perRequest.headers.userAgent != "" {
-		merged.headers.userAgent = perRequest.headers.userAgent
+// mergeRequestModifiers merges the values in *rhs into *lhs. The merging is
+// done according the following rules:
+//
+//   - for scalars : the rhs values, if present, will overwrite the lhs values
+//   - for slices  : the rhs values will be appended to the lhs values
+//   - for maps
+//     -- new keys      : the rhs values will be appended to the lhs values
+//     -- existing keys : the rhs values will overwrite the corresponding lhs values
+func mergeRequestModifiers(lhs, rhs *requestModifiers) {
+	if rhs.headers.userAgent != "" {
+		lhs.headers.userAgent = rhs.headers.userAgent
 	}
 
-	if perRequest.headers.token != "" {
-		merged.headers.token = perRequest.headers.token
+	if rhs.headers.token != "" {
+		lhs.headers.token = rhs.headers.token
 	}
 
-	if perRequest.headers.namespace != "" {
-		merged.headers.namespace = perRequest.headers.namespace
+	if rhs.headers.namespace != "" {
+		lhs.headers.namespace = rhs.headers.namespace
 	}
 
-	if len(perRequest.headers.mfaCredentials) != 0 {
-		merged.headers.mfaCredentials = perRequest.headers.mfaCredentials
+	lhs.headers.mfaCredentials = append(
+		lhs.headers.mfaCredentials,
+		rhs.headers.mfaCredentials...,
+	)
+
+	if rhs.headers.responseWrappingTTL != 0 {
+		lhs.headers.responseWrappingTTL = rhs.headers.responseWrappingTTL
 	}
 
-	if perRequest.headers.responseWrappingTTL != 0 {
-		merged.headers.responseWrappingTTL = perRequest.headers.responseWrappingTTL
+	if rhs.headers.replicationForwardingMode != ReplicationForwardNone {
+		lhs.headers.replicationForwardingMode = rhs.headers.replicationForwardingMode
 	}
 
-	if perRequest.headers.replicationForwardingMode != ReplicationForwardNone {
-		merged.headers.replicationForwardingMode = perRequest.headers.replicationForwardingMode
-	}
+	// in case of key collisions, the rhs keys will take precedence
+	maps.Copy(lhs.headers.customHeaders, rhs.headers.customHeaders)
 
-	if len(perRequest.headers.customHeaders) != 0 {
-		merged.headers.customHeaders = perRequest.headers.customHeaders
-	}
+	lhs.requestCallbacks = append(
+		lhs.requestCallbacks,
+		rhs.requestCallbacks...,
+	)
 
-	if len(perRequest.requestCallbacks) != 0 {
-		merged.requestCallbacks = perRequest.requestCallbacks
-	}
-
-	if len(perRequest.responseCallbacks) != 0 {
-		merged.responseCallbacks = perRequest.responseCallbacks
-	}
-
-	return merged
+	lhs.responseCallbacks = append(
+		lhs.responseCallbacks,
+		rhs.responseCallbacks...,
+	)
 }
 
 func validateToken(token string) error {
@@ -304,17 +308,14 @@ func validateNamespace(namespace string) error {
 	return nil
 }
 
-func validateCustomHeaders(headers http.Header) (errs error) {
+func validateCustomHeaders(headers http.Header) error {
 	for key := range headers {
 		if strings.HasPrefix(strings.ToLower(key), "x-vault-") {
-			errs = multierror.Append(
-				errs,
-				fmt.Errorf("custom header key %q is not allowed: 'X-Vault-' prefix is for internal use only", key),
-			)
+			return fmt.Errorf("custom header key %q is not allowed: 'X-Vault-' prefix is for internal use only", key)
 		}
 	}
 
-	return errs
+	return nil
 }
 
 // printable returns true if the given string has no non-printable characters

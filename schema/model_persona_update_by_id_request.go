@@ -19,12 +19,3 @@ type PersonaUpdateByIdRequest struct {
 	// Name of the persona
 	Name string `json:"name,omitempty"`
 }
-
-// NewPersonaUpdateByIdRequestWithDefaults instantiates a new PersonaUpdateByIdRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPersonaUpdateByIdRequestWithDefaults() *PersonaUpdateByIdRequest {
-	var this PersonaUpdateByIdRequest
-
-	return &this
-}

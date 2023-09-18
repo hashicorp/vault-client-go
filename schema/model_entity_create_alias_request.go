@@ -25,12 +25,3 @@ type EntityCreateAliasRequest struct {
 	// Name of the alias; unused for a modify
 	Name string `json:"name,omitempty"`
 }
-
-// NewEntityCreateAliasRequestWithDefaults instantiates a new EntityCreateAliasRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewEntityCreateAliasRequestWithDefaults() *EntityCreateAliasRequest {
-	var this EntityCreateAliasRequest
-
-	return &this
-}

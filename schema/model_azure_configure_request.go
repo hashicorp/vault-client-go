@@ -28,14 +28,3 @@ type AzureConfigureRequest struct {
 	// The tenant id for the Azure Active Directory. This value can also be provided with the AZURE_TENANT_ID environment variable.
 	TenantId string `json:"tenant_id,omitempty"`
 }
-
-// NewAzureConfigureRequestWithDefaults instantiates a new AzureConfigureRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAzureConfigureRequestWithDefaults() *AzureConfigureRequest {
-	var this AzureConfigureRequest
-
-	this.RootPasswordTtl = "15768000000000000"
-
-	return &this
-}

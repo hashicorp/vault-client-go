@@ -13,12 +13,3 @@ type LeasesListResponse struct {
 	// Number of matching leases
 	LeaseCount int32 `json:"lease_count,omitempty"`
 }
-
-// NewLeasesListResponseWithDefaults instantiates a new LeasesListResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLeasesListResponseWithDefaults() *LeasesListResponse {
-	var this LeasesListResponse
-
-	return &this
-}

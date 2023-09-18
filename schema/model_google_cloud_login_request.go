@@ -13,12 +13,3 @@ type GoogleCloudLoginRequest struct {
 	// Name of the role against which the login is being attempted. Required.
 	Role string `json:"role,omitempty"`
 }
-
-// NewGoogleCloudLoginRequestWithDefaults instantiates a new GoogleCloudLoginRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGoogleCloudLoginRequestWithDefaults() *GoogleCloudLoginRequest {
-	var this GoogleCloudLoginRequest
-
-	return &this
-}

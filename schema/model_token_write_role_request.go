@@ -61,15 +61,3 @@ type TokenWriteRoleRequest struct {
 	// The type of token to generate, service or batch
 	TokenType string `json:"token_type,omitempty"`
 }
-
-// NewTokenWriteRoleRequestWithDefaults instantiates a new TokenWriteRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTokenWriteRoleRequestWithDefaults() *TokenWriteRoleRequest {
-	var this TokenWriteRoleRequest
-
-	this.Renewable = true
-	this.TokenType = "default-service"
-
-	return &this
-}

@@ -9,14 +9,11 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"net"
 	"net/http"
 	"net/url"
 	"strings"
 
 	"github.com/hashicorp/go-retryablehttp"
-
-	"golang.org/x/exp/slices"
 )
 
 // Read attempts to read the value stored at the given Vault path.
@@ -31,9 +28,9 @@ func (c *Client) Read(ctx context.Context, path string, options ...RequestOption
 		c,
 		http.MethodGet,
 		v1Path(path),
-		nil,                                    // request body
-		requestModifiers.customQueryParameters, // request query parameters
-		requestModifiers,                       // request modifiers (headers & callbacks)
+		nil, // request body
+		requestModifiers.additionalQueryParameters,
+		requestModifiers,
 	)
 }
 
@@ -53,9 +50,9 @@ func (c *Client) ReadRaw(ctx context.Context, path string, options ...RequestOpt
 		c,
 		http.MethodGet,
 		v1Path(path),
-		nil,                                    // request body
-		requestModifiers.customQueryParameters, // request query parameters
-		requestModifiers,                       // request modifiers (headers & callbacks)
+		nil, // request body
+		requestModifiers.additionalQueryParameters,
+		requestModifiers,
 	)
 }
 
@@ -87,9 +84,9 @@ func (c *Client) WriteFromReader(ctx context.Context, path string, body io.Reade
 		c,
 		http.MethodPost,
 		v1Path(path),
-		body,                                   // request body
-		requestModifiers.customQueryParameters, // request query parameters
-		requestModifiers,                       // request modifiers (headers & callbacks)
+		body,
+		requestModifiers.additionalQueryParameters,
+		requestModifiers,
 	)
 }
 
@@ -100,7 +97,7 @@ func (c *Client) List(ctx context.Context, path string, options ...RequestOption
 		return nil, err
 	}
 
-	requestQueryParameters := requestModifiers.customQueryParametersOrDefault()
+	requestQueryParameters := requestModifiers.additionalQueryParametersOrDefault()
 	requestQueryParameters.Add("list", "true")
 
 	return sendRequestParseResponse[map[string]interface{}](
@@ -108,9 +105,9 @@ func (c *Client) List(ctx context.Context, path string, options ...RequestOption
 		c,
 		http.MethodGet,
 		v1Path(path),
-		nil,                    // request body
-		requestQueryParameters, // request query parameters
-		requestModifiers,       // request modifiers (headers & callbacks)
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
 	)
 }
 
@@ -126,9 +123,9 @@ func (c *Client) Delete(ctx context.Context, path string, options ...RequestOpti
 		c,
 		http.MethodDelete,
 		v1Path(path),
-		nil,                                    // request body
-		requestModifiers.customQueryParameters, // request query parameters
-		requestModifiers,                       // request modifiers (headers & callbacks)
+		nil, // request body
+		requestModifiers.additionalQueryParameters,
+		requestModifiers,
 	)
 }
 
@@ -140,7 +137,7 @@ func sendStructuredRequestParseResponse[ResponseT any](
 	path string,
 	body any,
 	parameters url.Values,
-	requestModifiersPerRequest requestModifiers,
+	requestModifiers requestModifiers,
 ) (*Response[ResponseT], error) {
 	var buf bytes.Buffer
 
@@ -155,7 +152,7 @@ func sendStructuredRequestParseResponse[ResponseT any](
 		path,
 		&buf,
 		parameters,
-		requestModifiersPerRequest,
+		requestModifiers,
 	)
 }
 
@@ -167,7 +164,7 @@ func sendRequestParseResponse[ResponseT any](
 	path string,
 	body io.Reader,
 	parameters url.Values,
-	requestModifiersPerRequest requestModifiers,
+	requestModifiers requestModifiers,
 ) (*Response[ResponseT], error) {
 	// apply the client-level request timeout, if set
 	if client.configuration.RequestTimeout > 0 {
@@ -177,13 +174,10 @@ func sendRequestParseResponse[ResponseT any](
 	}
 
 	// clone the client-level request modifiers to prevent race conditions
-	requestModifiersClient := client.cloneClientRequestModifiers()
+	modifiers := client.cloneClientRequestModifiers()
 
-	// merge the client-level & request-level modifiers, preferring the later
-	modifiers := mergeRequestModifiers(
-		requestModifiersClient,
-		requestModifiersPerRequest,
-	)
+	// merge in the request-level request modifiers
+	mergeRequestModifiers(&modifiers, &requestModifiers)
 
 	req, err := client.newRequest(ctx, method, path, body, parameters, modifiers.headers)
 	if err != nil {
@@ -215,16 +209,13 @@ func sendRequestReturnRawResponse(
 	path string,
 	body io.Reader,
 	parameters url.Values,
-	requestModifiersPerRequest requestModifiers,
+	requestModifiers requestModifiers,
 ) (*http.Response, error) {
 	// clone the client-level request modifiers to prevent race conditions
-	requestModifiersClient := client.cloneClientRequestModifiers()
+	modifiers := client.cloneClientRequestModifiers()
 
-	// merge the client-level & request-level modifiers, preferring the later
-	modifiers := mergeRequestModifiers(
-		requestModifiersClient,
-		requestModifiersPerRequest,
-	)
+	// merge in the request-level request modifiers
+	mergeRequestModifiers(&modifiers, &requestModifiers)
 
 	req, err := client.newRequest(ctx, method, path, body, parameters, modifiers.headers)
 	if err != nil {
@@ -247,15 +238,6 @@ func (c *Client) newRequest(
 	url, err := c.parsedBaseAddress.Parse(path)
 	if err != nil {
 		return nil, fmt.Errorf("could not join %q with the base address: %w", path, err)
-	}
-
-	// if configured, look up the DNS service record (SRV) and take the highest match
-	if c.configuration.EnableSRVLookup {
-		_, addrs, err := net.LookupSRV("http", "tcp", url.Hostname())
-		// don't return the error: address might not have a service record
-		if err == nil && len(addrs) > 0 {
-			url.Host = fmt.Sprintf("%s:%d", addrs[0].Target, addrs[0].Port)
-		}
 	}
 
 	// add query parameters (if any)
@@ -381,13 +363,12 @@ func (c *Client) do(req *http.Request, retry bool) (*http.Response, error) {
 // handleRedirect checks the given response for a redirect status & modifies
 // the request accordingly if the redirect is needed
 func (c *Client) handleRedirect(req *http.Request, resp *http.Response, redirectCount *int) (bool, *RedirectError) {
-	redirectStatuses := [...]int{
+	switch resp.StatusCode {
+	case
 		http.StatusMovedPermanently,  // 301
 		http.StatusFound,             // 302
-		http.StatusTemporaryRedirect, // 307
-	}
-
-	if !slices.Contains(redirectStatuses[:], resp.StatusCode) {
+		http.StatusTemporaryRedirect: // 307
+	default:
 		return false, nil
 	}
 

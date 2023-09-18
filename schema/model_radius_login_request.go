@@ -10,18 +10,6 @@ type RadiusLoginRequest struct {
 	// Password for this user.
 	Password string `json:"password,omitempty"`
 
-	// Username to be used for login. (URL parameter)
-	Urlusername string `json:"urlusername,omitempty"`
-
 	// Username to be used for login. (POST request body)
 	Username string `json:"username,omitempty"`
-}
-
-// NewRadiusLoginRequestWithDefaults instantiates a new RadiusLoginRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRadiusLoginRequestWithDefaults() *RadiusLoginRequest {
-	var this RadiusLoginRequest
-
-	return &this
 }

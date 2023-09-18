@@ -22,12 +22,3 @@ type AliasCreateRequest struct {
 	// Name of the alias
 	Name string `json:"name,omitempty"`
 }
-
-// NewAliasCreateRequestWithDefaults instantiates a new AliasCreateRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAliasCreateRequestWithDefaults() *AliasCreateRequest {
-	var this AliasCreateRequest
-
-	return &this
-}

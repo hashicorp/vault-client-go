@@ -106,18 +106,3 @@ type JwtWriteRoleRequest struct {
 	// Log received OIDC tokens and claims when debug-level logging is active. Not recommended in production since sensitive information may be present in OIDC responses.
 	VerboseOidcLogging bool `json:"verbose_oidc_logging,omitempty"`
 }
-
-// NewJwtWriteRoleRequestWithDefaults instantiates a new JwtWriteRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewJwtWriteRoleRequestWithDefaults() *JwtWriteRoleRequest {
-	var this JwtWriteRoleRequest
-
-	this.BoundClaimsType = "string"
-	this.ClockSkewLeeway = "60000000000"
-	this.ExpirationLeeway = "150"
-	this.NotBeforeLeeway = "150"
-	this.TokenType = "default-service"
-
-	return &this
-}

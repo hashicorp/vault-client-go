@@ -91,21 +91,3 @@ type PkiCrossSignIntermediateRequest struct {
 	// The requested URI SANs, if any, in a comma-delimited list.
 	UriSans []string `json:"uri_sans,omitempty"`
 }
-
-// NewPkiCrossSignIntermediateRequestWithDefaults instantiates a new PkiCrossSignIntermediateRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiCrossSignIntermediateRequestWithDefaults() *PkiCrossSignIntermediateRequest {
-	var this PkiCrossSignIntermediateRequest
-
-	this.ExcludeCnFromSans = false
-	this.Format = "pem"
-	this.KeyBits = 0
-	this.KeyRef = "default"
-	this.KeyType = "rsa"
-	this.NotBeforeDuration = "30"
-	this.PrivateKeyFormat = "der"
-	this.SignatureBits = 0
-
-	return &this
-}

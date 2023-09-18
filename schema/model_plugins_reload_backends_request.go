@@ -15,12 +15,3 @@ type PluginsReloadBackendsRequest struct {
 
 	Scope string `json:"scope,omitempty"`
 }
-
-// NewPluginsReloadBackendsRequestWithDefaults instantiates a new PluginsReloadBackendsRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPluginsReloadBackendsRequestWithDefaults() *PluginsReloadBackendsRequest {
-	var this PluginsReloadBackendsRequest
-
-	return &this
-}

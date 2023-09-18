@@ -39,12 +39,3 @@ type SealStatusResponse struct {
 
 	Version string `json:"version,omitempty"`
 }
-
-// NewSealStatusResponseWithDefaults instantiates a new SealStatusResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewSealStatusResponseWithDefaults() *SealStatusResponse {
-	var this SealStatusResponse
-
-	return &this
-}

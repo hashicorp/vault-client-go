@@ -9,12 +9,3 @@ package schema
 type GenerateHashResponse struct {
 	Sum string `json:"sum,omitempty"`
 }
-
-// NewGenerateHashResponseWithDefaults instantiates a new GenerateHashResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGenerateHashResponseWithDefaults() *GenerateHashResponse {
-	var this GenerateHashResponse
-
-	return &this
-}

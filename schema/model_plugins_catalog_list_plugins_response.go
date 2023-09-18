@@ -9,12 +9,3 @@ package schema
 type PluginsCatalogListPluginsResponse struct {
 	Detailed map[string]interface{} `json:"detailed,omitempty"`
 }
-
-// NewPluginsCatalogListPluginsResponseWithDefaults instantiates a new PluginsCatalogListPluginsResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPluginsCatalogListPluginsResponseWithDefaults() *PluginsCatalogListPluginsResponse {
-	var this PluginsCatalogListPluginsResponse
-
-	return &this
-}

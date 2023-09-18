@@ -25,7 +25,7 @@ type AuthEnableMethodRequest struct {
 	// Name of the auth plugin to use based from the name in the plugin catalog.
 	PluginName string `json:"plugin_name,omitempty"`
 
-	// The semantic version of the plugin to use.
+	// The semantic version of the plugin to use, or image tag if oci_image is provided.
 	PluginVersion string `json:"plugin_version,omitempty"`
 
 	// Whether to turn on seal wrapping for the mount.
@@ -33,17 +33,4 @@ type AuthEnableMethodRequest struct {
 
 	// The type of the backend. Example: \"userpass\"
 	Type string `json:"type,omitempty"`
-}
-
-// NewAuthEnableMethodRequestWithDefaults instantiates a new AuthEnableMethodRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAuthEnableMethodRequestWithDefaults() *AuthEnableMethodRequest {
-	var this AuthEnableMethodRequest
-
-	this.ExternalEntropyAccess = false
-	this.Local = false
-	this.SealWrap = false
-
-	return &this
 }

@@ -26,9 +26,9 @@ func WithAddress(address string) ClientOption {
 }
 
 // WithHTTPClient sets the HTTP client to use for all API requests.
-// The library sets reasonable defaults for the BaseClient and its associated
+// The library sets reasonable defaults for the HTTPClient and its associated
 // http.Transport. If you must modify Vault's defaults, it is suggested that
-// you start with DefaultConfiguration().BaseClient and modify it as needed
+// you start with DefaultConfiguration().HTTPClient and modify it as needed
 // rather than starting with an empty client or http.DefaultClient.
 func WithHTTPClient(client *http.Client) ClientOption {
 	return func(c *ClientConfiguration) error {
@@ -54,18 +54,34 @@ func WithRequestTimeout(timeout time.Duration) ClientOption {
 }
 
 // WithTLS configures the TLS settings in the base http.Client.
-func WithTLS(configuration TLSConfiguration) ClientOption {
+func WithTLS(tls TLSConfiguration) ClientOption {
 	return func(c *ClientConfiguration) error {
-		c.TLS = configuration
+		c.TLS = tls
 		return nil
 	}
 }
 
 // WithRetryConfiguration configures the internal go-retryablehttp client.
 // The library sets reasonable defaults for this setting.
-func WithRetryConfiguration(configuration RetryConfiguration) ClientOption {
+func WithRetryConfiguration(retry RetryConfiguration) ClientOption {
 	return func(c *ClientConfiguration) error {
-		c.RetryConfiguration = configuration
+		// if any of the required RetryConfiguration values are missing, use defaults
+		defaultRetryConfiguration := DefaultConfiguration().RetryConfiguration
+
+		if retry.CheckRetry == nil {
+			retry.CheckRetry = defaultRetryConfiguration.CheckRetry
+		}
+
+		if retry.Backoff == nil {
+			retry.Backoff = defaultRetryConfiguration.Backoff
+		}
+
+		if retry.ErrorHandler == nil {
+			retry.ErrorHandler = defaultRetryConfiguration.ErrorHandler
+		}
+
+		c.RetryConfiguration = retry
+
 		return nil
 	}
 }
@@ -104,21 +120,6 @@ func WithEnforceReadYourWritesConsistency() ClientOption {
 	}
 }
 
-// WithEnableSRVLookup enables the client to look up the Vault server host
-// through DNS SRV lookup. The lookup will happen on each request. The base
-// address' port must be empty for this setting to be respected.
-//
-// Note: this feature is not designed for high availability, just discovery.
-//
-// See https://datatracker.ietf.org/doc/html/draft-andrews-http-srv-02 for more
-// information
-func WithEnableSRVLookup() ClientOption {
-	return func(c *ClientConfiguration) error {
-		c.EnableSRVLookup = true
-		return nil
-	}
-}
-
 // WithDisableRedirects prevents the client from automatically following
 // redirects. Any redirect responses will result in `RedirectError` instead.
 //
@@ -150,7 +151,6 @@ func WithConfiguration(configuration ClientConfiguration) ClientOption {
 //	VAULT_ADDR, VAULT_AGENT_ADDR (vault's address, e.g. https://127.0.0.1:8200/)
 //	VAULT_CLIENT_TIMEOUT         (request timeout)
 //	VAULT_RATE_LIMIT             (rate[:burst] in operations per second)
-//	VAULT_SRV_LOOKUP             (enable DNS SRV lookup)
 //	VAULT_DISABLE_REDIRECTS      (prevents vault client from following redirects)
 //	VAULT_TOKEN                  (the initial authentication token)
 //	VAULT_NAMESPACE              (the initial namespace to use)

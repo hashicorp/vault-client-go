@@ -13,15 +13,3 @@ type RabbitMqConfigureLeaseRequest struct {
 	// Duration before which the issued credentials needs renewal
 	Ttl string `json:"ttl,omitempty"`
 }
-
-// NewRabbitMqConfigureLeaseRequestWithDefaults instantiates a new RabbitMqConfigureLeaseRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRabbitMqConfigureLeaseRequestWithDefaults() *RabbitMqConfigureLeaseRequest {
-	var this RabbitMqConfigureLeaseRequest
-
-	this.MaxTtl = "0"
-	this.Ttl = "0"
-
-	return &this
-}

@@ -45,14 +45,3 @@ type AwsWriteRoleRequest struct {
 	// Path for IAM User. Only valid when credential_type is iam_user
 	UserPath string `json:"user_path,omitempty"`
 }
-
-// NewAwsWriteRoleRequestWithDefaults instantiates a new AwsWriteRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAwsWriteRoleRequestWithDefaults() *AwsWriteRoleRequest {
-	var this AwsWriteRoleRequest
-
-	this.UserPath = "/"
-
-	return &this
-}

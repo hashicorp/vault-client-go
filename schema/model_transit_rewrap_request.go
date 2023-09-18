@@ -22,12 +22,3 @@ type TransitRewrapRequest struct {
 	// Nonce for when convergent encryption is used
 	Nonce string `json:"nonce,omitempty"`
 }
-
-// NewTransitRewrapRequestWithDefaults instantiates a new TransitRewrapRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTransitRewrapRequestWithDefaults() *TransitRewrapRequest {
-	var this TransitRewrapRequest
-
-	return &this
-}

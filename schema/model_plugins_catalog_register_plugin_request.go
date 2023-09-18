@@ -16,21 +16,12 @@ type PluginsCatalogRegisterPluginRequest struct {
 	// The environment variables passed to plugin command. Each entry is of the form \"key=value\".
 	Env []string `json:"env,omitempty"`
 
-	// The SHA256 sum of the executable used in the command field. This should be HEX encoded.
+	// The name of the OCI image to be run, without the tag or SHA256. Must already be present on the machine.
+	OciImage string `json:"oci_image,omitempty"`
+
+	// The SHA256 sum of the executable or container to be run. This should be HEX encoded.
 	Sha256 string `json:"sha256,omitempty"`
 
-	// The type of the plugin, may be auth, secret, or database
-	Type string `json:"type,omitempty"`
-
-	// The semantic version of the plugin to use.
+	// The semantic version of the plugin to use, or image tag if oci_image is provided.
 	Version string `json:"version,omitempty"`
-}
-
-// NewPluginsCatalogRegisterPluginRequestWithDefaults instantiates a new PluginsCatalogRegisterPluginRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPluginsCatalogRegisterPluginRequestWithDefaults() *PluginsCatalogRegisterPluginRequest {
-	var this PluginsCatalogRegisterPluginRequest
-
-	return &this
 }

@@ -91,24 +91,3 @@ type PkiRootSignIntermediateRequest struct {
 	// Whether or not to use PSS signatures when using a RSA key-type issuer. Defaults to false.
 	UsePss bool `json:"use_pss,omitempty"`
 }
-
-// NewPkiRootSignIntermediateRequestWithDefaults instantiates a new PkiRootSignIntermediateRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiRootSignIntermediateRequestWithDefaults() *PkiRootSignIntermediateRequest {
-	var this PkiRootSignIntermediateRequest
-
-	this.Csr = ""
-	this.ExcludeCnFromSans = false
-	this.Format = "pem"
-	this.IssuerRef = "default"
-	this.MaxPathLength = -1
-	this.NotBeforeDuration = "30"
-	this.PrivateKeyFormat = "der"
-	this.SignatureBits = 0
-	this.Skid = ""
-	this.UseCsrValues = false
-	this.UsePss = false
-
-	return &this
-}

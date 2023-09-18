@@ -27,12 +27,3 @@ type RekeyAttemptReadProgressResponse struct {
 
 	VerificationRequired bool `json:"verification_required,omitempty"`
 }
-
-// NewRekeyAttemptReadProgressResponseWithDefaults instantiates a new RekeyAttemptReadProgressResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRekeyAttemptReadProgressResponseWithDefaults() *RekeyAttemptReadProgressResponse {
-	var this RekeyAttemptReadProgressResponse
-
-	return &this
-}

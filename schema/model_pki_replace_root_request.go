@@ -10,14 +10,3 @@ type PkiReplaceRootRequest struct {
 	// Reference (name or identifier) to the default issuer.
 	Default string `json:"default,omitempty"`
 }
-
-// NewPkiReplaceRootRequestWithDefaults instantiates a new PkiReplaceRootRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiReplaceRootRequestWithDefaults() *PkiReplaceRootRequest {
-	var this PkiReplaceRootRequest
-
-	this.Default = "next"
-
-	return &this
-}

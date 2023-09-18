@@ -3,7 +3,7 @@
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AliCloudDeleteAuthRole**](AuthApi.md#AliCloudDeleteAuthRole) | **Delete** /auth/{alicloud_mount_path}/role/{role} | Create a role and associate policies to it.
-[**AliCloudListAuthRoles**](AuthApi.md#AliCloudListAuthRoles) | **Get** /auth/{alicloud_mount_path}/role | Lists all the roles that are registered with Vault.
+[**AliCloudListAuthRoles**](AuthApi.md#AliCloudListAuthRoles) | **Get** /auth/{alicloud_mount_path}/role/ | Lists all the roles that are registered with Vault.
 [**AliCloudLogin**](AuthApi.md#AliCloudLogin) | **Post** /auth/{alicloud_mount_path}/login | Authenticates an RAM entity with Vault.
 [**AliCloudReadAuthRole**](AuthApi.md#AliCloudReadAuthRole) | **Get** /auth/{alicloud_mount_path}/role/{role} | Create a role and associate policies to it.
 [**AliCloudWriteAuthRole**](AuthApi.md#AliCloudWriteAuthRole) | **Post** /auth/{alicloud_mount_path}/role/{role} | Create a role and associate policies to it.
@@ -21,8 +21,8 @@ Method | HTTP request | Description
 [**AppRoleDeleteTokenTtl**](AuthApi.md#AppRoleDeleteTokenTtl) | **Delete** /auth/{approle_mount_path}/role/{role_name}/token-ttl | 
 [**AppRoleDestroySecretId**](AuthApi.md#AppRoleDestroySecretId) | **Post** /auth/{approle_mount_path}/role/{role_name}/secret-id/destroy | 
 [**AppRoleDestroySecretIdByAccessor**](AuthApi.md#AppRoleDestroySecretIdByAccessor) | **Post** /auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/destroy | 
-[**AppRoleListRoles**](AuthApi.md#AppRoleListRoles) | **Get** /auth/{approle_mount_path}/role | 
-[**AppRoleListSecretIds**](AuthApi.md#AppRoleListSecretIds) | **Get** /auth/{approle_mount_path}/role/{role_name}/secret-id | 
+[**AppRoleListRoles**](AuthApi.md#AppRoleListRoles) | **Get** /auth/{approle_mount_path}/role/ | 
+[**AppRoleListSecretIds**](AuthApi.md#AppRoleListSecretIds) | **Get** /auth/{approle_mount_path}/role/{role_name}/secret-id/ | 
 [**AppRoleLogin**](AuthApi.md#AppRoleLogin) | **Post** /auth/{approle_mount_path}/login | 
 [**AppRoleLookUpSecretId**](AuthApi.md#AppRoleLookUpSecretId) | **Post** /auth/{approle_mount_path}/role/{role_name}/secret-id/lookup | 
 [**AppRoleLookUpSecretIdByAccessor**](AuthApi.md#AppRoleLookUpSecretIdByAccessor) | **Post** /auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/lookup | 
@@ -75,13 +75,13 @@ Method | HTTP request | Description
 [**AwsDeleteRoleTagDenyList**](AuthApi.md#AwsDeleteRoleTagDenyList) | **Delete** /auth/{aws_mount_path}/roletag-denylist/{role_tag} | 
 [**AwsDeleteRoleTagDenyListTidySettings**](AuthApi.md#AwsDeleteRoleTagDenyListTidySettings) | **Delete** /auth/{aws_mount_path}/config/tidy/roletag-denylist | 
 [**AwsDeleteStsRole**](AuthApi.md#AwsDeleteStsRole) | **Delete** /auth/{aws_mount_path}/config/sts/{account_id} | 
-[**AwsListAuthRoles**](AuthApi.md#AwsListAuthRoles) | **Get** /auth/{aws_mount_path}/role | 
-[**AwsListCertificateConfigurations**](AuthApi.md#AwsListCertificateConfigurations) | **Get** /auth/{aws_mount_path}/config/certificates | 
-[**AwsListIdentityAccessList**](AuthApi.md#AwsListIdentityAccessList) | **Get** /auth/{aws_mount_path}/identity-accesslist | 
-[**AwsListIdentityWhitelist**](AuthApi.md#AwsListIdentityWhitelist) | **Get** /auth/{aws_mount_path}/identity-whitelist | 
-[**AwsListRoleTagBlacklists**](AuthApi.md#AwsListRoleTagBlacklists) | **Get** /auth/{aws_mount_path}/roletag-blacklist | 
-[**AwsListRoleTagDenyLists**](AuthApi.md#AwsListRoleTagDenyLists) | **Get** /auth/{aws_mount_path}/roletag-denylist | 
-[**AwsListStsRoleRelationships**](AuthApi.md#AwsListStsRoleRelationships) | **Get** /auth/{aws_mount_path}/config/sts | 
+[**AwsListAuthRoles**](AuthApi.md#AwsListAuthRoles) | **Get** /auth/{aws_mount_path}/role/ | 
+[**AwsListCertificateConfigurations**](AuthApi.md#AwsListCertificateConfigurations) | **Get** /auth/{aws_mount_path}/config/certificates/ | 
+[**AwsListIdentityAccessList**](AuthApi.md#AwsListIdentityAccessList) | **Get** /auth/{aws_mount_path}/identity-accesslist/ | 
+[**AwsListIdentityWhitelist**](AuthApi.md#AwsListIdentityWhitelist) | **Get** /auth/{aws_mount_path}/identity-whitelist/ | 
+[**AwsListRoleTagBlacklists**](AuthApi.md#AwsListRoleTagBlacklists) | **Get** /auth/{aws_mount_path}/roletag-blacklist/ | 
+[**AwsListRoleTagDenyLists**](AuthApi.md#AwsListRoleTagDenyLists) | **Get** /auth/{aws_mount_path}/roletag-denylist/ | 
+[**AwsListStsRoleRelationships**](AuthApi.md#AwsListStsRoleRelationships) | **Get** /auth/{aws_mount_path}/config/sts/ | 
 [**AwsLogin**](AuthApi.md#AwsLogin) | **Post** /auth/{aws_mount_path}/login | 
 [**AwsReadAuthRole**](AuthApi.md#AwsReadAuthRole) | **Get** /auth/{aws_mount_path}/role/{role} | 
 [**AwsReadCertificateConfiguration**](AuthApi.md#AwsReadCertificateConfiguration) | **Get** /auth/{aws_mount_path}/config/certificate/{cert_name} | 
@@ -109,7 +109,7 @@ Method | HTTP request | Description
 [**AzureConfigureAuth**](AuthApi.md#AzureConfigureAuth) | **Post** /auth/{azure_mount_path}/config | 
 [**AzureDeleteAuthConfiguration**](AuthApi.md#AzureDeleteAuthConfiguration) | **Delete** /auth/{azure_mount_path}/config | 
 [**AzureDeleteAuthRole**](AuthApi.md#AzureDeleteAuthRole) | **Delete** /auth/{azure_mount_path}/role/{name} | 
-[**AzureListAuthRoles**](AuthApi.md#AzureListAuthRoles) | **Get** /auth/{azure_mount_path}/role | 
+[**AzureListAuthRoles**](AuthApi.md#AzureListAuthRoles) | **Get** /auth/{azure_mount_path}/role/ | 
 [**AzureLogin**](AuthApi.md#AzureLogin) | **Post** /auth/{azure_mount_path}/login | 
 [**AzureReadAuthConfiguration**](AuthApi.md#AzureReadAuthConfiguration) | **Get** /auth/{azure_mount_path}/config | 
 [**AzureReadAuthRole**](AuthApi.md#AzureReadAuthRole) | **Get** /auth/{azure_mount_path}/role/{name} | 
@@ -121,8 +121,8 @@ Method | HTTP request | Description
 [**CertConfigure**](AuthApi.md#CertConfigure) | **Post** /auth/{cert_mount_path}/config | 
 [**CertDeleteCertificate**](AuthApi.md#CertDeleteCertificate) | **Delete** /auth/{cert_mount_path}/certs/{name} | Manage trusted certificates used for authentication.
 [**CertDeleteCrl**](AuthApi.md#CertDeleteCrl) | **Delete** /auth/{cert_mount_path}/crls/{name} | Manage Certificate Revocation Lists checked during authentication.
-[**CertListCertificates**](AuthApi.md#CertListCertificates) | **Get** /auth/{cert_mount_path}/certs | Manage trusted certificates used for authentication.
-[**CertListCrls**](AuthApi.md#CertListCrls) | **Get** /auth/{cert_mount_path}/crls | 
+[**CertListCertificates**](AuthApi.md#CertListCertificates) | **Get** /auth/{cert_mount_path}/certs/ | Manage trusted certificates used for authentication.
+[**CertListCrls**](AuthApi.md#CertListCrls) | **Get** /auth/{cert_mount_path}/crls/ | 
 [**CertLogin**](AuthApi.md#CertLogin) | **Post** /auth/{cert_mount_path}/login | 
 [**CertReadCertificate**](AuthApi.md#CertReadCertificate) | **Get** /auth/{cert_mount_path}/certs/{name} | Manage trusted certificates used for authentication.
 [**CertReadConfiguration**](AuthApi.md#CertReadConfiguration) | **Get** /auth/{cert_mount_path}/config | 
@@ -132,7 +132,7 @@ Method | HTTP request | Description
 [**CloudFoundryConfigure**](AuthApi.md#CloudFoundryConfigure) | **Post** /auth/{cf_mount_path}/config | 
 [**CloudFoundryDeleteConfiguration**](AuthApi.md#CloudFoundryDeleteConfiguration) | **Delete** /auth/{cf_mount_path}/config | 
 [**CloudFoundryDeleteRole**](AuthApi.md#CloudFoundryDeleteRole) | **Delete** /auth/{cf_mount_path}/roles/{role} | 
-[**CloudFoundryListRoles**](AuthApi.md#CloudFoundryListRoles) | **Get** /auth/{cf_mount_path}/roles | 
+[**CloudFoundryListRoles**](AuthApi.md#CloudFoundryListRoles) | **Get** /auth/{cf_mount_path}/roles/ | 
 [**CloudFoundryLogin**](AuthApi.md#CloudFoundryLogin) | **Post** /auth/{cf_mount_path}/login | 
 [**CloudFoundryReadConfiguration**](AuthApi.md#CloudFoundryReadConfiguration) | **Get** /auth/{cf_mount_path}/config | 
 [**CloudFoundryReadRole**](AuthApi.md#CloudFoundryReadRole) | **Get** /auth/{cf_mount_path}/roles/{role} | 
@@ -140,29 +140,29 @@ Method | HTTP request | Description
 [**GithubConfigure**](AuthApi.md#GithubConfigure) | **Post** /auth/{github_mount_path}/config | 
 [**GithubDeleteTeamMapping**](AuthApi.md#GithubDeleteTeamMapping) | **Delete** /auth/{github_mount_path}/map/teams/{key} | Read/write/delete a single teams mapping
 [**GithubDeleteUserMapping**](AuthApi.md#GithubDeleteUserMapping) | **Delete** /auth/{github_mount_path}/map/users/{key} | Read/write/delete a single users mapping
+[**GithubListTeams**](AuthApi.md#GithubListTeams) | **Get** /auth/{github_mount_path}/map/teams/ | Read mappings for teams
+[**GithubListUsers**](AuthApi.md#GithubListUsers) | **Get** /auth/{github_mount_path}/map/users/ | Read mappings for users
 [**GithubLogin**](AuthApi.md#GithubLogin) | **Post** /auth/{github_mount_path}/login | 
 [**GithubReadConfiguration**](AuthApi.md#GithubReadConfiguration) | **Get** /auth/{github_mount_path}/config | 
 [**GithubReadTeamMapping**](AuthApi.md#GithubReadTeamMapping) | **Get** /auth/{github_mount_path}/map/teams/{key} | Read/write/delete a single teams mapping
-[**GithubReadTeams**](AuthApi.md#GithubReadTeams) | **Get** /auth/{github_mount_path}/map/teams | Read mappings for teams
 [**GithubReadUserMapping**](AuthApi.md#GithubReadUserMapping) | **Get** /auth/{github_mount_path}/map/users/{key} | Read/write/delete a single users mapping
-[**GithubReadUsers**](AuthApi.md#GithubReadUsers) | **Get** /auth/{github_mount_path}/map/users | Read mappings for users
 [**GithubWriteTeamMapping**](AuthApi.md#GithubWriteTeamMapping) | **Post** /auth/{github_mount_path}/map/teams/{key} | Read/write/delete a single teams mapping
 [**GithubWriteUserMapping**](AuthApi.md#GithubWriteUserMapping) | **Post** /auth/{github_mount_path}/map/users/{key} | Read/write/delete a single users mapping
 [**GoogleCloudConfigureAuth**](AuthApi.md#GoogleCloudConfigureAuth) | **Post** /auth/{gcp_mount_path}/config | 
 [**GoogleCloudDeleteRole**](AuthApi.md#GoogleCloudDeleteRole) | **Delete** /auth/{gcp_mount_path}/role/{name} | Create a GCP role with associated policies and required attributes.
 [**GoogleCloudEditLabelsForRole**](AuthApi.md#GoogleCloudEditLabelsForRole) | **Post** /auth/{gcp_mount_path}/role/{name}/labels | Add or remove labels for an existing &#x27;gce&#x27; role
 [**GoogleCloudEditServiceAccountsForRole**](AuthApi.md#GoogleCloudEditServiceAccountsForRole) | **Post** /auth/{gcp_mount_path}/role/{name}/service-accounts | Add or remove service accounts for an existing &#x60;iam&#x60; role
-[**GoogleCloudListRoles**](AuthApi.md#GoogleCloudListRoles) | **Get** /auth/{gcp_mount_path}/role | Lists all the roles that are registered with Vault.
+[**GoogleCloudListRoles**](AuthApi.md#GoogleCloudListRoles) | **Get** /auth/{gcp_mount_path}/role/ | Lists all the roles that are registered with Vault.
 [**GoogleCloudLogin**](AuthApi.md#GoogleCloudLogin) | **Post** /auth/{gcp_mount_path}/login | 
 [**GoogleCloudReadAuthConfiguration**](AuthApi.md#GoogleCloudReadAuthConfiguration) | **Get** /auth/{gcp_mount_path}/config | 
 [**GoogleCloudReadRole**](AuthApi.md#GoogleCloudReadRole) | **Get** /auth/{gcp_mount_path}/role/{name} | Create a GCP role with associated policies and required attributes.
 [**GoogleCloudWriteRole**](AuthApi.md#GoogleCloudWriteRole) | **Post** /auth/{gcp_mount_path}/role/{name} | Create a GCP role with associated policies and required attributes.
 [**JwtConfigure**](AuthApi.md#JwtConfigure) | **Post** /auth/{jwt_mount_path}/config | Configure the JWT authentication backend.
 [**JwtDeleteRole**](AuthApi.md#JwtDeleteRole) | **Delete** /auth/{jwt_mount_path}/role/{name} | Delete an existing role.
-[**JwtListRoles**](AuthApi.md#JwtListRoles) | **Get** /auth/{jwt_mount_path}/role | Lists all the roles registered with the backend.
+[**JwtListRoles**](AuthApi.md#JwtListRoles) | **Get** /auth/{jwt_mount_path}/role/ | Lists all the roles registered with the backend.
 [**JwtLogin**](AuthApi.md#JwtLogin) | **Post** /auth/{jwt_mount_path}/login | Authenticates to Vault using a JWT (or OIDC) token.
 [**JwtOidcCallback**](AuthApi.md#JwtOidcCallback) | **Get** /auth/{jwt_mount_path}/oidc/callback | Callback endpoint to complete an OIDC login.
-[**JwtOidcCallbackWithParameters**](AuthApi.md#JwtOidcCallbackWithParameters) | **Post** /auth/{jwt_mount_path}/oidc/callback | Callback endpoint to handle form_posts.
+[**JwtOidcCallbackFormPost**](AuthApi.md#JwtOidcCallbackFormPost) | **Post** /auth/{jwt_mount_path}/oidc/callback | Callback endpoint to handle form_posts.
 [**JwtOidcRequestAuthorizationUrl**](AuthApi.md#JwtOidcRequestAuthorizationUrl) | **Post** /auth/{jwt_mount_path}/oidc/auth_url | Request an authorization URL to start an OIDC login flow.
 [**JwtReadConfiguration**](AuthApi.md#JwtReadConfiguration) | **Get** /auth/{jwt_mount_path}/config | Read the current JWT authentication backend configuration.
 [**JwtReadRole**](AuthApi.md#JwtReadRole) | **Get** /auth/{jwt_mount_path}/role/{name} | Read an existing role.
@@ -170,7 +170,7 @@ Method | HTTP request | Description
 [**KerberosConfigure**](AuthApi.md#KerberosConfigure) | **Post** /auth/{kerberos_mount_path}/config | 
 [**KerberosConfigureLdap**](AuthApi.md#KerberosConfigureLdap) | **Post** /auth/{kerberos_mount_path}/config/ldap | 
 [**KerberosDeleteGroup**](AuthApi.md#KerberosDeleteGroup) | **Delete** /auth/{kerberos_mount_path}/groups/{name} | 
-[**KerberosListGroups**](AuthApi.md#KerberosListGroups) | **Get** /auth/{kerberos_mount_path}/groups | 
+[**KerberosListGroups**](AuthApi.md#KerberosListGroups) | **Get** /auth/{kerberos_mount_path}/groups/ | 
 [**KerberosLogin**](AuthApi.md#KerberosLogin) | **Post** /auth/{kerberos_mount_path}/login | 
 [**KerberosReadConfiguration**](AuthApi.md#KerberosReadConfiguration) | **Get** /auth/{kerberos_mount_path}/config | 
 [**KerberosReadGroup**](AuthApi.md#KerberosReadGroup) | **Get** /auth/{kerberos_mount_path}/groups/{name} | 
@@ -178,7 +178,7 @@ Method | HTTP request | Description
 [**KerberosWriteGroup**](AuthApi.md#KerberosWriteGroup) | **Post** /auth/{kerberos_mount_path}/groups/{name} | 
 [**KubernetesConfigureAuth**](AuthApi.md#KubernetesConfigureAuth) | **Post** /auth/{kubernetes_mount_path}/config | 
 [**KubernetesDeleteAuthRole**](AuthApi.md#KubernetesDeleteAuthRole) | **Delete** /auth/{kubernetes_mount_path}/role/{name} | Register an role with the backend.
-[**KubernetesListAuthRoles**](AuthApi.md#KubernetesListAuthRoles) | **Get** /auth/{kubernetes_mount_path}/role | Lists all the roles registered with the backend.
+[**KubernetesListAuthRoles**](AuthApi.md#KubernetesListAuthRoles) | **Get** /auth/{kubernetes_mount_path}/role/ | Lists all the roles registered with the backend.
 [**KubernetesLogin**](AuthApi.md#KubernetesLogin) | **Post** /auth/{kubernetes_mount_path}/login | Authenticates Kubernetes service accounts with Vault.
 [**KubernetesReadAuthConfiguration**](AuthApi.md#KubernetesReadAuthConfiguration) | **Get** /auth/{kubernetes_mount_path}/config | 
 [**KubernetesReadAuthRole**](AuthApi.md#KubernetesReadAuthRole) | **Get** /auth/{kubernetes_mount_path}/role/{name} | Register an role with the backend.
@@ -186,8 +186,8 @@ Method | HTTP request | Description
 [**LdapConfigureAuth**](AuthApi.md#LdapConfigureAuth) | **Post** /auth/{ldap_mount_path}/config | 
 [**LdapDeleteGroup**](AuthApi.md#LdapDeleteGroup) | **Delete** /auth/{ldap_mount_path}/groups/{name} | Manage additional groups for users allowed to authenticate.
 [**LdapDeleteUser**](AuthApi.md#LdapDeleteUser) | **Delete** /auth/{ldap_mount_path}/users/{name} | Manage users allowed to authenticate.
-[**LdapListGroups**](AuthApi.md#LdapListGroups) | **Get** /auth/{ldap_mount_path}/groups | Manage additional groups for users allowed to authenticate.
-[**LdapListUsers**](AuthApi.md#LdapListUsers) | **Get** /auth/{ldap_mount_path}/users | Manage users allowed to authenticate.
+[**LdapListGroups**](AuthApi.md#LdapListGroups) | **Get** /auth/{ldap_mount_path}/groups/ | Manage additional groups for users allowed to authenticate.
+[**LdapListUsers**](AuthApi.md#LdapListUsers) | **Get** /auth/{ldap_mount_path}/users/ | Manage users allowed to authenticate.
 [**LdapLogin**](AuthApi.md#LdapLogin) | **Post** /auth/{ldap_mount_path}/login/{username} | Log in with a username and password.
 [**LdapReadAuthConfiguration**](AuthApi.md#LdapReadAuthConfiguration) | **Get** /auth/{ldap_mount_path}/config | 
 [**LdapReadGroup**](AuthApi.md#LdapReadGroup) | **Get** /auth/{ldap_mount_path}/groups/{name} | Manage additional groups for users allowed to authenticate.
@@ -197,7 +197,7 @@ Method | HTTP request | Description
 [**OciConfigure**](AuthApi.md#OciConfigure) | **Post** /auth/{oci_mount_path}/config | 
 [**OciDeleteConfiguration**](AuthApi.md#OciDeleteConfiguration) | **Delete** /auth/{oci_mount_path}/config | 
 [**OciDeleteRole**](AuthApi.md#OciDeleteRole) | **Delete** /auth/{oci_mount_path}/role/{role} | Create a role and associate policies to it.
-[**OciListRoles**](AuthApi.md#OciListRoles) | **Get** /auth/{oci_mount_path}/role | Lists all the roles that are registered with Vault.
+[**OciListRoles**](AuthApi.md#OciListRoles) | **Get** /auth/{oci_mount_path}/role/ | Lists all the roles that are registered with Vault.
 [**OciLogin**](AuthApi.md#OciLogin) | **Post** /auth/{oci_mount_path}/login/{role} | Authenticates to Vault using OCI credentials
 [**OciReadConfiguration**](AuthApi.md#OciReadConfiguration) | **Get** /auth/{oci_mount_path}/config | 
 [**OciReadRole**](AuthApi.md#OciReadRole) | **Get** /auth/{oci_mount_path}/role/{role} | Create a role and associate policies to it.
@@ -205,8 +205,8 @@ Method | HTTP request | Description
 [**OktaConfigure**](AuthApi.md#OktaConfigure) | **Post** /auth/{okta_mount_path}/config | 
 [**OktaDeleteGroup**](AuthApi.md#OktaDeleteGroup) | **Delete** /auth/{okta_mount_path}/groups/{name} | Manage users allowed to authenticate.
 [**OktaDeleteUser**](AuthApi.md#OktaDeleteUser) | **Delete** /auth/{okta_mount_path}/users/{name} | Manage additional groups for users allowed to authenticate.
-[**OktaListGroups**](AuthApi.md#OktaListGroups) | **Get** /auth/{okta_mount_path}/groups | Manage users allowed to authenticate.
-[**OktaListUsers**](AuthApi.md#OktaListUsers) | **Get** /auth/{okta_mount_path}/users | Manage additional groups for users allowed to authenticate.
+[**OktaListGroups**](AuthApi.md#OktaListGroups) | **Get** /auth/{okta_mount_path}/groups/ | Manage users allowed to authenticate.
+[**OktaListUsers**](AuthApi.md#OktaListUsers) | **Get** /auth/{okta_mount_path}/users/ | Manage additional groups for users allowed to authenticate.
 [**OktaLogin**](AuthApi.md#OktaLogin) | **Post** /auth/{okta_mount_path}/login/{username} | Log in with a username and password.
 [**OktaReadConfiguration**](AuthApi.md#OktaReadConfiguration) | **Get** /auth/{okta_mount_path}/config | 
 [**OktaReadGroup**](AuthApi.md#OktaReadGroup) | **Get** /auth/{okta_mount_path}/groups/{name} | Manage users allowed to authenticate.
@@ -216,7 +216,7 @@ Method | HTTP request | Description
 [**OktaWriteUser**](AuthApi.md#OktaWriteUser) | **Post** /auth/{okta_mount_path}/users/{name} | Manage additional groups for users allowed to authenticate.
 [**RadiusConfigure**](AuthApi.md#RadiusConfigure) | **Post** /auth/{radius_mount_path}/config | 
 [**RadiusDeleteUser**](AuthApi.md#RadiusDeleteUser) | **Delete** /auth/{radius_mount_path}/users/{name} | Manage users allowed to authenticate.
-[**RadiusListUsers**](AuthApi.md#RadiusListUsers) | **Get** /auth/{radius_mount_path}/users | Manage users allowed to authenticate.
+[**RadiusListUsers**](AuthApi.md#RadiusListUsers) | **Get** /auth/{radius_mount_path}/users/ | Manage users allowed to authenticate.
 [**RadiusLogin**](AuthApi.md#RadiusLogin) | **Post** /auth/{radius_mount_path}/login | Log in with a username and password.
 [**RadiusLoginWithUsername**](AuthApi.md#RadiusLoginWithUsername) | **Post** /auth/{radius_mount_path}/login/{urlusername} | Log in with a username and password.
 [**RadiusReadConfiguration**](AuthApi.md#RadiusReadConfiguration) | **Get** /auth/{radius_mount_path}/config | 
@@ -226,8 +226,8 @@ Method | HTTP request | Description
 [**TokenCreateAgainstRole**](AuthApi.md#TokenCreateAgainstRole) | **Post** /auth/token/create/{role_name} | This token create path is used to create new tokens adhering to the given role.
 [**TokenCreateOrphan**](AuthApi.md#TokenCreateOrphan) | **Post** /auth/token/create-orphan | The token create path is used to create new orphan tokens.
 [**TokenDeleteRole**](AuthApi.md#TokenDeleteRole) | **Delete** /auth/token/roles/{role_name} | 
-[**TokenListAccessors**](AuthApi.md#TokenListAccessors) | **Get** /auth/token/accessors | List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires &#x27;sudo&#x27; capability in addition to &#x27;list&#x27;.
-[**TokenListRoles**](AuthApi.md#TokenListRoles) | **Get** /auth/token/roles | This endpoint lists configured roles.
+[**TokenListAccessors**](AuthApi.md#TokenListAccessors) | **Get** /auth/token/accessors/ | List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires &#x27;sudo&#x27; capability in addition to &#x27;list&#x27;.
+[**TokenListRoles**](AuthApi.md#TokenListRoles) | **Get** /auth/token/roles/ | This endpoint lists configured roles.
 [**TokenLookUp**](AuthApi.md#TokenLookUp) | **Post** /auth/token/lookup | 
 [**TokenLookUpAccessor**](AuthApi.md#TokenLookUpAccessor) | **Post** /auth/token/lookup-accessor | This endpoint will lookup a token associated with the given accessor and its properties. Response will not contain the token ID.
 [**TokenLookUpSelf**](AuthApi.md#TokenLookUpSelf) | **Get** /auth/token/lookup-self | 
@@ -242,16 +242,12 @@ Method | HTTP request | Description
 [**TokenTidy**](AuthApi.md#TokenTidy) | **Post** /auth/token/tidy | This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
 [**TokenWriteRole**](AuthApi.md#TokenWriteRole) | **Post** /auth/token/roles/{role_name} | 
 [**UserpassDeleteUser**](AuthApi.md#UserpassDeleteUser) | **Delete** /auth/{userpass_mount_path}/users/{username} | Manage users allowed to authenticate.
-[**UserpassListUsers**](AuthApi.md#UserpassListUsers) | **Get** /auth/{userpass_mount_path}/users | Manage users allowed to authenticate.
+[**UserpassListUsers**](AuthApi.md#UserpassListUsers) | **Get** /auth/{userpass_mount_path}/users/ | Manage users allowed to authenticate.
 [**UserpassLogin**](AuthApi.md#UserpassLogin) | **Post** /auth/{userpass_mount_path}/login/{username} | Log in with a username and password.
 [**UserpassReadUser**](AuthApi.md#UserpassReadUser) | **Get** /auth/{userpass_mount_path}/users/{username} | Manage users allowed to authenticate.
 [**UserpassResetPassword**](AuthApi.md#UserpassResetPassword) | **Post** /auth/{userpass_mount_path}/users/{username}/password | Reset user&#x27;s password.
 [**UserpassUpdatePolicies**](AuthApi.md#UserpassUpdatePolicies) | **Post** /auth/{userpass_mount_path}/users/{username}/policies | Update the policies associated with the username.
 [**UserpassWriteUser**](AuthApi.md#UserpassWriteUser) | **Post** /auth/{userpass_mount_path}/users/{username} | Manage users allowed to authenticate.
-
-
-
-
 
 ## AliCloudDeleteAuthRole
 
@@ -278,11 +274,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | The name of the role as it should appear in Vault.
 	resp, err := client.Auth.AliCloudDeleteAuthRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -314,8 +311,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AliCloudListAuthRoles
 
 Lists all the roles that are registered with Vault.
@@ -341,9 +336,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AliCloudListAuthRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -369,12 +365,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AliCloudLogin
 
@@ -402,11 +396,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAliCloudLoginRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AliCloudLogin(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.AliCloudLoginRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -437,8 +433,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AliCloudReadAuthRole
 
 Create a role and associate policies to it.
@@ -464,11 +458,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | The name of the role as it should appear in Vault.
 	resp, err := client.Auth.AliCloudReadAuthRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -500,8 +495,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AliCloudWriteAuthRole
 
 Create a role and associate policies to it.
@@ -528,13 +521,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | The name of the role as it should appear in Vault.
-	request := schema.NewAliCloudWriteAuthRoleRequestWithDefaults()
 	resp, err := client.Auth.AliCloudWriteAuthRole(
 		context.Background(),
 		role,
-		request,
-		vault.WithToken("my-token"),
+		schema.AliCloudWriteAuthRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("alicloud"),
 	)
 	if err != nil {
@@ -567,8 +562,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleDeleteBindSecretId
 
 
@@ -594,11 +587,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteBindSecretId(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -629,8 +623,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AppRoleDeleteBoundCidrList
 
@@ -657,11 +649,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteBoundCidrList(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -692,8 +685,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AppRoleDeletePeriod
 
@@ -720,11 +711,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeletePeriod(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -755,8 +747,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AppRoleDeletePolicies
 
@@ -783,11 +773,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeletePolicies(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -818,8 +809,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AppRoleDeleteRole
 
@@ -846,11 +835,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteRole(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -881,8 +871,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AppRoleDeleteSecretIdBoundCidrs
 
@@ -909,11 +897,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteSecretIdBoundCidrs(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -944,8 +933,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AppRoleDeleteSecretIdNumUses
 
@@ -972,11 +959,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteSecretIdNumUses(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1007,8 +995,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AppRoleDeleteSecretIdTtl
 
@@ -1035,11 +1021,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteSecretIdTtl(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1070,8 +1057,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AppRoleDeleteTokenBoundCidrs
 
@@ -1098,11 +1083,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteTokenBoundCidrs(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1133,8 +1119,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AppRoleDeleteTokenMaxTtl
 
@@ -1161,11 +1145,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteTokenMaxTtl(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1196,8 +1181,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AppRoleDeleteTokenNumUses
 
@@ -1224,11 +1207,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteTokenNumUses(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1259,8 +1243,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AppRoleDeleteTokenTtl
 
@@ -1287,11 +1269,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleDeleteTokenTtl(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1322,8 +1305,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AppRoleDestroySecretId
 
@@ -1351,13 +1332,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleDestroySecretIdRequestWithDefaults()
 	resp, err := client.Auth.AppRoleDestroySecretId(
 		context.Background(),
 		roleName,
-		request,
-		vault.WithToken("my-token"),
+		schema.AppRoleDestroySecretIdRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1390,8 +1373,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleDestroySecretIdByAccessor
 
 
@@ -1418,13 +1399,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleDestroySecretIdByAccessorRequestWithDefaults()
 	resp, err := client.Auth.AppRoleDestroySecretIdByAccessor(
 		context.Background(),
 		roleName,
-		request,
-		vault.WithToken("my-token"),
+		schema.AppRoleDestroySecretIdByAccessorRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1457,8 +1440,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleListRoles
 
 
@@ -1484,9 +1465,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AppRoleListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1512,12 +1494,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-[**AppRoleListRolesResponse**](AppRoleListRolesResponse.md)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AppRoleListSecretIds
 
@@ -1544,11 +1524,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleListSecretIds(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1576,12 +1557,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-[**AppRoleListSecretIdsResponse**](AppRoleListSecretIdsResponse.md)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AppRoleLogin
 
@@ -1609,11 +1588,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAppRoleLoginRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AppRoleLogin(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.AppRoleLoginRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1644,8 +1625,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleLookUpSecretId
 
 
@@ -1672,13 +1651,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleLookUpSecretIdRequestWithDefaults()
 	resp, err := client.Auth.AppRoleLookUpSecretId(
 		context.Background(),
 		roleName,
-		request,
-		vault.WithToken("my-token"),
+		schema.AppRoleLookUpSecretIdRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1711,8 +1692,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleLookUpSecretIdByAccessor
 
 
@@ -1739,13 +1718,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleLookUpSecretIdByAccessorRequestWithDefaults()
 	resp, err := client.Auth.AppRoleLookUpSecretIdByAccessor(
 		context.Background(),
 		roleName,
-		request,
-		vault.WithToken("my-token"),
+		schema.AppRoleLookUpSecretIdByAccessorRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1778,8 +1759,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleReadBindSecretId
 
 
@@ -1805,11 +1784,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadBindSecretId(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1841,8 +1821,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleReadBoundCidrList
 
 
@@ -1868,11 +1846,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadBoundCidrList(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1904,8 +1883,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleReadLocalSecretIds
 
 
@@ -1931,11 +1908,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadLocalSecretIds(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -1967,8 +1945,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleReadPeriod
 
 
@@ -1994,11 +1970,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadPeriod(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2030,8 +2007,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleReadPolicies
 
 
@@ -2057,11 +2032,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadPolicies(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2093,8 +2069,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleReadRole
 
 
@@ -2120,11 +2094,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadRole(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2156,8 +2131,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleReadRoleId
 
 
@@ -2183,11 +2156,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadRoleId(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2219,8 +2193,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleReadSecretIdBoundCidrs
 
 
@@ -2246,11 +2218,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadSecretIdBoundCidrs(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2282,8 +2255,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleReadSecretIdNumUses
 
 
@@ -2309,11 +2280,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadSecretIdNumUses(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2345,8 +2317,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleReadSecretIdTtl
 
 
@@ -2372,11 +2342,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadSecretIdTtl(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2408,8 +2379,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleReadTokenBoundCidrs
 
 
@@ -2435,11 +2404,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadTokenBoundCidrs(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2471,8 +2441,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleReadTokenMaxTtl
 
 
@@ -2498,11 +2466,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadTokenMaxTtl(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2534,8 +2503,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleReadTokenNumUses
 
 
@@ -2561,11 +2528,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadTokenNumUses(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2597,8 +2565,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleReadTokenTtl
 
 
@@ -2624,11 +2590,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	resp, err := client.Auth.AppRoleReadTokenTtl(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2660,8 +2627,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleTidySecretId
 
 
@@ -2687,9 +2652,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AppRoleTidySecretId(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2719,8 +2685,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleWriteBindSecretId
 
 
@@ -2747,13 +2711,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteBindSecretIdRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteBindSecretId(
 		context.Background(),
 		roleName,
-		request,
-		vault.WithToken("my-token"),
+		schema.AppRoleWriteBindSecretIdRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2786,8 +2752,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleWriteBoundCidrList
 
 
@@ -2814,13 +2778,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteBoundCidrListRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteBoundCidrList(
 		context.Background(),
 		roleName,
-		request,
-		vault.WithToken("my-token"),
+		schema.AppRoleWriteBoundCidrListRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2853,8 +2819,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleWriteCustomSecretId
 
 
@@ -2881,13 +2845,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteCustomSecretIdRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteCustomSecretId(
 		context.Background(),
 		roleName,
-		request,
-		vault.WithToken("my-token"),
+		schema.AppRoleWriteCustomSecretIdRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2920,8 +2886,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleWritePeriod
 
 
@@ -2948,13 +2912,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWritePeriodRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWritePeriod(
 		context.Background(),
 		roleName,
-		request,
-		vault.WithToken("my-token"),
+		schema.AppRoleWritePeriodRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -2987,8 +2953,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleWritePolicies
 
 
@@ -3015,13 +2979,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWritePoliciesRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWritePolicies(
 		context.Background(),
 		roleName,
-		request,
-		vault.WithToken("my-token"),
+		schema.AppRoleWritePoliciesRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3054,8 +3020,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleWriteRole
 
 
@@ -3082,13 +3046,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteRoleRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteRole(
 		context.Background(),
 		roleName,
-		request,
-		vault.WithToken("my-token"),
+		schema.AppRoleWriteRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3121,8 +3087,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleWriteRoleId
 
 
@@ -3149,13 +3113,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteRoleIdRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteRoleId(
 		context.Background(),
 		roleName,
-		request,
-		vault.WithToken("my-token"),
+		schema.AppRoleWriteRoleIdRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3188,8 +3154,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleWriteSecretId
 
 
@@ -3216,13 +3180,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteSecretIdRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteSecretId(
 		context.Background(),
 		roleName,
-		request,
-		vault.WithToken("my-token"),
+		schema.AppRoleWriteSecretIdRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3255,8 +3221,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleWriteSecretIdBoundCidrs
 
 
@@ -3283,13 +3247,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteSecretIdBoundCidrsRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteSecretIdBoundCidrs(
 		context.Background(),
 		roleName,
-		request,
-		vault.WithToken("my-token"),
+		schema.AppRoleWriteSecretIdBoundCidrsRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3322,8 +3288,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleWriteSecretIdNumUses
 
 
@@ -3350,13 +3314,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteSecretIdNumUsesRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteSecretIdNumUses(
 		context.Background(),
 		roleName,
-		request,
-		vault.WithToken("my-token"),
+		schema.AppRoleWriteSecretIdNumUsesRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3389,8 +3355,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleWriteSecretIdTtl
 
 
@@ -3417,13 +3381,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteSecretIdTtlRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteSecretIdTtl(
 		context.Background(),
 		roleName,
-		request,
-		vault.WithToken("my-token"),
+		schema.AppRoleWriteSecretIdTtlRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3456,8 +3422,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleWriteTokenBoundCidrs
 
 
@@ -3484,13 +3448,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteTokenBoundCidrsRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteTokenBoundCidrs(
 		context.Background(),
 		roleName,
-		request,
-		vault.WithToken("my-token"),
+		schema.AppRoleWriteTokenBoundCidrsRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3523,8 +3489,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleWriteTokenMaxTtl
 
 
@@ -3551,13 +3515,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteTokenMaxTtlRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteTokenMaxTtl(
 		context.Background(),
 		roleName,
-		request,
-		vault.WithToken("my-token"),
+		schema.AppRoleWriteTokenMaxTtlRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3590,8 +3556,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleWriteTokenNumUses
 
 
@@ -3618,13 +3582,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteTokenNumUsesRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteTokenNumUses(
 		context.Background(),
 		roleName,
-		request,
-		vault.WithToken("my-token"),
+		schema.AppRoleWriteTokenNumUsesRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3657,8 +3623,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AppRoleWriteTokenTtl
 
 
@@ -3685,13 +3649,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	request := schema.NewAppRoleWriteTokenTtlRequestWithDefaults()
 	resp, err := client.Auth.AppRoleWriteTokenTtl(
 		context.Background(),
 		roleName,
-		request,
-		vault.WithToken("my-token"),
+		schema.AppRoleWriteTokenTtlRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("approle"),
 	)
 	if err != nil {
@@ -3724,8 +3690,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsConfigureCertificate
 
 
@@ -3752,13 +3716,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	certName := "certName_example" // string | Name of the certificate.
-	request := schema.NewAwsConfigureCertificateRequestWithDefaults()
 	resp, err := client.Auth.AwsConfigureCertificate(
 		context.Background(),
 		certName,
-		request,
-		vault.WithToken("my-token"),
+		schema.AwsConfigureCertificateRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -3791,8 +3757,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsConfigureClient
 
 
@@ -3819,11 +3783,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAwsConfigureClientRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsConfigureClient(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.AwsConfigureClientRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -3854,8 +3820,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsConfigureIdentityAccessListTidyOperation
 
 
@@ -3882,11 +3846,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAwsConfigureIdentityAccessListTidyOperationRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsConfigureIdentityAccessListTidyOperation(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.AwsConfigureIdentityAccessListTidyOperationRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -3917,8 +3883,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsConfigureIdentityIntegration
 
 
@@ -3945,11 +3909,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAwsConfigureIdentityIntegrationRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsConfigureIdentityIntegration(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.AwsConfigureIdentityIntegrationRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -3980,8 +3946,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsConfigureIdentityWhitelistTidyOperation
 
 
@@ -4008,11 +3972,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAwsConfigureIdentityWhitelistTidyOperationRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsConfigureIdentityWhitelistTidyOperation(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.AwsConfigureIdentityWhitelistTidyOperationRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4043,8 +4009,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsConfigureRoleTagBlacklistTidyOperation
 
 
@@ -4071,11 +4035,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAwsConfigureRoleTagBlacklistTidyOperationRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsConfigureRoleTagBlacklistTidyOperation(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.AwsConfigureRoleTagBlacklistTidyOperationRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4106,8 +4072,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsConfigureRoleTagDenyListTidyOperation
 
 
@@ -4134,11 +4098,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAwsConfigureRoleTagDenyListTidyOperationRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsConfigureRoleTagDenyListTidyOperation(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.AwsConfigureRoleTagDenyListTidyOperationRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4169,8 +4135,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsDeleteAuthRole
 
 
@@ -4196,11 +4160,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | Name of the role.
 	resp, err := client.Auth.AwsDeleteAuthRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4232,8 +4197,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsDeleteCertificateConfiguration
 
 
@@ -4259,11 +4222,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	certName := "certName_example" // string | Name of the certificate.
 	resp, err := client.Auth.AwsDeleteCertificateConfiguration(
 		context.Background(),
 		certName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4295,8 +4259,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsDeleteClientConfiguration
 
 
@@ -4322,9 +4284,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsDeleteClientConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4353,8 +4316,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AwsDeleteIdentityAccessList
 
@@ -4381,11 +4342,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 	resp, err := client.Auth.AwsDeleteIdentityAccessList(
 		context.Background(),
 		instanceId,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4416,8 +4378,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AwsDeleteIdentityAccessListTidySettings
 
@@ -4444,9 +4404,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsDeleteIdentityAccessListTidySettings(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4476,8 +4437,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsDeleteIdentityWhitelist
 
 
@@ -4503,11 +4462,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 	resp, err := client.Auth.AwsDeleteIdentityWhitelist(
 		context.Background(),
 		instanceId,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4539,8 +4499,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsDeleteIdentityWhitelistTidySettings
 
 
@@ -4566,9 +4524,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsDeleteIdentityWhitelistTidySettings(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4597,8 +4556,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AwsDeleteRoleTagBlacklist
 
@@ -4625,11 +4582,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 	resp, err := client.Auth.AwsDeleteRoleTagBlacklist(
 		context.Background(),
 		roleTag,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4660,8 +4618,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AwsDeleteRoleTagBlacklistTidySettings
 
@@ -4688,9 +4644,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsDeleteRoleTagBlacklistTidySettings(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4720,8 +4677,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsDeleteRoleTagDenyList
 
 
@@ -4747,11 +4702,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 	resp, err := client.Auth.AwsDeleteRoleTagDenyList(
 		context.Background(),
 		roleTag,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4783,8 +4739,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsDeleteRoleTagDenyListTidySettings
 
 
@@ -4810,9 +4764,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsDeleteRoleTagDenyListTidySettings(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4842,8 +4797,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsDeleteStsRole
 
 
@@ -4869,11 +4822,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 	resp, err := client.Auth.AwsDeleteStsRole(
 		context.Background(),
 		accountId,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4905,8 +4859,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsListAuthRoles
 
 
@@ -4932,9 +4884,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsListAuthRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -4960,12 +4913,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AwsListCertificateConfigurations
 
@@ -4992,9 +4943,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsListCertificateConfigurations(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5020,12 +4972,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AwsListIdentityAccessList
 
@@ -5052,9 +5002,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsListIdentityAccessList(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5080,12 +5031,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AwsListIdentityWhitelist
 
@@ -5112,9 +5061,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsListIdentityWhitelist(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5140,12 +5090,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AwsListRoleTagBlacklists
 
@@ -5172,9 +5120,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsListRoleTagBlacklists(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5200,12 +5149,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AwsListRoleTagDenyLists
 
@@ -5232,9 +5179,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsListRoleTagDenyLists(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5260,12 +5208,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AwsListStsRoleRelationships
 
@@ -5292,9 +5238,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsListStsRoleRelationships(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5320,12 +5267,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AwsLogin
 
@@ -5353,11 +5298,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAwsLoginRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsLogin(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.AwsLoginRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5388,8 +5335,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsReadAuthRole
 
 
@@ -5415,11 +5360,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | Name of the role.
 	resp, err := client.Auth.AwsReadAuthRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5451,8 +5397,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsReadCertificateConfiguration
 
 
@@ -5478,11 +5422,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	certName := "certName_example" // string | Name of the certificate.
 	resp, err := client.Auth.AwsReadCertificateConfiguration(
 		context.Background(),
 		certName,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5514,8 +5459,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsReadClientConfiguration
 
 
@@ -5541,9 +5484,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsReadClientConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5572,8 +5516,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AwsReadIdentityAccessList
 
@@ -5600,11 +5542,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 	resp, err := client.Auth.AwsReadIdentityAccessList(
 		context.Background(),
 		instanceId,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5635,8 +5578,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AwsReadIdentityAccessListTidySettings
 
@@ -5663,9 +5604,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsReadIdentityAccessListTidySettings(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5694,8 +5636,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AwsReadIdentityIntegrationConfiguration
 
@@ -5722,9 +5662,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsReadIdentityIntegrationConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5754,8 +5695,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsReadIdentityWhitelist
 
 
@@ -5781,11 +5720,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 	resp, err := client.Auth.AwsReadIdentityWhitelist(
 		context.Background(),
 		instanceId,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5817,8 +5757,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsReadIdentityWhitelistTidySettings
 
 
@@ -5844,9 +5782,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsReadIdentityWhitelistTidySettings(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5875,8 +5814,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AwsReadRoleTagBlacklist
 
@@ -5903,11 +5840,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 	resp, err := client.Auth.AwsReadRoleTagBlacklist(
 		context.Background(),
 		roleTag,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5938,8 +5876,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AwsReadRoleTagBlacklistTidySettings
 
@@ -5966,9 +5902,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsReadRoleTagBlacklistTidySettings(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -5998,8 +5935,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsReadRoleTagDenyList
 
 
@@ -6025,11 +5960,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 	resp, err := client.Auth.AwsReadRoleTagDenyList(
 		context.Background(),
 		roleTag,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6061,8 +5997,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsReadRoleTagDenyListTidySettings
 
 
@@ -6088,9 +6022,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsReadRoleTagDenyListTidySettings(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6120,8 +6055,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsReadStsRole
 
 
@@ -6147,11 +6080,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 	resp, err := client.Auth.AwsReadStsRole(
 		context.Background(),
 		accountId,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6183,8 +6117,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsRotateRootCredentials
 
 
@@ -6210,9 +6142,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsRotateRootCredentials(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6242,8 +6175,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsTidyIdentityAccessList
 
 
@@ -6270,11 +6201,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAwsTidyIdentityAccessListRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsTidyIdentityAccessList(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.AwsTidyIdentityAccessListRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6305,8 +6238,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsTidyIdentityWhitelist
 
 
@@ -6333,11 +6264,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAwsTidyIdentityWhitelistRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsTidyIdentityWhitelist(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.AwsTidyIdentityWhitelistRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6368,8 +6301,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsTidyRoleTagBlacklist
 
 
@@ -6396,11 +6327,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAwsTidyRoleTagBlacklistRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsTidyRoleTagBlacklist(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.AwsTidyRoleTagBlacklistRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6431,8 +6364,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsTidyRoleTagDenyList
 
 
@@ -6459,11 +6390,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAwsTidyRoleTagDenyListRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AwsTidyRoleTagDenyList(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.AwsTidyRoleTagDenyListRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6494,8 +6427,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsWriteAuthRole
 
 
@@ -6522,13 +6453,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | Name of the role.
-	request := schema.NewAwsWriteAuthRoleRequestWithDefaults()
 	resp, err := client.Auth.AwsWriteAuthRole(
 		context.Background(),
 		role,
-		request,
-		vault.WithToken("my-token"),
+		schema.AwsWriteAuthRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6561,8 +6494,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsWriteRoleTag
 
 
@@ -6589,13 +6520,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | Name of the role.
-	request := schema.NewAwsWriteRoleTagRequestWithDefaults()
 	resp, err := client.Auth.AwsWriteRoleTag(
 		context.Background(),
 		role,
-		request,
-		vault.WithToken("my-token"),
+		schema.AwsWriteRoleTagRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6628,8 +6561,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AwsWriteRoleTagBlacklist
 
 
@@ -6655,11 +6586,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 	resp, err := client.Auth.AwsWriteRoleTagBlacklist(
 		context.Background(),
 		roleTag,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6690,8 +6622,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AwsWriteRoleTagDenyList
 
@@ -6718,11 +6648,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 	resp, err := client.Auth.AwsWriteRoleTagDenyList(
 		context.Background(),
 		roleTag,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6753,8 +6684,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AwsWriteStsRole
 
@@ -6782,13 +6711,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-	request := schema.NewAwsWriteStsRoleRequestWithDefaults()
 	resp, err := client.Auth.AwsWriteStsRole(
 		context.Background(),
 		accountId,
-		request,
-		vault.WithToken("my-token"),
+		schema.AwsWriteStsRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("aws"),
 	)
 	if err != nil {
@@ -6821,8 +6752,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AzureConfigureAuth
 
 
@@ -6849,11 +6778,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAzureConfigureAuthRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AzureConfigureAuth(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.AzureConfigureAuthRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -6884,8 +6815,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AzureDeleteAuthConfiguration
 
 
@@ -6911,9 +6840,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AzureDeleteAuthConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -6943,8 +6873,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AzureDeleteAuthRole
 
 
@@ -6970,11 +6898,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.AzureDeleteAuthRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -7006,8 +6935,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AzureListAuthRoles
 
 
@@ -7033,9 +6960,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AzureListAuthRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -7061,12 +6989,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## AzureLogin
 
@@ -7094,11 +7020,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewAzureLoginRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AzureLogin(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.AzureLoginRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -7129,8 +7057,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AzureReadAuthConfiguration
 
 
@@ -7156,9 +7082,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AzureReadAuthConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -7188,8 +7115,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AzureReadAuthRole
 
 
@@ -7215,11 +7140,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.AzureReadAuthRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -7251,8 +7177,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AzureRotateRootCredentials
 
 
@@ -7278,9 +7202,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.AzureRotateRootCredentials(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -7310,8 +7235,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## AzureWriteAuthRole
 
 
@@ -7338,13 +7261,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
-	request := schema.NewAzureWriteAuthRoleRequestWithDefaults()
 	resp, err := client.Auth.AzureWriteAuthRole(
 		context.Background(),
 		name,
-		request,
-		vault.WithToken("my-token"),
+		schema.AzureWriteAuthRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("azure"),
 	)
 	if err != nil {
@@ -7377,8 +7302,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## CentrifyConfigure
 
 
@@ -7405,11 +7328,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewCentrifyConfigureRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.CentrifyConfigure(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.CentrifyConfigureRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("centrify"),
 	)
 	if err != nil {
@@ -7440,8 +7365,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## CentrifyLogin
 
 Log in with a username and password.
@@ -7468,11 +7391,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewCentrifyLoginRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.CentrifyLogin(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.CentrifyLoginRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("centrify"),
 	)
 	if err != nil {
@@ -7503,8 +7428,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## CentrifyReadConfiguration
 
 
@@ -7530,9 +7453,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.CentrifyReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("centrify"),
 	)
 	if err != nil {
@@ -7562,8 +7486,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## CertConfigure
 
 
@@ -7590,11 +7512,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewCertConfigureRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.CertConfigure(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.CertConfigureRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -7625,8 +7549,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## CertDeleteCertificate
 
 Manage trusted certificates used for authentication.
@@ -7652,11 +7574,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the certificate
 	resp, err := client.Auth.CertDeleteCertificate(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -7687,8 +7610,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## CertDeleteCrl
 
@@ -7715,11 +7636,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the certificate
 	resp, err := client.Auth.CertDeleteCrl(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -7751,8 +7673,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## CertListCertificates
 
 Manage trusted certificates used for authentication.
@@ -7778,9 +7698,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.CertListCertificates(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -7806,12 +7727,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## CertListCrls
 
@@ -7838,9 +7757,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.CertListCrls(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -7866,12 +7786,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## CertLogin
 
@@ -7899,11 +7817,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewCertLoginRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.CertLogin(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.CertLoginRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -7934,8 +7854,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## CertReadCertificate
 
 Manage trusted certificates used for authentication.
@@ -7961,11 +7879,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the certificate
 	resp, err := client.Auth.CertReadCertificate(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -7996,8 +7915,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## CertReadConfiguration
 
@@ -8024,9 +7941,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.CertReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -8056,8 +7974,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## CertReadCrl
 
 Manage Certificate Revocation Lists checked during authentication.
@@ -8083,11 +7999,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the certificate
 	resp, err := client.Auth.CertReadCrl(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -8118,8 +8035,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## CertWriteCertificate
 
@@ -8147,13 +8062,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the certificate
-	request := schema.NewCertWriteCertificateRequestWithDefaults()
 	resp, err := client.Auth.CertWriteCertificate(
 		context.Background(),
 		name,
-		request,
-		vault.WithToken("my-token"),
+		schema.CertWriteCertificateRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -8186,8 +8103,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## CertWriteCrl
 
 Manage Certificate Revocation Lists checked during authentication.
@@ -8214,13 +8129,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | The name of the certificate
-	request := schema.NewCertWriteCrlRequestWithDefaults()
 	resp, err := client.Auth.CertWriteCrl(
 		context.Background(),
 		name,
-		request,
-		vault.WithToken("my-token"),
+		schema.CertWriteCrlRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("cert"),
 	)
 	if err != nil {
@@ -8253,8 +8170,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## CloudFoundryConfigure
 
 
@@ -8281,11 +8196,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewCloudFoundryConfigureRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.CloudFoundryConfigure(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.CloudFoundryConfigureRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8316,8 +8233,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## CloudFoundryDeleteConfiguration
 
 
@@ -8343,9 +8258,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.CloudFoundryDeleteConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8375,8 +8291,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## CloudFoundryDeleteRole
 
 
@@ -8402,11 +8316,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | The name of the role.
 	resp, err := client.Auth.CloudFoundryDeleteRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8438,8 +8353,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## CloudFoundryListRoles
 
 
@@ -8465,9 +8378,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.CloudFoundryListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8493,12 +8407,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## CloudFoundryLogin
 
@@ -8526,11 +8438,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewCloudFoundryLoginRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.CloudFoundryLogin(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.CloudFoundryLoginRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8561,8 +8475,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## CloudFoundryReadConfiguration
 
 
@@ -8588,9 +8500,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.CloudFoundryReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8620,8 +8533,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## CloudFoundryReadRole
 
 
@@ -8647,11 +8558,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | The name of the role.
 	resp, err := client.Auth.CloudFoundryReadRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8683,8 +8595,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## CloudFoundryWriteRole
 
 
@@ -8711,13 +8621,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | The name of the role.
-	request := schema.NewCloudFoundryWriteRoleRequestWithDefaults()
 	resp, err := client.Auth.CloudFoundryWriteRole(
 		context.Background(),
 		role,
-		request,
-		vault.WithToken("my-token"),
+		schema.CloudFoundryWriteRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("cf"),
 	)
 	if err != nil {
@@ -8750,8 +8662,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## GithubConfigure
 
 
@@ -8778,11 +8688,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewGithubConfigureRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.GithubConfigure(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.GithubConfigureRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -8813,8 +8725,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## GithubDeleteTeamMapping
 
 Read/write/delete a single teams mapping
@@ -8840,11 +8750,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	key := "key_example" // string | Key for the teams mapping
 	resp, err := client.Auth.GithubDeleteTeamMapping(
 		context.Background(),
 		key,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -8876,8 +8787,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## GithubDeleteUserMapping
 
 Read/write/delete a single users mapping
@@ -8903,11 +8812,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	key := "key_example" // string | Key for the users mapping
 	resp, err := client.Auth.GithubDeleteUserMapping(
 		context.Background(),
 		key,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -8939,7 +8849,123 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
+## GithubListTeams
 
+Read mappings for teams
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// TODO: authenticate if necessary (see the top-level README.md)
+
+	resp, err := client.Auth.GithubListTeams(
+		context.Background(),
+		vault.WithMountPath("github"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+[**StandardListResponse**](StandardListResponse.md)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+## GithubListUsers
+
+Read mappings for users
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// TODO: authenticate if necessary (see the top-level README.md)
+
+	resp, err := client.Auth.GithubListUsers(
+		context.Background(),
+		vault.WithMountPath("github"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+[**StandardListResponse**](StandardListResponse.md)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
 
 ## GithubLogin
 
@@ -8967,11 +8993,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewGithubLoginRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.GithubLogin(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.GithubLoginRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -9002,8 +9030,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## GithubReadConfiguration
 
 
@@ -9029,9 +9055,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.GithubReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -9061,8 +9088,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## GithubReadTeamMapping
 
 Read/write/delete a single teams mapping
@@ -9088,11 +9113,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	key := "key_example" // string | Key for the teams mapping
 	resp, err := client.Auth.GithubReadTeamMapping(
 		context.Background(),
 		key,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -9124,68 +9150,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
-## GithubReadTeams
-
-Read mappings for teams
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	resp, err := client.Auth.GithubReadTeams(
-		context.Background(),
-		vault.WithToken("my-token"),
-		vault.WithMountPath("github"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **list** | **string** | Return a list if &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
 ## GithubReadUserMapping
 
 Read/write/delete a single users mapping
@@ -9211,11 +9175,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	key := "key_example" // string | Key for the users mapping
 	resp, err := client.Auth.GithubReadUserMapping(
 		context.Background(),
 		key,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -9247,68 +9212,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
-## GithubReadUsers
-
-Read mappings for users
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	"github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	resp, err := client.Auth.GithubReadUsers(
-		context.Background(),
-		vault.WithToken("my-token"),
-		vault.WithMountPath("github"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **list** | **string** | Return a list if &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-
 ## GithubWriteTeamMapping
 
 Read/write/delete a single teams mapping
@@ -9335,13 +9238,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	key := "key_example" // string | Key for the teams mapping
-	request := schema.NewGithubWriteTeamMappingRequestWithDefaults()
 	resp, err := client.Auth.GithubWriteTeamMapping(
 		context.Background(),
 		key,
-		request,
-		vault.WithToken("my-token"),
+		schema.GithubWriteTeamMappingRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -9374,8 +9279,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## GithubWriteUserMapping
 
 Read/write/delete a single users mapping
@@ -9402,13 +9305,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	key := "key_example" // string | Key for the users mapping
-	request := schema.NewGithubWriteUserMappingRequestWithDefaults()
 	resp, err := client.Auth.GithubWriteUserMapping(
 		context.Background(),
 		key,
-		request,
-		vault.WithToken("my-token"),
+		schema.GithubWriteUserMappingRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("github"),
 	)
 	if err != nil {
@@ -9441,8 +9346,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## GoogleCloudConfigureAuth
 
 
@@ -9469,11 +9372,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewGoogleCloudConfigureAuthRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.GoogleCloudConfigureAuth(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.GoogleCloudConfigureAuthRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9504,8 +9409,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## GoogleCloudDeleteRole
 
 Create a GCP role with associated policies and required attributes.
@@ -9531,11 +9434,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.GoogleCloudDeleteRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9567,8 +9471,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## GoogleCloudEditLabelsForRole
 
 Add or remove labels for an existing 'gce' role
@@ -9595,13 +9497,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
-	request := schema.NewGoogleCloudEditLabelsForRoleRequestWithDefaults()
 	resp, err := client.Auth.GoogleCloudEditLabelsForRole(
 		context.Background(),
 		name,
-		request,
-		vault.WithToken("my-token"),
+		schema.GoogleCloudEditLabelsForRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9634,8 +9538,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## GoogleCloudEditServiceAccountsForRole
 
 Add or remove service accounts for an existing `iam` role
@@ -9662,13 +9564,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
-	request := schema.NewGoogleCloudEditServiceAccountsForRoleRequestWithDefaults()
 	resp, err := client.Auth.GoogleCloudEditServiceAccountsForRole(
 		context.Background(),
 		name,
-		request,
-		vault.WithToken("my-token"),
+		schema.GoogleCloudEditServiceAccountsForRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9701,8 +9605,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## GoogleCloudListRoles
 
 Lists all the roles that are registered with Vault.
@@ -9728,9 +9630,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.GoogleCloudListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9756,12 +9659,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## GoogleCloudLogin
 
@@ -9789,11 +9690,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewGoogleCloudLoginRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.GoogleCloudLogin(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.GoogleCloudLoginRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9824,8 +9727,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## GoogleCloudReadAuthConfiguration
 
 
@@ -9851,9 +9752,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.GoogleCloudReadAuthConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9883,8 +9785,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## GoogleCloudReadRole
 
 Create a GCP role with associated policies and required attributes.
@@ -9910,11 +9810,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.GoogleCloudReadRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -9946,8 +9847,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## GoogleCloudWriteRole
 
 Create a GCP role with associated policies and required attributes.
@@ -9974,13 +9873,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
-	request := schema.NewGoogleCloudWriteRoleRequestWithDefaults()
 	resp, err := client.Auth.GoogleCloudWriteRole(
 		context.Background(),
 		name,
-		request,
-		vault.WithToken("my-token"),
+		schema.GoogleCloudWriteRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("gcp"),
 	)
 	if err != nil {
@@ -10013,8 +9914,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## JwtConfigure
 
 Configure the JWT authentication backend.
@@ -10046,11 +9945,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewJwtConfigureRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.JwtConfigure(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.JwtConfigureRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10081,8 +9982,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## JwtDeleteRole
 
 Delete an existing role.
@@ -10108,11 +10007,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.JwtDeleteRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10144,8 +10044,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## JwtListRoles
 
 Lists all the roles registered with the backend.
@@ -10173,9 +10071,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.JwtListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10201,12 +10100,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## JwtLogin
 
@@ -10234,11 +10131,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewJwtLoginRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.JwtLogin(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.JwtLoginRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10269,8 +10168,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## JwtOidcCallback
 
 Callback endpoint to complete an OIDC login.
@@ -10296,9 +10193,16 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
+	clientNonce := "clientNonce_example" // string | 
+	code := "code_example" // string | 
+	state := "state_example" // string | 
 	resp, err := client.Auth.JwtOidcCallback(
 		context.Background(),
-		vault.WithToken("my-token"),
+		clientNonce,
+		code,
+		state,
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10322,15 +10226,16 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **clientNonce** | **string** |  | 
+ **code** | **string** |  | 
+ **state** | **string** |  | 
 
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
-## JwtOidcCallbackWithParameters
+## JwtOidcCallbackFormPost
 
 Callback endpoint to handle form_posts.
 
@@ -10356,11 +10261,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewJwtOidcCallbackWithParametersRequestWithDefaults()
-	resp, err := client.Auth.JwtOidcCallbackWithParameters(
+	// TODO: authenticate if necessary (see the top-level README.md)
+
+	resp, err := client.Auth.JwtOidcCallbackFormPost(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.JwtOidcCallbackFormPostRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10384,14 +10291,12 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **jwtOidcCallbackWithParametersRequest** | [**JwtOidcCallbackWithParametersRequest**](JwtOidcCallbackWithParametersRequest.md) |  | 
+ **jwtOidcCallbackFormPostRequest** | [**JwtOidcCallbackFormPostRequest**](JwtOidcCallbackFormPostRequest.md) |  | 
 
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## JwtOidcRequestAuthorizationUrl
 
@@ -10419,11 +10324,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewJwtOidcRequestAuthorizationUrlRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.JwtOidcRequestAuthorizationUrl(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.JwtOidcRequestAuthorizationUrlRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10454,8 +10361,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## JwtReadConfiguration
 
 Read the current JWT authentication backend configuration.
@@ -10481,9 +10386,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.JwtReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10513,8 +10419,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## JwtReadRole
 
 Read an existing role.
@@ -10540,11 +10444,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.JwtReadRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10575,8 +10480,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## JwtWriteRole
 
@@ -10609,13 +10512,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
-	request := schema.NewJwtWriteRoleRequestWithDefaults()
 	resp, err := client.Auth.JwtWriteRole(
 		context.Background(),
 		name,
-		request,
-		vault.WithToken("my-token"),
+		schema.JwtWriteRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("jwt"),
 	)
 	if err != nil {
@@ -10648,8 +10553,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## KerberosConfigure
 
 
@@ -10676,11 +10579,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewKerberosConfigureRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.KerberosConfigure(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.KerberosConfigureRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -10711,8 +10616,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## KerberosConfigureLdap
 
 
@@ -10739,11 +10642,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewKerberosConfigureLdapRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.KerberosConfigureLdap(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.KerberosConfigureLdapRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -10774,8 +10679,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## KerberosDeleteGroup
 
 
@@ -10801,11 +10704,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the LDAP group.
 	resp, err := client.Auth.KerberosDeleteGroup(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -10837,8 +10741,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## KerberosListGroups
 
 
@@ -10864,9 +10766,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.KerberosListGroups(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -10892,12 +10795,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## KerberosLogin
 
@@ -10925,11 +10826,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewKerberosLoginRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.KerberosLogin(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.KerberosLoginRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -10960,8 +10863,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## KerberosReadConfiguration
 
 
@@ -10987,9 +10888,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.KerberosReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -11019,8 +10921,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## KerberosReadGroup
 
 
@@ -11046,11 +10946,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the LDAP group.
 	resp, err := client.Auth.KerberosReadGroup(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -11082,8 +10983,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## KerberosReadLdapConfiguration
 
 
@@ -11109,9 +11008,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.KerberosReadLdapConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -11141,8 +11041,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## KerberosWriteGroup
 
 
@@ -11169,13 +11067,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the LDAP group.
-	request := schema.NewKerberosWriteGroupRequestWithDefaults()
 	resp, err := client.Auth.KerberosWriteGroup(
 		context.Background(),
 		name,
-		request,
-		vault.WithToken("my-token"),
+		schema.KerberosWriteGroupRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("kerberos"),
 	)
 	if err != nil {
@@ -11208,8 +11108,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## KubernetesConfigureAuth
 
 
@@ -11236,11 +11134,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewKubernetesConfigureAuthRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.KubernetesConfigureAuth(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.KubernetesConfigureAuthRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -11271,8 +11171,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## KubernetesDeleteAuthRole
 
 Register an role with the backend.
@@ -11298,11 +11196,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.KubernetesDeleteAuthRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -11334,8 +11233,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## KubernetesListAuthRoles
 
 Lists all the roles registered with the backend.
@@ -11361,9 +11258,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.KubernetesListAuthRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -11389,12 +11287,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## KubernetesLogin
 
@@ -11422,11 +11318,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewKubernetesLoginRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.KubernetesLogin(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.KubernetesLoginRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -11457,8 +11355,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## KubernetesReadAuthConfiguration
 
 
@@ -11484,9 +11380,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.KubernetesReadAuthConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -11516,8 +11413,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## KubernetesReadAuthRole
 
 Register an role with the backend.
@@ -11543,11 +11438,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
 	resp, err := client.Auth.KubernetesReadAuthRole(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -11579,8 +11475,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## KubernetesWriteAuthRole
 
 Register an role with the backend.
@@ -11607,13 +11501,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the role.
-	request := schema.NewKubernetesWriteAuthRoleRequestWithDefaults()
 	resp, err := client.Auth.KubernetesWriteAuthRole(
 		context.Background(),
 		name,
-		request,
-		vault.WithToken("my-token"),
+		schema.KubernetesWriteAuthRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("kubernetes"),
 	)
 	if err != nil {
@@ -11646,8 +11542,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## LdapConfigureAuth
 
 
@@ -11674,11 +11568,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewLdapConfigureAuthRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.LdapConfigureAuth(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.LdapConfigureAuthRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -11709,8 +11605,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## LdapDeleteGroup
 
 Manage additional groups for users allowed to authenticate.
@@ -11736,11 +11630,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the LDAP group.
 	resp, err := client.Auth.LdapDeleteGroup(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -11772,8 +11667,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## LdapDeleteUser
 
 Manage users allowed to authenticate.
@@ -11799,11 +11692,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the LDAP user.
 	resp, err := client.Auth.LdapDeleteUser(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -11835,8 +11729,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## LdapListGroups
 
 Manage additional groups for users allowed to authenticate.
@@ -11862,9 +11754,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.LdapListGroups(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -11890,12 +11783,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## LdapListUsers
 
@@ -11922,9 +11813,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.LdapListUsers(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -11950,12 +11842,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## LdapLogin
 
@@ -11983,13 +11873,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	username := "username_example" // string | DN (distinguished name) to be used for login.
-	request := schema.NewLdapLoginRequestWithDefaults()
 	resp, err := client.Auth.LdapLogin(
 		context.Background(),
 		username,
-		request,
-		vault.WithToken("my-token"),
+		schema.LdapLoginRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -12022,8 +11914,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## LdapReadAuthConfiguration
 
 
@@ -12049,9 +11939,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.LdapReadAuthConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -12081,8 +11972,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## LdapReadGroup
 
 Manage additional groups for users allowed to authenticate.
@@ -12108,11 +11997,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the LDAP group.
 	resp, err := client.Auth.LdapReadGroup(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -12144,8 +12034,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## LdapReadUser
 
 Manage users allowed to authenticate.
@@ -12171,11 +12059,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the LDAP user.
 	resp, err := client.Auth.LdapReadUser(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -12207,8 +12096,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## LdapWriteGroup
 
 Manage additional groups for users allowed to authenticate.
@@ -12235,13 +12122,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the LDAP group.
-	request := schema.NewLdapWriteGroupRequestWithDefaults()
 	resp, err := client.Auth.LdapWriteGroup(
 		context.Background(),
 		name,
-		request,
-		vault.WithToken("my-token"),
+		schema.LdapWriteGroupRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -12274,8 +12163,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## LdapWriteUser
 
 Manage users allowed to authenticate.
@@ -12302,13 +12189,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the LDAP user.
-	request := schema.NewLdapWriteUserRequestWithDefaults()
 	resp, err := client.Auth.LdapWriteUser(
 		context.Background(),
 		name,
-		request,
-		vault.WithToken("my-token"),
+		schema.LdapWriteUserRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("ldap"),
 	)
 	if err != nil {
@@ -12341,8 +12230,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OciConfigure
 
 
@@ -12369,11 +12256,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewOciConfigureRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.OciConfigure(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.OciConfigureRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12404,8 +12293,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OciDeleteConfiguration
 
 
@@ -12431,9 +12318,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.OciDeleteConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12463,8 +12351,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OciDeleteRole
 
 Create a role and associate policies to it.
@@ -12490,11 +12376,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | Name of the role.
 	resp, err := client.Auth.OciDeleteRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12526,8 +12413,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OciListRoles
 
 Lists all the roles that are registered with Vault.
@@ -12553,9 +12438,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.OciListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12581,12 +12467,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## OciLogin
 
@@ -12614,13 +12498,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | Name of the role.
-	request := schema.NewOciLoginRequestWithDefaults()
 	resp, err := client.Auth.OciLogin(
 		context.Background(),
 		role,
-		request,
-		vault.WithToken("my-token"),
+		schema.OciLoginRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12653,8 +12539,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OciReadConfiguration
 
 
@@ -12680,9 +12564,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.OciReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12712,8 +12597,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OciReadRole
 
 Create a role and associate policies to it.
@@ -12739,11 +12622,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | Name of the role.
 	resp, err := client.Auth.OciReadRole(
 		context.Background(),
 		role,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12775,8 +12659,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OciWriteRole
 
 Create a role and associate policies to it.
@@ -12803,13 +12685,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	role := "role_example" // string | Name of the role.
-	request := schema.NewOciWriteRoleRequestWithDefaults()
 	resp, err := client.Auth.OciWriteRole(
 		context.Background(),
 		role,
-		request,
-		vault.WithToken("my-token"),
+		schema.OciWriteRoleRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("oci"),
 	)
 	if err != nil {
@@ -12842,8 +12726,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OktaConfigure
 
 
@@ -12870,11 +12752,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewOktaConfigureRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.OktaConfigure(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.OktaConfigureRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -12905,8 +12789,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OktaDeleteGroup
 
 Manage users allowed to authenticate.
@@ -12932,11 +12814,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the Okta group.
 	resp, err := client.Auth.OktaDeleteGroup(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -12968,8 +12851,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OktaDeleteUser
 
 Manage additional groups for users allowed to authenticate.
@@ -12995,11 +12876,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the user.
 	resp, err := client.Auth.OktaDeleteUser(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13031,8 +12913,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OktaListGroups
 
 Manage users allowed to authenticate.
@@ -13058,9 +12938,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.OktaListGroups(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13086,12 +12967,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## OktaListUsers
 
@@ -13118,9 +12997,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.OktaListUsers(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13146,12 +13026,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## OktaLogin
 
@@ -13179,13 +13057,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	username := "username_example" // string | Username to be used for login.
-	request := schema.NewOktaLoginRequestWithDefaults()
 	resp, err := client.Auth.OktaLogin(
 		context.Background(),
 		username,
-		request,
-		vault.WithToken("my-token"),
+		schema.OktaLoginRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13218,8 +13098,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OktaReadConfiguration
 
 
@@ -13245,9 +13123,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.OktaReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13277,8 +13156,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OktaReadGroup
 
 Manage users allowed to authenticate.
@@ -13304,11 +13181,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the Okta group.
 	resp, err := client.Auth.OktaReadGroup(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13340,8 +13218,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OktaReadUser
 
 Manage additional groups for users allowed to authenticate.
@@ -13367,11 +13243,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the user.
 	resp, err := client.Auth.OktaReadUser(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13403,8 +13280,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OktaVerify
 
 
@@ -13430,11 +13305,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	nonce := "nonce_example" // string | Nonce provided during a login request to retrieve the number verification challenge for the matching request.
 	resp, err := client.Auth.OktaVerify(
 		context.Background(),
 		nonce,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13466,8 +13342,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OktaWriteGroup
 
 Manage users allowed to authenticate.
@@ -13494,13 +13368,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the Okta group.
-	request := schema.NewOktaWriteGroupRequestWithDefaults()
 	resp, err := client.Auth.OktaWriteGroup(
 		context.Background(),
 		name,
-		request,
-		vault.WithToken("my-token"),
+		schema.OktaWriteGroupRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13533,8 +13409,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## OktaWriteUser
 
 Manage additional groups for users allowed to authenticate.
@@ -13561,13 +13435,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the user.
-	request := schema.NewOktaWriteUserRequestWithDefaults()
 	resp, err := client.Auth.OktaWriteUser(
 		context.Background(),
 		name,
-		request,
-		vault.WithToken("my-token"),
+		schema.OktaWriteUserRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("okta"),
 	)
 	if err != nil {
@@ -13600,8 +13476,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## RadiusConfigure
 
 
@@ -13628,11 +13502,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewRadiusConfigureRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.RadiusConfigure(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.RadiusConfigureRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -13663,8 +13539,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## RadiusDeleteUser
 
 Manage users allowed to authenticate.
@@ -13690,11 +13564,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the RADIUS user.
 	resp, err := client.Auth.RadiusDeleteUser(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -13726,8 +13601,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## RadiusListUsers
 
 Manage users allowed to authenticate.
@@ -13753,9 +13626,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.RadiusListUsers(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -13781,12 +13655,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## RadiusLogin
 
@@ -13814,11 +13686,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewRadiusLoginRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.RadiusLogin(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.RadiusLoginRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -13849,8 +13723,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## RadiusLoginWithUsername
 
 Log in with a username and password.
@@ -13877,13 +13749,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	urlusername := "urlusername_example" // string | Username to be used for login. (URL parameter)
-	request := schema.NewRadiusLoginWithUsernameRequestWithDefaults()
 	resp, err := client.Auth.RadiusLoginWithUsername(
 		context.Background(),
 		urlusername,
-		request,
-		vault.WithToken("my-token"),
+		schema.RadiusLoginWithUsernameRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -13916,8 +13790,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## RadiusReadConfiguration
 
 
@@ -13943,9 +13815,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.RadiusReadConfiguration(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -13975,8 +13848,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## RadiusReadUser
 
 Manage users allowed to authenticate.
@@ -14002,11 +13873,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the RADIUS user.
 	resp, err := client.Auth.RadiusReadUser(
 		context.Background(),
 		name,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -14038,8 +13910,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## RadiusWriteUser
 
 Manage users allowed to authenticate.
@@ -14066,13 +13936,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	name := "name_example" // string | Name of the RADIUS user.
-	request := schema.NewRadiusWriteUserRequestWithDefaults()
 	resp, err := client.Auth.RadiusWriteUser(
 		context.Background(),
 		name,
-		request,
-		vault.WithToken("my-token"),
+		schema.RadiusWriteUserRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("radius"),
 	)
 	if err != nil {
@@ -14105,8 +13977,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## TokenCreate
 
 The token create path is used to create new tokens.
@@ -14133,13 +14003,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTokenCreateRequestWithDefaults()
-	format := "format_example" // string | Return json formatted output
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.TokenCreate(
 		context.Background(),
-		request,
-		format,
-		vault.WithToken("my-token"),
+		schema.TokenCreateRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14159,14 +14029,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenCreateRequest** | [**TokenCreateRequest**](TokenCreateRequest.md) |  | 
- **format** | **string** | Return json formatted output | 
 
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## TokenCreateAgainstRole
 
@@ -14194,15 +14061,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role
-	request := schema.NewTokenCreateAgainstRoleRequestWithDefaults()
-	format := "format_example" // string | Return json formatted output
 	resp, err := client.Auth.TokenCreateAgainstRole(
 		context.Background(),
 		roleName,
-		request,
-		format,
-		vault.WithToken("my-token"),
+		schema.TokenCreateAgainstRoleRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14227,14 +14094,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **tokenCreateAgainstRoleRequest** | [**TokenCreateAgainstRoleRequest**](TokenCreateAgainstRoleRequest.md) |  | 
- **format** | **string** | Return json formatted output | 
 
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## TokenCreateOrphan
 
@@ -14262,13 +14126,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTokenCreateOrphanRequestWithDefaults()
-	format := "format_example" // string | Return json formatted output
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.TokenCreateOrphan(
 		context.Background(),
-		request,
-		format,
-		vault.WithToken("my-token"),
+		schema.TokenCreateOrphanRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14288,14 +14152,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenCreateOrphanRequest** | [**TokenCreateOrphanRequest**](TokenCreateOrphanRequest.md) |  | 
- **format** | **string** | Return json formatted output | 
 
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## TokenDeleteRole
 
@@ -14322,11 +14183,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role
 	resp, err := client.Auth.TokenDeleteRole(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14356,8 +14218,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## TokenListAccessors
 
 List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires 'sudo' capability in addition to 'list'.
@@ -14383,9 +14243,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.TokenListAccessors(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14406,12 +14267,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## TokenListRoles
 
@@ -14438,9 +14297,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.TokenListRoles(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14461,12 +14321,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## TokenLookUp
 
@@ -14494,11 +14352,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTokenLookUpRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.TokenLookUp(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.TokenLookUpRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14523,8 +14383,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## TokenLookUpAccessor
 
@@ -14552,11 +14410,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTokenLookUpAccessorRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.TokenLookUpAccessor(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.TokenLookUpAccessorRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14581,8 +14441,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## TokenLookUpSelf
 
@@ -14609,9 +14467,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.TokenLookUpSelf(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14633,8 +14492,6 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## TokenReadRole
 
@@ -14661,11 +14518,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role
 	resp, err := client.Auth.TokenReadRole(
 		context.Background(),
 		roleName,
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14695,8 +14553,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## TokenRenew
 
 This endpoint will renew the given token and prevent expiration.
@@ -14723,11 +14579,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTokenRenewRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.TokenRenew(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.TokenRenewRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14752,8 +14610,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## TokenRenewAccessor
 
@@ -14781,11 +14637,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTokenRenewAccessorRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.TokenRenewAccessor(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.TokenRenewAccessorRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14810,8 +14668,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## TokenRenewSelf
 
@@ -14839,11 +14695,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTokenRenewSelfRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.TokenRenewSelf(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.TokenRenewSelfRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14868,8 +14726,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## TokenRevoke
 
@@ -14897,11 +14753,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTokenRevokeRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.TokenRevoke(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.TokenRevokeRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14926,8 +14784,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## TokenRevokeAccessor
 
@@ -14955,11 +14811,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTokenRevokeAccessorRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.TokenRevokeAccessor(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.TokenRevokeAccessorRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -14984,8 +14842,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## TokenRevokeOrphan
 
@@ -15013,11 +14869,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	request := schema.NewTokenRevokeOrphanRequestWithDefaults()
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.TokenRevokeOrphan(
 		context.Background(),
-		request,
-		vault.WithToken("my-token"),
+		schema.TokenRevokeOrphanRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15042,8 +14900,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## TokenRevokeSelf
 
@@ -15070,9 +14926,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.TokenRevokeSelf(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15094,8 +14951,6 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## TokenTidy
 
@@ -15122,9 +14977,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.TokenTidy(
 		context.Background(),
-		vault.WithToken("my-token"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15146,8 +15002,6 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## TokenWriteRole
 
@@ -15175,13 +15029,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	roleName := "roleName_example" // string | Name of the role
-	request := schema.NewTokenWriteRoleRequestWithDefaults()
 	resp, err := client.Auth.TokenWriteRole(
 		context.Background(),
 		roleName,
-		request,
-		vault.WithToken("my-token"),
+		schema.TokenWriteRoleRequest{
+			// populate request parameters
+		},
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -15212,8 +15068,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## UserpassDeleteUser
 
 Manage users allowed to authenticate.
@@ -15239,11 +15093,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	username := "username_example" // string | Username for this user.
 	resp, err := client.Auth.UserpassDeleteUser(
 		context.Background(),
 		username,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {
@@ -15275,8 +15130,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## UserpassListUsers
 
 Manage users allowed to authenticate.
@@ -15302,9 +15155,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	resp, err := client.Auth.UserpassListUsers(
 		context.Background(),
-		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {
@@ -15330,12 +15184,10 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
- (empty response body)
+[**StandardListResponse**](StandardListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 
 ## UserpassLogin
 
@@ -15363,13 +15215,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	username := "username_example" // string | Username of the user.
-	request := schema.NewUserpassLoginRequestWithDefaults()
 	resp, err := client.Auth.UserpassLogin(
 		context.Background(),
 		username,
-		request,
-		vault.WithToken("my-token"),
+		schema.UserpassLoginRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {
@@ -15402,8 +15256,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## UserpassReadUser
 
 Manage users allowed to authenticate.
@@ -15429,11 +15281,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	username := "username_example" // string | Username for this user.
 	resp, err := client.Auth.UserpassReadUser(
 		context.Background(),
 		username,
-		vault.WithToken("my-token"),
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {
@@ -15465,8 +15318,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## UserpassResetPassword
 
 Reset user's password.
@@ -15493,13 +15344,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	username := "username_example" // string | Username for this user.
-	request := schema.NewUserpassResetPasswordRequestWithDefaults()
 	resp, err := client.Auth.UserpassResetPassword(
 		context.Background(),
 		username,
-		request,
-		vault.WithToken("my-token"),
+		schema.UserpassResetPasswordRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {
@@ -15532,8 +15385,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## UserpassUpdatePolicies
 
 Update the policies associated with the username.
@@ -15560,13 +15411,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	username := "username_example" // string | Username for this user.
-	request := schema.NewUserpassUpdatePoliciesRequestWithDefaults()
 	resp, err := client.Auth.UserpassUpdatePolicies(
 		context.Background(),
 		username,
-		request,
-		vault.WithToken("my-token"),
+		schema.UserpassUpdatePoliciesRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {
@@ -15599,8 +15452,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
-
-
 ## UserpassWriteUser
 
 Manage users allowed to authenticate.
@@ -15627,13 +15478,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: authenticate if necessary (see the top-level README.md)
+
 	username := "username_example" // string | Username for this user.
-	request := schema.NewUserpassWriteUserRequestWithDefaults()
 	resp, err := client.Auth.UserpassWriteUser(
 		context.Background(),
 		username,
-		request,
-		vault.WithToken("my-token"),
+		schema.UserpassWriteUserRequest{
+			// populate request parameters
+		},
 		vault.WithMountPath("userpass"),
 	)
 	if err != nil {
@@ -15665,6 +15518,4 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
-
-
 

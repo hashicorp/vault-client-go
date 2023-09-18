@@ -28,12 +28,3 @@ type MfaCreateOktaMethodRequest struct {
 	// A template string for mapping Identity names to MFA method names. Values to substitute should be placed in {{}}. For example, \"{{entity.name}}@example.com\". If blank, the Entity's name field will be used as-is.
 	UsernameFormat string `json:"username_format,omitempty"`
 }
-
-// NewMfaCreateOktaMethodRequestWithDefaults instantiates a new MfaCreateOktaMethodRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMfaCreateOktaMethodRequestWithDefaults() *MfaCreateOktaMethodRequest {
-	var this MfaCreateOktaMethodRequest
-
-	return &this
-}

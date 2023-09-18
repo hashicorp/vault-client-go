@@ -19,12 +19,3 @@ type KvV2WriteMetadataRequest struct {
 	// The number of versions to keep. If not set, the backend’s configured max version is used.
 	MaxVersions int32 `json:"max_versions,omitempty"`
 }
-
-// NewKvV2WriteMetadataRequestWithDefaults instantiates a new KvV2WriteMetadataRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewKvV2WriteMetadataRequestWithDefaults() *KvV2WriteMetadataRequest {
-	var this KvV2WriteMetadataRequest
-
-	return &this
-}

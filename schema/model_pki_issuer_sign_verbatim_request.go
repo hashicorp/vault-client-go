@@ -46,9 +46,6 @@ type PkiIssuerSignVerbatimRequest struct {
 	// Whether or not to remove self-signed CA certificates in the output of the ca_chain field.
 	RemoveRootsFromChain bool `json:"remove_roots_from_chain,omitempty"`
 
-	// The desired role with configuration for this request
-	Role string `json:"role,omitempty"`
-
 	// The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field.
 	SerialNumber string `json:"serial_number,omitempty"`
 
@@ -66,21 +63,4 @@ type PkiIssuerSignVerbatimRequest struct {
 
 	// The requested user_ids value to place in the subject, if any, in a comma-delimited list. Restricted by allowed_user_ids. Any values are added with OID 0.9.2342.19200300.100.1.1.
 	UserIds []string `json:"user_ids,omitempty"`
-}
-
-// NewPkiIssuerSignVerbatimRequestWithDefaults instantiates a new PkiIssuerSignVerbatimRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiIssuerSignVerbatimRequestWithDefaults() *PkiIssuerSignVerbatimRequest {
-	var this PkiIssuerSignVerbatimRequest
-
-	this.Csr = ""
-	this.ExcludeCnFromSans = false
-	this.Format = "pem"
-	this.PrivateKeyFormat = "der"
-	this.RemoveRootsFromChain = false
-	this.SignatureBits = 0
-	this.UsePss = false
-
-	return &this
 }

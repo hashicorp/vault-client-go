@@ -13,12 +13,3 @@ type DecodeRequest struct {
 	// Specifies the otp code for decode.
 	Otp string `json:"otp,omitempty"`
 }
-
-// NewDecodeRequestWithDefaults instantiates a new DecodeRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewDecodeRequestWithDefaults() *DecodeRequest {
-	var this DecodeRequest
-
-	return &this
-}

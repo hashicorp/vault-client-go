@@ -16,12 +16,3 @@ type PkiWriteAcmeOrderOrderIdFinalizeRequest struct {
 	// ACME request 'signature' value
 	Signature string `json:"signature,omitempty"`
 }
-
-// NewPkiWriteAcmeOrderOrderIdFinalizeRequestWithDefaults instantiates a new PkiWriteAcmeOrderOrderIdFinalizeRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiWriteAcmeOrderOrderIdFinalizeRequestWithDefaults() *PkiWriteAcmeOrderOrderIdFinalizeRequest {
-	var this PkiWriteAcmeOrderOrderIdFinalizeRequest
-
-	return &this
-}

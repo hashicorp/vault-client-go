@@ -19,21 +19,6 @@ type PkiSignVerbatimResponse struct {
 	// Issuing Certificate Authority
 	IssuingCa string `json:"issuing_ca,omitempty"`
 
-	// Private key
-	PrivateKey string `json:"private_key,omitempty"`
-
-	// Private key type
-	PrivateKeyType string `json:"private_key_type,omitempty"`
-
 	// Serial Number
 	SerialNumber string `json:"serial_number,omitempty"`
-}
-
-// NewPkiSignVerbatimResponseWithDefaults instantiates a new PkiSignVerbatimResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiSignVerbatimResponseWithDefaults() *PkiSignVerbatimResponse {
-	var this PkiSignVerbatimResponse
-
-	return &this
 }

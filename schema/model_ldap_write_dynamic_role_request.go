@@ -25,12 +25,3 @@ type LdapWriteDynamicRoleRequest struct {
 	// The template used to create a username
 	UsernameTemplate string `json:"username_template,omitempty"`
 }
-
-// NewLdapWriteDynamicRoleRequestWithDefaults instantiates a new LdapWriteDynamicRoleRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLdapWriteDynamicRoleRequestWithDefaults() *LdapWriteDynamicRoleRequest {
-	var this LdapWriteDynamicRoleRequest
-
-	return &this
-}

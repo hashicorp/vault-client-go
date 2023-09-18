@@ -36,7 +36,7 @@ type MountsTuneConfigurationParametersRequest struct {
 	// A list of headers to whitelist and pass from the request to the plugin.
 	PassthroughRequestHeaders []string `json:"passthrough_request_headers,omitempty"`
 
-	// The semantic version of the plugin to use.
+	// The semantic version of the plugin to use, or image tag if oci_image is provided.
 	PluginVersion string `json:"plugin_version,omitempty"`
 
 	// The type of token to issue (service or batch).
@@ -44,13 +44,4 @@ type MountsTuneConfigurationParametersRequest struct {
 
 	// The user lockout configuration to pass into the backend. Should be a json object with string keys and values.
 	UserLockoutConfig map[string]interface{} `json:"user_lockout_config,omitempty"`
-}
-
-// NewMountsTuneConfigurationParametersRequestWithDefaults instantiates a new MountsTuneConfigurationParametersRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMountsTuneConfigurationParametersRequestWithDefaults() *MountsTuneConfigurationParametersRequest {
-	var this MountsTuneConfigurationParametersRequest
-
-	return &this
 }

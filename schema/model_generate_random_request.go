@@ -12,23 +12,4 @@ type GenerateRandomRequest struct {
 
 	// Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".
 	Format string `json:"format,omitempty"`
-
-	// Which system to source random data from, ether \"platform\", \"seal\", or \"all\".
-	Source string `json:"source,omitempty"`
-
-	// The number of bytes to generate (POST URL parameter)
-	Urlbytes string `json:"urlbytes,omitempty"`
-}
-
-// NewGenerateRandomRequestWithDefaults instantiates a new GenerateRandomRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGenerateRandomRequestWithDefaults() *GenerateRandomRequest {
-	var this GenerateRandomRequest
-
-	this.Bytes = 32
-	this.Format = "base64"
-	this.Source = "platform"
-
-	return &this
 }

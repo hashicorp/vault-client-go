@@ -9,12 +9,3 @@ package schema
 type PluginsReloadBackendsResponse struct {
 	ReloadId string `json:"reload_id,omitempty"`
 }
-
-// NewPluginsReloadBackendsResponseWithDefaults instantiates a new PluginsReloadBackendsResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPluginsReloadBackendsResponseWithDefaults() *PluginsReloadBackendsResponse {
-	var this PluginsReloadBackendsResponse
-
-	return &this
-}

@@ -16,12 +16,3 @@ type GroupUpdateAliasByIdRequest struct {
 	// Alias of the group.
 	Name string `json:"name,omitempty"`
 }
-
-// NewGroupUpdateAliasByIdRequestWithDefaults instantiates a new GroupUpdateAliasByIdRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGroupUpdateAliasByIdRequestWithDefaults() *GroupUpdateAliasByIdRequest {
-	var this GroupUpdateAliasByIdRequest
-
-	return &this
-}

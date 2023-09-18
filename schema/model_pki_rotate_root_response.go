@@ -34,12 +34,3 @@ type PkiRotateRootResponse struct {
 	// The requested Subject's named serial number.
 	SerialNumber string `json:"serial_number,omitempty"`
 }
-
-// NewPkiRotateRootResponseWithDefaults instantiates a new PkiRotateRootResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiRotateRootResponseWithDefaults() *PkiRotateRootResponse {
-	var this PkiRotateRootResponse
-
-	return &this
-}

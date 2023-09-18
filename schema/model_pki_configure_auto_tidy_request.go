@@ -61,23 +61,3 @@ type PkiConfigureAutoTidyRequest struct {
 	// Set to true to expire all revoked and expired certificates, removing them both from the CRL and from storage. The CRL will be rotated if this causes any values to be removed.
 	TidyRevokedCerts bool `json:"tidy_revoked_certs,omitempty"`
 }
-
-// NewPkiConfigureAutoTidyRequestWithDefaults instantiates a new PkiConfigureAutoTidyRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiConfigureAutoTidyRequestWithDefaults() *PkiConfigureAutoTidyRequest {
-	var this PkiConfigureAutoTidyRequest
-
-	this.AcmeAccountSafetyBuffer = "2592000"
-	this.IntervalDuration = "43200"
-	this.IssuerSafetyBuffer = "31536000"
-	this.MaintainStoredCertificateCounts = false
-	this.PauseDuration = "0s"
-	this.PublishStoredCertificateCountMetrics = false
-	this.RevocationQueueSafetyBuffer = "172800"
-	this.SafetyBuffer = "259200"
-	this.TidyAcme = false
-	this.TidyRevocationQueue = false
-
-	return &this
-}

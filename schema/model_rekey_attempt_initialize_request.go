@@ -22,12 +22,3 @@ type RekeyAttemptInitializeRequest struct {
 	// Specifies the number of shares required to reconstruct the unseal key. This must be less than or equal secret_shares. If using Vault HSM with auto-unsealing, this value must be the same as secret_shares.
 	SecretThreshold int32 `json:"secret_threshold,omitempty"`
 }
-
-// NewRekeyAttemptInitializeRequestWithDefaults instantiates a new RekeyAttemptInitializeRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewRekeyAttemptInitializeRequestWithDefaults() *RekeyAttemptInitializeRequest {
-	var this RekeyAttemptInitializeRequest
-
-	return &this
-}

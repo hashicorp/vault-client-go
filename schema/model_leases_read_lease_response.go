@@ -27,12 +27,3 @@ type LeasesReadLeaseResponse struct {
 	// Time to Live set for the lease, returns 0 if unset
 	Ttl int32 `json:"ttl,omitempty"`
 }
-
-// NewLeasesReadLeaseResponseWithDefaults instantiates a new LeasesReadLeaseResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewLeasesReadLeaseResponseWithDefaults() *LeasesReadLeaseResponse {
-	var this LeasesReadLeaseResponse
-
-	return &this
-}

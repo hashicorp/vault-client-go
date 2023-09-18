@@ -13,14 +13,3 @@ type TokenRenewAccessorRequest struct {
 	// The desired increment in seconds to the token expiration
 	Increment string `json:"increment,omitempty"`
 }
-
-// NewTokenRenewAccessorRequestWithDefaults instantiates a new TokenRenewAccessorRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTokenRenewAccessorRequestWithDefaults() *TokenRenewAccessorRequest {
-	var this TokenRenewAccessorRequest
-
-	this.Increment = "0"
-
-	return &this
-}

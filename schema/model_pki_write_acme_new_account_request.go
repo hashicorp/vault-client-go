@@ -16,12 +16,3 @@ type PkiWriteAcmeNewAccountRequest struct {
 	// ACME request 'signature' value
 	Signature string `json:"signature,omitempty"`
 }
-
-// NewPkiWriteAcmeNewAccountRequestWithDefaults instantiates a new PkiWriteAcmeNewAccountRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiWriteAcmeNewAccountRequestWithDefaults() *PkiWriteAcmeNewAccountRequest {
-	var this PkiWriteAcmeNewAccountRequest
-
-	return &this
-}

@@ -28,12 +28,3 @@ type AzureLoginRequest struct {
 	// The name of the virtual machine scale set the instance is in.
 	VmssName string `json:"vmss_name,omitempty"`
 }
-
-// NewAzureLoginRequestWithDefaults instantiates a new AzureLoginRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAzureLoginRequestWithDefaults() *AzureLoginRequest {
-	var this AzureLoginRequest
-
-	return &this
-}

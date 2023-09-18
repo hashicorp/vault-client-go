@@ -25,7 +25,7 @@ type MountsEnableSecretsEngineRequest struct {
 	// Name of the plugin to mount based from the name registered in the plugin catalog.
 	PluginName string `json:"plugin_name,omitempty"`
 
-	// The semantic version of the plugin to use.
+	// The semantic version of the plugin to use, or image tag if oci_image is provided.
 	PluginVersion string `json:"plugin_version,omitempty"`
 
 	// Whether to turn on seal wrapping for the mount.
@@ -33,17 +33,4 @@ type MountsEnableSecretsEngineRequest struct {
 
 	// The type of the backend. Example: \"passthrough\"
 	Type string `json:"type,omitempty"`
-}
-
-// NewMountsEnableSecretsEngineRequestWithDefaults instantiates a new MountsEnableSecretsEngineRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewMountsEnableSecretsEngineRequestWithDefaults() *MountsEnableSecretsEngineRequest {
-	var this MountsEnableSecretsEngineRequest
-
-	this.ExternalEntropyAccess = false
-	this.Local = false
-	this.SealWrap = false
-
-	return &this
 }

@@ -37,7 +37,7 @@ type PkiPatchIssuerResponse struct {
 	// Manual Chain
 	ManualChain []string `json:"manual_chain,omitempty"`
 
-	// OSCP Servers
+	// OCSP Servers
 	OcspServers []string `json:"ocsp_servers,omitempty"`
 
 	// Revocation Signature Alogrithm
@@ -52,13 +52,4 @@ type PkiPatchIssuerResponse struct {
 
 	// Usage
 	Usage string `json:"usage,omitempty"`
-}
-
-// NewPkiPatchIssuerResponseWithDefaults instantiates a new PkiPatchIssuerResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPkiPatchIssuerResponseWithDefaults() *PkiPatchIssuerResponse {
-	var this PkiPatchIssuerResponse
-
-	return &this
 }

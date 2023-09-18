@@ -56,7 +56,7 @@ func isResponseError(req *http.Request, resp *http.Response) *ResponseError {
 	}
 
 	// /v1/sys/health returns a few special 4xx and 5xx status codes that
-	// should not be treated as errors; the response will contain valuable
+	// should not be treated as errors; the response body will contain valuable
 	// health status information.
 	//
 	// See: https://developer.hashicorp.com/vault/api-docs/system/health

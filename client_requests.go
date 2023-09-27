@@ -251,8 +251,12 @@ func (c *Client) newRequest(
 	}
 
 	// populate request headers
+	if headers.customHeaders != nil {
+		req.Header = headers.customHeaders
+	}
+
 	if headers.userAgent != "" {
-		req.Header.Set("User-Agent", headers.userAgent)
+		req.Header.Add("User-Agent", headers.userAgent)
 	}
 
 	if headers.token != "" {

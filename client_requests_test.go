@@ -73,8 +73,12 @@ func Fuzz_v1Path(f *testing.F) {
 func Test_newRequest(t *testing.T) {
 	// helper to read and close the request body
 	readClose := func(body io.ReadCloser) string {
-		b, _ := io.ReadAll(body)
-		defer body.Close()
+		b, err := io.ReadAll(body)
+		if err != nil {
+			return ""
+		}
+		body.Close()
+
 		return string(b)
 	}
 

@@ -71,7 +71,7 @@ func Fuzz_v1Path(f *testing.F) {
 }
 
 func Test_newRequest(t *testing.T) {
-
+	// helper to read and close the request body
 	readClose := func(body io.ReadCloser) string {
 		b, _ := io.ReadAll(body)
 		defer body.Close()
@@ -97,12 +97,12 @@ func Test_newRequest(t *testing.T) {
 		},
 
 		"with-body": {
-			method: http.MethodPost,
+			method: http.MethodPatch,
 			path:   "/some/path",
 			body:   strings.NewReader("{some body}"),
 
 			expect: func(t *testing.T, request *http.Request) {
-				assert.Equal(t, http.MethodPost, request.Method)
+				assert.Equal(t, http.MethodPatch, request.Method)
 				assert.Equal(t, "/some/path", request.URL.Path)
 				assert.Equal(t, "{some body}", readClose(request.Body))
 			},
@@ -121,7 +121,7 @@ func Test_newRequest(t *testing.T) {
 		},
 
 		"with-custom-headers": {
-			method: http.MethodPost,
+			method: http.MethodPut,
 			path:   "/some/path",
 			headers: requestHeaders{
 				customHeaders: http.Header{
@@ -130,7 +130,7 @@ func Test_newRequest(t *testing.T) {
 			},
 
 			expect: func(t *testing.T, request *http.Request) {
-				assert.Equal(t, http.MethodPost, request.Method)
+				assert.Equal(t, http.MethodPut, request.Method)
 				assert.Equal(t, "/some/path", request.URL.Path)
 				assert.Equal(t, []string{"text/html"}, request.Header.Values("Content-Type"))
 			},

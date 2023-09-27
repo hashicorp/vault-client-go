@@ -8,6 +8,12 @@ and this project adheres to
 
 ## Unreleased ([diff][unreleased-diff])
 
+## [0.4.1][] ([diff][0.4.1-diff]) - 2023-09-27
+
+### Fixed
+
+- Fixed `SetCustomHeaders` & `WithCustomHeaders` functions (#237).
+
 ## [0.4.0][] ([diff][0.4.0-diff]) - 2023-09-18
 
 ### Added
@@ -138,7 +144,9 @@ and this project adheres to
 <!-- diffs -->
 
 [unreleased-diff]:
-  https://github.com/hashicorp/vault-client-go/compare/v0.4.0...HEAD
+  https://github.com/hashicorp/vault-client-go/compare/v0.4.1...HEAD
+[0.4.1-diff]:
+  https://github.com/hashicorp/vault-client-go/compare/v0.4.0...v0.4.1
 [0.4.0-diff]:
   https://github.com/hashicorp/vault-client-go/compare/v0.3.3...v0.4.0
 [0.3.3-diff]:
@@ -158,6 +166,7 @@ and this project adheres to
 
 <!-- releases -->
 
+[0.4.1]: https://github.com/hashicorp/vault-client-go/releases/tag/v0.4.1
 [0.4.0]: https://github.com/hashicorp/vault-client-go/releases/tag/v0.4.0
 [0.3.3]: https://github.com/hashicorp/vault-client-go/releases/tag/v0.3.3
 [0.3.2]: https://github.com/hashicorp/vault-client-go/releases/tag/v0.3.2

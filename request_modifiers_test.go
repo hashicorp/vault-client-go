@@ -121,6 +121,21 @@ func Test_mergeRequestModifiers_overwrite(t *testing.T) {
 			rhs:      requestModifiers{headers: requestHeaders{namespace: "namespace-rhs"}},
 			expected: requestModifiers{headers: requestHeaders{token: "token-lhs", namespace: "namespace-rhs"}},
 		},
+		"custom-headers-in-lhs": {
+			lhs:      requestModifiers{headers: requestHeaders{customHeaders: http.Header{"Content-Type": []string{"image/png"}}}},
+			rhs:      requestModifiers{},
+			expected: requestModifiers{headers: requestHeaders{customHeaders: http.Header{"Content-Type": []string{"image/png"}}}},
+		},
+		"custom-headers-in-rhs": {
+			lhs:      requestModifiers{},
+			rhs:      requestModifiers{headers: requestHeaders{customHeaders: http.Header{"Content-Length": []string{"123"}}}},
+			expected: requestModifiers{headers: requestHeaders{customHeaders: http.Header{"Content-Length": []string{"123"}}}},
+		},
+		"custom-headers-in-both": {
+			lhs:      requestModifiers{headers: requestHeaders{customHeaders: http.Header{"Content-Type": []string{"image/png"}}}},
+			rhs:      requestModifiers{headers: requestHeaders{customHeaders: http.Header{"Content-Length": []string{"123"}}}},
+			expected: requestModifiers{headers: requestHeaders{customHeaders: http.Header{"Content-Type": []string{"image/png"}, "Content-Length": []string{"123"}}}},
+		},
 	}
 
 	for name, tc := range cases {

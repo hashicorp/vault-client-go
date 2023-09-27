@@ -279,7 +279,11 @@ func mergeRequestModifiers(lhs, rhs *requestModifiers) {
 	}
 
 	// in case of key collisions, the rhs keys will take precedence
-	maps.Copy(lhs.headers.customHeaders, rhs.headers.customHeaders)
+	if lhs.headers.customHeaders != nil {
+		maps.Copy(lhs.headers.customHeaders, rhs.headers.customHeaders)
+	} else {
+		lhs.headers.customHeaders = rhs.headers.customHeaders
+	}
 
 	lhs.requestCallbacks = append(
 		lhs.requestCallbacks,

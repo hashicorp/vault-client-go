@@ -216,7 +216,7 @@ func (c *Client) cloneClientRequestModifiers() requestModifiers {
 		customHeaders:             c.clientRequestModifiers.headers.customHeaders.Clone(),
 	}
 
-    clone.headers.mfaCredentials = append([]string{}, c.clientRequestModifiers.headers.mfaCredentials...)
+	clone.headers.mfaCredentials = append([]string{}, c.clientRequestModifiers.headers.mfaCredentials...)
 
 	return clone
 }

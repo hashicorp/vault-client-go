@@ -228,7 +228,7 @@ func (c *replicationStateCache) clone() replicationStateCache {
 	/* */ c.statesLock.RLock()
 	defer c.statesLock.RUnlock()
 
-	var cloned []string
+	cloned := make([]string, len(c.states))
 	copy(cloned, c.states)
 
 	return replicationStateCache{

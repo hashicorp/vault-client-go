@@ -180,8 +180,8 @@ func (c *Client) cloneClientRequestModifiers() requestModifiers {
 
 	var clone requestModifiers
 
-	clone.requestCallbacks = append(clone.requestCallbacks, c.clientRequestModifiers.requestCallbacks...)
-	clone.responseCallbacks = append(clone.responseCallbacks, c.clientRequestModifiers.responseCallbacks...)
+	clone.requestCallbacks = append([]RequestCallback{}, c.clientRequestModifiers.requestCallbacks...)
+	clone.responseCallbacks = append([]ResponseCallback{}, c.clientRequestModifiers.responseCallbacks...)
 
 	clone.headers = requestHeaders{
 		userAgent:                 c.clientRequestModifiers.headers.userAgent,
@@ -192,7 +192,7 @@ func (c *Client) cloneClientRequestModifiers() requestModifiers {
 		customHeaders:             c.clientRequestModifiers.headers.customHeaders.Clone(),
 	}
 
-    clone.headers.mfaCredentials = append(clone.headers.mfaCredentials, c.clientRequestModifiers.headers.mfaCredentials...)
+    clone.headers.mfaCredentials = append([]string{}, c.clientRequestModifiers.headers.mfaCredentials...)
 
 	return clone
 }

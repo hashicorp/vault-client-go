@@ -8,6 +8,7 @@ import (
 	"maps"
 	"net/http"
 	"net/url"
+	"slices"
 	"strings"
 	"time"
 	"unicode"
@@ -172,8 +173,7 @@ func (c *Client) ClearCustomHeaders() {
 // SetRequestCallbacks sets callbacks which will be invoked before each request.
 func (c *Client) SetRequestCallbacks(callbacks ...RequestCallback) error {
 	c.clientRequestModifiersLock.Lock()
-	c.clientRequestModifiers.requestCallbacks = make([]RequestCallback, len(callbacks))
-	copy(c.clientRequestModifiers.requestCallbacks, callbacks)
+	c.clientRequestModifiers.requestCallbacks = slices.Clone(callbacks)
 	c.clientRequestModifiersLock.Unlock()
 
 	return nil
@@ -190,8 +190,7 @@ func (c *Client) ClearRequestCallbacks() {
 // successful response.
 func (c *Client) SetResponseCallbacks(callbacks ...ResponseCallback) error {
 	c.clientRequestModifiersLock.Lock()
-	c.clientRequestModifiers.responseCallbacks = make([]ResponseCallback, len(callbacks))
-	copy(c.clientRequestModifiers.responseCallbacks, callbacks)
+	c.clientRequestModifiers.responseCallbacks = slices.Clone(callbacks)
 	c.clientRequestModifiersLock.Unlock()
 
 	return nil

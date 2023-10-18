@@ -11,6 +11,7 @@ import (
 	"net"
 	"net/http"
 	"net/url"
+	"slices"
 	"strings"
 	"sync"
 
@@ -204,8 +205,8 @@ func (c *Client) cloneClientRequestModifiers() requestModifiers {
 
 	var clone requestModifiers
 
-	clone.requestCallbacks = append([]RequestCallback{}, c.clientRequestModifiers.requestCallbacks...)
-	clone.responseCallbacks = append([]ResponseCallback{}, c.clientRequestModifiers.responseCallbacks...)
+	clone.requestCallbacks = slices.Clone(c.clientRequestModifiers.requestCallbacks)
+	clone.responseCallbacks = slices.Clone(c.clientRequestModifiers.responseCallbacks)
 
 	clone.headers = requestHeaders{
 		userAgent:                 c.clientRequestModifiers.headers.userAgent,
@@ -216,7 +217,7 @@ func (c *Client) cloneClientRequestModifiers() requestModifiers {
 		customHeaders:             c.clientRequestModifiers.headers.customHeaders.Clone(),
 	}
 
-	clone.headers.mfaCredentials = append([]string{}, c.clientRequestModifiers.headers.mfaCredentials...)
+	clone.headers.mfaCredentials = slices.Clone(c.clientRequestModifiers.headers.mfaCredentials)
 
 	return clone
 }

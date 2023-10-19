@@ -5,6 +5,7 @@ package vault
 
 import (
 	"fmt"
+	"net/http"
 	"testing"
 	"time"
 
@@ -27,6 +28,12 @@ func Test_Client_Clone(t *testing.T) {
 
 	require.NoError(t, client.SetToken("test-token"))
 	require.NoError(t, client.SetNamespace("test-namespace"))
+	require.NoError(t, client.SetRequestCallbacks(func(req *http.Request) {
+		t.Log(req)
+	}))
+	require.NoError(t, client.SetResponseCallbacks(func(req *http.Request, resp *http.Response) {
+		t.Log(req, resp)
+	}))
 
 	clone := client.Clone()
 

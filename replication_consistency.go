@@ -10,6 +10,7 @@ import (
 	"encoding/hex"
 	"fmt"
 	"net/http"
+	"slices"
 	"strconv"
 	"strings"
 	"sync"
@@ -228,8 +229,7 @@ func (c *replicationStateCache) clone() replicationStateCache {
 	/* */ c.statesLock.RLock()
 	defer c.statesLock.RUnlock()
 
-	var cloned []string
-	copy(cloned, c.states)
+	cloned := slices.Clone(c.states)
 
 	return replicationStateCache{
 		statesLock: sync.RWMutex{},

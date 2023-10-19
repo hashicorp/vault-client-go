@@ -8,6 +8,12 @@ and this project adheres to
 
 ## Unreleased ([diff][unreleased-diff])
 
+## [0.4.2][] ([diff][0.4.2-diff]) - 2023-10-19
+
+### Fixed
+
+- Fixed `SetRequestCallbacks` & `SetResponseCallbacks` functions (#242).
+
 ## [0.4.1][] ([diff][0.4.1-diff]) - 2023-09-27
 
 ### Fixed
@@ -144,7 +150,9 @@ and this project adheres to
 <!-- diffs -->
 
 [unreleased-diff]:
-  https://github.com/hashicorp/vault-client-go/compare/v0.4.1...HEAD
+  https://github.com/hashicorp/vault-client-go/compare/v0.4.2...HEAD
+[0.4.2-diff]:
+  https://github.com/hashicorp/vault-client-go/compare/v0.4.1...v0.4.2
 [0.4.1-diff]:
   https://github.com/hashicorp/vault-client-go/compare/v0.4.0...v0.4.1
 [0.4.0-diff]:
@@ -166,6 +174,7 @@ and this project adheres to
 
 <!-- releases -->
 
+[0.4.2]: https://github.com/hashicorp/vault-client-go/releases/tag/v0.4.2
 [0.4.1]: https://github.com/hashicorp/vault-client-go/releases/tag/v0.4.1
 [0.4.0]: https://github.com/hashicorp/vault-client-go/releases/tag/v0.4.0
 [0.3.3]: https://github.com/hashicorp/vault-client-go/releases/tag/v0.3.3

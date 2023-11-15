@@ -20273,6 +20273,53 @@
         }
       }
     },
+    "/{kv_v2_mount_path}/metadata/": {
+      "description": "Configures settings for the KV store",
+      "parameters": [
+        {
+          "name": "kv_v2_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "kv-v2"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "kv-v2-list2",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/{kv_v2_mount_path}/metadata/{path}/": {
       "description": "Configures settings for the KV store",
       "parameters": [

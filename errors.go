@@ -38,8 +38,8 @@ type ResponseError struct {
 	// Errors are the underlying error messages returned in the response body
 	Errors []string
 
-	// RawResponseBody is only popualted when error messages couldn't be parsed
-	RawResponseBody []byte
+	// RawResponseBytes is only popualted when error messages can't be parsed
+	RawResponseBytes []byte
 
 	// OriginalRequest is a pointer to the request that caused this error
 	OriginalRequest *http.Request
@@ -50,8 +50,8 @@ func (e *ResponseError) Error() string {
 	case len(e.Errors) > 0:
 		return fmt.Sprintf("%d %s: %s", e.StatusCode, http.StatusText(e.StatusCode), strings.Join(e.Errors, ", "))
 
-	case len(e.RawResponseBody) > 0:
-		return fmt.Sprintf("%d %s: %s", e.StatusCode, http.StatusText(e.StatusCode), e.RawResponseBody)
+	case len(e.RawResponseBytes) > 0:
+		return fmt.Sprintf("%d %s: %s", e.StatusCode, http.StatusText(e.StatusCode), e.RawResponseBytes)
 
 	default:
 		return fmt.Sprintf("%d %s", e.StatusCode, http.StatusText(e.StatusCode))
@@ -113,7 +113,7 @@ func isResponseError(req *http.Request, resp *http.Response) *ResponseError {
 	}
 
 	// else, return the raw response body
-	responseError.RawResponseBody = responseBody
+	responseError.RawResponseBytes = responseBody
 
 	return responseError
 }

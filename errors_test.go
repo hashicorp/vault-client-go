@@ -75,7 +75,7 @@ func Test_isResponseError(t *testing.T) {
 
 			assert.Equal(t, tc.statusCode, responseError.StatusCode)
 			assert.Equal(t, tc.expectedErrors, responseError.Errors)
-			assert.Equal(t, tc.expectedRawResponseBody, responseError.RawResponseBody)
+			assert.Equal(t, tc.expectedRawResponseBody, responseError.RawResponseBytes)
 		})
 	}
 }

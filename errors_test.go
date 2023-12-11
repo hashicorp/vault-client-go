@@ -16,11 +16,11 @@ import (
 
 func Test_isResponseError(t *testing.T) {
 	cases := map[string]struct {
-		statusCode              int
-		body                    string
-		expectedError           bool
-		expectedErrors          []string
-		expectedRawResponseBody []byte
+		statusCode               int
+		body                     string
+		expectedError            bool
+		expectedErrors           []string
+		expectedRawResponseBytes []byte
 	}{
 		"non-error": {
 			statusCode:    http.StatusOK,
@@ -40,18 +40,18 @@ func Test_isResponseError(t *testing.T) {
 			expectedErrors: []string{"single error"},
 		},
 		"json-response-without-errors": {
-			statusCode:              http.StatusNotFound,
-			body:                    `{"data":{"key1":"value1","key2":"value2"}}`,
-			expectedError:           true,
-			expectedErrors:          nil,
-			expectedRawResponseBody: []byte(`{"data":{"key1":"value1","key2":"value2"}}`),
+			statusCode:               http.StatusNotFound,
+			body:                     `{"data":{"key1":"value1","key2":"value2"}}`,
+			expectedError:            true,
+			expectedErrors:           nil,
+			expectedRawResponseBytes: []byte(`{"data":{"key1":"value1","key2":"value2"}}`),
 		},
 		"non-json-response": {
-			statusCode:              http.StatusTeapot,
-			body:                    `this is just a string`,
-			expectedError:           true,
-			expectedErrors:          nil,
-			expectedRawResponseBody: []byte(`this is just a string`),
+			statusCode:               http.StatusTeapot,
+			body:                     `this is just a string`,
+			expectedError:            true,
+			expectedErrors:           nil,
+			expectedRawResponseBytes: []byte(`this is just a string`),
 		},
 	}
 
@@ -75,7 +75,7 @@ func Test_isResponseError(t *testing.T) {
 
 			assert.Equal(t, tc.statusCode, responseError.StatusCode)
 			assert.Equal(t, tc.expectedErrors, responseError.Errors)
-			assert.Equal(t, tc.expectedRawResponseBody, responseError.RawResponseBytes)
+			assert.Equal(t, tc.expectedRawResponseBytes, responseError.RawResponseBytes)
 		})
 	}
 }

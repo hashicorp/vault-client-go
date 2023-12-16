@@ -8,11 +8,11 @@ and this project adheres to
 
 ## Unreleased ([diff][unreleased-diff])
 
-## [0.4.3][] ([diff][0.4.2-diff]) - 2023-12-15
+## [0.4.3][] ([diff][0.4.3-diff]) - 2023-12-15
 
 ### Fixed
 
-- Fixed error parsing for errors with non-standard response bodies (#247)
+- Fixed error parsing for errors with non-standard response bodies (#247).
 
 ## [0.4.2][] ([diff][0.4.2-diff]) - 2023-10-19
 

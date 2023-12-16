@@ -8,6 +8,12 @@ and this project adheres to
 
 ## Unreleased ([diff][unreleased-diff])
 
+## [0.4.3][] ([diff][0.4.2-diff]) - 2023-12-15
+
+### Fixed
+
+- Fixed error parsing for errors with non-standard response bodies (#247)
+
 ## [0.4.2][] ([diff][0.4.2-diff]) - 2023-10-19
 
 ### Fixed
@@ -150,7 +156,9 @@ and this project adheres to
 <!-- diffs -->
 
 [unreleased-diff]:
-  https://github.com/hashicorp/vault-client-go/compare/v0.4.2...HEAD
+  https://github.com/hashicorp/vault-client-go/compare/v0.4.3...HEAD
+[0.4.3-diff]:
+  https://github.com/hashicorp/vault-client-go/compare/v0.4.2...v0.4.3
 [0.4.2-diff]:
   https://github.com/hashicorp/vault-client-go/compare/v0.4.1...v0.4.2
 [0.4.1-diff]:
@@ -174,6 +182,7 @@ and this project adheres to
 
 <!-- releases -->
 
+[0.4.3]: https://github.com/hashicorp/vault-client-go/releases/tag/v0.4.3
 [0.4.2]: https://github.com/hashicorp/vault-client-go/releases/tag/v0.4.2
 [0.4.1]: https://github.com/hashicorp/vault-client-go/releases/tag/v0.4.1
 [0.4.0]: https://github.com/hashicorp/vault-client-go/releases/tag/v0.4.0

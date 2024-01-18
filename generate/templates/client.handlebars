@@ -140,8 +140,7 @@ func parseAddress(address string) (*url.URL, error) {
 		// used in the application layer and not to the transport layer. Hence,
 		// setting the fields accordingly.
 		parsed.Scheme = "http"
-		// fake host to construct valid URLs
-		parsed.Host = "unix.socket"
+		parsed.Host = "localhost"
 		parsed.Path = ""
 	}
 

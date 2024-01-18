@@ -155,7 +155,7 @@ func parseAddress(address string) (*url.URL, error) {
 		// used in the application layer and not to the transport layer. Hence,
 		// setting the fields accordingly.
 		parsed.Scheme = "http"
-		parsed.Host = strings.TrimPrefix(address, "unix://") // socket
+		parsed.Host = "localhost"
 		parsed.Path = ""
 	}
 

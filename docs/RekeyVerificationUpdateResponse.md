@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Complete** | Pointer to **bool** |  | [optional] 
-**Nounce** | Pointer to **string** |  | [optional] 
+**Nonce** | Pointer to **string** |  | [optional] 
 
 
 

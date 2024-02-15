@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **N** | Pointer to **int32** |  | [optional] 
-**Nounce** | Pointer to **string** |  | [optional] 
+**Nonce** | Pointer to **string** |  | [optional] 
 **Progress** | Pointer to **int32** |  | [optional] 
 **Started** | Pointer to **bool** |  | [optional] 
 **T** | Pointer to **int32** |  | [optional] 

@@ -9,7 +9,7 @@ package schema
 type RekeyVerificationCancelResponse struct {
 	N int32 `json:"n,omitempty"`
 
-	Nounce string `json:"nounce,omitempty"`
+	Nonce string `json:"nonce,omitempty"`
 
 	Progress int32 `json:"progress,omitempty"`
 

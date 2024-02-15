@@ -11,7 +11,7 @@ type RekeyAttemptReadProgressResponse struct {
 
 	N int32 `json:"n,omitempty"`
 
-	Nounce string `json:"nounce,omitempty"`
+	Nonce string `json:"nonce,omitempty"`
 
 	PgpFingerprints []string `json:"pgp_fingerprints,omitempty"`
 

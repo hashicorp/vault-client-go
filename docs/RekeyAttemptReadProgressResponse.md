@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Backup** | Pointer to **bool** |  | [optional] 
 **N** | Pointer to **int32** |  | [optional] 
-**Nounce** | Pointer to **string** |  | [optional] 
+**Nonce** | Pointer to **string** |  | [optional] 
 **PgpFingerprints** | Pointer to **[]string** |  | [optional] 
 **Progress** | Pointer to **int32** |  | [optional] 
 **Required** | Pointer to **int32** |  | [optional] 

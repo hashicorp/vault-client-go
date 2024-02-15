@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Keys** | Pointer to **[]string** |  | [optional] 
 **KeysBase64** | Pointer to **[]string** |  | [optional] 
 **N** | Pointer to **int32** |  | [optional] 
-**Nounce** | Pointer to **string** |  | [optional] 
+**Nonce** | Pointer to **string** |  | [optional] 
 **PgpFingerprints** | Pointer to **[]string** |  | [optional] 
 **Progress** | Pointer to **int32** |  | [optional] 
 **Required** | Pointer to **int32** |  | [optional] 

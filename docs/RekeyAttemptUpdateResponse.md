@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **PgpFingerprints** | Pointer to **[]string** |  | [optional] 
 **Progress** | Pointer to **int32** |  | [optional] 
 **Required** | Pointer to **int32** |  | [optional] 
-**Started** | Pointer to **string** |  | [optional] 
+**Started** | Pointer to **bool** |  | [optional] 
 **T** | Pointer to **int32** |  | [optional] 
 **VerificationNonce** | Pointer to **string** |  | [optional] 
 **VerificationRequired** | Pointer to **bool** |  | [optional] 

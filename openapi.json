@@ -48102,7 +48102,7 @@
             "type": "integer"
           },
           "started": {
-            "type": "string"
+            "type": "boolean"
           },
           "t": {
             "type": "integer"
@@ -48140,7 +48140,7 @@
             "type": "integer"
           },
           "started": {
-            "type": "string"
+            "type": "boolean"
           },
           "t": {
             "type": "integer"
@@ -48206,7 +48206,7 @@
             "type": "integer"
           },
           "started": {
-            "type": "string"
+            "type": "boolean"
           },
           "t": {
             "type": "integer"
@@ -48264,7 +48264,7 @@
             "type": "integer"
           },
           "started": {
-            "type": "string"
+            "type": "boolean"
           },
           "t": {
             "type": "integer"
@@ -48284,7 +48284,7 @@
             "type": "integer"
           },
           "started": {
-            "type": "string"
+            "type": "boolean"
           },
           "t": {
             "type": "integer"

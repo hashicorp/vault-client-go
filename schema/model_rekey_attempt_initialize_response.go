@@ -19,7 +19,7 @@ type RekeyAttemptInitializeResponse struct {
 
 	Required int32 `json:"required,omitempty"`
 
-	Started string `json:"started,omitempty"`
+	Started bool `json:"started,omitempty"`
 
 	T int32 `json:"t,omitempty"`
 

@@ -36917,7 +36917,10 @@
             "type": "integer",
             "description": "If provided during a read, the value at the version number will be returned"
           }
-        }
+        },
+          "required": [
+              "data"
+          ]
       },
       "KvV2WriteResponse": {
         "type": "object",

@@ -48086,7 +48086,7 @@
           "n": {
             "type": "integer"
           },
-          "nounce": {
+          "nonce": {
             "type": "string"
           },
           "pgp_fingerprints": {
@@ -48102,7 +48102,7 @@
             "type": "integer"
           },
           "started": {
-            "type": "string"
+            "type": "boolean"
           },
           "t": {
             "type": "integer"
@@ -48124,7 +48124,7 @@
           "n": {
             "type": "integer"
           },
-          "nounce": {
+          "nonce": {
             "type": "string"
           },
           "pgp_fingerprints": {
@@ -48140,7 +48140,7 @@
             "type": "integer"
           },
           "started": {
-            "type": "string"
+            "type": "boolean"
           },
           "t": {
             "type": "integer"
@@ -48190,7 +48190,7 @@
           "n": {
             "type": "integer"
           },
-          "nounce": {
+          "nonce": {
             "type": "string"
           },
           "pgp_fingerprints": {
@@ -48206,7 +48206,7 @@
             "type": "integer"
           },
           "started": {
-            "type": "string"
+            "type": "boolean"
           },
           "t": {
             "type": "integer"
@@ -48257,14 +48257,14 @@
           "n": {
             "type": "integer"
           },
-          "nounce": {
+          "nonce": {
             "type": "string"
           },
           "progress": {
             "type": "integer"
           },
           "started": {
-            "type": "string"
+            "type": "boolean"
           },
           "t": {
             "type": "integer"
@@ -48277,14 +48277,14 @@
           "n": {
             "type": "integer"
           },
-          "nounce": {
+          "nonce": {
             "type": "string"
           },
           "progress": {
             "type": "integer"
           },
           "started": {
-            "type": "string"
+            "type": "boolean"
           },
           "t": {
             "type": "integer"
@@ -48310,7 +48310,7 @@
           "complete": {
             "type": "boolean"
           },
-          "nounce": {
+          "nonce": {
             "type": "string"
           }
         }

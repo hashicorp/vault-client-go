@@ -12,4 +12,7 @@ type UnsealRequest struct {
 
 	// Specifies if previously-provided unseal keys are discarded and the unseal process is reset.
 	Reset bool `json:"reset,omitempty"`
+
+	// Available in 1.0 - Used to migrate the seal from shamir to autoseal or autoseal to shamir. Must be provided on all unseal key calls.
+	Migrate bool `json:"migrate,omitempty"`
 }

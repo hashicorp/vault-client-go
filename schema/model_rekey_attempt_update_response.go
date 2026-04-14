@@ -17,7 +17,7 @@ type RekeyAttemptUpdateResponse struct {
 
 	N int32 `json:"n,omitempty"`
 
-	Nounce string `json:"nounce,omitempty"`
+	Nonce string `json:"nonce,omitempty"`
 
 	PgpFingerprints []string `json:"pgp_fingerprints,omitempty"`
 
@@ -25,7 +25,7 @@ type RekeyAttemptUpdateResponse struct {
 
 	Required int32 `json:"required,omitempty"`
 
-	Started string `json:"started,omitempty"`
+	Started bool `json:"started,omitempty"`
 
 	T int32 `json:"t,omitempty"`
 

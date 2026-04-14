@@ -9,5 +9,5 @@ package schema
 type RekeyVerificationUpdateResponse struct {
 	Complete bool `json:"complete,omitempty"`
 
-	Nounce string `json:"nounce,omitempty"`
+	Nonce string `json:"nonce,omitempty"`
 }

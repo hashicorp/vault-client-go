@@ -8,5 +8,5 @@ package schema
 // AppRoleReadTokenMaxTtlResponse struct for AppRoleReadTokenMaxTtlResponse
 type AppRoleReadTokenMaxTtlResponse struct {
 	// The maximum lifetime of the generated token
-	TokenMaxTtl string `json:"token_max_ttl,omitempty"`
+	TokenMaxTtl int64 `json:"token_max_ttl,omitempty"`
 }

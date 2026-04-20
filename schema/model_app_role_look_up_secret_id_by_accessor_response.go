@@ -27,7 +27,7 @@ type AppRoleLookUpSecretIdByAccessorResponse struct {
 	SecretIdNumUses int32 `json:"secret_id_num_uses,omitempty"`
 
 	// Duration in seconds after which the issued secret ID expires.
-	SecretIdTtl string `json:"secret_id_ttl,omitempty"`
+	SecretIdTtl int64 `json:"secret_id_ttl,omitempty"`
 
 	// List of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token. Should be a subset of the token CIDR blocks listed on the role, if any.
 	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`

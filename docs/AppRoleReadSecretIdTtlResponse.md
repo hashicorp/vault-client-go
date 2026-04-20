@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SecretIdTtl** | Pointer to **string** | Duration in seconds after which the issued secret ID should expire. Defaults to 0, meaning no expiration. | [optional] 
+**SecretIdTtl** | Pointer to **int64** | Duration in seconds after which the issued secret ID should expire. Defaults to 0, meaning no expiration. | [optional] 
 
 
 

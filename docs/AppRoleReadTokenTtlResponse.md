@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TokenTtl** | Pointer to **string** | The initial ttl of the token to generate | [optional] 
+**TokenTtl** | Pointer to **int64** | The initial ttl of the token to generate | [optional] 
 
 
 
